@@ -227,9 +227,11 @@ then
 	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
 
 	package_extract_dir("/tmp/tools/adaway/org.adaway-1", "/data/app/");
+	ui_print("- Install Adaway apk");
 	set_metadata_recursive("/data/app/", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644);
 	set_metadata_recursive("/data/app/lib", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
 	set_metadata_recursive("/data/app/oat", "uid", 0, "gid", 0, "dmode", 0771, "fmode", 0644);
+	ui_print("- Install host file");
 	set_metadata("/etc/hosts", "uid", 0, "gid", 0, "fmode", 0777);
 	delete("/etc/hosts");
 	package_extract_file("/tmp/tools/adaway/hosts", "/etc/hosts");
