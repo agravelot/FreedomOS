@@ -23,7 +23,6 @@ Thumbs.db
 *.dmg
 *.gz
 *.iso
-*.jar
 *.rar
 *.tar
 *.zip
@@ -36,9 +35,12 @@ Thumbs.db
 *.md5
 *.apk
 
-tmp/
-output/
-zip/
-SignApk/*.pk8
-SignApk/*.pem
+*.pk8
+*.pem
+
+tmp/*
 system/*
+
+!system/EMPTY_DIRECTORY
+!tmp/EMPTY_DIRECTORY
+
