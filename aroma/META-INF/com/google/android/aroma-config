@@ -259,8 +259,8 @@ then
   	"mod.prop",
     "Extra mod", "", 2,
       "Install SuperSU", "SuperSU v2.74 by Chainfire", 1,
-  #    "Viper4Android + Dolby Atmos", "Divine beats by Theroyalseeker", 1,
-  #    "Xposed", "Xposed v85 by rovo89", 0,
+      "Viper4Android + Dolby Atmos", "Divine beats by Theroyalseeker", 1,
+      "Xposed", "Xposed v85 by rovo89", 0,
       "Adaway", "Ad-Blocker for Android", 1
   );
 endif;
