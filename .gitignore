@@ -33,14 +33,13 @@ Thumbs.db
 *.sql
 *.sqlite
 *.md5
-*.apk
 
 *.pk8
 *.pem
 
 tmp/*
 system/*
+download/*.apk
 
 !system/EMPTY_DIRECTORY
 !tmp/EMPTY_DIRECTORY
-
