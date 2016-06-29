@@ -81,7 +81,7 @@ package_extract_file("firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/
 ui_print("- recovery...");
 
 if
-	(file_getprop("/tmp/aroma/install_mod.prop", "selected.0")=="1")
+	(file_getprop("/tmp/aroma/install_mod.prop", "selected.1")=="1")
 then
 
   show_progress(0.450000, 10);
@@ -96,8 +96,8 @@ then
 		ui_print(" ");
     ui_print("@  Installing SuperSU ");
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    run_program("/sbin/busybox", "unzip", "/tmp/tools/su/BETA-SuperSU-v2.74.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/su");
-    run_program("/sbin/busybox", "sh", "/tmp/tools/su/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/su/BETA-SuperSU-v2.74.zip");
+    run_program("/sbin/busybox", "unzip", "/tmp/tools/su/*SuperSU*.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/su");
+    run_program("/sbin/busybox", "sh", "/tmp/tools/su/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/su/*SuperSU*.zip");
     unmount("/system");
   endif;
 
