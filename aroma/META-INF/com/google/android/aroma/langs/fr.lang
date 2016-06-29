@@ -1,0 +1,110 @@
+﻿#########################################################
+#	Bootloader Changer language file
+#
+#	English by: Nevax
+#
+#
+#
+
+text_ok=OK
+text_next=Suivant
+text_back=Retour
+text_yes=Oui
+text_no=Non
+text_about=Information
+text_quit=Quitter l'installation
+text_quit_msg=Êtes-vous sûr de vouloir quitter ?
+
+welcome.title=Bienvenue
+welcome.text1=Vous êtes sur le point d'utiliser
+welcome.version=VERSION
+welcome.codename=CODENAME
+welcome.updated=Date MAJ
+welcome.next=Presser suivant pour continuer l'installation...
+
+changelog.title=Changelogs
+changelog.desc=HeliumOS Changelogs
+language.title=Selection de la langue
+language.text=Sélectionner le language à utiliser
+language.english=English
+language.english.info=Using English
+language.french=France
+language.french.info=Utiliser le Français
+
+welcome.microblog=Youtube
+rom.data=28 Juin 2016
+text_finish=Terminer
+model.title=Modèle
+
+by=par
+
+main.tittle=Selectionner un menu pour poursuivre l'installation
+main.install=Installer
+main.install.info=Continuer l'installation
+main.sys=Information système
+main.sys.info=Montrer les informations système
+main.changelog.info=Bootloader Changer changelogs
+main.exit=Quitter
+main.exit.info=Quitter l'installateur Bootloader Changer
+
+sys.title=Information système
+sys.info.wait=Récupération des informations système...
+sys.info.title=Informations système
+sys.info.title2=Vos informations système.
+sys.info.model=Modèle
+sys.info.name=Nom
+sys.info.manu=Fabricant
+sys.info.cpu=CPU
+sys.info.lcd=Densité LCD
+sys.info.storage=Taille mémoire
+sys.info.storage.free=Libre
+
+pre.install.title=Prêt pour installation
+pre.install=L'outil est prêt pour l'installation.
+pre.install2=Appuyer <b>Installer Maintenant</b> pour débuter l'installation.
+pre.install3=Si vous souhaitez vérifier ou modifier vos paramètres d'installation, appuyer sur <b>Retour</b>.
+
+gapps.tittle=Google Apps
+gapps.tittle2=Select the Google Apps you want
+
+apps.tittle=System Apps
+apps.tittle2=Select the system Apps you want
+
+mod.ttile=Mod supplémentaire
+mod.ttile2=Selectionner les mod que vous souhaitez
+
+dpi.title=Change le DPI
+dpi.title2=Point par pouce
+dpi.500=DPI système à 500
+dpi.490=DPI système à 490
+dpi.480=DPI système à 480
+dpi.470=DPI système à 470
+dpi.460=DPI système à 460
+dpi.450=DPI système à 450
+dpi.440=DPI système à 440
+dpi.430=DPI système à 430
+dpi.420=DPI système à 420
+
+mod.title=Installation mod supplémentaire
+mod.title2=Root..
+
+limit.tittle=Limitation d'application
+limit.tittle2=Change le nombre maximum d'application en mémoire.
+limit.42=Max. 42 applications en mémoire
+limit.40=Max. 40 applications en mémoire
+limit.35=Max. 35 applications en mémoire
+limit.30=Max. 30 applications en mémoire
+limit.25=Max. 25 applications en mémoire
+limit.20=Max. 20 applications en mémoire
+limit.15=Max. 15 applications en mémoire
+limit.10=Max. 10 applications en mémoire
+
+install=Installation
+install.now=Installer Maintenant
+install.finish=L'outil d'installation a correctement installé HeliumOS. Appuyer sur Suivant pour continer.
+install.finish.title=L'installation est terminé.
+installing.title=Installation...
+finish.title=Félicitation!
+finish.msg=HeliumOS a été correctement installé sur votre G2.
+finish.status=Résultat d'installation :
+finish.reboot=Redémarrer votre périphérique maintenant.

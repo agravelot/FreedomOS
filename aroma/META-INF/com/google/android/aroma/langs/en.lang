@@ -1,0 +1,111 @@
+﻿#########################################################
+#	Bootloader Changer language file
+#
+#	English by: Nevax
+#
+#
+#
+
+text_ok=OK
+text_next=Next
+text_back=Back
+text_yes=Yes
+text_no=No
+text_about=About
+text_calibrating=Calibrating Tools
+text_quit=Quit Installation
+text_quit_msg=Are you sure ?
+
+welcome.title=Welcome
+welcome.text1=You are about to use
+welcome.version=VERSION
+welcome.codename=CODENAME
+welcome.updated=UPDATED
+welcome.next=Press Next to Continue the Installation...
+
+changelog.title=Changelogs
+changelog.desc=HeliumOS Changelogs
+language.title=Select language
+language.text=Select install language
+language.english=English
+language.english.info=Using English
+language.french=France
+language.french.info=Utiliser le Français
+
+welcome.microblog=Youtube
+rom.data=Jun. 28th 2016
+text_finish=Finish
+model.title=Phone Model
+
+by=by
+
+main.tittle=Please select menu below to start the Installation
+main.install=Install
+main.install.info=Continue to install mod
+main.sys=System Info
+main.sys.info=Show device informations
+main.changelog.info=HeliumOS changelogs
+main.exit=Exit
+main.exit.info=Exit HeliumOS installer
+
+sys.title=System information
+sys.info.wait=Get system informations...
+sys.info.title=System informations
+sys.info.title2=Your device system information.
+sys.info.model=Model
+sys.info.name=Name
+sys.info.manu=Manufacturer
+sys.info.cpu=CPU
+sys.info.lcd=LCD Density
+sys.info.storage=Storage Size
+sys.info.storage.free=Free
+
+pre.install.title=Ready to Install
+pre.install=The wizard is ready to begin the installation.
+pre.install2=Press <b>Install Now</b> to begin the installation.
+pre.install3=If you want to review or change any of your installation settings, press <b>Back</b>.
+
+gapps.tittle=Google Apps
+gapps.tittle2=Select the Google Apps you want
+
+apps.tittle=System Apps
+apps.tittle2=Select the system Apps you want
+
+mod.ttile=Extra mod
+mod.ttile2=Select the extra mod you want
+
+dpi.title=Change the DPI
+dpi.title2=Dots Per Inch
+dpi.500=Set android DPI to 500
+dpi.490=Set android DPI to 490
+dpi.480=Set android DPI to 480
+dpi.470=Set android DPI to 470
+dpi.460=Set android DPI to 460
+dpi.450=Set android DPI to 450
+dpi.440=Set android DPI to 440
+dpi.430=Set android DPI to 430
+dpi.420=Set android DPI to 420
+
+mod.title=Install extra mods
+mod.title2=Root...
+
+limit.tittle=App limitation
+limit.tittle2=Change the max number of apps in RAM.
+limit.42=Max. 42 apps running in RAM
+limit.40=Max. 40 apps running in RAM
+limit.35=Max. 35 apps running in RAM
+limit.30=Max. 30 apps running in RAM
+limit.25=Max. 25 apps running in RAM
+limit.20=Max. 20 apps running in RAM
+limit.15=Max. 15 apps running in RAM
+limit.10=Max. 10 apps running in RAM
+
+install=Installing
+install.now=Install Now
+install.finish=Installation Wizard has installed HeliumOS. Click NEXT to continue.
+install.finish.title=The installation has been completed.
+installing.title=Installing...
+finish.title=Congratulations!
+finish.msg=HeliumOS has been installed to your phone successfully.
+finish.status=Installation result:
+finish.reboot=Reboot your device now.

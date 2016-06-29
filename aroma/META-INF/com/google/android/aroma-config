@@ -1,0 +1,317 @@
+# Bootloader Changer aroma-config script
+# (c)Nevax
+#
+#Font&Language
+fontresload("0", "ttf/Roboto-Regular.ttf", "13");
+fontresload("1", "ttf/Roboto-Regular.ttf", "18");
+loadlang("langs/en.lang");
+
+#MOD Info
+ini_set("rom_name", "HeliumOS");
+ini_set("rom_version", "3.1.3-0");
+ini_set("rom_author", "Nevax - xda@NevaX1");
+ini_set("rom_date", "Jun. 27th 2016");
+
+#Font
+fontresload("0", "ttf/Roboto-Regular.ttf", "13");
+fontresload("1", "ttf/Roboto-Regular.ttf", "18");
+
+
+#UI
+ini_set("force_colorspace", "rgba");
+theme("g3");
+
+anisplash(
+    1,
+    "splash/nevax0", 500,
+    "splash/nevax10", 30,
+    "splash/nevax20", 30,
+    "splash/nevax30", 30,
+    "splash/nevax40", 30,
+    "splash/nevax50", 30,
+    "splash/nevax60", 30,
+    "splash/nevax70", 30,
+    "splash/nevax80", 30,
+    "splash/nevax90", 30,
+    "splash/nevax100", 2000
+);
+
+#SELECT LANGUAGE
+selectbox(
+    "<~language.title>",
+    "<~language.text>",
+    "@agreement",
+    "language.prop",
+
+    "<~language.french>", "<~language.french.info>", 0,
+    "<~language.english>", "<~language.english.info>", 1
+    );
+
+# SET LANGUAGE
+if prop("language.prop","selected.0")=="1" then
+  loadlang("langs/fr.lang");
+endif;
+
+if prop("language.prop","selected.0")=="2" then
+  loadlang("langs/en.lang");
+endif;
+
+#Welcome
+viewbox(
+	"<~welcome.title>",
+	"<~welcome.text1> <b>"
+	 + ini_get("rom_name")
+	 + " "
+	 + ini_get("rom_version")
+	 + "</b> <~by> <b>"
+	 + ini_get("rom_author")
+	 + "</b>.\n\n\n\n" +
+
+	"<~sys.title>\n\n" +
+
+	  "  <~welcome.version>\t\t:\t<b><#selectbg_g>"+ini_get("rom_version")+"</#></b>\n"+
+      "  <~welcome.codename>\t:\t<b><#selectbg_g>"+ini_get("rom_author")+"</#></b>\n"+
+      "  <~welcome.microblog>\t\t:\t<b><#selectbg_g>/nevaxtuto</#></b>\n"+
+      "  <~welcome.updated>\t\t:\t<b><#selectbg_g>"+ini_get("rom_date")+"</#></b>\n\n"+
+      "  <~welcome.next>",
+
+	"@welcome"
+);
+
+
+#Main Menu
+menubox(
+	ini_get("rom_name") + " <~by> <b>Nevax</b>",
+	"<~main.tittle>",
+	"@apps",
+	"menu.prop",
+
+	"<b><~main.install></b>", "<~main.install.info>", "@install",
+	"<b><~main.sys></b>", "<~main.sys.info>", "@info",
+	"<b><~changelog.title></b>", "<~main.changelog.info>", "@update",
+	"<b><~main.exit></b>", "<~main.exit.info>", "@default"
+);
+
+
+#System Info
+if prop("menu.prop", "selected")=="2" then
+	pleasewait("<~sys.info.wait>");
+	setvar(
+		"sysinfo",
+		"\n\n" +
+
+		"<~sys.info.model>\t\t\t: <b><#selectbg_g>" + sysprop("ro.product.model") + "</#></b>\n" +
+		"<~sys.info.name>\t\t\t: <b><#selectbg_g>" + sysprop("ro.product.name") + "</#></b>\n" +
+		"<~sys.info.manu>\t: <b><#selectbg_g>" + sysprop("ro.product.manufacturer") + "</#></b>\n\n" +
+
+		"<~sys.info.cpu>\t\t\t: <b><#selectbg_g>" + sysprop("ro.product.cpu.abi") + "</#></b>\n" +
+		"<~sys.info.lcd>\t\t: <b><#selectbg_g>" + sysprop("ro.sf.lcd_density") + "</#></b>\n\n" +
+
+		"<~sys.info.storage>\t\t: <b><#selectbg_g>" + getdisksize("/system", "m") + " MB</#></b>\n" +
+			"\t\t<~sys.info.storage.free>\t: <b><#selectbg_g>" + getdiskfree("/system", "m") + " MB</#></b>\n\n"
+		);
+
+	textbox(
+		"<~sys.info.title>",
+		"<~sys.info.title2>",
+		"@info",
+		getvar("sysinfo")
+	);
+
+	back("2");
+endif;
+
+
+#Changelog
+if prop("menu.prop", "selected")=="3" then
+	textdialog(
+		"HeliumOS changelog",
+		resread("changelog.txt"),
+		"Close"
+	);
+
+	back("1");
+endif;
+
+#Exit
+if prop("menu.prop", "selected")=="4" then
+	if
+		confirm(
+			"<~main.exit>",
+			"<~main.exit.info>?",
+			"@alert"
+		)=="yes"
+	then
+		exit("");
+	endif;
+
+	back("1");
+endif;
+
+#Choose install mod
+ini_set("text_next", "<~text_next>");
+selectbox(
+	"<~bl.tittle>",
+	"<~bl.title2>",
+	"@default",
+	"install_mod.prop",
+
+	"Install", "", 2,
+		"Custom", "GApps, Root and more ...", 1,
+		"Stock", "Original stock", 0,
+#		"Pico", "", 0,
+	"Check Assert", "", 2,
+    "Yes (Recommended)", "Check variant in build.prop", 1,
+    "No", "Do not check variant in build.prop ", 0,
+  "Reboot ?", "", 2,
+    "System", "Reboot to Android ", 0,
+    "Nop", "", 1
+);
+
+if
+	(file_getprop("/tmp/aroma/install_mod.prop", "selected.1")=="1")
+then
+  #GApp
+  ini_set("text_next", "<~text_next>");
+  checkbox(
+  	"<~gapps.tittle>",
+  	"<~gapps.tittle2>",
+  	"@default",
+  	"gapps.prop",
+
+  	"Google apps", "", 2,
+      "Calculator", "", 1,
+      "Calendar", "", 1,
+  		"Chrome", "", 1,
+  		"Drive", "", 1,
+  		"Gmail", "", 1,
+  		"Gmail Exchange", "", 1,
+      "Google", "", 1,
+  		"Hangouts", "", 1,
+      "Maps", "", 1,
+      "Photos", "", 1,
+      "Play Music", "", 1,
+      "TTS", "", 1,
+      "Talkback", "", 1,
+      "Play Movies", "", 1,
+      "YouTube", "", 1
+  );
+
+  #OnePlus App
+  ini_set("text_next", "<~text_next>");
+  checkbox(
+  	"<~apps.tittle>",
+  	"<~apps.title2>",
+  	"@default",
+  	"apps.prop",
+
+  	"System apps", "", 2,
+  		"Basic Dreams", "Veille intéractif", 1,
+  		"Face Lock", "", 1,
+  		"Black Hole", "Animated wallpaper", 1,
+  		"Holo spiral", "Animated wallpaper", 1,
+  		"Animated Wallpaper", "Support for animated wallpaper", 1,
+      "Music", "OnePlus music app", 1,
+      "NoiseFeild", "Animated wallpaper", 1,
+      "Phase Beam", "Animated wallpaper", 1,
+      "Protips", "", 1,
+      "Tags", "", 1
+  );
+
+  #DPI
+  selectbox(
+    "<~dpi.tittle>",
+  	"<~dpi.tittle2>",
+  	"@update",
+  	"dpi.prop",
+      "500", "<~dpi.500>", 0,
+      "490", "<~dpi.490>", 0,
+      "480 (Default)", "<~dpi.480>", 1,
+      "470", "<~dpi.470>", 0,
+      "460", "<~dpi.460>", 0,
+      "450", "<~dpi.450>", 0,
+      "440", "<~dpi.440>", 0,
+      "430", "<~dpi.430>", 0,
+      "420", "<~dpi.420>", 0
+  );
+
+  #App limit
+  selectbox(
+    "<~limit.tittle>",
+  	"<~limit.tittle2>",
+  	"@update",
+  	"limit.prop",
+      "42", "<~limit.42>", 0,
+      "40", "<~limit.40>", 0,
+      "35", "<~limit.35>", 1,
+      "30", "<~limit.30>", 0,
+      "25", "<~limit.25>", 0,
+      "20 (Default)", "<~limit.20>", 1,
+      "15", "<~limit.15>", 0,
+      "10", "<~limit.10>", 0
+  );
+
+  #Extra MOD
+  checkbox(
+    "<~mod.tittle>",
+  	"<~mod.tittle2>",
+  	"@update",
+  	"mod.prop",
+    "Extra mod", "", 2,
+      "Install SuperSU", "SuperSU v2.74 by Chainfire", 1
+  #    "Viper4Android + Dolby Atmos", "Divine beats by Theroyalseeker", 1,
+  #    "Xposed", "Xposed v85 by rovo89", 0
+  );
+endif;
+
+#PreInstall
+# If bootloader=3 (Lp Original), show alert message
+if prop("bootloader.prop", "selected.1")=="3" then
+    alert(
+     "Warning",
+     "\n\n\n\n" +
+     "<~warning1>\n" +
+     "<~warning2>"
+);
+endif;
+
+
+ini_set("text_next", "<~install.now>");
+viewbox(
+	"<~pre.install.title>",
+	"<~pre.install>\n\n" +
+	"<~pre.install2>\n\n" +
+	"<~pre.install3>\n\n\n\n",
+	"@install"
+);
+
+
+
+#Install
+ini_set("text_next", "<~text_next>");
+install(
+	"<~install>",
+	"<b>" + ini_get("rom_name") + "</b> is being installed.\n\n" +
+	"@install",
+	"<~install.finish>"
+);
+
+
+#PostInstall
+ini_set("text_next", "Finish");
+checkviewbox(
+	"<~install.finish.title>",
+	"<#selectbg_g><b><~finish.title></b></#>\n\n" +
+	"<b><~finish.msg></b>\n\n" +
+	"",
+	"@finish",
+
+	"<~finish.reboot>", "0", "reboot_it"
+);
+
+#Reboot
+if
+	getvar("reboot_it")=="1"
+then
+	reboot("onfinish");
+endif;
