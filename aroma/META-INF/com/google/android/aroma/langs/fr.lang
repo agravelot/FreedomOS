@@ -1,5 +1,5 @@
 ﻿#########################################################
-#	Bootloader Changer language file
+#	FreedomOS language file
 #
 #	English by: Nevax
 #
@@ -23,7 +23,7 @@ welcome.updated=Date MAJ
 welcome.next=Presser suivant pour continuer l'installation...
 
 changelog.title=Changelogs
-changelog.desc=HeliumOS Changelogs
+changelog.desc=FreedomOS Changelogs
 language.title=Selection de la langue
 language.text=Sélectionner le language à utiliser
 language.english=English
@@ -43,9 +43,9 @@ main.install=Installer
 main.install.info=Continuer l'installation
 main.sys=Information système
 main.sys.info=Montrer les informations système
-main.changelog.info=Bootloader Changer changelogs
+main.changelog.info=FreedomOS changelogs
 main.exit=Quitter
-main.exit.info=Quitter l'installateur Bootloader Changer
+main.exit.info=Quitter l'installateur FreedomOS
 
 sys.title=Information système
 sys.info.wait=Récupération des informations système...
@@ -101,10 +101,10 @@ limit.10=Max. 10 applications en mémoire
 
 install=Installation
 install.now=Installer Maintenant
-install.finish=L'outil d'installation a correctement installé HeliumOS. Appuyer sur Suivant pour continer.
+install.finish=L'outil d'installation a correctement installé FreedomOS. Appuyer sur Suivant pour continer.
 install.finish.title=L'installation est terminé.
 installing.title=Installation...
 finish.title=Félicitation!
-finish.msg=HeliumOS a été correctement installé sur votre G2.
+finish.msg=FreedomOS a été correctement installé sur votre G2.
 finish.status=Résultat d'installation :
 finish.reboot=Redémarrer votre périphérique maintenant.

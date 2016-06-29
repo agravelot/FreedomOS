@@ -69,19 +69,15 @@ cp download/$SU.zip tmp/tools/su/
 #cp download/$DIVINE.zip tmp/tools/divine/
 
 cd tmp/
-zip -r9 "HeliumOS-op3-nevax-$VERSION-unsigned.zip" * -x EMPTY_DIRECTORY
 zip -r9 "FreedomOS-op3-nevax-$VERSION-unsigned.zip" * -x EMPTY_DIRECTORY
 echo "----"
 cd ..
 echo "SignApk....."
-java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/HeliumOS-op3-nevax-$VERSION-unsigned.zip" "tmp/HeliumOS-op3-nevax-$VERSION-signed.zip"
 java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-op3-nevax-$VERSION-unsigned.zip" "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip"
 
 echo "Move signed zip file in output folder"
-mv "tmp/HeliumOS-op3-nevax-$VERSION-signed.zip" "output/"
 mv "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip" "output/"
 echo "Generating md5sum"
-md5sum "output/HeliumOS-op3-nevax-$VERSION-signed.zip" > "output/HeliumOS-op3-nevax-$VERSION-signed.zip.md5"
 md5sum "output/FreedomOS-op3-nevax-$VERSION-signed.zip" > "output/FreedomOS-op3-nevax-$VERSION-signed.zip.md5"
 echo "Clear tmp/ foler..."
 rm -Rf tmp/*
