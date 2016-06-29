@@ -79,6 +79,7 @@ package_extract_file("firmware-update/adspso.bin", "/dev/block/bootdevice/by-nam
 ui_print("- BTFM.bin...");
 package_extract_file("firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
 ui_print("- recovery...");
+package_extract_file("tools/recovery.img" ,"/dev/block/bootdevice/by-name/recovery");
 
 if
 	(file_getprop("/tmp/aroma/install_mod.prop", "selected.1")=="1")

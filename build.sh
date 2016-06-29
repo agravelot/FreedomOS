@@ -6,6 +6,7 @@ SU=BETA-SuperSU-v2.74-2-20160519174328
 XPOSED=xposed-v85-sdk23-arm64
 XPOSED_APK=XposedInstaller_3.0_alpha4
 DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER
+RECOVERY=twrp-Garak-3.0.2-0
 
 echo"Checking dependencies..."
 
@@ -60,6 +61,17 @@ else
    wget "http://fr1.androidfilehost.com/dl/b-p7sG3YlA4BZN8XoW7tbQ/1467379312/24533103863141857/$DIVINE.zip" -O download/$DIVINE.zip
    echo "Done!"
 fi
+
+if [ -f "download/$RECOVERY.img" ];
+then
+   echo "File $RECOVERY.img exist."
+else
+   echo "File $RECOVERY.img does not exist" >&2
+   echo "Downloading.."
+   wget "https://basketbuild.com/uploads/devs/Grarak/oneplus3/recovery.img" -O download/$RECOVERY.img
+   echo "Done!"
+fi
+
 unzip -o "download/$OOS.zip" -d "tmp/"
 rm -R "tmp/META-INF"
 cp -R "aroma/META-INF" "tmp/"
@@ -67,6 +79,7 @@ cp -R "tools" "tmp/"
 cp download/$SU.zip tmp/tools/su/
 #cp download/$XPOSED.zip $XPOSED_APK.apk tmp/tools/xposed/
 #cp download/$DIVINE.zip tmp/tools/divine/
+cp download/$RECOVERY.img tmp/tools/recovery.img
 
 cd tmp/
 zip -r9 "FreedomOS-op3-nevax-$VERSION-unsigned.zip" * -x EMPTY_DIRECTORY
