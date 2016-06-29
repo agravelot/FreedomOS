@@ -223,21 +223,22 @@ then
 	if
 		file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1"
 	then
-	ui_print("@  Installing Adaway");
-	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+		ui_print("@  Installing Adaway");
+		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
 
-	package_extract_dir("/tmp/tools/adaway/org.adaway-1", "/data/app/");
-	ui_print("- Install Adaway apk");
-	set_metadata_recursive("/data/app/", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644);
-	set_metadata_recursive("/data/app/lib", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
-	set_metadata_recursive("/data/app/oat", "uid", 0, "gid", 0, "dmode", 0771, "fmode", 0644);
-	ui_print("- Install host file");
-	set_metadata("/etc/hosts", "uid", 0, "gid", 0, "fmode", 0777);
-	delete("/etc/hosts");
-	package_extract_file("/tmp/tools/adaway/hosts", "/etc/hosts");
-	set_metadata("/etc/hosts", "uid", 0, "gid", 0, "fmode", 0644);
+		package_extract_dir("/tmp/tools/adaway/org.adaway-1", "/data/app/");
+		ui_print("- Install Adaway apk");
+		set_metadata_recursive("/data/app/", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644);
+		set_metadata_recursive("/data/app/lib", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
+		set_metadata_recursive("/data/app/oat", "uid", 0, "gid", 0, "dmode", 0771, "fmode", 0644);
 
-	unmount("/system");
+		ui_print("- Install host file");
+		set_metadata("/etc/hosts", "uid", 0, "gid", 0, "fmode", 0777);
+		delete("/etc/hosts");
+		package_extract_file("/tmp/tools/adaway/hosts", "/etc/hosts");
+		set_metadata("/etc/hosts", "uid", 0, "gid", 0, "fmode", 0644);
+
+		unmount("/system");
 	endif;
 
 
@@ -579,20 +580,20 @@ ui_print("@	Finish!");
 if
 	(file_getprop("/tmp/aroma/install_mod.prop", "selected.3")=="1")
 then
-		ui_print(" ");
-		ui_print(" ");
-		ui_print("@  Reboot");
-		ui_print(" .....");
-				run_program("/sbin/busybox", "sleep", "1");
-		ui_print(" ....");
-				run_program("/sbin/busybox", "sleep", "1");
-		ui_print(" ...");
-				run_program("/sbin/busybox", "sleep", "1");
-		ui_print(" ..");
-				run_program("/sbin/busybox", "sleep", "1");
-		ui_print(" .");
-				run_program("/sbin/busybox", "sleep", "1");
+	ui_print(" ");
+	ui_print(" ");
+	ui_print("@  Reboot");
+	ui_print(" .....");
+	run_program("/sbin/busybox", "sleep", "1");
+	ui_print(" ....");
+	run_program("/sbin/busybox", "sleep", "1");
+	ui_print(" ...");
+	run_program("/sbin/busybox", "sleep", "1");
+	ui_print(" ..");
+	run_program("/sbin/busybox", "sleep", "1");
+	ui_print(" .");
+	run_program("/sbin/busybox", "sleep", "1");
 
-		package_extract_file("tools/reboot.sh", "/tmp/reboot.sh");
-    set_metadata("/tmp/reboot.sh", "uid", 0, "gid", 0, "fmode", 0755);
+	package_extract_file("tools/reboot.sh", "/tmp/reboot.sh");
+  set_metadata("/tmp/reboot.sh", "uid", 0, "gid", 0, "fmode", 0755);
 endif;
