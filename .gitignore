@@ -40,6 +40,8 @@ Thumbs.db
 tmp/*
 system/*
 download/*.apk
+download/*.img
+download/*.old
 
 !system/EMPTY_DIRECTORY
 !tmp/EMPTY_DIRECTORY
