@@ -23,10 +23,10 @@ unmount("/system");
 
 ui_print("@  Installing the system");
 ui_print(" ");
-ui_print("Patching system image unconditionally...");
+ui_print("- /system...");
 show_progress(0.100000, 0);
 block_image_update("/dev/block/bootdevice/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat");
-ui_print("Verifying the updated system image...");
+ui_print("- Verifying the updated system image...");
 show_progress(0.150000, 0);
 if range_sha1("/dev/block/bootdevice/by-name/system", "98,0,32770,32961,32963,33461,65535,65536,65538,66036,98303,98304,98306,98497,98499,98997,131071,131072,131074,131572,163839,163840,163842,164033,164035,164533,196607,196608,196610,197108,229375,229376,229378,229569,229571,230069,262143,262144,262146,262644,294911,294912,294914,295105,295107,295605,327679,327680,327682,328180,360447,360448,360450,360948,393215,393216,393218,393716,425983,425984,425986,426484,458751,458752,458754,459252,491519,491520,491522,492020,524287,524288,524290,524788,557055,557056,557058,557556,589823,589824,589826,590324,622591,622592,622594,623092,644180,655360,655362,688128,688130,720896,720898,753664,753666,754164,763975,763976,770001") == "42f9a783365a910abf4555bc4e1400f553c248a2" then
 show_progress(0.200000, 0);
@@ -42,25 +42,36 @@ endif;
 
 show_progress(0.220000, 10);
 show_progress(0.220000, 5);
+ui_print("- boot.img...");
 package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
 show_progress(0.250000, 10);
-ui_print("Writing static_nvbk image...");
+ui_print("- static_nvbk.bin...");
 package_extract_file("RADIO/static_nvbk.bin", "/dev/block/bootdevice/by-name/oem_stanvbk");
 
 
 # ---- radio update tasks ----
 show_progress(0.350000, 10);
-ui_print("Patching firmware images...");
 ifelse(msm.boot_update("main"), (
+ui_print("Patching firmware images :");
+ui_print("- cmnlib64.mbn...");
 package_extract_file("firmware-update/cmnlib64.mbn", "/dev/block/bootdevice/by-name/cmnlib64");
+ui_print("- cmnlib.mbn...");
 package_extract_file("firmware-update/cmnlib.mbn", "/dev/block/bootdevice/by-name/cmnlib");
+ui_print("- hyp.mbn...");
 package_extract_file("firmware-update/hyp.mbn", "/dev/block/bootdevice/by-name/hyp");
+ui_print("- pmic.elf...");
 package_extract_file("firmware-update/pmic.elf", "/dev/block/bootdevice/by-name/pmic");
+ui_print("- tz.mbn");
 package_extract_file("firmware-update/tz.mbn", "/dev/block/bootdevice/by-name/tz");
+ui_print("- emmc_appboot.bin.mbn...");
 package_extract_file("firmware-update/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/aboot");
+ui_print("- devcfg.mbn...");
 package_extract_file("firmware-update/devcfg.mbn", "/dev/block/bootdevice/by-name/devcfg");
+ui_print("- keymaster...");
 package_extract_file("firmware-update/keymaster.mbn", "/dev/block/bootdevice/by-name/keymaster");
+ui_print("- xbl.elf...");
 package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/xbl");
+ui_print("- rpm.mbn...");
 package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpm");
 ), "");
 ifelse(msm.boot_update("backup"), (
@@ -75,9 +86,13 @@ package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/x
 package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpmbak");
 ), "");
 msm.boot_update("finalize");
+ui_print("- NON-HLOS.bin...");
 package_extract_file("firmware-update/NON-HLOS.bin", "/dev/block/bootdevice/by-name/modem");
+ui_print("- adspso.bin...");
 package_extract_file("firmware-update/adspso.bin", "/dev/block/bootdevice/by-name/dsp");
+ui_print("- BTFM.bin...");
 package_extract_file("firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
+ui_print("- recovery...");
 
 if
 	(file_getprop("/tmp/aroma/install_mod.prop", "selected.0")=="1")
@@ -98,6 +113,7 @@ then
   if
   	file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1"
   then
+		ui_print(" ");
     ui_print("@  Installing SuperSU ");
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     run_program("/sbin/busybox", "unzip", "/tmp/tools/su/BETA-SuperSU-v2.74.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/su");
@@ -109,6 +125,7 @@ then
   if
   	file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1"
   then
+		ui_print(" ");
   	ui_print("@  Installing Viper4Android + Dolby Atmos ");
     ui_print("===================================");
     ui_print("           DivineBeats v7.0         ");
@@ -211,6 +228,7 @@ then
   if
   	file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1"
   then
+		ui_print(" ");
     ui_print("@  Installing Xposed v85 by rovo89");
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     run_program("/sbin/busybox", "unzip", "/tmp/tools/xposed/xposed-v85-sdk23-arm64.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/xposed");
@@ -223,6 +241,7 @@ then
 	if
 		file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1"
 	then
+		ui_print(" ");
 		ui_print("@  Installing Adaway");
 		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
 
@@ -243,6 +262,7 @@ then
 
 
   #dpi
+	ui_print(" ");
   ui_print("@  Applying settings");
   if
   	(file_getprop("/tmp/aroma/dpi.prop", "selected.0")=="1")
@@ -384,6 +404,7 @@ then
   # Google apps
   mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
 
+	ui_print(" ");
   ui_print("@  Uninstalling Google applications :");
 
   if
@@ -575,6 +596,8 @@ endif;
 ui_print("@  Delete temp files..");
 delete_recursive("/tmp/tools");
 
+ui_print(" ");
+ui_print(" ");
 ui_print("@	Finish!");
 
 if
