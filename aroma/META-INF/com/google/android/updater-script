@@ -97,8 +97,8 @@ then
 		ui_print(" ");
     ui_print("@  Installing SuperSU ");
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    run_program("/sbin/busybox", "unzip", "/tmp/tools/su/*SuperSU*.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/su");
-    run_program("/sbin/busybox", "sh", "/tmp/tools/su/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/su/*SuperSU*.zip");
+    run_program("/sbin/busybox", "unzip", "/tmp/tools/su/su.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/su");
+    run_program("/sbin/busybox", "sh", "/tmp/tools/su/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/su/su.zip");
     unmount("/system");
   endif;
 

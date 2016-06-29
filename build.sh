@@ -76,7 +76,7 @@ unzip -o "download/$OOS.zip" -d "tmp/"
 rm -R "tmp/META-INF"
 cp -R "aroma/META-INF" "tmp/"
 cp -R "tools" "tmp/"
-cp download/$SU.zip tmp/tools/su/
+cp download/$SU.zip tmp/tools/su/su.zip
 #cp download/$XPOSED.zip $XPOSED_APK.apk tmp/tools/xposed/
 #cp download/$DIVINE.zip tmp/tools/divine/
 cp download/$RECOVERY.img tmp/tools/recovery.img
