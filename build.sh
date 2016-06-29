@@ -77,4 +77,8 @@ java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8"
 
 echo "Move signed zip file in output folder"
 mv "tmp/HeliumOS-op3-nevax-$VERSION-signed.zip" "output/"
+echo "Generating md5sum"
+md5sum "output/HeliumOS-op3-nevax-$VERSION-signed.zip" > "output/HeliumOS-op3-nevax-$VERSION-signed.zip.md5"
+echo ("Clear tmp/ foler...")
 rm -Rf tmp/* !(EMPTY_DIRECTORY)
+echo ("Finish !")
