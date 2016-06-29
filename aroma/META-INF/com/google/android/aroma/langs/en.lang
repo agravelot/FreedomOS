@@ -86,8 +86,8 @@ dpi.440=Set android DPI to 440
 dpi.430=Set android DPI to 430
 dpi.420=Set android DPI to 420
 
-mod.title=Install extra mods
-mod.title2=Root...
+mod.tittle=Install extra mods
+mod.tittle2=Root...
 
 limit.tittle=App limitation
 limit.tittle2=Change the max number of apps in RAM.
