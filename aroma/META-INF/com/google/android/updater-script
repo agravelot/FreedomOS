@@ -51,7 +51,6 @@ package_extract_file("RADIO/static_nvbk.bin", "/dev/block/bootdevice/by-name/oem
 
 # ---- radio update tasks ----
 show_progress(0.350000, 10);
-ifelse(msm.boot_update("main"), (
 ui_print("Patching firmware images :");
 ui_print("- cmnlib64.mbn...");
 package_extract_file("firmware-update/cmnlib64.mbn", "/dev/block/bootdevice/by-name/cmnlib64");
@@ -73,19 +72,6 @@ ui_print("- xbl.elf...");
 package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/xbl");
 ui_print("- rpm.mbn...");
 package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpm");
-), "");
-ifelse(msm.boot_update("backup"), (
-package_extract_file("firmware-update/cmnlib64.mbn", "/dev/block/bootdevice/by-name/cmnlib64bak");
-package_extract_file("firmware-update/cmnlib.mbn", "/dev/block/bootdevice/by-name/cmnlibbak");
-package_extract_file("firmware-update/hyp.mbn", "/dev/block/bootdevice/by-name/hypbak");
-package_extract_file("firmware-update/tz.mbn", "/dev/block/bootdevice/by-name/tzbak");
-package_extract_file("firmware-update/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/abootbak");
-package_extract_file("firmware-update/devcfg.mbn", "/dev/block/bootdevice/by-name/devcfgbak");
-package_extract_file("firmware-update/keymaster.mbn", "/dev/block/bootdevice/by-name/keymasterbak");
-package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/xblbak");
-package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpmbak");
-), "");
-msm.boot_update("finalize");
 ui_print("- NON-HLOS.bin...");
 package_extract_file("firmware-update/NON-HLOS.bin", "/dev/block/bootdevice/by-name/modem");
 ui_print("- adspso.bin...");
@@ -100,13 +86,7 @@ then
 
   show_progress(0.450000, 10);
   package_extract_dir("tools", "/tmp/tools");
-  package_extract_dir("tools/su", "/tmp/tools/su");
-  package_extract_dir("tools/xposed", "/tmp/tools/xposed");
-  package_extract_dir("tools/divine", "/tmp/tools/divine");
   set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
-  set_metadata_recursive("/tmp/tools/su", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
-  set_metadata_recursive("/tmp/tools/xposed", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
-  set_metadata_recursive("/tmp/tools/divine", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
 
   ## MOD
   #ROOT
