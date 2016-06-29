@@ -221,7 +221,7 @@ then
 
 	#ADAWAY
 	if
-		file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1"
+		file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1"
 	then
 	ui_print("@  Installing Adaway");
 	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
