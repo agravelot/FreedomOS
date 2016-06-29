@@ -1,5 +1,6 @@
 ﻿#########################################################
 #	Bootloader Changer language file
+#	FreedomOS language file
 #
 #	English by: Nevax
 #
@@ -25,6 +26,7 @@ welcome.next=Press Next to Continue the Installation...
 
 changelog.title=Changelogs
 changelog.desc=HeliumOS Changelogs
+changelog.desc=FreedomOS Changelogs
 language.title=Select language
 language.text=Select install language
 language.english=English
@@ -45,8 +47,10 @@ main.install.info=Continue to install mod
 main.sys=System Info
 main.sys.info=Show device informations
 main.changelog.info=HeliumOS changelogs
+main.changelog.info=FreedomOS changelogs
 main.exit=Exit
 main.exit.info=Exit HeliumOS installer
+main.exit.info=Exit FreedomOS installer
 
 sys.title=System information
 sys.info.wait=Get system informations...
@@ -103,6 +107,7 @@ limit.10=Max. 10 apps running in RAM
 install=Installing
 install.now=Install Now
 install.finish=Installation Wizard has installed HeliumOS. Click NEXT to continue.
+install.finish=Installation Wizard has installed FreedomOS. Click NEXT to continue.
 install.finish.title=The installation has been completed.
 installing.title=Installing...
 finish.title=Congratulations!

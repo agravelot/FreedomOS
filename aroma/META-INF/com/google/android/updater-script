@@ -1,9 +1,11 @@
 # HeliumOS updater-script
+# FreedomOS updater-script
 # (c)Nevax
 #
 ui_print(" ");
 ui_print("----------------------------------------------------------- ");
 ui_print("@                   HeliumOS");
+ui_print("@                   FreedomOS");
 ui_print("@              www.facebook.com/nevaxtuto ");
 ui_print("@               www.youtube.com/nevaxtuto ");
 ui_print("@                www.twitter.com/nevax07 ");

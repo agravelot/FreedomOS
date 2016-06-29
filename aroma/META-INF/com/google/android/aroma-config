@@ -1,4 +1,5 @@
 # Bootloader Changer aroma-config script
+# FreedomOS aroma-config script
 # (c)Nevax
 #
 #Font&Language
@@ -8,6 +9,7 @@ loadlang("langs/en.lang");
 
 #MOD Info
 ini_set("rom_name", "HeliumOS");
+ini_set("rom_name", "FreedomOS");
 ini_set("rom_version", "3.1.3-0");
 ini_set("rom_author", "Nevax - xda@NevaX1");
 ini_set("rom_date", "Jun. 27th 2016");
@@ -126,6 +128,7 @@ endif;
 if prop("menu.prop", "selected")=="3" then
 	textdialog(
 		"HeliumOS changelog",
+		"FreedomOS changelog",
 		resread("changelog.txt"),
 		"Close"
 	);
