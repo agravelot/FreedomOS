@@ -27,9 +27,9 @@ ui_print("- /system...");
 show_progress(0.100000, 0);
 block_image_update("/dev/block/bootdevice/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat");
 ui_print("- Verifying the updated system image...");
-show_progress(0.150000, 0);
+show_progress(0.400000, 0);
 if range_sha1("/dev/block/bootdevice/by-name/system", "98,0,32770,32961,32963,33461,65535,65536,65538,66036,98303,98304,98306,98497,98499,98997,131071,131072,131074,131572,163839,163840,163842,164033,164035,164533,196607,196608,196610,197108,229375,229376,229378,229569,229571,230069,262143,262144,262146,262644,294911,294912,294914,295105,295107,295605,327679,327680,327682,328180,360447,360448,360450,360948,393215,393216,393218,393716,425983,425984,425986,426484,458751,458752,458754,459252,491519,491520,491522,492020,524287,524288,524290,524788,557055,557056,557058,557556,589823,589824,589826,590324,622591,622592,622594,623092,644180,655360,655362,688128,688130,720896,720898,753664,753666,754164,763975,763976,770001") == "42f9a783365a910abf4555bc4e1400f553c248a2" then
-show_progress(0.200000, 0);
+show_progress(0.420000, 0);
 if range_sha1("/dev/block/bootdevice/by-name/system", "104,32770,32961,32963,33461,65535,65536,65538,66036,98303,98304,98306,98497,98499,98997,131071,131072,131074,131572,163839,163840,163842,164033,164035,164533,196607,196608,196610,197108,229375,229376,229378,229569,229571,230069,262143,262144,262146,262644,294911,294912,294914,295105,295107,295605,327679,327680,327682,328180,360447,360448,360450,360948,393215,393216,393218,393716,425983,425984,425986,426484,458751,458752,458754,459252,491519,491520,491522,492020,524287,524288,524290,524788,557055,557056,557058,557556,589823,589824,589826,590324,622591,622592,622594,623092,644180,644692,654848,655360,655362,655874,687616,688128,688130,688642,720384,720896,720898,721410,753152,753664,753666,754164,763975,763976") == "8cce7ae23912de941f7fb33df7fe708f24b02253" then
 ui_print("Verified the updated system image.");
 
@@ -40,17 +40,16 @@ else
   abort("system partition has unexpected contents after OTA update");
 endif;
 
-show_progress(0.220000, 10);
-show_progress(0.220000, 5);
+show_progress(0.430000, 10);
 ui_print("- boot.img...");
 package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
-show_progress(0.250000, 10);
+show_progress(0.440000, 10);
 ui_print("- static_nvbk.bin...");
 package_extract_file("RADIO/static_nvbk.bin", "/dev/block/bootdevice/by-name/oem_stanvbk");
 
 
 # ---- radio update tasks ----
-show_progress(0.350000, 10);
+show_progress(0.450000, 15);
 ui_print("Patching firmware images :");
 ui_print("- cmnlib64.mbn...");
 package_extract_file("firmware-update/cmnlib64.mbn", "/dev/block/bootdevice/by-name/cmnlib64");
@@ -118,7 +117,6 @@ then
     ui_print("Ultimate sound just seconds away");
   	ui_print(" ");
   	ui_print("- Making system compatible...");
-    show_progress(0.33, 1);
   	unmount("/system");
   	#unmount("/data");
     run_program("/sbin/busybox", "mount", "/system");
@@ -146,7 +144,6 @@ then
     delete_recursive("/sdcard/DBEngine");
 
     package_extract_dir("tools/divine/system", "/system");
-    show_progress(0.35, 2);
 
     #mount("yaffs2", "MTD", "modextras", "/extras");
     #package_extract_dir("tools/divine/extras", "/extras");
@@ -197,7 +194,6 @@ then
 
     run_program("/sbin/busybox", "umount", "/system");
     run_program("/sbin/busybox", "umount", "/data");
-    show_progress(0.5, 2);
     ui_print("Installation complete");
     ui_print("DivineBeats V7.0 Evolution Installed");
     ui_print("You can install more Add-ons over DivineBeats @TheRoyalSeeker");
@@ -579,6 +575,7 @@ delete_recursive("/tmp/tools");
 
 ui_print(" ");
 ui_print(" ");
+show_progress(1.00000, 10);
 ui_print("@	Finish!");
 
 if
