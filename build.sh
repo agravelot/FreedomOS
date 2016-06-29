@@ -69,7 +69,7 @@ cp download/$SU.zip tmp/tools/su/
 #cp download/$DIVINE.zip tmp/tools/divine/
 
 cd tmp/
-zip -r9 "HeliumOS-op3-nevax-$VERSION-unsigned.zip" *
+zip -r9 "HeliumOS-op3-nevax-$VERSION-unsigned.zip" * -x EMPTY_DIRECTORY
 echo "----"
 cd ..
 echo "SignApk....."
@@ -77,4 +77,4 @@ java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8"
 
 echo "Move signed zip file in output folder"
 mv "tmp/HeliumOS-op3-nevax-$VERSION-signed.zip" "output/"
-#rm -Rf tmp/*
+rm -Rf tmp/* !(EMPTY_DIRECTORY)
