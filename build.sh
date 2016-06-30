@@ -107,12 +107,19 @@ else
 fi
 
 echo -en '\n'
+echo "Unzip system"
 unzip -o "download/$OOS.zip" -d "tmp/"
+echo "Remove META-INF"
 rm -R "tmp/META-INF"
+echo "Add aroma"
 cp -R "aroma/META-INF" "tmp/"
+echo "Add tools"
 cp -R "tools" "tmp/"
+echo "Add SuperSU"
 cp download/$SU.zip tmp/tools/su/su.zip
 #cp download/$XPOSED.zip $XPOSED_APK.apk tmp/tools/xposed/
+echo "Add xposed"
+echo "Add Divine"
 #cp download/$DIVINE.zip tmp/tools/divine/
 cp download/$RECOVERY.img tmp/tools/recovery.img
 
