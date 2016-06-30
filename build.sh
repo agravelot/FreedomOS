@@ -10,8 +10,40 @@ XPOSED_APK=XposedInstaller_3.0_alpha4
 DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER
 RECOVERY=twrp-Garak-3.0.2-0
 
-echo"Checking dependencies..."
+MENU=0
 
+echo "Choose the option what you want :"
+echo "1) Signed (Slower)"
+echo "2) Unsigned (Faster)"
+echo -en '\n'
+read MENU
+echo -en '\n'
+
+if [ "$MENU" = 1 ];
+then
+        echo "Signed"
+elif  [ "$MENU" = 2 ];
+then
+        echo "Unsigned"
+else
+        echo "Wrong entry"
+        exit
+fi
+
+echo -en '\n'
+echo "Clear tmp/ foler..."
+rm -Rf tmp/*
+touch tmp/EMPTY_DIRECTORY
+
+echo -en '\n'
+echo "Clear output/ foler..."
+rm -Rf output/*.zip
+rm -Rf output/*.md5
+
+echo -en '\n'
+echo "Checking dependencies..."
+
+echo -en '\n'
 if [ -f "download/$OOS.zip" ];
 then
    echo "File $OOS.zip exist."
@@ -74,6 +106,7 @@ else
    echo "Done!"
 fi
 
+echo -en '\n'
 unzip -o "download/$OOS.zip" -d "tmp/"
 rm -R "tmp/META-INF"
 cp -R "aroma/META-INF" "tmp/"
@@ -83,17 +116,34 @@ cp download/$SU.zip tmp/tools/su/su.zip
 #cp download/$DIVINE.zip tmp/tools/divine/
 cp download/$RECOVERY.img tmp/tools/recovery.img
 
-cd tmp/
-zip -r9 "FreedomOS-op3-nevax-$VERSION-unsigned.zip" * -x EMPTY_DIRECTORY
-echo "----"
-cd ..
-echo "SignApk....."
-java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-op3-nevax-$VERSION-unsigned.zip" "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip"
+if [ "$MENU" = 1 ];
+then
+  cd tmp/
+  echo "Making zip file"
+  zip -r9 "FreedomOS-op3-nevax-$VERSION-unsigned.zip" * -x EMPTY_DIRECTORY
+  echo "----"
+  cd ..
+  echo "SignApk....."
+  java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-op3-nevax-$VERSION-unsigned.zip" "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip"
+  echo "Move signed zip file in output folder"
+  mv "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip" "output/"
+  echo "Generating md5sum"
+  md5sum "output/FreedomOS-op3-nevax-$VERSION-signed.zip" > "output/FreedomOS-op3-nevax-$VERSION-signed.zip.md5"
+fi
 
-echo "Move signed zip file in output folder"
-mv "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip" "output/"
-echo "Generating md5sum"
-md5sum "output/FreedomOS-op3-nevax-$VERSION-signed.zip" > "output/FreedomOS-op3-nevax-$VERSION-signed.zip.md5"
+if [ "$MENU" = 2 ];
+then
+  cd tmp/
+  echo "Making zip file"
+  zip -r1 "FreedomOS-op3-nevax-$VERSION.zip" * -x EMPTY_DIRECTORY
+  echo "----"
+  cd ..
+  echo "Move unsigned zip file in output folder"
+  mv "tmp/FreedomOS-op3-nevax-$VERSION.zip" "output/"
+  echo "Generating md5sum"
+  md5sum "output/FreedomOS-op3-nevax-$VERSION.zip" > "output/FreedomOS-op3-nevax-$VERSION.zip.md5"
+fi
+
 echo "Clear tmp/ foler..."
 rm -Rf tmp/*
 touch tmp/EMPTY_DIRECTORY
