@@ -245,7 +245,7 @@ then
 		run_program("/sbin/busybox", "mount", "/data");
 
 		ui_print("- Install Adaway apk");
-		package_extract_dir("tools/adaway/org.adaway-1", "/data/app/");
+		package_extract_dir("tools/adaway/org.adaway-1", "/data/app/org.adaway-1");
 		set_metadata_recursive("/data/app/org.adaway-1/", "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 		set_metadata_recursive("/data/app/org.adaway-1/lib", "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 		set_metadata_recursive("/data/app/org.adaway-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
