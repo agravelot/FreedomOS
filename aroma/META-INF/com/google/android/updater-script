@@ -5,9 +5,9 @@
 ui_print(" ");
 ui_print("----------------------------------------------------------- ");
 ui_print("@                   FreedomOS");
-ui_print("@              www.facebook.com/nevaxtuto ");
-ui_print("@               www.youtube.com/nevaxtuto ");
-ui_print("@                www.twitter.com/nevax07 ");
+ui_print("@           facebook.com/nevaxtuto ");
+ui_print("@            youtube.com/nevaxtuto ");
+ui_print("@             twitter.com/nevax07 ");
 ui_print("----------------------------------------------------------- ");
 ui_print(" ");
 ui_print(" ");
@@ -18,24 +18,29 @@ then
   getprop("ro.build.product") == "OnePlus3" || abort("This package is for \"OnePlus3\" devices; this is a \"" + getprop("ro.build.product") + "\".");
 endif;
 
-show_progress(0.000000, 0);
+ui_print("Assert : OK");
+
+set_progress(0.000000);
+
+ui_print(" ");
 ui_print("@  Backup your current recovery");
 delete("tmp/your_recovery.img");
 run_program("/sbin/busybox", "dd", "if=/dev/block/bootdevice/by-name/recovery", "of=/tmp/your_recovery.img");
 
 ifelse(is_mounted("/system"), unmount("/system"));
 
+ui_print(" ");
 ui_print("@  Installing the system");
 ui_print(" ");
 ui_print("- /system...");
-show_progress(0.100000, 0);
+show_progress(0.00100, 1);
 block_image_update("/dev/block/bootdevice/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat");
+ui_print("                                         OK");
 ui_print("- Verifying the updated system image...");
-show_progress(0.400000, 0);
+set_progress(0.500000);
 if range_sha1("/dev/block/bootdevice/by-name/system", "98,0,32770,32961,32963,33461,65535,65536,65538,66036,98303,98304,98306,98497,98499,98997,131071,131072,131074,131572,163839,163840,163842,164033,164035,164533,196607,196608,196610,197108,229375,229376,229378,229569,229571,230069,262143,262144,262146,262644,294911,294912,294914,295105,295107,295605,327679,327680,327682,328180,360447,360448,360450,360948,393215,393216,393218,393716,425983,425984,425986,426484,458751,458752,458754,459252,491519,491520,491522,492020,524287,524288,524290,524788,557055,557056,557058,557556,589823,589824,589826,590324,622591,622592,622594,623092,644180,655360,655362,688128,688130,720896,720898,753664,753666,754164,763975,763976,770001") == "42f9a783365a910abf4555bc4e1400f553c248a2" then
-show_progress(0.420000, 0);
+set_progress(0.520000);
 if range_sha1("/dev/block/bootdevice/by-name/system", "104,32770,32961,32963,33461,65535,65536,65538,66036,98303,98304,98306,98497,98499,98997,131071,131072,131074,131572,163839,163840,163842,164033,164035,164533,196607,196608,196610,197108,229375,229376,229378,229569,229571,230069,262143,262144,262146,262644,294911,294912,294914,295105,295107,295605,327679,327680,327682,328180,360447,360448,360450,360948,393215,393216,393218,393716,425983,425984,425986,426484,458751,458752,458754,459252,491519,491520,491522,492020,524287,524288,524290,524788,557055,557056,557058,557556,589823,589824,589826,590324,622591,622592,622594,623092,644180,644692,654848,655360,655362,655874,687616,688128,688130,688642,720384,720896,720898,721410,753152,753664,753666,754164,763975,763976") == "8cce7ae23912de941f7fb33df7fe708f24b02253" then
-ui_print("         SHA-1 : OK");
 
 else
   abort("system partition has unexpected non-zero contents after system update");
@@ -44,57 +49,74 @@ else
   abort("system partition has unexpected contents after system update");
 endif;
 
-show_progress(0.430000, 10);
+ui_print("                                 SHA-1 : OK");
+set_progress(0.530000);
 ui_print("- boot.img...");
 package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
-show_progress(0.440000, 10);
+ui_print("                                         OK");
+set_progress(0.540000);
 ui_print("- static_nvbk.bin...");
 package_extract_file("RADIO/static_nvbk.bin", "/dev/block/bootdevice/by-name/oem_stanvbk");
-
+ui_print("                                         OK");
 
 # ---- radio update tasks ----
-show_progress(0.450000, 15);
+show_progress(0.050000, 0.5);
 ui_print(" ");
 ui_print("@  Patching firmware images :");
 ui_print(" ");
 ui_print("- cmnlib64.mbn...");
 package_extract_file("firmware-update/cmnlib64.mbn", "/dev/block/bootdevice/by-name/cmnlib64");
+ui_print("                                         OK");
 ui_print("- cmnlib.mbn...");
 package_extract_file("firmware-update/cmnlib.mbn", "/dev/block/bootdevice/by-name/cmnlib");
+ui_print("                                         OK");
 ui_print("- hyp.mbn...");
 package_extract_file("firmware-update/hyp.mbn", "/dev/block/bootdevice/by-name/hyp");
+ui_print("                                         OK");
 ui_print("- pmic.elf...");
 package_extract_file("firmware-update/pmic.elf", "/dev/block/bootdevice/by-name/pmic");
+ui_print("                                         OK");
 ui_print("- tz.mbn");
 package_extract_file("firmware-update/tz.mbn", "/dev/block/bootdevice/by-name/tz");
+ui_print("                                         OK");
 ui_print("- emmc_appboot.bin.mbn...");
 package_extract_file("firmware-update/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/aboot");
+ui_print("                                         OK");
 ui_print("- devcfg.mbn...");
 package_extract_file("firmware-update/devcfg.mbn", "/dev/block/bootdevice/by-name/devcfg");
+ui_print("                                         OK");
 ui_print("- keymaster...");
 package_extract_file("firmware-update/keymaster.mbn", "/dev/block/bootdevice/by-name/keymaster");
+ui_print("                                         OK");
 ui_print("- xbl.elf...");
 package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/xbl");
+ui_print("                                         OK");
 ui_print("- rpm.mbn...");
 package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpm");
+ui_print("                                         OK");
 ui_print("- NON-HLOS.bin...");
 package_extract_file("firmware-update/NON-HLOS.bin", "/dev/block/bootdevice/by-name/modem");
+ui_print("                                         OK");
 ui_print("- adspso.bin...");
 package_extract_file("firmware-update/adspso.bin", "/dev/block/bootdevice/by-name/dsp");
+ui_print("                                         OK");
 ui_print("- BTFM.bin...");
 package_extract_file("firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
+ui_print("                                         OK");
 ui_print("- Restore yout recovery...");
 package_extract_file("tmp/your_recovery.img" ,"/dev/block/bootdevice/by-name/recovery");
+ui_print("                                         OK");
 delete("tmp/your_recovery.img");
 
 if
 	(file_getprop("/tmp/aroma/install_mod.prop", "selected.1")=="1")
 then
 
-  show_progress(0.450000, 10);
+  set_progress(0.450000);
 	ui_print(" ");
 	ui_print("@  Extracting temp files ");
   package_extract_dir("tools/", "/tmp/tools");
+	ui_print("                                         OK");
   set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
 
   ## MOD
@@ -124,13 +146,15 @@ then
     ui_print("===================================");
 
     ui_print("TheRoyalSeeker presents DivineBeats v7.0 Evolution");
+		ui_print("Thank you for sharing it @TheRoyalSeeker");
     ui_print("Ultimate sound just seconds away");
   	ui_print(" ");
   	ui_print("- Making system compatible...");
-  	ifelse(is_mounted("/system"), unmount("/system"));
-  	#unmount("/data");
-    run_program("/sbin/busybox", "mount", "/system");
-    run_program("/sbin/busybox", "mount", "/data");
+		ifelse(is_mounted("/system"), unmount("/system"));
+		#unmount("/data");
+		run_program("/sbin/busybox", "mount", "/data");
+    #run_program("/sbin/busybox", "mount", "/system");
+		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
 
     delete_recursive("/system/priv-app/AudioFX");
     delete_recursive("/system/app/ViPER4Android_FX_A4.x");
@@ -200,14 +224,9 @@ then
     set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755);
 
     ui_print("Your device sound is going to be revolutionized      ");
-    ui_print("Dive into Divinity of DivineBeats");
-
     run_program("/sbin/busybox", "umount", "/system");
     run_program("/sbin/busybox", "umount", "/data");
     ui_print("Installation complete");
-    ui_print("DivineBeats V7.0 Evolution Installed");
-    ui_print("You can install more Add-ons over DivineBeats @TheRoyalSeeker");
-    ui_print("Press thanks if you can @theroyalseeker");
     ui_print("NO NEED TO Wipe Caches, just reboot");
   endif;
 
@@ -222,7 +241,6 @@ then
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     run_program("/sbin/busybox", "unzip", "/tmp/tools/xposed/xposed-v85-sdk23-arm64.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/xposed");
   	run_program("/sbin/busybox", "sh", "/tmp/tools/xposed/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/xposed/xposed-v85-sdk23-arm64.zip");
-		ui_print("- Install Xposed Installer");
 
 		ui_print("- Install Xposed Installer");
 		run_program("/sbin/busybox", "mount", "/data");
@@ -348,7 +366,7 @@ then
   	(file_getprop("/tmp/aroma/limit.prop", "selected.0")=="1")
   then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    ui_print("- Set the max number of apps running in background to 42.");
+    ui_print("- Set the max number of apps in RAM to 42.");
     run_program("/tmp/tools/limit/42.sh");
 		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
@@ -357,7 +375,7 @@ then
   	(file_getprop("/tmp/aroma/limit.prop", "selected.0")=="2")
   then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    ui_print("- Set the max number of apps running in background to 40.");
+    ui_print("- Set the max number of apps in RAM to 40.");
     run_program("/tmp/tools/limit/40.sh");
 		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
@@ -366,7 +384,7 @@ then
   	(file_getprop("/tmp/aroma/limit.prop", "selected.0")=="3")
   then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    ui_print("- Set the max number of apps running in background to 35.");
+    ui_print("- Set the max number of apps in RAM to 35.");
     run_program("/tmp/tools/limit/35.sh");
 		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
@@ -375,7 +393,7 @@ then
   	(file_getprop("/tmp/aroma/limit.prop", "selected.0")=="4")
   then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    ui_print("- Set the max number of apps running in background to 30.");
+    ui_print("- Set the max number of apps in RAM to 30.");
     run_program("/tmp/tools/limit/30.sh");
 		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
@@ -384,7 +402,7 @@ then
   	(file_getprop("/tmp/aroma/limit.prop", "selected.0")=="5")
   then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    ui_print("- Set the max number of apps running in background to 25.");
+    ui_print("- Set the max number of apps in RAM to 25.");
     run_program("/tmp/tools/limit/25.sh");
 		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
@@ -393,7 +411,7 @@ then
   	(file_getprop("/tmp/aroma/limit.prop", "selected.0")=="6")
   then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    ui_print("- Set the max number of apps running in background to 20.");
+    ui_print("- Set the max apps in RAM to 20.");
     run_program("/tmp/tools/limit/20.sh");
 		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
@@ -402,7 +420,7 @@ then
   	(file_getprop("/tmp/aroma/limit.prop", "selected.0")=="7")
   then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    ui_print("- Set the max number of apps running in background to 15.");
+    ui_print("- Set the max number of apps in RAM to 15.");
     run_program("/tmp/tools/limit/15.sh");
 		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
@@ -411,7 +429,7 @@ then
   	(file_getprop("/tmp/aroma/limit.prop", "selected.0")=="8")
   then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    ui_print("- Set the max number of apps running in background to 10.");
+    ui_print("- Set the max number of apps in RAM to 10.");
     run_program("/tmp/tools/limit/10.sh");
 		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
@@ -612,10 +630,11 @@ endif;
 
 ui_print("@  Delete temp files..");
 delete_recursive("/tmp/tools");
+ui_print("                                         OK");
 
 ui_print(" ");
 ui_print(" ");
-show_progress(1.00000, 10);
+set_progress(1.00000);
 ui_print("@	Finish!");
 
 if
