@@ -86,7 +86,7 @@ if
 then
 
   show_progress(0.450000, 10);
-  package_extract_dir("tools", "/tmp/tools");
+  package_extract_dir("tools/", "/tmp/tools");
   set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
 
   ## MOD
@@ -240,13 +240,13 @@ then
 	endif;
 
 
-  #dpi
+  #DPI
 	ui_print(" ");
   ui_print("@  Applying settings");
   if
   	(file_getprop("/tmp/aroma/dpi.prop", "selected.0")=="1")
   then
-    mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+	  mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set DPI to 500");
     run_program("/tmp/tools/dpi/500.sh");
 		ifelse(is_mounted("/system"), unmount("/system"));

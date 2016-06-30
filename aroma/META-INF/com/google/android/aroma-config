@@ -151,8 +151,8 @@ endif;
 #Choose install mod
 ini_set("text_next", "<~text_next>");
 selectbox(
-	"<~bl.tittle>",
-	"<~bl.title2>",
+	"<~install_mod.tittle>",
+	"<~install_mod.tittle2>",
 	"@default",
 	"install_mod.prop",
 
