@@ -33,7 +33,7 @@ ifelse(is_mounted("/system"), unmount("/system"));
 ui_print(" ");
 ui_print("@  Installing the system");
 ui_print(" ");
-ui_print("- /system...");
+ui_print("- /system...  (~1/2 minutes)");
 show_progress(0.00100, 1);
 block_image_update("/dev/block/bootdevice/by-name/system",
                    package_extract_file("system.transfer.list"),
