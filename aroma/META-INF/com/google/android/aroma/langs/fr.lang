@@ -48,7 +48,7 @@ main.exit=Quitter
 main.exit.info=Quitter l'installateur FreedomOS
 
 install_mod.tittle=Choisissez votre mode d'installation
-install_mod.tittle2=Root, mod audio, bloqueur de pub et xposed...
+install_mod.tittle2=Choisissez vos paramètres
 
 sys.title=Information système
 sys.info.wait=Récupération des informations système...
@@ -91,7 +91,7 @@ info.calendar=Clandrier Google.
 info.chrome=Navigateur web.
 info.drive=Service cloud.
 info.gmail=Cleint mail.
-info.gmail_exch=Support d'exchange pour Gmail.
+info.gmail_exchange=Support d'exchange pour Gmail.
 info.google=L'application Google.
 info.hangouts=Méssagerie instantané.
 info.maps=Navigation en temps réel, trafic, transports.

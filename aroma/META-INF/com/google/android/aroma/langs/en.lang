@@ -49,7 +49,7 @@ main.exit=Exit
 main.exit.info=Exit FreedomOS installer
 
 install_mod.tittle=Choose your installation mod
-install_mod.tittle2=
+install_mod.tittle2=Select your settings
 
 sys.title=System information
 sys.info.wait=Get system informations...
@@ -92,7 +92,7 @@ info.calendar=Google Calendar.
 info.chrome=Web browser.
 info.drive=Cloud service.
 info.gmail=Email client.
-info.gmail_exch=Support exchange for Gmail.
+info.gmail_exchange=Support exchange for Gmail.
 info.google=Google apps.
 info.hangouts=Instant messagery.
 info.maps=Real-time navigation, traffic, transport.
