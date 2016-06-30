@@ -117,9 +117,10 @@ echo "Add tools"
 cp -R "tools" "tmp/"
 echo "Add SuperSU"
 cp download/$SU.zip tmp/tools/su/su.zip
-#cp download/$XPOSED.zip $XPOSED_APK.apk tmp/tools/xposed/
 echo "Add xposed"
+cp download/{$XPOSED.zip,$XPOSED_APK.apk} tmp/tools/xposed/
 echo "Add Divine"
+unzip -o "download/$DIVINE.zip" "tmp/tools/divine/"
 #cp download/$DIVINE.zip tmp/tools/divine/
 #cp download/$RECOVERY.img tmp/tools/recovery.img
 
