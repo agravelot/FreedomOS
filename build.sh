@@ -121,7 +121,7 @@ cp download/$SU.zip tmp/tools/su/su.zip
 echo "Add xposed"
 echo "Add Divine"
 #cp download/$DIVINE.zip tmp/tools/divine/
-cp download/$RECOVERY.img tmp/tools/recovery.img
+#cp download/$RECOVERY.img tmp/tools/recovery.img
 
 if [ "$MENU" = 1 ];
 then

@@ -19,6 +19,9 @@ then
 endif;
 
 show_progress(0.000000, 0);
+ui_print("@  Backup your current recovery");
+delete("tmp/your_recovery.img");
+run_program("/sbin/busybox", "dd", "if=/dev/block/bootdevice/by-name/recovery", "of=/tmp/your_recovery.img");
 
 ifelse(is_mounted("/system"), unmount("/system"));
 
@@ -80,8 +83,9 @@ ui_print("- adspso.bin...");
 package_extract_file("firmware-update/adspso.bin", "/dev/block/bootdevice/by-name/dsp");
 ui_print("- BTFM.bin...");
 package_extract_file("firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
-ui_print("- recovery...");
-package_extract_file("tools/recovery.img" ,"/dev/block/bootdevice/by-name/recovery");
+ui_print("- Restore yout recovery...");
+package_extract_file("tmp/your_recovery.img" ,"/dev/block/bootdevice/by-name/recovery");
+delete("tmp/your_recovery.img");
 
 if
 	(file_getprop("/tmp/aroma/install_mod.prop", "selected.1")=="1")
