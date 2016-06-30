@@ -180,21 +180,21 @@ then
   	"gapps.prop",
 
   	"Google apps", "", 2,
-      "Calculator", "", 1,
-      "Calendar", "", 1,
-  		"Chrome", "", 1,
-  		"Drive", "", 1,
-  		"Gmail", "", 1,
-  		"Gmail Exchange", "", 1,
-      "Google", "", 1,
-  		"Hangouts", "", 1,
-      "Maps", "", 1,
-      "Photos", "", 1,
-      "Play Music", "", 1,
-      "TTS", "", 1,
-      "Talkback", "", 1,
-      "Play Movies", "", 1,
-      "YouTube", "", 1
+      "<~calculator>", "<~info.calculator>", 1,
+      "<~calendar>", "<~info.calendar>", 1,
+  		"<~chrome>", "<~info.chrome>", 1,
+  		"<~drive>", "<~info.drive>", 1,
+  		"<~gmail>", "<~info.gmail>", 1,
+  		"<~gmail_exchange>", "<~info.gmail_exchange>", 1,
+      "<~google>", "<~info.google>", 1,                          #VELVET
+  		"<~hangouts>", "<~info.hangouts>", 1,
+      "<~maps>", "<~info.maps>", 1,
+      "<~photos>", "<~info.photos>", 1,
+      "<~play_music>", "<~info.play_music>", 1,
+      "<~tts>", "<~info.tts>", 1,
+      "<~tallback>", "<~info.tallback>", 1,
+      "<~play_movies>", "<~info.play_movies>", 1,
+      "<~youtube>", "<~info.youtube>", 1
   );
 
   #OnePlus App
@@ -206,16 +206,16 @@ then
   	"apps.prop",
 
   	"System apps", "", 2,
-  		"Basic Dreams", "Veille intéractif", 1,
-  		"Face Lock", "", 1,
-  		"Black Hole", "Animated wallpaper", 1,
-  		"Holo spiral", "Animated wallpaper", 1,
-  		"Animated Wallpaper", "Support for animated wallpaper", 1,
-      "Music", "OnePlus music app", 1,
-      "NoiseFeild", "Animated wallpaper", 1,
-      "Phase Beam", "Animated wallpaper", 1,
-      "Protips", "", 1,
-      "Tags", "", 1
+  		"<~basic_dream>", "<~info.basic_dream>", 1,
+  		"<~facelock>", "<~info.facelock>", 1,
+  		"<~black_hole>", "<~info.black_hole>", 1,
+  		"<~holo_spiral>", "<~info.holo_spiral>", 1,
+  		"<~anim_wallpaper>", "<~info.anim_wallpaper>", 1,
+      "<~music>", "<~info.music>", 1,
+      "<~noise_feild>", "<~info.noise_feild>", 1,
+      "<~phase_beam>", "<~info.phase_beam>", 1,
+      "<~protips>", "<~info.protips>", 1,
+      "<~tags>", "<~info.tags>", 1
   );
 
   #DPI

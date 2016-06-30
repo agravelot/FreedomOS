@@ -65,10 +65,64 @@ pre.install2=Appuyer <b>Installer Maintenant</b> pour débuter l'installation.
 pre.install3=Si vous souhaitez vérifier ou modifier vos paramètres d'installation, appuyer sur <b>Retour</b>.
 
 gapps.tittle=Google Apps
-gapps.tittle2=Select the Google Apps you want
+gapps.tittle2=Select the Google applications you want
 
-apps.tittle=System Apps
-apps.tittle2=Select the system Apps you want
+calculator=Calculette
+calendar=Calendrier
+chrome=Chrome
+drive=Drive
+gmail=Gmail
+gmail_exchange=Gmail Exchange
+google=Google
+hangouts=Hangouts
+maps=Maps
+photos=Photos
+play_music=Play Musique
+tts=Text-to-Speech
+tallback=Tallback
+play_movies=Play Vidéos
+youtube=YouTube
+
+info.calculator=
+info.calendar=
+info.chrome=
+info.drive=
+info.gmail=
+info.gmail_exch=
+info.google=
+info.hangouts=
+info.maps=
+info.photos=
+info.play_music=
+info.tts=
+info.tallback=
+info.play_movies=
+info.youtube=
+
+apps.tittle=System applications
+apps.tittle2=Select the system applications you want
+
+basic_dream=
+facelock=
+black_hole=
+holo_spiral=
+anim_wallpaper=
+music=
+noise_feild=
+phase_beam=
+protips=
+tags=
+
+info.basic_dream=Veille intéractif
+info.facelock=
+info.black_hole=Animated wallpaper
+info.holo_spiral=Animated wallpaper
+info.anim_wallpaper=Support for animated wallpaper
+info.music=OnePlus music app
+info.noise_feild=Animated wallpaper
+info.phase_beam=Animated wallpaper
+info.protips=
+info.tags=
 
 mod.ttile=Mod supplémentaire
 mod.ttile2=Selectionner les mod que vous souhaitez

@@ -68,8 +68,63 @@ pre.install3=If you want to review or change any of your installation settings, 
 gapps.tittle=Google Apps
 gapps.tittle2=Select the Google Apps you want
 
+calculator=Calculator
+calendar=Calendar
+chrome=Chrome
+drive=Drive
+gmail=Gmail
+gmail_exchange=Gmail Exchange
+google=Google
+hangouts=Hangouts
+maps=Maps
+photos=Photos
+play_music=Play Music
+tts=Text-to-Speech
+tallback=Tallback
+play_movies=Play Movies
+youtube=YouTube
+
+info.calculator=
+info.calendar=
+info.chrome=
+info.drive=
+info.gmail=
+info.gmail_exch=
+info.google=
+info.hangouts=
+info.maps=
+info.photos=
+info.play_music=
+info.tts=
+info.tallback=
+info.play_movies=
+info.youtube=
+
+
 apps.tittle=System Apps
 apps.tittle2=Select the system Apps you want
+
+basic_dream=Basic Dream
+facelock=Facelock
+black_hole=Black Hole
+holo_spiral=Holo Spiral
+anim_wallpaper=Animated Wallpaper
+music=Music
+noise_feild=Noised Feild
+phase_beam=Phase Beam
+protips=Protips
+tags=Tags
+
+info.basic_dream=Veille intéractif
+info.facelock=
+info.black_hole=Animated wallpaper
+info.holo_spiral=Animated wallpaper
+info.anim_wallpaper=Support for animated wallpaper
+info.music=OnePlus music app
+info.noise_feild=Animated wallpaper
+info.phase_beam=Animated wallpaper
+info.protips=
+info.tags=
 
 mod.ttile=Extra mod
 mod.ttile2=Select the extra mod you want
