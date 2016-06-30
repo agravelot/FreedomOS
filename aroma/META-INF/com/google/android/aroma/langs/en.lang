@@ -48,6 +48,9 @@ main.changelog.info=FreedomOS changelogs
 main.exit=Exit
 main.exit.info=Exit FreedomOS installer
 
+install_mod.tittle=Choose your installation mod
+install_mod.tittle2=
+
 sys.title=System information
 sys.info.wait=Get system informations...
 sys.info.title=System informations
