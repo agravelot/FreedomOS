@@ -217,9 +217,10 @@ then
 		ui_print("- Install xposed Framework");
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     run_program("/sbin/busybox", "unzip", "/tmp/tools/xposed/xposed-v85-sdk23-arm64.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/xposed");
-  	set_metadata_recursive("/tmp/tools/xposed", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
-  	run_program("/tmp/tools/xposed/META-INF/com/google/android/update-binary", "/tmp/tools/xposed/META-INF/com/google/android/update-script", "dummy", "1", "/tmp/tools/xposed/xposed-v85-sdk23-arm64");
-    unmount("/system");
+  	run_program("/sbin/busybox", "sh", "/tmp/tools/xposed/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/xposed/xposed-v85-sdk23-arm64.zip");
+		ui_print("- Install Xposed Installer");
+
+
 		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
@@ -626,4 +627,5 @@ then
 
 	package_extract_file("tools/reboot.sh", "/tmp/reboot.sh");
   set_metadata("/tmp/reboot.sh", "uid", 0, "gid", 0, "fmode", 0755);
+	run_program("/tmp/system.sh");
 endif;
