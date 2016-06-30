@@ -2,7 +2,7 @@
 # FreedomOS build script
 # Author : Nevax
 
-VERSION=alpha1
+VERSION=0.9
 OOS=OnePlus3Oxygen_16_OTA_008_all_1606122244_e0cfc5ffc8bf411a
 SU=BETA-SuperSU-v2.74-2-20160519174328
 XPOSED=xposed-v85-sdk23-arm64
@@ -13,6 +13,7 @@ RECOVERY=twrp-Garak-3.0.2-0
 MENU=0
 
 echo "Choose the option what you want :"
+echo -en '\n'
 echo "1) Signed (Slower)"
 echo "2) Unsigned (Faster)"
 echo -en '\n'
