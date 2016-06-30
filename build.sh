@@ -2,7 +2,7 @@
 # FreedomOS build script
 # Author : Nevax
 
-VERSION=0.9
+VERSION=1.0
 OOS=OnePlus3Oxygen_16_OTA_008_all_1606122244_e0cfc5ffc8bf411a
 SU=BETA-SuperSU-v2.74-2-20160519174328
 XPOSED=xposed-v85-sdk23-arm64

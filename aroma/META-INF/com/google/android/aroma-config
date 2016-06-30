@@ -9,7 +9,7 @@ loadlang("langs/en.lang");
 
 #MOD Info
 ini_set("rom_name", "FreedomOS");
-ini_set("rom_version", "0.9");
+ini_set("rom_version", "1.0");
 ini_set("rom_author", "Nevax - xda@NevaX1");
 ini_set("rom_date", "July 1st 2016");
 ini_set("rom_device", "OnePlus3");
