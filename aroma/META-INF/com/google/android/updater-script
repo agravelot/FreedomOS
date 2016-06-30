@@ -20,7 +20,7 @@ endif;
 
 show_progress(0.000000, 0);
 
-unmount("/system");
+ifelse(is_mounted("/system"), unmount("/system"));
 
 ui_print("@  Installing the system");
 ui_print(" ");
@@ -99,7 +99,7 @@ then
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     run_program("/sbin/busybox", "unzip", "/tmp/tools/su/su.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/su");
     run_program("/sbin/busybox", "sh", "/tmp/tools/su/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/su/su.zip");
-    unmount("/system");
+    ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   #DiVINE BEATS
@@ -118,7 +118,7 @@ then
     ui_print("Ultimate sound just seconds away");
   	ui_print(" ");
   	ui_print("- Making system compatible...");
-  	unmount("/system");
+  	ifelse(is_mounted("/system"), unmount("/system"));
   	#unmount("/data");
     run_program("/sbin/busybox", "mount", "/system");
     run_program("/sbin/busybox", "mount", "/data");
@@ -213,6 +213,7 @@ then
   	set_metadata_recursive("/tmp/tools/xposed", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
   	run_program("/tmp/tools/xposed/META-INF/com/google/android/update-binary", "/tmp/tools/xposed/META-INF/com/google/android/update-script", "dummy", "1", "/tmp/tools/xposed/xposed-v85-sdk23-arm64");
     unmount("/system");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
 	#ADAWAY
@@ -235,7 +236,7 @@ then
 		package_extract_file("/tmp/tools/adaway/hosts", "/etc/hosts");
 		set_metadata("/etc/hosts", "uid", 0, "gid", 0, "fmode", 0644);
 
-		unmount("/system");
+		ifelse(is_mounted("/system"), unmount("/system"));
 	endif;
 
 
@@ -248,6 +249,7 @@ then
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set DPI to 500");
     run_program("/tmp/tools/dpi/500.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -256,6 +258,7 @@ then
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set DPI to 490");
     run_program("/tmp/tools/dpi/490.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -270,6 +273,7 @@ then
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set DPI to 470");
     run_program("/tmp/tools/dpi/470.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -278,6 +282,7 @@ then
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set DPI to 460");
     run_program("/tmp/tools/dpi/460.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -286,6 +291,7 @@ then
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set DPI to 450");
     run_program("/tmp/tools/dpi/450.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -294,6 +300,7 @@ then
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set DPI to 440");
     run_program("/tmp/tools/dpi/440.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -302,6 +309,7 @@ then
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set DPI to 430");
     run_program("/tmp/tools/dpi/430.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -310,6 +318,7 @@ then
     mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set DPI to 420");
     run_program("/tmp/tools/dpi/420.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
 
@@ -320,6 +329,7 @@ then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set the max number of apps running in background to 42.");
     run_program("/tmp/tools/limit/42.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -328,6 +338,7 @@ then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set the max number of apps running in background to 40.");
     run_program("/tmp/tools/limit/40.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -336,6 +347,7 @@ then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set the max number of apps running in background to 35.");
     run_program("/tmp/tools/limit/35.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -344,6 +356,7 @@ then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set the max number of apps running in background to 30.");
     run_program("/tmp/tools/limit/30.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -352,6 +365,7 @@ then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set the max number of apps running in background to 25.");
     run_program("/tmp/tools/limit/25.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -360,6 +374,7 @@ then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set the max number of apps running in background to 20.");
     run_program("/tmp/tools/limit/20.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -368,6 +383,7 @@ then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set the max number of apps running in background to 15.");
     run_program("/tmp/tools/limit/15.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   if
@@ -376,6 +392,7 @@ then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     ui_print("- Set the max number of apps running in background to 10.");
     run_program("/tmp/tools/limit/10.sh");
+		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
 
