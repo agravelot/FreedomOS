@@ -1,6 +1,7 @@
 # FreedomOS updater-script
-# (c)Nevax
+# Author : Nevax
 #
+
 ui_print(" ");
 ui_print("----------------------------------------------------------- ");
 ui_print("@                   FreedomOS");

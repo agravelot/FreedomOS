@@ -1,4 +1,6 @@
 #!/bin/bash
+# FreedomOS build script
+# Author : Nevax
 
 VERSION=alpha1
 OOS=OnePlus3Oxygen_16_OTA_008_all_1606122244_e0cfc5ffc8bf411a
