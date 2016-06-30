@@ -156,12 +156,12 @@ limit.20=Max. 20 applications en mémoire
 limit.15=Max. 15 applications en mémoire
 limit.10=Max. 10 applications en mémoire
 
-install=Installation
+install=Installation de FreedomOS
 install.now=Installer Maintenant
 install.finish=L'outil d'installation a correctement installé FreedomOS. Appuyer sur Suivant pour continer.
 install.finish.title=L'installation est terminé.
 installing.title=Installation...
 finish.title=Félicitation!
-finish.msg=FreedomOS a été correctement installé sur votre G2.
+finish.msg=FreedomOS a été correctement installé.
 finish.status=Résultat d'installation :
 finish.reboot=Redémarrer votre périphérique maintenant.
