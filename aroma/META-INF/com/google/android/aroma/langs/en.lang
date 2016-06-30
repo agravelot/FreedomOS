@@ -157,7 +157,7 @@ limit.20=Max. 20 apps running in RAM
 limit.15=Max. 15 apps running in RAM
 limit.10=Max. 10 apps running in RAM
 
-install=Installing
+install=Installing FreedomOS
 install.now=Install Now
 install.finish=Installation Wizard has installed FreedomOS. Click NEXT to continue.
 install.finish.title=The installation has been completed.
