@@ -223,18 +223,19 @@ then
 		ui_print(" ");
 		ui_print("@  Installing Adaway");
 		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+		run_program("/sbin/busybox", "mount", "/data");
 
-		package_extract_dir("/tmp/tools/adaway/org.adaway-1", "/data/app/");
 		ui_print("- Install Adaway apk");
-		set_metadata_recursive("/data/app/", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644);
-		set_metadata_recursive("/data/app/lib", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
-		set_metadata_recursive("/data/app/oat", "uid", 0, "gid", 0, "dmode", 0771, "fmode", 0644);
+		package_extract_dir("tools/adaway/org.adaway-1", "/data/app/");
+		set_metadata_recursive("/data/app/org.adaway-1/", "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+		set_metadata_recursive("/data/app/org.adaway-1/lib", "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
+		set_metadata_recursive("/data/app/org.adaway-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
 
 		ui_print("- Install host file");
-		set_metadata("/etc/hosts", "uid", 0, "gid", 0, "fmode", 0777);
-		delete("/etc/hosts");
-		package_extract_file("/tmp/tools/adaway/hosts", "/etc/hosts");
-		set_metadata("/etc/hosts", "uid", 0, "gid", 0, "fmode", 0644);
+		set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "fmode", 0777);
+		delete("/system/etc/hosts");
+		package_extract_file("tools/adaway/hosts", "/system/etc/hosts");
+		set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "fmode", 0644);
 
 		ifelse(is_mounted("/system"), unmount("/system"));
 	endif;
