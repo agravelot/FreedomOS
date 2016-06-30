@@ -119,10 +119,12 @@ cp download/$RECOVERY.img tmp/tools/recovery.img
 if [ "$MENU" = 1 ];
 then
   cd tmp/
+  echo -en '\n'
   echo "Making zip file"
   zip -r9 "FreedomOS-op3-nevax-$VERSION-unsigned.zip" * -x EMPTY_DIRECTORY
   echo "----"
   cd ..
+  echo -en '\n'
   echo "SignApk....."
   java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-op3-nevax-$VERSION-unsigned.zip" "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip"
   echo "Move signed zip file in output folder"
@@ -134,9 +136,11 @@ fi
 if [ "$MENU" = 2 ];
 then
   cd tmp/
+  echo -en '\n'
   echo "Making zip file"
   zip -r1 "FreedomOS-op3-nevax-$VERSION.zip" * -x EMPTY_DIRECTORY
   echo "----"
+  echo -en '\n'
   cd ..
   echo "Move unsigned zip file in output folder"
   mv "tmp/FreedomOS-op3-nevax-$VERSION.zip" "output/"
@@ -145,6 +149,7 @@ then
 fi
 
 echo "Clear tmp/ foler..."
-rm -Rf tmp/*
-touch tmp/EMPTY_DIRECTORY
+rm -Rf "tmp/*"
+touch "tmp/EMPTY_DIRECTORY"
+echo -en '\n'
 echo "Finish !"
