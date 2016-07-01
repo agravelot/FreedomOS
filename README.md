@@ -4,7 +4,7 @@
 - Linux
 - 10 Go of free space
 - Packages : `zip wget `
-- `Java` is also needed for signed the zip files **(optional)**.
+- `Java` is also needed for signed the zip file **(optional)**.
 I don't which version is needed is needed, i use `java-8-jdk` on my Arch Linux.
 
 **How to build :**
