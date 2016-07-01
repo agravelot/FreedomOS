@@ -49,6 +49,23 @@ main.exit.info=Quitter l'installateur FreedomOS
 
 install_mod.tittle=Choisissez votre mode d'installation
 install_mod.tittle2=Choisissez vos paramètres
+install_mod.sub_tittle=
+
+custom=
+stock=
+assert.tittle=
+assert_yes=
+assert_no=
+reboot.tittle=
+reboot_system=
+reboot_no=
+
+info.custom=
+info.stock=
+info.assert_yes=
+info.assert_no=
+info.reboot_system=
+info.reboot_no=.
 
 sys.title=Information système
 sys.info.wait=Récupération des informations système...

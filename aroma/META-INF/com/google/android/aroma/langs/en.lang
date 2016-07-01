@@ -50,6 +50,23 @@ main.exit.info=Exit FreedomOS installer
 
 install_mod.tittle=Choose your installation mod
 install_mod.tittle2=Select your settings
+install_mod.sub_tittle=Install
+
+custom=Custom
+stock=Stock
+assert.tittle=Check Assert
+assert_yes=Yes (Recommended)
+assert_no=No
+reboot.tittle=Reboot ?
+reboot_system=System
+reboot_no=Nop
+
+info.custom=GApps, Root and misc...
+info.stock=Original stock, no root
+info.assert_yes=Check variant in build.prop
+info.assert_no=Do not check variant in build.prop
+info.reboot_system=Reboot to Android
+info.reboot_no=.
 
 sys.title=System information
 sys.info.wait=Get system informations...

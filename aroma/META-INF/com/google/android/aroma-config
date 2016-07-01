@@ -119,13 +119,11 @@ ini_set("text_next", "<~text_next>");
 selectbox("<~install_mod.tittle>", "<~install_mod.tittle2>", "@default",
           "install_mod.prop",
 
-          "Install", "", 2, "Custom", "GApps, Root and misc...", 1, "Stock",
-          "Original stock, no root", 0,
-#"Pico", "", 0,
-          "Check Assert", "", 2, "Yes (Recommended)",
-          "Check variant in build.prop", 1, "No",
-          "Do not check variant in build.prop ", 0, "Reboot ?", "", 2, "System",
-          "Reboot to Android ", 0, "Nop", "", 1);
+          "<~install_mod.sub_tittle>", "", 2, "<~custom>", "<~info.custom>", 1,
+          "<~stock>", "<~info.stock>", 0, "<~assert.tittle>", "", 2,
+          "<~assert_yes>", "<~info.assert_yes>", 1, "<~assert_no>",
+          "<~info.assert_no>", 0, "<~reboot.tittle>", "", 2, "<~reboot_system>",
+          "<~info.reboot_system>", 0, "<~reboot_no>", "<~info.reboot_no>", 1);
 
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
