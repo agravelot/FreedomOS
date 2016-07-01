@@ -1,5 +1,5 @@
 #!/sbin/sh
 #
-# (c)Nevax
+# Author : Nevax
 #
-reboot
+busybox reboot
