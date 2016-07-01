@@ -33,7 +33,7 @@ language.french=France
 language.french.info=Utiliser le Français
 
 welcome.microblog=Youtube
-rom.data=July 1st 2016
+rom.data=Jun. 28th 2016
 text_finish=Finish
 model.title=Phone Model
 
@@ -128,8 +128,8 @@ info.phase_beam=Animated wallpaper
 info.protips=Some tips
 info.tags=NFC Tags
 
-mod.ttile=Extra mod
-mod.ttile2=Select the extra mod you want
+mod.title=Extra mod
+mod.title2=Select the extra mod you want
 
 dpi.title=Change the DPI
 dpi.title2=Dots Per Inch
