@@ -148,8 +148,8 @@ info.tags=NFC Tags
 mod.title=Extra mod
 mod.title2=Select the extra mod you want
 
-dpi.title=Change the DPI
-dpi.title2=Dots Per Inch
+dpi.tittle=Change the DPI
+dpi.tittle2=Dots Per Inch
 dpi.500=Set android DPI to 500
 dpi.490=Set android DPI to 490
 dpi.480=Set android DPI to 480

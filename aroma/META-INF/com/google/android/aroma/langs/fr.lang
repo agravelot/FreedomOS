@@ -147,8 +147,8 @@ info.tags=Tag NFC
 mod.ttile=Mod supplémentaire
 mod.ttile2=Selectionner les mod que vous souhaitez
 
-dpi.title=Change le DPI
-dpi.title2=Point par pouce
+dpi.tittle=Change le DPI
+dpi.tittle2=Point par pouce
 dpi.500=DPI système à 500
 dpi.490=DPI système à 490
 dpi.480=DPI système à 480
