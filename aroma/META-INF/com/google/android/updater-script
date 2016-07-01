@@ -363,6 +363,18 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
   	ifelse(is_mounted("/system"), unmount("/system"));
 endif;
 
+#ADB
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.5") == "1")
+  then
+    set_progress(0.920000);
+    ui_print(" ");
+    ui_print("@  Enabling adb");
+    ui_print(" ");
+    mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+    run_program("/tmp/tools/adb.sh");
+    ifelse(is_mounted("/system"), unmount("/system"));
+endif;
+
 #DPI
 set_progress(0.950000);
 ui_print(" ");
