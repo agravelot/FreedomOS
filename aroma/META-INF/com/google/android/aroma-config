@@ -146,7 +146,7 @@ checkbox("<~gapps.tittle>", "<~gapps.tittle2>", "@default", "gapps.prop",
 
 #OnePlus App
 ini_set("text_next", "<~text_next>");
-checkbox("<~apps.tittle>", "<~apps.title2>", "@default", "apps.prop",
+checkbox("<~apps.tittle>", "<~apps.tittle2>", "@default", "apps.prop",
 
          "System apps", "", 2, "<~basic_dream>", "<~info.basic_dream>", 1,
          "<~facelock>", "<~info.facelock>", 1, "<~black_hole>",
@@ -192,8 +192,8 @@ viewbox("<~pre.install.title>", "<~pre.install>\n\n" + "<~pre.install2>\n\n" +
 #Install
 ini_set("text_next", "<~text_next>");
 install("<~install>", "<b>" + ini_get("rom_name") +
-                          "</b> is being installed.\n\n" + "@install",
-        "<~install.finish>");
+                          "</b> is being installed.\n\n" + "<~install.finish>",
+        "@install");
 
 #PostInstall
 ini_set("text_next", "Finish");
