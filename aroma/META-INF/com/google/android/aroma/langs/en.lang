@@ -88,20 +88,20 @@ play_movies=Play Movies
 youtube=YouTube
 
 info.calculator=0010 1010?
-info.calendar=Google Calendar.
-info.chrome=Web browser.
-info.drive=Cloud service.
-info.gmail=Email client.
-info.gmail_exchange=Support exchange for Gmail.
-info.google=Google apps.
-info.hangouts=Instant messagery.
-info.maps=Real-time navigation, traffic, transport.
-info.photos=Digital photo management application.
-info.play_music=Google Play Music application.
-info.tts=Sometime, i can talk.
-info.tallback=Accessibility service.
-info.play_movies=Google Play Movies application.
-info.youtube=YouTube application.
+info.calendar=Google Calendar
+info.chrome=Web browser
+info.drive=Cloud service
+info.gmail=Email client
+info.gmail_exchange=Support exchange for Gmail
+info.google=Google apps
+info.hangouts=Instant messagery
+info.maps=Real-time navigation, traffic, transport
+info.photos=Digital photo management application
+info.play_music=Google Play Music application
+info.tts=Causes black screens on first boot if removed !!!
+info.tallback=Causes black screens on first boot if removed !!!
+info.play_movies=Google Play Movies application
+info.youtube=YouTube application
 
 apps.tittle=System Apps
 apps.tittle2=Select the system Apps you want
@@ -117,15 +117,15 @@ phase_beam=Phase Beam
 protips=Protips
 tags=Tags
 
-info.basic_dream=Screensaver.
-info.facelock=Unlock with your face.
-info.black_hole=Animated wallpaper.
-info.holo_spiral=Animated wallpaper.
-info.anim_wallpaper=Support for animated wallpaper.
-info.music=OnePlus music app.
-info.noise_feild=Animated wallpaper.
-info.phase_beam=Animated wallpaper.
-info.protips=Some tips.
+info.basic_dream=Screensaver
+info.facelock=Unlock with your face
+info.black_hole=Animated wallpaper
+info.holo_spiral=Animated wallpaper
+info.anim_wallpaper=Support for animated wallpaper
+info.music=OnePlus music app
+info.noise_feild=Animated wallpaper
+info.phase_beam=Animated wallpaper
+info.protips=Some tips
 info.tags=NFC Tags
 
 mod.ttile=Extra mod
@@ -143,9 +143,6 @@ dpi.440=Set android DPI to 440
 dpi.430=Set android DPI to 430
 dpi.420=Set android DPI to 420
 
-mod.tittle=Install extra mods
-mod.tittle2=Root, audio mod, ads blocker & xposed...
-
 limit.tittle=App limitation
 limit.tittle2=Change the max number of apps in RAM.
 limit.42=Max. 42 apps running in RAM
@@ -157,9 +154,25 @@ limit.20=Max. 20 apps running in RAM
 limit.15=Max. 15 apps running in RAM
 limit.10=Max. 10 apps running in RAM
 
+mod.tittle=Install extra mods
+mod.tittle2=Root, audio mod, ads blocker & xposed...
+mod.tittle3=Extra mod
+
+supersu=Install SuperSU
+divine=Viper4Android + Dolby Atmos
+xposed=Xposed | NOT WORKING
+adaway=Adaway
+adb=Enable ADB
+
+info.supersu=SuperSU v2.74 by Chainfire
+info.divine=Divine beats by Theroyalseeker
+info.xposed=Xposed v85 by rovo89
+info.adaway=Ad-Blocker for Android
+info.adb=Android Debugging Bridge
+
 install=Installing FreedomOS
 install.now=Install Now
-install.finish=Installation Wizard has installed FreedomOS. Click NEXT to continue.
+install.finish=It will take awhile...
 install.finish.title=The installation has been completed.
 installing.title=Installing...
 finish.title=Congratulations!

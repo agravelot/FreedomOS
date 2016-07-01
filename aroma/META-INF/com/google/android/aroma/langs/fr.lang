@@ -87,45 +87,45 @@ play_movies=Play Vidéos
 youtube=YouTube
 
 info.calculator=0010 1010 ?
-info.calendar=Clandrier Google.
-info.chrome=Navigateur web.
-info.drive=Service cloud.
-info.gmail=Cleint mail.
-info.gmail_exchange=Support d'exchange pour Gmail.
-info.google=L'application Google.
-info.hangouts=Méssagerie instantané.
-info.maps=Navigation en temps réel, trafic, transports.
-info.photos=Application de gestion des photos numériques.
-info.play_music=Application Google Play Musique.
-info.tts=Parfois, je peux parler.
-info.tallback=Service d'accessibilité.
-info.play_movies=Application Google Play Films.
-info.youtube=Application YouTube.
+info.calendar=Clandrier Google
+info.chrome=Navigateur web
+info.drive=Service cloud
+info.gmail=Cleint mail
+info.gmail_exchange=Support d'exchange pour Gmail
+info.google=L'application Google
+info.hangouts=Méssagerie instantané
+info.maps=Navigation en temps réel, trafic, transports
+info.photos=Application de gestion des photos numériques
+info.play_music=Application Google Play Musique
+info.tts=Cause écran noir au premier démarrage si retiré !!!
+info.tallback=Cause écran noir au premier démarrage si retiré !!!
+info.play_movies=Application Google Play Films
+info.youtube=Application YouTube
 
 apps.tittle=System applications
 apps.tittle2=Select the system applications you want
 
-basic_dream=Veille intéractif.
-facelock=Dévérouiller avec son visage.
-black_hole=Fond d'écran animé.
-holo_spiral=Fond d'écran animé.
-anim_wallpaper=Support fond d'écran animé.
+basic_dream=Veille intéractif
+facelock=Dévérouiller avec son visage
+black_hole=Fond d'écran animé
+holo_spiral=Fond d'écran animé
+anim_wallpaper=Support fond d'écran animé
 music=Application de musique OnePlus
-noise_feild=Fond d'écran animé.
-phase_beam=Fond d'écran animé.
-protips=Quelques astuces.
+noise_feild=Fond d'écran animé
+phase_beam=Fond d'écran animé
+protips=Quelques astuces
 tags=Tags NFC
 
 info.basic_dream=Veille intéractif
-info.facelock=
+info.facelock=Unlock with your face
 info.black_hole=Animated wallpaper
 info.holo_spiral=Animated wallpaper
 info.anim_wallpaper=Support for animated wallpaper
 info.music=OnePlus music app
 info.noise_feild=Animated wallpaper
 info.phase_beam=Animated wallpaper
-info.protips=
-info.tags=
+info.protips=ProTips
+info.tags=Tag NFC
 
 mod.ttile=Mod supplémentaire
 mod.ttile2=Selectionner les mod que vous souhaitez
@@ -142,9 +142,6 @@ dpi.440=DPI système à 440
 dpi.430=DPI système à 430
 dpi.420=DPI système à 420
 
-mod.title=Installation mod supplémentaire
-mod.title2=Root..
-
 limit.tittle=Limitation d'application
 limit.tittle2=Change le nombre maximum d'application en mémoire.
 limit.42=Max. 42 applications en mémoire
@@ -156,9 +153,25 @@ limit.20=Max. 20 applications en mémoire
 limit.15=Max. 15 applications en mémoire
 limit.10=Max. 10 applications en mémoire
 
+mod.title=Installation mod supplémentaire
+mod.tittle2=Root, mod audio, bloqueur de pub & xposed...
+mod.tittle3=Extra mod
+
+supersu=Installer SuperSU
+divine=Viper4Android + Dolby Atmos
+xposed=Xposed | MARCHE PAS
+adaway=Adaway
+adb=Activer ADB
+
+info.supersu=SuperSU v2.74 par Chainfire
+info.divine=Divine beats par Theroyalseeker
+info.xposed=Xposed v85 par rovo89
+info.adaway=Bloqueur de publicité pour Android
+info.adb=Android Debugging Bridge
+
 install=Installation de FreedomOS
 install.now=Installer Maintenant
-install.finish=L'outil d'installation a correctement installé FreedomOS. Appuyer sur Suivant pour continer.
+install.finish=Cela va prendre un moment...
 install.finish.title=L'installation est terminé.
 installing.title=Installation...
 finish.title=Félicitation!

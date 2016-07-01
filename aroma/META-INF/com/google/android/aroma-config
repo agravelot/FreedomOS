@@ -58,7 +58,6 @@ viewbox(
         "  <~welcome.microblog>\t\t:\t<b><#selectbg_g>/nevaxtuto</#></b>\n" +
         "  <~welcome.updated>\t\t:\t<b><#selectbg_g>" + ini_get("rom_date") +
         "</#></b>\n\n" + "  <~welcome.next>",
-
     "@welcome");
 
 #Main Menu
@@ -144,7 +143,7 @@ checkbox("<~gapps.tittle>", "<~gapps.tittle2>", "@default", "gapps.prop",
          "<~tallback>", "<~info.tallback>", 1, "<~play_movies>",
          "<~info.play_movies>", 1, "<~youtube>", "<~info.youtube>", 1);
 
-#OnePlus App
+#System Apps
 ini_set("text_next", "<~text_next>");
 checkbox("<~apps.tittle>", "<~apps.tittle2>", "@default", "apps.prop",
 
@@ -170,11 +169,10 @@ selectbox("<~limit.tittle>", "<~limit.tittle2>", "@update", "limit.prop", "42",
           "<~limit.20>", 1, "15", "<~limit.15>", 0, "10", "<~limit.10>", 0);
 
 #Extra MOD
-checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop", "Extra mod",
-         "", 2, "Install SuperSU", "SuperSU v2.74 by Chainfire", 1,
-         "Viper4Android + Dolby Atmos", "Divine beats by Theroyalseeker", 1,
-         "Xposed", "Xposed v85 by rovo89", 0, "Adaway",
-         "Ad-Blocker for Android", 1);
+checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
+         "<~mod.tittle3>", "", 2, "<~supersu>", "<~info.supersu>", 1,
+         "<~divine>", "<~info.divine>", 1, "<~xposed>", "<~info.xposed>", 0,
+         "<~adaway>", "<~info.adaway>", 1, "<~adb>", "<~info.adb>", 0);
 endif;
 
 #PreInstall
