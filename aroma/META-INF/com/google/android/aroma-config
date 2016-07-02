@@ -131,50 +131,83 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       ini_set("text_next", "<~text_next>");
 checkbox("<~gapps.tittle>", "<~gapps.tittle2>", "@default", "gapps.prop",
 
-         "Google apps", "", 2, "<~calculator>", "<~info.calculator>", 1,
-         "<~calendar>", "<~info.calendar>", 1, "<~chrome>", "<~info.chrome>", 1,
-         "<~drive>", "<~info.drive>", 1, "<~gmail>", "<~info.gmail>", 1,
-         "<~gmail_exchange>", "<~info.gmail_exchange>", 1, "<~google>",
-         "<~info.google>", 1, #VELVET "<~hangouts>", "<~info.hangouts>", 1,
-         "<~maps>", "<~info.maps>", 1, "<~photos>", "<~info.photos>", 1,
-         "<~play_music>", "<~info.play_music>", 1, "<~tts>", "<~info.tts>", 1,
-         "<~tallback>", "<~info.tallback>", 1, "<~play_movies>",
-         "<~info.play_movies>", 1, "<~youtube>", "<~info.youtube>", 1);
+  "Google apps", "", 2,
+  "<~calculator>", "<~info.calculator>", 1,
+     "<~calendar>", "<~info.calendar>", 1,
+     "<~chrome>", "<~info.chrome>", 1,
+     "<~drive>", "<~info.drive>", 1,
+     "<~gmail>", "<~info.gmail>", 1,
+     "<~gmail_exchange>", "<~info.gmail_exchange>", 1,
+     "<~google>", "<~info.google>", 1, #VELVET
+     "<~hangouts>", "<~info.hangouts>", 1,
+     "<~maps>", "<~info.maps>", 1,
+     "<~photos>", "<~info.photos>", 1,
+     "<~play_music>", "<~info.play_music>", 1,
+     "<~tts>", "<~info.tts>", 1,
+     "<~tallback>", "<~info.tallback>", 1,
+     "<~play_movies>", "<~info.play_movies>", 1,
+     "<~youtube>", "<~info.youtube>", 1
+   );
 
 #System Apps
 ini_set("text_next", "<~text_next>");
 checkbox("<~apps.tittle>", "<~apps.tittle2>", "@default", "apps.prop",
 
-         "System apps", "", 2, "<~basic_dream>", "<~info.basic_dream>", 1,
-         "<~facelock>", "<~info.facelock>", 1, "<~black_hole>",
-         "<~info.black_hole>", 1, "<~holo_spiral>", "<~info.holo_spiral>", 1,
-         "<~anim_wallpaper>", "<~info.anim_wallpaper>", 1, "<~music>",
-         "<~info.music>", 1, "<~noise_feild>", "<~info.noise_feild>", 1,
-         "<~phase_beam>", "<~info.phase_beam>", 1, "<~protips>",
-         "<~info.protips>", 1, "<~tags>", "<~info.tags>", 1);
+  "System apps", "", 2,
     "<~android_pay>", "<~info.android_pay>", 1,
+    "<~basic_dream>", "<~info.basic_dream>", 1,
+    "<~facelock>", "<~info.facelock>", 1,
+    "<~black_hole>", "<~info.black_hole>", 1,
+    "<~holo_spiral>", "<~info.holo_spiral>", 1,
+    "<~anim_wallpaper>", "<~info.anim_wallpaper>", 1,
+    "<~music>", "<~info.music>", 1,
+    "<~noise_feild>", "<~info.noise_feild>", 1,
+    "<~phase_beam>", "<~info.phase_beam>", 1,
+    "<~protips>", "<~info.protips>", 1,
     "<~swiftkey>", "<~info.swiftkey", 1,
+    "<~tags>", "<~info.tags>", 1
+  );
 
 #DPI
-selectbox("<~dpi.tittle>", "<~dpi.tittle2>", "@update", "dpi.prop", "500",
-          "<~dpi.500>", 0, "490", "<~dpi.490>", 0, "480 (Default)",
-          "<~dpi.480>", 1, "470", "<~dpi.470>", 0, "460", "<~dpi.460>", 0,
-          "450", "<~dpi.450>", 0, "440", "<~dpi.440>", 0, "430", "<~dpi.430>",
-          0, "420", "<~dpi.420>", 0, "<~dpi.410>", 0, "<~dpi.400>", 0,
-          "<~dpi.390>", 0, "<~dpi.380>", 0, "<~dpi.370>", 0, "<~dpi.360>", 0,
-          "<~dpi.350>", 0);
+selectbox("<~dpi.tittle>", "<~dpi.tittle2>", "@update", "dpi.prop",
+          "500","<~dpi.500>", 0,
+          "490", "<~dpi.490>", 0,
+          "480 (Default)", "<~dpi.480>", 1,
+          "470", "<~dpi.470>", 0,
+          "460", "<~dpi.460>", 0,
+          "450", "<~dpi.450>", 0,
+          "440", "<~dpi.440>", 0,
+          "430", "<~dpi.430>", 0,
+          "420", "<~dpi.420>", 0,
+          "410", "<~dpi.410>", 0,
+          "400", "<~dpi.400>", 0,
+          "390", "<~dpi.390>", 0,
+          "380", "<~dpi.380>", 0,
+          "370", "<~dpi.370>", 0,
+          "360", "<~dpi.360>", 0,
+          "350", "<~dpi.350>", 0
+        );
 
 #App limit
-selectbox("<~limit.tittle>", "<~limit.tittle2>", "@update", "limit.prop", "42",
-          "<~limit.42>", 0, "40", "<~limit.40>", 0, "35", "<~limit.35>", 1,
-          "30", "<~limit.30>", 0, "25", "<~limit.25>", 0, "20 (Default)",
-          "<~limit.20>", 1, "15", "<~limit.15>", 0, "10", "<~limit.10>", 0);
+selectbox("<~limit.tittle>", "<~limit.tittle2>", "@update", "limit.prop",
+          "42","<~limit.42>", 0,
+          "40", "<~limit.40>", 0,
+          "35", "<~limit.35>", 1,
+          "30", "<~limit.30>", 0,
+          "25", "<~limit.25>", 0,
+          "20 (Default)", "<~limit.20>", 1,
+          "15", "<~limit.15>", 0,
+          "10", "<~limit.10>", 0
+        );
 
 #Extra MOD
 checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
-         "<~mod.tittle3>", "", 2, "<~supersu>", "<~info.supersu>", 1,
-         "<~divine>", "<~info.divine>", 1, "<~xposed>", "<~info.xposed>", 0,
-         "<~adaway>", "<~info.adaway>", 1, "<~adb>", "<~info.adb>", 0);
+         "<~mod.tittle3>", "", 2,
+           "<~supersu>", "<~info.supersu>", 1,
+           "<~divine>", "<~info.divine>", 1,
+           "<~xposed>", "<~info.xposed>", 0,
+           "<~adaway>", "<~info.adaway>", 1,
+           "<~adb>", "<~info.adb>", 0);
 endif;
 
 #PreInstall
