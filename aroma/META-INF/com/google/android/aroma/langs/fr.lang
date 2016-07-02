@@ -49,22 +49,22 @@ main.exit.info=Quitter l'installateur FreedomOS
 
 install_mod.tittle=Choisissez votre mode d'installation
 install_mod.tittle2=Choisissez vos paramètres
-install_mod.sub_tittle=
+install_mod.sub_tittle=Installer
 
-custom=
-stock=
-assert.tittle=
-assert_yes=
-assert_no=
-reboot.tittle=
-reboot_system=
-reboot_no=
+custom=Modifié
+stock=D'origine OnePlus
+assert.tittle=Vérifier l'assert_yes
+assert_yes=Oui (Recommandé)
+assert_no=Non
+reboot.tittle=Redémarrer ?
+reboot_system=Système
+reboot_no=Nop
 
-info.custom=
-info.stock=
-info.assert_yes=
-info.assert_no=
-info.reboot_system=
+info.custom=GApps, root et autre
+info.stock=Stock d'origine, non modifié
+info.assert_yes=Vérifie la variant dans le build.prop
+info.assert_no=Ne pas vérifier la variante
+info.reboot_system=Redémarrer le système
 info.reboot_no=.
 
 sys.title=Information système
