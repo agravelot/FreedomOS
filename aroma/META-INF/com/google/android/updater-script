@@ -703,7 +703,6 @@ if
 			delete_recursive("/system/app/Protips");
 endif;
 
-swiftkey
 if
   (file_getprop("/tmp/aroma/apps.prop", "item.1.11") == "0")
     then
