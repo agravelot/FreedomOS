@@ -165,561 +165,561 @@ delete ("tmp/your_recovery.img");
 
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
-    ui_print(" ");
-    ui_print("@  Extracting temp files ");
-    package_extract_dir("tools/", "/tmp/tools");
-    set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode",
-                           0755);
-    set_progress(0.720000);
-##MOD
-#ROOT
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
-  then
-    ui_print(" ");
-    ui_print("@  Installing SuperSU by Chainfire");
-    mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    run_program("/sbin/busybox", "unzip", "/tmp/tools/su/su.zip",
-                "META-INF/com/google/android/*", "-d", "/tmp/tools/su");
-    run_program("/sbin/busybox", "sh",
-                "/tmp/tools/su/META-INF/com/google/android/update-binary", "dummy",
-                "1", "/tmp/tools/su/su.zip");
-    ifelse(is_mounted("/system"), unmount("/system"));
-endif;
+      ui_print(" ");
+      ui_print("@  Extracting temp files ");
+      package_extract_dir("tools/", "/tmp/tools");
+      set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode",
+                             0755);
+      set_progress(0.720000);
+  ##MOD
+  #ROOT
+  if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
+    then
+      ui_print(" ");
+      ui_print("@  Installing SuperSU by Chainfire");
+      mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+      run_program("/sbin/busybox", "unzip", "/tmp/tools/su/su.zip",
+                  "META-INF/com/google/android/*", "-d", "/tmp/tools/su");
+      run_program("/sbin/busybox", "sh",
+                  "/tmp/tools/su/META-INF/com/google/android/update-binary", "dummy",
+                  "1", "/tmp/tools/su/su.zip");
+      ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-#DiVINE BEATS
-if
-  (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
-  then
-    set_progress(0.780000);
-    ui_print(" ");
-    ui_print("@  Installing Viper4Android + Dolby Atmos ");
-    ui_print(" ");
-    ui_print("===================================");
-    ui_print("           DivineBeats v7.0         ");
-    ui_print("              Evolution             ");
-    ui_print("             Dolby Atmos            ");
-    ui_print("===================================");
+  #DiVINE BEATS
+  if
+    (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
+    then
+      set_progress(0.780000);
+      ui_print(" ");
+      ui_print("@  Installing Viper4Android + Dolby Atmos ");
+      ui_print(" ");
+      ui_print("===================================");
+      ui_print("           DivineBeats v7.0         ");
+      ui_print("              Evolution             ");
+      ui_print("             Dolby Atmos            ");
+      ui_print("===================================");
 
-    ui_print("TheRoyalSeeker presents DivineBeats v7.0 Evolution");
-    ui_print("Thank you for sharing it @TheRoyalSeeker");
-    ui_print("Ultimate sound just seconds away");
-    ui_print(" ");
-    ui_print("- Making system compatible...");
-    ifelse(is_mounted("/system"), unmount("/system"));
-#unmount("/data");
-    run_program("/sbin/busybox", "mount", "/data");
-#run_program("/sbin/busybox", "mount", "/system");
-    mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    delete_recursive("/system/priv-app/AudioFX");
-    delete_recursive("/system/app/ViPER4Android_FX_A4.x");
-    delete_recursive("/system/app/Viper4Android");
-    delete_recursive("/system/app/Material_Dark_V4A");
-    delete_recursive("/system/priv-app/Material_Dark_V4A");
-    delete_recursive("/data/app/com.vipercn.viper4android_v2-1");
-    delete ("/system/lib/soundfx/libv4a_fx_ics.so");
-    delete ("/system/lib/soundfx/libv4a_fx_jb.so");
-    delete_recursive("/system/app/As");
-    delete_recursive("/system/app/AsUI");
-    delete_recursive("/system/priv-app/As");
-    delete_recursive("/system/priv-app/SoundAlive");
-    delete_recursive("/system/priv-app/AsUI");
-    delete_recursive("/system/app/Ds");
-    delete_recursive("/system/app/DsUI");
-    delete_recursive("/system/priv-app/Ds");
-    delete_recursive("/system/priv-app/DsUI");
-    delete_recursive("/system/priv-app/SemcMusic");
-    delete ("/system/priv-app/TRSmods.apk");
-    delete_recursive("/sdcard/DBEngine");
-    package_extract_dir("tools/divine/system", "/system");
+      ui_print("TheRoyalSeeker presents DivineBeats v7.0 Evolution");
+      ui_print("Thank you for sharing it @TheRoyalSeeker");
+      ui_print("Ultimate sound just seconds away");
+      ui_print(" ");
+      ui_print("- Making system compatible...");
+      ifelse(is_mounted("/system"), unmount("/system"));
+  #unmount("/data");
+      run_program("/sbin/busybox", "mount", "/data");
+  #run_program("/sbin/busybox", "mount", "/system");
+      mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+      delete_recursive("/system/priv-app/AudioFX");
+      delete_recursive("/system/app/ViPER4Android_FX_A4.x");
+      delete_recursive("/system/app/Viper4Android");
+      delete_recursive("/system/app/Material_Dark_V4A");
+      delete_recursive("/system/priv-app/Material_Dark_V4A");
+      delete_recursive("/data/app/com.vipercn.viper4android_v2-1");
+      delete ("/system/lib/soundfx/libv4a_fx_ics.so");
+      delete ("/system/lib/soundfx/libv4a_fx_jb.so");
+      delete_recursive("/system/app/As");
+      delete_recursive("/system/app/AsUI");
+      delete_recursive("/system/priv-app/As");
+      delete_recursive("/system/priv-app/SoundAlive");
+      delete_recursive("/system/priv-app/AsUI");
+      delete_recursive("/system/app/Ds");
+      delete_recursive("/system/app/DsUI");
+      delete_recursive("/system/priv-app/Ds");
+      delete_recursive("/system/priv-app/DsUI");
+      delete_recursive("/system/priv-app/SemcMusic");
+      delete ("/system/priv-app/TRSmods.apk");
+      delete_recursive("/sdcard/DBEngine");
+      package_extract_dir("tools/divine/system", "/system");
 
-#mount("yaffs2", "MTD", "modextras", "/extras");
-#package_extract_dir("tools/divine/extras", "/extras");
-    package_extract_file("tools/divine/runme.sh", "/tmp/runme.sh");
-    set_metadata("/tmp/runme.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    run_program("/tmp/runme.sh");
-    delete ("/tmp/runme.sh");
+  #mount("yaffs2", "MTD", "modextras", "/extras");
+  #package_extract_dir("tools/divine/extras", "/extras");
+      package_extract_file("tools/divine/runme.sh", "/tmp/runme.sh");
+      set_metadata("/tmp/runme.sh", "uid", 0, "gid", 0, "fmode", 0777);
+      run_program("/tmp/runme.sh");
+      delete ("/tmp/runme.sh");
 
-    package_extract_file("tools/divine/libsprocessing.sh",
-                         "/tmp/libsprocessing.sh");
-    set_metadata("/tmp/libsprocessing.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    run_program("/tmp/libsprocessing.sh");
-    delete ("/tmp/libsprocessing.sh");
+      package_extract_file("tools/divine/libsprocessing.sh",
+                           "/tmp/libsprocessing.sh");
+      set_metadata("/tmp/libsprocessing.sh", "uid", 0, "gid", 0, "fmode", 0777);
+      run_program("/tmp/libsprocessing.sh");
+      delete ("/tmp/libsprocessing.sh");
 
-    package_extract_file("tools/divine/deepbuffer.sh", "/tmp/deepbuffer.sh");
-    set_metadata("/tmp/deepbuffer.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    run_program("/tmp/deepbuffer.sh");
-    delete ("/tmp/deepbuffer.sh");
+      package_extract_file("tools/divine/deepbuffer.sh", "/tmp/deepbuffer.sh");
+      set_metadata("/tmp/deepbuffer.sh", "uid", 0, "gid", 0, "fmode", 0777);
+      run_program("/tmp/deepbuffer.sh");
+      delete ("/tmp/deepbuffer.sh");
 
-    set_progress(0.820000);
-    ui_print("- Setting permissions");
-    set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
-    set_metadata("/system/etc/init.d/batsav", "uid", 0, "gid", 2000, "fmode", 0755);
-    set_metadata("/system/app/MaxxAudioService.apk", "uid", 0, "gid", 0, "fmode",
-                 06755);
-    set_metadata_recursive("/system/app/GoogleLyricsPlugin", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/SemcMetadataCleanup", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/SemcMetadataCleanup/lib", "uid", 0, "gid",
-                           0, "dmode", 0755, "fmode", 0755);
-    set_metadata_recursive("/system/app/SemcMetadataCleanup/lib/arm", "uid", 0,
-                           "gid", 0, "dmode", 0755, "fmode", 0777);
-    set_metadata_recursive("/system/app/SemcMusicVisualizer", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/SemcMusicVisualizer/lib", "uid", 0, "gid",
-                           0, "dmode", 0755, "fmode", 0755);
-    set_metadata_recursive("/system/app/SemcMusicVisualizer/lib/arm", "uid", 0,
-                           "gid", 0, "dmode", 0755, "fmode", 0777);
-    set_metadata_recursive("/system/priv-app/SomcPlayAnywhere", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/SemcMusic", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata("/system/priv-app/SemcMusic/SemcMusic.apk", "uid", 0, "gid", 0,
-                 "fmode", 0644);
-    set_metadata_recursive("/system/app/AudioEffectsManager", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/DolbyMobileAudioEffectService", "uid", 0,
-                           "gid", 0, "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/As", "uid", 0, "gid", 0, "dmode", 0755,
-                           "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/AsUI", "uid", 0, "gid", 0, "dmode",
-                           0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/DivineEQ", "uid", 0, "gid", 0, "dmode",
-                           0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/DivineEQ", "uid", 0, "gid", 0, "dmode",
-                           0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/Viper4Android", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/Viper4Android/lib", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0755);
-    set_metadata_recursive("/system/priv-app/Viper4Android/lib/arm", "uid", 0,
-                           "gid", 0, "dmode", 0755, "fmode", 0777);
-    set_metadata("/system/su.d/50viper.sh", "uid", 0, "gid", 0, "fmode", 0755);
-    set_metadata_recursive("/system/addon.d", "uid", 0, "gid", 0, "dmode", 0755,
-                           "fmode", 0755);
-    set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755,
-                           "fmode", 0755);
+      set_progress(0.820000);
+      ui_print("- Setting permissions");
+      set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
+      set_metadata("/system/etc/init.d/batsav", "uid", 0, "gid", 2000, "fmode", 0755);
+      set_metadata("/system/app/MaxxAudioService.apk", "uid", 0, "gid", 0, "fmode",
+                   06755);
+      set_metadata_recursive("/system/app/GoogleLyricsPlugin", "uid", 0, "gid", 0,
+                             "dmode", 0755, "fmode", 0644);
+      set_metadata_recursive("/system/app/SemcMetadataCleanup", "uid", 0, "gid", 0,
+                             "dmode", 0755, "fmode", 0644);
+      set_metadata_recursive("/system/app/SemcMetadataCleanup/lib", "uid", 0, "gid",
+                             0, "dmode", 0755, "fmode", 0755);
+      set_metadata_recursive("/system/app/SemcMetadataCleanup/lib/arm", "uid", 0,
+                             "gid", 0, "dmode", 0755, "fmode", 0777);
+      set_metadata_recursive("/system/app/SemcMusicVisualizer", "uid", 0, "gid", 0,
+                             "dmode", 0755, "fmode", 0644);
+      set_metadata_recursive("/system/app/SemcMusicVisualizer/lib", "uid", 0, "gid",
+                             0, "dmode", 0755, "fmode", 0755);
+      set_metadata_recursive("/system/app/SemcMusicVisualizer/lib/arm", "uid", 0,
+                             "gid", 0, "dmode", 0755, "fmode", 0777);
+      set_metadata_recursive("/system/priv-app/SomcPlayAnywhere", "uid", 0, "gid", 0,
+                             "dmode", 0755, "fmode", 0644);
+      set_metadata_recursive("/system/priv-app/SemcMusic", "uid", 0, "gid", 0,
+                             "dmode", 0755, "fmode", 0644);
+      set_metadata("/system/priv-app/SemcMusic/SemcMusic.apk", "uid", 0, "gid", 0,
+                   "fmode", 0644);
+      set_metadata_recursive("/system/app/AudioEffectsManager", "uid", 0, "gid", 0,
+                             "dmode", 0755, "fmode", 0644);
+      set_metadata_recursive("/system/app/DolbyMobileAudioEffectService", "uid", 0,
+                             "gid", 0, "dmode", 0755, "fmode", 0644);
+      set_metadata_recursive("/system/priv-app/As", "uid", 0, "gid", 0, "dmode", 0755,
+                             "fmode", 0644);
+      set_metadata_recursive("/system/priv-app/AsUI", "uid", 0, "gid", 0, "dmode",
+                             0755, "fmode", 0644);
+      set_metadata_recursive("/system/priv-app/DivineEQ", "uid", 0, "gid", 0, "dmode",
+                             0755, "fmode", 0644);
+      set_metadata_recursive("/system/app/DivineEQ", "uid", 0, "gid", 0, "dmode",
+                             0755, "fmode", 0644);
+      set_metadata_recursive("/system/priv-app/Viper4Android", "uid", 0, "gid", 0,
+                             "dmode", 0755, "fmode", 0644);
+      set_metadata_recursive("/system/priv-app/Viper4Android/lib", "uid", 0, "gid", 0,
+                             "dmode", 0755, "fmode", 0755);
+      set_metadata_recursive("/system/priv-app/Viper4Android/lib/arm", "uid", 0,
+                             "gid", 0, "dmode", 0755, "fmode", 0777);
+      set_metadata("/system/su.d/50viper.sh", "uid", 0, "gid", 0, "fmode", 0755);
+      set_metadata_recursive("/system/addon.d", "uid", 0, "gid", 0, "dmode", 0755,
+                             "fmode", 0755);
+      set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755,
+                             "fmode", 0755);
 
-    ui_print("Your device sound is going to be revolutionized      ");
-    run_program("/sbin/busybox", "umount", "/system");
-    run_program("/sbin/busybox", "umount", "/data");
-    ui_print("Installation complete");
-    ui_print("NO NEED TO Wipe Caches, just reboot");
-endif;
+      ui_print("Your device sound is going to be revolutionized      ");
+      run_program("/sbin/busybox", "umount", "/system");
+      run_program("/sbin/busybox", "umount", "/data");
+      ui_print("Installation complete");
+      ui_print("NO NEED TO Wipe Caches, just reboot");
+  endif;
 
-#XPOSED
-if
-  (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1")
-  then
-    set_progress(0.880000);
-    ui_print(" ");
-    ui_print("@  Installing Xposed v85 by rovo89");
-    ui_print(" ");
-    ui_print("- Install Xposed Framework");
-    mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    run_program("/sbin/busybox", "unzip",
-                "/tmp/tools/xposed/xposed-v85-sdk23-arm64.zip",
-                "META-INF/com/google/android/*", "-d", "/tmp/tools/xposed");
-    run_program("/sbin/busybox", "sh",
-                "/tmp/tools/xposed/META-INF/com/google/android/update-binary",
-                "dummy", "1", "/tmp/tools/xposed/xposed-v85-sdk23-arm64.zip");
+  #XPOSED
+  if
+    (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1")
+    then
+      set_progress(0.880000);
+      ui_print(" ");
+      ui_print("@  Installing Xposed v85 by rovo89");
+      ui_print(" ");
+      ui_print("- Install Xposed Framework");
+      mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+      run_program("/sbin/busybox", "unzip",
+                  "/tmp/tools/xposed/xposed-v85-sdk23-arm64.zip",
+                  "META-INF/com/google/android/*", "-d", "/tmp/tools/xposed");
+      run_program("/sbin/busybox", "sh",
+                  "/tmp/tools/xposed/META-INF/com/google/android/update-binary",
+                  "dummy", "1", "/tmp/tools/xposed/xposed-v85-sdk23-arm64.zip");
 
-    ui_print("- Install Xposed Installer");
-    run_program("/sbin/busybox", "mount", "/data");
-    package_extract_dir("tools/xposed/de.robv.android.xposed.installer-1",
-                        "/data/app/de.robv.android.xposed.installer-1");
-    set_metadata_recursive("/data/app/de.robv.android.xposed.installer-1", "uid",
-                           1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/data/app/de.robv.android.xposed.installer-1/lib",
-                           "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
-    set_metadata_recursive("/data/app/de.robv.android.xposed.installer-1/oat",
-                           "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
+      ui_print("- Install Xposed Installer");
+      run_program("/sbin/busybox", "mount", "/data");
+      package_extract_dir("tools/xposed/de.robv.android.xposed.installer-1",
+                          "/data/app/de.robv.android.xposed.installer-1");
+      set_metadata_recursive("/data/app/de.robv.android.xposed.installer-1", "uid",
+                             1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+      set_metadata_recursive("/data/app/de.robv.android.xposed.installer-1/lib",
+                             "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
+      set_metadata_recursive("/data/app/de.robv.android.xposed.installer-1/oat",
+                             "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
 
-    ifelse(is_mounted("/system"), unmount("/system"));
-endif;
+      ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-#ADAWAY
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
-  then
-    set_progress(0.900000);
-    ui_print(" ");
-  	ui_print("@  Installing Adaway");
-  	ui_print(" ");
+  #ADAWAY
+  if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
+    then
+      set_progress(0.900000);
+      ui_print(" ");
+    	ui_print("@  Installing Adaway");
+    	ui_print(" ");
+    	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+    	run_program("/sbin/busybox", "mount", "/data");
+    	ui_print("- Install Adaway apk");
+    	package_extract_dir("tools/adaway/org.adaway-1", "/data/app/org.adaway-1");
+    	set_metadata_recursive("/data/app/org.adaway-1/", "uid", 1000, "gid", 1000,
+    	                       "dmode", 0755, "fmode", 0644);
+    	set_metadata_recursive("/data/app/org.adaway-1/lib", "uid", 1000, "gid", 1000,
+    	                       "dmode", 0755, "fmode", 0755);
+    	set_metadata_recursive("/data/app/org.adaway-1/oat", "uid", 1000, "gid", 1000,
+    	                       "dmode", 0771, "fmode", 0644);
+    	ui_print("- Install host file");
+    	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "fmode", 0777);
+    	delete("/system/etc/hosts");
+    	package_extract_file("tools/adaway/hosts", "/system/etc/hosts");
+    	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "fmode", 0644);
+    	ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
+  #ADB
+  if (file_getprop("/tmp/aroma/mod.prop", "item.1.5") == "1")
+    then
+      set_progress(0.920000);
+      ui_print(" ");
+      ui_print("@  Enabling adb");
+      ui_print(" ");
+      mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+      run_program("/tmp/tools/adb.sh");
+      ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
+  #DPI
+  set_progress(0.950000);
+  ui_print(" ");
+  ui_print("@  Applying settings");
+  ui_print(" ");
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "1")
+    then
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set DPI to 500");
+  		run_program("/tmp/tools/dpi/500.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "2")
+    then
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set DPI to 490");
+  		run_program("/tmp/tools/dpi/490.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "3")
+    then ui_print("- Set DPI to 480");
+  endif;
+
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "4")
+    then
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set DPI to 470");
+  		run_program("/tmp/tools/dpi/470.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "5")
+    then
   	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-  	run_program("/sbin/busybox", "mount", "/data");
-  	ui_print("- Install Adaway apk");
-  	package_extract_dir("tools/adaway/org.adaway-1", "/data/app/org.adaway-1");
-  	set_metadata_recursive("/data/app/org.adaway-1/", "uid", 1000, "gid", 1000,
-  	                       "dmode", 0755, "fmode", 0644);
-  	set_metadata_recursive("/data/app/org.adaway-1/lib", "uid", 1000, "gid", 1000,
-  	                       "dmode", 0755, "fmode", 0755);
-  	set_metadata_recursive("/data/app/org.adaway-1/oat", "uid", 1000, "gid", 1000,
-  	                       "dmode", 0771, "fmode", 0644);
-  	ui_print("- Install host file");
-  	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "fmode", 0777);
-  	delete ("/system/etc/hosts");
-  	package_extract_file("tools/adaway/hosts", "/system/etc/hosts");
-  	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "fmode", 0644);
-  	ifelse(is_mounted("/system"), unmount("/system"));
-endif;
+  		ui_print("- Set DPI to 460");
+  		run_program("/tmp/tools/dpi/460.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-#ADB
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.5") == "1")
-  then
-    set_progress(0.920000);
-    ui_print(" ");
-    ui_print("@  Enabling adb");
-    ui_print(" ");
-    mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    run_program("/tmp/tools/adb.sh");
-    ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-#DPI
-set_progress(0.950000);
-ui_print(" ");
-ui_print("@  Applying settings");
-ui_print(" ");
-if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "1")
-  then
-		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set DPI to 500");
-		run_program("/tmp/tools/dpi/500.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "2")
-  then
-		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set DPI to 490");
-		run_program("/tmp/tools/dpi/490.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "3")
-  then ui_print("- Set DPI to 480");
-endif;
-
-if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "4")
-  then
-		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set DPI to 470");
-		run_program("/tmp/tools/dpi/470.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "5")
-  then
-	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set DPI to 460");
-		run_program("/tmp/tools/dpi/460.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "6")
-  then
-		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set DPI to 450");
-		run_program("/tmp/tools/dpi/450.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "7")
-  then
-		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set DPI to 440");
-		run_program("/tmp/tools/dpi/440.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "8")
-  then
-	 	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set DPI to 430");
-		run_program("/tmp/tools/dpi/430.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "9")
-  then
-		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set DPI to 420");
-		run_program("/tmp/tools/dpi/420.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-#App limit
-if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "1")
-  then
-		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set the max number of apps in RAM to 42.");
-		run_program("/tmp/tools/limit/42.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "2")
-  then
-		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set the max number of apps in RAM to 40.");
-		run_program("/tmp/tools/limit/40.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "3")
-  then
-		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set the max number of apps in RAM to 35.");
-		run_program("/tmp/tools/limit/35.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "4")
-  then
-		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set the max number of apps in RAM to 30.");
-		run_program("/tmp/tools/limit/30.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "5")
-  then
-		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set the max number of apps in RAM to 25.");
-		run_program("/tmp/tools/limit/25.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "6")
-  then
-		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set the max apps in RAM to 20.");
-		run_program("/tmp/tools/limit/20.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "7")
-  then
-		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-		ui_print("- Set the max number of apps in RAM to 15.");
-		run_program("/tmp/tools/limit/15.sh");
-		ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "8")
-  then
-    mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-    ui_print("- Set the max number of apps in RAM to 10.");
-    run_program("/tmp/tools/limit/10.sh");
-    ifelse(is_mounted("/system"), unmount("/system"));
-endif;
-
-#Google apps
-set_progress(0.940000);
-ui_print(" ");
-ui_print("@  Uninstalling Google applications :");
-ui_print(" ");
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.1") == "0")
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "6")
     then
-      ui_print("- Google Calculator");
-			delete_recursive("/system/app/CalculatorGoogle");
-endif;
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set DPI to 450");
+  		run_program("/tmp/tools/dpi/450.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.2") == "0")
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "7")
     then
-      ui_print("- Google Calendar ");
-			delete_recursive("/system/app/CalendarGoogle");
-endif;
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set DPI to 440");
+  		run_program("/tmp/tools/dpi/440.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.3") == "0")
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "8")
     then
-      ui_print("- Google Chrome ");
-			delete_recursive("/system/app/Chrome");
-endif;
+  	 	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set DPI to 430");
+  		run_program("/tmp/tools/dpi/430.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.4") == "0")
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "9")
     then
-      ui_print("- Google Drive ");
-			delete_recursive("/system/app/Drive");
-endif;
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set DPI to 420");
+  		run_program("/tmp/tools/dpi/420.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.5") == "0")
+  #App limit
+  if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "1")
     then
-      ui_print("- Gmail ");
-			delete_recursive("/system/app/Gmail2");
-endif;
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set the max number of apps in RAM to 42.");
+  		run_program("/tmp/tools/limit/42.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.6") == "0")
+  if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "2")
     then
-      ui_print("- Gmail Exchange ");
-			delete_recursive("/system/app/GmailExchange");
-endif;
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set the max number of apps in RAM to 40.");
+  		run_program("/tmp/tools/limit/40.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.7") == "0")
+  if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "3")
     then
-      ui_print("- Google ");
-			delete_recursive("/system/priv-app/Velvet");
-endif;
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set the max number of apps in RAM to 35.");
+  		run_program("/tmp/tools/limit/35.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.8") == "0")
+  if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "4")
     then
-      ui_print("- Google Hangouts ");
-			delete_recursive("/system/app/Hangouts");
-endif;
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set the max number of apps in RAM to 30.");
+  		run_program("/tmp/tools/limit/30.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.9") == "0")
+  if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "5")
     then
-      ui_print("- Google Maps ");
-			delete_recursive("/system/app/Maps");
-endif;
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set the max number of apps in RAM to 25.");
+  		run_program("/tmp/tools/limit/25.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.10") == "0")
+  if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "6")
     then
-      ui_print("- Google Photos ");
-			delete_recursive("/system/app/Photos");
-endif;
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set the max apps in RAM to 20.");
+  		run_program("/tmp/tools/limit/20.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.11") == "0")
+  if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "7")
     then
-      ui_print("- Google Play Music ");
-			delete_recursive("/system/app/Music2");
-endif;
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set the max number of apps in RAM to 15.");
+  		run_program("/tmp/tools/limit/15.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.12") == "0")
+  if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "8")
     then
-      ui_print("- Google TTS ");
-			delete_recursive("/system/app/GoogleTTS");
-endif;
+      mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+      ui_print("- Set the max number of apps in RAM to 10.");
+      run_program("/tmp/tools/limit/10.sh");
+      ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.13") == "0")
-    then
-      ui_print("- Google Tallback ");
-			delete_recursive("/system/app/talkback");
-endif;
+  #Google apps
+  set_progress(0.940000);
+  ui_print(" ");
+  ui_print("@  Uninstalling Google applications :");
+  ui_print(" ");
+  mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.14") == "0")
-    then
-      ui_print("- Google Play Movies");
-			delete_recursive("/system/app/Videos");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.1") == "0")
+      then
+        ui_print("- Google Calculator");
+  			delete_recursive("/system/app/CalculatorGoogle");
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/gapps.prop", "item.1.15") == "0")
-    then
-      ui_print("- YouTube");
-			delete_recursive("/system/app/YouTube");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.2") == "0")
+      then
+        ui_print("- Google Calendar ");
+  			delete_recursive("/system/app/CalendarGoogle");
+  endif;
 
-#System Apps
-set_progress(0.960000);
-ui_print(" ");
-ui_print("@  Uninstalling system applications");
-ui_print(" ");
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.3") == "0")
+      then
+        ui_print("- Google Chrome ");
+  			delete_recursive("/system/app/Chrome");
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/apps.prop", "item.1.1") == "0")
-    then
-      ui_print("- Android Pay");
-			delete_recursive("/system/app/AndroidPay");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.4") == "0")
+      then
+        ui_print("- Google Drive ");
+  			delete_recursive("/system/app/Drive");
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/apps.prop", "item.1.2") == "0")
-    then
-      ui_print("- Basic Dreams");
-			delete_recursive("/system/app/BasicDreams");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.5") == "0")
+      then
+        ui_print("- Gmail ");
+  			delete_recursive("/system/app/Gmail2");
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/apps.prop", "item.1.3") == "0")
-    then
-      ui_print("- FaceLock");
-			delete_recursive("/system/app/FaceLock");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.6") == "0")
+      then
+        ui_print("- Gmail Exchange ");
+  			delete_recursive("/system/app/GmailExchange");
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/apps.prop", "item.1.4") == "0")
-    then
-      ui_print("- Galaxy4");
-			delete_recursive("/system/app/Galaxy4");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.7") == "0")
+      then
+        ui_print("- Google ");
+  			delete_recursive("/system/priv-app/Velvet");
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/apps.prop", "item.1.5") == "0")
-    then
-      ui_print("- Holo Spiral");
-			delete_recursive("/system/app/HoloSpiralWallpaper");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.8") == "0")
+      then
+        ui_print("- Google Hangouts ");
+  			delete_recursive("/system/app/Hangouts");
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/apps.prop", "item.1.6") == "0")
-    then
-      ui_print("- Live wallpapers");
-			delete_recursive("/system/app/LiveWallpapers");
-      ui_print("- Live wallpapers Picker");
-      delete_recursive("/system/app/LiveWallpapersPicker");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.9") == "0")
+      then
+        ui_print("- Google Maps ");
+  			delete_recursive("/system/app/Maps");
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/apps.prop", "item.1.7") == "0")
-    then
-      ui_print("- Music");
-			delete_recursive("/system/app/Music");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.10") == "0")
+      then
+        ui_print("- Google Photos ");
+  			delete_recursive("/system/app/Photos");
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/apps.prop", "item.1.8") == "0")
-    then
-      ui_print("- Noise Feild");
-			delete_recursive("/system/app/NoiseField");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.11") == "0")
+      then
+        ui_print("- Google Play Music ");
+  			delete_recursive("/system/app/Music2");
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/apps.prop", "item.1.9") == "0")
-    then
-      ui_print("- Phase beam");
-			delete_recursive("/system/app/PhaseBeam");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.12") == "0")
+      then
+        ui_print("- Google TTS ");
+  			delete_recursive("/system/app/GoogleTTS");
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/apps.prop", "item.1.10") == "0")
-    then
-      ui_print("- Protips");
-			delete_recursive("/system/app/Protips");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.13") == "0")
+      then
+        ui_print("- Google Tallback ");
+  			delete_recursive("/system/app/talkback");
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/apps.prop", "item.1.11") == "0")
-    then
-      ui_print("- Protips");
-			delete_recursive("/system/app/Swiftkey");
-      delete_recursive("/system/app/SwiftkeyFactorySettings");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.14") == "0")
+      then
+        ui_print("- Google Play Movies");
+  			delete_recursive("/system/app/Videos");
+  endif;
 
-if
-  (file_getprop("/tmp/aroma/apps.prop", "item.1.12") == "0")
-    then
-      ui_print("- Tag");
-			delete_recursive("/system/priv-app/Tag");
-endif;
+  if
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.15") == "0")
+      then
+        ui_print("- YouTube");
+  			delete_recursive("/system/app/YouTube");
+  endif;
 
-ui_print(".");
-ui_print(" ");
+  #System Apps
+  set_progress(0.960000);
+  ui_print(" ");
+  ui_print("@  Uninstalling system applications");
+  ui_print(" ");
+
+  if
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.1") == "0")
+      then
+        ui_print("- Android Pay");
+  			delete_recursive("/system/app/AndroidPay");
+  endif;
+
+  if
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.2") == "0")
+      then
+        ui_print("- Basic Dreams");
+  			delete_recursive("/system/app/BasicDreams");
+  endif;
+
+  if
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.3") == "0")
+      then
+        ui_print("- FaceLock");
+  			delete_recursive("/system/app/FaceLock");
+  endif;
+
+  if
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.4") == "0")
+      then
+        ui_print("- Galaxy4");
+  			delete_recursive("/system/app/Galaxy4");
+  endif;
+
+  if
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.5") == "0")
+      then
+        ui_print("- Holo Spiral");
+  			delete_recursive("/system/app/HoloSpiralWallpaper");
+  endif;
+
+  if
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.6") == "0")
+      then
+        ui_print("- Live wallpapers");
+  			delete_recursive("/system/app/LiveWallpapers");
+        ui_print("- Live wallpapers Picker");
+        delete_recursive("/system/app/LiveWallpapersPicker");
+  endif;
+
+  if
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.7") == "0")
+      then
+        ui_print("- Music");
+  			delete_recursive("/system/app/Music");
+  endif;
+
+  if
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.8") == "0")
+      then
+        ui_print("- Noise Feild");
+  			delete_recursive("/system/app/NoiseField");
+  endif;
+
+  if
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.9") == "0")
+      then
+        ui_print("- Phase beam");
+  			delete_recursive("/system/app/PhaseBeam");
+  endif;
+
+  if
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.10") == "0")
+      then
+        ui_print("- Protips");
+  			delete_recursive("/system/app/Protips");
+  endif;
+
+  if
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.11") == "0")
+      then
+        ui_print("- Swiftkey");
+  			delete_recursive("/system/app/Swiftkey");
+        delete_recursive("/system/app/SwiftkeyFactorySettings");
+  endif;
+
+  if
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.12") == "0")
+      then
+        ui_print("- Tag");
+  			delete_recursive("/system/priv-app/Tag");
+  endif;
+
+  ui_print(".");
+  ui_print(" ");
 
 endif;
 
