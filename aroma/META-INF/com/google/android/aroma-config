@@ -211,12 +211,6 @@ checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
 endif;
 
 #PreInstall
-#If bootloader = 3(Lp Original), show alert message
-if
-  prop("bootloader.prop", "selected.1") == "3" then
-      alert("Warning", "\n\n\n\n" + "<~warning1>\n" + "<~warning2>");
-endif;
-
 ini_set("text_next", "<~install.now>");
 viewbox("<~pre.install.title>", "<~pre.install>\n\n" + "<~pre.install2>\n\n" +
                                     "<~pre.install3>\n\n\n\n",
