@@ -448,6 +448,62 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   		ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "10")
+    then
+  		mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+  		ui_print("- Set DPI to 410");
+  		run_program("/tmp/tools/dpi/410.sh");
+  		ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "11")
+    then
+      mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+      ui_print("- Set DPI to 400");
+      run_program("/tmp/tools/dpi/400.sh");
+      ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "12")
+    then
+      mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+      ui_print("- Set DPI to 390");
+      run_program("/tmp/tools/dpi/390.sh");
+      ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "13")
+    then
+      mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+      ui_print("- Set DPI to 380");
+      run_program("/tmp/tools/dpi/380.sh");
+      ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "14")
+    then
+      mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+      ui_print("- Set DPI to 370");
+      run_program("/tmp/tools/dpi/370.sh");
+      ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "15")
+    then
+      mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+      ui_print("- Set DPI to 360");
+      run_program("/tmp/tools/dpi/360.sh");
+      ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
+  if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "16")
+    then
+      mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+      ui_print("- Set DPI to 350");
+      run_program("/tmp/tools/dpi/350.sh");
+      ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
   #App limit
   if (file_getprop("/tmp/aroma/limit.prop", "selected.0") == "1")
     then
@@ -730,6 +786,7 @@ ui_print(" ");
 ui_print(" ");
 set_progress(1.00000);
 ui_print("@	Finish!");
+ui_print(" ");
 
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.3") == "1")
   then
