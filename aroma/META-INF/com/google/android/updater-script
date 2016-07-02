@@ -671,6 +671,7 @@ if
     then
       ui_print("- Live wallpapers");
 			delete_recursive("/system/app/LiveWallpapers");
+      ui_print("- Live wallpapers Picker");
       delete_recursive("/system/app/LiveWallpapersPicker");
 endif;
 
