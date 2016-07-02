@@ -152,6 +152,8 @@ checkbox("<~apps.tittle>", "<~apps.tittle2>", "@default", "apps.prop",
          "<~info.music>", 1, "<~noise_feild>", "<~info.noise_feild>", 1,
          "<~phase_beam>", "<~info.phase_beam>", 1, "<~protips>",
          "<~info.protips>", 1, "<~tags>", "<~info.tags>", 1);
+    "<~android_pay>", "<~info.android_pay>", 1,
+    "<~swiftkey>", "<~info.swiftkey", 1,
 
 #DPI
 selectbox("<~dpi.tittle>", "<~dpi.tittle2>", "@update", "dpi.prop", "500",

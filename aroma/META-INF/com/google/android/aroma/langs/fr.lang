@@ -122,6 +122,7 @@ info.youtube=Application YouTube
 apps.tittle=System applications
 apps.tittle2=Select the system applications you want
 
+android_pay=Andoroid Pay
 basic_dream=Veille intéractif
 facelock=Dévérouiller avec son visage
 black_hole=Fond d'écran animé
@@ -131,8 +132,10 @@ music=Application de musique OnePlus
 noise_feild=Fond d'écran animé
 phase_beam=Fond d'écran animé
 protips=Quelques astuces
+swiftkey=Swiftkey
 tags=Tags NFC
 
+info.android_pay=Paiement par NFC
 info.basic_dream=Veille intéractif
 info.facelock=Unlock with your face
 info.black_hole=Animated wallpaper
@@ -142,6 +145,7 @@ info.music=OnePlus music app
 info.noise_feild=Animated wallpaper
 info.phase_beam=Animated wallpaper
 info.protips=ProTips
+info.swiftkey=Clavier Swiftkey
 info.tags=Tag NFC
 
 mod.ttile=Mod supplémentaire

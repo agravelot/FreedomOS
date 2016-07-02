@@ -123,6 +123,7 @@ info.youtube=YouTube application
 apps.tittle=System Apps
 apps.tittle2=Select the system Apps you want
 
+android_pay=Android Pay
 basic_dream=Basic Dream
 facelock=Facelock
 black_hole=Black Hole
@@ -132,8 +133,10 @@ music=Music
 noise_feild=Noised Feild
 phase_beam=Phase Beam
 protips=Protips
+swiftkey=Swiftkey
 tags=Tags
 
+info.android_pay=NFC payment
 info.basic_dream=Screensaver
 info.facelock=Unlock with your face
 info.black_hole=Animated wallpaper
@@ -143,6 +146,7 @@ info.music=OnePlus music app
 info.noise_feild=Animated wallpaper
 info.phase_beam=Animated wallpaper
 info.protips=Some tips
+info.swiftkey=Swiftkey keyboard
 info.tags=NFC Tags
 
 mod.title=Extra mod
