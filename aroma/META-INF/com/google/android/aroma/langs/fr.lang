@@ -158,6 +158,13 @@ dpi.450=DPI système à 450
 dpi.440=DPI système à 440
 dpi.430=DPI système à 430
 dpi.420=DPI système à 420
+dpi.410=DPI système à 410
+dpi.400=DPI système à 400
+dpi.390=DPI système à 390
+dpi.380=DPI système à 380
+dpi.370=DPI système à 370
+dpi.360=DPI système à 360
+dpi.350=DPI système à 350
 
 limit.tittle=Limitation d'application
 limit.tittle2=Change le nombre maximum d'application en mémoire.

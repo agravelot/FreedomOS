@@ -65,7 +65,7 @@ info.custom=GApps, Root and misc...
 info.stock=Original stock, no root
 info.assert_yes=Check variant in build.prop
 info.assert_no=Do not check variant in build.prop
-info.reboot_system=Reboot to Android
+info.reboot_system=Reboot to system
 info.reboot_no=.
 
 sys.title=System information
@@ -159,6 +159,13 @@ dpi.450=Set android DPI to 450
 dpi.440=Set android DPI to 440
 dpi.430=Set android DPI to 430
 dpi.420=Set android DPI to 420
+dpi.410=Set android DPI to 410
+dpi.400=Set android DPI to 400
+dpi.390=Set android DPI to 390
+dpi.380=Set android DPI to 380
+dpi.370=Set android DPI to 370
+dpi.360=Set android DPI to 360
+dpi.350=Set android DPI to 350
 
 limit.tittle=App limitation
 limit.tittle2=Change the max number of apps in RAM.

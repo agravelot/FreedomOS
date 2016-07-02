@@ -158,7 +158,9 @@ selectbox("<~dpi.tittle>", "<~dpi.tittle2>", "@update", "dpi.prop", "500",
           "<~dpi.500>", 0, "490", "<~dpi.490>", 0, "480 (Default)",
           "<~dpi.480>", 1, "470", "<~dpi.470>", 0, "460", "<~dpi.460>", 0,
           "450", "<~dpi.450>", 0, "440", "<~dpi.440>", 0, "430", "<~dpi.430>",
-          0, "420", "<~dpi.420>", 0);
+          0, "420", "<~dpi.420>", 0, "<~dpi.410>", 0, "<~dpi.400>", 0,
+          "<~dpi.390>", 0, "<~dpi.380>", 0, "<~dpi.370>", 0, "<~dpi.360>", 0,
+          "<~dpi.350>", 0);
 
 #App limit
 selectbox("<~limit.tittle>", "<~limit.tittle2>", "@update", "limit.prop", "42",
