@@ -1,3 +1,11 @@
+1.0.1
+  Update French, few lines were missing.
+  More DPI choice, 500-420 > 500-350.
+  Add Android Pay and Swiftkey in Aroma Installer.
+  Better uninstaller for Live wallpapers.
+  Fix uninstaller for some apps (Like Play Music, Play Films...).
+  Update hosts file.
+  And more.. check github.
+
 1.0
   Initial release
-  
