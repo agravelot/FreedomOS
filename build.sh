@@ -2,7 +2,7 @@
 # FreedomOS build script
 # Author : Nevax
 
-VERSION=1.0
+VERSION=0
 OOS=OnePlus3Oxygen_16_OTA_008_all_1606122244_e0cfc5ffc8bf411a
 SU=BETA-SuperSU-v2.74-2-20160519174328
 XPOSED=xposed-v85-sdk23-arm64
@@ -30,6 +30,11 @@ else
         echo "Wrong entry"
         exit
 fi
+
+echo "Version :"
+echo -en '\n'
+read VERSION
+echo -en '\n'
 
 echo -en '\n'
 echo "Clear tmp/ foler..."
@@ -124,6 +129,15 @@ echo "Add Divine"
 unzip -o "download/$DIVINE.zip" -d "tmp/tools/divine/"
 #cp download/$DIVINE.zip tmp/tools/divine/
 #cp download/$RECOVERY.img tmp/tools/recovery.img
+
+echo "Set version in aroma"
+sed -i "s:!version!:$VERSION:" tmp/META-INF/com/google/android/aroma-config
+echo "Set date in aroma"
+sed -i "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma-config
+echo "Set date in en.lang"
+sed -i "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma/langs/en.lang
+echo "Set date in fr.lang"
+sed -i "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma/langs/fr.lang
 
 if [ "$MENU" = 1 ];
 then
