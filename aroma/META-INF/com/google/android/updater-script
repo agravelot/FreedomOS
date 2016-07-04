@@ -348,12 +348,14 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     	mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
     	run_program("/sbin/busybox", "mount", "/data");
     	ui_print("- Install Adaway apk");
-    	package_extract_dir("tools/adaway/org.adaway-1", "/data/app/org.adaway-1");
-    	set_metadata_recursive("/data/app/org.adaway-1/", "uid", 1000, "gid", 1000,
+      delete_recursive("/data/app//org.adaway-0");
+      delete_recursive("/data/app//org.adaway-1");
+    	package_extract_dir("tools/adaway/org.adaway-2", "/data/app/org.adaway-2");
+    	set_metadata_recursive("/data/app/org.adaway-2/", "uid", 1000, "gid", 1000,
     	                       "dmode", 0755, "fmode", 0644);
-    	set_metadata_recursive("/data/app/org.adaway-1/lib", "uid", 1000, "gid", 1000,
+    	set_metadata_recursive("/data/app/org.adaway-2/lib", "uid", 1000, "gid", 1000,
     	                       "dmode", 0755, "fmode", 0755);
-    	set_metadata_recursive("/data/app/org.adaway-1/oat", "uid", 1000, "gid", 1000,
+    	set_metadata_recursive("/data/app/org.adaway-2/oat", "uid", 1000, "gid", 1000,
     	                       "dmode", 0771, "fmode", 0644);
     	ui_print("- Install host file");
     	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "fmode", 0777);
