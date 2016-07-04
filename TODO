@@ -1,7 +1,6 @@
 TODO
   Add xposed framework to installer, for now just flash the latest xposed zip file.
   Better status bar
-  Splash screen
   Check md5 download in build.sh
   Add more divine mod
   Fix download

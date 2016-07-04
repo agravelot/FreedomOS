@@ -3,7 +3,8 @@
 # Author : Nevax
 
 VERSION=0
-OOS=OnePlus3Oxygen_16_OTA_008_all_1606122244_e0cfc5ffc8bf411a
+#OOS=OnePlus3Oxygen_16_OTA_008_all_1606122244_e0cfc5ffc8bf411a
+OOS=OnePlus3Oxygen_16_OTA_010_all_1607012342_741e629725ed457b
 SU=BETA-SuperSU-v2.74-2-20160519174328
 XPOSED=xposed-v85-sdk23-arm64
 XPOSED_APK=XposedInstaller_3.0_alpha4
@@ -56,7 +57,8 @@ then
 else
    echo "File $OOS.zip does not exist" >&2
    echo "Downloading.."
-   wget "http://fr1.androidOOShost.com/dl/OVtaqkbP1apDmbYG3wFiCQ/1467377045/24591000424941790/$OOS.zip" -O download/$OOS.zip
+   wget "https://s3.amazonaws.com/oxygenos.oneplus.net/$OOS.zip" -O download/$OOS.zip
+   #wget "http://fr1.androidOOShost.com/dl/OVtaqkbP1apDmbYG3wFiCQ/1467377045/24591000424941790/$OOS.zip" -O download/$OOS.zip
    echo "Done!"
 fi
 

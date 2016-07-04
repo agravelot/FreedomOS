@@ -1,3 +1,20 @@
+1.1
+  Update Adaway 3.1.1 to 3.1.2.
+  Update host file (58,692 additions, 15,444 deletions)
+  Splash screen for aroma, thanks @badboy47 for the original work.
+  Add 13 more options for debloat
+  Update to OxygenOS 3.2 :
+        -  Enabled sRGB mode in developer options
+        -  Improved RAM management
+        -  Improved GPS performance
+        -  Enhanced audio playback quality
+        -  Updated custom icon packs
+        -  Fixed some issues with notifications
+        -  Improved camera quality/functionality
+        -  Fixed some issues in Gallery
+        -  Latest Google security patches
+        -  Fixed bugs in Clock/Music apps
+
 1.0.1
   Update French, few lines were missing.
   More DPI choice, 500-420 > 500-350.
