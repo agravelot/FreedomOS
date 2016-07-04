@@ -22,10 +22,10 @@ fontresload("1", "ttf/Roboto-Regular.ttf", "18");
 ini_set("force_colorspace", "rgba");
 theme("g3");
 
-#anisplash(1, "splash/nevax0", 500, "splash/nevax10", 30, "splash/nevax20", 30,
-#"splash/nevax30", 30, "splash/nevax40", 30, "splash/nevax50", 30,
-#"splash/nevax60", 30, "splash/nevax70", 30, "splash/nevax80", 30,
-#"splash/nevax90", 30, "splash/nevax100", 2000);
+anisplash(1, "splash/0", 500, "splash/10", 30, "splash/20", 30,
+              "splash/30", 30, "splash/40", 30, "splash/50", 30,
+              "splash/60", 30, "splash/70", 30, "splash/80", 30,
+              "splash/90", 30, "splash/100", 1000);
 
 #SELECT LANGUAGE
 selectbox("<~language.title>", "<~language.text>", "@agreement",
