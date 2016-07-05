@@ -1,7 +1,7 @@
 # FreedomOS-oneplus3
 
 **Required :**
-- Linux
+- Linux or Mac
 - 10 Go of free space
 - Packages : `zip wget `
 - `Java` is also needed for signed the zip file **(optional)**.
