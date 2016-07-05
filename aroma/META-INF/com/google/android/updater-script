@@ -588,26 +588,12 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   if
     (file_getprop("/tmp/aroma/gapps.prop", "item.1.12") == "0")
       then
-        ui_print("- Google TTS ");
-  			delete_recursive("/system/app/GoogleTTS");
-  endif;
-
-  if
-    (file_getprop("/tmp/aroma/gapps.prop", "item.1.13") == "0")
-      then
-        ui_print("- Google Tallback ");
-  			delete_recursive("/system/app/talkback");
-  endif;
-
-  if
-    (file_getprop("/tmp/aroma/gapps.prop", "item.1.14") == "0")
-      then
         ui_print("- Google Play Movies");
   			delete_recursive("/system/app/Videos");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/gapps.prop", "item.1.15") == "0")
+    (file_getprop("/tmp/aroma/gapps.prop", "item.1.13") == "0")
       then
         ui_print("- YouTube");
   			delete_recursive("/system/app/YouTube");

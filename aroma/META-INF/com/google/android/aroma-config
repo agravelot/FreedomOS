@@ -145,8 +145,6 @@ checkbox("<~gapps.tittle>", "<~gapps.tittle2>", "@default", "gapps.prop",
      "<~maps>", "<~info.maps>", 1,
      "<~photos>", "<~info.photos>", 1,
      "<~play_music>", "<~info.play_music>", 1,
-     "<~tts>", "<~info.tts>", 1,
-     "<~tallback>", "<~info.tallback>", 1,
      "<~play_movies>", "<~info.play_movies>", 1,
      "<~youtube>", "<~info.youtube>", 1
    );
