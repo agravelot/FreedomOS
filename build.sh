@@ -115,8 +115,9 @@ else
 fi
 
 echo -en '\n'
-echo "Unzip system"
-unzip -o "download/$OOS.zip" -d "tmp/"
+echo "Copy OOS"
+cp -R system/* tmp/
+#unzip -o "download/$OOS.zip" -d "tmp/"
 echo "Remove META-INF"
 rm -R "tmp/META-INF"
 echo "Add aroma"
