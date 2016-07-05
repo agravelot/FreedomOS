@@ -201,18 +201,6 @@ selectbox("<~dpi.tittle>", "<~dpi.tittle2>", "@update", "dpi.prop",
           "350", "<~dpi.350>", 0
         );
 
-#App limit
-selectbox("<~limit.tittle>", "<~limit.tittle2>", "@update", "limit.prop",
-          "42","<~limit.42>", 0,
-          "40", "<~limit.40>", 0,
-          "35", "<~limit.35>", 1,
-          "30", "<~limit.30>", 0,
-          "25", "<~limit.25>", 0,
-          "20 (Default)", "<~limit.20>", 1,
-          "15", "<~limit.15>", 0,
-          "10", "<~limit.10>", 0
-        );
-
 #Extra MOD
 checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
          "<~mod.tittle3>", "", 2,
