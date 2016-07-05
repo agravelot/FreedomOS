@@ -1,9 +1,10 @@
-1.0.1
+1.1.1
   Update French, few lines were missing.
-  Add Viper4Android Profiles and IRS ARISE and Rika
-  Remove reboot choice at the start of the aroma
+  Add Viper4Android Profiles and IRS ARISE, Rika and FreedomOS
+  Remove reboot choice at the beginning of the aroma
   Update to SuperSU v2.76
-  
+  Goodbye app limitation in RAM, dummy on 1.1.
+
 1.1
   Update Adaway 3.1.1 to 3.1.2.
   Update host file (58,692 additions, 15,444 deletions)
