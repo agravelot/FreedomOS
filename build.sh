@@ -3,66 +3,61 @@
 # Author : Nevax
 
 VERSION=0
-#OOS=OnePlus3Oxygen_16_OTA_008_all_1606122244_e0cfc5ffc8bf411a
 OOS=OnePlus3Oxygen_16_OTA_010_all_1607012342_741e629725ed457b
-#SU=BETA-SuperSU-v2.74-2-20160519174328
 SU=UPDATE-SuperSU-v2.76-20160630161323
 XPOSED=xposed-v85-sdk23-arm64
 XPOSED_APK=XposedInstaller_3.0_alpha4
 DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER
 
 MENU=0
-
-echo "Choose the option what you want :"
-echo -en '\n'
+echo "#################################"
+echo "FreedomOS build script by Nevax"
+echo "#################################"
+echo ""
+echo "Choose the build method you want:"
 echo "1) Signed (Slower)"
 echo "2) Unsigned (Faster)"
-echo -en '\n'
-read MENU
-echo -en '\n'
+echo ""
+read -p "enter build method [1-2]: " MENU
 
 if [ "$MENU" = 1 ];
 then
-        echo "Signed"
+        echo "Signed method selected"
 elif  [ "$MENU" = 2 ];
 then
-        echo "Unsigned"
+        echo "Unsigned method selected"
 else
-        echo "Wrong entry"
+        echo "Wrong entry, please select between 1 or 2"
         exit
 fi
+echo ""
+read -p "Enter a version number you want to use: " VERSION
 
-echo "Version :"
-echo -en '\n'
-read VERSION
-echo -en '\n'
-
-echo -en '\n'
+echo ""
 echo "Clear tmp/ foler..."
-rm -Rf tmp/*
+rm -rf tmp/*
 touch tmp/EMPTY_DIRECTORY
 
-echo -en '\n'
+echo ""
 echo "Clear output/ foler..."
-rm -Rf output/*.zip
-rm -Rf output/*.md5
+rm -rf output/*.zip
+rm -rf output/*.md5
 
-echo -en '\n'
+echo ""
 echo "Checking dependencies..."
-
-echo -en '\n'
+echo ""
 if [ -f "download/$OOS.zip" ];
 then
    echo "File $OOS.zip exist."
 else
    echo "File $OOS.zip does not exist" >&2
    echo "Downloading.."
-   wget "https://s3.amazonaws.com/oxygenos.oneplus.net/$OOS.zip" -O download/$OOS.zip
-   #wget "http://fr1.androidOOShost.com/dl/OVtaqkbP1apDmbYG3wFiCQ/1467377045/24591000424941790/$OOS.zip" -O download/$OOS.zip
-   rm -R system/*
+   curl -o download/$OOS.zip "https://s3.amazonaws.com/oxygenos.oneplus.net/$OOS.zip"
+   rm -rf system/*
    unzip -o download/$OOS.zip -d system/
    echo "Done!"
 fi
+echo ""
 
 if [ -f "download/$SU.zip" ];
 then
@@ -70,11 +65,10 @@ then
 else
    echo "File $SU.zip does not exist" >&2
    echo "Downloading.."
-   wget "http://fr1.androidfilehost.com/dl/1JCF2741XshSLSFUOQPtaQ/1467951889/24591000424944637/$SU.zip" -O download/$SU.zip
-   #wget "https://download.chainfire.eu/969/SuperSU/$SU.zip?retrieve_file=1" -O download/$SU.zip
-   #wget "https://download.chainfire.eu/964/SuperSU/$SU.zip?retrieve_file=1" -O download/$SU.zip
+   curl -o download/$SU.zip "http://fr1.androidfilehost.com/dl/1JCF2741XshSLSFUOQPtaQ/1467951889/24591000424944637/$SU.zip"
    echo "Done!"
 fi
+echo ""
 
 if [ -f "download/$XPOSED.zip" ];
 then
@@ -82,9 +76,10 @@ then
 else
    echo "File $XPOSED.zip does not exist" >&2
    echo "Downloading.."
-   wget "http://dl-xda.xposed.info/framework/sdk23/arm64/$XPOSED.zip" -O download/$XPOSED.zip
+   curl -o download/$XPOSED.zip "http://dl-xda.xposed.info/framework/sdk23/arm64/$XPOSED.zip"
    echo "Done!"
 fi
+echo ""
 
 if [ -f "download/$XPOSED_APK.apk" ];
 then
@@ -92,9 +87,10 @@ then
 else
    echo "File $XPOSED_APK.apk does not exist" >&2
    echo "Downloading.."
-   wget "http://forum.xda-developers.com/attachment.php?attachmentid=3383776&d=1435601440" -O download/$XPOSED_APK.apk
+   curl -o download/$XPOSED_APK.apk "http://forum.xda-developers.com/attachment.php?attachmentid=3383776&d=1435601440"
    echo "Done!"
 fi
+echo""
 
 if [ -f "download/$DIVINE.zip" ];
 then
@@ -102,51 +98,59 @@ then
 else
    echo "File $DIVINE.zip does not exist" >&2
    echo "Downloading.."
-   wget "http://fr1.androidfilehost.com/dl/b-p7sG3YlA4BZN8XoW7tbQ/1467379312/24533103863141857/$DIVINE.zip" -O download/$DIVINE.zip
+   curl -o download/$DIVINE.zip "http://fr1.androidfilehost.com/dl/b-p7sG3YlA4BZN8XoW7tbQ/1467379312/24533103863141857/$DIVINE.zip"
    echo "Done!"
 fi
 
-echo -en '\n'
+echo ""
 echo "Copy OOS"
-cp -R system/* tmp/
-#unzip -o "download/$OOS.zip" -d "tmp/"
+cp -rf system/* tmp/
+echo ""
 echo "Remove META-INF"
-rm -R "tmp/META-INF"
+rm -rf "tmp/META-INF"
+echo ""
 echo "Add aroma"
 cp -R "aroma/META-INF" "tmp/"
+echo ""
 echo "Add tools"
 cp -R "tools" "tmp/"
+echo ""
 echo "Add SuperSU"
 cp download/$SU.zip tmp/tools/su/su.zip
+echo ""
 echo "Add xposed"
 cp download/{$XPOSED.zip,$XPOSED_APK.apk} tmp/tools/xposed/
+echo ""
 echo "Add Divine"
 unzip -o "download/$DIVINE.zip" -d "tmp/tools/divine/"
-#cp download/$DIVINE.zip tmp/tools/divine/
-#cp download/$RECOVERY.img tmp/tools/recovery.img
-
+echo ""
 echo "Set version in aroma"
 sed -i "s:!version!:$VERSION:" tmp/META-INF/com/google/android/aroma-config
+echo ""
 echo "Set date in aroma"
 sed -i "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma-config
+echo ""
 echo "Set date in en.lang"
 sed -i "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma/langs/en.lang
+echo ""
 echo "Set date in fr.lang"
 sed -i "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma/langs/fr.lang
 
 if [ "$MENU" = 1 ];
 then
   cd tmp/
-  echo -en '\n'
+  echo ""
   echo "Making zip file"
   zip -r9 "FreedomOS-op3-nevax-$VERSION-unsigned.zip" * -x EMPTY_DIRECTORY
   echo "----"
   cd ..
-  echo -en '\n'
+  echo ""
   echo "SignApk....."
   java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-op3-nevax-$VERSION-unsigned.zip" "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip"
+  echo ""
   echo "Move signed zip file in output folder"
   mv "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip" "output/"
+  echo ""
   echo "Generating md5sum"
   md5sum "output/FreedomOS-op3-nevax-$VERSION-signed.zip" > "output/FreedomOS-op3-nevax-$VERSION-signed.zip.md5"
 fi
@@ -154,20 +158,24 @@ fi
 if [ "$MENU" = 2 ];
 then
   cd tmp/
-  echo -en '\n'
+  echo ""
   echo "Making zip file"
   zip -r1 "FreedomOS-op3-nevax-$VERSION.zip" * -x EMPTY_DIRECTORY
   echo "----"
-  echo -en '\n'
+  echo ""
+  echo "testing zip integrity"
+  zip -T "FreedomOS-op3-nevax-$VERSION.zip" 
+  echo ""
   cd ..
   echo "Move unsigned zip file in output folder"
   mv "tmp/FreedomOS-op3-nevax-$VERSION.zip" "output/"
+  echo ""
   echo "Generating md5sum"
   md5sum "output/FreedomOS-op3-nevax-$VERSION.zip" > "output/FreedomOS-op3-nevax-$VERSION.zip.md5"
 fi
 
 echo "Clear tmp/ foler..."
-rm -Rf "tmp/*"
+rm -rf "tmp/*"
 touch "tmp/EMPTY_DIRECTORY"
-echo -en '\n'
-echo "Finish !"
+echo ""
+echo "Finish! You can find the build here: output/FreedomOS-op3-nevax-$VERSION.zip"
