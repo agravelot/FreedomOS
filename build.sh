@@ -5,7 +5,8 @@
 VERSION=0
 #OOS=OnePlus3Oxygen_16_OTA_008_all_1606122244_e0cfc5ffc8bf411a
 OOS=OnePlus3Oxygen_16_OTA_010_all_1607012342_741e629725ed457b
-SU=BETA-SuperSU-v2.74-2-20160519174328
+#SU=BETA-SuperSU-v2.74-2-20160519174328
+SU=UPDATE-SuperSU-v2.76-20160630161323
 XPOSED=xposed-v85-sdk23-arm64
 XPOSED_APK=XposedInstaller_3.0_alpha4
 DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER
@@ -69,7 +70,9 @@ then
 else
    echo "File $SU.zip does not exist" >&2
    echo "Downloading.."
-   wget "https://download.chainfire.eu/964/SuperSU/$SU.zip?retrieve_file=1" -O download/$SU.zip
+   wget "http://fr1.androidfilehost.com/dl/1JCF2741XshSLSFUOQPtaQ/1467951889/24591000424944637/$SU.zip" -O download/$SU.zip
+   #wget "https://download.chainfire.eu/969/SuperSU/$SU.zip?retrieve_file=1" -O download/$SU.zip
+   #wget "https://download.chainfire.eu/964/SuperSU/$SU.zip?retrieve_file=1" -O download/$SU.zip
    echo "Done!"
 fi
 
