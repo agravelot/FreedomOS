@@ -3,7 +3,7 @@
 **Required :**
 - Linux or Mac
 - 10 Go of free space
-- Packages : `zip wget `
+- Packages : `zip curl `
 - `Java` is also needed for signed the zip file **(optional)**.
 I don't know which version is needed, i use `java-8-jdk` on my Arch Linux.
 
