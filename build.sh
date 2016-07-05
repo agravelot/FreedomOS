@@ -58,6 +58,8 @@ else
    echo "Downloading.."
    wget "https://s3.amazonaws.com/oxygenos.oneplus.net/$OOS.zip" -O download/$OOS.zip
    #wget "http://fr1.androidOOShost.com/dl/OVtaqkbP1apDmbYG3wFiCQ/1467377045/24591000424941790/$OOS.zip" -O download/$OOS.zip
+   rm -R system/*
+   unzip -o download/$OOS.zip -d system/
    echo "Done!"
 fi
 
@@ -78,8 +80,6 @@ else
    echo "File $XPOSED.zip does not exist" >&2
    echo "Downloading.."
    wget "http://dl-xda.xposed.info/framework/sdk23/arm64/$XPOSED.zip" -O download/$XPOSED.zip
-   rm -R system/*
-   unzip -o download/$OOS.zip -d system/
    echo "Done!"
 fi
 
