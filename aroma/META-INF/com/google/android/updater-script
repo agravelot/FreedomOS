@@ -53,7 +53,7 @@ if range_sha1("/dev/block/bootdevice/by-name/system",
     589824,589826,590324,622591,622592,622594,623092,652656,655360,655362,688128,
     688130,720896,720898,753664,753666,754164,763975,763976,770001")
      == "8f42011d2d5d0040b21f18e76b2703c60569aaa9" then set_progress(0.560000);
-     
+
 if range_sha1("/dev/block/bootdevice/by-name/system",
     "104,32770,32961,32963,33461,65535,65536,65538,66036,98303,98304,98306,
     98497,98499,98997,131071,131072,131074,131572,163839,163840,163842,164033,
@@ -294,6 +294,8 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
                              "fmode", 0755);
 
       ui_print("Your device sound is going to be revolutionized      ");
+      ui_print("Installing Viper4Android Profiles and IRS by A.R.I.S.E & Rika");
+      package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
       run_program("/sbin/busybox", "umount", "/system");
       run_program("/sbin/busybox", "umount", "/data");
       ui_print("Installation complete");
