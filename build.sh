@@ -7,8 +7,8 @@ OOS=OnePlus3Oxygen_16_OTA_010_all_1607012342_741e629725ed457b
 SU=UPDATE-SuperSU-v2.76-20160630161323
 XPOSED_APK=XposedInstaller_3.0_alpha4
 DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER
-
 MENU=0
+
 echo "#################################"
 echo "FreedomOS build script by Nevax"
 echo "#################################"
@@ -17,7 +17,7 @@ echo "Choose the build method you want:"
 echo "1) Signed (Slower)"
 echo "2) Unsigned (Faster)"
 echo ""
-read -p "enter build method [1-2]: " MENU
+read -p "enter build method [2]: " MENU
 
 if [ "$MENU" = 1 ];
 then
@@ -26,11 +26,16 @@ elif  [ "$MENU" = 2 ];
 then
         echo "Unsigned method selected"
 else
-        echo "Wrong entry, please select between 1 or 2"
-        exit
+        MENU=2
+        echo "Unsigned method selected"
 fi
 echo ""
-read -p "Enter a version number you want to use: " VERSION
+read -p "Enter a version number you want to use [test] : " VERSION
+
+if [ -z "$VERSION" ];
+then
+        VERSION=test
+fi
 
 echo ""
 echo "Clear tmp/ foler..."
