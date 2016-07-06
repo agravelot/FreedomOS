@@ -181,7 +181,7 @@ checkbox("<~apps.tittle>", "<~apps.tittle2>", "@default", "apps.prop",
 
 #DPI
 selectbox("<~dpi.tittle>", "<~dpi.tittle2>", "@update", "dpi.prop",
-          "500","<~dpi.500>", 0,
+          "500", "<~dpi.500>", 0,
           "490", "<~dpi.490>", 0,
           "480 (Default)", "<~dpi.480>", 1,
           "470", "<~dpi.470>", 0,
@@ -206,7 +206,9 @@ checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
            "<~divine>", "<~info.divine>", 1,
            "<~xposed>", "<~info.xposed>", 0,
            "<~adaway>", "<~info.adaway>", 1,
-           "<~adb>", "<~info.adb>", 0);
+           "<~adb>", "<~info.adb>", 0,
+           "<~layer>", "<~info.layer>", 1
+         );
 endif;
 
 #Kernel

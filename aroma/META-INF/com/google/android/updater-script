@@ -164,8 +164,8 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode",
                              0755);
       set_progress(0.720000);
+
   ##MOD
-  
   #Llama Sweet kernel
   if (file_getprop("/tmp/aroma/kernel.prop", "item.1.2") == "1")
     then
@@ -368,6 +368,24 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
       run_program("/tmp/tools/adb.sh");
       ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
+  #LAYERS
+  if
+    (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "1")
+    then
+      set_progress(0.880000);
+      ui_print(" ");
+      ui_print("@ Install ROO Layers Manager");
+      run_program("/sbin/busybox", "mount", "/data");
+      package_extract_dir("tools/layers/com.lovejoy777.rroandlayersmanager-1",
+                          "/data/app/com.lovejoy777.rroandlayersmanager-1");
+      set_metadata_recursive("/data/app/com.lovejoy777.rroandlayersmanager-1", "uid",
+                             1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+      set_metadata_recursive("/data/app/com.lovejoy777.rroandlayersmanager-1/lib",
+                             "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
+      set_metadata_recursive("/data/app/com.lovejoy777.rroandlayersmanager-1/oat",
+                             "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
   endif;
 
   #DPI

@@ -202,12 +202,14 @@ divine=Viper4Android + Dolby Atmos
 xposed=Xposed Installer
 adaway=Adaway
 adb=Enable ADB
+layer=RRO Layers
 
 info.supersu=SuperSU v2.74 by Chainfire
 info.divine=Divine beats by Theroyalseeker
 info.xposed=Xposed Installer application only
 info.adaway=Ad-Blocker for Android
 info.adb=Android Debugging Bridge
+info.layer=Layers Manager
 
 kernel.tittle=Select your kernel
 kernel.tittle2=

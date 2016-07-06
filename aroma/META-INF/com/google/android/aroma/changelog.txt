@@ -5,6 +5,7 @@
   Update to SuperSU v2.76.
   Goodbye app limitation in RAM, dummy on 1.1.
   No more Xposed framework, i can't support xposed bug, apk still there.
+  Welcome to RRO Layers Manager
 
 1.1
   Update Adaway 3.1.1 to 3.1.2.
