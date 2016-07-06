@@ -5,7 +5,6 @@
 VERSION=0
 OOS=OnePlus3Oxygen_16_OTA_010_all_1607012342_741e629725ed457b
 SU=UPDATE-SuperSU-v2.76-20160630161323
-XPOSED=xposed-v85-sdk23-arm64
 XPOSED_APK=XposedInstaller_3.0_alpha4
 DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER
 
@@ -81,20 +80,6 @@ else
 fi
 echo ""
 
-if [ -f "download/$XPOSED.zip" ];
-then
-   echo "File $XPOSED.zip exist."
-else
-   echo "File $XPOSED.zip does not exist" >&2
-   echo "Downloading.."
-   curl -o download/$XPOSED.zip "http://dl-xda.xposed.info/framework/sdk23/arm64/$XPOSED.zip"
-   echo ""
-   echo "testing zip integrity"
-   zip -T download/$XPOSED.zip
-   echo "Done!"
-fi
-echo ""
-
 if [ -f "download/$XPOSED_APK.apk" ];
 then
    echo "File $XPOSED_APK.apk exist."
@@ -135,8 +120,8 @@ echo ""
 echo "Add SuperSU"
 cp download/$SU.zip tmp/tools/su/su.zip
 echo ""
-echo "Add xposed"
-cp download/{$XPOSED.zip,$XPOSED_APK.apk} tmp/tools/xposed/
+echo "Add xposed apk"
+cp download/$XPOSED_APK.apk tmp/tools/xposed/
 echo ""
 echo "Add Divine"
 unzip -o "download/$DIVINE.zip" -d "tmp/tools/divine/"

@@ -308,18 +308,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     then
       set_progress(0.880000);
       ui_print(" ");
-      ui_print("@  Installing Xposed v85 by rovo89");
-      ui_print(" ");
-      ui_print("- Install Xposed Framework");
-      mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
-      run_program("/sbin/busybox", "unzip",
-                  "/tmp/tools/xposed/xposed-v85-sdk23-arm64.zip",
-                  "META-INF/com/google/android/*", "-d", "/tmp/tools/xposed");
-      run_program("/sbin/busybox", "sh",
-                  "/tmp/tools/xposed/META-INF/com/google/android/update-binary",
-                  "dummy", "1", "/tmp/tools/xposed/xposed-v85-sdk23-arm64.zip");
-
-      ui_print("- Install Xposed Installer");
+      ui_print("@ Install Xposed Installer");
       run_program("/sbin/busybox", "mount", "/data");
       package_extract_dir("tools/xposed/de.robv.android.xposed.installer-1",
                           "/data/app/de.robv.android.xposed.installer-1");
@@ -329,8 +318,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
                              "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
       set_metadata_recursive("/data/app/de.robv.android.xposed.installer-1/oat",
                              "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-
-      ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
   #ADAWAY
