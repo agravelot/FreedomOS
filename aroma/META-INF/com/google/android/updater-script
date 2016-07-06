@@ -1,6 +1,12 @@
-#FreedomOS updater - script
-#Author : Nevax
+##
 #
+# AROMA Installer - Installer Script
+#       (c) 2011 by Ahmad Amarullah
+#           amarullz - xda-developers
+#
+#     FreedomOS - Installer script
+#         (c) 2016 by Antoine GRAVELOT
+#           Nevax1 - xda-developers
 
 ui_print(" ");
 ui_print("----------------------------------------------------------- ");
@@ -39,6 +45,7 @@ block_image_update("/dev/block/bootdevice/by-name/system",
                    package_extract_file("system.transfer.list"),
                    "system.new.dat", "system.patch.dat");
 
+set_progress(0.500000);
 ui_print("- Verifying the updated system image...");
 show_progress(0.55, "-30000");
 
@@ -169,7 +176,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   ##Llama Sweet kernel
   #if (file_getprop("/tmp/aroma/kernel.prop", "item.1.2") == "1")
   #  then
-  #    set_progress(0.930000);
+  #    set_progress(0.730000);
   #    ui_print(" ");
   #    ui_print("@  Llama Sweet kernel Rx");
   #    ui_print(" ");
@@ -180,6 +187,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
     then
       ui_print(" ");
+      show_progress(0.78, "-30000");
       ui_print("@  Installing SuperSU by Chainfire");
       mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
       run_program("/sbin/busybox", "unzip", "/tmp/tools/su/su.zip",
@@ -194,7 +202,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   if
     (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
     then
-      set_progress(0.780000);
+      show_progress(0.81, "-10000");
       ui_print(" ");
       ui_print("@  Installing Viper4Android + Dolby Atmos ");
       ui_print(" ");
