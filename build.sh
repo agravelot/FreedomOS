@@ -53,7 +53,15 @@ else
    echo "File $OOS.zip does not exist" >&2
    echo "Downloading.."
    curl -o download/$OOS.zip "https://s3.amazonaws.com/oxygenos.oneplus.net/$OOS.zip"
+   echo ""
+   echo "testing zip integrity"
+   zip -T download/$OOS.zip
+   echo ""
+   echo "Clean system/"
    rm -rf system/*
+   touch "system/EMPTY_DIRECTORY"
+   echo ""
+   echo "Extracting system"
    unzip -o download/$OOS.zip -d system/
    echo "Done!"
 fi
@@ -66,6 +74,9 @@ else
    echo "File $SU.zip does not exist" >&2
    echo "Downloading.."
    curl -o download/$SU.zip "http://fr1.androidfilehost.com/dl/1JCF2741XshSLSFUOQPtaQ/1467951889/24591000424944637/$SU.zip"
+   echo ""
+   echo "testing zip integrity"
+   zip -T download/$SU.zip
    echo "Done!"
 fi
 echo ""
@@ -77,6 +88,9 @@ else
    echo "File $XPOSED.zip does not exist" >&2
    echo "Downloading.."
    curl -o download/$XPOSED.zip "http://dl-xda.xposed.info/framework/sdk23/arm64/$XPOSED.zip"
+   echo ""
+   echo "testing zip integrity"
+   zip -T download/$XPOSED.zip
    echo "Done!"
 fi
 echo ""
@@ -99,6 +113,9 @@ else
    echo "File $DIVINE.zip does not exist" >&2
    echo "Downloading.."
    curl -o download/$DIVINE.zip "http://fr1.androidfilehost.com/dl/b-p7sG3YlA4BZN8XoW7tbQ/1467379312/24533103863141857/$DIVINE.zip"
+   echo ""
+   echo "testing zip integrity"
+   zip -T download/$DIVINE.zip
    echo "Done!"
 fi
 
@@ -149,7 +166,7 @@ then
   java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-op3-nevax-$VERSION-unsigned.zip" "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip"
   echo ""
   echo "testing zip integrity"
-  zip -T "FreedomOS-op3-nevax-$VERSION-signed.zip"
+  zip -T "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip"
   echo ""
   echo "Move signed zip file in output folder"
   mv "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip" "output/"
