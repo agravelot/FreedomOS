@@ -193,17 +193,6 @@ dpi.370=Set android DPI to 370
 dpi.360=Set android DPI to 360
 dpi.350=Set android DPI to 350
 
-limit.tittle=App limitation
-limit.tittle2=Change the max number of apps in RAM.
-limit.42=Max. 42 apps running in RAM
-limit.40=Max. 40 apps running in RAM
-limit.35=Max. 35 apps running in RAM
-limit.30=Max. 30 apps running in RAM
-limit.25=Max. 25 apps running in RAM
-limit.20=Max. 20 apps running in RAM
-limit.15=Max. 15 apps running in RAM
-limit.10=Max. 10 apps running in RAM
-
 mod.tittle=Install extra mods
 mod.tittle2=Root, audio mod, ads blocker & xposed...
 mod.tittle3=Extra mod
@@ -219,6 +208,13 @@ info.divine=Divine beats by Theroyalseeker
 info.xposed=Xposed Installer application only
 info.adaway=Ad-Blocker for Android
 info.adb=Android Debugging Bridge
+
+kernel.tittle=
+kernel.tittle2=
+kernel_stock=Stock Kernel
+info.kernel_stock=
+kernel_custom_1=Llama Sweet kernel R1
+info.kernel_custom_1=
 
 install=Installing FreedomOS
 install.now=Install Now
