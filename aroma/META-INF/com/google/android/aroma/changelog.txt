@@ -1,11 +1,16 @@
 1.1.1
   Update French, few lines were missing.
-  Add Viper4Android Profiles and IRS A.R.I.S.E, Rika and FreedomOS.
+  New Viper4Android Profiles and IRS, A.R.I.S.E, Rika and FreedomOS.
   Remove reboot option at the beginning of the aroma.
   Update to SuperSU v2.76.
   Goodbye app limitation in RAM, dummy on 1.1.
-  No more Xposed framework, i can't support xposed bug, apk still there.
+  No more Xposed framework, flash the zip file by yourself, apk still there.
   Welcome to RRO Layers Manager
+  Add missing information in aroma @TimV_
+  New splash screen @badboy47
+  Status bar optimized
+  Aroma ready for a "xx" kernel, released planned in august, stay tuned :) .
+  Remove Bugle in aroma, deleted in OxygenOS 3.2.0
 
 1.1
   Update Adaway 3.1.1 to 3.1.2.
