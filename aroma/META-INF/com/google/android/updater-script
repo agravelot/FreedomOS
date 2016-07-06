@@ -652,54 +652,47 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   if
     (file_getprop("/tmp/aroma/apps.prop", "item.1.5") == "0")
       then
-        ui_print("- Bugle");
-        delete_recursive("/system/app/BasicDreams");
-  endif;
-
-  if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.6") == "0")
-      then
         ui_print("- Desk Clock");
         delete_recursive("/system/app/DeskClock");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.7") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.6") == "0")
       then
         ui_print("- Engineering Mode");
         delete_recursive("/system/app/EngineeringMode");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.8") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.7") == "0")
       then
         ui_print("- EngSpecialTest");
         delete_recursive("/system/app/EngSpecialTest");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.9") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.8") == "0")
       then
         ui_print("- FaceLock");
   			delete_recursive("/system/app/FaceLock");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.10") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.9") == "0")
       then
         ui_print("- Galaxy4");
   			delete_recursive("/system/app/Galaxy4");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.11") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.10") == "0")
       then
         ui_print("- Holo Spiral");
   			delete_recursive("/system/app/HoloSpiralWallpaper");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.12") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.11") == "0")
       then
         ui_print("- Live wallpapers");
   			delete_recursive("/system/app/LiveWallpapers");
@@ -708,63 +701,63 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.13") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.12") == "0")
       then
         ui_print("- Log Kit Sd Service");
   			delete_recursive("/system/app/LogKitSdService");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.14") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.13") == "0")
       then
         ui_print("- Music");
   			delete_recursive("/system/app/Music");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.15") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.14") == "0")
       then
         ui_print("- Noise Feild");
   			delete_recursive("/system/app/NoiseField");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.16") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.15") == "0")
       then
         ui_print("- Oem Auto Test Server");
         delete_recursive("/system/app/OemAutoTestServer");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.17") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.16") == "0")
       then
         ui_print("- OEM Log Kit");
         delete_recursive("/system/app/OEMLogKit");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.18") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.17") == "0")
       then
         ui_print("- Phase beam");
   			delete_recursive("/system/app/PhaseBeam");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.19") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.18") == "0")
       then
         ui_print("- Protips");
   			delete_recursive("/system/app/Protips");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.20") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.19") == "0")
       then
         ui_print("- Sensor Test Tool");
         delete_recursive("/system/app/SensorTestTool");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.21") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.20") == "0")
       then
         ui_print("- Swiftkey");
   			delete_recursive("/system/app/Swiftkey");
@@ -772,14 +765,14 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.22") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.21") == "0")
       then
         ui_print("- Tag");
   			delete_recursive("/system/priv-app/Tag");
   endif;
 
   if
-    (file_getprop("/tmp/aroma/apps.prop", "item.1.23") == "0")
+    (file_getprop("/tmp/aroma/apps.prop", "item.1.22") == "0")
       then
         ui_print("- Wifi Rf Test Apk");
         delete_recursive("/system/app/WifiRfTestApk");
