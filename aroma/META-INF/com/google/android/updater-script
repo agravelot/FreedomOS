@@ -34,13 +34,13 @@ ui_print(" ");
 ui_print("@  Installing the system");
 ui_print(" ");
 ui_print("- /system...  (~1/2 minutes)");
-show_progress(0.00100, 1);
+show_progress(0.50, "-130000");
 block_image_update("/dev/block/bootdevice/by-name/system",
                    package_extract_file("system.transfer.list"),
                    "system.new.dat", "system.patch.dat");
 
 ui_print("- Verifying the updated system image...");
-set_progress(0.550000);
+show_progress(0.55, "-30000");
 
 if range_sha1("/dev/block/bootdevice/by-name/system",
     "98,0,32770,32961,32963,33461,65535,65536,65538,66036,98303,98304,98306,
@@ -166,15 +166,15 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       set_progress(0.720000);
 
   ##MOD
-  #Llama Sweet kernel
-  if (file_getprop("/tmp/aroma/kernel.prop", "item.1.2") == "1")
-    then
-      set_progress(0.930000);
-      ui_print(" ");
-      ui_print("@  Llama Sweet kernel Rx");
-      ui_print(" ");
-      package_extract_file("tools/kernel/boot.img", "/dev/block/bootdevice/by-name/boot");
-  endif;
+  ##Llama Sweet kernel
+  #if (file_getprop("/tmp/aroma/kernel.prop", "item.1.2") == "1")
+  #  then
+  #    set_progress(0.930000);
+  #    ui_print(" ");
+  #    ui_print("@  Llama Sweet kernel Rx");
+  #    ui_print(" ");
+  #    package_extract_file("tools/kernel/boot.img", "/dev/block/bootdevice/by-name/boot");
+  #endif;
 
   #ROOT
   if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
