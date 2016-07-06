@@ -165,6 +165,17 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
                              0755);
       set_progress(0.720000);
   ##MOD
+  
+  #Llama Sweet kernel
+  if (file_getprop("/tmp/aroma/kernel.prop", "item.1.2") == "1")
+    then
+      set_progress(0.930000);
+      ui_print(" ");
+      ui_print("@  Llama Sweet kernel Rx");
+      ui_print(" ");
+      package_extract_file("tools/kernel/boot.img", "/dev/block/bootdevice/by-name/boot");
+  endif;
+
   #ROOT
   if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
     then

@@ -209,6 +209,12 @@ checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
            "<~adb>", "<~info.adb>", 0);
 endif;
 
+#Kernel
+#selectbox("<~kernel.tittle>", "<~kernel.tittle2>", "@update", "kernel.prop",
+#          "<~kernel_stock>", "<~info.kernel_stock>", 1,
+#          "<~kernel_custom_1>", "<~info.kernel_custom_1>", 0
+#        );
+
 #PreInstall
 ini_set("text_next", "<~install.now>");
 viewbox("<~pre.install.title>", "<~pre.install>\n\n" + "<~pre.install2>\n\n" +

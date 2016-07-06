@@ -209,12 +209,12 @@ info.xposed=Xposed Installer application only
 info.adaway=Ad-Blocker for Android
 info.adb=Android Debugging Bridge
 
-kernel.tittle=
+kernel.tittle=Select your kernel
 kernel.tittle2=
 kernel_stock=Stock Kernel
-info.kernel_stock=
+info.kernel_stock=By OnePlus
 kernel_custom_1=Llama Sweet kernel R1
-info.kernel_custom_1=
+info.kernel_custom_1=By genesixx
 
 install=Installing FreedomOS
 install.now=Install Now
