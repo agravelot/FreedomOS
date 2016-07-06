@@ -148,11 +148,14 @@ then
   echo "SignApk....."
   java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-op3-nevax-$VERSION-unsigned.zip" "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip"
   echo ""
+  echo "testing zip integrity"
+  zip -T "FreedomOS-op3-nevax-$VERSION-signed.zip"
+  echo ""
   echo "Move signed zip file in output folder"
   mv "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip" "output/"
   echo ""
-  echo "Generating md5sum"
-  md5sum "output/FreedomOS-op3-nevax-$VERSION-signed.zip" > "output/FreedomOS-op3-nevax-$VERSION-signed.zip.md5"
+  echo "Generating md5 hash"
+  openssl md5 "output/FreedomOS-op3-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "output/FreedomOS-op3-nevax-$VERSION-signed.zip.md5"
 fi
 
 if [ "$MENU" = 2 ];
@@ -164,14 +167,14 @@ then
   echo "----"
   echo ""
   echo "testing zip integrity"
-  zip -T "FreedomOS-op3-nevax-$VERSION.zip" 
+  zip -T "FreedomOS-op3-nevax-$VERSION.zip"
   echo ""
   cd ..
   echo "Move unsigned zip file in output folder"
   mv "tmp/FreedomOS-op3-nevax-$VERSION.zip" "output/"
   echo ""
-  echo "Generating md5sum"
-  md5sum "output/FreedomOS-op3-nevax-$VERSION.zip" > "output/FreedomOS-op3-nevax-$VERSION.zip.md5"
+  echo "Generating md5 hash"
+  openssl md5 "output/FreedomOS-op3-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-op3-nevax-$VERSION.zip.md5"
 fi
 
 echo "Clear tmp/ foler..."
