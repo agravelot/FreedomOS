@@ -34,14 +34,12 @@ Thumbs.db
 *.sqlite
 *.md5
 
-*.pk8
-*.pem
-
 tmp/*
 system/*
-download/*.apk
-download/*.img
-download/*.old
+output/*
+download/*
 
 !system/EMPTY_DIRECTORY
 !tmp/EMPTY_DIRECTORY
+!output/EMPTY_DIRECTORY
+!download/EMPTY_DIRECTORY
