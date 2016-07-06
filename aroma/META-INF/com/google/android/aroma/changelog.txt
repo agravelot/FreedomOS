@@ -9,7 +9,7 @@
   Add missing information in aroma @TimV_
   New splash screen @badboy47
   Status bar optimized
-  Aroma ready for a "xx" kernel, released planned in august, stay tuned :) .
+  Aroma ready for a kernel, released planned in august, stay tuned :) .
   Remove Bugle in aroma, deleted in OxygenOS 3.2.0
 
 1.1
