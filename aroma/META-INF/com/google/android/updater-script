@@ -170,6 +170,8 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       package_extract_dir("tools/", "/tmp/tools");
       set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode",
                              0755);
+      delete_recursive("tmp/tools/v4a_profiles_irs");
+      delete_recursive("tmp/tools/xposed");
       set_progress(0.720000);
 
   ##MOD
@@ -196,13 +198,14 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
                   "/tmp/tools/su/META-INF/com/google/android/update-binary", "dummy",
                   "1", "/tmp/tools/su/su.zip");
       ifelse(is_mounted("/system"), unmount("/system"));
+      delete_recursive("/tmp/tools/su");
   endif;
 
   #ARISE Exodus
   if
     (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
     then
-      show_progress(0.81, "-10000");
+      show_progress(0.05, "-10000");
       ui_print(" ");
     ui_print("@  Installing A.R.I.S.E Exodus");
     ui_print(" ");
@@ -396,7 +399,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
 
     #LP/MM
     #ui_print("Configuring for LP/MM...");
-    package_extract_dir("tools/arise/v4a","/system/priv-app/ViPER4Android_FX_A4.x");
+    package_extract_dir("/tmp/tools/arise/v4a","/system/priv-app/ViPER4Android_FX_A4.x");
 
     #DTS DATA
     ui_print("Installing DTS as user app...");
