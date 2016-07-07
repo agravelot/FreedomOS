@@ -1,0 +1,1447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<algorithm-settings>
+    <preprocessing name="preprocessing">
+        <scene name="off" default="true">
+            <device input="*" output="*" default="true">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="false" />
+                    <parameter key="NoiseReduceMode" value="0" />
+                    <parameter key="MaxNoiseReduceLevel" value="13" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-40" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+        </scene>
+        <scene name="normal">
+            <device input="in_builtin_mic" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="true" />
+                    <parameter key="NoiseReduceMode" value="1" />
+                    <parameter key="MaxNoiseReduceLevel" value="13" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-40" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+            <device input="*" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="true" />
+                    <parameter key="NoiseReduceMode" value="1" />
+                    <parameter key="MaxNoiseReduceLevel" value="14" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-45" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+        </scene>
+        <scene name="meeting">
+            <device input="in_builtin_mic" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="true" />
+                    <parameter key="NoiseReduceMode" value="1" />
+                    <parameter key="MaxNoiseReduceLevel" value="14" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-45" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+            <device input="*" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="true" />
+                    <parameter key="NoiseReduceMode" value="1" />
+                    <parameter key="MaxNoiseReduceLevel" value="14" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-45" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+        </scene>
+        <scene name="interview">
+            <device input="in_builtin_mic" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="true" />
+                    <parameter key="NoiseReduceMode" value="1" />
+                    <parameter key="MaxNoiseReduceLevel" value="15" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-40" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+            <device input="*" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="true" />
+                    <parameter key="NoiseReduceMode" value="1" />
+                    <parameter key="MaxNoiseReduceLevel" value="15" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-40" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+        </scene>
+        <scene name="music">
+            <device input="in_builtin_mic" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="true" />
+                    <parameter key="NoiseReduceMode" value="0" />
+                    <parameter key="MaxNoiseReduceLevel" value="10" />
+                    <parameter key="UseHighPassFilt" value="0" />
+                    <parameter key="NoiseThreshold" value="-55" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="53" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+            <device input="*" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="true" />
+                    <parameter key="NoiseReduceMode" value="0" />
+                    <parameter key="MaxNoiseReduceLevel" value="10" />
+                    <parameter key="UseHighPassFilt" value="0" />
+                    <parameter key="NoiseThreshold" value="-55" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="53" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+        </scene>
+        <scene name="video">
+            <device input="in_builtin_mic" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="true" />
+                    <parameter key="NoiseReduceMode" value="0" />
+                    <parameter key="MaxNoiseReduceLevel" value="10" />
+                    <parameter key="UseHighPassFilt" value="0" />
+                    <parameter key="NoiseThreshold" value="-55" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="53" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+            <device input="*" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="true" />
+                    <parameter key="NoiseReduceMode" value="0" />
+                    <parameter key="MaxNoiseReduceLevel" value="10" />
+                    <parameter key="UseHighPassFilt" value="0" />
+                    <parameter key="NoiseThreshold" value="-55" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="53" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+        </scene>
+        <scene name="dir-rec">
+            <device input="in_builtin_mic" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="true" />
+                    <parameter key="NoiseReduceMode" value="0" />
+                    <parameter key="MaxNoiseReduceLevel" value="10" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-55" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+            <device input="*" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="true" />
+                    <parameter key="NoiseReduceMode" value="0" />
+                    <parameter key="MaxNoiseReduceLevel" value="10" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-55" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+        </scene>
+        <scene name="omni-direction-rec">
+            <device input="in_builtin_mic" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="OmniDirection" value="true"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="false" />
+                    <parameter key="NoiseReduceMode" value="0" />
+                    <parameter key="MaxNoiseReduceLevel" value="10" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-55" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+            <device input="*" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="false" />
+                    <parameter key="NoiseReduceMode" value="0" />
+                    <parameter key="MaxNoiseReduceLevel" value="10" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-55" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+        </scene>
+        <scene name="omni-direction-play">
+            <device input="*" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="true" />
+                    <parameter key="NoiseReduceMode" value="0" />
+                    <parameter key="MaxNoiseReduceLevel" value="10" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-55" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="true"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+        </scene>
+        <scene name="voice_message">
+            <device input="in_builtin_mic" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="false" />
+                    <parameter key="NoiseReduceMode" value="1" />
+                    <parameter key="MaxNoiseReduceLevel" value="13" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-40" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="false"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+            <device input="*" output="*">
+                <algorithm name="HDR">
+                    <parameter key="Enable" value="true"/>
+                    <parameter key="MainMicGainMindB" value="12"/>
+                    <parameter key="MainMicGainMaxdB" value="32"/>
+                    <parameter key="MainMicGainInitdB" value="32"/>
+                    <parameter key="MainMicGainStepdB" value="2"/>
+                    <parameter key="MainMicAttackTime" value="20"/>
+                    <parameter key="MainMicReleaseTime" value="200"/>
+                    <parameter key="MainMicHdrFlag" value="1"/>
+                    <parameter key="MainMicRecordMode" value="1"/>
+                    <parameter key="SubMicGainMindB" value="12"/>
+                    <parameter key="SubMicGainMaxdB" value="32"/>
+                    <parameter key="SubMicGainInitdB" value="32"/>
+                    <parameter key="SubMicGainStepdB" value="2"/>
+                    <parameter key="SubMicAttackTime" value="20"/>
+                    <parameter key="SubMicReleaseTime" value="200"/>
+                    <parameter key="SubMicHdrFlag" value="1"/>
+                    <parameter key="SubMicRecordMode" value="1"/>
+                </algorithm>
+                <algorithm name="DR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="OmniDirection" value="false"/>
+                    <parameter key="MicDistance" value="160,34,157"/>
+                    <parameter key="MicBlock" value="0,1,1,2,10,49"/>
+                    <parameter key="MicFail" value="1,1,1,-6,10,49"/>
+                    <parameter key="AdrGain" value="11"/>
+                </algorithm>
+                <algorithm name="LDR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="MainMicTargetLev" value="-3"/>
+                    <parameter key="MainMicNoiseFloor" value="-40"/>
+                    <parameter key="MainMicMaxGain" value="15"/>
+                    <parameter key="MainMicMinGain" value="-40"/>
+                    <parameter key="MainMicAdjustSpd" value="5"/>
+                    <parameter key="MainMicImproveSNR" value="0"/>
+                    <parameter key="MainMicBackGrdLev" value="-40"/>
+                    <parameter key="MainMicSuppressRange" value="0"/>
+                    <parameter key="MainMicUseHPFilter" value="2"/>
+                    <parameter key="MainMicOutputMode" value="0"/>
+                    <parameter key="SubMicTargetLev" value="-3"/>
+                    <parameter key="SubMicNoiseFloor" value="-40"/>
+                    <parameter key="SubMicMaxGain" value="15"/>
+                    <parameter key="SubMicMinGain" value="-40"/>
+                    <parameter key="SubMicAdjustSpd" value="5"/>
+                    <parameter key="SubMicImproveSNR" value="0"/>
+                    <parameter key="SubMicBackGrdLev" value="-40"/>
+                    <parameter key="SubMicSuppressRange" value="0"/>
+                    <parameter key="SubMicUseHPFilter" value="2"/>
+                    <parameter key="SubMicOutputMode" value="0"/>
+                </algorithm>
+                <algorithm name="RNR">
+                    <parameter key="Enable" value="false" />
+                    <parameter key="NoiseReduceMode" value="0" />
+                    <parameter key="MaxNoiseReduceLevel" value="13" />
+                    <parameter key="UseHighPassFilt" value="1" />
+                    <parameter key="NoiseThreshold" value="-40" />
+                    <parameter key="EnableNoiseBurst" value="1" />
+                    <parameter key="VadThreshold" value="50" />
+                </algorithm>
+                <algorithm name="WNR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="Mode" value="1"/>
+                </algorithm>
+                <algorithm name="STEREOENHANCEMENT">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="HPEhanceEnable" value="false"/>
+                    <parameter key="HPGain" value="0.8"/>
+                    <parameter key="MicDistance" value="157"/>
+                    <parameter key="LeftChannelDelay" value="0"/>
+                    <parameter key="RightChannelDelay" value="0"/>
+                    <parameter key="MicChannelExchange" value="false"/>
+                </algorithm>
+                <algorithm name="FIR">
+                    <parameter key="Enable" value="false"/>
+                    <parameter key="coef_48K" value="-0.0041084208646031215, -0.0099997298836820517, -0.014404212558307478, -0.0095412108198417323, 0.011518705743028684, 0.049164047468714112, 0.094390133383369254, 0.13157866126158405, 0.50078261406920577, 0.13157866126158405, 0.094390133383369254, 0.049164047468714112, 0.011518705743028684, -0.0095412108198417323, -0.014404212558307478, -0.0099997298836820517, -0.0041084208646031215"/>
+                    <parameter key="coef_16K" value="-0.0056817620839079309, 0.0021418612519652166, -0.041082726861886847, 0.15834029233429456, 0.768446884814319, 0.15834029233429456, -0.041082726861886847, 0.0021418612519652166, -0.0056817620839079309"/>
+                </algorithm>
+            </device>
+        </scene>
+    </preprocessing>
+</algorithm-settings>

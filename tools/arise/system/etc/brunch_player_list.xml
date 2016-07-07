@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MediaPlayers>
+	<Locals>
+		<MediaPlayer key="audio/mpeg" value="9101"/>
+		<MediaPlayer key="audio/mp4" value="9101"/>
+		<MediaPlayer key="audio/wav" value="9101"/>
+		<MediaPlayer key="audio/3gpp" value="9101"/>
+		<MediaPlayer key="audio/amr-wb" value="9101"/>
+		<MediaPlayer key="application/ogg" value="9101"/>
+		<MediaPlayer key="video/ogm" value="9101"/>
+		<MediaPlayer key="audio/mp4a-latm" value="9101"/>
+		<MediaPlayer key="audio/x-matroska" value="9101"/>
+		<MediaPlayer key="audio/midi" value="9102"/>
+		<MediaPlayer key="audio/sp-midi" value="9102"/>
+		<MediaPlayer key="audio/imelody" value="9102"/>
+		<MediaPlayer key="video/mpeg" value="9101"/>
+		<MediaPlayer key="video/mp4" value="9101"/>
+		<MediaPlayer key="video/mpeg4" value="9101"/>
+		<MediaPlayer key="video/mp4v-es" value="9101"/>
+		<MediaPlayer key="video/3gpp" value="9101"/>
+		<MediaPlayer key="video/3gpp2" value="9101"/>
+		<MediaPlayer key="video/x-matroska" value="9101"/>
+		<MediaPlayer key="video/webm" value="9101"/>
+		<MediaPlayer key="video/mp2ts" value="9101"/>
+		<MediaPlayer key="video/avi" value="9101"/>
+		<MediaPlayer key="audio/x-mpegurl" value="9101"/>
+		<MediaPlayer key="audio/x-scpls" value="9101"/>
+		<MediaPlayer key="application/vnd.ms-wpl" value="9101"/>
+		<MediaPlayer key="application/x-android-drm-fl" value="9101"/>
+		<MediaPlayer key="audio/flac" value="9101"/>
+		<MediaPlayer key="video/x-vnd.on2.vp8" value="9101"/>
+		<MediaPlayer key="video/avc" value="9101"/>
+		<MediaPlayer key="video/raw" value="9101"/>
+		<MediaPlayer key="audio/qcelp" value="9101"/>
+		<MediaPlayer key="video/wvm" value="9101"/>
+		<MediaPlayer key="video/divx" value="9101"/>
+		<MediaPlayer key="audio/ac3" value="9101"/>
+		<MediaPlayer key="audio/dts" value="9101"/>
+	</Locals>
+	<Networks>
+		<MediaPlayer key="rtsp" value="9103"/>
+		<MediaPlayer key="http" value="9302"/>
+		<MediaPlayer key="https" value="9302"/>
+		<MediaPlayer key="httplive" value="9103"/>
+		<MediaPlayer key="widevine" value="9103"/>
+	</Networks>
+</MediaPlayers>

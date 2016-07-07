@@ -1,0 +1,140 @@
+##                                      ##
+##  guitardedhero's current tweak.prop  ##
+##                                      ##
+##            XDA Developers            ##
+##                                      ##
+
+BACKUP=y
+
+## Audio Offload ##
+
+#
+audio.offload.pcm.enable=true
+audio.offload.pcm.16bit.enable=true
+audio.offload.pcm.24bit.enable=true
+audio.offload.pcm.32bit.enable=true
+#
+
+## HTC™ Audio ##
+
+#
+# System props for Dolby
+dmid=-1286820014
+audio.ds1.metainfo.key=273
+dolby.audio.sink.info=speaker
+dolby.ds.dialogenhancer.state=off
+dolby.ds.graphiceq.state=on
+dolby.ds.hpvirtualizer.state=on
+dolby.ds.intelligenteq.preset=Open
+dolby.ds.intelligenteq.state=on
+dolby.ds.profile.name=Music
+dolby.ds.spkvirtualizer.state=off
+dolby.ds.state=on
+dolby.ds.volumeleveler.state=off
+#
+
+## Lenovo™ K4 Note Dolby™ Audio ##
+
+#
+## lenovo-sw heww3 add for dolby support ##
+LENOVO_DOLBY_SUPPORT=true
+# lenovo-sw heww3 add end ##
+ro.mtk_dolby_dap_support=1
+# lenovo-sw heww3 add for hifi support begin ##
+ro.lenovo.hifi_support=true
+ro.lenovo.soundeffect=dolby
+# lenovo-sw heww3 add for hifi support end ##
+#
+
+## Huawei™ Audio ##
+
+#
+ro.config.hw_dts=true
+ro.config.hw_music_lp=true
+ro.config.music_lp_vol=true
+media.stagefright.use-awesome=false
+#
+
+## Vivo™ DTS™ Audio ##
+
+#
+use.dts_m6=true
+use.dts_m6_notify=true
+use.dts_eagle=true
+#
+
+## LG™ G5 Audio ##
+
+#
+persist.service.bdroid.sap=true
+persist.audio.voice.clarity=on
+ro.lge.voice.clarity=1
+ro.config.media_vol_extend=ON
+#
+
+## LG™ V10 Audio ##
+
+#
+mmp.enable.3g2=true
+mm.enable.smoothstreaming=true
+media.aac_51_output_enabled=true
+#persist.audio.hifi_dac=ON
+#
+
+## Sony™ Audio ##
+
+#
+ro.semc.sound_effects_enabled=true
+ro.semc.enhance.supported=true
+ro.somc.clearphase.supported=true
+ro.semc.clearaudio.supported=true
+ro.semc.xloud.supported=true
+persist.service.enhance.enable=1
+persist.service.clearphase.enable=1
+persist.service.clearaudio.enable=1
+persist.service.xloud.enable=1
+
+#SONY effect
+sony.support.effect=0x1FF
+#  Allocate bit for each effect.
+#  If necessary, define effect list with logical sum.
+#  EFFECT_DN        0x0001 (Dynamic Normalizer)
+#  EFFECT_SF        0x0002 (S-Force)
+#  EFFECT_CPHP      0x0004 (ClearPhase Headphone)
+#  EFFECT_CA        0x0008 (ClearAudio)
+#  EFFECT_VPT       0x0010 (VPT)
+#  EFFECT_CPSP      0x0020 (ClearPhase Speaker)
+#  EFFECT_XLOUD     0x0040 (xLOUD)
+#  EFFECT_CAPLUS    0x0080 (ClearAudio+)
+#  EFFECT_SPBUNDLE  0x0100 (Speaker Bundle)
+#  EFFECT_ALC       0x0200 (ALC)
+
+# Effect used by Speaker Bundle.
+# EFFECT_SF | EFFECT_CPSP | EFFECT_SPBUNDLE = 0x122
+sony.effect.custom.sp_bundle=0x122
+
+# Effect used by ClearAudio+ headset
+# EFFECT_CA | EFFECT_VPT | EFFECT_CAPLUS | EFFECT_ALC = 0x298
+sony.effect.custom.caplus_hs=0x298
+
+# Effect used by ClearAudio+ speaker
+# EFFECT_CA | EFFECT_VPT | EFFECT_CPSP | EFFECT_CAPLUS | EFFECT_ALC = 0x2B8
+sony.effect.custom.caplus_sp=0x2B8
+
+# LDAC audio support
+ro.somc.ldac.audio.supported=true
+# Force LDAC to run in Bluetooth
+persist.service.ldac.enable=1
+com.sonymobile.ldac_enabled=true
+#
+
+## Miscellaneous Audio ##
+
+#
+tunnel.audio.encode=false
+tunnel.decode=false
+tunnel.audiovideo.decode=false
+lpa.decode=false
+lpa.releaselock=false
+lpa.use-stagefright=false
+#
