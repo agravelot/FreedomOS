@@ -163,7 +163,7 @@ then
   zip -T output/FreedomOS-op3-nevax-$VERSION.zip
   echo ""
   echo "Generating md5 hash"
-  openssl md5 "output/FreedomOS-op3-nevax-$VERSION" |cut -f 2 -d " " > "output/FreedomOS-op3-nevax-$VERSION.zip.md5"
+  openssl md5 "output/FreedomOS-op3-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-op3-nevax-$VERSION.zip.md5"
   echo ""
   echo "SignApk....."
   java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-op3-nevax-$VERSION.zip" "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip"
