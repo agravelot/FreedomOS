@@ -11,6 +11,7 @@
   Status bar optimized
   Aroma ready for a kernel, released planned in august, stay tuned :) .
   Remove Bugle in aroma, deleted in OxygenOS 3.2.0
+  Tallback & TTS removed from aroma.
 
 1.1
   Update Adaway 3.1.1 to 3.1.2.
