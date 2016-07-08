@@ -303,121 +303,18 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     delete("/system/priv-app/DSPManager.apk");
     delete("/system/app/DSPManager.apk");
     ui_print("Extracting sound system...");
-    package_extract_dir("system","/system");
-    package_extract_dir("vendor","/system/vendor");
+    package_extract_dir("tools/arise/system","/system");
+    package_extract_dir("tools/arise/vendor","/system/vendor");
 
+    #?!?!?!
     if
       file_getprop("/tmp/aroma/phone.prop","selected.1") == "2"
       then
       ui_print("Installing extra LG stuff");
-      package_extract_dir("Bluetooth","/system");
+      package_extract_dir("tools/arise/Bluetooth","/system");
     endif;
 
-    if
-      file_getprop("/tmp/aroma/phone.prop","selected.2") == "1"
-      then
-      ui_print("Installing extra HTC stuff");
-      package_extract_dir("HTC","/system");
-    endif;
-    #JB/KK
-
-    if
-      file_getprop("/tmp/aroma/info.prop","selected.1") == "1"
-      then
-      ui_print("Configuring for JB/KK...");
-      package_extract_dir("v4a","/system/priv-app");
-      #DTS SYSTEM
-
-      if
-      file_getprop("/tmp/aroma/dts.prop","selected.1") == "1"
-      then
-      ui_print("Installing DTS as system app...");
-      package_extract_dir("dts","/system/app");
-      endif;
-      #DTS DATA
-
-      if
-      file_getprop("/tmp/aroma/dts.prop","selected.1") == "2"
-      then
-      ui_print("Installing DTS as user app...");
-      package_extract_dir("datadts","/data/app");
-      set_perm_recursive(1000, 1000, 0755, 0644, "/data/app/com.dts.dcc.services-1");
-      set_perm_recursive(1000, 1000, 0755, 0755, "/data/app/com.dts.dcc.services-1/lib/arm");
-      ui_print("DTS permissions set.");
-      endif;
-
-      if
-      file_getprop("/tmp/aroma/dolby.prop","selected.1") == "1"
-      then
-      ui_print("Installing Dolby Atmos...");
-      run_program("/sbin/busybox", "mount", "/system");
-      run_program("/sbin/busybox", "mount", "/vendor");
-      delete_recursive("/system/etc/dolby");
-      delete_recursive("/vendor/etc/dolby");
-      delete_recursive("/system/vendor/etc/dolby");
-      package_extract_file("permissive.sh", "/system/su.d/permissive.sh");
-      set_perm(0, 0, 0755, "/system/su.d/permissive.sh");
-      package_extract_dir("dolby", "/tmp/dolby");
-      run_program("/sbin/busybox", "unzip", "/tmp/dolby/dolby.zip", "META-INF/com/google/android/*", "-d", "/tmp/dolby");
-      run_program("/sbin/busybox", "sh", "/tmp/dolby/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/dolby/dolby.zip");
-      endif;
-
-      if
-      file_getprop("/tmp/aroma/dolby.prop","selected.1") == "2"
-      then
-      ui_print("Installing DD+...");
-      run_program("/sbin/busybox", "mount", "/system");
-      run_program("/sbin/busybox", "mount", "/vendor");
-      package_extract_file("permissive.sh", "/system/su.d/permissive.sh");
-      set_perm(0, 0, 0755, "/system/su.d/permissive.sh");
-      delete_recursive("/system/etc/dolby");
-      delete_recursive("/vendor/etc/dolby");
-      delete_recursive("/system/vendor/etc/dolby");
-      package_extract_dir("dd+", "/");
-      package_extract_dir("ds", "/system/priv-app");
-      package_extract_dir("dsui", "/system/priv-app");
-      endif;
-
-      if
-      file_getprop("/tmp/aroma/dolby.prop","selected.1") == "3"
-      then
-      ui_print("Installing Dolby Atmos and DD+...");
-      run_program("/sbin/busybox", "mount", "/system");
-      run_program("/sbin/busybox", "mount", "/vendor");
-      package_extract_file("permissive.sh", "/system/su.d/permissive.sh");
-      set_perm(0, 0, 0755, "/system/su.d/permissive.sh");
-      delete_recursive("/system/etc/dolby");
-      delete_recursive("/vendor/etc/dolby");
-      delete_recursive("/system/vendor/etc/dolby");
-      package_extract_dir("dd+", "/");
-      package_extract_dir("dolby", "/tmp/dolby");
-      run_program("/sbin/busybox", "unzip", "/tmp/dolby/dolby.zip", "META-INF/com/google/android/*", "-d", "/tmp/dolby");
-      run_program("/sbin/busybox", "sh", "/tmp/dolby/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/dolby/dolby.zip");
-      package_extract_dir("ds", "/system/priv-app");
-      package_extract_dir("dsui", "/system/priv-app");
-      endif;
-
-      if
-      file_getprop("/tmp/aroma/dolby.prop","selected.1") == "5"
-      then
-      ui_print("Installing Dolby Atmos...");
-      run_program("/sbin/busybox", "mount", "/system");
-      run_program("/sbin/busybox", "mount", "/vendor");
-      delete_recursive("/system/etc/dolby");
-      delete_recursive("/vendor/etc/dolby");
-      delete_recursive("/system/vendor/etc/dolby");
-      package_extract_dir("dap", "/tmp/dap");
-      run_program("/sbin/busybox", "unzip", "/tmp/dap/dap.zip", "META-INF/com/google/android/*", "-d", "/tmp/dap");
-      run_program("/sbin/busybox", "sh", "/tmp/dap/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/dap/dap.zip");
-      endif;
-
-      package_extract_file("runme.sh", "/tmp/runme.sh");
-      set_perm(0, 0, 0777, "/tmp/runme.sh");
-      run_program("/tmp/runme.sh");
-      delete("/tmp/runme.sh");
-    endif;
     #LP/MM
-
     if
       file_getprop("/tmp/aroma/info.prop","selected.1") == "2"
       then
@@ -525,119 +422,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       endif;
     endif;
 
-    #N
 
-    if
-      file_getprop("/tmp/aroma/info.prop","selected.1") == "3"
-      then
-      ui_print("Configuring for N Preview...");
-      delete("/system/bin/logd");
-      package_extract_dir("v4a","/system/priv-app/ViPER4Android_FX_A4.x");
-      package_extract_file("permissive.sh", "/system/su.d/permissive.sh");
-      set_perm(0, 0, 0755, "/system/su.d/permissive.sh");
-      #DTS SYSTEM
-
-      if
-        file_getprop("/tmp/aroma/dts.prop","selected.1") == "1"
-        then
-        ui_print("Installing DTS as system app...");
-        run_program("/sbin/busybox", "mount", "/system");
-        run_program("/sbin/busybox", "mount", "/vendor");
-        package_extract_dir("dts","/system/app/DTSClientControllerService");
-        package_extract_dir("dtslib","/system/app/DTSClientControllerService");
-      endif;
-
-      #DTS DATA
-
-      if
-        file_getprop("/tmp/aroma/dts.prop","selected.1") == "2"
-        then
-        ui_print("Installing DTS as user app...");
-        package_extract_dir("datadts","/data/app");
-        set_perm_recursive(1000, 1000, 0755, 0644, "/data/app/com.dts.dcc.services-1");
-        set_perm_recursive(1000, 1000, 0755, 0755, "/data/app/com.dts.dcc.services-1/lib/arm");
-        ui_print("DTS permissions set.");
-        ui_print(" ");
-      endif;
-
-      if
-        file_getprop("/tmp/aroma/dolby.prop","selected.1") == "1"
-        then
-        ui_print("Installing Dolby Atmos...");
-        run_program("/sbin/busybox", "mount", "/system");
-        run_program("/sbin/busybox", "mount", "/vendor");
-        delete_recursive("/system/etc/dolby");
-        delete_recursive("/vendor/etc/dolby");
-        delete_recursive("/system/vendor/etc/dolby");
-        package_extract_file("permissive.sh", "/system/su.d/permissive.sh");
-        set_perm(0, 0, 0755, "/system/su.d/permissive.sh");
-        package_extract_dir("dolby", "/tmp/dolby");
-        run_program("/sbin/busybox", "unzip", "/tmp/dolby/dolby.zip", "META-INF/com/google/android/*", "-d", "/tmp/dolby");
-        run_program("/sbin/busybox", "sh", "/tmp/dolby/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/dolby/dolby.zip");
-      endif;
-
-      if
-        file_getprop("/tmp/aroma/dolby.prop","selected.1") == "2"
-        then
-        ui_print("Installing DD+...");
-        run_program("/sbin/busybox", "mount", "/system");
-        run_program("/sbin/busybox", "mount", "/vendor");
-        package_extract_file("permissive.sh", "/system/su.d/permissive.sh");
-        set_perm(0, 0, 0755, "/system/su.d/permissive.sh");
-        delete_recursive("/system/etc/dolby");
-        delete_recursive("/vendor/etc/dolby");
-        delete_recursive("/system/vendor/etc/dolby");
-        package_extract_dir("dd+", "/");
-        package_extract_dir("ds", "/system/priv-app/Ds");
-        package_extract_dir("dsui", "/system/priv-app/DsUi");
-      endif;
-
-      if
-        file_getprop("/tmp/aroma/dolby.prop","selected.1") == "3"
-        then
-        ui_print("Installing Dolby Atmos and DD+...");
-        run_program("/sbin/busybox", "mount", "/system");
-        run_program("/sbin/busybox", "mount", "/vendor");
-        package_extract_file("permissive.sh", "/system/su.d/permissive.sh");
-        set_perm(0, 0, 0755, "/system/su.d/permissive.sh");
-        delete_recursive("/system/etc/dolby");
-        delete_recursive("/vendor/etc/dolby");
-        delete_recursive("/system/vendor/etc/dolby");
-        package_extract_dir("dolby", "/tmp/dolby");
-        run_program("/sbin/busybox", "unzip", "/tmp/dolby/dolby.zip", "META-INF/com/google/android/*", "-d", "/tmp/dolby");
-        run_program("/sbin/busybox", "sh", "/tmp/dolby/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/dolby/dolby.zip");
-        package_extract_dir("dd+", "/");
-        package_extract_dir("ds", "/system/priv-app/Ds");
-        package_extract_dir("dsui", "/system/priv-app/DsUi");
-      endif;
-
-      if
-        file_getprop("/tmp/aroma/dolby.prop","selected.1") == "5"
-        then
-        ui_print("Installing Dolby Atmos...");
-        run_program("/sbin/busybox", "mount", "/system");
-        run_program("/sbin/busybox", "mount", "/vendor");
-        delete_recursive("/system/etc/dolby");
-        delete_recursive("/vendor/etc/dolby");
-        delete_recursive("/system/vendor/etc/dolby");
-        package_extract_dir("dap", "/tmp/dap");
-        run_program("/sbin/busybox", "unzip", "/tmp/dap/dap.zip", "META-INF/com/google/android/*", "-d", "/tmp/dap");
-        run_program("/sbin/busybox", "sh", "/tmp/dap/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/dap/dap.zip");
-      endif;
-
-      if
-        file_getprop("/tmp/aroma/dolby.prop","selected.2") == "1"
-        then
-        ui_print("Installing AM3D...");
-        run_program("/sbin/busybox", "mount", "/system");
-        run_program("/sbin/busybox", "mount", "/vendor");
-        package_extract_file("permissive.sh", "/system/su.d/permissive.sh");
-        set_perm(0, 0, 0755, "/system/su.d/permissive.sh");
-        package_extract_dir("am3d", "/tmp/am3d");
-        run_program("/sbin/busybox", "unzip", "/tmp/am3d/am3d.zip", "META-INF/com/google/android/*", "-d", "/tmp/am3d");
-        run_program("/sbin/busybox", "sh", "/tmp/am3d/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/am3d/am3d.zip");
-      endif;
-    endif;
     package_extract_dir("tweakProps","/tmp");
 
     if
