@@ -2,7 +2,7 @@
 # FreedomOS build script
 # Author : Nevax
 
-VERSION=0
+VERSION="0"
 OOS=OnePlus3Oxygen_16_OTA_011_all_1607052050_0e5983ace5314161
 SU=UPDATE-SuperSU-v2.76-20160630161323
 XPOSED_APK=XposedInstaller_3.0_alpha4
@@ -34,7 +34,7 @@ read -p "Enter a version number you want to use [test] : " VERSION
 
 if [ -z "$VERSION" ];
 then
-        VERSION=test
+        VERSION="test"
 fi
 
 echo ""
@@ -136,16 +136,19 @@ echo "Add Divine"
 unzip -o "download/$DIVINE.zip" -d "tmp/tools/divine/"
 echo ""
 echo "Set version in aroma"
-sed -i "s:!version!:$VERSION:" tmp/META-INF/com/google/android/aroma-config
+sed -i.bak "s:!version!:$VERSION:" tmp/META-INF/com/google/android/aroma-config
 echo ""
 echo "Set date in aroma"
-sed -i "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma-config
+sed -i.bak "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma-config
 echo ""
 echo "Set date in en.lang"
-sed -i "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma/langs/en.lang
+sed -i.bak "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma/langs/en.lang
 echo ""
 echo "Set date in fr.lang"
-sed -i "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma/langs/fr.lang
+sed -i.bak "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma/langs/fr.lang
+rm -rf tmp/META-INF/com/google/android/aroma-config.bak
+rm -rf tmp/META-INF/com/google/android/aroma/langs/*.lang.bak
+
 
 if [ "$MENU" = 1 ];
 then
