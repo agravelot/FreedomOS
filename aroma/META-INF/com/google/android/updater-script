@@ -307,12 +307,8 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     package_extract_dir("tools/arise/vendor","/system/vendor");
 
     #?!?!?!
-    if
-      file_getprop("/tmp/aroma/phone.prop","selected.1") == "2"
-      then
-      ui_print("Installing extra LG stuff");
-      package_extract_dir("tools/arise/Bluetooth","/system");
-    endif;
+    ui_print("Installing extra LG stuff");
+    package_extract_dir("tools/arise/Bluetooth","/system");
 
     #LP/MM
     if
