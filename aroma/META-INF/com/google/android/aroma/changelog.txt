@@ -1,3 +1,18 @@
+1.1.2
+  Update to OxygenOS 3.2.1.
+      - Fixed some notification issues
+      - Addressed SIM recognition issue
+      - Enabled sRGB mode in developer options
+      - Improved RAM management
+      - Improved GPS performance
+      - Enhanced audio playback quality
+      - Updated custom icon packs
+      - Improved camera quality/functionality
+      - Fixed some issues in Gallery
+      - Implemented latest Google security patches
+      - Fixed bugs in Clock/Music apps
+  Fix wrong indicated version of SuperSU in aroma.
+
 1.1.1
   Update French, few lines were missing.
   New Viper4Android Profiles and IRS, A.R.I.S.E, Rika and FreedomOS.
