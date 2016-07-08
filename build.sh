@@ -110,8 +110,8 @@ else
 fi
 
 echo ""
-echo "testing downloaded zip integrity"
-zip -T download/*.zip
+#echo "testing downloaded zip integrity"
+#zip -T download/*.zip
 
 echo ""
 echo "Copy OOS"
