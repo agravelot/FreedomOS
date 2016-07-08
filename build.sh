@@ -1,12 +1,12 @@
 #!/bin/bash
 # FreedomOS build script
 # Author : Nevax
+# Contributor : TimVNL
 
 VERSION=0
 OOS=OnePlus3Oxygen_16_OTA_011_all_1607052050_0e5983ace5314161
 SU=UPDATE-SuperSU-v2.76-20160630161323
 XPOSED_APK=XposedInstaller_3.0_alpha4
-DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER
 MENU=0
 
 echo "#################################"
