@@ -337,8 +337,8 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         then
         ui_print("Installing DTS as user app...");
         package_extract_dir("tools/arise/datadts","/data/app");
-        set_perm_recursive(1000, 1000, 0755, 0644, "/data/app/com.dts.dcc.services-1");
-        set_perm_recursive(1000, 1000, 0755, 0755, "/data/app/com.dts.dcc.services-1/lib/arm");
+        set_metadata_recursive("/data/app/com.dts.dcc.services-1", "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+        set_metadata_recursive("/data/app/com.dts.dcc.services-1/lib/arm", "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
         ui_print("DTS permissions set.");
         ui_print(" ");
       endif;
@@ -353,7 +353,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         delete_recursive("/vendor/etc/dolby");
         delete_recursive("/system/vendor/etc/dolby");
         package_extract_file("tools/arise/permissive.sh", "/system/su.d/permissive.sh");
-        set_perm(0, 0, 0755, "/system/su.d/permissive.sh");
+        set_metadata("/system/su.d/permissive.sh", "uid", 0, "gid", 0, "fmode", 0755);
         package_extract_dir("tools/arise/dolby", "/tmp/dolby");
         run_program("/sbin/busybox", "unzip", "/tmp/dolby/dolby.zip", "META-INF/com/google/android/*", "-d", "/tmp/dolby");
         run_program("/sbin/busybox", "sh", "/tmp/dolby/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/dolby/dolby.zip");
@@ -366,7 +366,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         run_program("/sbin/busybox", "mount", "/system");
         run_program("/sbin/busybox", "mount", "/vendor");
         package_extract_file("tools/arise/permissive.sh", "/system/su.d/permissive.sh");
-        set_perm(0, 0, 0755, "/system/su.d/permissive.sh");
+        set_metadata("/system/su.d/permissive.sh", "uid", 0, "gid", 0, "fmode", 0755);
         delete_recursive("/system/etc/dolby");
         delete_recursive("/vendor/etc/dolby");
         delete_recursive("/system/vendor/etc/dolby");
@@ -382,7 +382,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         run_program("/sbin/busybox", "mount", "/system");
         run_program("/sbin/busybox", "mount", "/vendor");
         package_extract_file("tools/arise/permissive.sh", "/system/su.d/permissive.sh");
-        set_perm(0, 0, 0755, "/system/su.d/permissive.sh");
+        set_metadata("/system/su.d/permissive.sh", "uid", 0, "gid", 0, "fmode", 0755);
         delete_recursive("/system/etc/dolby");
         delete_recursive("/vendor/etc/dolby");
         delete_recursive("/system/vendor/etc/dolby");
@@ -415,7 +415,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         run_program("/sbin/busybox", "mount", "/system");
         run_program("/sbin/busybox", "mount", "/vendor");
         package_extract_file("tools/arise/permissive.sh", "/system/su.d/permissive.sh");
-        set_perm(0, 0, 0755, "/system/su.d/permissive.sh");
+        set_metadata("/system/su.d/permissive.sh", "uid", 0, "gid", 0, "fmode", 0755);
         package_extract_dir("tools/arise/am3d", "/tmp/am3d");
         run_program("/sbin/busybox", "unzip", "/tmp/am3d/am3d.zip", "META-INF/com/google/android/*", "-d", "/tmp/am3d");
         run_program("/sbin/busybox", "sh", "/tmp/am3d/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/am3d/am3d.zip");
@@ -430,7 +430,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       then
       ui_print("Installing gh tweak.prop");
       package_extract_file("tools/arise/gh.sh","/tmp/gh.sh");
-      set_perm(0, 0, 0777, "/tmp/gh.sh");
+      set_metadata("/tmp/gh.sh", "uid", 0, "gid", 0, "fmode", 0777);
       run_program("/tmp/gh.sh");
     endif;
 
@@ -439,7 +439,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       then
       ui_print("Installing Sono tweak.prop");
       package_extract_file("tools/arise/sono.sh","/tmp/sono.sh");
-      set_perm(0, 0, 0777, "/tmp/sono.sh");
+      set_metadata("/tmp/sono.sh", "uid", 0, "gid", 0, "fmode", 0777);
       run_program("/tmp/sono.sh");
     endif;
 
@@ -448,7 +448,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       then
       ui_print("Installing smee tweak.prop");
       package_extract_file("tools/arise/smee.sh","/tmp/smee.sh");
-      set_perm(0, 0, 0777, "/tmp/smee.sh");
+      set_metadata("/tmp/smee.sh", "uid", 0, "gid", 0, "fmode", 0777);
       run_program("/tmp/smee.sh");
     endif;
 
@@ -457,7 +457,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       then
       ui_print("Installing rp tweak.prop");
       package_extract_file("tools/arise/rp.sh","/tmp/rp.sh");
-      set_perm(0, 0, 0777, "/tmp/rp.sh");
+      set_metadata("/tmp/rp.sh", "uid", 0, "gid", 0, "fmode", 0777);
       run_program("/tmp/rp.sh");
     endif;
 
