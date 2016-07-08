@@ -1,12 +1,12 @@
 #!/bin/bash
 # FreedomOS build script
 # Author : Nevax
+# Contributor : TimVNL
 
 VERSION="0"
 OOS=OnePlus3Oxygen_16_OTA_011_all_1607052050_0e5983ace5314161
 SU=UPDATE-SuperSU-v2.76-20160630161323
 XPOSED_APK=XposedInstaller_3.0_alpha4
-DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER
 MENU=0
 
 echo "#################################"
@@ -94,24 +94,10 @@ else
    curl -o download/$XPOSED_APK.apk "http://forum.xda-developers.com/attachment.php?attachmentid=3383776&d=1435601440"
    echo "Done!"
 fi
-echo""
-
-if [ -f "download/$DIVINE.zip" ];
-then
-   echo "File $DIVINE.zip exist."
-else
-   echo "File $DIVINE.zip does not exist" >&2
-   echo "Downloading.."
-   curl -o download/$DIVINE.zip "http://fr1.androidfilehost.com/dl/b-p7sG3YlA4BZN8XoW7tbQ/1467379312/24533103863141857/$DIVINE.zip"
-   echo ""
-   echo "testing zip integrity"
-   zip -T download/$DIVINE.zip
-   echo "Done!"
-fi
-
 echo ""
-echo "testing downloaded zip integrity"
-zip -T download/*.zip
+echo ""
+#echo "testing downloaded zip integrity"
+#zip -T download/*.zip
 
 echo ""
 echo "Copy OOS"
@@ -132,8 +118,8 @@ echo ""
 echo "Add xposed apk"
 cp download/$XPOSED_APK.apk tmp/tools/xposed/
 echo ""
-echo "Add Divine"
-unzip -o "download/$DIVINE.zip" -d "tmp/tools/divine/"
+echo "Set version in updater-script"
+sed -i "s:!version!:$VERSION:" tmp/META-INF/com/google/android/updater-script
 echo ""
 echo "Set version in aroma"
 sed -i.bak "s:!version!:$VERSION:" tmp/META-INF/com/google/android/aroma-config

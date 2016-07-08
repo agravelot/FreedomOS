@@ -226,13 +226,51 @@ selectbox("<~dpi.tittle>", "<~dpi.tittle2>", "@update", "dpi.prop",
 checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
          "<~mod.tittle3>", "", 2,
            "<~supersu>", "<~info.supersu>", 1,
-           "<~divine>", "<~info.divine>", 1,
+           "<~arise>", "<~info.arise>", 1,
            "<~xposed>", "<~info.xposed>", 0,
            "<~adaway>", "<~info.adaway>", 1,
            "<~adb>", "<~info.adb>", 0,
            "<~layer>", "<~info.layer>", 1
          );
 endif;
+
+if
+  prop("mod.prop", "item.1.2") == "1"
+    then
+     selectbox(
+ "Tweakprop","","","tweak.prop",
+ "Tweakprops","",2,
+ "guitardedhero","",1,
+ "sonophilos","",0,
+ "smeejaytee","",0,
+ "ratchetpanda","",0,
+ "custom","",0,
+ "no tweakprop","",0
+ );
+
+ selectbox(
+ "Apps","","","dolby.prop",
+ "Dolby","",2,
+ "dolby atmos new","",1,
+ "dd+","",0,
+ "both","",0,
+ "neither","",0,
+ "dolby atmos old","more compatibility",0,
+ "AM3D","not for jb/kk",2,
+ "am3d","",1,
+ "no am3d","",0
+ );
+
+ selectbox(
+ "RatchetPanda","","","rp.prop",
+
+ "RP Custom","Additions to ARISE for a better experience",2,
+ "Yes, install","Take a leap of faithful",1,
+ "No, don't install","Your not hurting my feelings",0
+ );
+
+ endif;
+
 
 #Kernel
 #selectbox("<~kernel.tittle>", "<~kernel.tittle2>", "@update", "kernel.prop",

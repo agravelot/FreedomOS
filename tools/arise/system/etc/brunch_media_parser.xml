@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LgeMediaParsers>
+	<MediaParser type="video/avi" name="LGAVIExtractor"/>
+	<MediaParser type="video/x-ms-asf" name="LGASFExtractor"/>
+	<MediaParser type="video/flv" name="LGFLVExtractor"/>
+	<MediaParser type="video/ogm" name="LGOGMExtractor"/>
+	<MediaParser type="audio/vnd.qcelp" name="LGQCPExtractor"/>
+	<MediaParser type="video/mp4" name="LGMP4Extractor"/>
+	<MediaParser type="video/x-matroska" name="LGMKVExtractor"/>
+	<MediaParser type="audio/aac-adts" name="LGAACExtractor"/>
+	<MediaParser type="audio/aac-adif" name="LGAACExtractor"/>
+	<MediaParser type="audio/3gpp" name="LGAMRExtractor"/>
+	<MediaParser type="audio/amr-wb" name="LGAMRExtractor"/>
+	<MediaParser type="audio/flac" name="LGFLACExtractor"/>
+	<MediaParser type="audio/ac3" name="LGAC3Extractor"/>
+	<MediaParser type="audio/mpeg" name="LGMP3Extractor"/>
+	<MediaParser type="video/mp2ts" name="LGMPEG2TSExtractor"/>
+	<MediaParser type="video/mp2p" name="LGMPEG2PSExtractor"/>
+	<MediaParser type="audio/x-wav" name="LGWAVExtractor"/>
+	<MediaParser type="video/wvm" name="WVMExtractor"/>
+	<MediaParser type="application/ogg" name="OGGExtractor"/>
+	<MediaParser type="audio/midi" name="LGMidiExtractor"/>
+	<MediaParser type="audio/x-dff" name="LGDFFExtractor"/>
+	<MediaParser type="audio/x-dsf" name="LGDSFExtractor"/>
+</LgeMediaParsers>

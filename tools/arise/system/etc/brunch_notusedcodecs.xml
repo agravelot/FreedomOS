@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Codecs>
+	<NoUseCodecTypes>
+		<Codec key="NOUSE:VIDEO:MPEG2" value="video/mpeg2"/>
+		<Codec key="NOUSE:VIDEO:S263" value="video/s263"/>
+		<Codec key="NOUSE:AUDIO:DTS" value="audio/dts"/>
+		<Codec key="NOUSE:AUDIO:QCELP" value="audio/qcelp"/>
+		<Codec key="NOUSE:AUDIO:EVRC" value="audio/evrc"/>
+		<Codec key="NOUSE:AUDIO:X_MS_WMA1" value="audio/x-ms-wma1"/>
+		<Codec key="NOUSE:AUDIO:X_MS_WMA2" value="audio/x-ms-wma2"/>
+		<Codec key="NOUSE:AUDIO:X_MS_WMA3" value="audio/x-ms-wma3"/>
+		<Codec key="NOUSE:VIDEO:X_MS_WMV1" value="video/x-ms-wmv1"/>
+		<Codec key="NOUSE:VIDEO:X_MS_WMV2" value="video/x-ms-wmv2"/>
+		<Codec key="NOUSE:VIDEO:X_MS_WMV3" value="video/x-ms-wmv3"/>
+		<Codec key="NOUSE:VIDEO:X_MS_VC1" value="video/x-ms-vc1"/>
+		<Codec key="NOUSE:VIDEO:DIVX311" value="video/divx311"/>
+	</NoUseCodecTypes>
+</Codecs>

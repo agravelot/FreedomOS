@@ -1,0 +1,154 @@
+﻿### LICENSE:
+#
+# Copyright (C) 2011 Ahmad Amarullah ( http://amarullz.com/ )
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+### FILE INFO:
+#
+# AROMA Installer 2.70 - AROMA Installer Test Script Configuration
+#       (c) 2011-2012 by Ahmad Amarullah
+#           amarullz - xda-developers
+#           http://www.amarullz.com/
+#
+#       Binary Version  : 2.70RC2
+#       Binary Codename : Flamboyan
+#
+### INFO:
+#
+# * AROMA Resource Dir  = META-INF/com/google/android/aroma
+#
+# * AROMA Temporary Dir = /tmp/aroma/
+
+ini_set("rom_name",             "ARISE");
+ini_set("rom_version",          "RC7");
+ini_set("rom_author",           "Team ARISE");
+ini_set("rom_device",           "All devices");
+ini_set("rom_date",             "Today");
+
+ini_set("force_colorspace","rgba");
+ini_set("dp","8");
+
+fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
+fontresload( "1", "ttf/Roboto-Regular.ttf", "18" ); 
+
+viewbox(
+    "Welcome",
+    "You are about to flash <b>"+
+	  ini_get("rom_name")+
+	"</b>\nfor <b>"+ini_get("rom_device")+"</b>.\n\n"+
+    
+	
+      "  VERSION\t: <b><#selectbg_g>"+ini_get("rom_version")+"</#></b>\n"+
+      "  AUTHOR \t: <b><#selectbg_g>"+ini_get("rom_author")+"</#></b>\n"+
+      "  RELEASED\t: <b><#selectbg_g>"+ini_get("rom_date")+"</#></b>\n\n\n"+
+
+    "Press Next to Continue...",
+    "@welcome"
+);
+
+selectbox(
+  "Android Version","","","info.prop",
+
+  "Version","",2,
+  "JB/KK","",0,
+  "LP/MM","",0,
+  "N Preview","",0
+);
+selectbox(
+  "Manufacturer","","","phone.prop",
+
+  "Manufacturer","",2,
+  "sony","",0,
+  "not sony","",1,
+
+"Manufacturer","",2,
+  "lg","",0,
+  "not lg","",1,
+
+"Manufacturer","",2,
+  "htc","",0,
+  "not htc","",1
+);
+selectbox(
+  "Tweakprop","","","tweak.prop",
+  "guitardedhero","",1,
+  "sonophilos","",0,
+  "smeejaytee","",0,
+  "custom","",0,
+  "no tweakprop","",0
+);
+
+selectbox(
+  "Presets","","","preset.prop",
+  "Audio Effects","",2,
+  "exodus","",1,
+  "xplay3s","",0,
+
+  "HTC Effects","",2,
+  "boomsound","",1,
+  "harmon kardon","",0,
+  "jbl","",0
+);
+
+selectbox(
+  "Dolby","","","dolby.prop",
+  "Dolby","",2,
+  "dolby atmos","",1,
+  "dd+","",0,
+  "both","",0,
+  "neither","",0
+);
+
+selectbox(
+  "Profiles","","","dts.prop",
+
+  "DTS Config","Use whichever one works for you",2,
+  "system install","For use on Android N",0,
+  "data install","For use on LP/MM",1
+);
+
+menubox(
+  "ARISE Installer",
+  "Ready to install",
+  "@info",
+  "menu.prop",
+  "Install ARISE","","@install",
+  "Abort installation","","@default"
+);
+
+if prop("menu.prop","selected")=="2"
+then
+  exit("");
+endif;
+
+setvar("retstatus",
+install(
+  "Installing",
+  "Installing ARISE...\nPlease wait...",
+  "@install")
+);
+
+ini_set("text_next", "Finish");
+
+if getvar("retstatus")=="0" then
+  viewbox(
+  "Installation Completed",
+  "<#080>Congratulations...</#>\n\n"+
+  "ARISE has been installed successfully!\n\n"+
+  "Enjoy!",
+  "@info"
+);
+else
+   viewbox("Installation Failed","\n\nInstaller Status: "+ getvar("retstatus"),"@alert");
+endif;

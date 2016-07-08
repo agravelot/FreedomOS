@@ -1,0 +1,42 @@
+#!/system/bin/sh
+
+src_dir="/system/etc/dts/"
+dest_dir="/data/dts/"
+
+check_file="attached0.dtscs"
+cp $src_dir$check_file $dest_dir$check_file
+chmod 644 $dest_dir$check_file
+
+check_file="attached1.dtscs"
+cp $src_dir$check_file $dest_dir$check_file
+chmod 644 $dest_dir$check_file
+
+check_file="bluetooth0.dtscs"
+cp $src_dir$check_file $dest_dir$check_file
+chmod 644 $dest_dir$check_file
+
+check_file="combo0.dtscs"
+cp $src_dir$check_file $dest_dir$check_file
+chmod 644 $dest_dir$check_file
+
+check_file="lineout0.dtscs"
+cp $src_dir$check_file $dest_dir$check_file
+chmod 644 $dest_dir$check_file
+
+check_file="other.dtscs"
+cp $src_dir$check_file $dest_dir$check_file
+chmod 644 $dest_dir$check_file
+
+check_file="configurator.cfg"
+cp $src_dir$check_file $dest_dir$check_file
+chmod 644 $dest_dir$check_file
+
+check_file="eagle-lic.key"
+cp $src_dir$check_file $dest_dir$check_file
+chmod 644 $dest_dir$check_file
+
+check_file="m6-lic.key"
+cp $src_dir$check_file $dest_dir$check_file
+chmod 644 $dest_dir$check_file
+
+dts_configurator 
