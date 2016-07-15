@@ -48,25 +48,25 @@ main.changelog.info=FreedomOS changelogs
 main.exit=Exit
 main.exit.info=Exit FreedomOS installer
 
-install_mod.tittle=Choose your installation mod
+install_mod.tittle=FreedomOS installer
 install_mod.tittle2=Select your settings
-install_mod.sub_tittle=Install
+install_mod.sub_tittle=Installation method
 
 custom=Custom
 stock=Stock
-assert.tittle=Check Assert
+assert.tittle=Checking the assert
 assert_yes=Yes (Recommended)
 assert_no=No
-reboot.tittle=Reboot ?
-reboot_system=System
-reboot_no=Nop
+sha1.tittle=Checking the integrity of the system after installation
+sha1_yes=Yes, check the system
+info.sha1_yes=Recommended
+sha1_no=No, don't check the system
+info.sha1_no=For dirty flash, not recommended
 
-info.custom=GApps, Root and misc...
-info.stock=Original stock, no root
+info.custom=The Freedom way
+info.stock=Original OnePlus stock, no root
 info.assert_yes=Check variant in build.prop
 info.assert_no=Do not check variant in build.prop
-info.reboot_system=Reboot to system
-info.reboot_no=.
 
 sys.title=System information
 sys.info.wait=Get system informations...
