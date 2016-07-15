@@ -39,6 +39,8 @@ system/*
 output/*
 download/*
 
+!download/*SuperSU*.zip
+!download/*BEATS*.zip
 !system/EMPTY_DIRECTORY
 !tmp/EMPTY_DIRECTORY
 !output/EMPTY_DIRECTORY
