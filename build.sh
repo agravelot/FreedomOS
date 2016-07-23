@@ -7,6 +7,7 @@ OOS=OnePlus3Oxygen_16_OTA_011_all_1607052050_0e5983ace5314161
 SU=UPDATE-SuperSU-v2.76-20160630161323
 XPOSED_APK=XposedInstaller_3.0_alpha4
 DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER
+DEVICE=op3
 MENU=0
 
 echo "#################################"
@@ -110,8 +111,8 @@ else
 fi
 
 echo ""
-echo "testing downloaded zip integrity"
-zip -T download/*.zip
+#echo "testing downloaded zip integrity"
+#zip -T download/*.zip
 
 echo ""
 echo "Copy OOS"
@@ -155,30 +156,30 @@ then
   cd tmp/
   echo ""
   echo "Making zip file"
-  zip -r9 "FreedomOS-op3-nevax-$VERSION.zip" * -x EMPTY_DIRECTORY
+  zip -r9 "FreedomOS-$DEVICE-nevax-$VERSION.zip" * -x EMPTY_DIRECTORY
   echo "----"
   cd ..
   echo ""
   echo "Copy Unsigned in output folder"
-  cp tmp/FreedomOS-op3-nevax-$VERSION.zip output/FreedomOS-op3-nevax-$VERSION.zip
+  cp tmp/FreedomOS-$DEVICE-nevax-$VERSION.zip output/FreedomOS-$DEVICE-nevax-$VERSION.zip
   echo ""
   echo "testing zip integrity"
-  zip -T output/FreedomOS-op3-nevax-$VERSION.zip
+  zip -T output/FreedomOS-$DEVICE-nevax-$VERSION.zip
   echo ""
   echo "Generating md5 hash"
-  openssl md5 "output/FreedomOS-op3-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-op3-nevax-$VERSION.zip.md5"
+  openssl md5 "output/FreedomOS-$DEVICE-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$DEVICE-nevax-$VERSION.zip.md5"
   echo ""
   echo "SignApk....."
-  java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-op3-nevax-$VERSION.zip" "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip"
+  java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-$DEVICE-nevax-$VERSION.zip" "tmp/FreedomOS-$DEVICE-nevax-$VERSION-signed.zip"
   echo ""
   echo "Move signed zip file in output folder"
-  mv "tmp/FreedomOS-op3-nevax-$VERSION-signed.zip" "output/"
+  mv "tmp/FreedomOS-$DEVICE-nevax-$VERSION-signed.zip" "output/"
   echo ""
   echo "testing zip integrity"
-  zip -T "output/FreedomOS-op3-nevax-$VERSION-signed.zip"
+  zip -T "output/FreedomOS-$DEVICE-nevax-$VERSION-signed.zip"
   echo ""
   echo "Generating md5 hash"
-  openssl md5 "output/FreedomOS-op3-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "output/FreedomOS-op3-nevax-$VERSION-signed.zip.md5"
+  openssl md5 "output/FreedomOS-$DEVICE-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "output/FreedomOS-$DEVICE-nevax-$VERSION-signed.zip.md5"
 fi
 
 if [ "$MENU" = 2 ];
@@ -186,26 +187,26 @@ then
   cd tmp/
   echo ""
   echo "Making zip file"
-  zip -r1 "FreedomOS-op3-nevax-$VERSION.zip" * -x EMPTY_DIRECTORY
+  zip -r1 "FreedomOS-$DEVICE-nevax-$VERSION.zip" * -x EMPTY_DIRECTORY
   echo "----"
   echo ""
   echo "testing zip integrity"
-  zip -T "FreedomOS-op3-nevax-$VERSION.zip"
+  zip -T "FreedomOS-$DEVICE-nevax-$VERSION.zip"
   echo ""
   cd ..
   echo "Move unsigned zip file in output folder"
-  mv "tmp/FreedomOS-op3-nevax-$VERSION.zip" "output/"
+  mv "tmp/FreedomOS-$DEVICE-nevax-$VERSION.zip" "output/"
   echo ""
   echo "Generating md5 hash"
-  openssl md5 "output/FreedomOS-op3-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-op3-nevax-$VERSION.zip.md5"
+  openssl md5 "output/FreedomOS-$DEVICE-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$DEVICE-nevax-$VERSION.zip.md5"
 fi
 
 echo ""
 echo "testing final zip integrity"
-zip -T output/FreedomOS-op3-nevax-$VERSION*.zip
+zip -T output/FreedomOS-$DEVICE-nevax-$VERSION*.zip
 echo ""
 echo "Clear tmp/ foler..."
 rm -rf "tmp/*"
 touch "tmp/EMPTY_DIRECTORY"
 echo ""
-echo "Finish! You can find the build here: output/FreedomOS-op3-nevax-$VERSION.zip"
+echo "Finish! You can find the build here: output/FreedomOS-$DEVICE-nevax-$VERSION.zip"
