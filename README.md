@@ -1,6 +1,6 @@
-#FreedomOS-oneplus3
+#FreedomOS
 
-![alt tag](https://raw.githubusercontent.com/Nevax07/FreedomOS-oneplus3/master/banner_small.png)
+![alt tag](https://raw.githubusercontent.com/Nevax07/FreedomOS/master/home_banner.png)
 
 **Required :**
 - Linux or Mac
@@ -8,6 +8,20 @@
 - Packages : `zip curl openssl`
 - `Java` is also needed for signed the zip file **(optional)**.
 I don't know which version is needed, i use `java-8-jdk` on my Arch Linux.
+
+**Devices :**
+OnePlus 3
+```
+git clone https://github.com/Nevax07/FreedomOS.git -b op3
+```
+OnePlus 2
+```
+git clone https://github.com/Nevax07/FreedomOS.git -b op2
+```
+OnePlus 1
+```
+git clone https://github.com/Nevax07/FreedomOS.git -b bacon
+```
 
 **How to build :**
 
@@ -21,4 +35,4 @@ Once you have the needed files, you don't need to re-download them.
 #### Join the beta team
 We use Slack, just give me your email address in PM on XDA and i will invite you in the team.
 
-XDA thread : http://forum.xda-developers.com/oneplus-3/development/rom-freedomos-1-0-t3409348
+XDA usernamee : NevaX1
