@@ -3,11 +3,11 @@
 # Author : Nevax
 
 VERSION="0"
-OOS=OnePlus3Oxygen_16_OTA_011_all_1607052050_0e5983ace5314161
+OOS=OnePlus_Bacon_OxygenOS_201601190107
 SU=UPDATE-SuperSU-v2.76-20160630161323
 XPOSED_APK=XposedInstaller_3.0_alpha4
 DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER
-DEVICE=op3
+DEVICE=bacon
 MENU=0
 
 echo "#################################"
@@ -57,7 +57,7 @@ then
 else
    echo "File $OOS.zip does not exist" >&2
    echo "Downloading.."
-   curl -o download/$OOS.zip "http://otafs.coloros.com/patch/amazone2/GLO/OnePlus3Oxygen/OnePlus3Oxygen_16.A.11_GLO_011_1607052050/$OOS.zip"
+   curl -o download/$OOS.zip "http://oxygenos.oneplus.net/$OOS.zip"
    echo ""
    echo "testing zip integrity"
    zip -T download/$OOS.zip
