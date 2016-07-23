@@ -26,4 +26,4 @@ git clone https://github.com/Nevax07/FreedomOS.git -b bacon
 #### Join the beta team
 We use Slack, just give me your email address in PM on XDA and i will invite you in the team.
 
-XDA usernamee : NevaX1
+XDA username : NevaX1
