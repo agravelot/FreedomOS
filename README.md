@@ -1,6 +1,6 @@
-#FreedomOS-oneplus3
+#FreedomOS-oneplus2
 
-![alt tag](https://raw.githubusercontent.com/Nevax07/FreedomOS-oneplus3/master/banner_small.png)
+![alt tag](https://raw.githubusercontent.com/Nevax07/FreedomOS/op2/banner.png)
 
 **Required :**
 - Linux or Mac
