@@ -186,6 +186,7 @@ then
   echo ""
   echo "Generating md5 hash"
   openssl md5 "output/FreedomOS-$DEVICE-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "output/FreedomOS-$DEVICE-nevax-$VERSION-signed.zip.md5"
+  #We doesn't test the final, because it doesn't work with the signed zip.
 fi
 
 if [ "$MENU" = 2 ];
@@ -205,11 +206,11 @@ then
   echo ""
   echo "Generating md5 hash"
   openssl md5 "output/FreedomOS-$DEVICE-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$DEVICE-nevax-$VERSION.zip.md5"
+  echo ""
+  echo "testing final zip integrity"
+  zip -T output/FreedomOS-$DEVICE-nevax-$VERSION*.zip
 fi
 
-echo ""
-echo "testing final zip integrity"
-zip -T output/FreedomOS-$DEVICE-nevax-$VERSION*.zip
 echo ""
 echo "Clear tmp/ foler..."
 rm -rf "tmp/*"
