@@ -162,7 +162,7 @@ then
   cd tmp/
   echo ""
   echo "Making zip file"
-  zip -r9 "FreedomOS-$DEVICE-nevax-$VERSION.zip" * -x EMPTY_DIRECTORY
+  zip -r9 "FreedomOS-$DEVICE-nevax-$VERSION.zip" * -x "*EMPTY_DIRECTORY*" -x "*.*"
   echo "----"
   cd ..
   echo ""
@@ -193,7 +193,7 @@ then
   cd tmp/
   echo ""
   echo "Making zip file"
-  zip -r1 "FreedomOS-$DEVICE-nevax-$VERSION.zip" * -x EMPTY_DIRECTORY
+  zip -r1 "FreedomOS-$DEVICE-nevax-$VERSION.zip" * -x "*EMPTY_DIRECTORY*" -x "*.*"
   echo "----"
   echo ""
   echo "testing zip integrity"
