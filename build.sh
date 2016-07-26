@@ -116,7 +116,7 @@ echo ""
 
 echo ""
 echo "Copy OOS"
-cp -rf system/* tmp/
+cp -rvf system/* tmp/
 echo ""
 echo "Remove META-INF"
 rm -rf "tmp/META-INF"
