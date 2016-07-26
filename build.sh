@@ -4,7 +4,7 @@
 # Contributor : TimVNL
 
 VERSION="0"
-URLOOS=https://s3.amazonaws.com/oxygenos.oneplus.net/0
+URLOOS=https://s3.amazonaws.com/oxygenos.oneplus.net
 OOS=OnePlus3Oxygen_16_OTA_012_all_1607251520_5926eed75c18470f
 SU=UPDATE-SuperSU-v2.76-20160630161323
 XPOSED_APK=XposedInstaller_3.0_alpha4
