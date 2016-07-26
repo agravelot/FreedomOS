@@ -133,6 +133,10 @@ echo ""
 echo "Add xposed apk"
 cp download/$XPOSED_APK.apk tmp/tools/xposed/
 echo ""
+echo "Add wallpaper by badboy47"
+mkdir -p tmp/media/wallpaper
+cp media/wallpaper/* tmp/media/wallpaper
+echo ""
 echo "Add Divine"
 unzip -o "download/$DIVINE.zip" -d "tmp/tools/divine/"
 echo ""

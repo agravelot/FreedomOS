@@ -202,6 +202,7 @@ xposed=Xposed Installer
 adaway=Adaway
 adb=Enable ADB
 layer=RRO Layers
+fos_wallpapers=FreedomOS wallpapers
 
 info.supersu=SuperSU v2.76 by Chainfire
 info.divine=Divine beats by Theroyalseeker
@@ -209,6 +210,7 @@ info.xposed=Xposed Installer application only
 info.adaway=Ad-Blocker for Android
 info.adb=Android Debugging Bridge
 info.layer=Layers Manager
+info.fos_wallpapers=Designed by @badboy47
 
 kernel.tittle=Select your kernel
 kernel.tittle2=

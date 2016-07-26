@@ -400,6 +400,21 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
                              "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
   endif;
 
+  #WALLPAPER
+  if
+    (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
+    then
+      set_progress(0.900000);
+      ui_print(" ");
+      ui_print("@ Installing FreedomOS wallpaper by badboy47");
+      ui_print(" ");
+      ui_print("They should be available in /sdcard/FreedomOS_wallpaper");
+      run_program("/sbin/busybox", "mount", "/data");
+      package_extract_dir("media/wallpaper", "/sdcard/FreedomOS_wallpaper");
+      set_metadata_recursive("/sdcard/FreedomOS_wallpaper", "uid",
+                             1015, "gid", 1015, "dmode", 0755, "fmode", 0644);
+endif;
+
   #DPI
   set_progress(0.950000);
   ui_print(" ");
