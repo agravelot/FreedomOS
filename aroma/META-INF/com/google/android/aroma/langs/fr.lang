@@ -62,6 +62,11 @@ sha1_yes=Oui, vérifier le système
 info.sha1_yes=Recommandé
 sha1_no=Non, ne pas vérifier le système
 info.sha1_no=Pour dirty flash, non recommandé
+addon.tittle=Sauvegarder/Réstaurer /system/addon.d/
+addon_yes=Oui
+info.addon_yes=Recommandédirty flash
+addon_no=Non
+info.addon_no=Pour flash propre
 
 info.custom=Méthode FreedomOS
 info.stock=Stock d'origine, non modifié

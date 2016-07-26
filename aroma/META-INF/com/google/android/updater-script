@@ -35,6 +35,15 @@ run_program("/sbin/busybox", "dd", "if=/dev/block/bootdevice/by-name/recovery",
 
 ifelse(is_mounted("/system"), unmount("/system"));
 
+#Backup addond
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
+  then
+  ui_print("@  Backup up your addon.d ");
+  package_extract_dir("tools/addon", "/tmp/tools/addon");
+  set_metadata_recursive("/tmp/tools/addon", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
+  run_program("/tmp/tools/addon/backuptool.sh", "backup");
+endif;
+
 ui_print(" ");
 ui_print("@  Installing the system");
 ui_print(" ");
@@ -167,8 +176,17 @@ package_extract_file("tmp/your_recovery.img",
                      "/dev/block/bootdevice/by-name/recovery");
 delete ("tmp/your_recovery.img");
 
+# Restoring Addon.d
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
+  then
+  ui_print(" ");
+  ui_print("Restoring your addon.d... ");
+  run_program("/tmp/tools/addon/backuptool.sh", "restore");
+endif;
+
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
+      ifelse(is_mounted("/system"), unmount("/system"));
       ui_print(" ");
       ui_print("@  Extracting temp files ");
       package_extract_dir("tools/", "/tmp/tools");

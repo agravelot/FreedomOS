@@ -62,6 +62,11 @@ sha1_yes=Yes, check the system
 info.sha1_yes=Recommended
 sha1_no=No, don't check the system
 info.sha1_no=For dirty flash, not recommended
+addon.tittle=Backup/Restore /system/addon.d/
+addon_yes=Yes
+info.addon_yes=Recommended for dirty flash
+addon_no=No
+info.addon_no=For clean flash
 
 info.custom=The Freedom way
 info.stock=Original OnePlus stock, no root
