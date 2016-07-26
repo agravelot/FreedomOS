@@ -1,9 +1,11 @@
 #!/bin/bash
 # FreedomOS build script
 # Author : Nevax
+# Contributor : TimVNL
 
 VERSION="0"
-OOS=OnePlus3Oxygen_16_OTA_011_all_1607052050_0e5983ace5314161
+URLOOS=https://s3.amazonaws.com/oxygenos.oneplus.net/0
+OOS=OnePlus3Oxygen_16_OTA_012_all_1607251520_5926eed75c18470f
 SU=UPDATE-SuperSU-v2.76-20160630161323
 XPOSED_APK=XposedInstaller_3.0_alpha4
 DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER
@@ -57,7 +59,7 @@ then
 else
    echo "File $OOS.zip does not exist" >&2
    echo "Downloading.."
-   curl -o download/$OOS.zip "http://otafs.coloros.com/patch/amazone2/GLO/OnePlus3Oxygen/OnePlus3Oxygen_16.A.11_GLO_011_1607052050/$OOS.zip"
+   curl -o download/$OOS.zip "$URLOOS/$OOS.zip"
    echo ""
    echo "testing zip integrity"
    zip -T download/$OOS.zip

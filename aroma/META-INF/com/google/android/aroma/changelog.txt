@@ -1,7 +1,18 @@
-1.1.3
-  Adding option for user to disable system verification after installation, that mean a better support for dirty flash.
-        I do not recommend any dirty flash!
-  Some under the hood clean and optimization.
+1.2
+  Adding option for user to disable system verification after installation.
+  Adding backup/restore script for addon.d.
+  The both mean a better support for dirty flash.
+      |-> I do not recommend any dirty flash!
+  Adding FreedomOS wallpapers designed by @badboy47.
+      |-> Available in /sdcard/FreedomOS_wallpaper.
+  Updated to OxygenOS 3.2.2:
+      - Improved notification management in doze.
+      - Addressed alert slider/silent mode issue.
+      - Disabled fingerprint sensor while in pocket.
+      - Added NFC toggle in quick settings.
+      - Improved noise cancellation in video recording.
+      - Updated 4K video recording codec.
+      - Added latest security patches and various optimizations.
 
 1.1.2
   Update to OxygenOS 3.2.1.
