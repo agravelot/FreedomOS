@@ -124,20 +124,20 @@ echo "Remove META-INF"
 rm -rf "tmp/META-INF"
 echo ""
 echo "Add aroma"
-cp -R "aroma/META-INF" "tmp/"
+cp -vR "aroma/META-INF" "tmp/"
 echo ""
 echo "Add tools"
-cp -R "tools" "tmp/"
+cp -vR "tools" "tmp/"
 echo ""
 echo "Add SuperSU"
-cp download/$SU.zip tmp/tools/su/su.zip
+cp -v download/$SU.zip tmp/tools/su/su.zip
 echo ""
 echo "Add xposed apk"
-cp download/$XPOSED_APK.apk tmp/tools/xposed/
+cp -v download/$XPOSED_APK.apk tmp/tools/xposed/
 echo ""
 echo "Add wallpaper by badboy47"
 mkdir -p tmp/media/wallpaper
-cp media/wallpaper/* tmp/media/wallpaper
+cp -v media/wallpaper/* tmp/media/wallpaper
 echo ""
 echo "Add Divine"
 unzip -o "download/$DIVINE.zip" -d "tmp/tools/divine/"
@@ -167,7 +167,7 @@ then
   cd ..
   echo ""
   echo "Copy Unsigned in output folder"
-  cp tmp/FreedomOS-$DEVICE-nevax-$VERSION.zip output/FreedomOS-$DEVICE-nevax-$VERSION.zip
+  cp -v tmp/FreedomOS-$DEVICE-nevax-$VERSION.zip output/FreedomOS-$DEVICE-nevax-$VERSION.zip
   echo ""
   echo "testing zip integrity"
   zip -T output/FreedomOS-$DEVICE-nevax-$VERSION.zip
