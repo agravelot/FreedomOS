@@ -865,7 +865,7 @@ endif;
 
 set_progress(0.990000);
 ui_print("@  Delete temp files..");
-delete_recursive("/tmp/tools");
+delete_recursive("/tmp");
 ui_print(" ");
 ui_print(" ");
 set_progress(1.00000);
