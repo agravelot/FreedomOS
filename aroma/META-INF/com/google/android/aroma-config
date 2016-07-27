@@ -241,6 +241,13 @@ checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
          );
 endif;
 
+#Theme
+selectbox("<~theme.tittle>", "<~theme.tittle2>", "@update", "theme.prop",
+           "<~notheme>", "<~info.notheme>", 0,
+           "<~layer>", "<~info.layer>", 0,
+           "<~substratum>", "<~info.substratum>", 1
+         );
+
 #Kernel
 #selectbox("<~kernel.tittle>", "<~kernel.tittle2>", "@update", "kernel.prop",
 #          "<~kernel_stock>", "<~info.kernel_stock>", 1,

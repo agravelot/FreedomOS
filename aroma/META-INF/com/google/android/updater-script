@@ -430,23 +430,26 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
                              "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
   endif;
 
-  #WALLPAPER
+  #substratum
   if
-    (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
+    (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="2")
     then
-      set_progress(0.900000);
+      set_progress(0.950000);
       ui_print(" ");
-      ui_print("@ Installing FreedomOS wallpaper by badboy47");
-      ui_print(" ");
-      ui_print("They should be available in /sdcard/FreedomOS_wallpaper");
+      ui_print("@ Install Substratum");
       run_program("/sbin/busybox", "mount", "/data");
-      package_extract_dir("media/wallpaper", "/sdcard/FreedomOS_wallpaper");
-      set_metadata_recursive("/sdcard/FreedomOS_wallpaper", "uid",
-                             1023, "gid", 1023, "dmode", 0755, "fmode", 0644);
-endif;
+      package_extract_dir("tools/substratum/projekt.substratum-1",
+                          "/data/app/projekt.substratum-1");
+      set_metadata_recursive("/data/app/projekt.substratum-1", "uid",
+                             1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+      set_metadata_recursive("/data/app/projekt.substratum-1/lib",
+                             "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
+      set_metadata_recursive("/data/app/projekt.substratum-1/oat",
+                             "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
+  endif;
 
   #DPI
-  set_progress(0.950000);
+  set_progress(0.960000);
   ui_print(" ");
   ui_print("@  Applying settings");
   ui_print(" ");
