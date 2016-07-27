@@ -18,7 +18,7 @@ ui_print("----------------------------------------------------------- ");
 ui_print(" ");
 ui_print(" ");
 
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   then getprop("ro.build.product") == "OnePlus3" ||
       abort("This package is for \"OnePlus3\" devices; this is a \"" +
             getprop("ro.build.product") + "\".");
@@ -36,7 +36,7 @@ run_program("/sbin/busybox", "dd", "if=/dev/block/bootdevice/by-name/recovery",
 ifelse(is_mounted("/system"), unmount("/system"));
 
 #Backup addond
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.4") == "1")
   then
   ui_print("@  Backup up your addon.d ");
   package_extract_dir("tools/addon", "/tmp/tools/addon");
@@ -57,7 +57,7 @@ set_progress(0.500000);
 ui_print("- Verifying the updated system image...");
 show_progress(0.55, "-30000");
 
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.3") == "1")
   then
   if range_sha1("/dev/block/bootdevice/by-name/system", "100,0,32770,32961,32963,
   33461,65535,65536,65538,66036,98303,98304,98306,98497,98499,98997,131071,131072,
@@ -176,7 +176,7 @@ package_extract_file("tmp/your_recovery.img",
 delete ("tmp/your_recovery.img");
 
 # Restoring Addon.d
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.4") == "1")
   then
   ui_print(" ");
   ui_print("Restoring your addon.d... ");
