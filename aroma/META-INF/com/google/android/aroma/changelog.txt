@@ -1,3 +1,8 @@
+1.2.1
+  Fix system verification
+  Fix inverted checkbox
+  Fix recovery restore
+  
 1.2
   Adding option for user to disable system verification after installation.
   Adding backup/restore script for addon.d.
