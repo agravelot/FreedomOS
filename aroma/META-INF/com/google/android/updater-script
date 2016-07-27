@@ -404,11 +404,19 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
-  #LAYERS
+  #Google DNS
   if
     (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "1")
     then
-      set_progress(0.880000);
+    set_progress(0.925000);
+    ui_print(" ");
+    ui_print("@  Google DNS");
+    ui_print(" ");
+    mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+    run_program("/tmp/tools/google_dns.sh");
+    ifelse(is_mounted("/system"), unmount("/system"));
+  endif;
+
       ui_print(" ");
       ui_print("@ Install ROO Layers Manager");
       run_program("/sbin/busybox", "mount", "/data");

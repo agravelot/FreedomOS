@@ -236,7 +236,7 @@ checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
            "<~xposed>", "<~info.xposed>", 0,
            "<~adaway>", "<~info.adaway>", 1,
            "<~adb>", "<~info.adb>", 0,
-           "<~layer>", "<~info.layer>", 1,
+           "<~dns>", "<~info.dns>", 1,
            "<~fos_wallpapers>", "<~info.fos_wallpapers>", 0
          );
 endif;
