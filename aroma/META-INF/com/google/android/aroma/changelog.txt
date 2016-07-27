@@ -3,6 +3,7 @@
   Fix inverted checkbox
   Fix recovery restore
   No more OnePlus recovery coming from the dark side
+  Fix permissions in Viper4Android folder
 
 1.2
   Adding option for user to disable system verification after installation.

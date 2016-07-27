@@ -339,6 +339,8 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       ui_print("Your device sound is going to be revolutionized      ");
       ui_print("Installing Viper4Android Profiles and IRS by A.R.I.S.E & Rika");
       package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
+      set_metadata_recursive("/sdcard/Viper4Android", "uid",
+                             1015, "gid", 1015, "dmode", 0755, "fmode", 0644);
       run_program("/sbin/busybox", "umount", "/system");
       run_program("/sbin/busybox", "umount", "/data");
       ui_print("Installation complete");
