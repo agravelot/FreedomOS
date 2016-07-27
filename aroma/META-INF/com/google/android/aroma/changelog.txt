@@ -1,7 +1,7 @@
 1.2.1
   Fix system verification
   Fix inverted checkbox
-  Fix recovery restore
+  Fix recovery restoration
   No more OnePlus recovery coming from the dark side
   Fix permissions in Viper4Android folder
 
