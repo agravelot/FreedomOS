@@ -417,6 +417,26 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     ifelse(is_mounted("/system"), unmount("/system"));
   endif;
 
+  #WALLPAPER
+  if
+    (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
+    then
+      set_progress(0.930000);
+      ui_print(" ");
+      ui_print("@ Installing FreedomOS wallpaper by badboy47");
+      ui_print(" ");
+      ui_print("They should be available in /sdcard/FreedomOS_wallpaper");
+      run_program("/sbin/busybox", "mount", "/data");
+      package_extract_dir("media/wallpaper", "/sdcard/FreedomOS_wallpaper");
+      set_metadata_recursive("/sdcard/FreedomOS_wallpaper", "uid",
+                             1023, "gid", 1023, "dmode", 0755, "fmode", 0644);
+  endif;
+
+  #LAYERS
+  if
+    (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="1")
+    then
+      set_progress(0.940000);
       ui_print(" ");
       ui_print("@ Install ROO Layers Manager");
       run_program("/sbin/busybox", "mount", "/data");
