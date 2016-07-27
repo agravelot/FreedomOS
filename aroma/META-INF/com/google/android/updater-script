@@ -171,9 +171,9 @@ package_extract_file("firmware-update/BTFM.bin",
 
 set_progress(0.710000);
 ui_print("- Restoring your recovery...");
-package_extract_file("tmp/your_recovery.img",
+package_extract_file("/tmp/your_recovery.img",
                      "/dev/block/bootdevice/by-name/recovery");
-delete ("tmp/your_recovery.img");
+delete ("/tmp/your_recovery.img");
 
 # Restoring Addon.d
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.4") == "1")
