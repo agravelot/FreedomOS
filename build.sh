@@ -215,7 +215,7 @@ then
   echo ""
   echo "Building patch file"
   mkdir -p tmp/patch/
-  cp -rvf device/$DEVICE/patch/ tmp/patch/
+  cp -rvf device/$DEVICE/patch/META-INF tmp/patch/
   cd tmp/patch/
   zip -r9 "patch-FreedomOS-$VERSION.zip" * -x "*EMPTY_DIRECTORY*"
   cd ../..
