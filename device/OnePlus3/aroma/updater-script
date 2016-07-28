@@ -19,8 +19,8 @@ ui_print(" ");
 ui_print(" ");
 
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
-  then getprop("ro.build.product") == "OnePlus3" ||
-      abort("This package is for \"OnePlus3\" devices; this is a \"" +
+  then getprop("ro.build.product") == "!assert!" ||
+      abort("This package is for \"!assert!\" devices; this is a \"" +
             getprop("ro.build.product") + "\".");
             ui_print("Assert : OK");
 endif;

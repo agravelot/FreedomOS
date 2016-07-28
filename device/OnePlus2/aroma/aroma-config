@@ -36,7 +36,7 @@ ini_set("rom_name", "FreedomOS");
 ini_set("rom_version", "!version!");
 ini_set("rom_author", "Nevax - xda@NevaX1");
 ini_set("rom_date", "!date!");
-ini_set("rom_device", "OnePlus3");
+ini_set("rom_device", "!device!");
 
 #Font
 fontresload("0", "ttf/Roboto-Regular.ttf", "13");

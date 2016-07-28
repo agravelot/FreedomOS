@@ -139,11 +139,16 @@ cp -v media/wallpaper/* tmp/media/wallpaper
 echo ""
 echo "Add Divine"
 unzip -o "download/$DIVINE.zip" -d "tmp/tools/divine/"
+
 echo ""
-
-
+echo "Set Assert in updater-script"
+sed -i.bak "s:!assert!:$ASSERT:" tmp/META-INF/com/google/android/updater-script
+echo ""
 echo "Set version in aroma"
 sed -i.bak "s:!version!:$VERSION:" tmp/META-INF/com/google/android/aroma-config
+echo ""
+echo "Set version in aroma"
+sed -i.bak "s:!device!:$DEVICE:" tmp/META-INF/com/google/android/aroma-config
 echo ""
 echo "Set date in aroma"
 sed -i.bak "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma-config

@@ -3,6 +3,7 @@
 ARCH=ARM64
 CODENAME=op2
 DEVICE=OnePlus2
+ASSERT=OnePlus2
 ROM_NAME=OnePlus2Oxygen_14_OTA_019_all_1606041303_bd42fc5cc5cc4ab2
 ROM_LINK=https://s3.amazonaws.com/oxygenos.oneplus.net/$ROM_NAME.zip
 ROM_ZIP=

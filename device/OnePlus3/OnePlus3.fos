@@ -3,6 +3,7 @@
 ARCH=ARM64
 CODENAME=op3
 DEVICE=OnePlus3
+ASSERT=OnePlus3
 ROM_NAME=OnePlus3Oxygen_16_OTA_012_all_1607251520_5926eed75c18470f
 ROM_LINK=https://s3.amazonaws.com/oxygenos.oneplus.net/$ROM_NAME.zip
 ROM_ZIP=
