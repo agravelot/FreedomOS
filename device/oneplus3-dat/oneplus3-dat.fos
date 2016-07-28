@@ -1,0 +1,10 @@
+# Freedom OS conf file
+
+ARCH=ARM64
+CODENAME=op3
+DEVICE=OnePlus3
+ROM_NAME=OnePlus3Oxygen_16_OTA_012_all_1607251520_5926eed75c18470f
+ROM_LINK=https://s3.amazonaws.com/oxygenos.oneplus.net/$ROM_NAME.zip
+SHA1_1=c60b9ff44f543b146c9cb15cd70e0882c1109446
+SHA1_2=3e19928129a78b7dc3578c3bdd668f8a39f5ceb2
+ROM_ZIP=

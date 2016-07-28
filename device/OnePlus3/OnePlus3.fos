@@ -1,0 +1,11 @@
+# Freedom OS conf file
+
+ARCH=ARM64
+CODENAME=op3
+DEVICE=OnePlus3
+ROM_NAME=OnePlus3Oxygen_16_OTA_012_all_1607251520_5926eed75c18470f
+ROM_LINK=https://s3.amazonaws.com/oxygenos.oneplus.net/$ROM_NAME.zip
+ROM_ZIP=
+SU=UPDATE-SuperSU-v2.76-20160630161323
+XPOSED_APK=XposedInstaller_3.0_alpha4
+DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER

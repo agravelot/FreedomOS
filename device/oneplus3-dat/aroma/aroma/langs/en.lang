@@ -1,0 +1,235 @@
+﻿#########################################################
+#	FreedomOS language file
+#
+#	English by: Nevax
+#
+#
+#
+
+text_ok=OK
+text_next=Next
+text_back=Back
+text_yes=Yes
+text_no=No
+text_about=About
+text_calibrating=Calibrating Tools
+text_quit=Quit Installation
+text_quit_msg=Are you sure ?
+
+welcome.title=Welcome
+welcome.text1=You are about to use
+welcome.version=VERSION
+welcome.codename=CODENAME
+welcome.updated=UPDATED
+welcome.next=Press Next to Continue the Installation...
+
+changelog.title=Changelogs
+changelog.desc=FreedomOS Changelogs
+language.title=Select language
+language.text=Select install language
+language.english=English
+language.english.info=Using English
+language.french=France
+language.french.info=Utiliser le Français
+
+welcome.microblog=Youtube
+rom.data=!date!
+text_finish=Finish
+model.title=Phone Model
+
+by=by
+
+main.tittle=Please select menu below to start the Installation
+main.install=Install
+main.install.info=Continue to install mod
+main.sys=System Info
+main.sys.info=Show device informations
+main.changelog.info=FreedomOS changelogs
+main.exit=Exit
+main.exit.info=Exit FreedomOS installer
+
+install_mod.tittle=FreedomOS installer
+install_mod.tittle2=Select your settings
+install_mod.sub_tittle=Installation method
+
+custom=Custom
+stock=Stock
+assert.tittle=Checking the assert
+assert_yes=Yes (Recommended)
+assert_no=No
+sha1.tittle=Checking the integrity of the system
+sha1_yes=Yes, check the system
+info.sha1_yes=Recommended
+sha1_no=No, don't check the system
+info.sha1_no=For dirty flash
+addon.tittle=Backup/Restore /system/addon.d/
+addon_yes=Yes
+info.addon_yes=Recommended for dirty flash
+addon_no=No
+info.addon_no=For clean flash
+
+info.custom=The Freedom way
+info.stock=Original OnePlus stock, no root
+info.assert_yes=Check variant in build.prop
+info.assert_no=Do not check variant in build.prop
+
+sys.title=System information
+sys.info.wait=Get system informations...
+sys.info.title=System informations
+sys.info.title2=Your device system information.
+sys.info.model=Model
+sys.info.name=Name
+sys.info.manu=Manufacturer
+sys.info.cpu=CPU
+sys.info.lcd=LCD Density
+sys.info.storage=Storage Size
+sys.info.storage.free=Free
+
+pre.install.title=Ready to Install
+pre.install=The wizard is ready to begin the installation.
+pre.install2=Press <b>Install Now</b> to begin the installation.
+pre.install3=If you want to review or change any of your installation settings, press <b>Back</b>.
+
+gapps.tittle=Google Apps
+gapps.tittle2=Select the Google Apps you want
+
+calculator=Calculator
+calendar=Calendar
+chrome=Chrome
+drive=Drive
+gmail=Gmail
+gmail_exchange=Gmail Exchange
+google=Google
+hangouts=Hangouts
+maps=Maps
+photos=Photos
+play_music=Play Music
+tts=Text-to-Speech
+tallback=Tallback
+play_movies=Play Movies
+youtube=YouTube
+
+info.calculator=0010 1010?
+info.calendar=Google Calendar
+info.chrome=Web browser
+info.drive=Cloud service
+info.gmail=Email client
+info.gmail_exchange=Support exchange for Gmail
+info.google=Google apps
+info.hangouts=Instant messaging
+info.maps=Real-time navigation, traffic, transport
+info.photos=Digital photo management application
+info.play_music=Google Play Music application
+info.tts=Causes black screens on first boot if removed!!
+info.tallback=Causes black screens on first boot if removed!!
+info.play_movies=Google Play Movies application
+info.youtube=YouTube application
+
+apps.tittle=System Apps
+apps.tittle2=Select the system Apps you want
+
+android_pay=Android Pay
+basic_dream=Basic Dream
+bt_midi=BT Midi Service
+bt_test=BTtestmode
+bugle=Bugle
+desk_clock=DeskClock
+engineering=EngineeringMode
+eng_special_test=EngSpecialTest
+facelock=Facelock
+galaxy=Galaxy
+holo_spiral=Holo Spiral
+anim_wallpaper=Animated Wallpaper
+log_kit=LogKitSdService
+music=Music
+noise_feild=Noised Feild
+oem_test=OemAutoTestServer
+oem_log=OEMLogKit
+phase_beam=Phase Beam
+protips=Protips
+sensor_test=SensorTestTool
+swiftkey=Swiftkey
+tags=Tags
+wifi_test=WifiRfTestApk
+
+info.android_pay=NFC payments
+info.basic_dream=Screensaver
+info.bt_midi=Bluetooth MIDI Support
+info.bt_test=Bluetooth testing
+info.desk_clock=Alarm, clock and timer
+info.engineering=Various developer settings
+info.eng_special_test=Miscellaneous testing
+info.facelock=Unlock with your face
+info.galaxy=Animated wallpaper
+info.holo_spiral=Animated wallpaper
+info.anim_wallpaper=Support for animated wallpapers
+info.log_kit=Logging
+info.music=OnePlus music app
+info.noise_feild=Animated wallpaper
+info.oem_test=OEM testing application
+info.oem_log=Logging
+info.phase_beam=Animated wallpaper
+info.protips=Some tips
+info.sensor_test=Sensor testing application
+info.swiftkey=Swiftkey keyboard
+info.tags=NFC Tags
+info.wifi_test=Wifi Testing
+
+mod.title=Extra mod
+mod.title2=Select the extra mod you want
+
+dpi.tittle=Change the DPI
+dpi.tittle2=Dots Per Inch
+dpi.500=Set android DPI to 500
+dpi.490=Set android DPI to 490
+dpi.480=Set android DPI to 480
+dpi.470=Set android DPI to 470
+dpi.460=Set android DPI to 460
+dpi.450=Set android DPI to 450
+dpi.440=Set android DPI to 440
+dpi.430=Set android DPI to 430
+dpi.420=Set android DPI to 420
+dpi.410=Set android DPI to 410
+dpi.400=Set android DPI to 400
+dpi.390=Set android DPI to 390
+dpi.380=Set android DPI to 380
+dpi.370=Set android DPI to 370
+dpi.360=Set android DPI to 360
+dpi.350=Set android DPI to 350
+
+mod.tittle=Install extra mods
+mod.tittle2=Root, audio mod, ads blocker & xposed...
+mod.tittle3=Extra mod
+
+supersu=Install SuperSU
+divine=Viper4Android + Dolby Atmos
+xposed=Xposed Installer
+adaway=Adaway
+adb=Enable ADB
+layer=RRO Layers
+fos_wallpapers=FreedomOS wallpapers
+
+info.supersu=SuperSU v2.76 by Chainfire
+info.divine=Divine beats by Theroyalseeker
+info.xposed=Xposed Installer application only
+info.adaway=Ad-Blocker for Android
+info.adb=Android Debugging Bridge
+info.layer=Layers Manager
+info.fos_wallpapers=Designed by @badboy47
+
+kernel.tittle=Select your kernel
+kernel.tittle2=
+kernel_stock=Stock Kernel
+info.kernel_stock=By OnePlus
+kernel_custom_1=Llama Sweet kernel R1
+info.kernel_custom_1=By genesixx
+
+install=Installing FreedomOS
+install.now=Install Now
+install.finish=It will take awhile...
+install.finish.title=The installation has been completed.
+installing.title=Installing...
+finish.title=Congratulations!
+finish.msg=FreedomOS has been installed to your phone successfully.
+finish.status=Installation result:
+finish.reboot=Reboot your device now.
