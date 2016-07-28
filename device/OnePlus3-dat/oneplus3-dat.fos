@@ -1,4 +1,4 @@
-# Freedom OS conf file
+# FreedomOS conf file
 
 ARCH=ARM64
 CODENAME=op3
