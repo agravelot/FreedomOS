@@ -38,6 +38,7 @@ tmp/*
 system/*
 output/*
 download/*
+rom/
 
 !download/*SuperSU*.zip
 !download/*BEATS*.zip
@@ -46,3 +47,4 @@ download/*
 !tmp/EMPTY_DIRECTORY
 !output/EMPTY_DIRECTORY
 !download/EMPTY_DIRECTORY
+!rom/EMPTY_DIRECTORY
