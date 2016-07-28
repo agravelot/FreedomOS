@@ -4,8 +4,8 @@
 
 **Required :**
 - Linux or Mac
-- 10 Go of free space
-- Packages : `zip curl openssl`
+- 20 Go of free space
+- Packages : `python zip curl openssl`
 - `Java` is also needed for signed the zip file **(optional)**.
 I don't know which version is needed, i use `java-8-jdk` on my Arch Linux.
 
