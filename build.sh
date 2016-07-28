@@ -76,20 +76,18 @@ else
 fi
 echo ""
 
-if [ -d "rom/$DEVICE/" ];
+if [ -d rom/$DEVICE ];
 then
   echo "rom/$DEVICE/ dir exist."
 else
   echo ""
-  echo "testing zip integrity"
-  #MD5 instead !!
-  zip -T download/$ROM_NAME.zip
+  echo "Extracting rom zip"
   echo ""
-  echo "Clean system/"
-  rm -rvf rom/$DEVICE/*
-  touch "system/EMPTY_DIRECTORY"
+  echo "Checking MD5 of $ROM_NAME"
+  #MD5
   echo ""
-  echo "Extracting system"
+  echo "Extracting..."
+  mkdir -p rom/$DEVICE
   unzip -o download/$ROM_NAME.zip -d rom/$DEVICE/
   echo Done!
 fi
