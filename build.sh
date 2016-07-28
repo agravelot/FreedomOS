@@ -94,6 +94,7 @@ fi
 
 echo "Updating sdat2img tools"
 curl -o download/sdat2img.py https://raw.githubusercontent.com/xpirt/sdat2img/master/sdat2img.py
+chmod +x download/sdat2img.py
 
 echo ""
 echo "Copy $ROM_NAME files:"
