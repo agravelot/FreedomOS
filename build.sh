@@ -32,16 +32,19 @@ echo "Choose the build method you want:"
 echo "1) user-realease"
 echo "2) debug"
 echo ""
-read -p "enter build method [2]: " BUILD
+read -p "enter build method [debug]: " BUILD
 
 if [ "$BUILD" = 1 ];
 then
+        BUILD_TYPE=stable
         echo "user-realease selected"
 elif  [ "$BUILD" = 2 ];
 then
+        BUILD_TYPE=debug
         echo "debug selected"
 else
         BUILD=2
+        BUILD_TYPE=debug
         echo "debug selected"
 fi
 echo ""
@@ -158,27 +161,27 @@ then
   cd tmp/
   echo ""
   echo "Making zip file"
-  zip -r9 "FreedomOS-$CODENAME-nevax-$VERSION.zip" * -x "*EMPTY_DIRECTORY*"
+  zip -r9 "FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" * -x "*EMPTY_DIRECTORY*"
   echo "----"
   cd ..
   echo ""
   echo "Copy Unsigned in output folder"
-  cp -v tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip output/FreedomOS-$CODENAME-nevax-$VERSION.zip
+  cp -v tmp/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip
   echo ""
   echo "testing zip integrity"
-  zip -T output/FreedomOS-$CODENAME-nevax-$VERSION.zip
+  zip -T output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip
   echo ""
   echo "Generating md5 hash"
-  openssl md5 "output/FreedomOS-$CODENAME-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-nevax-$VERSION.zip.md5"
+  openssl md5 "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip.md5"
   echo ""
   echo "SignApk....."
-  java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip" "tmp/FreedomOS-$DEVICE-nevax-$VERSION-signed.zip"
+  java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" "tmp/FreedomOS-$DEVICE-$BUILD_TYPE-$VERSION-signed.zip"
   echo ""
   echo "Move signed zip file in output folder"
-  mv -v "tmp/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" "output/"
+  mv -v "tmp/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION-signed.zip" "output/"
   echo ""
   echo "Generating md5 hash"
-  openssl md5 "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip.md5"
+  openssl md5 "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION-signed.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION-signed.zip.md5"
   #We doesn't test the final, because it doesn't work with the signed zip.
 fi
 
@@ -187,18 +190,18 @@ then
   cd tmp/
   echo ""
   echo "Making zip file"
-  zip -r1 "FreedomOS-$CODENAME-nevax-$VERSION.zip" * -x "*EMPTY_DIRECTORY*"
+  zip -r1 "FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" * -x "*EMPTY_DIRECTORY*"
   echo "----"
   echo ""
   echo "testing zip integrity"
-  zip -T "FreedomOS-$CODENAME-nevax-$VERSION.zip"
+  zip -T "FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip"
   echo ""
   cd ..
   echo "Move unsigned zip file in output folder"
-  mv -v "tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip" "output/"
+  mv -v "tmp/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" "output/"
   echo ""
   echo "Generating md5 hash"
-  openssl md5 "output/FreedomOS-$CODENAME-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-nevax-$VERSION.zip.md5"
+  openssl md5 "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip.md5"
 fi
 
 echo ""
@@ -206,7 +209,7 @@ echo "Clear tmp/ foler..."
 rm -rvf tmp/*
 touch "tmp/EMPTY_DIRECTORY"
 echo ""
-echo "Finish! You can find the build here: output/FreedomOS-$DEVICE-nevax-$VERSION.zip"
+echo "Finish! You can find the build here: output/FreedomOS-$DEVICE-$BUILD_TYPE-$VERSION.zip"
 
 
 if [ -d "device/$DEVICE/patch" ];
@@ -226,5 +229,5 @@ then
   rm -rvf tmp/*
   touch "tmp/EMPTY_DIRECTORY"
   echo ""
-  echo "Finish! You can find the build here: output/FreedomOS-$DEVICE-nevax-$VERSION.zip"
+  echo "Finish! You can find the build here: output/FreedomOS-$DEVICE-$BUILD_TYPE-$VERSION.zip"
 fi
