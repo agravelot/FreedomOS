@@ -1,4 +1,4 @@
-#FreedomOS-oneplus3
+#FreedomOS
 
 ![alt tag](https://raw.githubusercontent.com/Nevax07/FreedomOS/op3/banner_small.png)
 
