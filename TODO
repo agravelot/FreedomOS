@@ -6,4 +6,12 @@ TODO
   Remove recovery from boot
   Check internet access before download
   Fix symbolink link
-  
+  f2fs?
+  Push zip to device adb push
+  flash from build.sh
+      echo 'boot-recovery ' > /cache/recovery/command
+      echo '--update_package=/sdcard/update.zip' >> /cache/recovery/command
+      reboot recovery
+  script adb pull adaway & more..
+  Gapps update
+  Custom kernel
