@@ -8,11 +8,50 @@ DEVICE=0
 MENU=0
 DEVICEMENU=0
 
-echo "#################################"
-echo "FreedomOS build script by Nevax"
-echo "#################################"
-echo ""
+redt=$(tput setaf 1)
+redb=$(tput setab 1)
+greent=$(tput setaf 2)
+greenb=$(tput setab 2)
+yellowt=$(tput setaf 3)
+yellowb=$(tput setab 3)
+bluet=$(tput setaf 4)
+blueb=$(tput setab 4)
+magentat=$(tput setaf 5)
+magentab=$(tput setab 5)
+cyant=$(tput setaf 6)
+cyanb=$(tput setab 6)
+whiteb=$(tput setab 7)
+bold=$(tput bold)
+italic=$(tput sitm)
+stand=$(tput smso)
+underline=$(tput smul)
+normal=$(tput sgr0)
+clears=$(tput clear)
+
+banner() {
+	echo "$clears"
+  echo "-------------------------------------------"
+  echo "$bold$stand       FreedomOS build script by Nevax    $normal"
+  echo "-------------------------------------------"
+  echo ""
+}
+
+confirm () {
+    # call with a prompt string or use a default
+    read -r -p "${1:-Are you sure? [Y/n]} " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            false
+            ;;
+        *)
+            true
+            ;;
+    esac
+}
+
+banner
 echo "Available devices:"
+echo ""
 find . -print | grep -i 'device/.*[.]fos'
 echo ""
 read -p "Enter your device codename: " DEVICE
@@ -27,7 +66,7 @@ else
 fi
 
 
-echo ""
+banner
 echo "Choose the build method you want:"
 echo "1) user-realease"
 echo "2) debug"
@@ -36,7 +75,7 @@ read -p "enter build method [debug]: " BUILD
 
 if [ "$BUILD" = 1 ];
 then
-        BUILD_TYPE=stable
+        BUILD_TYPE=user-realease
         echo "user-realease selected"
 elif  [ "$BUILD" = 2 ];
 then
@@ -47,7 +86,8 @@ else
         BUILD_TYPE=debug
         echo "debug selected"
 fi
-echo ""
+
+banner
 read -p "Enter the version number [test] : " VERSION
 
 if [ -z "$VERSION" ];
@@ -55,7 +95,25 @@ then
         VERSION="test"
 fi
 
+banner
+echo "Build review:"
 echo ""
+echo "Device target: $DEVICE"
+echo "Build type: $BUILD_TYPE"
+echo "Build version: $VERSION"
+echo "Arch: $ARCH"
+echo "Codename: $CODENAME"
+echo "Assert: $ASSERT"
+echo "ROM name: $ROM_NAME"
+echo "ROM Link: $ROM_LINK"
+echo "ROM MD5: $ROM_MD5"
+echo "SuperSU zip: $SU"
+echo "Xposed apk: $XPOSED_APK"
+echo "Audio mod: $DIVINE"
+echo ""
+confirm
+
+banner
 echo "Clear tmp/ foler..."
 rm -rvf tmp/*
 touch tmp/EMPTY_DIRECTORY
