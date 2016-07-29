@@ -192,6 +192,7 @@ then
   echo "Generating md5 hash"
   openssl md5 "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION-signed.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION-signed.zip.md5"
   #We doesn't test the final, because it doesn't work with the signed zip.
+  FINAL_ZIP=FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION-signed
 fi
 
 if [ "$BUILD" = 2 ];
@@ -211,6 +212,7 @@ then
   echo ""
   echo "Generating md5 hash"
   openssl md5 "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip.md5"
+  FINAL_ZIP=FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION
 fi
 
 echo ""
@@ -220,4 +222,16 @@ touch "tmp/EMPTY_DIRECTORY"
 echo ""
 echo "Finish! You can find the build here: output/FreedomOS-$DEVICE-$BUILD_TYPE-$VERSION.zip"
 
+echo ""
+echo "Pushing $FINAL_ZIP.zip to your $DEVICE..."
+adb shell "rm /sdcard/$FINAL_ZIP.zip"
+adb push output/$FINAL_ZIP.zip /sdcard/
+echo "Pushing $FINAL_ZIP.zip.md5 to your $DEVICE..."
+adb shell "rm /sdcard/$FINAL_ZIP.zip.md5"
+adb push output/$FINAL_ZIP.zip.md5 /sdcard/
 
+echo ""
+echo "Flashing $FINAL_ZIP.zip into TWRP"
+adb shell "echo 'boot-recovery ' > /cache/recovery/command"
+adb shell "echo '--update_package=/sdcard/$FINAL_ZIP.zip' >> /cache/recovery/command"
+adb shell reboot recovery
