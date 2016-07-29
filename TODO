@@ -1,4 +1,5 @@
 TODO
+  Add arg support "build.sh -d OnePlus3 -v 1.3 ..."
   Better status bar
   Add more divine mod
   Emoji One
@@ -15,3 +16,10 @@ TODO
   script adb pull adaway & more..
   Gapps update
   Custom kernel
+
+  OnePlusOTA
+  SetupWizard
+  OnePlusWizard
+  OnePlusGallery
+  OnePlusCamera
+  OnePlusCameraService
