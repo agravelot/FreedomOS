@@ -118,6 +118,10 @@ echo "Clean tmp/"
 umount tmp/mount/
 rm -rvf tmp/mount
 rm -rvf tmp/system.*
+echo ""
+echo "Remove stock recovery"
+rm -vf tmp/system/bin/install-recovery.sh
+rm -vf tmp/system/recovery-from-boot.p
 
 echo ""
 echo "Remove META-INF"
