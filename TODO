@@ -6,7 +6,6 @@ TODO
   DD flash recovery
   Remove recovery from boot
   Check internet access before download
-  Fix symbolink link
   f2fs?
   Push zip to device adb push
   flash from build.sh
