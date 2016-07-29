@@ -137,9 +137,9 @@ else
 fi
 echo ""
 
-if [ -d rom/$DEVICE ];
+if [ -d rom/$DEVICE/$ROM_NAME ];
 then
-  echo "rom/$DEVICE/ dir exist."
+  echo "rom/$DEVICE/$ROM_NAME dir exist."
 else
   echo ""
   echo "Extracting rom zip"
@@ -148,8 +148,8 @@ else
   #MD5
   echo ""
   echo "Extracting..."
-  mkdir -p rom/$DEVICE
-  unzip -o download/$ROM_NAME.zip -d rom/$DEVICE/
+  mkdir -p rom/$DEVICE/$ROM_NAME
+  unzip -o download/$ROM_NAME.zip -d rom/$DEVICE/$ROM_NAME
   echo Done!
 fi
 
@@ -159,7 +159,7 @@ chmod +x download/sdat2img.py
 
 echo ""
 echo "Copy $ROM_NAME files:"
-cp -rvf rom/$DEVICE/* tmp/
+cp -rvf rom/$DEVICE/$ROM_NAME/* tmp/
 mkdir tmp/mount
 mkdir tmp/system
 echo ""
