@@ -221,22 +221,3 @@ echo ""
 echo "Finish! You can find the build here: output/FreedomOS-$DEVICE-$BUILD_TYPE-$VERSION.zip"
 
 
-if [ -d "device/$DEVICE/patch" ];
-then
-  echo ""
-  echo "Building patch file"
-  mkdir -p tmp/patch/
-  cp -rvf device/$DEVICE/patch/META-INF tmp/patch/
-  cd tmp/patch/
-  zip -r9 "patch-FreedomOS-$VERSION.zip" * -x "*EMPTY_DIRECTORY*"
-  cd ../..
-  echo ""
-  echo "Move patch file:"
-  mv -vf tmp/patch/patch-FreedomOS-$VERSION.zip output/patch-FreedomOS-$VERSION.zip
-  echo ""
-  echo "Clear tmp/ foler..."
-  rm -rvf tmp/*
-  touch "tmp/EMPTY_DIRECTORY"
-  echo ""
-  echo "Finish! You can find the build here: output/FreedomOS-$DEVICE-$BUILD_TYPE-$VERSION.zip"
-fi
