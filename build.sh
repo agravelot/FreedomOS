@@ -283,10 +283,10 @@ echo "Finish! You can find the build here: output/FreedomOS-$DEVICE-$BUILD_TYPE-
 echo ""
 echo "Pushing $FINAL_ZIP.zip to your $DEVICE..."
 adb shell "rm /sdcard/$FINAL_ZIP.zip"
-adb push output/$FINAL_ZIP.zip /sdcard/
+adb push -p output/$FINAL_ZIP.zip /sdcard/
 echo "Pushing $FINAL_ZIP.zip.md5 to your $DEVICE..."
 adb shell "rm /sdcard/$FINAL_ZIP.zip.md5"
-adb push output/$FINAL_ZIP.zip.md5 /sdcard/
+adb push -p output/$FINAL_ZIP.zip.md5 /sdcard/
 
 echo ""
 echo "Flashing $FINAL_ZIP.zip into TWRP"
