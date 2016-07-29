@@ -1,17 +1,11 @@
 TODO
-  Add arg support "build.sh -d OnePlus3 -v 1.3 ..."
+  Add arg support "build.sh -d OnePlus3 -v 1.3 ..." verbose / push / flash
   Better status bar
   Add more divine mod
   Emoji One
-  DD flash recovery
-  Remove recovery from boot
   Check internet access before download
   f2fs?
-  Push zip to device adb push
-  flash from build.sh
-      echo 'boot-recovery ' > /cache/recovery/command
-      echo '--update_package=/sdcard/update.zip' >> /cache/recovery/command
-      reboot recovery
+
   script adb pull adaway & more..
   Gapps update
   Custom kernel
