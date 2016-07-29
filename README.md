@@ -3,17 +3,17 @@
 ![alt tag](https://raw.githubusercontent.com/Nevax07/FreedomOS/op3/banner_small.png)
 
 **Required :**
-- Linux 
-- 20 Go of free space
-- Packages : `python zip curl openssl`
-- Optional packages: `adb` for pulling apps update and pushing rom with automatic flash. 
-                     `Java` for signed the zip file.
-                    I don't know which version is needed, i use `java-8-jdk` on my Arch Linux.
-- You also need ext4 mount support with loop option.
+Linux
+20 Go of free space
+Packages : `python zip curl openssl`
+Optional packages: 
+- `adb` for pulling updated apps and pushing rom with automatic flash. 
+- `java` for signed the zip file, i don't know which version is needed, i use `java-8-jdk` on my Arch Linux.
+You also need ext4 mount support with loop option.
 
 **How to build :**
 
-```
+```bash
 bash build.sh
 ```
 
