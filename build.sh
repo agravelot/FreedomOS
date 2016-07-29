@@ -166,7 +166,7 @@ echo ""
 echo "Extracting system.new.dat:"
 download/sdat2img.py tmp/system.transfer.list tmp/system.new.dat tmp/system.img
 echo ""
-echo "Mounting system.new.dat:"
+echo "Mounting system.img:"
 mount -t ext4 -o loop tmp/system.img tmp/mount/
 echo ""
 echo "Extracting system files:"
