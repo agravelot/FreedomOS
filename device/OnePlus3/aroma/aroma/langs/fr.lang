@@ -203,7 +203,7 @@ mod.tittle3=Extra mod
 
 supersu=Installer SuperSU
 divine=Viper4Android + Dolby Atmos
-xposed=Xposed Installer
+xposed=Material Design Xposed Installer
 adaway=Adaway
 adb=Activer ADB
 layer=RRO Layers
@@ -211,7 +211,7 @@ fos_wallpapers=Fond d'écran FreedomOS
 
 info.supersu=SuperSU v2.76 par Chainfire
 info.divine=Divine beats par Theroyalseeker
-info.xposed=Application Xposed seulement
+info.xposed=Application Xposed seulement par DVD android
 info.adaway=Bloqueur de publicité pour Android
 info.adb=Android Debugging Bridge
 info.layer=Layers Manager
