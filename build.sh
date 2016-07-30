@@ -114,6 +114,12 @@ echo ""
 confirm
 
 banner
+
+if [ -d tmp/mount/ ];
+then
+	umount tmp/mount/
+fi
+
 echo "Clear tmp/ foler..."
 rm -rvf tmp/*
 touch tmp/EMPTY_DIRECTORY
