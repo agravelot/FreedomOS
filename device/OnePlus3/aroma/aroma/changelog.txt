@@ -1,11 +1,18 @@
-1.3
-  FIX: Viper4Android and fos_wallpapers folder are not writable.
-  ADD: Google DNS.
-  ADD: Substratum theme engine.
-  ADD: Busybox, that will fix SuperSU installation for some poeple.
-  NEW: Installation process, no more system.new.dat
-  DEL: SHA1 system verification
-  Some improvements.
+  FIX: ViPER4Android and fos_wallpapers folders are not writable.
+  FIX: SuperSU installation. [OPTION]
+  ADD: Google DNS. [OPTION]
+  ADD: Substratum theme engine. [OPTION]
+  ADD: Busybox 1.24.2.
+  ADD: EmojiOne 2.2. [OPTION]
+  ADD: New installation process, no more system.new.dat.
+  ADD: Material Design Xposed Installer 3.0 alpha4. [OPTION]
+  ADD: Uninstall OnePlus Camera [OPTION]
+  ADD: Uninstall OnePlus Gallery [OPTION]
+  ADD: Uninstall OnePlus OTA [OPTION]
+  ADD: Uninstall OnePlus Setup Wizard [OPTION]
+  ADD: Uninstall Google Setup Wizard [OPTION]
+  DEL: Xposed Installer alpha4.0.
+  DEL: SHA1 System verification.
 
 1.2.1
   Fix system verification
