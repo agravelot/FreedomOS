@@ -201,6 +201,9 @@ cp -v media/wallpaper/* tmp/media/wallpaper
 echo ""
 echo "Add Divine"
 unzip -o "download/$DIVINE.zip" -d "tmp/tools/divine/"
+echo ""
+echo "Add Busybox"
+cp -v download/$BUSYBOX.zip tmp/tools/busybox/busybox.zip
 
 echo ""
 echo "Set Assert in updater-script"
