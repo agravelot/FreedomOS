@@ -158,13 +158,13 @@ curl -o download/sdat2img.py https://raw.githubusercontent.com/xpirt/sdat2img/ma
 chmod +x download/sdat2img.py
 
 echo ""
-echo "Copy $ROM_NAME files:"
-cp -rvf rom/$DEVICE/$ROM_NAME/* tmp/
+echo "Copy $ROM_NAME needed files:"
+rsync -rv rom/$DEVICE/$ROM_NAME/* tmp/ --exclude='system.transfer.list' --exclude='system.new.dat' --exclude='system.patch.dat' --exclude='META-INF/'
 mkdir tmp/mount
 mkdir tmp/system
 echo ""
 echo "Extracting system.new.dat:"
-download/sdat2img.py tmp/system.transfer.list tmp/system.new.dat tmp/system.img
+download/sdat2img.py rom/$DEVICE/$ROM_NAME/system.transfer.list rom/$DEVICE/$ROM_NAME/system.new.dat tmp/system.img
 echo ""
 echo "Mounting system.img:"
 mount -t ext4 -o loop tmp/system.img tmp/mount/
