@@ -821,18 +821,17 @@ package_extract_file("firmware-update/BTFM.bin",
 ui_print(" ");
 
 # -- - Busybox - -- #
-
-#ui_print("   Installing Busybox");
-#ui_print(" ");
-#set_metadata("/system/xbin/busybox",
-#                    "uid", 0, "gid", 1000, "mode", 0755, "capabilities", 0x0,
-#                    "selabel", "u:object_r:hostapd_exec:s0");
+ui_print("   Installing Busybox");
+ui_print(" ");
+set_metadata("/system/xbin/busybox",
+                    "uid", 0, "gid", 1000, "mode", 0755, "capabilities", 0x0,
+                    "selabel", "u:object_r:hostapd_exec:s0");
 #run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
 #
-#run_program("/sbin/busybox", "unzip", "/tmp/tools/busybox/busybox.zip",
-#                    "META-INF/com/google/android/*", "-d", "/tmp/tools/busybox");
-#run_program("/sbin/busybox", "sh", "/tmp/tools/busybox/META-INF/com/google/android/update-binary",
-#                    "dummy", "1", "/tmp/tools/busybox/busybox.zip");
+run_program("/sbin/busybox", "unzip", "/tmp/tools/busybox/busybox.zip",
+                    "META-INF/com/google/android/*", "-d", "/tmp/tools/busybox");
+run_program("/sbin/busybox", "sh", "/tmp/tools/busybox/META-INF/com/google/android/update-binary",
+                    "dummy", "1", "/tmp/tools/busybox/busybox.zip");
 #REMOUNT ??
 
 # -- - Restoring Addon.d - -- #
