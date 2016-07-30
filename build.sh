@@ -178,6 +178,9 @@ echo ""
 echo "Extracting system files:"
 cp -rvf tmp/mount/* tmp/system/
 echo ""
+echo "Patching system files:"
+cp -rvf patch/* tmp/system/
+echo ""
 echo "Clean tmp/"
 umount tmp/mount/
 rm -rvf tmp/mount
