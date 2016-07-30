@@ -287,6 +287,7 @@ adb push -p output/$FINAL_ZIP.zip /sdcard/
 echo "Pushing $FINAL_ZIP.zip.md5 to your $DEVICE..."
 adb shell "rm /sdcard/$FINAL_ZIP.zip.md5"
 adb push -p output/$FINAL_ZIP.zip.md5 /sdcard/
+adb shell "chown -R media_rw:media_rw /sdcard/FreedomOS*"
 
 echo ""
 echo "Flashing $FINAL_ZIP.zip into TWRP"
