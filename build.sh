@@ -7,6 +7,7 @@ VERSION=0
 DEVICE=0
 MENU=0
 DEVICEMENU=0
+SDAT2IMG_LINK="https://raw.githubusercontent.com/xpirt/sdat2img/master/sdat2img.py"
 
 redt=$(tput setaf 1)
 redb=$(tput setab 1)
@@ -76,7 +77,7 @@ read -p "enter build method [debug]: " BUILD
 if [ "$BUILD" = 1 ];
 then
         BUILD_TYPE=user-realease
-        echo "user-realease selected"
+        echo "user-release selected"
 elif  [ "$BUILD" = 2 ];
 then
         BUILD_TYPE=debug
@@ -135,11 +136,16 @@ echo "Checking dependencies..."
 echo ""
 if [ -f "download/$ROM_NAME.zip" ];
 then
-   echo "File $ROM_NAME.zip exist."
+  echo "File $ROM_NAME.zip exist."
 else
-   echo "File $ROM_NAME.zip does not exist" >&2
-   echo "Downloading.."
-   curl -o download/$ROM_NAME.zip $ROM_LINK
+  echo "File $ROM_NAME.zip does not exist" >&2
+  if curl -Is $ROM_LINK | grep "200 OK" &> /dev/null
+  then
+    echo "Downloading.."
+    curl -o download/$ROM_NAME.zip $ROM_LINK
+  else
+    echo "$ROM_LINK is OFFLINE! Check your connection"
+  fi
 fi
 echo ""
 
@@ -160,7 +166,12 @@ else
 fi
 
 echo "Updating sdat2img tools"
-curl -o download/sdat2img.py https://raw.githubusercontent.com/xpirt/sdat2img/master/sdat2img.py
+if curl -Is $SDAT2IMG_LINK | grep "200 OK" &> /dev/null
+then
+  curl -o download/sdat2img.py $SDAT2IMG_LINK
+else
+  echo "$SDAT2IMG_LINK is OFFLINE! Check your connection"
+fi
 chmod +x download/sdat2img.py
 
 echo ""
