@@ -12,6 +12,7 @@ TODO
   More ringtone/notif ?
   Try SU 2.74 & 76
   multi windows
+  Make translation
 
 openssl genrsa -out key.pem 1024
 openssl req -new -key key.pem -out request.pem
