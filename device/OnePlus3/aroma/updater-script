@@ -44,7 +44,7 @@ ifelse(is_mounted("/system"), unmount("/system"));
 
 set_progress(0.01);
 ui_print(" ");
-ui_print("@Pre-install Process");
+ui_print("@Pre-installing Process");
 ui_print(" ");
 
 set_progress(0.02);
@@ -100,10 +100,12 @@ ui_print("   Extracting System");
 package_extract_dir("system", "/system");
 
 ui_print("   Creating Symlinks");
-run_program("/sbin/busybox", "sleep", "1");
+run_program("/sbin/busybox", "sleep", "5");
 ifelse(is_mounted("/system"), unmount("/system"));
+ifelse(is_mounted("/data"), unmount("/data"));
 run_program("/sbin/busybox", "sleep", "5");
 mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
 symlink("../../../../lib/libwebviewchromium.so", "/system/app/webview/lib/arm/libwebviewchromium.so");
 symlink("../../../../lib64/libwebviewchromium.so", "/system/app/webview/lib/arm64/libwebviewchromium.so");
 symlink("/data/hlos_rfs/shared", "/system/rfs/apq/gnss/hlos");
@@ -453,8 +455,10 @@ symlink("toybox", "/system/bin/yes");
 ui_print("   Setting permissions");
 run_program("/sbin/busybox", "sleep", "5");
 ifelse(is_mounted("/system"), unmount("/system"));
+ifelse(is_mounted("/data"), unmount("/data"));
 run_program("/sbin/busybox", "sleep", "5");
 mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
 set_metadata_recursive("/system", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/bin/ATFWD-daemon", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:atfwd_exec:s0");
@@ -821,17 +825,17 @@ package_extract_file("firmware-update/BTFM.bin",
 ui_print(" ");
 
 # -- - Busybox - -- #
-ui_print("@Installing Busybox");
-ui_print(" ");
-set_metadata("/system/xbin/busybox",
-                    "uid", 0, "gid", 1000, "mode", 0755, "capabilities", 0x0,
-                    "selabel", "u:object_r:hostapd_exec:s0");
+#ui_print("@Installing Busybox");
+#ui_print(" ");
+#set_metadata("/system/xbin/busybox",
+#                    "uid", 0, "gid", 1000, "mode", 0755, "capabilities", 0x0,
+#                    "selabel", "u:object_r:hostapd_exec:s0");
 #run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
 #
-run_program("/sbin/busybox", "unzip", "/tmp/tools/busybox/busybox.zip",
-                    "META-INF/com/google/android/*", "-d", "/tmp/tools/busybox");
-run_program("/sbin/busybox", "sh", "/tmp/tools/busybox/META-INF/com/google/android/update-binary",
-                    "dummy", "1", "/tmp/tools/busybox/busybox.zip");
+#run_program("/sbin/busybox", "unzip", "/tmp/tools/busybox/busybox.zip",
+#                    "META-INF/com/google/android/*", "-d", "/tmp/tools/busybox");
+#run_program("/sbin/busybox", "sh", "/tmp/tools/busybox/META-INF/com/google/android/update-binary",
+#                    "dummy", "1", "/tmp/tools/busybox/busybox.zip");
 
 # -- - Restoring Addon.d - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
