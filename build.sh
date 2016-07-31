@@ -38,22 +38,22 @@ banner() {
 }
 
 confirm () {
-    # call with a prompt string or use a default
-    read -r -p "${1:-Are you sure? [Y/n]} " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            false
-            ;;
-        *)
-            exit
-            ;;
-    esac
+  # call with a prompt string or use a default
+  read -r -p "${1:-Are you sure? [Y/n]} " response
+  case $response in
+    [yY][eE][sS]|[yY])
+      false
+      ;;
+    *)
+    exit
+    ;;
+  esac
 }
 
+# Show device list
 banner
 echo "Available devices:"
 echo ""
-#find . -print | grep -i 'device/.*[.]fos'
 find . -name "*.fos" -exec basename \{} .fos \;
 echo ""
 read -p "Enter your device codename: " DEVICE
@@ -61,42 +61,44 @@ echo ""
 
 if [ -f device/$DEVICE/$DEVICE.fos ];
 then
-        source device/$DEVICE/$DEVICE.fos
+  source device/$DEVICE/$DEVICE.fos
 else
-        echo "Can not find $DEVICE.fos file!"
-        exit
+  echo "Can not find $DEVICE.fos file!"
+  exit
 fi
 
-
+# Choose build method option
 banner
 echo "Choose the build method you want:"
-echo "1) user-realease"
+echo "1) user-release"
 echo "2) debug"
 echo ""
 read -p "enter build method [debug]: " BUILD
 
 if [ "$BUILD" = 1 ];
 then
-        BUILD_TYPE=user-realease
-        echo "user-release selected"
-elif  [ "$BUILD" = 2 ];
+  BUILD_TYPE=user-release
+  echo "user-release selected"
+elif [ "$BUILD" = 2 ];
 then
-        BUILD_TYPE=debug
-        echo "debug selected"
+  BUILD_TYPE=debug
+  echo "debug selected"
 else
-        BUILD=2
-        BUILD_TYPE=debug
-        echo "debug selected"
+  BUILD=2
+  BUILD_TYPE=debug
+  echo "debug selected"
 fi
 
+# Enter version number option
 banner
 read -p "Enter the version number [test] : " VERSION
 
 if [ -z "$VERSION" ];
 then
-        VERSION="test"
+  VERSION="test"
 fi
 
+# Show Build review
 banner
 echo "Build review:"
 echo ""
@@ -115,6 +117,7 @@ echo "Audio mod: $DIVINE"
 echo ""
 confirm
 
+# Building Process
 banner
 
 if [ -d tmp/mount/ ];
@@ -248,6 +251,7 @@ sed -i.bak "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma/l
 rm -rvf tmp/META-INF/com/google/android/aroma-config.bak
 rm -rvf tmp/META-INF/com/google/android/aroma/langs/*.lang.bak
 
+## user release build
 if [ "$BUILD" = 1 ];
 then
   cd tmp/
@@ -278,6 +282,7 @@ then
   FINAL_ZIP=FreedomOS-$CODENAME-$-nevax-$VERSION-signed
 fi
 
+## debug build
 if [ "$BUILD" = 2 ];
 then
   cd tmp/
@@ -305,6 +310,7 @@ touch "tmp/EMPTY_DIRECTORY"
 echo ""
 echo "$greent$bold Finish! You can find the build here: output/FreedomOS-$DEVICE-$BUILD_TYPE-$VERSION.zip $normal"
 
+## ADB Push zip on device
 echo ""
 echo "Pushing $FINAL_ZIP.zip to your $DEVICE..."
 adb shell "rm /sdcard/$FINAL_ZIP.zip"
@@ -314,6 +320,7 @@ adb shell "rm /sdcard/$FINAL_ZIP.zip.md5"
 adb push -p output/$FINAL_ZIP.zip.md5 /sdcard/
 adb shell "chown -R media_rw:media_rw /sdcard/FreedomOS*"
 
+# Flashing zip on device 
 echo ""
 echo "Flashing $FINAL_ZIP.zip into TWRP"
 adb shell "echo 'boot-recovery ' > /cache/recovery/command"
