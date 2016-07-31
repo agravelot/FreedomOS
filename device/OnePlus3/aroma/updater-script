@@ -1235,7 +1235,7 @@ if (file_getprop("/tmp/aroma/gapps.prop", "item.1.13") == "0")
   delete_recursive("/system/priv-app/SetupWizard");
 endif;
 
-if (file_getprop("/tmp/aroma/gapps.prop", "item.1.13") == "0")
+if (file_getprop("/tmp/aroma/gapps.prop", "item.1.14") == "0")
   then
     ui_print("   Removing YouTube");
 		delete_recursive("/system/app/YouTube");
