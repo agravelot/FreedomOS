@@ -93,8 +93,6 @@ then
   VERSION="test"
 fi
 
-# ADB options
-
 # Show Build review
 banner
 echo "Build review:"
@@ -112,10 +110,15 @@ echo "SuperSU zip: $SU"
 echo "Xposed apk: $XPOSED_APK"
 echo "Audio mod: $DIVINE"
 echo ""
-
+if [[ "no" == $(confirm "All options correct?") ]]
+then
+  echo "Stopping build now! To start a new build restart the script."
+  exit 0
+fi
 # Building Process
 banner
-
+echo "$DEVICE build starting now."
+echo ""
 if [ -d tmp/mount/ ];
 then
 	umount tmp/mount/
