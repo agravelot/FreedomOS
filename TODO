@@ -7,9 +7,11 @@ TODO
   Custom kernel
   No sleep ?
   system/etc GPS NTP server
-  copy cert on server
   apktool
-  adb push zip to device yes or no option
+  Pull update system app
+  More ringtone/notif ?
+  Try SU 2.74 & 76
+  multi windows
 
 openssl genrsa -out key.pem 1024
 openssl req -new -key key.pem -out request.pem
