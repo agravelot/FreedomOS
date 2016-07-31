@@ -1,7 +1,6 @@
 TODO
   Add arg support "build.sh -d OnePlus3 -v 1.3 ..." verbose / push / flash
   Add more divine mod
-  Check internet access before download
   f2fs?
   script adb pull adaway & more..
   Gapps update
@@ -10,6 +9,7 @@ TODO
   system/etc GPS NTP server
   copy cert on server
   apktool
+  adb push zip to device yes or no option
 
 openssl genrsa -out key.pem 1024
 openssl req -new -key key.pem -out request.pem

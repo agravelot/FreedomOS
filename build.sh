@@ -45,7 +45,7 @@ confirm () {
             false
             ;;
         *)
-            true
+            exit
             ;;
     esac
 }
@@ -53,7 +53,8 @@ confirm () {
 banner
 echo "Available devices:"
 echo ""
-find . -print | grep -i 'device/.*[.]fos'
+#find . -print | grep -i 'device/.*[.]fos'
+find . -name "*.fos" -exec basename \{} .fos \;
 echo ""
 read -p "Enter your device codename: " DEVICE
 echo ""
@@ -144,7 +145,8 @@ else
     echo "Downloading.."
     curl -o download/$ROM_NAME.zip $ROM_LINK
   else
-    echo "$ROM_LINK is OFFLINE! Check your connection"
+    echo "$redt $ROM_NAME mirror OFFLINE! Check your connection $normal"
+    exit
   fi
 fi
 echo ""
@@ -170,7 +172,7 @@ if curl -Is $SDAT2IMG_LINK | grep "200 OK" &> /dev/null
 then
   curl -o download/sdat2img.py $SDAT2IMG_LINK
 else
-  echo "$SDAT2IMG_LINK is OFFLINE! Check your connection"
+  echo "$yellowt sdat2img tools mirror is OFFLINE! sdat2img tools not updated $normal"
 fi
 chmod +x download/sdat2img.py
 
@@ -301,7 +303,7 @@ echo "Clear tmp/ foler..."
 rm -rvf tmp/*
 touch "tmp/EMPTY_DIRECTORY"
 echo ""
-echo "Finish! You can find the build here: output/FreedomOS-$DEVICE-$BUILD_TYPE-$VERSION.zip"
+echo "$greent$bold Finish! You can find the build here: output/FreedomOS-$DEVICE-$BUILD_TYPE-$VERSION.zip $normal"
 
 echo ""
 echo "Pushing $FINAL_ZIP.zip to your $DEVICE..."
