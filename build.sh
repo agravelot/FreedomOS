@@ -31,23 +31,18 @@ clears=$(tput clear)
 
 banner() {
 	echo "$clears"
-  echo "-------------------------------------------"
-  echo "$bold$stand       FreedomOS build script by Nevax    $normal"
-  echo "-------------------------------------------"
+  echo "----------------------------------------"
+  echo "$bold$redt    FreedomOS build script by Nevax $normal"
+  echo "----------------------------------------"
   echo ""
 }
 
-confirm () {
-  # call with a prompt string or use a default
-  read -r -p "${1:-Are you sure? [Y/n]} " response
-  case $response in
-    [yY][eE][sS]|[yY])
-      false
-      ;;
-    *)
-    exit
-    ;;
-  esac
+function confirm() {
+    read -p "$1 ([y]es or [N]o): "
+    case $(echo $REPLY | tr '[A-Z]' '[a-z]') in
+        y|yes) echo "yes" ;;
+        *)     echo "no" ;;
+    esac
 }
 
 # Show device list
@@ -98,6 +93,8 @@ then
   VERSION="test"
 fi
 
+# ADB options
+
 # Show Build review
 banner
 echo "Build review:"
@@ -115,7 +112,6 @@ echo "SuperSU zip: $SU"
 echo "Xposed apk: $XPOSED_APK"
 echo "Audio mod: $DIVINE"
 echo ""
-confirm
 
 # Building Process
 banner
@@ -308,21 +304,25 @@ echo "Clear tmp/ foler..."
 rm -rvf tmp/*
 touch "tmp/EMPTY_DIRECTORY"
 echo ""
-echo "$greent$bold Finish! You can find the build here: output/FreedomOS-$DEVICE-$BUILD_TYPE-$VERSION.zip $normal"
-
-## ADB Push zip on device
+echo "$greent$bold Build finished! You can find the build here: output/FreedomOS-$DEVICE-$BUILD_TYPE-$VERSION.zip $normal"
 echo ""
-echo "Pushing $FINAL_ZIP.zip to your $DEVICE..."
-adb shell "rm /sdcard/$FINAL_ZIP.zip"
-adb push -p output/$FINAL_ZIP.zip /sdcard/
-echo "Pushing $FINAL_ZIP.zip.md5 to your $DEVICE..."
-adb shell "rm /sdcard/$FINAL_ZIP.zip.md5"
-adb push -p output/$FINAL_ZIP.zip.md5 /sdcard/
-adb shell "chown -R media_rw:media_rw /sdcard/FreedomOS*"
-
-# Flashing zip on device 
-echo ""
-echo "Flashing $FINAL_ZIP.zip into TWRP"
-adb shell "echo 'boot-recovery ' > /cache/recovery/command"
-adb shell "echo '--update_package=/sdcard/$FINAL_ZIP.zip' >> /cache/recovery/command"
-adb shell reboot recovery
+if [[ "yes" == $(confirm "Want to flash it now?") ]]
+then
+  ## ADB Push zip on device
+  echo ""
+  echo "Pushing $FINAL_ZIP.zip to your $DEVICE..."
+  adb shell "rm /sdcard/$FINAL_ZIP.zip"
+  adb push -p output/$FINAL_ZIP.zip /sdcard/
+  echo "Pushing $FINAL_ZIP.zip.md5 to your $DEVICE..."
+  adb shell "rm /sdcard/$FINAL_ZIP.zip.md5"
+  adb push -p output/$FINAL_ZIP.zip.md5 /sdcard/
+  adb shell "chown -R media_rw:media_rw /sdcard/FreedomOS*"
+  ## Flashing zip on device
+  echo ""
+  echo "Flashing $FINAL_ZIP.zip into TWRP"
+  adb shell "echo 'boot-recovery ' > /cache/recovery/command"
+  adb shell "echo '--update_package=/sdcard/$FINAL_ZIP.zip' >> /cache/recovery/command"
+  adb shell reboot recovery
+  echo ""
+  echo "$greent$bold Flash Successful! Follow the steps on you device $normal"
+fi
