@@ -1,8 +1,7 @@
   FIX: ViPER4Android and fos_wallpapers folders are not writable.
-  FIX: SuperSU installation. [OPTION]
+  FIX: SuperSU installation.
   ADD: Google DNS. [OPTION]
   ADD: Substratum theme engine. [OPTION]
-  ADD: Busybox 1.24.2.
   ADD: EmojiOne 2.2. [OPTION]
   ADD: New installation process, no more system.new.dat.
   ADD: Material Design Xposed Installer 3.0 alpha4. [OPTION]
@@ -11,8 +10,10 @@
   ADD: Uninstall OnePlus OTA [OPTION]
   ADD: Uninstall OnePlus Setup Wizard [OPTION]
   ADD: Uninstall Google Setup Wizard [OPTION]
-  DEL: Xposed Installer alpha4.0.
-  DEL: SHA1 System verification.
+  UPDATE: Swiftkey to 6.3.8.77
+  DELETE: Xposed Installer alpha4.0.
+  DELETE: SHA1 System verification.
+  NOTE : And much more, check github.com/NevaX07/FreedomOS
 
 1.2.1
   Fix system verification
