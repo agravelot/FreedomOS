@@ -170,7 +170,6 @@ checkbox("<~gapps.tittle>", "<~gapps.tittle2>", "@default", "gapps.prop",
      "<~photos>", "<~info.photos>", 1,
      "<~play_music>", "<~info.play_music>", 1,
      "<~play_movies>", "<~info.play_movies>", 1,
-     "<~setup_wizard", "<~info.setup_wizard>", 1,
      "<~youtube>", "<~info.youtube>", 1
    );
 
