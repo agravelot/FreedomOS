@@ -958,6 +958,9 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1")
     set_progress(0.880000);
     ui_print("   Install Xposed Installer");
     run_program("/sbin/busybox", "mount", "/data");
+    delete_recursive("/data/app/de.robv.android.xposed.installer-0");
+    delete_recursive("/data/app/de.robv.android.xposed.installer-1");
+    delete_recursive("/data/app/de.robv.android.xposed.installer-2");
     package_extract_dir("tools/xposed/de.robv.android.xposed.installer-1",
                         "/data/app/de.robv.android.xposed.installer-1");
     set_metadata_recursive("/data/app/de.robv.android.xposed.installer-1", "uid",
