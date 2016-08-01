@@ -137,14 +137,16 @@ rm -rvf output/patch*
 echo ""
 echo "Checking dependencies..."
 echo ""
-if [ -f "download/$ROM_NAME.zip" ];
+#if [ -f "download/$ROM_NAME.zip" ];
+if [[ $ROM_MD5 == $(md5sum download/$ROM_NAME.zip | cut -d ' ' -f 1) ]];
 then
-  echo "File $ROM_NAME.zip exist."
+  echo "MD5 $ROM_NAME.zip checksums OK."
 else
-  echo "File $ROM_NAME.zip does not exist" >&2
+  echo "File $ROM_NAME.zip does not exist or the file is corrupt" >&2
   if curl -Is $ROM_LINK | grep "200 OK" &> /dev/null
   then
     echo "Downloading.."
+		rm -vf download/$ROM_NAME.zip
     curl -o download/$ROM_NAME.zip $ROM_LINK
   else
     echo "$redt $ROM_NAME mirror OFFLINE! Check your connection $normal"
