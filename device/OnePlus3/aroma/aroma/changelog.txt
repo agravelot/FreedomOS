@@ -1,19 +1,38 @@
-  FIX: ViPER4Android and fos_wallpapers folders are not writable.
+1.3
+  FIX: ViPER4Android and FreedomOS_Wallpapers folders are not writable.
   FIX: SuperSU installation.
-  ADD: Google DNS. [OPTION]
-  ADD: Substratum theme engine. [OPTION]
-  ADD: EmojiOne 2.2. [OPTION]
+  ADD: Google DNS. [OPTION].
+  ADD: Substratum theme engine. [OPTION].
+  ADD: EmojiOne 2.2. [OPTION] see more: http://emojione.com.
   ADD: New installation process, no more system.new.dat.
-  ADD: Material Design Xposed Installer 3.0 alpha4. [OPTION]
-  ADD: Uninstall OnePlus Camera [OPTION]
-  ADD: Uninstall OnePlus Gallery [OPTION]
-  ADD: Uninstall OnePlus OTA [OPTION]
-  ADD: Uninstall OnePlus Setup Wizard [OPTION]
-  ADD: Uninstall Google Setup Wizard [OPTION]
-  UPDATE: Swiftkey to 6.3.8.77
+  ADD: Material Design Xposed Installer 3.0 alpha4. [OPTION].
+  ADD: OnePlus Camera [OPTION].
+  ADD: OnePlus Gallery [OPTION].
+  ADD: OnePlus OTA [OPTION].
+  ADD: OnePlus Setup Wizard [OPTION].
+  ADD: Multi Window [OPTION].
+  ADD: Most of the apps are now installed as user apps, instead of system apps.
+  ADD: AntHalService [OPTION]
+  ADD/UPDATE: Google Messenger 1.9.035 [OPTION].
+  UPDATE: Google 6.2.28.21.
+  UPDATE: Google Agenda 5.5.12-127519458.
+  UPDATE: Google Maps 9.33.1.
+  UPDATE: Google Musique 6.11.3120D.3072211.
+  UPDATE: Google Play Music 6.11.3120D.3072211.
+  UPDATE: Google Photos 1.24.0.127982639.
+  UPDATE: YouTube 11.27.53.
+  UPDATE: Swiftkey 6.3.8.77.
+  UPDATE: Removing "Removing Wifi Rf Test" also remove "WifiLogger_app" binary.
+  UPDATE: hosts file
+  DELETE: fmfactorytest binairy.
+  DELETE: fmfactorytestserver binairy.
   DELETE: Xposed Installer alpha4.0.
   DELETE: SHA1 System verification.
-  NOTE : And much more, check github.com/NevaX07/FreedomOS
+  DELETE: Google Play Videos.
+  And more, check gitlab.com/Nevax/FreedomOS
+  NOTE: Migrate to GitLab, the change are mirrored to Github every hour.
+  Check gitlab.com/Nevax/FreedomOS
+  NOTE: Dirty flash should be now more supported thant ever, just wipe cache/dalvik.
 
 1.2.1
   Fix system verification
