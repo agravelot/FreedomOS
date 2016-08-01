@@ -12,6 +12,9 @@ TODO
   More ringtone/notif ?
   Try SU 2.74 & 76
   Make translation
+  Check OOS start pull apps
+  New dpi with arg + avoid duplicate
+  RM from list
 
 openssl genrsa -out key.pem 1024
 openssl req -new -key key.pem -out request.pem
