@@ -50,9 +50,11 @@ ui_print(" ");
 set_progress(0.02);
 ui_print("   Mounting System");
 mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+ui_print("   Mounting Data");
+mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
 
 ui_print("   Extracting Temporary Files");
-show_progress(0.025, 1600);
+show_progress(0.03, 1600);
 delete_recursive("/tmp/tools");
 package_extract_dir("tools", "/tmp/tools");
 set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
@@ -60,7 +62,7 @@ set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode",
 # -- - Backup addond - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   then
-  set_progress(0.03);
+  set_progress(0.035);
   ui_print("   Backup up your addon.d ");
   set_metadata_recursive("/tmp/tools/addon", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
   run_program("/tmp/tools/addon/backuptool.sh", "backup");
@@ -98,12 +100,14 @@ set_progress(0.10);
 show_progress(0.50, 5200);
 ui_print("   Extracting System");
 package_extract_dir("system", "/system");
+ui_print("   Extracting Data");
+package_extract_dir("data", "/data");
 
 ui_print("   Creating Symlinks");
-run_program("/sbin/busybox", "sleep", "5");
+run_program("/sbin/busybox", "sleep", "1");
 ifelse(is_mounted("/system"), unmount("/system"));
 ifelse(is_mounted("/data"), unmount("/data"));
-run_program("/sbin/busybox", "sleep", "5");
+run_program("/sbin/busybox", "sleep", "1");
 mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
 mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
 symlink("../../../../lib/libwebviewchromium.so", "/system/app/webview/lib/arm/libwebviewchromium.so");
@@ -453,10 +457,10 @@ symlink("toybox", "/system/bin/xargs");
 symlink("toybox", "/system/bin/yes");
 
 ui_print("   Setting permissions");
-run_program("/sbin/busybox", "sleep", "5");
+run_program("/sbin/busybox", "sleep", "1");
 ifelse(is_mounted("/system"), unmount("/system"));
 ifelse(is_mounted("/data"), unmount("/data"));
-run_program("/sbin/busybox", "sleep", "5");
+run_program("/sbin/busybox", "sleep", "1");
 mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
 mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
 set_metadata_recursive("/system", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
@@ -979,6 +983,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
                            "fmode", 0755);
 
     package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
+    # 1023 is media_rw user and group
     set_metadata_recursive("/sdcard/Viper4Android", "uid",
                            1023, "gid", 1023, "dmode", 0755, "fmode", 0644);
 endif;
