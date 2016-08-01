@@ -7,8 +7,8 @@
 - 20 Go of free space
 - Packages : `rsync python zip curl openssl`
 - Optional packages:
- - `adb` for pulling updated apps and pushing rom with automatic flash.
- - `java` for signed the zip file, i don't know which version is needed, i use `java-8-jdk` on my Arch Linux.
+- `adb` for pulling updated apps and pushing rom with automatic flash.
+- `java` for signed the zip file, i don't know which version is needed, i use `java-8-jdk` on my Arch Linux.
 You also need ext4 mount support with loop option.
 
 **How to build**
