@@ -15,7 +15,7 @@ You also need ext4 mount support with loop option.
 
 Clone the repo:
 ```bash
-git clone https://gitlab.com/Nevax/FreedomOS.git -b op3
+git clone https://gitlab.com/Nevax/FreedomOS.git -b master
 ```
 Build the project:
 ```bash
