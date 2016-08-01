@@ -1059,6 +1059,13 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
                            0, "gid", 0,  "fmode", 0644);
 endif;
 
+# -- - MULTI WINDOW - -- #
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
+  then
+    ui_print("   Enabling Multi Window");
+    run_program("/tmp/tools/multi_window.sh");
+endif;
+
 # -- - LAYERS - -- #
 if (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="2")
   then
