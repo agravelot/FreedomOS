@@ -291,7 +291,8 @@ then
   openssl md5 "output/FreedomOS-$CODENAME-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-nevax-$VERSION.zip.md5"
   echo ""
   echo "SignApk....."
-  java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip" "tmp/FreedomOS-$DEVICE-nevax-$VERSION-signed.zip"
+	chmod +x SignApk/signapk.jar
+  java -jar "SignApk/signapk.jar" "SignApk/certificate.pem" "SignApk/key.pk8" "tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip" "tmp/FreedomOS-$DEVICE-nevax-$VERSION-signed.zip"
   echo ""
   echo "Move signed zip file in output folder"
   mv -v "tmp/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" "output/"
