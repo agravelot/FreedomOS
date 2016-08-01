@@ -84,6 +84,7 @@ delete_recursive("/sdcard/DCIM/.thumbnails");
 delete_recursive("/sdcard/LazyList");
 delete_recursive("/sdcard/LOST.DIR");
 delete_recursive("/sdcard/tmp");
+run_program("/tmp/tools/clean_apps.sh");
 
 ui_print(" ");
 ui_print("@Installing FreedomOS");
