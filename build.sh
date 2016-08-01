@@ -277,29 +277,29 @@ then
   cd tmp/
   echo ""
   echo "Making zip file"
-  zip -r9 "FreedomOS-$CODENAME-$-nevax-$VERSION.zip" * -x "*EMPTY_DIRECTORY*"
+  zip -r9 "FreedomOS-$CODENAME-nevax-$VERSION.zip" * -x "*EMPTY_DIRECTORY*"
   echo "----"
   cd ..
   echo ""
   echo "Copy Unsigned in output folder"
-  cp -v tmp/FreedomOS-$CODENAME-$-nevax-$VERSION.zip output/FreedomOS-$CODENAME-$-nevax-$VERSION.zip
+  cp -v tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip output/FreedomOS-$CODENAME-nevax-$VERSION.zip
   echo ""
   echo "testing zip integrity"
-  zip -T output/FreedomOS-$CODENAME-$-nevax-$VERSION.zip
+  zip -T output/FreedomOS-$CODENAME-nevax-$VERSION.zip
   echo ""
   echo "Generating md5 hash"
-  openssl md5 "output/FreedomOS-$CODENAME-$-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-$-nevax-$VERSION.zip.md5"
+  openssl md5 "output/FreedomOS-$CODENAME-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-nevax-$VERSION.zip.md5"
   echo ""
   echo "SignApk....."
-  java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-$CODENAME-$-nevax-$VERSION.zip" "tmp/FreedomOS-$DEVICE-$-nevax-$VERSION-signed.zip"
+  java -jar "SignApk/signapk.jar" "SignApk/testkey.x509.pem" "SignApk/testkey.pk8" "tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip" "tmp/FreedomOS-$DEVICE-nevax-$VERSION-signed.zip"
   echo ""
   echo "Move signed zip file in output folder"
-  mv -v "tmp/FreedomOS-$CODENAME-$-nevax-$VERSION-signed.zip" "output/"
+  mv -v "tmp/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" "output/"
   echo ""
   echo "Generating md5 hash"
-  openssl md5 "output/FreedomOS-$CODENAME-$-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-$-nevax-$VERSION-signed.zip.md5"
+  openssl md5 "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip.md5"
   #We doesn't test the final, because it doesn't work with the signed zip.
-  FINAL_ZIP=FreedomOS-$CODENAME-$-nevax-$VERSION-signed
+  FINAL_ZIP=FreedomOS-$CODENAME-nevax-$VERSION-signed
 fi
 
 ## debug build
