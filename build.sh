@@ -292,10 +292,7 @@ then
   echo ""
   echo "SignApk....."
 	chmod +x SignApk/signapk.jar
-  java -jar "SignApk/signapk.jar" "SignApk/certificate.pem" "SignApk/key.pk8" "tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip" "tmp/FreedomOS-$DEVICE-nevax-$VERSION-signed.zip"
-  echo ""
-  echo "Move signed zip file in output folder"
-  mv -v "tmp/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" "output/"
+  java -jar "SignApk/signapk.jar" "SignApk/certificate.pem" "SignApk/key.pk8" "tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip" "output/FreedomOS-$DEVICE-nevax-$VERSION-signed.zip"
   echo ""
   echo "Generating md5 hash"
   openssl md5 "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip.md5"
@@ -326,7 +323,7 @@ fi
 
 echo ""
 echo "Clear tmp/ foler..."
-rm -rvf tmp/*
+rm -rf tmp/*
 touch "tmp/EMPTY_DIRECTORY"
 echo ""
 echo "$greent$bold Build finished! You can find the build here: output/FreedomOS-$DEVICE-$BUILD_TYPE-$VERSION.zip $normal"
