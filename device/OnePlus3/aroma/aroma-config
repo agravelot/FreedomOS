@@ -140,16 +140,15 @@ endif;
 
 #Choose install mod
 ini_set("text_next", "<~text_next>");
-selectbox("<~install_mod.tittle>", "<~install_mod.tittle2>", "@default",
-          "install_mod.prop",
+selectbox("<~install_mod.tittle>", "<~install_mod.tittle2>", "@default", "install_mod.prop",
 
-          "<~assert.tittle>", "", 2,
-          "<~assert_yes>", "<~info.assert_yes>", 1,
-          "<~assert_no>", "<~info.assert_no>", 0,
-          "<~addon.tittle>", "", 2,
-          "<~addon_yes>", "<~info.addon_yes>", 0,
-          "<~addon_no>", "<~info.addon_no>", 1
-        );
+  "<~assert.tittle>", "", 2,
+     "<~assert_yes>", "<~info.assert_yes>", 1,
+     "<~assert_no>", "<~info.assert_no>", 0,
+  "<~addon.tittle>", "", 2,
+     "<~addon_yes>", "<~info.addon_yes>", 0,
+     "<~addon_no>", "<~info.addon_no>", 1
+    );
 
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
