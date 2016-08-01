@@ -74,11 +74,16 @@ delete_recursive("/system");
 
 set_progress(0.08);
 ui_print("   Cleaning junk files");
+delete_recursive("/sdcard/.android_secure");
+delete_recursive("/sdcard/.bookmark_thumb1");
+delete_recursive("/sdcard/.data");
 delete_recursive("/sdcard/.tmp");
 delete_recursive("/sdcard/Android");
+delete_recursive("/sdcard/bugreports");
 delete_recursive("/sdcard/DCIM/.thumbnails");
 delete_recursive("/sdcard/LazyList");
 delete_recursive("/sdcard/LOST.DIR");
+delete_recursive("/sdcard/tmp");
 
 ui_print(" ");
 ui_print("@Installing FreedomOS");
@@ -110,6 +115,8 @@ ifelse(is_mounted("/data"), unmount("/data"));
 run_program("/sbin/busybox", "sleep", "1");
 mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
 mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
+symlink("app_process64", "/system/bin/app_process");
+symlink("app_process64", "/system/bin/app_process");
 symlink("../../../../lib/libwebviewchromium.so", "/system/app/webview/lib/arm/libwebviewchromium.so");
 symlink("../../../../lib64/libwebviewchromium.so", "/system/app/webview/lib/arm64/libwebviewchromium.so");
 symlink("/data/hlos_rfs/shared", "/system/rfs/apq/gnss/hlos");
@@ -195,8 +202,6 @@ symlink("/system/lib64/libttscompat.so", "/system/app/PicoTts/lib/arm64/libttsco
 symlink("/system/lib64/libttspico.so", "/system/app/PicoTts/lib/arm64/libttspico.so");
 symlink("/system/vendor/lib64/libimscamera_jni.so", "/system/vendor/app/ims/lib/arm64/libimscamera_jni.so");
 symlink("/system/vendor/lib64/libimsmedia_jni.so", "/system/vendor/app/ims/lib/arm64/libimsmedia_jni.so");
-symlink("app_process64", "/system/bin/app_process");
-symlink("app_process64", "/system/bin/app_process");
 symlink("busybox", "/system/xbin/[", "/system/xbin/[[",
         "/system/xbin/adjtimex", "/system/xbin/arp", "/system/xbin/ash",
         "/system/xbin/awk", "/system/xbin/base64", "/system/xbin/basename",
