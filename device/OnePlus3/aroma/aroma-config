@@ -158,6 +158,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
 checkbox("<~gapps.tittle>", "<~gapps.tittle2>", "@default", "gapps.prop",
 
   "Google apps", "", 2,
+     "<anthal>, <info.anthal>", 0,
      "<~calculator>", "<~info.calculator>", 1,
      "<~calendar>", "<~info.calendar>", 1,
      "<~chrome>", "<~info.chrome>", 1,
