@@ -164,13 +164,13 @@ checkbox("<~gapps.tittle>", "<~gapps.tittle2>", "@default", "gapps.prop",
      "<~chrome>", "<~info.chrome>", 1,
      "<~drive>", "<~info.drive>", 1,
      "<~gmail>", "<~info.gmail>", 1,
-     "<~gmail_exchange>", "<~info.gmail_exchange>", 1,
+     "<~gmail_exchange>", "<~info.gmail_exchange>", 0,
      "<~google>", "<~info.google>", 1, #VELVET
-     "<~hangouts>", "<~info.hangouts>", 1,
+     "<~hangouts>", "<~info.hangouts>", 0,
      "<~maps>", "<~info.maps>", 1,
+     "<~messenger>", "<~info.messenger>", 1,
      "<~photos>", "<~info.photos>", 1,
-     "<~play_music>", "<~info.play_music>", 1,
-     "<~play_movies>", "<~info.play_movies>", 1,
+     "<~play_music>", "<~info.play_music>", 0,
      "<~youtube>", "<~info.youtube>", 1
    );
 
