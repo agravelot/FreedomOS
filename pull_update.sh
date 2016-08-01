@@ -44,3 +44,5 @@ adb pull -p /data/app/$APP data/app/$APP
 cd data/
 find . -name "*.odex" -type f -delete
 cd ..
+
+adb pull -p /system/etc/hosts tools/adaway/hosts
