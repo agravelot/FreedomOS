@@ -40,5 +40,7 @@ adb pull -p /data/app/$APP data/app/$APP
 
 APP=de.robv.android.xposed.installer-1
 adb pull -p /data/app/$APP data/app/$APP
-APP=eu.chainfire.supersu-2
-adb pull -p /data/app/$APP data/app/$APP
+
+cd data/
+find . -name "*.odex" -type f -delete
+cd ..
