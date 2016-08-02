@@ -1216,14 +1216,6 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
     run_program("/sbin/busybox", "sleep", "1");
     run_program("/sbin/busybox", "unzip", "/tmp/tools/su/su.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/su");
     run_program("/sbin/busybox", "sh", "/tmp/tools/su/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/su/su.zip");
-    ui_print(" ");
-    package_extract_dir("data/app/eu.chainfire.supersu-1", "/data/app/eu.chainfire.supersu-1");
-    set_metadata_recursive("/data/app/eu.chainfire.supersu-1", "uid",
-                           1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/data/app/eu.chainfire.supersu-1/lib",
-                           "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
-    set_metadata_recursive("/data/app/eu.chainfire.supersu-1/oat",
-                           "uid", 1000, "gid", 1000, "dmode", 0775, "fmode", 0644);
 endif;
 
 # -- - Google apps - -- #
