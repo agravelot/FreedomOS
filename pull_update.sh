@@ -1,48 +1,47 @@
 #!/bin/bash
-APP=com.google.android.apps.photos-1
-adb pull -p /data/app/$APP data/app/$APP
 
-APP=com.google.android.apps.maps-1
-adb pull -p /data/app/$APP data/app/$APP
+adb shell "mount /data"
+adb shell "mount /system"
 
-APP=com.google.android.calendar-1
-adb pull -p /data/app/$APP data/app/$APP
+DATA_PATH="data/app/"
 
-APP=com.google.android.apps.messaging-1
-adb pull -p /data/app/$APP data/app/$APP
+app_list="
+com.google.android.apps.photos-1
+com.google.android.apps.maps-1
+com.google.android.calendar-1
+com.google.android.apps.messaging-1
+com.google.android.youtube-1
+com.google.android.music-1
+com.google.android.talk-1
+com.android.chrome-1
+com.touchtype.swiftkey-1
+com.google.android.gm-1
+com.google.android.apps.docs-1
+com.google.android.googlequicksearchbox-1
+com.google.android.music-1
+de.robv.android.xposed.installer-1
+"
 
-APP=com.google.android.youtube-1
-adb pull -p /data/app/$APP data/app/$APP
+for i in ${app_list}
+do
+  mkdir -p ${DATA_PATH}${i}
+done
 
-APP=com.google.android.music-1
-adb pull -p /data/app/$APP data/app/$APP
+for i in ${app_list}
+do
+  echo " "
+  echo "Pulling ${i} :"
+  adb pull /data/app/${i} ${DATA_PATH}${i}
+done
 
-APP=com.google.android.talk-1
-adb pull -p /data/app/$APP data/app/$APP
+cd ${DATA_PATH}
+chmod 775 *
+cd -
 
-APP=com.android.chrome-1
-adb pull -p /data/app/$APP data/app/$APP
-
-APP=com.touchtype.swiftkey-1
-adb pull -p /data/app/$APP data/app/$APP
-
-APP=com.google.android.gm-1
-adb pull -p /data/app/$APP data/app/$APP
-
-APP=com.google.android.apps.docs-1
-adb pull -p /data/app/$APP data/app/$APP
-
-APP=com.google.android.googlequicksearchbox-1
-adb pull -p /data/app/$APP data/app/$APP
-
-APP=com.google.android.music-1
-adb pull -p /data/app/$APP data/app/$APP
-
-APP=de.robv.android.xposed.installer-1
-adb pull -p /data/app/$APP data/app/$APP
-
-cd data/
+echo "Remove .odex files"
+cd ${DATA_PATH}
 find . -name "*.odex" -type f -delete
-cd ..
+cd -
 
-adb pull -p /system/etc/hosts tools/adaway/hosts
+echo "Pull hosts file"
+adb pull /system/etc/hosts tools/adaway/hosts
