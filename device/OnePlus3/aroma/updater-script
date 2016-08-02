@@ -49,9 +49,9 @@ ui_print(" ");
 
 set_progress(0.02);
 ui_print("   Mounting System");
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+run_program("/sbin/busybox", "mount", "/system");
 ui_print("   Mounting Data");
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
+run_program("/sbin/busybox", "mount", "/data");
 
 ui_print("   Extracting Temporary Files");
 show_progress(0.03, 1600);
@@ -68,6 +68,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   run_program("/tmp/tools/addon/backuptool.sh", "backup");
 endif;
 
+# -- - CLEAN SYSTEM - -- #
 set_progress(0.04);
 ui_print("   Formating System");
 delete_recursive("/system");
@@ -85,6 +86,10 @@ delete_recursive("/sdcard/LazyList");
 delete_recursive("/sdcard/LOST.DIR");
 delete_recursive("/sdcard/tmp");
 run_program("/tmp/tools/clean_apps.sh");
+
+ui_print("   Wiping Cache");
+run_program("/sbin/busybox", "mount", "/cache");
+delete_recursive("/cache");
 
 ui_print(" ");
 ui_print("@Installing FreedomOS");
@@ -110,12 +115,12 @@ ui_print("   Extracting Data");
 package_extract_dir("data", "/data");
 
 ui_print("   Creating Symlinks");
-run_program("/sbin/busybox", "sleep", "1");
 ifelse(is_mounted("/system"), unmount("/system"));
 ifelse(is_mounted("/data"), unmount("/data"));
 run_program("/sbin/busybox", "sleep", "1");
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
+run_program("/sbin/busybox", "mount", "/system");
+run_program("/sbin/busybox", "mount", "/data");
+run_program("/sbin/busybox", "sleep", "1");
 symlink("app_process64", "/system/bin/app_process");
 symlink("app_process64", "/system/bin/app_process");
 symlink("../../../../lib/libwebviewchromium.so", "/system/app/webview/lib/arm/libwebviewchromium.so");
@@ -463,12 +468,12 @@ symlink("toybox", "/system/bin/xargs");
 symlink("toybox", "/system/bin/yes");
 
 ui_print("   Setting permissions");
-run_program("/sbin/busybox", "sleep", "1");
 ifelse(is_mounted("/system"), unmount("/system"));
 ifelse(is_mounted("/data"), unmount("/data"));
 run_program("/sbin/busybox", "sleep", "1");
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
+run_program("/sbin/busybox", "mount", "/system");
+run_program("/sbin/busybox", "mount", "/data");
+run_program("/sbin/busybox", "sleep", "1");
 set_metadata_recursive("/system", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/bin/ATFWD-daemon", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:atfwd_exec:s0");
@@ -891,7 +896,7 @@ set_progress(0.720000);
 ui_print("@Applying Your Settings");
 ui_print(" ");
 ui_print("   Mounting System");
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+run_program("/sbin/busybox", "mount", "/system");
 ui_print("   Mounting Data");
 run_program("/sbin/busybox", "mount", "/data");
 
@@ -1481,7 +1486,7 @@ endif;
 
 set_progress(0.990000);
 ui_print(" ");
-ui_print("@Deleting Temporary Files");
+#ui_print("@Deleting Temporary Files");
 #delete_recursive("/tmp/tools");
 ui_print(" ");
 set_progress(1.00000);
