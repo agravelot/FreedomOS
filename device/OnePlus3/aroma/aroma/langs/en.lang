@@ -244,12 +244,12 @@ info.substratum=The new Theme Engine
 
 # -- - KERNEL - -- #
 
-kernel.tittle=Select your kernel
-kernel.tittle2=
+kernel.tittle=Kernel
+kernel.tittle2=Select your kernel.
 kernel_stock=Stock Kernel
-info.kernel_stock=By OnePlus
-kernel_custom_1=Llama Sweet kernel R1
-info.kernel_custom_1=By genesixx
+info.kernel_stock=The Original by OnePlus
+elementalx=ElementalX (Highly recommended)
+info.elementalx=Developed by @flar2
 
 # -- - INSTALLER - -- #
 install=Installing FreedomOS

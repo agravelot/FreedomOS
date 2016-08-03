@@ -96,23 +96,50 @@ ui_print("@Installing FreedomOS");
 ui_print(" ");
 
 set_progress(0.05);
-ui_print("   Extracting Kernel");
-package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
-
-##Kernel
-#if (file_getprop("/tmp/aroma/kernel.prop", "item.1.2") == "1")
-#  then
-#    set_progress(0.05);
-#    ui_print("   Extracting xx Kernel");
-#    package_extract_file("tools/kernel/boot.img", "/dev/block/bootdevice/by-name/boot");
-#endif;
-
-set_progress(0.10);
-show_progress(0.50, 5200);
+show_progress(0.45, 5200);
 ui_print("   Extracting System");
 package_extract_dir("system", "/system");
 ui_print("   Extracting Data");
 package_extract_dir("data", "/data");
+
+# -- - STOCK KERNEL - -- #
+if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="1")
+  then
+  ui_print("   Installing Stock Kernel");
+  package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
+endif;
+
+# -- - ELEMENTALX - -- #
+if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
+  then
+    set_progress(0.50);
+    ui_print("   Installing ElementalX");
+    package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
+    package_extract_dir("tools/elementalx/config", "/tmp");
+    set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
+
+    run_program("/tmp/busybox", "fstrim", "/cache");
+    run_program("/tmp/busybox", "fstrim", "/data");
+
+    package_extract_dir("tools/elementalx/boot", "/tmp");
+
+    set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "fmode", 0777);
+
+    set_metadata("/tmp/buildconfig.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    run_program("/tmp/buildconfig.sh");
+
+    run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
+    run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
+    run_program("/tmp/cmdline.sh");
+    run_program("/tmp/editramdisk.sh");
+    run_program("/tmp/makebootimg.sh");
+
+    run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
+endif;
 
 ui_print("   Creating Symlinks");
 ifelse(is_mounted("/system"), unmount("/system"));

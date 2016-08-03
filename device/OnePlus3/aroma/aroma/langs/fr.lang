@@ -243,12 +243,12 @@ info.substratum=Le remplacent de Layers
 
 # -- - KERNEL - -- #
 
-kernel.tittle=Selectionnez votre kernel
-kernel.tittle2=
-kernel_stock=Kernel stock
-info.kernel_stock=Par OnePlus
-kernel_custom_1=Llama Sweet kernel R1
-info.kernel_custom_1=Par genesixx
+kernel.tittle=Kernel
+kernel.tittle2=Selectionnez votre kernel.
+kernel_stock=Stock Kernel
+info.kernel_stock=Le stock de OnePlus
+elementalx=ElementalX (Highly recommended)
+info.elementalx=Developed by @flar2
 
 # -- - INSTALLER - -- #
 install=Installation de FreedomOS
