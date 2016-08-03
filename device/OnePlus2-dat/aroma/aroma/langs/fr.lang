@@ -51,9 +51,17 @@ install_mod.tittle=Choisissez votre mode d'installation
 install_mod.tittle2=Choisissez vos paramètres
 install_mod.sub_tittle=Installer
 
+custom=Modifié
+stock=D'origine OnePlus
 assert.tittle=Vérifier l'assert_yes
 assert_yes=Oui (Recommandé)
 assert_no=Non
+
+sha1.tittle=Vérification de l'intégrité du système
+sha1_yes=Oui, vérifier le système
+info.sha1_yes=Recommandé
+sha1_no=Non, ne pas vérifier le système
+info.sha1_no=Pour dirty flash
 addon.tittle=Sauvegarder/Réstaurer /system/addon.d/
 addon_yes=Oui
 info.addon_yes=Recommandédirty flash
@@ -82,8 +90,6 @@ pre.install=L'outil est prêt pour l'installation.
 pre.install2=Appuyer <b>Installer Maintenant</b> pour débuter l'installation.
 pre.install3=Si vous souhaitez vérifier ou modifier vos paramètres d'installation, appuyer sur <b>Retour</b>.
 
-# -- - GOOGLE APPS - -- #
-
 gapps.tittle=Google Apps
 gapps.tittle2=Select the Google applications you want
 
@@ -96,7 +102,6 @@ gmail_exchange=Gmail Exchange
 google=Google
 hangouts=Hangouts
 maps=Maps
-messenger=Messenger
 photos=Photos
 play_music=Play Musique
 tts=Text-to-Speech
@@ -104,13 +109,13 @@ tallback=Tallback
 play_movies=Play Vidéos
 youtube=YouTube
 
-info.calculator=0010 1010
+info.calculator=0010 1010 ?
 info.calendar=Clandrier Google
 info.chrome=Navigateur web
 info.drive=Service cloud
 info.gmail=Cleint mail
 info.gmail_exchange=Support d'exchange pour Gmail
-info.google=Google Now
+info.google=L'application Google
 info.hangouts=Méssagerie instantané
 info.maps=Navigation en temps réel, trafic, transports
 info.photos=Application de gestion des photos numériques
@@ -120,12 +125,9 @@ info.tallback=Cause écran noir au premier démarrage si retiré !!!
 info.play_movies=Application Google Play Films
 info.youtube=Application YouTube
 
-# -- - SYSTEM APPS - -- #
-
 apps.tittle=System applications
 apps.tittle2=Select the system applications you want
 
-anthal=AntHalService
 android_pay=Andoroid Pay
 basic_dream=Veille intéractif
 bt_midi=BT Midi Service
@@ -143,10 +145,6 @@ music=Application de musique OnePlus
 noise_feild=Fond d'écran animé
 oem_test=OemAutoTestServer
 oem_log=OEMLogKit
-oneplus_camera=Camera OnePlus
-oneplus_gallery=Galerie OnePlus
-ota=OTA OnePlus
-oneplus_wizard=SetupWizard OnePlus
 phase_beam=Fond d'écran animé
 sensor_test=SensorTestTool
 protips=Quelques astuces
@@ -154,7 +152,6 @@ swiftkey=Swiftkey
 tags=Tags NFC
 wifi_test=WifiRfTestApk
 
-info.anthal=Pour les périphriques sport/santé/fitness
 info.android_pay=Paiement par NFC
 info.basic_dream=Veille intéractif
 info.bt_midi=Support Bluetooth MIDI
@@ -171,10 +168,6 @@ info.music=OnePlus music app
 info.noise_feild=Fond d'écran animé
 info.oem_test=Application de test OnePlus
 info.oem_log=Log OnePlus
-info.oneplus_camera=Prendre des photos et vidéos
-info.oneplus_gallery=Regarder vos photos et vidéos
-info.ota=Mise à jour système (non recommandé)
-info.oneplus_wizard=Initialisation OnePlus
 info.phase_beam=Fond d'écran animé
 info.protips=ProTips
 info.sensor_test=Application de test des capteurs
@@ -210,47 +203,27 @@ mod.tittle3=Extra mod
 
 supersu=Installer SuperSU
 divine=Viper4Android + Dolby Atmos
-xposed=Material Design Xposed Installer
+xposed=Xposed Installer
 adaway=Adaway
 adb=Activer ADB
-dns=Google DNS
+layer=RRO Layers
 fos_wallpapers=Fond d'écran FreedomOS
-emoji_one=EmojiOne
-multi_window=Multi Fenêtre
 
 info.supersu=SuperSU v2.76 par Chainfire
 info.divine=Divine beats par Theroyalseeker
-info.xposed=Application Xposed seulement par DVD android
+info.xposed=Application Xposed seulement
 info.adaway=Bloqueur de publicité pour Android
 info.adb=Android Debugging Bridge
-info.dns=DNS 8.8.8.8/8.8.4.4
-info.fos_wallpapers=Conçu par @badboy47
-info.emoji_one=The Open Emoji Standard
-info.multi_window=Active le Multi Window
-
-
-# -- - THEME - -- #
-theme.tittle=Theme Engine
-theme.tittle2=Slectionnez votre theme engine
-
-notheme=Aucun Theme engine
-layer=RRO Layers
-substratum=Substratum (BETA)
-
-info.notheme=J'aime le stock
 info.layer=Layers Manager
-info.substratum=Le remplacent de Layers
+info.fos_wallpapers=Conçu par @badboy47
 
-# -- - KERNEL - -- #
+kernel.tittle=Selectionnez votre kernel
+kernel.tittle2=
+kernel_stock=Kernel stock
+info.kernel_stock=Par OnePlus
+kernel_custom_1=Llama Sweet kernel R1
+info.kernel_custom_1=Par genesixx
 
-kernel.tittle=Kernel
-kernel.tittle2=Selectionnez votre kernel.
-kernel_stock=Stock Kernel
-info.kernel_stock=Le stock de OnePlus
-elementalx=ElementalX (Highly recommended)
-info.elementalx=Developed by @flar2
-
-# -- - INSTALLER - -- #
 install=Installation de FreedomOS
 install.now=Installer Maintenant
 install.finish=Cela va prendre un moment...

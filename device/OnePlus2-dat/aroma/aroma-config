@@ -140,33 +140,42 @@ endif;
 
 #Choose install mod
 ini_set("text_next", "<~text_next>");
-selectbox("<~install_mod.tittle>", "<~install_mod.tittle2>", "@default", "install_mod.prop",
+selectbox("<~install_mod.tittle>", "<~install_mod.tittle2>", "@default",
+          "install_mod.prop",
 
-  "<~assert.tittle>", "", 2,
-     "<~assert_yes>", "<~info.assert_yes>", 1,
-     "<~assert_no>", "<~info.assert_no>", 0,
-  "<~addon.tittle>", "", 2,
-     "<~addon_yes>", "<~info.addon_yes>", 0,
-     "<~addon_no>", "<~info.addon_no>", 1
-    );
+          "<~install_mod.sub_tittle>", "", 2,
+          "<~custom>", "<~info.custom>", 1,
+          "<~stock>", "<~info.stock>", 0,
+          "<~assert.tittle>", "", 2,
+          "<~assert_yes>", "<~info.assert_yes>", 1,
+          "<~assert_no>", "<~info.assert_no>", 0,
+          "<~sha1.tittle>", "", 2,
+          "<~sha1_yes>", "<~info.sha1_yes>", 1,
+          "<~sha1_no>", "<~info.sha1_no>", 0,
+          "<~addon.tittle>", "", 2,
+          "<~addon_yes>", "<~info.addon_yes>", 0,
+          "<~addon_no>", "<~info.addon_no>", 1
+        );
 
-# -- - GOOGLE APPS - -- #
-ini_set("text_next", "<~text_next>");
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
+  then
+#GApp
+      ini_set("text_next", "<~text_next>");
 checkbox("<~gapps.tittle>", "<~gapps.tittle2>", "@default", "gapps.prop",
 
   "Google apps", "", 2,
-     "<~calculator>", "<~info.calculator>", 1,
+  "<~calculator>", "<~info.calculator>", 1,
      "<~calendar>", "<~info.calendar>", 1,
      "<~chrome>", "<~info.chrome>", 1,
      "<~drive>", "<~info.drive>", 1,
      "<~gmail>", "<~info.gmail>", 1,
-     "<~gmail_exchange>", "<~info.gmail_exchange>", 0,
+     "<~gmail_exchange>", "<~info.gmail_exchange>", 1,
      "<~google>", "<~info.google>", 1, #VELVET
-     "<~hangouts>", "<~info.hangouts>", 0,
+     "<~hangouts>", "<~info.hangouts>", 1,
      "<~maps>", "<~info.maps>", 1,
-     "<~messenger>", "<~info.messenger>", 1,
      "<~photos>", "<~info.photos>", 1,
-     "<~play_music>", "<~info.play_music>", 0,
+     "<~play_music>", "<~info.play_music>", 1,
+     "<~play_movies>", "<~info.play_movies>", 1,
      "<~youtube>", "<~info.youtube>", 1
    );
 
@@ -175,31 +184,26 @@ ini_set("text_next", "<~text_next>");
 checkbox("<~apps.tittle>", "<~apps.tittle2>", "@default", "apps.prop",
 
   "System apps", "", 2,
-    "<~anthal>", "<~info.anthal>", 0,
-    "<~android_pay>", "<~info.android_pay>", 0,
-    "<~basic_dream>", "<~info.basic_dream>", 0,
+    "<~android_pay>", "<~info.android_pay>", 1,
+    "<~basic_dream>", "<~info.basic_dream>", 1,
     "<~bt_midi>", "<~info.bt_midi>", 1,
     "<~bt_test>", "<~info.bt_test>", 1,
     "<~desk_clock>", "<~info.desk_clock>", 1,
-    "<~engineering>", "<~info.engineering>", 0,
+    "<~engineering>", "<~info.engineering>", 1,
     "<~eng_special_test>", "<~info.eng_special_test>", 1,
-    "<~facelock>", "<~info.facelock>", 0,
-    "<~galaxy>","<~info.galaxy>", 0,
-    "<~holo_spiral>", "<~info.holo_spiral>", 0,
+    "<~facelock>", "<~info.facelock>", 1,
+    "<~galaxy>","<~info.galaxy>", 1,
+    "<~holo_spiral>", "<~info.holo_spiral>", 1,
     "<~anim_wallpaper>", "<~info.anim_wallpaper>", 1,
-    "<~log_kit>", "<~info.log_kit>", 0,
+    "<~log_kit>", "<~info.log_kit>", 1,
     "<~music>", "<~info.music>", 1,
-    "<~noise_feild>", "<~info.noise_feild>", 0,
-    "<~oem_test>", "<~info.oem_test>", 0,
-    "<~oem_log>", "<~info.oem_log>", 0,
-    "<~oneplus_camera>", "<~info.oneplus_camera>", 1,
-    "<~oneplus_gallery>", "<~info.oneplus_gallery>", 1,
-    "<~ota>", "<~info.ota>", 0,
-    "<~oneplus_wizard>", "<~info.oneplus_wizard>", 1,
-    "<~phase_beam>", "<~info.phase_beam>", 0,
+    "<~noise_feild>", "<~info.noise_feild>", 1,
+    "<~oem_test>", "<~info.oem_test>", 1,
+    "<~oem_log>", "<~info.oem_log>", 1,
+    "<~phase_beam>", "<~info.phase_beam>", 1,
     "<~protips>", "<~info.protips>", 1,
     "<~sensor_test>", "<~info.sensor_test>", 1,
-    "<~swiftkey>", "<~info.swiftkey>", 1,
+    "<~swiftkey>", "<~info.swiftkey", 1,
     "<~tags>", "<~info.tags>", 1,
     "<~wifi_test>", "<~info.wifi_test>", 1
   );
@@ -224,7 +228,7 @@ selectbox("<~dpi.tittle>", "<~dpi.tittle2>", "@update", "dpi.prop",
           "350", "<~dpi.350>", 0
         );
 
-# -- - MOD - -- #
+#Extra MOD
 checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
          "<~mod.tittle3>", "", 2,
            "<~supersu>", "<~info.supersu>", 1,
@@ -233,109 +237,36 @@ checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
            "<~adaway>", "<~info.adaway>", 1,
            "<~adb>", "<~info.adb>", 0,
            "<~dns>", "<~info.dns>", 1,
-           "<~fos_wallpapers>", "<~info.fos_wallpapers>", 1,
-           "<~emoji_one>", "<~info.emoji_one>", 1,
-           "<~multi_window>", "<~info.multi_window>", 0
+           "<~fos_wallpapers>", "<~info.fos_wallpapers>", 0
          );
+endif;
 
-# -- - THEME - -- #
+#Theme
 selectbox("<~theme.tittle>", "<~theme.tittle2>", "@update", "theme.prop",
            "<~notheme>", "<~info.notheme>", 0,
            "<~layer>", "<~info.layer>", 0,
            "<~substratum>", "<~info.substratum>", 1
          );
 
-# -- - KERNEL - -- #
-selectbox("<~kernel.tittle>", "<~kernel.tittle2>", "@update", "kernel.prop",
-           "<~kernel_stock>", "<~info.kernel_stock>", 0,
-           "<~elementalx>", "<~info.elementalx>", 1
-         );
+#Kernel
+#selectbox("<~kernel.tittle>", "<~kernel.tittle2>", "@update", "kernel.prop",
+#          "<~kernel_stock>", "<~info.kernel_stock>", 1,
+#          "<~kernel_custom_1>", "<~info.kernel_custom_1>", 0
+#        );
 
-# -- - ELEMENTALX - -- #
-if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2")
-  then
-
-  splash(2000, "elementalx/elementalx");
-
-  agreebox(
-     "Terms Of Use",
-     "<@center>Please read the ElementalX terms of use</@>",
-     "",
-     "" + readfile_aroma("elementalx/agreement.txt"),
-     "I agree with these terms of use",
-     "<@center>You must accept the terms</@>"
-   );
-
-  selectbox(
-    "Maximum CPU Frequency","<@center><b>Select maximum CPU frequency for the little cluster</b></@>","","cpu0.prop",
-    "1728MHz","(overclocked)",0,
-    "1593MHz","(stock)",1,
-    "1478MHz","",0,
-    "1324MHz","",0,
-    "1228MHz","",0
-  );
-
-  selectbox(
-    "Maximum CPU Frequency","<@center><b>Select maximum CPU frequency for the big cluster</b></@>","","cpu2.prop",
-    "2265MHz","(overclocked)",0,
-    "2150MHz","(stock)",1,
-    "1996MHz","",0,
-    "1824MHz","",0,
-    "1708MHz","",0,
-    "1555MHz","",0
-  );
-
-  selectbox(
-    "Disk Settings","","","disk.prop",
-
-    "Select i/o scheduler","",2,
-    "CFQ","(stock)",0,
-    "deadline","",0,
-    "FIOPS","(default)",1,
-    "SIO","",0,
-    "BFQ","",0,
-    "noop","",0
-  );
-
-  checkbox(
-    "Wake Gestures","<@center><b>Select the screen gestures you would like to use</b></@>","","gest.prop",
-
-    "Wake Gestures","<b>Sweep or double tap to wake up phone</b>",2,
-    "Sweep right","",0,
-    "Sweep left","",0,
-    "Sweep up","",0,
-    "Sweep down","",0,
-    "Double tap","",0
-  );
-
-  selectbox(
-    "Sweep2Sleep","<@center><b>Sweep across navbar area to put phone to sleep</b></@>","","s2s.prop",
-    "Disable Sweep2Sleep","",0,
-    "Sweep right","",0,
-    "Sweep left","(default)",1,
-    "Sweep left or right","",0
-  );
-
-  checkbox(
-    "Other settings","<@center><b>Select the mods you want to install</b></@>","","mods.prop",
-    "Disable fsync","Faster fileystem performance, with risk of data loss",0,
-    "Backlight dimmer","Lower screen brightness",0
-  );
-endif;
-
-# -- - Pre-Install - -- -#
+#PreInstall
 ini_set("text_next", "<~install.now>");
 viewbox("<~pre.install.title>", "<~pre.install>\n\n" + "<~pre.install2>\n\n" +
                                     "<~pre.install3>\n\n\n\n",
         "@install");
 
-# -- - Install - -- #
+#Install
 ini_set("text_next", "<~text_next>");
 install("<~install>", "<b>" + ini_get("rom_name") +
                           "</b> is being installed.\n\n" + "<~install.finish>",
         "@install");
 
-# -- - Post-Install - -- #
+#PostInstall
 ini_set("text_next", "Finish");
 checkviewbox("<~install.finish.title>",
              "<#selectbg_g><b><~finish.title></b></#>\n\n" +
