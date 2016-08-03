@@ -150,10 +150,6 @@ selectbox("<~install_mod.tittle>", "<~install_mod.tittle2>", "@default", "instal
      "<~addon_no>", "<~info.addon_no>", 1
     );
 
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
-  then
-#GApp
-      ini_set("text_next", "<~text_next>");
 checkbox("<~gapps.tittle>", "<~gapps.tittle2>", "@default", "gapps.prop",
 
   "Google apps", "", 2,
@@ -239,7 +235,6 @@ checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
            "<~emoji_one>", "<~info.emoji_one>", 1,
            "<~multi_window>", "<~info.multi_window>", 0
          );
-endif;
 
 #Theme
 selectbox("<~theme.tittle>", "<~theme.tittle2>", "@update", "theme.prop",
