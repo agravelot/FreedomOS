@@ -137,7 +137,8 @@ rm -rvf output/patch*
 echo ""
 echo "Checking dependencies..."
 echo ""
-#if [ -f "download/$ROM_NAME.zip" ];
+echo "Checking MD5 of $ROM_NAME"
+echo ""
 if [[ $ROM_MD5 == $(md5sum download/$ROM_NAME.zip | cut -d ' ' -f 1) ]];
 then
   echo "MD5 $ROM_NAME.zip checksums OK."
@@ -155,17 +156,12 @@ else
 fi
 echo ""
 
-if [ -d rom/$DEVICE/$ROM_NAME ];
+if [ -f rom/$DEVICE/$ROM_NAME/system.new.dat ];
 then
   echo "rom/$DEVICE/$ROM_NAME dir exist."
 else
   echo ""
   echo "Extracting rom zip"
-  echo ""
-  echo "Checking MD5 of $ROM_NAME"
-  #MD5
-  echo ""
-  echo "Extracting..."
   mkdir -p rom/$DEVICE/$ROM_NAME
   unzip -o download/$ROM_NAME.zip -d rom/$DEVICE/$ROM_NAME
   echo Done!
