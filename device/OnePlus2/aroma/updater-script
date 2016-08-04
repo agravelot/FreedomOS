@@ -106,45 +106,6 @@ package_extract_dir("system", "/system");
 ui_print("   Extracting Data");
 package_extract_dir("data", "/data");
 
-# -- - STOCK KERNEL - -- #
-if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="1")
-  then
-  ui_print("   Installing Stock Kernel");
-  package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
-endif;
-
-# -- - ELEMENTALX - -- #
-if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
-  then
-    set_progress(0.50);
-    ui_print("   Installing ElementalX");
-    package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
-    package_extract_dir("tools/elementalx/config", "/tmp");
-    set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
-
-    run_program("/tmp/busybox", "fstrim", "/cache");
-    run_program("/tmp/busybox", "fstrim", "/data");
-
-    package_extract_dir("tools/elementalx/boot", "/tmp");
-
-    set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "fmode", 0777);
-    set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "fmode", 0777);
-
-    set_metadata("/tmp/buildconfig.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    run_program("/tmp/buildconfig.sh");
-
-    run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
-    run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
-    run_program("/tmp/cmdline.sh");
-    run_program("/tmp/editramdisk.sh");
-    run_program("/tmp/makebootimg.sh");
-
-    run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
-endif;
-
 ui_print("   Creating Symlinks");
 ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
 ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
@@ -153,31 +114,10 @@ run_program("/sbin/busybox", "mount", "/system");
 run_program("/sbin/busybox", "mount", "/data");
 run_program("/sbin/busybox", "sleep", "1");
 symlink("app_process64", "/system/bin/app_process");
-symlink("app_process64", "/system/bin/app_process");
-symlink("../../../../lib/libwebviewchromium.so", "/system/app/webview/lib/arm/libwebviewchromium.so");
-symlink("../../../../lib64/libwebviewchromium.so", "/system/app/webview/lib/arm64/libwebviewchromium.so");
-symlink("/data/hlos_rfs/shared", "/system/rfs/apq/gnss/hlos");
-symlink("/data/hlos_rfs/shared", "/system/rfs/mdm/adsp/hlos");
-symlink("/data/hlos_rfs/shared", "/system/rfs/mdm/mpss/hlos");
-symlink("/data/hlos_rfs/shared", "/system/rfs/mdm/sparrow/hlos");
-symlink("/data/hlos_rfs/shared", "/system/rfs/msm/adsp/hlos");
-symlink("/data/hlos_rfs/shared", "/system/rfs/msm/mpss/hlos");
+symlink("dalvikvm64", "/system/bin/dalvikvm");
 symlink("/data/misc/audio/mbhc.bin", "/system/etc/firmware/wcd9320/wcd9320_mbhc.bin");
 symlink("/data/misc/audio/wcd9320_anc.bin", "/system/etc/firmware/wcd9320/wcd9320_anc.bin");
 symlink("/data/misc/audio/wcd9320_mad_audio.bin", "/system/etc/firmware/wcd9320/wcd9320_mad_audio.bin");
-symlink("/data/misc/audio/wcd9320_mbhc.bin", "/system/etc/firmware/wcd9320/wcd9320_mbhc.bin");
-symlink("/data/rfs/apq/gnss", "/system/rfs/apq/gnss/readwrite");
-symlink("/data/rfs/mdm/adsp", "/system/rfs/mdm/adsp/readwrite");
-symlink("/data/rfs/mdm/mpss", "/system/rfs/mdm/mpss/readwrite");
-symlink("/data/rfs/mdm/sparrow", "/system/rfs/mdm/sparrow/readwrite");
-symlink("/data/rfs/msm/adsp", "/system/rfs/msm/adsp/readwrite");
-symlink("/data/rfs/msm/mpss", "/system/rfs/msm/mpss/readwrite");
-symlink("/data/rfs/shared", "/system/rfs/apq/gnss/shared");
-symlink("/data/rfs/shared", "/system/rfs/mdm/adsp/shared");
-symlink("/data/rfs/shared", "/system/rfs/mdm/mpss/shared");
-symlink("/data/rfs/shared", "/system/rfs/mdm/sparrow/shared");
-symlink("/data/rfs/shared", "/system/rfs/msm/adsp/shared");
-symlink("/data/rfs/shared", "/system/rfs/msm/mpss/shared");
 symlink("/data/tombstones/lpass", "/system/rfs/mdm/adsp/ramdumps");
 symlink("/data/tombstones/lpass", "/system/rfs/msm/adsp/ramdumps");
 symlink("/data/tombstones/modem", "/system/rfs/apq/gnss/ramdumps");
@@ -185,17 +125,18 @@ symlink("/data/tombstones/modem", "/system/rfs/mdm/mpss/ramdumps");
 symlink("/data/tombstones/modem", "/system/rfs/msm/mpss/ramdumps");
 symlink("/data/tombstones/sparrow", "/system/rfs/mdm/sparrow/ramdumps");
 symlink("/dev/block/bootdevice/by-name/msadp", "/system/etc/firmware/msadp");
+symlink("egl/libEGL_adreno.so", "/system/vendor/lib64/libEGL_adreno.so");
+symlink("egl/libEGL_adreno.so", "/system/vendor/lib/libEGL_adreno.so");
 symlink("/firmware", "/system/rfs/apq/gnss/readonly/firmware");
 symlink("/firmware", "/system/rfs/mdm/adsp/readonly/firmware");
 symlink("/firmware", "/system/rfs/mdm/mpss/readonly/firmware");
 symlink("/firmware", "/system/rfs/mdm/sparrow/readonly/firmware");
 symlink("/firmware", "/system/rfs/msm/adsp/readonly/firmware");
 symlink("/firmware", "/system/rfs/msm/mpss/readonly/firmware");
-symlink("/firmware/image/keymaste.b00", "/system/vendor/firmware/keymaster/keymaster.b00");
-symlink("/firmware/image/keymaste.b01", "/system/vendor/firmware/keymaster/keymaster.b01");
-symlink("/firmware/image/keymaste.b02", "/system/vendor/firmware/keymaster/keymaster.b02");
-symlink("/firmware/image/keymaste.b03", "/system/vendor/firmware/keymaster/keymaster.b03");
-symlink("/firmware/image/keymaste.mdt", "/system/vendor/firmware/keymaster/keymastermdt");
+symlink("grep", "/system/bin/egrep");
+symlink("grep", "/system/bin/fgrep");
+symlink("libGLESv2.so", "/system/lib64/libGLESv3.so");
+symlink("libGLESv2.so", "/system/lib/libGLESv3.so");
 symlink("/persist/hlos_rfs/shared", "/system/rfs/apq/gnss/hlos");
 symlink("/persist/hlos_rfs/shared", "/system/rfs/mdm/adsp/hlos");
 symlink("/persist/hlos_rfs/shared", "/system/rfs/mdm/mpss/hlos");
@@ -215,151 +156,28 @@ symlink("/persist/rfs/shared", "/system/rfs/mdm/sparrow/shared");
 symlink("/persist/rfs/shared", "/system/rfs/msm/adsp/shared");
 symlink("/persist/rfs/shared", "/system/rfs/msm/mpss/shared");
 symlink("/persist/wlan_mac.bin", "/system/etc/firmware/wlan/qca_cld/wlan_mac.bin");
-symlink("/system/etc/wifi/WCNSS_qcom_cfg.ini", "/system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini");
-symlink("/system/etc/wifi/WCNSS_qcom_wlan_nv.bin", "/system/etc/firmware/wlan/qca_cld/WCNSS_qcom_wlan_nv.bin");
-symlink("/system/lib/libbluetooth_jni.so", "/system/app/Bluetooth/lib/arm/libbluetooth_jni.so");
-symlink("/system/lib/libbluetooth_jni.so", "/system/app/BluetoothExt/lib/arm/libbluetooth_jni.so");
-symlink("/system/lib/libjni_eglfence.so", "/system/app/Gallery2/lib/arm/libjni_eglfence.so");
-symlink("/system/lib/libjni_filtershow_filters.so", "/system/app/Gallery2/lib/arm/libjni_filtershow_filters.so");
-symlink("/system/lib/libjni_jpegstream.so", "/system/app/Gallery2/lib/arm/libjni_jpegstream.so");
-symlink("/system/lib/librsjni.so", "/system/app/Gallery2/lib/arm/librsjni.so");
-symlink("/system/lib/libwipower_jni.so", "/system/app/a4wpservice/lib/arm/libwipower_jni.so");
-symlink("/system/lib/libwipower_jni.so", "/system/app/wipowerservice/lib/arm/libwipower_jni.so");
-symlink("/system/lib/modules/qca_cld/qca_cld_wlan.ko", "/system/lib/modules/wlan.ko");
-symlink("/system/lib64/libChineseDateAndSolarDate.so", "/system/app/Calendar/lib/arm64/libChineseDateAndSolarDate.so");
-symlink("/system/lib64/libdefcontainer_jni.so", "/system/priv-app/DefaultContainerService/lib/arm64/libdefcontainer_jni.so");
-symlink("/system/lib64/libfeast_jni.so", "/system/app/Calendar/lib/arm64/libfeast_jni.so");
-symlink("/system/lib64/libjni_jpegutil.so", "/system/app/Camera2/lib/arm64/libjni_jpegutil.so");
-symlink("/system/lib64/libjni_latinime.so", "/system/app/LatinIME/lib/arm64/libjni_latinime.so");
-symlink("/system/lib64/libjni_pacprocessor.so", "/system/app/PacProcessor/lib/arm64/libjni_pacprocessor.so");
-symlink("/system/lib64/libjni_terminal.so", "/system/app/Terminal/lib/arm64/libjni_terminal.so");
-symlink("/system/lib64/libjni_tinyplanet.so", "/system/app/Camera2/lib/arm64/libjni_tinyplanet.so");
-symlink("/system/lib64/libprintspooler_jni.so", "/system/app/PrintSpooler/lib/arm64/libprintspooler_jni.so");
-symlink("/system/lib64/libttscompat.so", "/system/app/PicoTts/lib/arm64/libttscompat.so");
-symlink("/system/lib64/libttspico.so", "/system/app/PicoTts/lib/arm64/libttspico.so");
-symlink("/system/vendor/lib64/libimscamera_jni.so", "/system/vendor/app/ims/lib/arm64/libimscamera_jni.so");
-symlink("/system/vendor/lib64/libimsmedia_jni.so", "/system/vendor/app/ims/lib/arm64/libimsmedia_jni.so");
-symlink("busybox", "/system/xbin/[", "/system/xbin/[[",
-        "/system/xbin/adjtimex", "/system/xbin/arp", "/system/xbin/ash",
-        "/system/xbin/awk", "/system/xbin/base64", "/system/xbin/basename",
-        "/system/xbin/bbconfig", "/system/xbin/blkid", "/system/xbin/blockdev",
-        "/system/xbin/brctl", "/system/xbin/bunzip2", "/system/xbin/bzcat",
-        "/system/xbin/bzip2", "/system/xbin/cal", "/system/xbin/cat",
-        "/system/xbin/catv", "/system/xbin/chattr", "/system/xbin/chcon",
-        "/system/xbin/chgrp", "/system/xbin/chmod", "/system/xbin/chown",
-        "/system/xbin/chroot", "/system/xbin/chvt", "/system/xbin/clear",
-        "/system/xbin/cmp", "/system/xbin/comm", "/system/xbin/cp",
-        "/system/xbin/cpio", "/system/xbin/crond", "/system/xbin/crontab",
-        "/system/xbin/cut", "/system/xbin/date", "/system/xbin/dc",
-        "/system/xbin/dd", "/system/xbin/deallocvt", "/system/xbin/depmod",
-        "/system/xbin/devmem", "/system/xbin/df", "/system/xbin/diff",
-        "/system/xbin/dirname", "/system/xbin/dmesg", "/system/xbin/dnsd",
-        "/system/xbin/dos2unix", "/system/xbin/du", "/system/xbin/echo",
-        "/system/xbin/ed", "/system/xbin/egrep", "/system/xbin/env",
-        "/system/xbin/expand", "/system/xbin/expr", "/system/xbin/false",
-        "/system/xbin/fbsplash", "/system/xbin/fdisk", "/system/xbin/fgconsole",
-        "/system/xbin/fgrep", "/system/xbin/find", "/system/xbin/findfs",
-        "/system/xbin/flash_lock", "/system/xbin/flash_unlock",
-        "/system/xbin/flashcp", "/system/xbin/flock", "/system/xbin/fold",
-        "/system/xbin/free", "/system/xbin/freeramdisk", "/system/xbin/fstrim",
-        "/system/xbin/fsync", "/system/xbin/ftpget", "/system/xbin/ftpput",
-        "/system/xbin/fuser", "/system/xbin/getenforce", "/system/xbin/getopt",
-        "/system/xbin/getsebool", "/system/xbin/grep", "/system/xbin/groups",
-        "/system/xbin/gunzip", "/system/xbin/gzip", "/system/xbin/halt",
-        "/system/xbin/head", "/system/xbin/hexdump", "/system/xbin/hwclock",
-        "/system/xbin/id", "/system/xbin/ifconfig", "/system/xbin/inetd",
-        "/system/xbin/insmod", "/system/xbin/install", "/system/xbin/ionice",
-        "/system/xbin/iostat", "/system/xbin/ip", "/system/xbin/kill",
-        "/system/xbin/killall", "/system/xbin/killall5", "/system/xbin/less",
-        "/system/xbin/ln", "/system/xbin/losetup", "/system/xbin/ls",
-        "/system/xbin/lsattr", "/system/xbin/lsmod", "/system/xbin/lspci",
-        "/system/xbin/lsusb", "/system/xbin/lzcat", "/system/xbin/lzma",
-        "/system/xbin/lzop", "/system/xbin/lzopcat", "/system/xbin/man",
-        "/system/xbin/matchpathcon", "/system/xbin/md5sum", "/system/xbin/mesg",
-        "/system/xbin/mkdir", "/system/xbin/mke2fs", "/system/xbin/mkfifo",
-        "/system/xbin/mkfs.ext2", "/system/xbin/mkfs.vfat",
-        "/system/xbin/mknod", "/system/xbin/mkswap", "/system/xbin/mktemp",
-        "/system/xbin/modinfo", "/system/xbin/modprobe", "/system/xbin/more",
-        "/system/xbin/mount", "/system/xbin/mountpoint", "/system/xbin/mpstat",
-        "/system/xbin/mv", "/system/xbin/nanddump", "/system/xbin/nandwrite",
-        "/system/xbin/nbd-client", "/system/xbin/netstat", "/system/xbin/nice",
-        "/system/xbin/nmeter", "/system/xbin/nohup", "/system/xbin/nslookup",
-        "/system/xbin/ntpd", "/system/xbin/od", "/system/xbin/openvt",
-        "/system/xbin/patch", "/system/xbin/pgrep", "/system/xbin/pidof",
-        "/system/xbin/ping", "/system/xbin/pipe_progress", "/system/xbin/pkill",
-        "/system/xbin/pmap", "/system/xbin/poweroff", "/system/xbin/printenv",
-        "/system/xbin/printf", "/system/xbin/ps", "/system/xbin/pstree",
-        "/system/xbin/pwd", "/system/xbin/pwdx", "/system/xbin/rdate",
-        "/system/xbin/rdev", "/system/xbin/readlink", "/system/xbin/realpath",
-        "/system/xbin/renice", "/system/xbin/reset", "/system/xbin/resize",
-        "/system/xbin/restorecon", "/system/xbin/rev", "/system/xbin/rm",
-        "/system/xbin/rmdir", "/system/xbin/rmmod", "/system/xbin/route",
-        "/system/xbin/run-parts", "/system/xbin/runcon", "/system/xbin/rx",
-        "/system/xbin/sed", "/system/xbin/selinuxenabled", "/system/xbin/seq",
-        "/system/xbin/sestatus", "/system/xbin/setconsole",
-        "/system/xbin/setenforce", "/system/xbin/setfiles",
-        "/system/xbin/setkeycodes", "/system/xbin/setsebool",
-        "/system/xbin/setserial", "/system/xbin/setsid", "/system/xbin/sh",
-        "/system/xbin/sha1sum", "/system/xbin/sha256sum",
-        "/system/xbin/sha3sum", "/system/xbin/sha512sum", "/system/xbin/sleep",
-        "/system/xbin/smemcap", "/system/xbin/sort", "/system/xbin/split",
-        "/system/xbin/stat", "/system/xbin/strings", "/system/xbin/stty",
-        "/system/xbin/sum", "/system/xbin/swapoff", "/system/xbin/swapon",
-        "/system/xbin/sync", "/system/xbin/sysctl", "/system/xbin/tac",
-        "/system/xbin/tail", "/system/xbin/tar", "/system/xbin/taskset",
-        "/system/xbin/tee", "/system/xbin/telnet", "/system/xbin/telnetd",
-        "/system/xbin/test", "/system/xbin/tftp", "/system/xbin/tftpd",
-        "/system/xbin/time", "/system/xbin/timeout", "/system/xbin/top",
-        "/system/xbin/touch", "/system/xbin/tr", "/system/xbin/traceroute",
-        "/system/xbin/true", "/system/xbin/ttysize", "/system/xbin/tune2fs",
-        "/system/xbin/umount", "/system/xbin/uname", "/system/xbin/uncompress",
-        "/system/xbin/unexpand", "/system/xbin/uniq", "/system/xbin/unix2dos",
-        "/system/xbin/unlzma", "/system/xbin/unlzop", "/system/xbin/unxz",
-        "/system/xbin/unzip", "/system/xbin/uptime", "/system/xbin/usleep",
-        "/system/xbin/uudecode", "/system/xbin/uuencode", "/system/xbin/vi",
-        "/system/xbin/watch", "/system/xbin/wc", "/system/xbin/wget",
-        "/system/xbin/which", "/system/xbin/whoami", "/system/xbin/xargs",
-        "/system/xbin/xz", "/system/xbin/xzcat", "/system/xbin/yes",
-        "/system/xbin/zcat");
-symlink("dalvikvm64", "/system/bin/dalvikvm");
-symlink("egl/libEGL_adreno.so", "/system/vendor/lib/libEGL_adreno.so",
-        "/system/vendor/lib64/libEGL_adreno.so");
-symlink("grep", "/system/bin/egrep");
-symlink("grep", "/system/bin/fgrep");
-symlink("libGLESv2.so", "/system/lib/libGLESv3.so",
-        "/system/lib64/libGLESv3.so");
-symlink("mount.exfat", "/system/bin/fsck.exfat",
-        "/system/bin/mkfs.exfat");
-symlink("pigz", "/system/xbin/unpigz");
 symlink("Roboto-Bold.ttf", "/system/fonts/DroidSans-Bold.ttf");
 symlink("Roboto-Regular.ttf", "/system/fonts/DroidSans.ttf");
-symlink("toolbox", "/system/bin/cat", "/system/bin/chcon",
-        "/system/bin/chmod", "/system/bin/chown", "/system/bin/clear",
-        "/system/bin/cmp", "/system/bin/cp", "/system/bin/date",
-        "/system/bin/dd", "/system/bin/df", "/system/bin/dmesg",
-        "/system/bin/du", "/system/bin/getenforce", "/system/bin/getevent",
-        "/system/bin/getprop", "/system/bin/getsebool", "/system/bin/grep",
-        "/system/bin/hd", "/system/bin/id", "/system/bin/ifconfig",
-        "/system/bin/iftop", "/system/bin/insmod", "/system/bin/ioctl",
-        "/system/bin/ionice", "/system/bin/kill", "/system/bin/ln",
-        "/system/bin/load_policy", "/system/bin/log", "/system/bin/ls",
-        "/system/bin/lsmod", "/system/bin/lsof", "/system/bin/md5",
-        "/system/bin/mkdir", "/system/bin/mknod", "/system/bin/mkswap",
-        "/system/bin/mount", "/system/bin/mv", "/system/bin/nandread",
-        "/system/bin/netstat", "/system/bin/newfs_msdos", "/system/bin/nohup",
-        "/system/bin/notify", "/system/bin/printenv", "/system/bin/prlimit",
-        "/system/bin/ps", "/system/bin/r", "/system/bin/readlink",
-        "/system/bin/renice", "/system/bin/restart", "/system/bin/restorecon",
-        "/system/bin/rm", "/system/bin/rmdir", "/system/bin/rmmod",
-        "/system/bin/route", "/system/bin/runcon", "/system/bin/schedtop",
-        "/system/bin/sendevent", "/system/bin/setenforce",
-        "/system/bin/setfattr", "/system/bin/setprop", "/system/bin/setsebool",
-        "/system/bin/sleep", "/system/bin/smd", "/system/bin/start",
-        "/system/bin/stop", "/system/bin/swapoff", "/system/bin/swapon",
-        "/system/bin/sync", "/system/bin/top", "/system/bin/touch",
-        "/system/bin/umount", "/system/bin/uptime", "/system/bin/vmstat",
-        "/system/bin/watchprops",
-        "/system/bin/wipe");
+symlink("/system/etc/wifi/WCNSS_qcom_cfg.ini", "/system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini");
+symlink("/system/lib64/libaudiotest_jni.so", "/system/app/EngineeringMode/lib/arm64/libaudiotest_jni.so");
+symlink("/system/lib64/libdefcontainer_jni.so", "/system/priv-app/DefaultContainerService/lib/arm64/libdefcontainer_jni.so");
+symlink("/system/lib64/libdiagdci.so", "/system/app/EngineeringMode/lib/arm64/libdiagdci.so");
+symlink("/system/lib64/libdoor.so", "/system/app/EngineeringMode/lib/arm64/libdoor.so");
+symlink("/system/lib64/libjni_pacprocessor.so", "/system/app/PacProcessor/lib/arm64/libjni_pacprocessor.so");
+symlink("/system/lib64/liblight_jni.so", "/system/app/EngineeringMode/lib/arm64/liblight_jni.so");
+symlink("/system/lib64/libmmiaudiotest_jni.so", "/system/app/OemAutoTestServer/lib/arm64/libmmiaudiotest_jni.so");
+symlink("/system/lib64/libmmilight_jni.so", "/system/app/OemAutoTestServer/lib/arm64/libmmilight_jni.so");
+symlink("/system/lib64/libnfc_nci_jni.so", "/system/app/NfcNci/lib/arm64/libnfc_nci_jni.so");
+symlink("/system/lib64/libprintspooler_jni.so", "/system/app/PrintSpooler/lib/arm64/libprintspooler_jni.so");
+symlink("/system/lib64/libtelcelnetlock.so", "/system/app/EngineeringMode/lib/arm64/libtelcelnetlock.so");
+symlink("/system/lib64/libwnndict.so", "/system/app/OpenWnn/lib/arm64/libwnndict.so");
+symlink("/system/lib64/libWnnEngDic.so", "/system/app/OpenWnn/lib/arm64/libWnnEngDic.so");
+symlink("/system/lib64/libWnnJpnDic.so", "/system/app/OpenWnn/lib/arm64/libWnnJpnDic.so");
+symlink("/system/lib/libbluetooth_jni.so", "/system/app/BluetoothExt/lib/arm/libbluetooth_jni.so");
+symlink("/system/lib/libbluetooth_jni.so", "/system/app/Bluetooth/lib/arm/libbluetooth_jni.so");
+symlink("/system/lib/modules/qca_cld/qca_cld_wlan.ko", "/system/lib/modules/wlan.ko");
+symlink("/system/vendor/lib64/libimscamera_jni.so", "/system/vendor/app/ims/lib/arm64/libimscamera_jni.so");
+symlink("/system/vendor/lib64/libimsmedia_jni.so", "/system/vendor/app/ims/lib/arm64/libimsmedia_jni.so");
 symlink("toolbox", "/system/bin/dd");
 symlink("toolbox", "/system/bin/df");
 symlink("toolbox", "/system/bin/du");
@@ -497,6 +315,13 @@ symlink("toybox", "/system/bin/which");
 symlink("toybox", "/system/bin/whoami");
 symlink("toybox", "/system/bin/xargs");
 symlink("toybox", "/system/bin/yes");
+
+#set_metadata("/system/xbin/busybox", "uid", 0, "gid", 1000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:hostapd_exec:s0");
+#run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
+
+#package_extract_dir("tools/busybox", "/tmp/busybox");
+#run_program("/sbin/busybox", "unzip", "/tmp/busybox/busybox.zip", "META-INF/com/google/android/*", "-d", "/tmp/busybox");
+#run_program("/sbin/busybox", "sh", "/tmp/busybox/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/busybox/busybox.zip");
 
 ui_print("   Setting permissions");
 ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
@@ -663,7 +488,7 @@ set_metadata_recursive("/system/xbin", "uid", 0, "gid", 2000, "dmode", 0755, "fm
 set_metadata("/system/xbin/busybox", "uid", 0, "gid", 1000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/xbin/dexdump", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/xbin/tcpdump", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:tcpdumpserver_exec:s0");
-set_metadata_recursive("/system/su.d", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+set_metadata_recursive("/system/supersu.d", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/system", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", "0x0", "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", "0x0", "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/bin/ATFWD-daemon", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:atfwd_exec:s0");
@@ -1026,7 +851,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
                            "dmode", 0755, "fmode", 0755);
     set_metadata_recursive("/system/priv-app/Viper4Android/lib/arm", "uid", 0,
                            "gid", 0, "dmode", 0755, "fmode", 0777);
-    set_metadata("/system/su.d/50viper.sh", "uid", 0, "gid", 0, "fmode", 0755);
+    set_metadata("/system/supersu.d/50viper.sh", "uid", 0, "gid", 0, "fmode", 0755);
     set_metadata_recursive("/system/addon.d", "uid", 0, "gid", 0, "dmode", 0755,
                            "fmode", 0755);
     set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755,
@@ -1242,25 +1067,6 @@ if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "16")
   then
     ui_print("   Setting DPI to 350");
     run_program("/tmp/tools/dpi/350.sh");
-endif;
-
-# -- - ROOT - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
-  then
-    ui_print(" ");
-    ui_print("@Installing SuperSU");
-    ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
-    ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
-    run_program("/sbin/busybox", "sleep", "1");
-    run_program("/sbin/busybox", "unzip", "/tmp/tools/su/su.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/su");
-    run_program("/sbin/busybox", "sh", "/tmp/tools/su/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/su/su.zip");
-
-    ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
-    ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
-    run_program("/sbin/busybox", "sleep", "1");
-    run_program("/sbin/busybox", "mount", "/system");
-    run_program("/sbin/busybox", "mount", "/data");
-    run_program("/sbin/busybox", "sleep", "1");
 endif;
 
 # -- - Google apps - -- #
@@ -1519,6 +1325,75 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.27") == "0")
    ui_print("   Removing Wifi Rf Test");
    delete_recursive("/system/app/WifiRfTestApk");
    delete("/system/bin/WifiLogger_app");
+endif;
+
+
+# -- - STOCK KERNEL - -- #
+if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="1")
+  then
+  ui_print("   Installing Stock Kernel");
+endif;
+
+package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
+#package_extract_file("boot.img", "/tmp/boot-stock-fos.img");
+#run_program("/sbin/busybox", "dd", "if=/tmp/boot-stock-fos.img", "of=/dev/block/sda18");
+
+# -- - ROOT - -- #
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
+  then
+    ui_print(" ");
+    ui_print("@Installing SuperSU");
+    #ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
+    #ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
+    #run_program("/sbin/busybox", "sleep", "1");
+
+    package_extract_dir("supersu", "/tmp/supersu");
+    run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
+    run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
+
+    #run_program("/sbin/busybox", "unzip", "/tmp/tools/su/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/su");
+    #run_program("/sbin/busybox", "sh", "/tmp/tools/su/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/su/supersu.zip");
+
+    ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
+    ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
+    run_program("/sbin/busybox", "sleep", "1");
+    run_program("/sbin/busybox", "mount", "/system");
+    run_program("/sbin/busybox", "mount", "/data");
+    run_program("/sbin/busybox", "sleep", "1");
+endif;
+
+# -- - ELEMENTALX - -- #
+if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
+  then
+    set_progress(0.980);
+    ui_print("   Installing ElementalX");
+    #package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
+    #package_extract_file("boot.img", "/tmp/boot-stock-fos.img");
+    #run_program("/sbin/busybox", "dd", "if=/tmp/boot-stock-fos.img", "of=/dev/block/sda18");
+    package_extract_dir("tools/elementalx/config", "/tmp");
+    set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
+
+    run_program("/tmp/busybox", "fstrim", "/cache");
+    run_program("/tmp/busybox", "fstrim", "/data");
+
+    package_extract_dir("tools/elementalx/boot", "/tmp");
+
+    set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "fmode", 0777);
+
+    set_metadata("/tmp/buildconfig.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    run_program("/tmp/buildconfig.sh");
+
+    run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
+    run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
+    run_program("/tmp/cmdline.sh");
+    run_program("/tmp/editramdisk.sh");
+    run_program("/tmp/makebootimg.sh");
+
+    run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
 endif;
 
 set_progress(0.990000);
