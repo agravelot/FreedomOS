@@ -663,49 +663,57 @@ set_metadata("/system/xbin/librank", "uid", 0, "gid", 0, "mode", 06755, "capabil
 set_metadata("/system/xbin/procmem", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/xbin/procrank", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 
-set_metadata_recursive("/data/app/com.android.chrome-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+set_metadata_recursive("/data/app/com.android.chrome-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/com.android.chrome-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.android.chrome-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-set_metadata_recursive("/data/app/com.google.android.apps.docs-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+
+set_metadata_recursive("/data/app/com.google.android.apps.docs-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/com.google.android.apps.docs-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.google.android.apps.docs-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-set_metadata_recursive("/data/app/com.google.android.apps.maps-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+
+set_metadata_recursive("/data/app/com.google.android.apps.maps-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/com.google.android.apps.maps-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.google.android.apps.maps-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-set_metadata_recursive("/data/app/com.google.android.apps.messaging-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+
+set_metadata_recursive("/data/app/com.google.android.apps.messaging-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/com.google.android.apps.messaging-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.google.android.apps.messaging-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-set_metadata_recursive("/data/app/com.google.android.apps.photos-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+
+set_metadata_recursive("/data/app/com.google.android.apps.photos-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/com.google.android.apps.photos-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.google.android.apps.photos-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-set_metadata_recursive("/data/app/com.google.android.calendar-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+
+set_metadata_recursive("/data/app/com.google.android.calendar-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/com.google.android.calendar-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.go&ogle.android.calendar-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-set_metadata_recursive("/data/app/com.google.android.gm-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+
+set_metadata_recursive("/data/app/com.google.android.gm-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/com.google.android.gm-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.google.android.gm-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-set_metadata_recursive("/data/app/com.google.android.googlequicksearchbox-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+
+set_metadata_recursive("/data/app/com.google.android.googlequicksearchbox-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/com.google.android.googlequicksearchbox-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.google.android.googlequicksearchbox-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-set_metadata_recursive("/data/app/com.google.android.music-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+
+set_metadata_recursive("/data/app/com.google.android.music-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/com.google.android.music-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.google.android.music-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-set_metadata_recursive("/data/app/com.google.android.talk-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+
+set_metadata_recursive("/data/app/com.google.android.talk-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/com.google.android.talk-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.google.android.talk-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-set_metadata_recursive("/data/app/com.google.android.youtube-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+
+set_metadata_recursive("/data/app/com.google.android.youtube-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/com.google.android.youtube-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.google.android.youtube-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-set_metadata_recursive("/data/app/com.touchtype.swiftkey-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+
+set_metadata_recursive("/data/app/com.touchtype.swiftkey-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/com.touchtype.swiftkey-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.touchtype.swiftkey-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-set_metadata_recursive("/data/app/de.robv.android.xposed.installer-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+
+set_metadata_recursive("/data/app/de.robv.android.xposed.installer-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/de.robv.android.xposed.installer-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/de.robv.android.xposed.installer-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-set_metadata_recursive("/data/app/eu.chainfire.supersu-1/" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
-set_metadata_recursive("/data/app/eu.chainfire.supersu-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
-set_metadata_recursive("/data/app/eu.chainfire.supersu-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-
 
 # -- - radio update tasks - -- #
 
@@ -927,7 +935,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.5") == "1")
     run_program("/tmp/tools/adb.sh");
 endif;
 
-  # -- - Google DNS - -- #
+  # -- - GOOGLE DNS - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "1")
   then
     set_progress(0.925000);
@@ -951,8 +959,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
     set_progress(0.935000);
     ui_print("   Installing EmojiOne");
     package_extract_file("tools/fonts/emojione-android.ttf", "/system/fonts/NotoColorEmoji.ttf");
-    set_metadata("/system/fonts/NotoColorEmoji.ttf", "uid",
-                           0, "gid", 0,  "fmode", 0644);
+    set_metadata("/system/fonts/NotoColorEmoji.ttf", "uid", 0, "gid", 0,  "fmode", 0644);
 endif;
 
 # -- - MULTI WINDOW - -- #
