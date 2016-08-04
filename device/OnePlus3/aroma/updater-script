@@ -39,8 +39,10 @@ endif;
 
 set_progress(0.000000);
 
-ifelse(is_mounted("/system"), unmount("/system"));
+#ifelse(is_mounted("/system"), unmount("/system"));
 #ifelse(is_mounted("/data"), unmount("/data"));
+ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
+ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
 
 set_progress(0.01);
 ui_print(" ");
@@ -88,7 +90,6 @@ delete_recursive("/sdcard/tmp");
 run_program("/tmp/tools/clean_apps.sh");
 
 ui_print("   Wiping Cache");
-run_program("/sbin/busybox", "mount", "/cache");
 delete_recursive("/cache");
 
 ui_print(" ");
@@ -96,7 +97,7 @@ ui_print("@Installing FreedomOS");
 ui_print(" ");
 
 set_progress(0.05);
-show_progress(0.45, 5200);
+show_progress(0.45, 3996);
 ui_print("   Extracting System");
 package_extract_dir("system", "/system");
 ui_print("   Extracting Data");
@@ -352,8 +353,8 @@ symlink("toybox", "/system/bin/xargs");
 symlink("toybox", "/system/bin/yes");
 
 ui_print("   Setting permissions");
-ifelse(is_mounted("/system"), unmount("/system"));
-ifelse(is_mounted("/data"), unmount("/data"));
+ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
+ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
 run_program("/sbin/busybox", "sleep", "1");
 run_program("/sbin/busybox", "mount", "/system");
 run_program("/sbin/busybox", "mount", "/data");
@@ -779,10 +780,10 @@ endif;
 set_progress(0.720000);
 ui_print("@Applying Your Settings");
 ui_print(" ");
-ui_print("   Mounting System");
-run_program("/sbin/busybox", "mount", "/system");
-ui_print("   Mounting Data");
-run_program("/sbin/busybox", "mount", "/data");
+#ui_print("   Mounting System");
+#run_program("/sbin/busybox", "mount", "/system");
+#ui_print("   Mounting Data");
+#run_program("/sbin/busybox", "mount", "/data");
 
 # -- - DIVINE BEATS - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
@@ -901,7 +902,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
   then
     set_progress(0.900000);
   	ui_print("   Installing Adaway");
-  	run_program("/sbin/busybox", "mount", "/data");
+  	#run_program("/sbin/busybox", "mount", "/data");
     delete_recursive("/data/app/org.adaway-0");
     delete_recursive("/data/app/org.adaway-1");
   	package_extract_dir("tools/adaway/org.adaway-2", "/data/app/org.adaway-2");
@@ -966,7 +967,7 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="2")
   then
     set_progress(0.940000);
     ui_print("   Installing ROO Layers Manager");
-    run_program("/sbin/busybox", "mount", "/data");
+    #run_program("/sbin/busybox", "mount", "/data");
     package_extract_dir("tools/layers/com.lovejoy777.rroandlayersmanager-1",
                         "/data/app/com.lovejoy777.rroandlayersmanager-1");
     set_metadata_recursive("/data/app/com.lovejoy777.rroandlayersmanager-1", "uid",
@@ -982,7 +983,7 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="3")
   then
     set_progress(0.950000);
     ui_print("   Installing Substratum");
-    run_program("/sbin/busybox", "mount", "/data");
+    #run_program("/sbin/busybox", "mount", "/data");
     package_extract_dir("tools/substratum/projekt.substratum-1",
                         "/data/app/projekt.substratum-1");
     set_metadata_recursive("/data/app/projekt.substratum-1", "uid",
