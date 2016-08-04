@@ -15,3 +15,4 @@ rm -R /data/app/com.google.android.talk-*
 rm -R /data/app/com.google.android.youtube-*
 rm -R /data/app/com.touchtype.swiftkey-*
 rm -R /data/app/de.robv.android.xposed.installer-*
+exit
