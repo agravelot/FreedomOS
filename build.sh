@@ -213,7 +213,6 @@ rm -rvf tmp/system/app/Drive
 rm -rvf tmp/system/app/Chrome
 rm -rvf tmp/system/app/Gmail2
 rm -rvf tmp/system/app/SwiftKey
-rm -rvf tmp/system/priv-app/Velvet
 rm -rvf system/bin/fmfactorytest
 rm -rvf system/bin/fmfactorytestserver
 

@@ -652,10 +652,6 @@ set_metadata_recursive("/data/app/com.google.android.gm-1" , "uid", 1000, "gid",
 set_metadata_recursive("/data/app/com.google.android.gm-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.google.android.gm-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
 
-set_metadata_recursive("/data/app/com.google.android.googlequicksearchbox-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
-set_metadata_recursive("/data/app/com.google.android.googlequicksearchbox-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
-set_metadata_recursive("/data/app/com.google.android.googlequicksearchbox-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
-
 set_metadata_recursive("/data/app/com.google.android.music-1" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
 set_metadata_recursive("/data/app/com.google.android.music-1/lib" , "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
 set_metadata_recursive("/data/app/com.google.android.music-1/oat", "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
