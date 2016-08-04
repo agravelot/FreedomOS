@@ -54,9 +54,6 @@ ui_print("   Mounting System");
 run_program("/sbin/busybox", "mount", "/system");
 ui_print("   Mounting Data");
 run_program("/sbin/busybox", "mount", "/data");
-# Mounted by default
-#ui_print("   Mounting Cache");
-#run_program("/sbin/busybox", "mount", "/cache");
 
 ui_print("   Extracting Temporary Files");
 show_progress(0.03, 1600);
@@ -316,13 +313,6 @@ symlink("toybox", "/system/bin/whoami");
 symlink("toybox", "/system/bin/xargs");
 symlink("toybox", "/system/bin/yes");
 
-#set_metadata("/system/xbin/busybox", "uid", 0, "gid", 1000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:hostapd_exec:s0");
-#run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
-
-#package_extract_dir("tools/busybox", "/tmp/busybox");
-#run_program("/sbin/busybox", "unzip", "/tmp/busybox/busybox.zip", "META-INF/com/google/android/*", "-d", "/tmp/busybox");
-#run_program("/sbin/busybox", "sh", "/tmp/busybox/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/busybox/busybox.zip");
-
 ui_print("   Setting permissions");
 ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
 ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
@@ -488,7 +478,7 @@ set_metadata_recursive("/system/xbin", "uid", 0, "gid", 2000, "dmode", 0755, "fm
 set_metadata("/system/xbin/busybox", "uid", 0, "gid", 1000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/xbin/dexdump", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/xbin/tcpdump", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:tcpdumpserver_exec:s0");
-set_metadata_recursive("/system/supersu.d", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+set_metadata_recursive("/system/su.d", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/system", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", "0x0", "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", "0x0", "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/bin/ATFWD-daemon", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:atfwd_exec:s0");
@@ -847,7 +837,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
                            "dmode", 0755, "fmode", 0755);
     set_metadata_recursive("/system/priv-app/Viper4Android/lib/arm", "uid", 0,
                            "gid", 0, "dmode", 0755, "fmode", 0777);
-    set_metadata("/system/supersu.d/50viper.sh", "uid", 0, "gid", 0, "fmode", 0755);
+    set_metadata("/system/su.d/50viper.sh", "uid", 0, "gid", 0, "fmode", 0755);
     set_metadata_recursive("/system/addon.d", "uid", 0, "gid", 0, "dmode", 0755,
                            "fmode", 0755);
     set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755,
@@ -1331,8 +1321,6 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="1")
 endif;
 
 package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
-#package_extract_file("boot.img", "/tmp/boot-stock-fos.img");
-#run_program("/sbin/busybox", "dd", "if=/tmp/boot-stock-fos.img", "of=/dev/block/sda18");
 
 # -- - ROOT - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
@@ -1347,9 +1335,6 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
     run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
     run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
 
-    #run_program("/sbin/busybox", "unzip", "/tmp/tools/su/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/su");
-    #run_program("/sbin/busybox", "sh", "/tmp/tools/su/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/su/supersu.zip");
-
     ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
     ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
     run_program("/sbin/busybox", "sleep", "1");
@@ -1362,10 +1347,7 @@ endif;
 if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
   then
     set_progress(0.980);
-    ui_print("   Installing ElementalX");
-    #package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
-    #package_extract_file("boot.img", "/tmp/boot-stock-fos.img");
-    #run_program("/sbin/busybox", "dd", "if=/tmp/boot-stock-fos.img", "of=/dev/block/sda18");
+    ui_print("@Installing ElementalX");
     package_extract_dir("tools/elementalx/config", "/tmp");
     set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
 
@@ -1380,15 +1362,18 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
     set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "fmode", 0777);
     set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "fmode", 0777);
 
+    ui_print("   Creating config...");
     set_metadata("/tmp/buildconfig.sh", "uid", 0, "gid", 0, "fmode", 0777);
     run_program("/tmp/buildconfig.sh");
 
+    ui_print("   Customizing ramdisk...");
     run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
     run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
     run_program("/tmp/cmdline.sh");
     run_program("/tmp/editramdisk.sh");
     run_program("/tmp/makebootimg.sh");
 
+    ui_print("   Installing kernel...");
     run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
 endif;
 
