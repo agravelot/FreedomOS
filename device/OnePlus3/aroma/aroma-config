@@ -150,6 +150,8 @@ selectbox("<~install_mod.tittle>", "<~install_mod.tittle2>", "@default", "instal
      "<~addon_no>", "<~info.addon_no>", 1
     );
 
+# -- - GOOGLE APPS - -- #
+ini_set("text_next", "<~text_next>");
 checkbox("<~gapps.tittle>", "<~gapps.tittle2>", "@default", "gapps.prop",
 
   "Google apps", "", 2,
@@ -222,7 +224,7 @@ selectbox("<~dpi.tittle>", "<~dpi.tittle2>", "@update", "dpi.prop",
           "350", "<~dpi.350>", 0
         );
 
-#Extra MOD
+# -- - MOD - -- #
 checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
          "<~mod.tittle3>", "", 2,
            "<~supersu>", "<~info.supersu>", 1,
@@ -236,7 +238,7 @@ checkbox("<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
            "<~multi_window>", "<~info.multi_window>", 0
          );
 
-#Theme
+# -- - THEME - -- #
 selectbox("<~theme.tittle>", "<~theme.tittle2>", "@update", "theme.prop",
            "<~notheme>", "<~info.notheme>", 0,
            "<~layer>", "<~info.layer>", 0,
@@ -321,19 +323,19 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2")
   );
 endif;
 
-#PreInstall
+# -- - Pre-Install - -- -#
 ini_set("text_next", "<~install.now>");
 viewbox("<~pre.install.title>", "<~pre.install>\n\n" + "<~pre.install2>\n\n" +
                                     "<~pre.install3>\n\n\n\n",
         "@install");
 
-#Install
+# -- - Install - -- #
 ini_set("text_next", "<~text_next>");
 install("<~install>", "<b>" + ini_get("rom_name") +
                           "</b> is being installed.\n\n" + "<~install.finish>",
         "@install");
 
-#PostInstall
+# -- - Post-Install - -- #
 ini_set("text_next", "Finish");
 checkviewbox("<~install.finish.title>",
              "<#selectbg_g><b><~finish.title></b></#>\n\n" +
