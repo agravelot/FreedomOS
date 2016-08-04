@@ -241,7 +241,11 @@ echo "Add tools"
 cp -vR "tools" "tmp/"
 echo ""
 echo "Add SuperSU"
-cp -v download/$SU.zip tmp/tools/su/su.zip
+#cp -v download/$SU.zip tmp/supersu/supersu.zip
+#cp -rv supersu tmp/
+mkdir tmp/supersu
+cp -v download/$SU.zip tmp/supersu/supersu.zip
+
 echo ""
 echo "Add FreedomOS wallpapers by badboy47"
 mkdir -p tmp/media/wallpaper
