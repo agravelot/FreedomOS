@@ -103,45 +103,6 @@ package_extract_dir("system", "/system");
 ui_print("   Extracting Data");
 package_extract_dir("data", "/data");
 
-# -- - STOCK KERNEL - -- #
-if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="1")
-  then
-  ui_print("   Installing Stock Kernel");
-  package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
-endif;
-
-# -- - ELEMENTALX - -- #
-if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
-  then
-    set_progress(0.50);
-    ui_print("   Installing ElementalX");
-    package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
-    package_extract_dir("tools/elementalx/config", "/tmp");
-    set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
-
-    run_program("/tmp/busybox", "fstrim", "/cache");
-    run_program("/tmp/busybox", "fstrim", "/data");
-
-    package_extract_dir("tools/elementalx/boot", "/tmp");
-
-    set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "fmode", 0777);
-    set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "fmode", 0777);
-
-    set_metadata("/tmp/buildconfig.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    run_program("/tmp/buildconfig.sh");
-
-    run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
-    run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
-    run_program("/tmp/cmdline.sh");
-    run_program("/tmp/editramdisk.sh");
-    run_program("/tmp/makebootimg.sh");
-
-    run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
-endif;
-
 ui_print("   Creating Symlinks");
 ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
 ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
@@ -1098,18 +1059,6 @@ if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "16")
     run_program("/tmp/tools/dpi/350.sh");
 endif;
 
-# -- - ROOT - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
-  then
-    ui_print(" ");
-    ui_print("@Installing SuperSU");
-    ifelse(is_mounted("/system"), unmount("/system"));
-    ifelse(is_mounted("/data"), unmount("/data"));
-    run_program("/sbin/busybox", "sleep", "1");
-    run_program("/sbin/busybox", "unzip", "/tmp/tools/su/su.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/su");
-    run_program("/sbin/busybox", "sh", "/tmp/tools/su/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/su/su.zip");
-endif;
-
 # -- - Google apps - -- #
 set_progress(0.940000);
 ui_print(" ");
@@ -1366,6 +1315,70 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.27") == "0")
    ui_print("   Removing Wifi Rf Test");
    delete_recursive("/system/app/WifiRfTestApk");
    delete("/system/bin/WifiLogger_app");
+endif;
+
+
+# -- - STOCK KERNEL - -- #
+if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="1")
+  then
+  ui_print("   Installing Stock Kernel");
+endif;
+
+package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
+
+# -- - ROOT - -- #
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
+  then
+    ui_print(" ");
+    ui_print("@Installing SuperSU");
+    #ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
+    #ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
+    #run_program("/sbin/busybox", "sleep", "1");
+
+    package_extract_dir("supersu", "/tmp/supersu");
+    run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
+    run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
+
+    ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
+    ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
+    run_program("/sbin/busybox", "sleep", "1");
+    run_program("/sbin/busybox", "mount", "/system");
+    run_program("/sbin/busybox", "mount", "/data");
+    run_program("/sbin/busybox", "sleep", "1");
+endif;
+
+# -- - ELEMENTALX - -- #
+if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
+  then
+    set_progress(0.980);
+    ui_print("@Installing ElementalX");
+    package_extract_dir("tools/elementalx/config", "/tmp");
+    set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
+
+    run_program("/tmp/busybox", "fstrim", "/cache");
+    run_program("/tmp/busybox", "fstrim", "/data");
+
+    package_extract_dir("tools/elementalx/boot", "/tmp");
+
+    set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "fmode", 0777);
+
+    ui_print("   Creating config...");
+    set_metadata("/tmp/buildconfig.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    run_program("/tmp/buildconfig.sh");
+
+    ui_print("   Customizing ramdisk...");
+    run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
+    run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
+    run_program("/tmp/cmdline.sh");
+    run_program("/tmp/editramdisk.sh");
+    run_program("/tmp/makebootimg.sh");
+
+    ui_print("   Installing kernel...");
+    run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
 endif;
 
 set_progress(0.990000);
