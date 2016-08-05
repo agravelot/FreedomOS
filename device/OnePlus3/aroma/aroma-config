@@ -87,7 +87,7 @@ viewbox(
 
 # -- - MAIN MENU - -- #
 menubox(
-  ini_get("rom_name") + " <~by> <b>Nevax</b>", "<~main.tittle>", "@apps", "menu.prop",
+  ini_get("rom_name") + " <~by> <b>Nevax</b>", "<~main.tittle>", "@welcome", "menu.prop",
 
   "<b><~main.install></b>", "<~main.install.info>", "@install",
   "<b><~main.sys></b>", "<~main.sys.info>", "@info",
@@ -143,7 +143,7 @@ selectbox(
 # -- - GOOGLE APPS - -- #
 ini_set("text_next", "<~text_next>");
 checkbox(
-  "<~gapps.tittle>", "<~gapps.tittle2>", "@default", "gapps.prop",
+  "<~gapps.tittle>", "<~gapps.tittle2>", "@personalize", "gapps.prop",
 
   "Google apps", "", 2,
      "<~calculator>", "<~info.calculator>", 1,
@@ -164,7 +164,7 @@ checkbox(
 # -- - SYSTEM APPS - -- #
 ini_set("text_next", "<~text_next>");
 checkbox(
-  "<~apps.tittle>", "<~apps.tittle2>", "@default", "apps.prop",
+  "<~apps.tittle>", "<~apps.tittle2>", "@personalize", "apps.prop",
 
   "System apps", "", 2,
     "<~anthal>", "<~info.anthal>", 0,
@@ -198,7 +198,7 @@ checkbox(
 
 # -- - DPI - -- #
 selectbox(
-  "<~dpi.tittle>", "<~dpi.tittle2>", "@update", "dpi.prop",
+  "<~dpi.tittle>", "<~dpi.tittle2>", "@customize", "dpi.prop",
 
   "500", "<~dpi.500>", 0,
   "490", "<~dpi.490>", 0,
@@ -220,7 +220,7 @@ selectbox(
 
 # -- - MOD - -- #
 checkbox(
-  "<~mod.tittle>", "<~mod.tittle2>", "@update", "mod.prop",
+  "<~mod.tittle>", "<~mod.tittle2>", "@personalize", "mod.prop",
 
   "<~mod.tittle3>", "", 2,
     "<~supersu>", "<~info.supersu>", 1,
@@ -236,7 +236,7 @@ checkbox(
 
 # -- - THEME - -- #
 selectbox(
-  "<~theme.tittle>", "<~theme.tittle2>", "@update", "theme.prop",
+  "<~theme.tittle>", "<~theme.tittle2>", "@default", "theme.prop",
 
   "<~notheme>", "<~info.notheme>", 0,
   "<~layer>", "<~info.layer>", 0,
@@ -245,7 +245,7 @@ selectbox(
 
 # -- - KERNEL - -- #
 selectbox(
-  "<~kernel.tittle>", "<~kernel.tittle2>", "@update", "kernel.prop",
+  "<~kernel.tittle>", "<~kernel.tittle2>", "@personalize", "kernel.prop",
 
   "<~kernel_stock>", "<~info.kernel_stock>", 1,
   "<~elementalx>", "<~info.elementalx>", 0
@@ -259,14 +259,14 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2") then
   agreebox(
      "Terms Of Use",
      "<@center>Please read the ElementalX terms of use</@>",
-     "",
+     "@elementalx",
      "" + readfile_aroma("elementalx/agreement.txt"),
      "I agree with these terms of use",
      "<@center>You must accept the terms</@>"
    );
 
   selectbox(
-    "Maximum CPU Frequency","<@center><b>Select maximum CPU frequency for the little cluster</b></@>","","cpu0.prop",
+    "Maximum CPU Frequency","<@center><b>Select maximum CPU frequency for the little cluster</b></@>","@elementalx","cpu0.prop",
 
     "1728MHz","(overclocked)",0,
     "1593MHz","(stock)",1,
@@ -276,7 +276,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2") then
   );
 
   selectbox(
-    "Maximum CPU Frequency","<@center><b>Select maximum CPU frequency for the big cluster</b></@>","","cpu2.prop",
+    "Maximum CPU Frequency","<@center><b>Select maximum CPU frequency for the big cluster</b></@>","@elementalx","cpu2.prop",
 
     "2265MHz","(overclocked)",0,
     "2150MHz","(stock)",1,
@@ -287,7 +287,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2") then
   );
 
   selectbox(
-    "Disk Settings","","","disk.prop",
+    "Disk Settings","","@elementalx","disk.prop",
 
     "Select i/o scheduler","",2,
       "CFQ","(stock)",0,
@@ -299,7 +299,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2") then
   );
 
   checkbox(
-    "Wake Gestures","<@center><b>Select the screen gestures you would like to use</b></@>","","gest.prop",
+    "Wake Gestures","<@center><b>Select the screen gestures you would like to use</b></@>","@elementalx","gest.prop",
 
     "Wake Gestures","<b>Sweep or double tap to wake up phone</b>",2,
     "Sweep right","",0,
@@ -310,7 +310,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2") then
   );
 
   selectbox(
-    "Sweep2Sleep","<@center><b>Sweep across navbar area to put phone to sleep</b></@>","","s2s.prop",
+    "Sweep2Sleep","<@center><b>Sweep across navbar area to put phone to sleep</b></@>","@elementalx","s2s.prop",
 
     "Disable Sweep2Sleep","",0,
     "Sweep right","",0,
@@ -319,7 +319,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2") then
   );
 
   checkbox(
-    "Other settings","<@center><b>Select the mods you want to install</b></@>","","mods.prop",
+    "Other settings","<@center><b>Select the mods you want to install</b></@>","@elementalx","mods.prop",
 
     "Disable fsync","Faster fileystem performance, with risk of data loss",0,
     "Backlight dimmer","Lower screen brightness",0
