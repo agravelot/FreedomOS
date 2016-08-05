@@ -325,7 +325,7 @@ echo "Clear tmp/ foler..."
 rm -rf tmp/*
 touch "tmp/EMPTY_DIRECTORY"
 echo ""
-echo "$greent$bold Build finished! You can find the build here: output/FreedomOS-$DEVICE-$BUILD_TYPE-$VERSION.zip $normal"
+echo "$greent$bold Build finished! You can find the build here: output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip $normal"
 echo ""
 if [[ "yes" == $(confirm "Want to flash it now?") ]]
 then
