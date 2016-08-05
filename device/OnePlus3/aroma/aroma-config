@@ -193,7 +193,9 @@ checkbox(
     "<~sensor_test>", "<~info.sensor_test>", 1,
     "<~swiftkey>", "<~info.swiftkey>", 1,
     "<~tags>", "<~info.tags>", 1,
-    "<~wifi_test>", "<~info.wifi_test>", 1
+    "<~wifi_test>", "<~info.wifi_test>", 1,
+    "<~dive_icon>", "<~info.dive_icon>", 1,
+    "<~rifon_icon>", "<~info.rifon_icon>", 1
 );
 
 # -- - DPI - -- #

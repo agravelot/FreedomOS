@@ -157,6 +157,8 @@ sensor_test=SensorTestTool
 swiftkey=Swiftkey
 tags=Tags
 wifi_test=WifiRfTestApk
+dive_icon=Dive Icon Pack
+rifon_icon=Rifon Icon Pack
 
 info.anthal=For sport/fitness/health devices
 info.android_pay=NFC payments
@@ -185,6 +187,8 @@ info.sensor_test=Sensor testing application
 info.swiftkey=Swiftkey keyboard
 info.tags=NFC Tags
 info.wifi_test=Wifi Testing
+info.dive_icon=Icons pack from OnePlus
+info.rifon_icon=Icons pack from OnePlus
 
 mod.title=Extra mod
 mod.title2=Select the extra mod you want

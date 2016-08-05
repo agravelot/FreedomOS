@@ -1379,6 +1379,17 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.27") == "0")
    delete("/system/bin/WifiLogger_app");
 endif;
 
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.28") == "0")
+  then
+   ui_print("   Removing DivesIconPack");
+   delete_recursive("/system/app/DivesIconPack");
+endif;
+
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.29") == "0")
+  then
+   ui_print("   Removing RifonIconPack");
+   delete_recursive("/system/app/RifonIconPack");
+endif;
 
 # -- - STOCK KERNEL - -- #
 if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="1")
