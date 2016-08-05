@@ -1362,7 +1362,7 @@ endif;
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.25") == "0")
   then
     ui_print("   Removing Swiftkey");
-		delete_recursive("/system/app/Swiftkey");
+		delete_recursive("/data/app/com.touchtype.swiftkey-1");
     delete_recursive("/system/app/SwiftkeyFactorySettings");
 endif;
 
