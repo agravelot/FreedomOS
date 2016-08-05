@@ -247,8 +247,8 @@ selectbox("<~theme.tittle>", "<~theme.tittle2>", "@update", "theme.prop",
 
 # -- - KERNEL - -- #
 selectbox("<~kernel.tittle>", "<~kernel.tittle2>", "@update", "kernel.prop",
-           "<~kernel_stock>", "<~info.kernel_stock>", 0,
-           "<~elementalx>", "<~info.elementalx>", 1
+           "<~kernel_stock>", "<~info.kernel_stock>", 1,
+           "<~elementalx>", "<~info.elementalx>", 0
          );
 
 # -- - ELEMENTALX - -- #

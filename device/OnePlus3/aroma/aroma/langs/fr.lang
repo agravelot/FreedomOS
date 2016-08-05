@@ -247,7 +247,7 @@ kernel.tittle=Kernel
 kernel.tittle2=Selectionnez votre kernel.
 kernel_stock=Stock Kernel
 info.kernel_stock=Le stock de OnePlus
-elementalx=ElementalX (Highly recommended)
+elementalx=ElementalX
 info.elementalx=Developed by @flar2
 
 # -- - INSTALLER - -- #
