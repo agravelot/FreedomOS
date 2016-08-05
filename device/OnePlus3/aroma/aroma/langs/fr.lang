@@ -237,8 +237,8 @@ theme.tittle=Theme Engine
 theme.tittle2=Slectionnez votre theme engine
 
 notheme=Aucun Theme engine
-layer=RRO Layers
-substratum=Substratum (BETA)
+layer=RRO Layers [obsolète]
+substratum=Substratum
 
 info.notheme=J'aime le stock
 info.layer=Layers Manager
