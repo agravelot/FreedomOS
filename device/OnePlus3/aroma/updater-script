@@ -1347,6 +1347,7 @@ endif;
 if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
   then
     set_progress(0.980);
+    ui_print(" ");
     ui_print("@Installing ElementalX");
     package_extract_dir("tools/elementalx/config", "/tmp");
     set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
@@ -1378,9 +1379,6 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
 endif;
 
 set_progress(0.990000);
-ui_print(" ");
-#ui_print("@Deleting Temporary Files");
-#delete_recursive("/tmp/tools");
 ui_print(" ");
 set_progress(1.00000);
 ui_print("@Finished");
