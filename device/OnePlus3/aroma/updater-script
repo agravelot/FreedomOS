@@ -819,7 +819,7 @@ ui_print("@Applying Your Settings");
 ui_print(" ");
 
 # -- - DIVINE BEATS - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
   then
     show_progress(0.81, 673);
     ui_print("   Installing Audio mod");
@@ -918,20 +918,20 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
 endif;
 
 # -- - XPOSED - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1")
   then
     set_progress(0.880000);
     ui_print("   Install Xposed Installer");
 endif;
 
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "0")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "0")
   then
     set_progress(0.880000);
     delete_recursive("/data/app/de.robv.android.xposed.installer-1");
 endif;
 
 # -- - ADAWAY - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1")
   then
     set_progress(0.900000);
   	ui_print("   Installing Adaway");
@@ -953,7 +953,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
 endif;
 
 # -- - ADB - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.5") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
   then
     set_progress(0.920000);
     ui_print("   Enabling ADB");
@@ -961,7 +961,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.5") == "1")
 endif;
 
   # -- - GOOGLE DNS - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.5") == "1")
   then
     set_progress(0.925000);
     ui_print("   Setting Google DNS");
@@ -969,7 +969,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "1")
 endif;
 
 # -- - WALLPAPER - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "1")
   then
     set_progress(0.930000);
     ui_print("   Extracting FreedomOS Wallpapers  (@badboy47)");
@@ -979,7 +979,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
 endif;
 
 # -- - EMOJI ONE - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
   then
     set_progress(0.935000);
     ui_print("   Installing EmojiOne");
@@ -988,7 +988,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
 endif;
 
 # -- - MULTI WINDOW - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
   then
     ui_print("   Enabling Multi Window");
     run_program("/tmp/tools/multi_window.sh");
@@ -1389,14 +1389,13 @@ endif;
 package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
 
 # -- - ROOT - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
-  then
-    ui_print(" ");
-    ui_print("@Installing SuperSU");
-    package_extract_dir("supersu", "/tmp/supersu");
-    run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
-    run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
-endif;
+
+ui_print(" ");
+ui_print("@Installing SuperSU");
+package_extract_dir("supersu", "/tmp/supersu");
+run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
+run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
+
 
 # -- - ELEMENTALX - -- #
 if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
