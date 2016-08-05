@@ -1,20 +1,23 @@
-ADD: ElementalX Kernel 0.09 with the AROMA settings. @flar2 [OPTION]
-ADD: Wipe cache during flash
-ADD: odex files for data apps, the first booting time is now reduced.
-UPDATE: SuperSU 2.76 STABLE
-UPDATE: AROMA 3.00b1
-UPDATE: Google Hangouts
-UPDATE: Google Maps
-UPDATE! Gmail
-UPDATE: Google Music
-UPDATE: Swiftkey
-UPDATE: YouTube
-UPDATE: Xposed Installer Material
-CHANGE: Change temp dir for supersu installation "/tmp/tools/su" -> "/tmp/supersu"
-FIX: If you selected "No" to the assert check, it skips some steps.
-FIX: SuperSU installation for users coming from 1.2.1 with dirty flash.
-FIX: Gogole on Tap, apk installed as system app.
-NOTE: Swiftkey icon is hidden with OnePlus launcher, go to settings > input.
+1.3.1-rc2
+  ADD: ElementalX Kernel 0.09 with the AROMA configuration. @flar2 [OPTION]
+  ADD: Wipe cache during flash
+  ADD: odex files for data apps, the first booting time is now reduced.
+  UPDATE: SuperSU 2.76 STABLE
+  UPDATE: AROMA 3.00b1
+  UPDATE: Google Hangouts
+  UPDATE: Google Maps
+  UPDATE: Gmail
+  UPDATE: Google Music
+  UPDATE: Swiftkey
+  UPDATE: YouTube
+  UPDATE: Xposed Installer Material
+  CHANGE: Change temp dir for supersu installation "/tmp/tools/su" -> "/tmp/supersu"
+  FIX: If you selected "No" to the assert check, it skips some steps.
+  FIX: SuperSU installation for users coming from 1.2.1 with dirty flash.
+  FIX: Gogole on Tap, apk is now installed as system app.
+  FIX: su.d permissions, see 5.1.1 https://su.chainfire.eu.
+  NOTE: Swiftkey icon is hidden with OnePlus launcher,
+        Go to 'Settings > Language & input > Actual keyboard > Select keyboard'.
 
 1.3
   FIX: ViPER4Android and FreedomOS_Wallpapers folders are not writable.
