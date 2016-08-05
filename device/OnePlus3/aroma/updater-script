@@ -104,12 +104,6 @@ ui_print("   Extracting Data");
 package_extract_dir("data", "/data");
 
 ui_print("   Creating Symlinks");
-ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
-ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
-run_program("/sbin/busybox", "sleep", "1");
-run_program("/sbin/busybox", "mount", "/system");
-run_program("/sbin/busybox", "mount", "/data");
-run_program("/sbin/busybox", "sleep", "1");
 symlink("app_process64", "/system/bin/app_process");
 symlink("dalvikvm64", "/system/bin/dalvikvm");
 symlink("/data/misc/audio/mbhc.bin", "/system/etc/firmware/wcd9320/wcd9320_mbhc.bin");
@@ -314,12 +308,6 @@ symlink("toybox", "/system/bin/xargs");
 symlink("toybox", "/system/bin/yes");
 
 ui_print("   Setting permissions");
-ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
-ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
-run_program("/sbin/busybox", "sleep", "1");
-run_program("/sbin/busybox", "mount", "/system");
-run_program("/sbin/busybox", "mount", "/data");
-run_program("/sbin/busybox", "sleep", "1");
 set_metadata_recursive("/system", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/bin/ATFWD-daemon", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:atfwd_exec:s0");
@@ -745,15 +733,11 @@ endif;
 set_progress(0.720000);
 ui_print("@Applying Your Settings");
 ui_print(" ");
-#ui_print("   Mounting System");
-#run_program("/sbin/busybox", "mount", "/system");
-#ui_print("   Mounting Data");
-#run_program("/sbin/busybox", "mount", "/data");
 
 # -- - DIVINE BEATS - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
   then
-    show_progress(0.81, "-10000");
+    show_progress(0.81, 673);
     ui_print("   Installing Audio mod");
     delete_recursive("/system/priv-app/AudioFX");
     delete_recursive("/system/app/ViPER4Android_FX_A4.x");
@@ -867,16 +851,16 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
   then
     set_progress(0.900000);
   	ui_print("   Installing Adaway");
-  	#run_program("/sbin/busybox", "mount", "/data");
     delete_recursive("/data/app/org.adaway-0");
     delete_recursive("/data/app/org.adaway-1");
   	package_extract_dir("tools/adaway/org.adaway-2", "/data/app/org.adaway-2");
-  	set_metadata_recursive("/data/app/org.adaway-2/", "uid", 1000, "gid", 1000,
-  	                       "dmode", 0755, "fmode", 0644);
-  	set_metadata_recursive("/data/app/org.adaway-2/lib", "uid", 1000, "gid", 1000,
-  	                       "dmode", 0755, "fmode", 0755);
-  	set_metadata_recursive("/data/app/org.adaway-2/oat", "uid", 1000, "gid", 1000,
-  	                       "dmode", 0771, "fmode", 0644);
+  	set_metadata_recursive("/data/app/org.adaway-2/",
+                           "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+  	set_metadata_recursive("/data/app/org.adaway-2/lib",
+                           "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
+  	set_metadata_recursive("/data/app/org.adaway-2/oat",
+                           "uid", 1000, "gid", 1000, "dmode", 0771, "fmode", 0644);
+
   	ui_print("   Installing host file");
   	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "fmode", 0777);
   	delete("/system/etc/hosts");
@@ -906,8 +890,8 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
     set_progress(0.930000);
     ui_print("   Extracting FreedomOS Wallpapers  (@badboy47)");
     package_extract_dir("media/wallpaper", "/sdcard/FreedomOS_wallpaper");
-    set_metadata_recursive("/sdcard/FreedomOS_wallpaper", "uid",
-                           1023, "gid", 1023, "dmode", 0755, "fmode", 0644);
+    set_metadata_recursive("/sdcard/FreedomOS_wallpaper",
+                           "uid", 1023, "gid", 1023, "dmode", 0755, "fmode", 0644);
 endif;
 
 # -- - EMOJI ONE - -- #
@@ -931,11 +915,10 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="2")
   then
     set_progress(0.940000);
     ui_print("   Installing ROO Layers Manager");
-    #run_program("/sbin/busybox", "mount", "/data");
     package_extract_dir("tools/layers/com.lovejoy777.rroandlayersmanager-1",
                         "/data/app/com.lovejoy777.rroandlayersmanager-1");
-    set_metadata_recursive("/data/app/com.lovejoy777.rroandlayersmanager-1", "uid",
-                           1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+    set_metadata_recursive("/data/app/com.lovejoy777.rroandlayersmanager-1",
+                           "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
     set_metadata_recursive("/data/app/com.lovejoy777.rroandlayersmanager-1/lib",
                            "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
     set_metadata_recursive("/data/app/com.lovejoy777.rroandlayersmanager-1/oat",
@@ -947,11 +930,10 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="3")
   then
     set_progress(0.950000);
     ui_print("   Installing Substratum");
-    #run_program("/sbin/busybox", "mount", "/data");
     package_extract_dir("tools/substratum/projekt.substratum-1",
                         "/data/app/projekt.substratum-1");
-    set_metadata_recursive("/data/app/projekt.substratum-1", "uid",
-                           1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
+    set_metadata_recursive("/data/app/projekt.substratum-1",
+                           "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0644);
     set_metadata_recursive("/data/app/projekt.substratum-1/lib",
                            "uid", 1000, "gid", 1000, "dmode", 0755, "fmode", 0755);
     set_metadata_recursive("/data/app/projekt.substratum-1/oat",
@@ -1327,20 +1309,9 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
   then
     ui_print(" ");
     ui_print("@Installing SuperSU");
-    #ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
-    #ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
-    #run_program("/sbin/busybox", "sleep", "1");
-
     package_extract_dir("supersu", "/tmp/supersu");
     run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
     run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
-
-    ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
-    ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
-    run_program("/sbin/busybox", "sleep", "1");
-    run_program("/sbin/busybox", "mount", "/system");
-    run_program("/sbin/busybox", "mount", "/data");
-    run_program("/sbin/busybox", "sleep", "1");
 endif;
 
 # -- - ELEMENTALX - -- #
@@ -1349,6 +1320,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
     set_progress(0.980);
     ui_print(" ");
     ui_print("@Installing ElementalX");
+    ui_print(" ");
     package_extract_dir("tools/elementalx/config", "/tmp");
     set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
 
