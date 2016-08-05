@@ -17,7 +17,7 @@ text_quit=Quit Installation
 text_quit_msg=Are you sure ?
 
 welcome.title=Welcome
-welcome.tittle2=ROM informations
+welcome.title2=ROM informations
 welcome.text1=You are about to use
 welcome.version=Version
 welcome.device=Device
