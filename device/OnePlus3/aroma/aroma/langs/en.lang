@@ -17,10 +17,13 @@ text_quit=Quit Installation
 text_quit_msg=Are you sure ?
 
 welcome.title=Welcome
+welcome.tittle2=ROM informations
 welcome.text1=You are about to use
-welcome.version=VERSION
-welcome.codename=CODENAME
-welcome.updated=UPDATED
+welcome.version=Version
+welcome.device=Device
+welcome.updated=Updated
+welcome.microblog=YouTube
+welcome.developer=Developer
 welcome.next=Press Next to Continue the Installation...
 
 changelog.title=Changelogs
@@ -32,7 +35,6 @@ language.english.info=Using English
 language.french=France
 language.french.info=Utiliser le Français
 
-welcome.microblog=Youtube
 rom.data=!date!
 text_finish=Finish
 model.title=Phone Model
@@ -42,7 +44,7 @@ by=by
 main.tittle=Please select menu below to start the Installation
 main.install=Install
 main.install.info=Continue to install mod
-main.sys=System Info
+main.sys=System Information
 main.sys.info=Show device informations
 main.changelog.info=FreedomOS changelogs
 main.exit=Exit

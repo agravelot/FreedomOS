@@ -16,10 +16,13 @@ text_quit=Quitter l'installation
 text_quit_msg=Êtes-vous sûr de vouloir quitter ?
 
 welcome.title=Bienvenue
+welcome.tittle2=Informations sur la ROM
 welcome.text1=Vous êtes sur le point d'utiliser
-welcome.version=VERSION
-welcome.codename=CODENAME
+welcome.version=Version
+welcome.device=Périphérique
 welcome.updated=Date MAJ
+welcome.microblog=YouTube
+welcome.developer=Développeur
 welcome.next=Presser suivant pour continuer l'installation...
 
 changelog.title=Changelogs
