@@ -56,6 +56,15 @@ else
   echo "write /sys/sweep2sleep/sweep2sleep 0" >> $CONFIGFILE
 fi
 
+#wifi module
+echo "if ! lsmod | grep wlan &> /dev/null ; then" >> $CONFIGFILE
+echo "  insmod /sbin/wlan.ko" >> $CONFIGFILE
+echo "fi" >> $CONFIGFILE
+
+echo "" >> $CONFIGFILE
+echo "on property:sys.boot_completed=1" >> $CONFIGFILE
+echo "" >> $CONFIGFILE
+
 #i/o scheduler
 SCHED=`grep selected.1 /tmp/aroma/disk.prop | cut -d '=' -f2`
 if [ $SCHED = 1 ]; then
@@ -72,16 +81,8 @@ elif [ $SCHED = 6 ]; then
   echo "write /sys/block/sda/queue/scheduler noop"  >> $CONFIGFILE
 fi
 
-#wifi module
-echo "if ! lsmod | grep wlan &> /dev/null ; then" >> $CONFIGFILE
-echo "  insmod /sbin/wlan.ko" >> $CONFIGFILE
-echo "fi" >> $CONFIGFILE
-
-#fstrim
-echo "if hash fstrim 2>/dev/null; then" >> $CONFIGFILE
-  echo "  fstrim -v /cache" >> $CONFIGFILE
-  echo "  fstrim -v /data" >> $CONFIGFILE
-echo "fi" >> $CONFIGFILE
+#set readahead to 512
+echo "write /sys/block/sda/queue/read_ahead_kb 512" >> $CONFIGFILE
 
 #reinstall options
 echo -e "##### Reinstall Options #####" > $BACKUP
