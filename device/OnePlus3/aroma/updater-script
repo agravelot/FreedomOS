@@ -1166,7 +1166,7 @@ endif;
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.7") == "0")
   then
     ui_print("   Removing Google ");
-		delete_recursive("/data/app/com.google.android.googlequicksearchbox-1");
+		delete_recursive("/system/priv-app/Velvet");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.8") == "0")
