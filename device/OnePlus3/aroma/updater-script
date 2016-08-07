@@ -1325,8 +1325,8 @@ endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.19") == "0")
   then
-  ui_print("   Removing Gallery");
-  delete_recursive("/system/priv-app/Gallery");
+  ui_print("   Removing OnePlusGallery");
+  delete_recursive("/system/priv-app/OnePlusGallery");
 endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.20") == "0")
