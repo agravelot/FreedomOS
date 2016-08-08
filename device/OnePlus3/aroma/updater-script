@@ -102,8 +102,8 @@ set_progress(0.05);
 show_progress(0.45, 3996);
 ui_print("   Extracting System");
 package_extract_dir("system", "/system");
-ui_print("   Extracting Data");
-package_extract_dir("data", "/data");
+#ui_print("   Extracting Data");
+#package_extract_dir("data", "/data");
 
 ui_print("   Creating Symlinks");
 symlink("app_process64", "/system/bin/app_process");
@@ -1136,24 +1136,28 @@ endif;
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.2") == "0")
   then
     ui_print("   Removing Google Calendar ");
+    delete_recursive("/system/app/CalendarGoogle");
   	delete_recursive("/data/app/com.google.android.calendar-1");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.3") == "0")
   then
     ui_print("   Removing Google Chrome ");
+    delete_recursive("/system/app/Chrome");
 		delete_recursive("/data/app/com.android.chrome-1");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.4") == "0")
   then
     ui_print("   Removing Google Drive ");
+    delete_recursive("/system/app/Drive");
 		delete_recursive("/data/app/com.google.android.apps.docs-1");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.5") == "0")
   then
     ui_print("   Removing Gmail ");
+    delete_recursive("/system/app/Gmail2");
   	delete_recursive("/data/app/com.google.android.gm-1");
 endif;
 
@@ -1172,36 +1176,42 @@ endif;
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.8") == "0")
   then
     ui_print("   Removing Google Hangouts ");
+    delete_recursive("/system/app/Hangouts");
   	delete_recursive("/data/app/com.google.android.talk-1");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.9") == "0")
   then
     ui_print("   Removing Google Maps ");
+    delete_recursive("/system/app/Maps");
   	delete_recursive("/data/app/com.google.android.apps.maps-1");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.10") == "0")
   then
     ui_print("   Removing Messenger ");
+    delete_recursive("/system/app/Messenger");
   	delete_recursive("/data/app/com.google.android.apps.messaging-1");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.11") == "0")
   then
     ui_print("   Removing Google Photos ");
+    delete_recursive("/system/app/Photos");
 		delete_recursive("/data/app/com.google.android.apps.photos-1");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.12") == "0")
   then
     ui_print("   Removing Google Play Music ");
+    delete_recursive("/system/app/Music2");
   	delete_recursive("/data/app/com.google.android.music-1");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.13") == "0")
   then
     ui_print("   Removing YouTube");
+    delete_recursive("/system/app/YouTube");
 		delete_recursive("/data/app/com.google.android.youtube-1");
 endif;
 
@@ -1362,6 +1372,7 @@ endif;
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.25") == "0")
   then
     ui_print("   Removing Swiftkey");
+    delete_recursive("/system/app/SwiftKey");
 		delete_recursive("/data/app/com.touchtype.swiftkey-1");
     delete_recursive("/system/app/SwiftKeyFactorySettings");
 endif;
