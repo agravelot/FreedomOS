@@ -390,6 +390,7 @@ symlink("busybox", "/system/xbin/[", "/system/xbin/[[",
         "/system/xbin/which", "/system/xbin/whoami", "/system/xbin/xargs",
         "/system/xbin/xz", "/system/xbin/xzcat", "/system/xbin/yes",
         "/system/xbin/zcat");
+symlink("mount.exfat", "/system/bin/fsck.exfat", "/system/bin/mkfs.exfat");
 
 ui_print("   Setting permissions");
 set_metadata_recursive("/system", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
