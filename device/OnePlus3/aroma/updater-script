@@ -773,7 +773,7 @@ ui_print(" ");
 # -- - DIVINE BEATS - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
   then
-    show_progress(0.81, 673);
+    show_progress(0.10, 673);
     ui_print("   Installing Audio mod");
     delete_recursive("/system/priv-app/AudioFX");
     delete_recursive("/system/app/ViPER4Android_FX_A4.x");
