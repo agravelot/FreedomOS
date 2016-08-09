@@ -770,6 +770,15 @@ set_progress(0.720000);
 ui_print("@Applying Your Settings");
 ui_print(" ");
 
+# -- - STOCK KERNEL - -- #
+if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="1")
+  then
+  ui_print("   Installing Stock Kernel");
+endif;
+
+package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
+
+
 # -- - DIVINE BEATS - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
   then
@@ -1371,14 +1380,6 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.33") == "0")
    ui_print("   Removing RifonIconPack");
    delete_recursive("/system/app/RifonIconPack");
 endif;
-
-# -- - STOCK KERNEL - -- #
-if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="1")
-  then
-  ui_print("   Installing Stock Kernel");
-endif;
-
-package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
 
 # -- - ROOT - -- #
 
