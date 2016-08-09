@@ -755,18 +755,18 @@ package_extract_file("firmware-update/adspso.bin",
 set_progress(0.700000);
 package_extract_file("firmware-update/BTFM.bin",
                      "/dev/block/bootdevice/by-name/bluetooth");
-ui_print(" ");
+
 
 # -- - Restoring Addon.d - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   then
   ui_print("   Restoring your addon.d... ");
-  ui_print(" ");
   run_program("/tmp/tools/addon/backuptool.sh", "restore");
 endif;
 
 # -- - MOD - -- #
 set_progress(0.720000);
+ui_print(" ");
 ui_print("@Applying Your Settings");
 ui_print(" ");
 
@@ -826,8 +826,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
 
     set_progress(0.820000);
     set_metadata("/system/etc/init.d/batsav", "uid", 0, "gid", 2000, "fmode", 0755);
-    set_metadata("/system/app/MaxxAudioService.apk", "uid", 0, "gid", 0, "fmode",
-                 06755);
+    set_metadata("/system/app/MaxxAudioService.apk", "uid", 0, "gid", 0, "fmode", 06755);
     set_metadata_recursive("/system/app/GoogleLyricsPlugin", "uid", 0, "gid", 0,
                            "dmode", 0755, "fmode", 0644);
     set_metadata_recursive("/system/app/SemcMetadataCleanup", "uid", 0, "gid", 0,
@@ -877,6 +876,9 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
     set_metadata_recursive("/sdcard/Viper4Android", "uid",
                            1023, "gid", 1023, "dmode", 0755, "fmode", 0644);
 endif;
+
+mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
 
 # -- - XPOSED - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1")
@@ -1385,8 +1387,11 @@ endif;
 
 ui_print(" ");
 ui_print("@Installing SuperSU");
+run_program("/system/bin/echo", "Extracting SU");
 package_extract_dir("supersu", "/tmp/supersu");
+run_program("/system/bin/echo", "Unzip SU");
 run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
+run_program("/system/bin/echo", "Start SU install script");
 run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
 
 
@@ -1397,6 +1402,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
     ui_print(" ");
     ui_print("@Installing ElementalX");
     ui_print(" ");
+    run_program("/system/bin/echo", "Extracting EX files");
     package_extract_dir("tools/elementalx/config", "/tmp");
     set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
 
@@ -1405,24 +1411,25 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
 
     package_extract_dir("tools/elementalx/boot", "/tmp");
 
+    run_program("/system/bin/echo", "Set permissions");
     set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "fmode", 0777);
     set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
     set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
     set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "fmode", 0777);
     set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "fmode", 0777);
 
-    ui_print("   Creating config...");
+    ui_print("   Creating config");
     set_metadata("/tmp/buildconfig.sh", "uid", 0, "gid", 0, "fmode", 0777);
     run_program("/tmp/buildconfig.sh");
 
-    ui_print("   Customizing ramdisk...");
+    ui_print("   Customizing ramdisk");
     run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
     run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
     run_program("/tmp/cmdline.sh");
     run_program("/tmp/editramdisk.sh");
     run_program("/tmp/makebootimg.sh");
 
-    ui_print("   Installing kernel...");
+    ui_print("   Installing kernel");
     run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
 endif;
 
