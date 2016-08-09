@@ -136,8 +136,8 @@ selectbox(
     "<~assert_yes>", "<~info.assert_yes>", 1,
     "<~assert_no>", "<~info.assert_no>", 0,
   "<~addon.tittle>", "", 2,
-    "<~addon_yes>", "<~info.addon_yes>", 0,
-    "<~addon_no>", "<~info.addon_no>", 1
+    "<~addon_yes>", "<~info.addon_yes>", 1,
+    "<~addon_no>", "<~info.addon_no>", 0
 );
 
 # -- - GOOGLE APPS - -- #
@@ -170,13 +170,13 @@ checkbox(
     "<~anthal>", "<~info.anthal>", 0,
     "<~android_pay>", "<~info.android_pay>", 0,
     "<~basic_dream>", "<~info.basic_dream>", 0,
-    "<~bt_midi>", "<~info.bt_midi>", 1,
-    "<~bt_test>", "<~info.bt_test>", 1,
+    "<~bt_midi>", "<~info.bt_midi>", 0,
+    "<~bt_test>", "<~info.bt_test>", 0,
     "<~desk_clock>", "<~info.desk_clock>", 1,
     "<~document>", "<~info.document>", 1,
     "<~download_provider>", "<~info.download_provider>", 1,
     "<~engineering>", "<~info.engineering>", 0,
-    "<~eng_special_test>", "<~info.eng_special_test>", 1,
+    "<~eng_special_test>", "<~info.eng_special_test>", 0,
     "<~facelock>", "<~info.facelock>", 0,
     "<~galaxy>","<~info.galaxy>", 0,
     "<~holo_spiral>", "<~info.holo_spiral>", 0,
@@ -193,7 +193,7 @@ checkbox(
     "<~ota>", "<~info.ota>", 0,
     "<~oneplus_wizard>", "<~info.oneplus_wizard>", 1,
     "<~phase_beam>", "<~info.phase_beam>", 0,
-    "<~protips>", "<~info.protips>", 1,
+    "<~protips>", "<~info.protips>", 0,
     "<~sensor_test>", "<~info.sensor_test>", 1,
     "<~swiftkey>", "<~info.swiftkey>", 1,
     "<~tags>", "<~info.tags>", 1,
@@ -233,7 +233,7 @@ checkbox(
     "<~xposed>", "<~info.xposed>", 0,
     "<~adaway>", "<~info.adaway>", 1,
     "<~adb>", "<~info.adb>", 0,
-    "<~dns>", "<~info.dns>", 1,
+    "<~dns>", "<~info.dns>", 0,
     "<~fos_wallpapers>", "<~info.fos_wallpapers>", 1,
     "<~emoji_one>", "<~info.emoji_one>", 1,
     "<~multi_window>", "<~info.multi_window>", 0
