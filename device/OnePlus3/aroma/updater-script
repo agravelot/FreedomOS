@@ -1030,13 +1030,13 @@ set_progress(0.960000);
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "1")
   then
 		ui_print("   Setting DPI to 500");
-		run_program("/tmp/tools/dpi/500.sh");
+		run_program("/tmp/tools/dpi.sh", 500);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "2")
   then
 		ui_print("   Setting DPI to 490");
-		run_program("/tmp/tools/dpi/490.sh");
+		run_program("/tmp/tools/dpi.sh", 490);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "3")
@@ -1046,79 +1046,79 @@ endif;
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "4")
   then
 		ui_print("   Setting DPI to 470");
-		run_program("/tmp/tools/dpi/470.sh");
+		run_program("/tmp/tools/dpi.sh", 470);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "5")
   then
 		ui_print("   Setting DPI to 460");
-		run_program("/tmp/tools/dpi/460.sh");
+		run_program("/tmp/tools/dpi.sh", 460);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "6")
   then
 		ui_print("   Setting DPI to 450");
-		run_program("/tmp/tools/dpi/450.sh");
+		run_program("/tmp/tools/dpi.sh", 450);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "7")
   then
 		ui_print("   Setting DPI to 440");
-		run_program("/tmp/tools/dpi/440.sh");
+		run_program("/tmp/tools/dpi.sh", 440);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "8")
   then
 		ui_print("   Setting DPI to 430");
-		run_program("/tmp/tools/dpi/430.sh");
+		run_program("/tmp/tools/dpi.sh", 430);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "9")
   then
 		ui_print("   Setting DPI to 420");
-		run_program("/tmp/tools/dpi/420.sh");
+		run_program("/tmp/tools/dpi.sh", 420);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "10")
   then
 		ui_print("   Setting DPI to 410");
-		run_program("/tmp/tools/dpi/410.sh");
+		run_program("/tmp/tools/dpi.sh", 410);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "11")
   then
     ui_print("   Setting DPI to 400");
-    run_program("/tmp/tools/dpi/400.sh");
+    run_program("/tmp/tools/dpi.sh", 400);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "12")
   then
     ui_print("   Setting DPI to 390");
-    run_program("/tmp/tools/dpi/390.sh");
+    run_program("/tmp/tools/dpi.sh", 390);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "13")
   then
     ui_print("   Setting DPI to 380");
-    run_program("/tmp/tools/dpi/380.sh");
+    run_program("/tmp/tools/dpi.sh", 380);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "14")
   then
     ui_print("   Setting DPI to 370");
-    run_program("/tmp/tools/dpi/370.sh");
+    run_program("/tmp/tools/dpi.sh", 370);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "15")
   then
     ui_print("   Setting DPI to 360");
-    run_program("/tmp/tools/dpi/360.sh");
+    run_program("/tmp/tools/dpi.sh", 360);
 endif;
 
 if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "16")
   then
     ui_print("   Setting DPI to 350");
-    run_program("/tmp/tools/dpi/350.sh");
+    run_program("/tmp/tools/dpi.sh", 350);
 endif;
 
 # -- - Google apps - -- #
