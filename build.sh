@@ -3,6 +3,8 @@
 # Author : Nevax
 # Contributor : TimVNL
 
+set -e
+
 VERSION=0
 DEVICE=0
 MENU=0
@@ -34,7 +36,13 @@ banner() {
   echo "----------------------------------------"
   echo "$bold$redt    FreedomOS build script by Nevax $normal"
   echo "----------------------------------------"
-  echo ""
+  echo
+}
+
+function error_exit() {
+	echo "$bold$redt$1" 1>&2
+	echo "Error: $2$normal"
+	exit $2
 }
 
 function confirm() {
@@ -45,14 +53,18 @@ function confirm() {
     esac
 }
 
+if [ "$EUID" -ne 0 ]; then
+	error_exit "Please, run this script as root! Aborting." "7"
+fi
+
 # Show device list
 banner
 echo "Available devices:"
-echo ""
+echo
 find . -name "*.fos" -exec basename \{} .fos \;
-echo ""
+echo
 read -p "Enter your device codename: " DEVICE
-echo ""
+echo
 
 if [ -f device/$DEVICE/$DEVICE.fos ];
 then
@@ -67,7 +79,7 @@ banner
 echo "Choose the build method you want:"
 echo "1) user-release"
 echo "2) debug"
-echo ""
+echo
 read -p "enter build method [debug]: " BUILD
 
 if [ "$BUILD" = 1 ];
@@ -96,7 +108,7 @@ fi
 # Show Build review
 banner
 echo "Build review:"
-echo ""
+echo
 echo "Device target: $DEVICE"
 echo "Build type: $BUILD_TYPE"
 echo "Build version: $VERSION"
@@ -109,58 +121,60 @@ echo "ROM MD5: $ROM_MD5"
 echo "SuperSU zip: $SU"
 echo "Xposed apk: $XPOSED_APK"
 echo "Audio mod: $DIVINE"
-echo ""
+echo
 if [[ "no" == $(confirm "All options correct?") ]]
 then
-  echo "Stopping build now! To start a new build restart the script."
-  exit 0
+  error_exit "Stopping build now! To start a new build restart the script." "0"
 fi
 # Building Process
 banner
 echo "$DEVICE build starting now."
-echo ""
-if [ -d tmp/mount/ ];
+echo
+
+if [ mount | grep tmp/mount ];
 then
-	umount tmp/mount/
+		umount tmp/mount/
 fi
+
 
 echo "Clear tmp/ foler..."
 rm -rvf tmp/*
 touch tmp/EMPTY_DIRECTORY
 
-echo ""
+echo
 echo "Clear output/ foler..."
+#TODO: Delete only the file with the same name
 rm -rvf output/*.zip
 rm -rvf output/*.md5
-rm -rvf output/patch*
 
-echo ""
+echo
 echo "Checking dependencies..."
-echo ""
+echo
 echo "Checking MD5 of $ROM_NAME"
-echo ""
+echo
 if [[ $ROM_MD5 == $(md5sum download/$ROM_NAME.zip | cut -d ' ' -f 1) ]];
 then
   echo "MD5 $ROM_NAME.zip checksums OK."
 else
   echo "File $ROM_NAME.zip does not exist or the file is corrupt" >&2
+	echo
   if curl -Is $ROM_LINK | grep "200 OK" &> /dev/null
   then
     echo "Downloading.."
+		#TODO Ask user for delete or change name of the old corrupted zip
 		rm -vf download/$ROM_NAME.zip
     curl -o download/$ROM_NAME.zip $ROM_LINK
   else
-    echo "$redt $ROM_NAME mirror OFFLINE! Check your connection $normal"
-    exit
+    error_exit "$ROM_NAME mirror OFFLINE! Check your connection" "10"
   fi
 fi
-echo ""
+echo
 
 if [ -f rom/$DEVICE/$ROM_NAME/system.new.dat ];
 then
   echo "rom/$DEVICE/$ROM_NAME dir exist."
 else
-  echo ""
+  echo
   echo "Extracting rom zip"
   mkdir -p rom/$DEVICE/$ROM_NAME
   unzip -o download/$ROM_NAME.zip -d rom/$DEVICE/$ROM_NAME
@@ -176,31 +190,30 @@ else
 fi
 chmod +x download/sdat2img.py
 
-echo ""
+echo
 echo "Copy $ROM_NAME needed files:"
 rsync -rv rom/$DEVICE/$ROM_NAME/* tmp/ --exclude='system.transfer.list' --exclude='system.new.dat' --exclude='system.patch.dat' --exclude='META-INF/'
-mkdir tmp/mount
-mkdir tmp/system
-echo ""
+mkdir -p tmp/mount
+mkdir -p tmp/system
+echo
 echo "Extracting system.new.dat:"
 download/sdat2img.py rom/$DEVICE/$ROM_NAME/system.transfer.list rom/$DEVICE/$ROM_NAME/system.new.dat tmp/system.img
-echo ""
+echo
 echo "Mounting system.img:"
 mount -t ext4 -o loop tmp/system.img tmp/mount/
-echo ""
+echo
 echo "Extracting system files:"
 cp -rvf tmp/mount/* tmp/system/
-echo ""
+echo
 echo "Clean tmp/"
-umount tmp/mount/
 rm -rvf tmp/mount
 rm -rvf tmp/system.*
-echo ""
+echo
 echo "Remove stock recovery"
 rm -vf tmp/system/bin/install-recovery.sh
 rm -vf tmp/system/recovery-from-boot.p
-echo ""
-echo "Remove system apps"
+echo
+echo "Remove system apps/bin"
 #rm -rvf tmp/system/app/Maps
 #rm -rvf tmp/system/app/CalendarGoogle
 #rm -rvf tmp/system/app/Messenger
@@ -216,55 +229,55 @@ rm -rvf tmp/system/app/Videos
 rm -rvf system/bin/fmfactorytest
 rm -rvf system/bin/fmfactorytestserver
 
-echo ""
+echo
 echo "Patching system files:"
 cp -rvf system/* tmp/system
 
-#echo ""
+#echo
 #echo "Copying data files:"
 #cp -rvf data tmp/data
 
-echo ""
+echo
 echo "Remove META-INF"
 rm -rvf "tmp/META-INF"
-echo ""
+echo
 echo "Add aroma"
 mkdir -p tmp/META-INF/com/google/android/
 cp -vR device/$DEVICE/aroma/* tmp/META-INF/com/google/android/
-echo ""
+echo
 echo "Add tools"
 cp -vR "tools" "tmp/"
-echo ""
+echo
 echo "Add SuperSU"
 #cp -v download/$SU.zip tmp/supersu/supersu.zip
 #cp -rv supersu tmp/
 mkdir tmp/supersu
 cp -v download/$SU.zip tmp/supersu/supersu.zip
 
-echo ""
+echo
 echo "Add FreedomOS wallpapers by badboy47"
 mkdir -p tmp/media/wallpaper
 cp -v media/wallpaper/* tmp/media/wallpaper
-echo ""
+echo
 echo "Add Divine"
 unzip -o "download/$DIVINE.zip" -d "tmp/tools/divine/"
 
-echo ""
+echo
 echo "Set Assert in updater-script"
 sed -i.bak "s:!assert!:$ASSERT:" tmp/META-INF/com/google/android/updater-script
-echo ""
+echo
 echo "Set version in aroma"
 sed -i.bak "s:!version!:$VERSION:" tmp/META-INF/com/google/android/aroma-config
-echo ""
+echo
 echo "Set version in aroma"
 sed -i.bak "s:!device!:$DEVICE:" tmp/META-INF/com/google/android/aroma-config
-echo ""
+echo
 echo "Set date in aroma"
 sed -i.bak "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma-config
-echo ""
+echo
 echo "Set date in en.lang"
 sed -i.bak "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma/langs/en.lang
-echo ""
+echo
 echo "Set date in fr.lang"
 sed -i.bak "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma/langs/fr.lang
 rm -rvf tmp/META-INF/com/google/android/aroma-config.bak
@@ -274,25 +287,25 @@ rm -rvf tmp/META-INF/com/google/android/aroma/langs/*.lang.bak
 if [ "$BUILD" = 1 ];
 then
   cd tmp/
-  echo ""
+  echo
   echo "Making zip file"
   zip -r9 "FreedomOS-$CODENAME-nevax-$VERSION.zip" * -x "*EMPTY_DIRECTORY*"
   echo "----"
   cd ..
-  echo ""
+  echo
   echo "Copy Unsigned in output folder"
   cp -v tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip output/FreedomOS-$CODENAME-nevax-$VERSION.zip
-  echo ""
+  echo
   echo "testing zip integrity"
   zip -T output/FreedomOS-$CODENAME-nevax-$VERSION.zip
-  echo ""
+  echo
   echo "Generating md5 hash"
   openssl md5 "output/FreedomOS-$CODENAME-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-nevax-$VERSION.zip.md5"
-  echo ""
+  echo
   echo "SignApk....."
 	chmod +x SignApk/signapk.jar
   java -jar "SignApk/signapk.jar" "SignApk/certificate.pem" "SignApk/key.pk8" "tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip" "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip"
-  echo ""
+  echo
   echo "Generating md5 hash"
   openssl md5 "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip.md5"
   #We doesn't test the final, because it doesn't work with the signed zip.
@@ -303,34 +316,34 @@ fi
 if [ "$BUILD" = 2 ];
 then
   cd tmp/
-  echo ""
+  echo
   echo "Making zip file"
   zip -r1 "FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" * -x "*EMPTY_DIRECTORY*"
   echo "----"
-  echo ""
+  echo
   echo "testing zip integrity"
   zip -T "FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip"
-  echo ""
+  echo
   cd ..
   echo "Move unsigned zip file in output folder"
   mv -v "tmp/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" "output/"
-  echo ""
+  echo
   echo "Generating md5 hash"
   openssl md5 "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip.md5"
   FINAL_ZIP=FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION
 fi
 
-echo ""
+echo
 echo "Clear tmp/ foler..."
 rm -rf tmp/*
 touch "tmp/EMPTY_DIRECTORY"
-echo ""
+echo
 echo "$greent$bold Build finished! You can find the build here: output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip $normal"
-echo ""
+echo
 if [[ "yes" == $(confirm "Want to flash it now?") ]]
 then
   ## ADB Push zip on device
-  echo ""
+  echo
   echo "Pushing $FINAL_ZIP.zip to your $DEVICE..."
   adb shell "rm /sdcard/$FINAL_ZIP.zip"
   adb push -p output/$FINAL_ZIP.zip /sdcard/
@@ -339,11 +352,11 @@ then
   adb push -p output/$FINAL_ZIP.zip.md5 /sdcard/
   adb shell "chown -R media_rw:media_rw /sdcard/FreedomOS*"
   ## Flashing zip on device
-  echo ""
+  echo
   echo "Flashing $FINAL_ZIP.zip into TWRP"
   adb shell "echo 'boot-recovery ' > /cache/recovery/command"
   adb shell "echo '--update_package=/sdcard/$FINAL_ZIP.zip' >> /cache/recovery/command"
   adb shell reboot recovery
-  echo ""
+  echo
   echo "$greent$bold Flash Successful! Follow the steps on you device $normal"
 fi
