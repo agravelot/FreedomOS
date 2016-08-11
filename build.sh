@@ -131,13 +131,12 @@ banner
 echo "$DEVICE build starting now."
 echo
 
-if [ mount | grep tmp/mount ];
-then
-		umount tmp/mount/
-fi
-
-
 echo "Clear tmp/ foler..."
+if [[ 'df | grep "/tmp/mount"' ]];
+then
+	echo "umount tmp/mount/"
+	umount tmp/mount/
+fi
 rm -rvf tmp/*
 touch tmp/EMPTY_DIRECTORY
 
@@ -206,8 +205,15 @@ echo "Extracting system files:"
 cp -rvf tmp/mount/* tmp/system/
 echo
 echo "Clean tmp/"
+if [[ 'df | grep "/tmp/mount"' ]];
+then
+		echo "umount tmp/mount/"
+		sleep 2
+		umount tmp/mount/
+fi
 rm -rvf tmp/mount
 rm -rvf tmp/system.*
+
 echo
 echo "Remove stock recovery"
 rm -vf tmp/system/bin/install-recovery.sh
