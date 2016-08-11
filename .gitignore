@@ -36,11 +36,10 @@ Thumbs.db
 
 NOTE
 tmp/*
-system/*
 output/*
 download/*
 rom/
-SignApk/
+SignApk/*
 
 !download/*SuperSU*.zip
 !download/*BEATS*.zip
