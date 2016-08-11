@@ -132,7 +132,7 @@ echo "$DEVICE build starting now."
 echo
 
 echo "Clear tmp/ foler..."
-if [[ 'df | grep "/tmp/mount"' ]];
+if mount | grep "repos/FreedomOS/tmp/mount" > /dev/null;
 then
 	echo "umount tmp/mount/"
 	umount tmp/mount/
@@ -205,7 +205,7 @@ echo "Extracting system files:"
 cp -rvf tmp/mount/* tmp/system/
 echo
 echo "Clean tmp/"
-if [[ 'df | grep "/tmp/mount"' ]];
+if mount | grep "repos/FreedomOS/tmp/mount" > /dev/null;
 then
 		echo "umount tmp/mount/"
 		sleep 2
@@ -220,18 +220,18 @@ rm -vf tmp/system/bin/install-recovery.sh
 rm -vf tmp/system/recovery-from-boot.p
 echo
 echo "Remove system apps/bin"
-#rm -rvf tmp/system/app/Maps
-#rm -rvf tmp/system/app/CalendarGoogle
-#rm -rvf tmp/system/app/Messenger
-#rm -rvf tmp/system/app/YouTube
-#rm -rvf tmp/system/app/Music2
+rm -rvf tmp/system/app/Maps
+rm -rvf tmp/system/app/CalendarGoogle
+rm -rvf tmp/system/app/Messenger
+rm -rvf tmp/system/app/YouTube
+rm -rvf tmp/system/app/Music2
 rm -rvf tmp/system/app/Videos
-#rm -rvf tmp/system/app/Photos
-#rm -rvf tmp/system/app/Hangouts
-#rm -rvf tmp/system/app/Drive
-#rm -rvf tmp/system/app/Chrome
-#rm -rvf tmp/system/app/Gmail2
-#rm -rvf tmp/system/app/SwiftKey
+rm -rvf tmp/system/app/Photos
+rm -rvf tmp/system/app/Hangouts
+rm -rvf tmp/system/app/Drive
+rm -rvf tmp/system/app/Chrome
+rm -rvf tmp/system/app/Gmail2
+rm -rvf tmp/system/app/SwiftKey
 rm -rvf system/bin/fmfactorytest
 rm -rvf system/bin/fmfactorytestserver
 
