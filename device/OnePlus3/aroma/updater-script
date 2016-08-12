@@ -621,7 +621,7 @@ package_extract_file("firmware-update/BTFM.bin",
 # -- - Restoring Addon.d - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   then
-  ui_print("   Restoring your addon.d... ");
+  ui_print("   Restoring your addon.d");
   run_program("/tmp/tools/addon/backuptool.sh", "restore");
 endif;
 
@@ -733,9 +733,11 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
                            "fmode", 0755);
 
     package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
-    # 1023 is media_rw user and group
-    set_metadata_recursive("/sdcard/Viper4Android", "uid",
-                           1023, "gid", 1023, "dmode", 0755, "fmode", 0644);
+endif;
+
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
+  then
+    run_program("/system/bin/echo", "DEBUG: No audio mod");
 endif;
 
 mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
@@ -751,7 +753,7 @@ endif;
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "0")
   then
     set_progress(0.880000);
-    run_program("/system/bin/echo", "Uninstall Xposed");
+    run_program("/system/bin/echo", "DEBUG: Uninstall Xposed");
     delete_recursive("/system/app/XposedInstaller");
 endif;
 
@@ -770,7 +772,7 @@ endif;
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "0")
   then
     set_progress(0.900000);
-    run_program("/system/bin/echo", "Uninstall Adaway");
+    run_program("/system/bin/echo", "DEBUG: Uninstall Adaway");
     delete_recursive("/system/app/Adaway");
 endif;
 
@@ -819,7 +821,7 @@ endif;
 # -- - NO THEME - -- #
 if (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="1")
   then
-    run_program("/system/bin/echo", "No theme selected");
+    run_program("/system/bin/echo", "DEBUG: No theme selected");
     delete_recursive("/system/app/Substratum");
     delete_recursive("/system/app/Layers");
 endif;
@@ -829,7 +831,7 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="2")
   then
     set_progress(0.940000);
     ui_print("   Installing ROO Layers Manager");
-    run_program("/system/bin/echo", "Uninstall Substratum");
+    run_program("/system/bin/echo", "DEBUG: Uninstall Substratum");
     delete_recursive("/system/app/Substratum");
 endif;
 
@@ -838,7 +840,7 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="3")
   then
     set_progress(0.950000);
     ui_print("   Installing Substratum");
-    run_program("/system/bin/echo", "Uninstall Layers");
+    run_program("/system/bin/echo", "DEBUG: Uninstall Layers");
     delete_recursive("/system/app/Layers");
 endif;
 
@@ -1248,11 +1250,11 @@ endif;
 
 ui_print(" ");
 ui_print("@Installing SuperSU");
-run_program("/system/bin/echo", "Extracting SU");
+run_program("/system/bin/echo", "DEBUG: Extracting SU");
 package_extract_dir("supersu", "/tmp/supersu");
-run_program("/system/bin/echo", "Unzip SU");
+run_program("/system/bin/echo", "DEBUG: Unzip SU");
 run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
-run_program("/system/bin/echo", "Start SU install script");
+run_program("/system/bin/echo", "DEBUG: Start SU install script");
 run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
 
 
@@ -1263,7 +1265,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
     ui_print(" ");
     ui_print("@Installing ElementalX");
     ui_print(" ");
-    run_program("/system/bin/echo", "Extracting EX files");
+    run_program("/system/bin/echo", "DEBUG: Extracting EX files");
     package_extract_dir("tools/elementalx/config", "/tmp");
     set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
 
@@ -1272,7 +1274,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
 
     package_extract_dir("tools/elementalx/boot", "/tmp");
 
-    run_program("/system/bin/echo", "Set permissions");
+    run_program("/system/bin/echo", "DEBUG: Set permissions");
     set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "fmode", 0777);
     set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
     set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
