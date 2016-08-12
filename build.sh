@@ -222,6 +222,7 @@ echo
 echo "Remove system apps/bin"
 rm -rvf tmp/system/app/Maps
 rm -rvf tmp/system/app/CalendarGoogle
+rm -rvf tmp/system/app/CalculatorGoogle
 rm -rvf tmp/system/app/Messenger
 rm -rvf tmp/system/app/YouTube
 rm -rvf tmp/system/app/Music2
@@ -232,6 +233,9 @@ rm -rvf tmp/system/app/Drive
 rm -rvf tmp/system/app/Chrome
 rm -rvf tmp/system/app/Gmail2
 rm -rvf tmp/system/app/SwiftKey
+rm -rvf tmp/system/app/WebViewGoogle
+rm -rvf tmp/system/app/talkback
+rm -rvf tmp/system/priv-app/Velvet
 rm -rvf system/bin/fmfactorytest
 rm -rvf system/bin/fmfactorytestserver
 
