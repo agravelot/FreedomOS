@@ -16,6 +16,7 @@
   UPDATE: Google TallBack
   UPDATE: Substratum
   UPDATE: Swiftkey
+  UPDATE: hosts file.
   REVERT: "Google apps in /data" They are now installed in /system. #3 #5
   REVERT: "Delete /sdcard/Android" after some users requests. #7
 
