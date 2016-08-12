@@ -798,8 +798,6 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "1")
     set_progress(0.930000);
     ui_print("   Extracting FreedomOS Wallpapers  (@badboy47)");
     package_extract_dir("media/wallpaper", "/sdcard/FreedomOS_wallpaper");
-    set_metadata_recursive("/sdcard/FreedomOS_wallpaper",
-                           "uid", 1023, "gid", 1023, "dmode", 0755, "fmode", 0644);
 endif;
 
 # -- - EMOJI ONE - -- #
