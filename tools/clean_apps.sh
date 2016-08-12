@@ -15,4 +15,6 @@ rm -R /data/app/com.google.android.talk-*
 rm -R /data/app/com.google.android.youtube-*
 rm -R /data/app/com.touchtype.swiftkey-*
 rm -R /data/app/de.robv.android.xposed.installer-*
-exit
+
+#chown -R sdcard_rw:sdcard_rw /sdcard/
+chown -R media_rw:media_rw /data/media
