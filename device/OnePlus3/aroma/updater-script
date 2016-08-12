@@ -765,7 +765,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1")
   	ui_print("   Installing host file");
   	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "fmode", 0777);
   	delete("/system/etc/hosts");
-  	package_extract_file("tools/adaway/hosts", "/system/etc/hosts");
+  	package_extract_file("tools/hosts", "/system/etc/hosts");
   	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "fmode", 0644);
 endif;
 
