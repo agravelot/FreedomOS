@@ -132,7 +132,7 @@ echo "$DEVICE build starting now."
 echo
 
 echo "Clear tmp/ foler..."
-if mount | grep "repos/FreedomOS/tmp/mount" > /dev/null;
+if mount | grep "FreedomOS/tmp/mount" > /dev/null;
 then
 	echo "umount tmp/mount/"
 	umount tmp/mount/
@@ -205,7 +205,7 @@ echo "Extracting system files:"
 cp -rvf tmp/mount/* tmp/system/
 echo
 echo "Clean tmp/"
-if mount | grep "repos/FreedomOS/tmp/mount" > /dev/null;
+if mount | grep "FreedomOS/tmp/mount" > /dev/null;
 then
 		echo "umount tmp/mount/"
 		sleep 2
