@@ -1,3 +1,24 @@
+1.3.2
+  ADD: Removing OnePlusWallpapers [OPTION]
+  ADD: DocumentsUI [OPTION] #6
+  ADD: DownloadProvider [OPTION] #6
+  ADD: Google Call Backup [OPTION] #6
+  ADD: Fix sdcard access for multirom users.
+  FIX: OnePlusGallery uninstallation. #5
+  FIX: Google Now (Velvet) uninstallation. #5
+  FIX: BTtestmode uninstallation. #6
+  FIX: USB OTG Support.
+  FIX: Some apps has not correctly installed.
+  UPDATE: Google
+  UPDATE: Google Calandar
+  UPDATE: Google Calculator
+  UPDATE: Google Photos
+  UPDATE: Google TallBack
+  UPDATE: Substratum
+  UPDATE: Swiftkey
+  REVERT: "Google apps in /data" They are now installed in /system. #3 #5
+  REVERT: "Delete /sdcard/Android" after some users requests. #7
+
 1.3.1
   ADD: ElementalX Kernel 0.10 with the AROMA configuration. @flar2 [OPTION]
   ADD: Wipe cache during flash
