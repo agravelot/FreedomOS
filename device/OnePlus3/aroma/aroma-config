@@ -185,7 +185,6 @@ checkbox(
     "<~log_kit>", "<~info.log_kit>", 0,
     "<~music>", "<~info.music>", 1,
     "<~noise_feild>", "<~info.noise_feild>", 0,
-    "<~nvbackup>", "<~info.nvbackup>", 1,
     "<~oneplus_wallpapers>", "<~info.oneplus_wallpapers>", 1,
     "<~oem_test>", "<~info.oem_test>", 0,
     "<~oem_log>", "<~info.oem_log>", 0,

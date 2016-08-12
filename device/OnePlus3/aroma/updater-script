@@ -1151,73 +1151,67 @@ endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.18") == "0")
   then
-    ui_print("   Removing NVBackupUI");
-    delete_recursive("/system/app/NVBackupUI");
-endif;
-
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.19") == "0")
-  then
     ui_print("   Removing OnePlusWallpapers");
     delete_recursive("/system/app/OnePlusWallpapers")
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.20") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.19") == "0")
   then
     ui_print("   Removing OEM Auto Test Server");
     delete_recursive("/system/app/OemAutoTestServer");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.21") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.20") == "0")
   then
     ui_print("   Removing OEM Log Kit");
     delete_recursive("/system/app/OEMLogKit");
     delete("/system/bin/oemlogkit")
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.22") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.21") == "0")
   then
   ui_print("   Removing Camera");
   delete_recursive("/system/priv-app/OnePlusCamera");
   delete_recursive("/system/priv-app/OnePlusCameraService");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.23") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.22") == "0")
   then
   ui_print("   Removing OnePlusGallery");
   delete_recursive("/system/priv-app/OnePlusGallery");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.24") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.23") == "0")
   then
   ui_print("   Removing OnePlusOta");
   delete_recursive("/system/priv-app/OnePlusOta");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.25") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.24") == "0")
   then
   ui_print("   Removing OnePlusWizard");
   delete_recursive("/system/priv-app/OnePlusWizard");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.26") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.25") == "0")
   then
     ui_print("   Removing Phase beam");
 		delete_recursive("/system/app/PhaseBeam");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.27") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.26") == "0")
   then
     ui_print("   Removing Protips");
 	  delete_recursive("/system/app/Protips");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.28") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.27") == "0")
   then
     ui_print("   Removing Sensor Test Tool");
     delete_recursive("/system/app/SensorTestTool");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.29") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.28") == "0")
   then
     ui_print("   Removing Swiftkey");
     delete_recursive("/system/app/SwiftKey");
@@ -1225,26 +1219,26 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.29") == "0")
     delete_recursive("/system/app/SwiftKeyFactorySettings");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.30") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.29") == "0")
   then
     ui_print("   Removing Tags");
 		delete_recursive("/system/priv-app/Tag");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.31") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.30") == "0")
   then
    ui_print("   Removing Wifi Rf Test");
    delete_recursive("/system/app/WifiRfTestApk");
    delete("/system/bin/WifiLogger_app");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.32") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.31") == "0")
   then
    ui_print("   Removing DivesIconPack");
    delete_recursive("/system/app/DivesIconPack");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.33") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.32") == "0")
   then
    ui_print("   Removing RifonIconPack");
    delete_recursive("/system/app/RifonIconPack");
