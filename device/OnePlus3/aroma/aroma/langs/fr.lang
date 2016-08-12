@@ -92,6 +92,7 @@ gapps.tittle2=Select the Google applications you want
 
 calculator=Calculette
 calendar=Calendrier
+call_log=Google Call Backup
 chrome=Chrome
 drive=Drive
 gmail=Gmail
@@ -109,6 +110,7 @@ youtube=YouTube
 
 info.calculator=0010 1010
 info.calendar=Clandrier Google
+info.call_log=Envoie votre historique d'appel à Google
 info.chrome=Navigateur web
 info.drive=Service cloud
 info.gmail=Cleint mail

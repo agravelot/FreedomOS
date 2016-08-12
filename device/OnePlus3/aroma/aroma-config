@@ -148,11 +148,12 @@ checkbox(
   "Google apps", "", 2,
      "<~calculator>", "<~info.calculator>", 1,
      "<~calendar>", "<~info.calendar>", 1,
+     "<~call_log>", "<~info.call_log>", 1,
      "<~chrome>", "<~info.chrome>", 1,
      "<~drive>", "<~info.drive>", 1,
      "<~gmail>", "<~info.gmail>", 1,
      "<~gmail_exchange>", "<~info.gmail_exchange>", 0,
-     "<~google>", "<~info.google>", 1, #VELVET
+     "<~google>", "<~info.google>", 1,
      "<~hangouts>", "<~info.hangouts>", 0,
      "<~maps>", "<~info.maps>", 1,
      "<~messenger>", "<~info.messenger>", 1,
