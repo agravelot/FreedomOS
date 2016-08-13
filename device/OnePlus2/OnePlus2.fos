@@ -11,3 +11,27 @@ SU=UPDATE-SuperSU-v2.76-20160630161323
 BUSYBOX=UPDATE-Busybox.Installer.v1.24.2-ALL-signed
 XPOSED_APK=XposedInstaller_by_dvdandroid
 DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER
+
+#File to remove from the original stock image
+CLEAN_LIST="
+/system/app/Maps
+/system/app/CalendarGoogle
+/system/app/CalculatorGoogle
+/system/app/Messenger
+/system/app/YouTube
+/system/app/Music2
+/system/app/Videos
+/system/app/Photos
+/system/app/Hangouts
+/system/app/Drive
+/system/app/Chrome
+/system/app/Gmail2
+/system/app/SwiftKey
+/system/app/WebViewGoogle
+/system/app/talkback
+/system/priv-app/Velvet
+/system/bin/fmfactorytest
+/system/bin/fmfactorytestserver
+/system/bin/install-recovery.sh
+/system/recovery-from-boot.p
+"

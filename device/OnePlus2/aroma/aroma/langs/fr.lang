@@ -16,10 +16,13 @@ text_quit=Quitter l'installation
 text_quit_msg=Êtes-vous sûr de vouloir quitter ?
 
 welcome.title=Bienvenue
+welcome.title2=Informations sur la ROM
 welcome.text1=Vous êtes sur le point d'utiliser
-welcome.version=VERSION
-welcome.codename=CODENAME
+welcome.version=Version
+welcome.device=Périphérique
 welcome.updated=Date MAJ
+welcome.microblog=YouTube
+welcome.developer=Développeur
 welcome.next=Presser suivant pour continuer l'installation...
 
 changelog.title=Changelogs
@@ -89,6 +92,7 @@ gapps.tittle2=Select the Google applications you want
 
 calculator=Calculette
 calendar=Calendrier
+call_log=Google Call Backup
 chrome=Chrome
 drive=Drive
 gmail=Gmail
@@ -106,6 +110,7 @@ youtube=YouTube
 
 info.calculator=0010 1010
 info.calendar=Clandrier Google
+info.call_log=Envoie votre historique d'appel à Google
 info.chrome=Navigateur web
 info.drive=Service cloud
 info.gmail=Cleint mail
@@ -130,8 +135,9 @@ android_pay=Andoroid Pay
 basic_dream=Veille intéractif
 bt_midi=BT Midi Service
 bt_test=BTtestmode
-bugle=Bugle
 desk_clock=DeskClock
+document=Documents
+download_provider=Géstionnaire de téléchargement
 engineering=EngineeringMode
 eng_special_test=EngSpecialTest
 facelock=Dévérouiller avec son visage
@@ -141,6 +147,7 @@ anim_wallpaper=Support fond d'écran animé
 log_kit=LogKitSdService
 music=Application de musique OnePlus
 noise_feild=Fond d'écran animé
+oneplus_wallpapers=OnePlus fond d'écran
 oem_test=OemAutoTestServer
 oem_log=OEMLogKit
 oneplus_camera=Camera OnePlus
@@ -160,6 +167,8 @@ info.basic_dream=Veille intéractif
 info.bt_midi=Support Bluetooth MIDI
 info.bt_test=Bluetooth testing
 info.desk_clock=Alarme, horloge et chronomètre
+info.document=Géstionnaire de fichier
+info.download_provider=Application de télécargement
 info.engineering=Pamaètres de développement
 info.eng_special_test=Paramètres divers
 info.facelock=Unlock with your face
@@ -169,6 +178,7 @@ info.anim_wallpaper=Support fond d'écran animé
 info.log_kit=Log
 info.music=OnePlus music app
 info.noise_feild=Fond d'écran animé
+info.oneplus_wallpapers=Quelques fonds d'écran
 info.oem_test=Application de test OnePlus
 info.oem_log=Log OnePlus
 info.oneplus_camera=Prendre des photos et vidéos
@@ -181,6 +191,8 @@ info.sensor_test=Application de test des capteurs
 info.swiftkey=Clavier Swiftkey
 info.tags=Tag NFC
 info.wifi_test=Test Wifi
+info.dive_icon=Pack d'icône de OnePlus
+info.rifon_icon=Pack d'icône de OnePlus
 
 mod.ttile=Mod supplémentaire
 mod.ttile2=Selectionner les mod que vous souhaitez
@@ -234,8 +246,8 @@ theme.tittle=Theme Engine
 theme.tittle2=Slectionnez votre theme engine
 
 notheme=Aucun Theme engine
-layer=RRO Layers
-substratum=Substratum (BETA)
+layer=RRO Layers [obsolète]
+substratum=Substratum
 
 info.notheme=J'aime le stock
 info.layer=Layers Manager
@@ -247,7 +259,7 @@ kernel.tittle=Kernel
 kernel.tittle2=Selectionnez votre kernel.
 kernel_stock=Stock Kernel
 info.kernel_stock=Le stock de OnePlus
-elementalx=ElementalX (Highly recommended)
+elementalx=ElementalX
 info.elementalx=Developed by @flar2
 
 # -- - INSTALLER - -- #
