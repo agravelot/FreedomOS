@@ -17,10 +17,13 @@ text_quit=Quit Installation
 text_quit_msg=Are you sure ?
 
 welcome.title=Welcome
+welcome.title2=ROM informations
 welcome.text1=You are about to use
-welcome.version=VERSION
-welcome.codename=CODENAME
-welcome.updated=UPDATED
+welcome.version=Version
+welcome.device=Device
+welcome.updated=Updated
+welcome.microblog=YouTube
+welcome.developer=Developer
 welcome.next=Press Next to Continue the Installation...
 
 changelog.title=Changelogs
@@ -32,7 +35,6 @@ language.english.info=Using English
 language.french=France
 language.french.info=Utiliser le Français
 
-welcome.microblog=Youtube
 rom.data=!date!
 text_finish=Finish
 model.title=Phone Model
@@ -42,7 +44,7 @@ by=by
 main.tittle=Please select menu below to start the Installation
 main.install=Install
 main.install.info=Continue to install mod
-main.sys=System Info
+main.sys=System Information
 main.sys.info=Show device informations
 main.changelog.info=FreedomOS changelogs
 main.exit=Exit
@@ -52,16 +54,9 @@ install_mod.tittle=FreedomOS installer
 install_mod.tittle2=Select your settings
 install_mod.sub_tittle=Installation method
 
-custom=Custom
-stock=Stock
 assert.tittle=Checking the assert
 assert_yes=Yes (Recommended)
 assert_no=No
-sha1.tittle=Checking the integrity of the system
-sha1_yes=Yes, check the system
-info.sha1_yes=Recommended
-sha1_no=No, don't check the system
-info.sha1_no=For dirty flash
 addon.tittle=Backup/Restore /system/addon.d/
 addon_yes=Yes
 info.addon_yes=Recommended for dirty flash
@@ -90,11 +85,14 @@ pre.install=The wizard is ready to begin the installation.
 pre.install2=Press <b>Install Now</b> to begin the installation.
 pre.install3=If you want to review or change any of your installation settings, press <b>Back</b>.
 
+# -- - GOOGLE APPS - -- #
+
 gapps.tittle=Google Apps
 gapps.tittle2=Select the Google Apps you want
 
 calculator=Calculator
 calendar=Calendar
+call_log=Google Call Backup
 chrome=Chrome
 drive=Drive
 gmail=Gmail
@@ -102,6 +100,7 @@ gmail_exchange=Gmail Exchange
 google=Google
 hangouts=Hangouts
 maps=Maps
+messenger=Messenger
 photos=Photos
 play_music=Play Music
 tts=Text-to-Speech
@@ -109,15 +108,17 @@ tallback=Tallback
 play_movies=Play Movies
 youtube=YouTube
 
-info.calculator=0010 1010?
+info.calculator=0010 1010
 info.calendar=Google Calendar
+info.call_log=Send your call history to Google
 info.chrome=Web browser
 info.drive=Cloud service
 info.gmail=Email client
 info.gmail_exchange=Support exchange for Gmail
-info.google=Google apps
+info.google=Google Now
 info.hangouts=Instant messaging
 info.maps=Real-time navigation, traffic, transport
+info.messenger=Google SMS/MMS apps.
 info.photos=Digital photo management application
 info.play_music=Google Play Music application
 info.tts=Causes black screens on first boot if removed!!
@@ -125,15 +126,19 @@ info.tallback=Causes black screens on first boot if removed!!
 info.play_movies=Google Play Movies application
 info.youtube=YouTube application
 
+# -- - SYSTEM APPS - -- #
+
 apps.tittle=System Apps
 apps.tittle2=Select the system Apps you want
 
+anthal=AntHalService
 android_pay=Android Pay
 basic_dream=Basic Dream
 bt_midi=BT Midi Service
 bt_test=BTtestmode
-bugle=Bugle
 desk_clock=DeskClock
+document=Documents
+download_provider=Download Provider
 engineering=EngineeringMode
 eng_special_test=EngSpecialTest
 facelock=Facelock
@@ -143,20 +148,30 @@ anim_wallpaper=Animated Wallpaper
 log_kit=LogKitSdService
 music=Music
 noise_feild=Noised Feild
+oneplus_wallpapers=OnePlus Wallpapers
 oem_test=OemAutoTestServer
 oem_log=OEMLogKit
+oneplus_camera=OnePlus Camera
+oneplus_gallery=OnePlus Gallery
+ota=OnePlus OTA
+oneplus_wizard=OnePlus SetupWizard
 phase_beam=Phase Beam
 protips=Protips
 sensor_test=SensorTestTool
 swiftkey=Swiftkey
 tags=Tags
 wifi_test=WifiRfTestApk
+dive_icon=Dive Icon Pack
+rifon_icon=Rifon Icon Pack
 
+info.anthal=For sport/fitness/health devices
 info.android_pay=NFC payments
 info.basic_dream=Screensaver
 info.bt_midi=Bluetooth MIDI Support
 info.bt_test=Bluetooth testing
 info.desk_clock=Alarm, clock and timer
+info.document=File Manager
+info.download_provider=Files downloader
 info.engineering=Various developer settings
 info.eng_special_test=Miscellaneous testing
 info.facelock=Unlock with your face
@@ -166,14 +181,21 @@ info.anim_wallpaper=Support for animated wallpapers
 info.log_kit=Logging
 info.music=OnePlus music app
 info.noise_feild=Animated wallpaper
+info.oneplus_wallpapers=Some wallpapers
 info.oem_test=OEM testing application
 info.oem_log=Logging
+info.oneplus_camera=Take pictues and movies
+info.oneplus_gallery=View pictures and movies
+info.ota=OnePlus system update (not recommended)
+info.oneplus_wizard=SetupWizard coming after Google
 info.phase_beam=Animated wallpaper
 info.protips=Some tips
 info.sensor_test=Sensor testing application
 info.swiftkey=Swiftkey keyboard
 info.tags=NFC Tags
 info.wifi_test=Wifi Testing
+info.dive_icon=Icons pack from OnePlus
+info.rifon_icon=Icons pack from OnePlus
 
 mod.title=Extra mod
 mod.title2=Select the extra mod you want
@@ -203,27 +225,46 @@ mod.tittle3=Extra mod
 
 supersu=Install SuperSU
 divine=Viper4Android + Dolby Atmos
-xposed=Xposed Installer
+xposed=Material Design Xposed Installer
 adaway=Adaway
 adb=Enable ADB
-layer=RRO Layers
+dns=Google DNS
 fos_wallpapers=FreedomOS wallpapers
+emoji_one=EmojiOne
+multi_window=Multi Window
 
 info.supersu=SuperSU v2.76 by Chainfire
 info.divine=Divine beats by Theroyalseeker
-info.xposed=Xposed Installer application only
+info.xposed=Xposed Installer application only by DVD android
 info.adaway=Ad-Blocker for Android
 info.adb=Android Debugging Bridge
-info.layer=Layers Manager
+info.dns=Set DNS 8.8.8.8/8.8.4.4
 info.fos_wallpapers=Designed by @badboy47
+info.emoji_one=The Open Emoji Standard
+info.multi_window=Enable Multi Window
 
-kernel.tittle=Select your kernel
-kernel.tittle2=
+# -- - THEME - -- #
+theme.tittle=Theme Engine
+theme.tittle2=Select your theme engine
+
+notheme=Don't install theme engine
+layer=RRO Layers [deprecated]
+substratum=Substratum
+
+info.notheme=I love stock
+info.layer=RRO Layers Manager
+info.substratum=The new Theme Engine
+
+# -- - KERNEL - -- #
+
+kernel.tittle=Kernel
+kernel.tittle2=Select your kernel.
 kernel_stock=Stock Kernel
-info.kernel_stock=By OnePlus
-kernel_custom_1=Llama Sweet kernel R1
-info.kernel_custom_1=By genesixx
+info.kernel_stock=The Original by OnePlus
+elementalx=ElementalX
+info.elementalx=Developed by @flar2
 
+# -- - INSTALLER - -- #
 install=Installing FreedomOS
 install.now=Install Now
 install.finish=It will take awhile...
