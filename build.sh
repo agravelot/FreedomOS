@@ -159,7 +159,7 @@ else
 	echo
   if curl -Is $ROM_LINK | grep "200 OK" &> /dev/null
   then
-    echo "Downloading.."
+    echo "Downloading $ROM_NAME..."
 		#TODO Ask user for delete or change name of the old corrupted zip
 		rm -vf download/$ROM_NAME.zip
     curl -o download/$ROM_NAME.zip $ROM_LINK
@@ -215,29 +215,11 @@ rm -rvf tmp/mount
 rm -rvf tmp/system.*
 
 echo
-echo "Remove stock recovery"
-rm -vf tmp/system/bin/install-recovery.sh
-rm -vf tmp/system/recovery-from-boot.p
-echo
-echo "Remove system apps/bin"
-rm -rvf tmp/system/app/Maps
-rm -rvf tmp/system/app/CalendarGoogle
-rm -rvf tmp/system/app/CalculatorGoogle
-rm -rvf tmp/system/app/Messenger
-rm -rvf tmp/system/app/YouTube
-rm -rvf tmp/system/app/Music2
-rm -rvf tmp/system/app/Videos
-rm -rvf tmp/system/app/Photos
-rm -rvf tmp/system/app/Hangouts
-rm -rvf tmp/system/app/Drive
-rm -rvf tmp/system/app/Chrome
-rm -rvf tmp/system/app/Gmail2
-rm -rvf tmp/system/app/SwiftKey
-rm -rvf tmp/system/app/WebViewGoogle
-rm -rvf tmp/system/app/talkback
-rm -rvf tmp/system/priv-app/Velvet
-rm -rvf system/bin/fmfactorytest
-rm -rvf system/bin/fmfactorytestserver
+echo "Remove unneeded system files"
+for i in ${CLEAN_LIST}
+do
+	rm -rvf tmp${i}
+done
 
 echo
 echo "Patching system files:"
@@ -248,9 +230,6 @@ cp -rvf system/* tmp/system
 #cp -rvf data tmp/data
 
 echo
-echo "Remove META-INF"
-rm -rvf "tmp/META-INF"
-echo
 echo "Add aroma"
 mkdir -p tmp/META-INF/com/google/android/
 cp -vR device/$DEVICE/aroma/* tmp/META-INF/com/google/android/
@@ -259,8 +238,6 @@ echo "Add tools"
 cp -vR "tools" "tmp/"
 echo
 echo "Add SuperSU"
-#cp -v download/$SU.zip tmp/supersu/supersu.zip
-#cp -rv supersu tmp/
 mkdir tmp/supersu
 cp -v download/$SU.zip tmp/supersu/supersu.zip
 
