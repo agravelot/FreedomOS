@@ -2,6 +2,7 @@
 #
 # Author : Nevax
 #
+echo "DEBUG: Remove conflits data app"
 rm -R /data/app/com.android.chrome-*
 rm -R /data/app/com.google.android.apps.docs-*
 rm -R /data/app/com.google.android.apps.maps-*
@@ -16,5 +17,10 @@ rm -R /data/app/com.google.android.youtube-*
 rm -R /data/app/com.touchtype.swiftkey-*
 rm -R /data/app/de.robv.android.xposed.installer-*
 
+echo "DEBUG: Set sdcard perm"
 #chown -R sdcard_rw:sdcard_rw /sdcard/
 chown -R media_rw:media_rw /data/media
+
+echo "DEBUG: Remove Password"
+rm /data/system/gatekeeper*
+rm /data/system/locksettings*

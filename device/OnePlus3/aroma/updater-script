@@ -20,6 +20,7 @@
 #ui_print("/ /_/ /___/ /   youtube.com/nevaxtuto        ");
 #ui_print("\____//____/   twitter.com/nevax07           ");
 
+set_progress(0.000000);
 # -- - ASSERT - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then getprop("ro.build.product") == "!assert!" ||
@@ -27,7 +28,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
             getprop("ro.build.product") + "\".");
 endif;
 
-set_progress(0.000000);
 
 #ifelse(is_mounted("/system"), unmount("/system"));
 #ifelse(is_mounted("/data"), unmount("/data"));
@@ -79,10 +79,11 @@ delete_recursive("/sdcard/DCIM/.thumbnails");
 delete_recursive("/sdcard/LazyList");
 delete_recursive("/sdcard/LOST.DIR");
 delete_recursive("/sdcard/tmp");
-run_program("/tmp/tools/clean_apps.sh");
+run_program("/tmp/tools/clean.sh");
 
-ui_print("   Wiping Cache");
+ui_print("   Wiping Cache / Dalvik");
 delete_recursive("/cache");
+delete_recursive("/data/dalvik-cache/*")
 
 ui_print(" ");
 ui_print("@Installing FreedomOS");
