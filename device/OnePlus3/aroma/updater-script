@@ -1249,10 +1249,12 @@ endif;
 
 ui_print(" ");
 ui_print("@Installing SuperSU");
-run_program("/system/bin/echo", "DEBUG: Extracting SU");
-package_extract_dir("supersu", "/tmp/supersu");
-run_program("/system/bin/echo", "DEBUG: Unzip SU");
-run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
+#run_program("/system/bin/echo", "DEBUG: Extracting SU");
+#package_extract_dir("tools/supersu", "/tmp/supersu");
+#run_program("/system/bin/echo", "DEBUG: Unzip SU");
+#run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
+run_program("/system/bin/echo", "DEBUG: Move supersu to /tmp/tools/supersu ->  /tmp/supersu ");
+run_program("/sbin/busybox", "mv", "/tmp/tools/supersu", "/tmp/supersu");
 run_program("/system/bin/echo", "DEBUG: Start SU install script");
 run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
 
