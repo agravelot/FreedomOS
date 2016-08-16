@@ -1,161 +1,138 @@
-function build_op3 {
+function build_op2 {
   # Building Process
-  echo
-  echo "Copy $ROM_NAME needed files:"
-  rsync -rv rom/$DEVICE/$ROM_NAME/* tmp/ --exclude='system.transfer.list' --exclude='system.new.dat' --exclude='system.patch.dat' --exclude='META-INF/'
-  mkdir -p tmp/mount
-  mkdir -p tmp/system
-  echo
-  echo "Extracting system.new.dat:"
-  download/sdat2img.py rom/$DEVICE/$ROM_NAME/system.transfer.list rom/$DEVICE/$ROM_NAME/system.new.dat tmp/system.img
-  echo
-  echo "Mounting system.img:"
-  mount -t ext4 -o loop tmp/system.img tmp/mount/
-  echo
-  echo "Extracting system files:"
-  cp -rvf tmp/mount/* tmp/system/
-  echo
-  echo "Clean tmp/"
-  if mount | grep "FreedomOS/tmp/mount" > /dev/null;
-  then
-      echo "umount tmp/mount/"
-      sleep 2
-      umount tmp/mount/
-  fi
-  rm -rvf tmp/mount
-  rm -rvf tmp/system.*
 
-  echo
-  echo "Remove unneeded system files"
+  echo ">> Copying ${ROM_NAME} needed files" 2>&1 | tee -a ${build_log}
+  rsync -vr ${rom_root}/${device}/${ROM_NAME}/* ${build_root}/ --exclude='system.transfer.list' --exclude='system.new.dat' --exclude='system.patch.dat' --exclude='META-INF/' >> ${build_log} 2>&1
+  mkdir -p ${build_root}/mount >> ${build_log} 2>&1
+  mkdir -p ${build_root}/system >> ${build_log} 2>&1
+
+  echo ">> Extracting system.new.dat" 2>&1 | tee -a ${build_log}
+  ${download_root}/sdat2img.py ${rom_root}/${device}/${ROM_NAME}/system.transfer.list ${rom_root}/${device}/${ROM_NAME}/system.new.dat ${build_root}/system.img >> ${build_log} 2>&1
+
+  echo ">> Mounting system.img" 2>&1 | tee -a ${build_log}
+  mount -t ext4 -o loop ${build_root}/system.img ${build_root}/mount/ >> ${build_log} 2>&1
+
+  echo ">>> Extracting system files" 2>&1 | tee -a ${build_log}
+  cp -rvf ${build_root}/mount/* ${build_root}/system/ >> ${build_log} 2>&1
+
+  echo ">> Cleaning build root " 2>&1 | tee -a ${build_log}
+  if mount | grep "${build_root}/mount" > /dev/null;
+  then
+      echo ">> Unmounting system.img" 2>&1 | tee -a ${build_log}
+      sleep 2
+      umount ${build_root}/mount/ >> ${build_log} 2>&1
+  fi
+  rm -rvf ${build_root}/mount >> ${build_log} 2>&1
+  rm -rvf ${build_root}/system.* >> ${build_log} 2>&1
+
+  echo "> Removing unneeded system files" 2>&1 | tee -a ${build_log}
   for i in ${CLEAN_LIST}
   do
-    rm -rvf tmp${i}
+    rm -rvf ${build_root}${i} >> ${build_log} 2>&1
   done
 
   echo
-  echo "Patching system files:"
-  cp -rvf system/* tmp/system
+  echo "> Patching system files" 2>&1 | tee -a ${build_log}
+  cp -rvf ${top_root}/system/* ${build_root}/system >> ${build_log} 2>&1
 
   #echo
   #echo "Copying data files:"
-  #cp -rvf data tmp/data
+  #cp -rvf data ${build_root}/data
 
-  echo
-  echo "Add aroma"
-  mkdir -p tmp/META-INF/com/google/android/
-  cp -vR device/$DEVICE/aroma/* tmp/META-INF/com/google/android/
-  echo
-  echo "Add tools"
-  cp -vR "tools" "tmp/"
-  echo
-  echo "Add SuperSU"
-  mkdir tmp/supersu
-  cp -v download/$SU.zip tmp/supersu/supersu.zip
+  echo ">> Add aroma" 2>&1 | tee -a ${build_log}
+  mkdir -p ${build_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
+  cp -vR ${top_root}/device/${device}/aroma/* ${build_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
 
-  echo
-  echo "Add FreedomOS wallpapers by badboy47"
-  mkdir -p tmp/media/wallpaper
-  cp -v media/wallpaper/* tmp/media/wallpaper
-  echo
-  echo "Add Divine"
-  unzip -o "download/$DIVINE.zip" -d "tmp/tools/divine/" >> $BUILD_LOG 2>&1
+  echo ">> Add tools" 2>&1 | tee -a ${build_log}
+  cp -vR "${top_root}/tools" ${build_root} >> ${build_log} 2>&1
 
-  echo
-  echo "Set Assert in updater-script"
-  sed -i.bak "s:!assert!:$ASSERT:" tmp/META-INF/com/google/android/updater-script
-  echo
-  echo "Set VERSION in aroma"
-  sed -i.bak "s:!VERSION!:$VERSION:" tmp/META-INF/com/google/android/aroma-config
-  echo
-  echo "Set VERSION in aroma"
-  sed -i.bak "s:!device!:$DEVICE:" tmp/META-INF/com/google/android/aroma-config
-  echo
-  echo "Set date in aroma"
-  sed -i.bak "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma-config
-  echo
-  echo "Set date in en.lang"
-  sed -i.bak "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma/langs/en.lang
-  echo
-  echo "Set date in fr.lang"
-  sed -i.bak "s:!date!:$(date +"%d%m%y"):" tmp/META-INF/com/google/android/aroma/langs/fr.lang
-  rm -rvf tmp/META-INF/com/google/android/aroma-config.bak
-  rm -rvf tmp/META-INF/com/google/android/aroma/langs/*.lang.bak
+  echo ">> Add SuperSU" 2>&1 | tee -a ${build_log}
+  mkdir ${build_root}/supersu >> ${build_log} 2>&1
+  cp -v ${download_root}/$SU.zip ${build_root}/supersu/supersu.zip >> ${build_log} 2>&1
+
+  echo ">> Add FreedomOS wallpapers by badboy47" 2>&1 | tee -a ${build_log}
+  mkdir -p ${build_root}/media/wallpaper >> ${build_log} 2>&1
+  cp -v ${top_root}/media/wallpaper/* ${build_root}/media/wallpaper >> ${build_log} 2>&1
+
+  echo ">> Add Divine ..." 2>&1 | tee -a ${build_log}
+  unzip -o "${download_root}/$DIVINE.zip" -d "${build_root}/tools/divine/" >> ${build_log} 2>&1
+
+
+  echo ">> Set Assert in updater-script" 2>&1 | tee -a ${build_log}
+  sed -i.bak "s:!assert!:$ASSERT:" ${build_root}/META-INF/com/google/android/updater-script >> ${build_log} 2>&1
+
+  echo ">> Set VERSION in aroma" 2>&1 | tee -a ${build_log}
+  sed -i.bak "s:!VERSION!:$VERSION:" ${build_root}/META-INF/com/google/android/aroma-config >> ${build_log} 2>&1
+
+  echo ">> Set device in aroma" 2>&1 | tee -a ${build_log}
+  sed -i.bak "s:!device!:${device}:" ${build_root}/META-INF/com/google/android/aroma-config >> ${build_log} 2>&1
+
+  echo ">> Set date in aroma" 2>&1 | tee -a ${build_log}
+  sed -i.bak "s:!date!:$(date +"%d%m%y"):" ${build_root}/META-INF/com/google/android/aroma-config >> ${build_log} 2>&1
+
+  echo ">> Set date in en.lang" 2>&1 | tee -a ${build_log}
+  sed -i.bak "s:!date!:$(date +"%d%m%y"):" ${build_root}/META-INF/com/google/android/aroma/langs/en.lang >> ${build_log} 2>&1
+
+  echo ">> Set date in fr.lang" 2>&1 | tee -a ${build_log}
+  sed -i.bak "s:!date!:$(date +"%d%m%y"):" ${build_root}/META-INF/com/google/android/aroma/langs/fr.lang >> ${build_log} 2>&1
+
+  rm -rvf ${build_root}/META-INF/com/google/android/aroma-config.bak >> ${build_log} 2>&1
+  rm -rvf ${build_root}/META-INF/com/google/android/aroma/langs/*.lang.bak >> ${build_log} 2>&1
 
   ## user release build
   if [ "$BUILD" = 1 ];
   then
-    cd tmp/
-    echo
-    echo "Making zip file"
-    zip -r9 "FreedomOS-$CODENAME-nevax-$VERSION.zip" * -x "*EMPTY_DIRECTORY*" >> $BUILD_LOG 2>&1
-    echo "----"
-    cd ..
-    echo
-    echo "Copy Unsigned in output folder"
-    cp -v tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip output/FreedomOS-$CODENAME-nevax-$VERSION.zip >> $BUILD_LOG 2>&1
-    echo
-    echo "testing zip integrity"
-    zip -T output/FreedomOS-$CODENAME-nevax-$VERSION.zip >> $BUILD_LOG 2>&1
-    echo
-    echo "Generating md5 hash"
-    openssl md5 "output/FreedomOS-$CODENAME-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-nevax-$VERSION.zip.md5"
-    echo
-    echo "SignApk....."
-    chmod +x SignApk/signapk.jar
-    java -jar "SignApk/signapk.jar" "SignApk/certificate.pem" "SignApk/key.pk8" "tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip" "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip"
-    echo
-    echo "Generating md5 hash"
-    openssl md5 "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip.md5"
+    cd ${build_root}/
+
+    echo "> Making zip file" 2>&1 | tee -a ${build_log}
+    zip -r9 "FreedomOS-$CODENAME-nevax-$VERSION.zip" * -x "*EMPTY_DIRECTORY*" >> ${build_log} 2>&1
+    cd ${top_root}
+
+    echo ">> Copy Unsigned in output folder" 2>&1 | tee -a ${build_log}
+    cp -v ${build_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip ${output_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip >> ${build_log} 2>&1
+
+    echo ">> testing zip integrity" 2>&1 | tee -a ${build_log}
+    zip -T ${output_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip >> ${build_log} 2>&1
+
+    echo ">> Generating md5 hash" 2>&1 | tee -a ${build_log}
+    openssl md5 "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip" |cut -f 2 -d " " > "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip.md5" >> ${build_log} 2>&1
+
+    echo ">> SignApk....." 2>&1 | tee -a ${build_log}
+    chmod +x ${top_root}/SignApk/signapk.jar >> ${build_log} 2>&1
+    java -jar "SignApk/signapk.jar" "SignApk/certificate.pem" "SignApk/key.pk8" "${build_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip" "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" >> ${build_log} 2>&1
+
+    echo ">> Generating md5 hash" 2>&1 | tee -a ${build_log}
+    openssl md5 "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip.md5" >> ${build_log} 2>&1
     #We doesn't test the final, because it doesn't work with the signed zip.
     FINAL_ZIP=FreedomOS-$CODENAME-nevax-$VERSION-signed
+
   fi
 
   ## debug build
   if [ "$BUILD" = 2 ];
   then
-    cd tmp/
-    echo
-    echo "Making zip file"
-    zip -r1 "FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" * -x "*EMPTY_DIRECTORY*" >> $BUILD_LOG 2>&1
-    echo "----"
-    echo
-    echo "testing zip integrity"
-    zip -T "FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" >> $BUILD_LOG 2>&1
-    echo
-    cd ..
-    echo "Move unsigned zip file in output folder"
-    mv -v "tmp/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" "output/"
-    echo
-    echo "Generating md5 hash"
-    openssl md5 "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip.md5"
+    cd ${build_root}/
+
+    echo "> Making zip file" 2>&1 | tee -a ${build_log}
+    zip -r1 "FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" * -x "*EMPTY_DIRECTORY*" >> ${build_log} 2>&1
+
+    echo ">> testing zip integrity" 2>&1 | tee -a ${build_log}
+    zip -T "FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" >> ${build_log} 2>&1
+
+    cd ${top_root}
+    echo ">> Move unsigned zip file in output folder" 2>&1 | tee -a ${build_log}
+    mv -v "${build_root}/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" "${output_root}/" >> ${build_log} 2>&1
+
+    echo ">> Generating md5 hash"
+    openssl md5 "${output_root}/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" |cut -f 2 -d " " > "${output_root}/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip.md5" >> ${build_log} 2>&1
     FINAL_ZIP=FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION
   fi
 
   echo
-  echo "Clear tmp/ foler..."
-  rm -rf tmp/*
-  touch "tmp/EMPTY_DIRECTORY"
-  echo
-  echo "$greent$bold Build finished! You can find the build here: output/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip $normal"
-  echo
-  if [[ "yes" == $(confirm "Want to flash it now?") ]]
-  then
-    ## ADB Push zip on device
-    echo
-    echo "Pushing $FINAL_ZIP.zip to your $DEVICE..."
-    adb shell "rm /sdcard/$FINAL_ZIP.zip"
-    adb push -p output/$FINAL_ZIP.zip /sdcard/
-    echo "Pushing $FINAL_ZIP.zip.md5 to your $DEVICE..."
-    adb shell "rm /sdcard/$FINAL_ZIP.zip.md5"
-    adb push -p output/$FINAL_ZIP.zip.md5 /sdcard/
-    adb shell "chown -R media_rw:media_rw /sdcard/FreedomOS*"
-    ## Flashing zip on device
-    echo
-    echo "Flashing $FINAL_ZIP.zip into TWRP"
-    adb shell "echo 'boot-recovery ' > /cache/recovery/command"
-    adb shell "echo '--update_package=/sdcard/$FINAL_ZIP.zip' >> /cache/recovery/command"
-    adb shell reboot recovery
-    echo
-    echo "$greent$bold Flash Successful! Follow the steps on you device $normal"
-  fi
+  echo "> Cleaning build root" 2>&1 | tee -a ${build_log}
+  rm -rvf ${build_root}/* >> ${build_log} 2>&1
+
+  echo ">" 2>&1 | tee -a ${build_log}
+  echo "> Build finished! You can find the build here: ${output_root}/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" 2>&1 | tee -a ${build_log}
+  echo "> You can find the log file here: ${build_log}" 2>&1 | tee -a ${build_log}
 }
