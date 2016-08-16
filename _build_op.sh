@@ -1,4 +1,4 @@
-function build_op2 {
+function build_oneplus {
   # Building Process
 
   echo ">> Copying ${ROM_NAME} needed files" 2>&1 | tee -a ${build_log}
@@ -55,6 +55,7 @@ function build_op2 {
   cp -v ${top_root}/media/wallpaper/* ${build_root}/media/wallpaper >> ${build_log} 2>&1
 
   echo ">> Add Divine ..." 2>&1 | tee -a ${build_log}
+  mkdir -p ${build_root}/tools/divine >> ${build_log} 2>&1
   unzip -o "${download_root}/$DIVINE.zip" -d "${build_root}/tools/divine/" >> ${build_log} 2>&1
 
 

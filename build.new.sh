@@ -189,8 +189,8 @@ function build {
   echo "> $device build starting now." 2>&1 | tee -a ${build_log}
 
   case $device in
-    OnePlus3) build_op3 ;;
-    OnePlus2) build_op2 ;;
+    OnePlus3) build_oneplus ;;
+    OnePlus2) build_oneplus ;;
   esac
 }
 
