@@ -1,6 +1,6 @@
 # FreedomOS conf file
 
-ARCH=ARM64
+ARCH=arm64
 CODENAME=op2
 DEVICE=OnePlus2
 ASSERT=OnePlus2
@@ -34,4 +34,19 @@ CLEAN_LIST="
 /system/bin/fmfactorytestserver
 /system/bin/install-recovery.sh
 /system/recovery-from-boot.p
+"
+
+# tools to add to the rom, (/assets/tools/)
+TOOLS_LIST="
+adb.sh
+addon
+clean.sh
+divine
+dpi.sh
+fonts
+google_dns.sh
+hosts
+multi_window.sh
+supersu
+v4a_profiles_irs
 "

@@ -1,6 +1,6 @@
 # FreedomOS conf file
 
-ARCH=ARM64
+ARCH=arm64
 CODENAME=op3
 DEVICE=OnePlus3
 ASSERT=OnePlus3
@@ -12,7 +12,7 @@ BUSYBOX=UPDATE-Busybox.Installer.v1.24.2-ALL-signed
 XPOSED_APK=XposedInstaller_by_dvdandroid
 DIVINE=DiVINE_BEATS_v7.0_EVOLUTION_BY_THE_ROYAL_SEEKER
 
-#File to remove from the original stock image
+# Files/folders to remove from the original stock image
 CLEAN_LIST="
 /system/app/Maps
 /system/app/CalendarGoogle
@@ -34,4 +34,19 @@ CLEAN_LIST="
 /system/bin/fmfactorytestserver
 /system/bin/install-recovery.sh
 /system/recovery-from-boot.p
+"
+# tools to add to the rom, (/assets/tools/)
+TOOLS_LIST="
+adb.sh
+addon
+clean.sh
+divine
+dpi.sh
+elementalx
+fonts
+google_dns.sh
+hosts
+multi_window.sh
+supersu
+v4a_profiles_irs
 "

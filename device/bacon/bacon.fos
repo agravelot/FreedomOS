@@ -1,6 +1,6 @@
 # FreedomOS conf file
 
-ARCH=ARM
+ARCH=arm
 CODENAME=bacon
 DEVICE=bacon
 ASSERT=bacon

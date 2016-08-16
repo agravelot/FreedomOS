@@ -36,8 +36,10 @@ function initialize {
   SDAT2IMG_LINK="https://raw.githubusercontent.com/xpirt/sdat2img/master/sdat2img.py"
 
   top_root=$PWD
-  build_root=${top_root}/build
   rom_root=${top_root}/rom
+  build_root=${top_root}/build
+  tools_root=${top_root}/tools
+  assets_root=${top_root}/assets
   output_root=${top_root}/output
   download_root=${top_root}/download
   build_log=${output_root}/build.log
@@ -197,11 +199,11 @@ function update_tools {
   echo "> Updating sdat2img tools ..." 2>&1 | tee -a ${build_log}
   if curl -Is ${SDAT2IMG_LINK} | grep "200 OK" &> /dev/null
   then
-    curl -o ${download_root}/sdat2img.py ${SDAT2IMG_LINK} >> ${build_log} 2>&1
+    curl -o ${tools_root}/sdat2img.py ${SDAT2IMG_LINK} >> ${build_log} 2>&1
   else
     echo "sdat2img tools mirror is OFFLINE! sdat2img tools not updated!" 2>&1 | tee -a ${build_log}
   fi
-  chmod +x ${download_root}/sdat2img.py
+  chmod +x ${tools_root}/*
 }
 
 function download_rom {

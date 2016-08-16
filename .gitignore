@@ -39,15 +39,11 @@ tmp/*
 output/*
 download/*
 rom/
-SignApk/*
 .build.conf
+tools/*
 
-!download/*SuperSU*.zip
-!download/*BEATS*.zip
-!download/Xposed*.apk
 !system/EMPTY_DIRECTORY
 !tmp/EMPTY_DIRECTORY
 !output/EMPTY_DIRECTORY
 !download/EMPTY_DIRECTORY
 !rom/EMPTY_DIRECTORY
-!SignApk/signapk.jar

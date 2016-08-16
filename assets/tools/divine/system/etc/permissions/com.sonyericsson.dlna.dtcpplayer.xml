@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.sonyericsson.dlna.dtcpplayer.api"
+        file="/system/framework/com.sonyericsson.dlna.dtcpplayer.jar"/>
+    <library name="com.sonyericsson.dlna.dtcpplayer.api_2"
+        file="/system/framework/com.sonyericsson.dlna.dtcpplayer.jar"/>
+</permissions>

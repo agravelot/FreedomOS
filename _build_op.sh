@@ -33,7 +33,7 @@ function build_oneplus {
 
   echo
   echo "> Patching system files" 2>&1 | tee -a ${build_log}
-  cp -rvf ${top_root}/system/* ${build_root}/system >> ${build_log} 2>&1
+  cp -rvf ${assets_root}/system/${ARCH}/* ${build_root}/system >> ${build_log} 2>&1
 
   #echo
   #echo "Copying data files:"
@@ -44,20 +44,15 @@ function build_oneplus {
   cp -vR ${top_root}/device/${device}/aroma/* ${build_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
 
   echo ">> Add tools" 2>&1 | tee -a ${build_log}
-  cp -vR "${top_root}/tools" ${build_root} >> ${build_log} 2>&1
-
-  echo ">> Add SuperSU" 2>&1 | tee -a ${build_log}
-  mkdir ${build_root}/supersu >> ${build_log} 2>&1
-  cp -v ${download_root}/$SU.zip ${build_root}/supersu/supersu.zip >> ${build_log} 2>&1
+  mkdir -p ${build_root}/tools >> ${build_log} 2>&1
+  for i in ${TOOLS_LIST}
+  do
+    cp -rvf ${assets_root}/tools/${i} ${build_root}/tools/
+  done
 
   echo ">> Add FreedomOS wallpapers by badboy47" 2>&1 | tee -a ${build_log}
   mkdir -p ${build_root}/media/wallpaper >> ${build_log} 2>&1
   cp -v ${top_root}/media/wallpaper/* ${build_root}/media/wallpaper >> ${build_log} 2>&1
-
-  echo ">> Add Divine ..." 2>&1 | tee -a ${build_log}
-  mkdir -p ${build_root}/tools/divine >> ${build_log} 2>&1
-  unzip -o "${download_root}/$DIVINE.zip" -d "${build_root}/tools/divine/" >> ${build_log} 2>&1
-
 
   echo ">> Set Assert in updater-script" 2>&1 | tee -a ${build_log}
   sed -i.bak "s:!assert!:$ASSERT:" ${build_root}/META-INF/com/google/android/updater-script >> ${build_log} 2>&1
@@ -99,8 +94,8 @@ function build_oneplus {
     openssl md5 "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip" |cut -f 2 -d " " > "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip.md5" >> ${build_log} 2>&1
 
     echo ">> SignApk....." 2>&1 | tee -a ${build_log}
-    chmod +x ${top_root}/SignApk/signapk.jar >> ${build_log} 2>&1
-    java -jar "SignApk/signapk.jar" "SignApk/certificate.pem" "SignApk/key.pk8" "${build_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip" "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" >> ${build_log} 2>&1
+    chmod +x ${tools_root}/bin/signapk.jar >> ${build_log} 2>&1
+    java -jar "${tools_root}/bin/signapk.jar" "${tools_root}/keys/certificate.pem" "${tools_root}/keys/key.pk8" "${build_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip" "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" >> ${build_log} 2>&1
 
     echo ">> Generating md5 hash" 2>&1 | tee -a ${build_log}
     openssl md5 "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip.md5" >> ${build_log} 2>&1

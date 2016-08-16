@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configurations>
+  <item type="boolean" name="support_beats_audio">true</item>
+  <item type="boolean" name="support_boomsound_effect">true</item>
+</system>
+</configurations>

@@ -1,0 +1,7004 @@
+#ENR_VOIP_0312			--------------------------------------------------------------- book 0 is selected
+w 30 00 00 
+w 30 7f 00 
+#			# reg[  0][  0][  1] = 0x01	; Initialize the device through software reset
+w 30 01 01 
+#			--------------------------------------------------------------- book 120 is selected
+w 30 7f 78 
+#			# reg[120][0][24] = 0x80	; 1 cycle jump
+w 30 18 80 
+#			# reg[120][  0][ 50] = 0x88	; Interpolation Ratio is 8, FIFO=Enabled
+w 30 32 88 
+#			# reg[120][  0][ 24] = 0x80       ; set to 1-cycle jump for RevD silicon
+w 30 18 80 
+#			--------------------------------------------------------------- book 100 is selected
+w 30 7f 64 
+#			# reg[100][  0][ 50] = 0xa4	; Decimation Ratio is 4, CIC AutoNorm = Enabled, FIFO=Enabled
+w 30 32 a4 
+#			--------------------------------------------------------------- book 0 is selected
+w 30 7f 00 
+#			# reg[  0][  0][ 60] = 0x00	; Interpolation Ratio is 4, FIFO=Enabled; Decimation Ratio is 2, CIC AutoNorm = Enabled, FIFO=Enabled; Interpolation Ratio is 2, FIFO=Enabled; Decimation Ratio is 1, CIC AutoNorm = Enabled, FIFO=Enabled; Use miniDSP_D for signal processing, sync mode; Disable ADC double buffer mode; Disable DAC double buffer mode; Use miniDSP_D for signal processing
+w 30 3c 00 
+#			--------------------------------------------------------------- book 100 is selected
+w 30 7f 64 
+#			# reg[100][  0][ 20] = 0x80	; Enable ADC double buffer mode
+w 30 14 80 
+#			--------------------------------------------------------------- book 120 is selected
+w 30 7f 78 
+#			# reg[120][  0][ 20] = 0x80	; Enable DAC double buffer mode
+w 30 14 80 
+#			--------------------------------------------------------------- book 0 is selected
+w 30 7f 00 
+#			# reg[  0][  0][ 61] = 0x00	; Use miniDSP_A for signal processing
+w 30 3d 00 
+#			--------------------------------------------------------------- book 40 is selected
+w 30 7f 28 
+#			# reg[ 40][  0][  1] = 0x04       ; adaptive mode for miniDSP_A
+w 30 01 04 
+#			--------------------------------------------------------------- book 80 is selected
+w 30 7f 50 
+#			# reg[ 80][  0][  1] = 0x04	; adaptive mode for miniDSP_D
+w 30 01 04 
+#			--------------------------------------------------------------- book 100 is selected
+w 30 7f 64 
+#			# reg[100][  0][ 48] = 1
+w 30 30 01 
+#			# reg[100][  0][ 49] = 0
+w 30 31 00 
+#			--------------------------------------------------------------- book 120 is selected
+w 30 7f 78 
+#			# reg[120][  0][ 48] = 1
+w 30 30 01 
+#			# reg[120][  0][ 49] = 192
+w 30 31 c0 
+#			# reg[120][0][24]=0x80
+w 30 18 80 
+#			--------------------------------------------------------------- book 40 is selected
+w 30 00 00 
+w 30 7f 28 
+#			--------------------------------------------------------------- page 1 is selected
+w 30 00 01 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 0
+w 30 08 ff 
+#			 (Bit 23-16)
+w 30 09 ff 
+#			 (Bit 15-8)
+w 30 0a ff 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 1
+w 30 0c 80 
+#			 (Bit 23-16)
+w 30 0d 00 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 2
+w 30 10 7f 
+#			 (Bit 23-16)
+w 30 11 ff 
+#			 (Bit 15-8)
+w 30 12 ff 
+#			 (Bit 7-0)
+w 30 13 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 3
+w 30 14 40 
+#			 (Bit 23-16)
+w 30 15 00 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 4
+w 30 18 00 
+#			 (Bit 23-16)
+w 30 19 00 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 5
+w 30 1c ff 
+#			 (Bit 23-16)
+w 30 1d 9e 
+#			 (Bit 15-8)
+w 30 1e 00 
+#			 (Bit 7-0)
+w 30 1f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 6
+w 30 20 f7 
+#			 (Bit 23-16)
+w 30 21 10 
+#			 (Bit 15-8)
+w 30 22 00 
+#			 (Bit 7-0)
+w 30 23 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 7
+w 30 24 7d 
+#			 (Bit 23-16)
+w 30 25 a6 
+#			 (Bit 15-8)
+w 30 26 e2 
+#			 (Bit 7-0)
+w 30 27 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 8
+w 30 28 82 
+#			 (Bit 23-16)
+w 30 29 59 
+#			 (Bit 15-8)
+w 30 2a 1e 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 9
+w 30 2c 7d 
+#			 (Bit 23-16)
+w 30 2d a6 
+#			 (Bit 15-8)
+w 30 2e e2 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 10
+w 30 30 7d 
+#			 (Bit 23-16)
+w 30 31 a1 
+#			 (Bit 15-8)
+w 30 32 5f 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 11
+w 30 34 84 
+#			 (Bit 23-16)
+w 30 35 a7 
+#			 (Bit 15-8)
+w 30 36 34 
+#			 (Bit 7-0)
+w 30 37 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 12
+w 30 38 35 
+#			 (Bit 23-16)
+w 30 39 85 
+#			 (Bit 15-8)
+w 30 3a 8e 
+#			 (Bit 7-0)
+w 30 3b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 13
+w 30 3c 35 
+#			 (Bit 23-16)
+w 30 3d 85 
+#			 (Bit 15-8)
+w 30 3e 8e 
+#			 (Bit 7-0)
+w 30 3f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 14
+w 30 40 35 
+#			 (Bit 23-16)
+w 30 41 85 
+#			 (Bit 15-8)
+w 30 42 8e 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 15
+w 30 44 e2 
+#			 (Bit 23-16)
+w 30 45 5f 
+#			 (Bit 15-8)
+w 30 46 ae 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 16
+w 30 48 e5 
+#			 (Bit 23-16)
+w 30 49 2a 
+#			 (Bit 15-8)
+w 30 4a 6a 
+#			 (Bit 7-0)
+w 30 4b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 17
+w 30 4c 00 
+#			 (Bit 23-16)
+w 30 4d b7 
+#			 (Bit 15-8)
+w 30 4e 98 
+#			 (Bit 7-0)
+w 30 4f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 18
+w 30 50 7e 
+#			 (Bit 23-16)
+w 30 51 90 
+#			 (Bit 15-8)
+w 30 52 d0 
+#			 (Bit 7-0)
+w 30 53 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 19
+w 30 54 7b 
+#			 (Bit 23-16)
+w 30 55 28 
+#			 (Bit 15-8)
+w 30 56 fc 
+#			 (Bit 7-0)
+w 30 57 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 20
+w 30 58 84 
+#			 (Bit 23-16)
+w 30 59 d7 
+#			 (Bit 15-8)
+w 30 5a 04 
+#			 (Bit 7-0)
+w 30 5b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 21
+w 30 5c 76 
+#			 (Bit 23-16)
+w 30 5d 52 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 22
+w 30 60 26 
+#			 (Bit 23-16)
+w 30 61 f0 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 23
+w 30 64 02 
+#			 (Bit 23-16)
+w 30 65 61 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 24
+w 30 68 40 
+#			 (Bit 23-16)
+w 30 69 02 
+#			 (Bit 15-8)
+w 30 6a 00 
+#			 (Bit 7-0)
+w 30 6b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 25
+w 30 6c ff 
+#			 (Bit 23-16)
+w 30 6d fc 
+#			 (Bit 15-8)
+w 30 6e 00 
+#			 (Bit 7-0)
+w 30 6f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 26
+w 30 70 ff 
+#			 (Bit 23-16)
+w 30 71 fd 
+#			 (Bit 15-8)
+w 30 72 00 
+#			 (Bit 7-0)
+w 30 73 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 27
+w 30 74 ff 
+#			 (Bit 23-16)
+w 30 75 e5 
+#			 (Bit 15-8)
+w 30 76 00 
+#			 (Bit 7-0)
+w 30 77 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 28
+w 30 78 ff 
+#			 (Bit 23-16)
+w 30 79 a7 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 29
+w 30 7c ff 
+#			 (Bit 23-16)
+w 30 7d c7 
+#			 (Bit 15-8)
+w 30 7e 00 
+#			 (Bit 7-0)
+w 30 7f 00 
+#			--------------------------------------------------------------- page 2 is selected
+w 30 00 02 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 30
+w 30 08 ff 
+#			 (Bit 23-16)
+w 30 09 ce 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 31
+w 30 0c ff 
+#			 (Bit 23-16)
+w 30 0d fe 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 32
+w 30 10 fe 
+#			 (Bit 23-16)
+w 30 11 f7 
+#			 (Bit 15-8)
+w 30 12 00 
+#			 (Bit 7-0)
+w 30 13 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 33
+w 30 14 ff 
+#			 (Bit 23-16)
+w 30 15 46 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 34
+w 30 18 ff 
+#			 (Bit 23-16)
+w 30 19 22 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 35
+w 30 1c ff 
+#			 (Bit 23-16)
+w 30 1d 0f 
+#			 (Bit 15-8)
+w 30 1e 00 
+#			 (Bit 7-0)
+w 30 1f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 36
+w 30 20 fa 
+#			 (Bit 23-16)
+w 30 21 8c 
+#			 (Bit 15-8)
+w 30 22 00 
+#			 (Bit 7-0)
+w 30 23 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 37
+w 30 24 f5 
+#			 (Bit 23-16)
+w 30 25 08 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 38
+w 30 28 fd 
+#			 (Bit 23-16)
+w 30 29 92 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 39
+w 30 2c f3 
+#			 (Bit 23-16)
+w 30 2d a3 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 40
+w 30 30 03 
+#			 (Bit 23-16)
+w 30 31 b3 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 41
+w 30 34 00 
+#			 (Bit 23-16)
+w 30 35 33 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 42
+w 30 38 00 
+#			 (Bit 23-16)
+w 30 39 71 
+#			 (Bit 15-8)
+w 30 3a 00 
+#			 (Bit 7-0)
+w 30 3b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 43
+w 30 3c 40 
+#			 (Bit 23-16)
+w 30 3d 60 
+#			 (Bit 15-8)
+w 30 3e 00 
+#			 (Bit 7-0)
+w 30 3f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 44
+w 30 40 00 
+#			 (Bit 23-16)
+w 30 41 e2 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 45
+w 30 44 00 
+#			 (Bit 23-16)
+w 30 45 c6 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 46
+w 30 48 00 
+#			 (Bit 23-16)
+w 30 49 87 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 47
+w 30 4c 00 
+#			 (Bit 23-16)
+w 30 4d 0f 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 48
+w 30 50 00 
+#			 (Bit 23-16)
+w 30 51 0a 
+#			 (Bit 15-8)
+w 30 52 00 
+#			 (Bit 7-0)
+w 30 53 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 49
+w 30 54 00 
+#			 (Bit 23-16)
+w 30 55 02 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 50
+w 30 58 01 
+#			 (Bit 23-16)
+w 30 59 81 
+#			 (Bit 15-8)
+w 30 5a 00 
+#			 (Bit 7-0)
+w 30 5b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 51
+w 30 5c 18 
+#			 (Bit 23-16)
+w 30 5d 89 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 52
+w 30 60 07 
+#			 (Bit 23-16)
+w 30 61 fb 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 53
+w 30 64 03 
+#			 (Bit 23-16)
+w 30 65 be 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 00 
+#			--------------------------------------------------------------- page 9 is selected
+w 30 00 09 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 256
+w 30 48 ff 
+#			 (Bit 23-16)
+w 30 49 ff 
+#			 (Bit 15-8)
+w 30 4a ff 
+#			 (Bit 7-0)
+w 30 4b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 257
+w 30 4c 80 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 258
+w 30 50 7f 
+#			 (Bit 23-16)
+w 30 51 ff 
+#			 (Bit 15-8)
+w 30 52 ff 
+#			 (Bit 7-0)
+w 30 53 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 259
+w 30 54 40 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 260
+w 30 58 00 
+#			 (Bit 23-16)
+w 30 59 00 
+#			 (Bit 15-8)
+w 30 5a 00 
+#			 (Bit 7-0)
+w 30 5b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 261
+w 30 5c ff 
+#			 (Bit 23-16)
+w 30 5d 9e 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 262
+w 30 60 f7 
+#			 (Bit 23-16)
+w 30 61 10 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 263
+w 30 64 7d 
+#			 (Bit 23-16)
+w 30 65 a6 
+#			 (Bit 15-8)
+w 30 66 e2 
+#			 (Bit 7-0)
+w 30 67 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 264
+w 30 68 82 
+#			 (Bit 23-16)
+w 30 69 59 
+#			 (Bit 15-8)
+w 30 6a 1e 
+#			 (Bit 7-0)
+w 30 6b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 265
+w 30 6c 7d 
+#			 (Bit 23-16)
+w 30 6d a6 
+#			 (Bit 15-8)
+w 30 6e e2 
+#			 (Bit 7-0)
+w 30 6f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 266
+w 30 70 7d 
+#			 (Bit 23-16)
+w 30 71 a1 
+#			 (Bit 15-8)
+w 30 72 5f 
+#			 (Bit 7-0)
+w 30 73 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 267
+w 30 74 84 
+#			 (Bit 23-16)
+w 30 75 a7 
+#			 (Bit 15-8)
+w 30 76 34 
+#			 (Bit 7-0)
+w 30 77 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 268
+w 30 78 35 
+#			 (Bit 23-16)
+w 30 79 85 
+#			 (Bit 15-8)
+w 30 7a 8e 
+#			 (Bit 7-0)
+w 30 7b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 269
+w 30 7c 35 
+#			 (Bit 23-16)
+w 30 7d 85 
+#			 (Bit 15-8)
+w 30 7e 8e 
+#			 (Bit 7-0)
+w 30 7f 00 
+#			--------------------------------------------------------------- page 10 is selected
+w 30 00 0a 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 270
+w 30 08 35 
+#			 (Bit 23-16)
+w 30 09 85 
+#			 (Bit 15-8)
+w 30 0a 8e 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 271
+w 30 0c e2 
+#			 (Bit 23-16)
+w 30 0d 5f 
+#			 (Bit 15-8)
+w 30 0e ae 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 272
+w 30 10 e5 
+#			 (Bit 23-16)
+w 30 11 2a 
+#			 (Bit 15-8)
+w 30 12 6a 
+#			 (Bit 7-0)
+w 30 13 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 273
+w 30 14 00 
+#			 (Bit 23-16)
+w 30 15 b7 
+#			 (Bit 15-8)
+w 30 16 98 
+#			 (Bit 7-0)
+w 30 17 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 274
+w 30 18 7e 
+#			 (Bit 23-16)
+w 30 19 90 
+#			 (Bit 15-8)
+w 30 1a d0 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 275
+w 30 1c 7b 
+#			 (Bit 23-16)
+w 30 1d 28 
+#			 (Bit 15-8)
+w 30 1e fc 
+#			 (Bit 7-0)
+w 30 1f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 276
+w 30 20 84 
+#			 (Bit 23-16)
+w 30 21 d7 
+#			 (Bit 15-8)
+w 30 22 04 
+#			 (Bit 7-0)
+w 30 23 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 277
+w 30 24 76 
+#			 (Bit 23-16)
+w 30 25 52 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 278
+w 30 28 26 
+#			 (Bit 23-16)
+w 30 29 f0 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 279
+w 30 2c 02 
+#			 (Bit 23-16)
+w 30 2d 61 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 280
+w 30 30 40 
+#			 (Bit 23-16)
+w 30 31 02 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 281
+w 30 34 ff 
+#			 (Bit 23-16)
+w 30 35 fc 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 282
+w 30 38 ff 
+#			 (Bit 23-16)
+w 30 39 fd 
+#			 (Bit 15-8)
+w 30 3a 00 
+#			 (Bit 7-0)
+w 30 3b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 283
+w 30 3c ff 
+#			 (Bit 23-16)
+w 30 3d e5 
+#			 (Bit 15-8)
+w 30 3e 00 
+#			 (Bit 7-0)
+w 30 3f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 284
+w 30 40 ff 
+#			 (Bit 23-16)
+w 30 41 a7 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 285
+w 30 44 ff 
+#			 (Bit 23-16)
+w 30 45 c7 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 286
+w 30 48 ff 
+#			 (Bit 23-16)
+w 30 49 ce 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 287
+w 30 4c ff 
+#			 (Bit 23-16)
+w 30 4d fe 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 288
+w 30 50 fe 
+#			 (Bit 23-16)
+w 30 51 f7 
+#			 (Bit 15-8)
+w 30 52 00 
+#			 (Bit 7-0)
+w 30 53 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 289
+w 30 54 ff 
+#			 (Bit 23-16)
+w 30 55 46 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 290
+w 30 58 ff 
+#			 (Bit 23-16)
+w 30 59 22 
+#			 (Bit 15-8)
+w 30 5a 00 
+#			 (Bit 7-0)
+w 30 5b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 291
+w 30 5c ff 
+#			 (Bit 23-16)
+w 30 5d 0f 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 292
+w 30 60 fa 
+#			 (Bit 23-16)
+w 30 61 8c 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 293
+w 30 64 f5 
+#			 (Bit 23-16)
+w 30 65 08 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 294
+w 30 68 fd 
+#			 (Bit 23-16)
+w 30 69 92 
+#			 (Bit 15-8)
+w 30 6a 00 
+#			 (Bit 7-0)
+w 30 6b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 295
+w 30 6c f3 
+#			 (Bit 23-16)
+w 30 6d a3 
+#			 (Bit 15-8)
+w 30 6e 00 
+#			 (Bit 7-0)
+w 30 6f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 296
+w 30 70 03 
+#			 (Bit 23-16)
+w 30 71 b3 
+#			 (Bit 15-8)
+w 30 72 00 
+#			 (Bit 7-0)
+w 30 73 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 297
+w 30 74 00 
+#			 (Bit 23-16)
+w 30 75 33 
+#			 (Bit 15-8)
+w 30 76 00 
+#			 (Bit 7-0)
+w 30 77 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 298
+w 30 78 00 
+#			 (Bit 23-16)
+w 30 79 71 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 299
+w 30 7c 40 
+#			 (Bit 23-16)
+w 30 7d 60 
+#			 (Bit 15-8)
+w 30 7e 00 
+#			 (Bit 7-0)
+w 30 7f 00 
+#			--------------------------------------------------------------- page 11 is selected
+w 30 00 0b 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 300
+w 30 08 00 
+#			 (Bit 23-16)
+w 30 09 e2 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 301
+w 30 0c 00 
+#			 (Bit 23-16)
+w 30 0d c6 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 302
+w 30 10 00 
+#			 (Bit 23-16)
+w 30 11 87 
+#			 (Bit 15-8)
+w 30 12 00 
+#			 (Bit 7-0)
+w 30 13 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 303
+w 30 14 00 
+#			 (Bit 23-16)
+w 30 15 0f 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 304
+w 30 18 00 
+#			 (Bit 23-16)
+w 30 19 0a 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 305
+w 30 1c 00 
+#			 (Bit 23-16)
+w 30 1d 02 
+#			 (Bit 15-8)
+w 30 1e 00 
+#			 (Bit 7-0)
+w 30 1f 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 306
+w 30 20 01 
+#			 (Bit 23-16)
+w 30 21 81 
+#			 (Bit 15-8)
+w 30 22 00 
+#			 (Bit 7-0)
+w 30 23 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 307
+w 30 24 18 
+#			 (Bit 23-16)
+w 30 25 89 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 308
+w 30 28 07 
+#			 (Bit 23-16)
+w 30 29 fb 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 309
+w 30 2c 03 
+#			 (Bit 23-16)
+w 30 2d be 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			--------------------------------------------------------------- book 20 is selected
+w 30 00 00 
+w 30 7f 14 
+#			--------------------------------------------------------------- page 1 is selected
+w 30 00 01 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 2048
+w 30 08 c0 
+#			 (Bit 23-16)
+w 30 09 00 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB ADC COEFF No. 2049
+w 30 0c c0 
+#			 (Bit 23-16)
+w 30 0d 00 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			--------------------------------------------------------------- book 100 is selected
+w 30 00 00 
+w 30 7f 64 
+#			--------------------------------------------------------------- page 1 is selected
+w 30 00 01 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 0
+w 30 08 58 
+#			 (Bit 23-16)
+w 30 09 60 
+#			 (Bit 15-8)
+w 30 0a 08 
+#			 (Bit 7-0)
+w 30 0b 01 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 1
+w 30 0c 60 
+#			 (Bit 23-16)
+w 30 0d 60 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 2
+w 30 10 58 
+#			 (Bit 23-16)
+w 30 11 60 
+#			 (Bit 15-8)
+w 30 12 00 
+#			 (Bit 7-0)
+w 30 13 04 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 3
+w 30 14 00 
+#			 (Bit 23-16)
+w 30 15 00 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 4
+w 30 18 44 
+#			 (Bit 23-16)
+w 30 19 00 
+#			 (Bit 15-8)
+w 30 1a c0 
+#			 (Bit 7-0)
+w 30 1b 07 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 5
+w 30 1c 04 
+#			 (Bit 23-16)
+w 30 1d 00 
+#			 (Bit 15-8)
+w 30 1e 00 
+#			 (Bit 7-0)
+w 30 1f 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 6
+w 30 20 04 
+#			 (Bit 23-16)
+w 30 21 00 
+#			 (Bit 15-8)
+w 30 22 00 
+#			 (Bit 7-0)
+w 30 23 0d 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 7
+w 30 24 04 
+#			 (Bit 23-16)
+w 30 25 00 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 08 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 8
+w 30 28 04 
+#			 (Bit 23-16)
+w 30 29 00 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 04 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 9
+w 30 2c 00 
+#			 (Bit 23-16)
+w 30 2d 00 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 10
+w 30 30 00 
+#			 (Bit 23-16)
+w 30 31 00 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 11
+w 30 34 44 
+#			 (Bit 23-16)
+w 30 35 00 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 07 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 12
+w 30 38 21 
+#			 (Bit 23-16)
+w 30 39 00 
+#			 (Bit 15-8)
+w 30 3a 20 
+#			 (Bit 7-0)
+w 30 3b 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 13
+w 30 3c 4b 
+#			 (Bit 23-16)
+w 30 3d 00 
+#			 (Bit 15-8)
+w 30 3e c0 
+#			 (Bit 7-0)
+w 30 3f 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 14
+w 30 40 4b 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 e0 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 15
+w 30 44 10 
+#			 (Bit 23-16)
+w 30 45 00 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 16
+w 30 48 10 
+#			 (Bit 23-16)
+w 30 49 00 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 0d 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 17
+w 30 4c 10 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 08 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 18
+w 30 50 10 
+#			 (Bit 23-16)
+w 30 51 00 
+#			 (Bit 15-8)
+w 30 52 00 
+#			 (Bit 7-0)
+w 30 53 04 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 19
+w 30 54 18 
+#			 (Bit 23-16)
+w 30 55 03 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 0f 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 20
+w 30 58 1c 
+#			 (Bit 23-16)
+w 30 59 02 
+#			 (Bit 15-8)
+w 30 5a e0 
+#			 (Bit 7-0)
+w 30 5b 09 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 21
+w 30 5c 1c 
+#			 (Bit 23-16)
+w 30 5d 02 
+#			 (Bit 15-8)
+w 30 5e e0 
+#			 (Bit 7-0)
+w 30 5f 03 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 22
+w 30 60 1c 
+#			 (Bit 23-16)
+w 30 61 02 
+#			 (Bit 15-8)
+w 30 62 c0 
+#			 (Bit 7-0)
+w 30 63 0a 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 23
+w 30 64 1c 
+#			 (Bit 23-16)
+w 30 65 02 
+#			 (Bit 15-8)
+w 30 66 c0 
+#			 (Bit 7-0)
+w 30 67 02 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 24
+w 30 68 1c 
+#			 (Bit 23-16)
+w 30 69 00 
+#			 (Bit 15-8)
+w 30 6a a0 
+#			 (Bit 7-0)
+w 30 6b 0c 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 25
+w 30 6c 1c 
+#			 (Bit 23-16)
+w 30 6d 00 
+#			 (Bit 15-8)
+w 30 6e a0 
+#			 (Bit 7-0)
+w 30 6f 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 26
+w 30 70 1c 
+#			 (Bit 23-16)
+w 30 71 00 
+#			 (Bit 15-8)
+w 30 72 c0 
+#			 (Bit 7-0)
+w 30 73 01 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 27
+w 30 74 1c 
+#			 (Bit 23-16)
+w 30 75 00 
+#			 (Bit 15-8)
+w 30 76 c0 
+#			 (Bit 7-0)
+w 30 77 0b 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 28
+w 30 78 18 
+#			 (Bit 23-16)
+w 30 79 00 
+#			 (Bit 15-8)
+w 30 7a a0 
+#			 (Bit 7-0)
+w 30 7b 03 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 29
+w 30 7c 1c 
+#			 (Bit 23-16)
+w 30 7d 00 
+#			 (Bit 15-8)
+w 30 7e a0 
+#			 (Bit 7-0)
+w 30 7f 08 
+#			--------------------------------------------------------------- page 2 is selected
+w 30 00 02 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 30
+w 30 08 1c 
+#			 (Bit 23-16)
+w 30 09 00 
+#			 (Bit 15-8)
+w 30 0a c0 
+#			 (Bit 7-0)
+w 30 0b 09 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 31
+w 30 0c 10 
+#			 (Bit 23-16)
+w 30 0d 00 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 2d 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 32
+w 30 10 1c 
+#			 (Bit 23-16)
+w 30 11 00 
+#			 (Bit 15-8)
+w 30 12 c0 
+#			 (Bit 7-0)
+w 30 13 02 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 33
+w 30 14 1c 
+#			 (Bit 23-16)
+w 30 15 02 
+#			 (Bit 15-8)
+w 30 16 c0 
+#			 (Bit 7-0)
+w 30 17 01 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 34
+w 30 18 1c 
+#			 (Bit 23-16)
+w 30 19 02 
+#			 (Bit 15-8)
+w 30 1a c0 
+#			 (Bit 7-0)
+w 30 1b 0a 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 35
+w 30 1c 1c 
+#			 (Bit 23-16)
+w 30 1d 02 
+#			 (Bit 15-8)
+w 30 1e e0 
+#			 (Bit 7-0)
+w 30 1f 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 36
+w 30 20 1c 
+#			 (Bit 23-16)
+w 30 21 02 
+#			 (Bit 15-8)
+w 30 22 e0 
+#			 (Bit 7-0)
+w 30 23 0b 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 37
+w 30 24 1c 
+#			 (Bit 23-16)
+w 30 25 03 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 06 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 38
+w 30 28 00 
+#			 (Bit 23-16)
+w 30 29 00 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 39
+w 30 2c 00 
+#			 (Bit 23-16)
+w 30 2d 00 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 40
+w 30 30 00 
+#			 (Bit 23-16)
+w 30 31 00 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 41
+w 30 34 10 
+#			 (Bit 23-16)
+w 30 35 00 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 0f 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 42
+w 30 38 18 
+#			 (Bit 23-16)
+w 30 39 03 
+#			 (Bit 15-8)
+w 30 3a 20 
+#			 (Bit 7-0)
+w 30 3b 2c 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 43
+w 30 3c 1c 
+#			 (Bit 23-16)
+w 30 3d 03 
+#			 (Bit 15-8)
+w 30 3e 40 
+#			 (Bit 7-0)
+w 30 3f 11 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 44
+w 30 40 1c 
+#			 (Bit 23-16)
+w 30 41 03 
+#			 (Bit 15-8)
+w 30 42 40 
+#			 (Bit 7-0)
+w 30 43 48 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 45
+w 30 44 1c 
+#			 (Bit 23-16)
+w 30 45 03 
+#			 (Bit 15-8)
+w 30 46 20 
+#			 (Bit 7-0)
+w 30 47 2d 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 46
+w 30 48 1c 
+#			 (Bit 23-16)
+w 30 49 03 
+#			 (Bit 15-8)
+w 30 4a 60 
+#			 (Bit 7-0)
+w 30 4b 2f 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 47
+w 30 4c 1c 
+#			 (Bit 23-16)
+w 30 4d 03 
+#			 (Bit 15-8)
+w 30 4e 60 
+#			 (Bit 7-0)
+w 30 4f 2a 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 48
+w 30 50 1c 
+#			 (Bit 23-16)
+w 30 51 03 
+#			 (Bit 15-8)
+w 30 52 80 
+#			 (Bit 7-0)
+w 30 53 31 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 49
+w 30 54 1c 
+#			 (Bit 23-16)
+w 30 55 03 
+#			 (Bit 15-8)
+w 30 56 80 
+#			 (Bit 7-0)
+w 30 57 28 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 50
+w 30 58 1c 
+#			 (Bit 23-16)
+w 30 59 03 
+#			 (Bit 15-8)
+w 30 5a a0 
+#			 (Bit 7-0)
+w 30 5b 37 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 51
+w 30 5c 1c 
+#			 (Bit 23-16)
+w 30 5d 03 
+#			 (Bit 15-8)
+w 30 5e a0 
+#			 (Bit 7-0)
+w 30 5f 22 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 52
+w 30 60 1c 
+#			 (Bit 23-16)
+w 30 61 03 
+#			 (Bit 15-8)
+w 30 62 c0 
+#			 (Bit 7-0)
+w 30 63 14 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 53
+w 30 64 1c 
+#			 (Bit 23-16)
+w 30 65 03 
+#			 (Bit 15-8)
+w 30 66 c0 
+#			 (Bit 7-0)
+w 30 67 45 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 54
+w 30 68 1c 
+#			 (Bit 23-16)
+w 30 69 03 
+#			 (Bit 15-8)
+w 30 6a e0 
+#			 (Bit 7-0)
+w 30 6b 12 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 55
+w 30 6c 1c 
+#			 (Bit 23-16)
+w 30 6d 03 
+#			 (Bit 15-8)
+w 30 6e e0 
+#			 (Bit 7-0)
+w 30 6f 47 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 56
+w 30 70 1c 
+#			 (Bit 23-16)
+w 30 71 04 
+#			 (Bit 15-8)
+w 30 72 00 
+#			 (Bit 7-0)
+w 30 73 38 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 57
+w 30 74 1c 
+#			 (Bit 23-16)
+w 30 75 04 
+#			 (Bit 15-8)
+w 30 76 00 
+#			 (Bit 7-0)
+w 30 77 21 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 58
+w 30 78 1c 
+#			 (Bit 23-16)
+w 30 79 04 
+#			 (Bit 15-8)
+w 30 7a 20 
+#			 (Bit 7-0)
+w 30 7b 33 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 59
+w 30 7c 1c 
+#			 (Bit 23-16)
+w 30 7d 04 
+#			 (Bit 15-8)
+w 30 7e 20 
+#			 (Bit 7-0)
+w 30 7f 26 
+#			--------------------------------------------------------------- page 3 is selected
+w 30 00 03 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 60
+w 30 08 1c 
+#			 (Bit 23-16)
+w 30 09 04 
+#			 (Bit 15-8)
+w 30 0a 40 
+#			 (Bit 7-0)
+w 30 0b 16 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 61
+w 30 0c 1c 
+#			 (Bit 23-16)
+w 30 0d 04 
+#			 (Bit 15-8)
+w 30 0e 40 
+#			 (Bit 7-0)
+w 30 0f 43 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 62
+w 30 10 1c 
+#			 (Bit 23-16)
+w 30 11 04 
+#			 (Bit 15-8)
+w 30 12 60 
+#			 (Bit 7-0)
+w 30 13 35 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 63
+w 30 14 1c 
+#			 (Bit 23-16)
+w 30 15 04 
+#			 (Bit 15-8)
+w 30 16 60 
+#			 (Bit 7-0)
+w 30 17 24 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 64
+w 30 18 1c 
+#			 (Bit 23-16)
+w 30 19 04 
+#			 (Bit 15-8)
+w 30 1a 80 
+#			 (Bit 7-0)
+w 30 1b 1a 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 65
+w 30 1c 1c 
+#			 (Bit 23-16)
+w 30 1d 04 
+#			 (Bit 15-8)
+w 30 1e 80 
+#			 (Bit 7-0)
+w 30 1f 3f 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 66
+w 30 20 1c 
+#			 (Bit 23-16)
+w 30 21 04 
+#			 (Bit 15-8)
+w 30 22 a0 
+#			 (Bit 7-0)
+w 30 23 3a 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 67
+w 30 24 1c 
+#			 (Bit 23-16)
+w 30 25 04 
+#			 (Bit 15-8)
+w 30 26 a0 
+#			 (Bit 7-0)
+w 30 27 1f 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 68
+w 30 28 1c 
+#			 (Bit 23-16)
+w 30 29 04 
+#			 (Bit 15-8)
+w 30 2a c0 
+#			 (Bit 7-0)
+w 30 2b 18 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 69
+w 30 2c 1c 
+#			 (Bit 23-16)
+w 30 2d 04 
+#			 (Bit 15-8)
+w 30 2e c0 
+#			 (Bit 7-0)
+w 30 2f 41 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 70
+w 30 30 1c 
+#			 (Bit 23-16)
+w 30 31 04 
+#			 (Bit 15-8)
+w 30 32 e0 
+#			 (Bit 7-0)
+w 30 33 1c 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 71
+w 30 34 1c 
+#			 (Bit 23-16)
+w 30 35 04 
+#			 (Bit 15-8)
+w 30 36 e0 
+#			 (Bit 7-0)
+w 30 37 3d 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 72
+w 30 38 1c 
+#			 (Bit 23-16)
+w 30 39 05 
+#			 (Bit 15-8)
+w 30 3a 00 
+#			 (Bit 7-0)
+w 30 3b 19 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 73
+w 30 3c 1c 
+#			 (Bit 23-16)
+w 30 3d 05 
+#			 (Bit 15-8)
+w 30 3e 00 
+#			 (Bit 7-0)
+w 30 3f 40 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 74
+w 30 40 1c 
+#			 (Bit 23-16)
+w 30 41 05 
+#			 (Bit 15-8)
+w 30 42 20 
+#			 (Bit 7-0)
+w 30 43 30 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 75
+w 30 44 1c 
+#			 (Bit 23-16)
+w 30 45 05 
+#			 (Bit 15-8)
+w 30 46 20 
+#			 (Bit 7-0)
+w 30 47 29 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 76
+w 30 48 1c 
+#			 (Bit 23-16)
+w 30 49 05 
+#			 (Bit 15-8)
+w 30 4a 40 
+#			 (Bit 7-0)
+w 30 4b 15 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 77
+w 30 4c 1c 
+#			 (Bit 23-16)
+w 30 4d 05 
+#			 (Bit 15-8)
+w 30 4e 40 
+#			 (Bit 7-0)
+w 30 4f 44 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 78
+w 30 50 1c 
+#			 (Bit 23-16)
+w 30 51 05 
+#			 (Bit 15-8)
+w 30 52 60 
+#			 (Bit 7-0)
+w 30 53 3b 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 79
+w 30 54 1c 
+#			 (Bit 23-16)
+w 30 55 05 
+#			 (Bit 15-8)
+w 30 56 60 
+#			 (Bit 7-0)
+w 30 57 1e 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 80
+w 30 58 1c 
+#			 (Bit 23-16)
+w 30 59 05 
+#			 (Bit 15-8)
+w 30 5a 80 
+#			 (Bit 7-0)
+w 30 5b 34 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 81
+w 30 5c 1c 
+#			 (Bit 23-16)
+w 30 5d 05 
+#			 (Bit 15-8)
+w 30 5e 80 
+#			 (Bit 7-0)
+w 30 5f 25 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 82
+w 30 60 1c 
+#			 (Bit 23-16)
+w 30 61 05 
+#			 (Bit 15-8)
+w 30 62 a0 
+#			 (Bit 7-0)
+w 30 63 36 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 83
+w 30 64 1c 
+#			 (Bit 23-16)
+w 30 65 05 
+#			 (Bit 15-8)
+w 30 66 a0 
+#			 (Bit 7-0)
+w 30 67 23 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 84
+w 30 68 1c 
+#			 (Bit 23-16)
+w 30 69 05 
+#			 (Bit 15-8)
+w 30 6a c0 
+#			 (Bit 7-0)
+w 30 6b 32 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 85
+w 30 6c 1c 
+#			 (Bit 23-16)
+w 30 6d 05 
+#			 (Bit 15-8)
+w 30 6e c0 
+#			 (Bit 7-0)
+w 30 6f 27 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 86
+w 30 70 1c 
+#			 (Bit 23-16)
+w 30 71 05 
+#			 (Bit 15-8)
+w 30 72 e0 
+#			 (Bit 7-0)
+w 30 73 13 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 87
+w 30 74 1c 
+#			 (Bit 23-16)
+w 30 75 05 
+#			 (Bit 15-8)
+w 30 76 e0 
+#			 (Bit 7-0)
+w 30 77 46 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 88
+w 30 78 1c 
+#			 (Bit 23-16)
+w 30 79 06 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 2e 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 89
+w 30 7c 1c 
+#			 (Bit 23-16)
+w 30 7d 06 
+#			 (Bit 15-8)
+w 30 7e 00 
+#			 (Bit 7-0)
+w 30 7f 2b 
+#			--------------------------------------------------------------- page 4 is selected
+w 30 00 04 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 90
+w 30 08 1c 
+#			 (Bit 23-16)
+w 30 09 06 
+#			 (Bit 15-8)
+w 30 0a 20 
+#			 (Bit 7-0)
+w 30 0b 10 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 91
+w 30 0c 1c 
+#			 (Bit 23-16)
+w 30 0d 06 
+#			 (Bit 15-8)
+w 30 0e 20 
+#			 (Bit 7-0)
+w 30 0f 49 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 92
+w 30 10 1c 
+#			 (Bit 23-16)
+w 30 11 06 
+#			 (Bit 15-8)
+w 30 12 40 
+#			 (Bit 7-0)
+w 30 13 17 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 93
+w 30 14 1c 
+#			 (Bit 23-16)
+w 30 15 06 
+#			 (Bit 15-8)
+w 30 16 40 
+#			 (Bit 7-0)
+w 30 17 42 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 94
+w 30 18 1c 
+#			 (Bit 23-16)
+w 30 19 06 
+#			 (Bit 15-8)
+w 30 1a 60 
+#			 (Bit 7-0)
+w 30 1b 1d 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 95
+w 30 1c 1c 
+#			 (Bit 23-16)
+w 30 1d 06 
+#			 (Bit 15-8)
+w 30 1e 60 
+#			 (Bit 7-0)
+w 30 1f 3c 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 96
+w 30 20 1c 
+#			 (Bit 23-16)
+w 30 21 06 
+#			 (Bit 15-8)
+w 30 22 80 
+#			 (Bit 7-0)
+w 30 23 1b 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 97
+w 30 24 1c 
+#			 (Bit 23-16)
+w 30 25 06 
+#			 (Bit 15-8)
+w 30 26 80 
+#			 (Bit 7-0)
+w 30 27 3e 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 98
+w 30 28 1c 
+#			 (Bit 23-16)
+w 30 29 06 
+#			 (Bit 15-8)
+w 30 2a a0 
+#			 (Bit 7-0)
+w 30 2b 39 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 99
+w 30 2c 1c 
+#			 (Bit 23-16)
+w 30 2d 06 
+#			 (Bit 15-8)
+w 30 2e a0 
+#			 (Bit 7-0)
+w 30 2f 20 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 100
+w 30 30 00 
+#			 (Bit 23-16)
+w 30 31 00 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 101
+w 30 34 5c 
+#			 (Bit 23-16)
+w 30 35 90 
+#			 (Bit 15-8)
+w 30 36 40 
+#			 (Bit 7-0)
+w 30 37 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 102
+w 30 38 00 
+#			 (Bit 23-16)
+w 30 39 00 
+#			 (Bit 15-8)
+w 30 3a 00 
+#			 (Bit 7-0)
+w 30 3b 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 103
+w 30 3c 5c 
+#			 (Bit 23-16)
+w 30 3d 90 
+#			 (Bit 15-8)
+w 30 3e 20 
+#			 (Bit 7-0)
+w 30 3f 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 104
+w 30 40 00 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 105
+w 30 44 00 
+#			 (Bit 23-16)
+w 30 45 00 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 106
+w 30 48 00 
+#			 (Bit 23-16)
+w 30 49 00 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 107
+w 30 4c 10 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 49 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 108
+w 30 50 18 
+#			 (Bit 23-16)
+w 30 51 02 
+#			 (Bit 15-8)
+w 30 52 80 
+#			 (Bit 7-0)
+w 30 53 4a 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 109
+w 30 54 1c 
+#			 (Bit 23-16)
+w 30 55 02 
+#			 (Bit 15-8)
+w 30 56 a0 
+#			 (Bit 7-0)
+w 30 57 4c 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 110
+w 30 58 1c 
+#			 (Bit 23-16)
+w 30 59 02 
+#			 (Bit 15-8)
+w 30 5a 60 
+#			 (Bit 7-0)
+w 30 5b 49 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 111
+w 30 5c 30 
+#			 (Bit 23-16)
+w 30 5d 02 
+#			 (Bit 15-8)
+w 30 5e 20 
+#			 (Bit 7-0)
+w 30 5f 4c 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 112
+w 30 60 1c 
+#			 (Bit 23-16)
+w 30 61 02 
+#			 (Bit 15-8)
+w 30 62 40 
+#			 (Bit 7-0)
+w 30 63 4e 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 113
+w 30 64 00 
+#			 (Bit 23-16)
+w 30 65 00 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 114
+w 30 68 10 
+#			 (Bit 23-16)
+w 30 69 30 
+#			 (Bit 15-8)
+w 30 6a 00 
+#			 (Bit 7-0)
+w 30 6b 4b 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 115
+w 30 6c 34 
+#			 (Bit 23-16)
+w 30 6d 02 
+#			 (Bit 15-8)
+w 30 6e 20 
+#			 (Bit 7-0)
+w 30 6f 4b 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 116
+w 30 70 5c 
+#			 (Bit 23-16)
+w 30 71 60 
+#			 (Bit 15-8)
+w 30 72 a0 
+#			 (Bit 7-0)
+w 30 73 4b 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 117
+w 30 74 0c 
+#			 (Bit 23-16)
+w 30 75 00 
+#			 (Bit 15-8)
+w 30 76 40 
+#			 (Bit 7-0)
+w 30 77 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 118
+w 30 78 00 
+#			 (Bit 23-16)
+w 30 79 00 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 119
+w 30 7c 10 
+#			 (Bit 23-16)
+w 30 7d 30 
+#			 (Bit 15-8)
+w 30 7e 00 
+#			 (Bit 7-0)
+w 30 7f 4d 
+#			--------------------------------------------------------------- page 5 is selected
+w 30 00 05 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 120
+w 30 08 10 
+#			 (Bit 23-16)
+w 30 09 13 
+#			 (Bit 15-8)
+w 30 0a e0 
+#			 (Bit 7-0)
+w 30 0b 50 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 121
+w 30 0c 18 
+#			 (Bit 23-16)
+w 30 0d 00 
+#			 (Bit 15-8)
+w 30 0e 60 
+#			 (Bit 7-0)
+w 30 0f 50 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 122
+w 30 10 18 
+#			 (Bit 23-16)
+w 30 11 01 
+#			 (Bit 15-8)
+w 30 12 20 
+#			 (Bit 7-0)
+w 30 13 53 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 123
+w 30 14 6c 
+#			 (Bit 23-16)
+w 30 15 01 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 52 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 124
+w 30 18 6c 
+#			 (Bit 23-16)
+w 30 19 01 
+#			 (Bit 15-8)
+w 30 1a 40 
+#			 (Bit 7-0)
+w 30 1b 55 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 125
+w 30 1c 10 
+#			 (Bit 23-16)
+w 30 1d 00 
+#			 (Bit 15-8)
+w 30 1e 20 
+#			 (Bit 7-0)
+w 30 1f 51 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 126
+w 30 20 1c 
+#			 (Bit 23-16)
+w 30 21 00 
+#			 (Bit 15-8)
+w 30 22 e0 
+#			 (Bit 7-0)
+w 30 23 51 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 127
+w 30 24 1c 
+#			 (Bit 23-16)
+w 30 25 01 
+#			 (Bit 15-8)
+w 30 26 60 
+#			 (Bit 7-0)
+w 30 27 56 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 128
+w 30 28 18 
+#			 (Bit 23-16)
+w 30 29 01 
+#			 (Bit 15-8)
+w 30 2a c0 
+#			 (Bit 7-0)
+w 30 2b 56 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 129
+w 30 2c 6c 
+#			 (Bit 23-16)
+w 30 2d 01 
+#			 (Bit 15-8)
+w 30 2e a0 
+#			 (Bit 7-0)
+w 30 2f 55 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 130
+w 30 30 6c 
+#			 (Bit 23-16)
+w 30 31 01 
+#			 (Bit 15-8)
+w 30 32 e0 
+#			 (Bit 7-0)
+w 30 33 58 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 131
+w 30 34 4c 
+#			 (Bit 23-16)
+w 30 35 01 
+#			 (Bit 15-8)
+w 30 36 80 
+#			 (Bit 7-0)
+w 30 37 54 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 132
+w 30 38 1c 
+#			 (Bit 23-16)
+w 30 39 02 
+#			 (Bit 15-8)
+w 30 3a 00 
+#			 (Bit 7-0)
+w 30 3b 59 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 133
+w 30 3c 00 
+#			 (Bit 23-16)
+w 30 3d 00 
+#			 (Bit 15-8)
+w 30 3e 00 
+#			 (Bit 7-0)
+w 30 3f 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 134
+w 30 40 00 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 135
+w 30 44 00 
+#			 (Bit 23-16)
+w 30 45 00 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 136
+w 30 48 10 
+#			 (Bit 23-16)
+w 30 49 00 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 57 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 137
+w 30 4c 18 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 60 
+#			 (Bit 7-0)
+w 30 4f 57 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 138
+w 30 50 18 
+#			 (Bit 23-16)
+w 30 51 00 
+#			 (Bit 15-8)
+w 30 52 60 
+#			 (Bit 7-0)
+w 30 53 57 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 139
+w 30 54 0c 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 03 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 140
+w 30 58 0c 
+#			 (Bit 23-16)
+w 30 59 00 
+#			 (Bit 15-8)
+w 30 5a 20 
+#			 (Bit 7-0)
+w 30 5b 03 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 141
+w 30 5c 00 
+#			 (Bit 23-16)
+w 30 5d 00 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 142
+w 30 60 00 
+#			 (Bit 23-16)
+w 30 61 00 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 143
+w 30 64 00 
+#			 (Bit 23-16)
+w 30 65 00 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 144
+w 30 68 02 
+#			 (Bit 23-16)
+w 30 69 00 
+#			 (Bit 15-8)
+w 30 6a 00 
+#			 (Bit 7-0)
+w 30 6b 00 
+#			 (Bit 31-24) ------------ MSB ADC INST No. 145
+w 30 6c 00 
+#			 (Bit 23-16)
+w 30 6d 00 
+#			 (Bit 15-8)
+w 30 6e 00 
+#			 (Bit 7-0)
+w 30 6f 00 
+#			--------------------------------------------------------------- book 80 is selected
+w 30 00 00 
+w 30 7f 50 
+#			--------------------------------------------------------------- page 1 is selected
+w 30 00 01 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 0
+w 30 08 ff 
+#			 (Bit 23-16)
+w 30 09 ff 
+#			 (Bit 15-8)
+w 30 0a ff 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 1
+w 30 0c 80 
+#			 (Bit 23-16)
+w 30 0d 00 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 2
+w 30 10 7f 
+#			 (Bit 23-16)
+w 30 11 f7 
+#			 (Bit 15-8)
+w 30 12 00 
+#			 (Bit 7-0)
+w 30 13 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 3
+w 30 14 80 
+#			 (Bit 23-16)
+w 30 15 09 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 4
+w 30 18 7f 
+#			 (Bit 23-16)
+w 30 19 ef 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 5
+w 30 1c 40 
+#			 (Bit 23-16)
+w 30 1d 00 
+#			 (Bit 15-8)
+w 30 1e 00 
+#			 (Bit 7-0)
+w 30 1f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 6
+w 30 20 40 
+#			 (Bit 23-16)
+w 30 21 00 
+#			 (Bit 15-8)
+w 30 22 00 
+#			 (Bit 7-0)
+w 30 23 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 7
+w 30 24 40 
+#			 (Bit 23-16)
+w 30 25 00 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 8
+w 30 28 7f 
+#			 (Bit 23-16)
+w 30 29 ff 
+#			 (Bit 15-8)
+w 30 2a ff 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 9
+w 30 2c 00 
+#			 (Bit 23-16)
+w 30 2d 00 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 10
+w 30 30 c0 
+#			 (Bit 23-16)
+w 30 31 00 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 11
+w 30 34 20 
+#			 (Bit 23-16)
+w 30 35 00 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 12
+w 30 38 00 
+#			 (Bit 23-16)
+w 30 39 00 
+#			 (Bit 15-8)
+w 30 3a 00 
+#			 (Bit 7-0)
+w 30 3b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 13
+w 30 3c d7 
+#			 (Bit 23-16)
+w 30 3d 41 
+#			 (Bit 15-8)
+w 30 3e a0 
+#			 (Bit 7-0)
+w 30 3f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 14
+w 30 40 ff 
+#			 (Bit 23-16)
+w 30 41 f0 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 15
+w 30 44 00 
+#			 (Bit 23-16)
+w 30 45 7d 
+#			 (Bit 15-8)
+w 30 46 33 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 16
+w 30 48 7f 
+#			 (Bit 23-16)
+w 30 49 82 
+#			 (Bit 15-8)
+w 30 4a cd 
+#			 (Bit 7-0)
+w 30 4b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 17
+w 30 4c 00 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 18
+w 30 50 fe 
+#			 (Bit 23-16)
+w 30 51 5b 
+#			 (Bit 15-8)
+w 30 52 e6 
+#			 (Bit 7-0)
+w 30 53 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 19
+w 30 54 d8 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 20
+w 30 58 32 
+#			 (Bit 23-16)
+w 30 59 00 
+#			 (Bit 15-8)
+w 30 5a 00 
+#			 (Bit 7-0)
+w 30 5b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 21
+w 30 5c 0b 
+#			 (Bit 23-16)
+w 30 5d 00 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 22
+w 30 60 08 
+#			 (Bit 23-16)
+w 30 61 00 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 23
+w 30 64 06 
+#			 (Bit 23-16)
+w 30 65 00 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 24
+w 30 68 00 
+#			 (Bit 23-16)
+w 30 69 7d 
+#			 (Bit 15-8)
+w 30 6a 33 
+#			 (Bit 7-0)
+w 30 6b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 25
+w 30 6c 7f 
+#			 (Bit 23-16)
+w 30 6d 82 
+#			 (Bit 15-8)
+w 30 6e cd 
+#			 (Bit 7-0)
+w 30 6f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 26
+w 30 70 00 
+#			 (Bit 23-16)
+w 30 71 7d 
+#			 (Bit 15-8)
+w 30 72 33 
+#			 (Bit 7-0)
+w 30 73 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 27
+w 30 74 7f 
+#			 (Bit 23-16)
+w 30 75 82 
+#			 (Bit 15-8)
+w 30 76 cd 
+#			 (Bit 7-0)
+w 30 77 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 28
+w 30 78 88 
+#			 (Bit 23-16)
+w 30 79 00 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 29
+w 30 7c 7f 
+#			 (Bit 23-16)
+w 30 7d ff 
+#			 (Bit 15-8)
+w 30 7e ff 
+#			 (Bit 7-0)
+w 30 7f 00 
+#			--------------------------------------------------------------- page 2 is selected
+w 30 00 02 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 30
+w 30 08 82 
+#			 (Bit 23-16)
+w 30 09 ee 
+#			 (Bit 15-8)
+w 30 0a 9d 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 31
+w 30 0c 7c 
+#			 (Bit 23-16)
+w 30 0d 4b 
+#			 (Bit 15-8)
+w 30 0e 55 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 32
+w 30 10 7d 
+#			 (Bit 23-16)
+w 30 11 43 
+#			 (Bit 15-8)
+w 30 12 de 
+#			 (Bit 7-0)
+w 30 13 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 33
+w 30 14 83 
+#			 (Bit 23-16)
+w 30 15 4e 
+#			 (Bit 15-8)
+w 30 16 d5 
+#			 (Bit 7-0)
+w 30 17 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 34
+w 30 18 18 
+#			 (Bit 23-16)
+w 30 19 00 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 35
+w 30 1c 00 
+#			 (Bit 23-16)
+w 30 1d 00 
+#			 (Bit 15-8)
+w 30 1e 00 
+#			 (Bit 7-0)
+w 30 1f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 36
+w 30 20 0c 
+#			 (Bit 23-16)
+w 30 21 00 
+#			 (Bit 15-8)
+w 30 22 00 
+#			 (Bit 7-0)
+w 30 23 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 37
+w 30 24 f4 
+#			 (Bit 23-16)
+w 30 25 00 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 38
+w 30 28 15 
+#			 (Bit 23-16)
+w 30 29 42 
+#			 (Bit 15-8)
+w 30 2a a6 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 39
+w 30 2c 7f 
+#			 (Bit 23-16)
+w 30 2d ff 
+#			 (Bit 15-8)
+w 30 2e ff 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 40
+w 30 30 0b 
+#			 (Bit 23-16)
+w 30 31 f9 
+#			 (Bit 15-8)
+w 30 32 13 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 41
+w 30 34 18 
+#			 (Bit 23-16)
+w 30 35 ec 
+#			 (Bit 15-8)
+w 30 36 f7 
+#			 (Bit 7-0)
+w 30 37 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 42
+w 30 38 5b 
+#			 (Bit 23-16)
+w 30 39 9e 
+#			 (Bit 15-8)
+w 30 3a c4 
+#			 (Bit 7-0)
+w 30 3b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 43
+w 30 3c 7f 
+#			 (Bit 23-16)
+w 30 3d 7b 
+#			 (Bit 15-8)
+w 30 3e 30 
+#			 (Bit 7-0)
+w 30 3f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 44
+w 30 40 00 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 45
+w 30 44 00 
+#			 (Bit 23-16)
+w 30 45 00 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 46
+w 30 48 00 
+#			 (Bit 23-16)
+w 30 49 00 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 47
+w 30 4c 00 
+#			 (Bit 23-16)
+w 30 4d 0d 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 48
+w 30 50 00 
+#			 (Bit 23-16)
+w 30 51 1c 
+#			 (Bit 15-8)
+w 30 52 00 
+#			 (Bit 7-0)
+w 30 53 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 49
+w 30 54 00 
+#			 (Bit 23-16)
+w 30 55 3e 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 50
+w 30 58 00 
+#			 (Bit 23-16)
+w 30 59 78 
+#			 (Bit 15-8)
+w 30 5a 00 
+#			 (Bit 7-0)
+w 30 5b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 51
+w 30 5c 02 
+#			 (Bit 23-16)
+w 30 5d 4c 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 52
+w 30 60 00 
+#			 (Bit 23-16)
+w 30 61 d5 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 53
+w 30 64 01 
+#			 (Bit 23-16)
+w 30 65 65 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 54
+w 30 68 03 
+#			 (Bit 23-16)
+w 30 69 e9 
+#			 (Bit 15-8)
+w 30 6a 00 
+#			 (Bit 7-0)
+w 30 6b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 55
+w 30 6c 07 
+#			 (Bit 23-16)
+w 30 6d ca 
+#			 (Bit 15-8)
+w 30 6e 00 
+#			 (Bit 7-0)
+w 30 6f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 56
+w 30 70 ff 
+#			 (Bit 23-16)
+w 30 71 ef 
+#			 (Bit 15-8)
+w 30 72 00 
+#			 (Bit 7-0)
+w 30 73 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 57
+w 30 74 fe 
+#			 (Bit 23-16)
+w 30 75 eb 
+#			 (Bit 15-8)
+w 30 76 00 
+#			 (Bit 7-0)
+w 30 77 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 58
+w 30 78 ff 
+#			 (Bit 23-16)
+w 30 79 a8 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 59
+w 30 7c fd 
+#			 (Bit 23-16)
+w 30 7d 08 
+#			 (Bit 15-8)
+w 30 7e 00 
+#			 (Bit 7-0)
+w 30 7f 00 
+#			--------------------------------------------------------------- page 3 is selected
+w 30 00 03 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 60
+w 30 08 ff 
+#			 (Bit 23-16)
+w 30 09 5e 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 61
+w 30 0c ff 
+#			 (Bit 23-16)
+w 30 0d d5 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 62
+w 30 10 fe 
+#			 (Bit 23-16)
+w 30 11 36 
+#			 (Bit 15-8)
+w 30 12 00 
+#			 (Bit 7-0)
+w 30 13 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 63
+w 30 14 fa 
+#			 (Bit 23-16)
+w 30 15 ac 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 64
+w 30 18 f2 
+#			 (Bit 23-16)
+w 30 19 a3 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 65
+w 30 1c 28 
+#			 (Bit 23-16)
+w 30 1d ab 
+#			 (Bit 15-8)
+w 30 1e 00 
+#			 (Bit 7-0)
+w 30 1f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 66
+w 30 20 3f 
+#			 (Bit 23-16)
+w 30 21 ff 
+#			 (Bit 15-8)
+w 30 22 00 
+#			 (Bit 7-0)
+w 30 23 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 67
+w 30 24 ff 
+#			 (Bit 23-16)
+w 30 25 98 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 68
+w 30 28 f6 
+#			 (Bit 23-16)
+w 30 29 f9 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 69
+w 30 2c 26 
+#			 (Bit 23-16)
+w 30 2d fb 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 70
+w 30 30 02 
+#			 (Bit 23-16)
+w 30 31 72 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 71
+w 30 34 40 
+#			 (Bit 23-16)
+w 30 35 02 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 72
+w 30 38 fb 
+#			 (Bit 23-16)
+w 30 39 cb 
+#			 (Bit 15-8)
+w 30 3a 00 
+#			 (Bit 7-0)
+w 30 3b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 73
+w 30 3c 20 
+#			 (Bit 23-16)
+w 30 3d a7 
+#			 (Bit 15-8)
+w 30 3e 00 
+#			 (Bit 7-0)
+w 30 3f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 74
+w 30 40 ff 
+#			 (Bit 23-16)
+w 30 41 6a 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 75
+w 30 44 3a 
+#			 (Bit 23-16)
+w 30 45 0f 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 00 
+#			--------------------------------------------------------------- page 9 is selected
+w 30 00 09 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 256
+w 30 48 ff 
+#			 (Bit 23-16)
+w 30 49 ff 
+#			 (Bit 15-8)
+w 30 4a ff 
+#			 (Bit 7-0)
+w 30 4b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 257
+w 30 4c 80 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 258
+w 30 50 7f 
+#			 (Bit 23-16)
+w 30 51 f7 
+#			 (Bit 15-8)
+w 30 52 00 
+#			 (Bit 7-0)
+w 30 53 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 259
+w 30 54 80 
+#			 (Bit 23-16)
+w 30 55 09 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 260
+w 30 58 7f 
+#			 (Bit 23-16)
+w 30 59 ef 
+#			 (Bit 15-8)
+w 30 5a 00 
+#			 (Bit 7-0)
+w 30 5b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 261
+w 30 5c 40 
+#			 (Bit 23-16)
+w 30 5d 00 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 262
+w 30 60 40 
+#			 (Bit 23-16)
+w 30 61 00 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 263
+w 30 64 40 
+#			 (Bit 23-16)
+w 30 65 00 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 264
+w 30 68 7f 
+#			 (Bit 23-16)
+w 30 69 ff 
+#			 (Bit 15-8)
+w 30 6a ff 
+#			 (Bit 7-0)
+w 30 6b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 265
+w 30 6c 00 
+#			 (Bit 23-16)
+w 30 6d 00 
+#			 (Bit 15-8)
+w 30 6e 00 
+#			 (Bit 7-0)
+w 30 6f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 266
+w 30 70 c0 
+#			 (Bit 23-16)
+w 30 71 00 
+#			 (Bit 15-8)
+w 30 72 00 
+#			 (Bit 7-0)
+w 30 73 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 267
+w 30 74 20 
+#			 (Bit 23-16)
+w 30 75 00 
+#			 (Bit 15-8)
+w 30 76 00 
+#			 (Bit 7-0)
+w 30 77 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 268
+w 30 78 00 
+#			 (Bit 23-16)
+w 30 79 00 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 269
+w 30 7c d7 
+#			 (Bit 23-16)
+w 30 7d 41 
+#			 (Bit 15-8)
+w 30 7e a0 
+#			 (Bit 7-0)
+w 30 7f 00 
+#			--------------------------------------------------------------- page 10 is selected
+w 30 00 0a 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 270
+w 30 08 ff 
+#			 (Bit 23-16)
+w 30 09 f0 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 271
+w 30 0c 00 
+#			 (Bit 23-16)
+w 30 0d 7d 
+#			 (Bit 15-8)
+w 30 0e 33 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 272
+w 30 10 7f 
+#			 (Bit 23-16)
+w 30 11 82 
+#			 (Bit 15-8)
+w 30 12 cd 
+#			 (Bit 7-0)
+w 30 13 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 273
+w 30 14 00 
+#			 (Bit 23-16)
+w 30 15 00 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 274
+w 30 18 fe 
+#			 (Bit 23-16)
+w 30 19 5b 
+#			 (Bit 15-8)
+w 30 1a e6 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 275
+w 30 1c d8 
+#			 (Bit 23-16)
+w 30 1d 00 
+#			 (Bit 15-8)
+w 30 1e 00 
+#			 (Bit 7-0)
+w 30 1f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 276
+w 30 20 32 
+#			 (Bit 23-16)
+w 30 21 00 
+#			 (Bit 15-8)
+w 30 22 00 
+#			 (Bit 7-0)
+w 30 23 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 277
+w 30 24 0b 
+#			 (Bit 23-16)
+w 30 25 00 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 278
+w 30 28 08 
+#			 (Bit 23-16)
+w 30 29 00 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 279
+w 30 2c 06 
+#			 (Bit 23-16)
+w 30 2d 00 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 280
+w 30 30 00 
+#			 (Bit 23-16)
+w 30 31 7d 
+#			 (Bit 15-8)
+w 30 32 33 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 281
+w 30 34 7f 
+#			 (Bit 23-16)
+w 30 35 82 
+#			 (Bit 15-8)
+w 30 36 cd 
+#			 (Bit 7-0)
+w 30 37 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 282
+w 30 38 00 
+#			 (Bit 23-16)
+w 30 39 7d 
+#			 (Bit 15-8)
+w 30 3a 33 
+#			 (Bit 7-0)
+w 30 3b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 283
+w 30 3c 7f 
+#			 (Bit 23-16)
+w 30 3d 82 
+#			 (Bit 15-8)
+w 30 3e cd 
+#			 (Bit 7-0)
+w 30 3f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 284
+w 30 40 88 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 285
+w 30 44 7f 
+#			 (Bit 23-16)
+w 30 45 ff 
+#			 (Bit 15-8)
+w 30 46 ff 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 286
+w 30 48 82 
+#			 (Bit 23-16)
+w 30 49 ee 
+#			 (Bit 15-8)
+w 30 4a 9d 
+#			 (Bit 7-0)
+w 30 4b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 287
+w 30 4c 7c 
+#			 (Bit 23-16)
+w 30 4d 4b 
+#			 (Bit 15-8)
+w 30 4e 55 
+#			 (Bit 7-0)
+w 30 4f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 288
+w 30 50 7d 
+#			 (Bit 23-16)
+w 30 51 43 
+#			 (Bit 15-8)
+w 30 52 de 
+#			 (Bit 7-0)
+w 30 53 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 289
+w 30 54 83 
+#			 (Bit 23-16)
+w 30 55 4e 
+#			 (Bit 15-8)
+w 30 56 d5 
+#			 (Bit 7-0)
+w 30 57 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 290
+w 30 58 18 
+#			 (Bit 23-16)
+w 30 59 00 
+#			 (Bit 15-8)
+w 30 5a 00 
+#			 (Bit 7-0)
+w 30 5b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 291
+w 30 5c 00 
+#			 (Bit 23-16)
+w 30 5d 00 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 292
+w 30 60 0c 
+#			 (Bit 23-16)
+w 30 61 00 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 293
+w 30 64 f4 
+#			 (Bit 23-16)
+w 30 65 00 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 294
+w 30 68 15 
+#			 (Bit 23-16)
+w 30 69 42 
+#			 (Bit 15-8)
+w 30 6a a6 
+#			 (Bit 7-0)
+w 30 6b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 295
+w 30 6c 7f 
+#			 (Bit 23-16)
+w 30 6d ff 
+#			 (Bit 15-8)
+w 30 6e ff 
+#			 (Bit 7-0)
+w 30 6f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 296
+w 30 70 0b 
+#			 (Bit 23-16)
+w 30 71 f9 
+#			 (Bit 15-8)
+w 30 72 13 
+#			 (Bit 7-0)
+w 30 73 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 297
+w 30 74 18 
+#			 (Bit 23-16)
+w 30 75 ec 
+#			 (Bit 15-8)
+w 30 76 f7 
+#			 (Bit 7-0)
+w 30 77 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 298
+w 30 78 5b 
+#			 (Bit 23-16)
+w 30 79 9e 
+#			 (Bit 15-8)
+w 30 7a c4 
+#			 (Bit 7-0)
+w 30 7b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 299
+w 30 7c 7f 
+#			 (Bit 23-16)
+w 30 7d 7b 
+#			 (Bit 15-8)
+w 30 7e 30 
+#			 (Bit 7-0)
+w 30 7f 00 
+#			--------------------------------------------------------------- page 11 is selected
+w 30 00 0b 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 300
+w 30 08 00 
+#			 (Bit 23-16)
+w 30 09 00 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 301
+w 30 0c 00 
+#			 (Bit 23-16)
+w 30 0d 00 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 302
+w 30 10 00 
+#			 (Bit 23-16)
+w 30 11 00 
+#			 (Bit 15-8)
+w 30 12 00 
+#			 (Bit 7-0)
+w 30 13 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 303
+w 30 14 00 
+#			 (Bit 23-16)
+w 30 15 0d 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 304
+w 30 18 00 
+#			 (Bit 23-16)
+w 30 19 1c 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 305
+w 30 1c 00 
+#			 (Bit 23-16)
+w 30 1d 3e 
+#			 (Bit 15-8)
+w 30 1e 00 
+#			 (Bit 7-0)
+w 30 1f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 306
+w 30 20 00 
+#			 (Bit 23-16)
+w 30 21 78 
+#			 (Bit 15-8)
+w 30 22 00 
+#			 (Bit 7-0)
+w 30 23 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 307
+w 30 24 02 
+#			 (Bit 23-16)
+w 30 25 4c 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 308
+w 30 28 00 
+#			 (Bit 23-16)
+w 30 29 d5 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 309
+w 30 2c 01 
+#			 (Bit 23-16)
+w 30 2d 65 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 310
+w 30 30 03 
+#			 (Bit 23-16)
+w 30 31 e9 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 311
+w 30 34 07 
+#			 (Bit 23-16)
+w 30 35 ca 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 312
+w 30 38 ff 
+#			 (Bit 23-16)
+w 30 39 ef 
+#			 (Bit 15-8)
+w 30 3a 00 
+#			 (Bit 7-0)
+w 30 3b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 313
+w 30 3c fe 
+#			 (Bit 23-16)
+w 30 3d eb 
+#			 (Bit 15-8)
+w 30 3e 00 
+#			 (Bit 7-0)
+w 30 3f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 314
+w 30 40 ff 
+#			 (Bit 23-16)
+w 30 41 a8 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 315
+w 30 44 fd 
+#			 (Bit 23-16)
+w 30 45 08 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 316
+w 30 48 ff 
+#			 (Bit 23-16)
+w 30 49 5e 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 317
+w 30 4c ff 
+#			 (Bit 23-16)
+w 30 4d d5 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 318
+w 30 50 fe 
+#			 (Bit 23-16)
+w 30 51 36 
+#			 (Bit 15-8)
+w 30 52 00 
+#			 (Bit 7-0)
+w 30 53 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 319
+w 30 54 fa 
+#			 (Bit 23-16)
+w 30 55 ac 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 320
+w 30 58 f2 
+#			 (Bit 23-16)
+w 30 59 a3 
+#			 (Bit 15-8)
+w 30 5a 00 
+#			 (Bit 7-0)
+w 30 5b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 321
+w 30 5c 28 
+#			 (Bit 23-16)
+w 30 5d ab 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 322
+w 30 60 3f 
+#			 (Bit 23-16)
+w 30 61 ff 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 323
+w 30 64 ff 
+#			 (Bit 23-16)
+w 30 65 98 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 324
+w 30 68 f6 
+#			 (Bit 23-16)
+w 30 69 f9 
+#			 (Bit 15-8)
+w 30 6a 00 
+#			 (Bit 7-0)
+w 30 6b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 325
+w 30 6c 26 
+#			 (Bit 23-16)
+w 30 6d fb 
+#			 (Bit 15-8)
+w 30 6e 00 
+#			 (Bit 7-0)
+w 30 6f 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 326
+w 30 70 02 
+#			 (Bit 23-16)
+w 30 71 72 
+#			 (Bit 15-8)
+w 30 72 00 
+#			 (Bit 7-0)
+w 30 73 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 327
+w 30 74 40 
+#			 (Bit 23-16)
+w 30 75 02 
+#			 (Bit 15-8)
+w 30 76 00 
+#			 (Bit 7-0)
+w 30 77 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 328
+w 30 78 fb 
+#			 (Bit 23-16)
+w 30 79 cb 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 329
+w 30 7c 20 
+#			 (Bit 23-16)
+w 30 7d a7 
+#			 (Bit 15-8)
+w 30 7e 00 
+#			 (Bit 7-0)
+w 30 7f 00 
+#			--------------------------------------------------------------- page 12 is selected
+w 30 00 0c 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 330
+w 30 08 ff 
+#			 (Bit 23-16)
+w 30 09 6a 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 331
+w 30 0c 3a 
+#			 (Bit 23-16)
+w 30 0d 0f 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			--------------------------------------------------------------- book 60 is selected
+w 30 00 00 
+w 30 7f 3c 
+#			--------------------------------------------------------------- page 1 is selected
+w 30 00 01 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 2048
+w 30 08 c0 
+#			 (Bit 23-16)
+w 30 09 00 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB DAC COEFF No. 2049
+w 30 0c c0 
+#			 (Bit 23-16)
+w 30 0d 00 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			--------------------------------------------------------------- book 120 is selected
+w 30 00 00 
+w 30 7f 78 
+#			--------------------------------------------------------------- page 1 is selected
+w 30 00 01 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 0
+w 30 08 04 
+#			 (Bit 23-16)
+w 30 09 00 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 1
+w 30 0c 04 
+#			 (Bit 23-16)
+w 30 0d 00 
+#			 (Bit 15-8)
+w 30 0e 20 
+#			 (Bit 7-0)
+w 30 0f 01 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 2
+w 30 10 58 
+#			 (Bit 23-16)
+w 30 11 60 
+#			 (Bit 15-8)
+w 30 12 08 
+#			 (Bit 7-0)
+w 30 13 01 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 3
+w 30 14 60 
+#			 (Bit 23-16)
+w 30 15 60 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 4
+w 30 18 58 
+#			 (Bit 23-16)
+w 30 19 60 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 09 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 5
+w 30 1c 00 
+#			 (Bit 23-16)
+w 30 1d 00 
+#			 (Bit 15-8)
+w 30 1e 00 
+#			 (Bit 7-0)
+w 30 1f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 6
+w 30 20 44 
+#			 (Bit 23-16)
+w 30 21 00 
+#			 (Bit 15-8)
+w 30 22 c0 
+#			 (Bit 7-0)
+w 30 23 16 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 7
+w 30 24 08 
+#			 (Bit 23-16)
+w 30 25 00 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 55 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 8
+w 30 28 08 
+#			 (Bit 23-16)
+w 30 29 00 
+#			 (Bit 15-8)
+w 30 2a 20 
+#			 (Bit 7-0)
+w 30 2b 95 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 9
+w 30 2c 08 
+#			 (Bit 23-16)
+w 30 2d 00 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 54 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 10
+w 30 30 08 
+#			 (Bit 23-16)
+w 30 31 00 
+#			 (Bit 15-8)
+w 30 32 20 
+#			 (Bit 7-0)
+w 30 33 94 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 11
+w 30 34 08 
+#			 (Bit 23-16)
+w 30 35 00 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 53 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 12
+w 30 38 08 
+#			 (Bit 23-16)
+w 30 39 00 
+#			 (Bit 15-8)
+w 30 3a 20 
+#			 (Bit 7-0)
+w 30 3b 93 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 13
+w 30 3c 08 
+#			 (Bit 23-16)
+w 30 3d 00 
+#			 (Bit 15-8)
+w 30 3e 00 
+#			 (Bit 7-0)
+w 30 3f 52 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 14
+w 30 40 08 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 20 
+#			 (Bit 7-0)
+w 30 43 92 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 15
+w 30 44 08 
+#			 (Bit 23-16)
+w 30 45 00 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 51 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 16
+w 30 48 08 
+#			 (Bit 23-16)
+w 30 49 00 
+#			 (Bit 15-8)
+w 30 4a 20 
+#			 (Bit 7-0)
+w 30 4b 91 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 17
+w 30 4c 08 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 50 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 18
+w 30 50 08 
+#			 (Bit 23-16)
+w 30 51 00 
+#			 (Bit 15-8)
+w 30 52 20 
+#			 (Bit 7-0)
+w 30 53 90 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 19
+w 30 54 08 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 4f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 20
+w 30 58 08 
+#			 (Bit 23-16)
+w 30 59 00 
+#			 (Bit 15-8)
+w 30 5a 20 
+#			 (Bit 7-0)
+w 30 5b 8f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 21
+w 30 5c 08 
+#			 (Bit 23-16)
+w 30 5d 00 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 4e 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 22
+w 30 60 08 
+#			 (Bit 23-16)
+w 30 61 00 
+#			 (Bit 15-8)
+w 30 62 20 
+#			 (Bit 7-0)
+w 30 63 8e 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 23
+w 30 64 00 
+#			 (Bit 23-16)
+w 30 65 00 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 24
+w 30 68 00 
+#			 (Bit 23-16)
+w 30 69 00 
+#			 (Bit 15-8)
+w 30 6a 00 
+#			 (Bit 7-0)
+w 30 6b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 25
+w 30 6c 00 
+#			 (Bit 23-16)
+w 30 6d 00 
+#			 (Bit 15-8)
+w 30 6e 00 
+#			 (Bit 7-0)
+w 30 6f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 26
+w 30 70 00 
+#			 (Bit 23-16)
+w 30 71 00 
+#			 (Bit 15-8)
+w 30 72 00 
+#			 (Bit 7-0)
+w 30 73 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 27
+w 30 74 00 
+#			 (Bit 23-16)
+w 30 75 00 
+#			 (Bit 15-8)
+w 30 76 00 
+#			 (Bit 7-0)
+w 30 77 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 28
+w 30 78 44 
+#			 (Bit 23-16)
+w 30 79 00 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 06 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 29
+w 30 7c 21 
+#			 (Bit 23-16)
+w 30 7d 00 
+#			 (Bit 15-8)
+w 30 7e 20 
+#			 (Bit 7-0)
+w 30 7f 00 
+#			--------------------------------------------------------------- page 2 is selected
+w 30 00 02 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 30
+w 30 08 4b 
+#			 (Bit 23-16)
+w 30 09 00 
+#			 (Bit 15-8)
+w 30 0a c0 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 31
+w 30 0c 4b 
+#			 (Bit 23-16)
+w 30 0d 00 
+#			 (Bit 15-8)
+w 30 0e e0 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 32
+w 30 10 00 
+#			 (Bit 23-16)
+w 30 11 00 
+#			 (Bit 15-8)
+w 30 12 40 
+#			 (Bit 7-0)
+w 30 13 48 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 33
+w 30 14 0c 
+#			 (Bit 23-16)
+w 30 15 00 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 34
+w 30 18 0c 
+#			 (Bit 23-16)
+w 30 19 00 
+#			 (Bit 15-8)
+w 30 1a 20 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 35
+w 30 1c 18 
+#			 (Bit 23-16)
+w 30 1d 00 
+#			 (Bit 15-8)
+w 30 1e a0 
+#			 (Bit 7-0)
+w 30 1f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 36
+w 30 20 1c 
+#			 (Bit 23-16)
+w 30 21 00 
+#			 (Bit 15-8)
+w 30 22 c0 
+#			 (Bit 7-0)
+w 30 23 01 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 37
+w 30 24 00 
+#			 (Bit 23-16)
+w 30 25 00 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 38
+w 30 28 00 
+#			 (Bit 23-16)
+w 30 29 00 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 39
+w 30 2c 00 
+#			 (Bit 23-16)
+w 30 2d 00 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 40
+w 30 30 10 
+#			 (Bit 23-16)
+w 30 31 00 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 02 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 41
+w 30 34 30 
+#			 (Bit 23-16)
+w 30 35 01 
+#			 (Bit 15-8)
+w 30 36 e0 
+#			 (Bit 7-0)
+w 30 37 02 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 42
+w 30 38 1c 
+#			 (Bit 23-16)
+w 30 39 02 
+#			 (Bit 15-8)
+w 30 3a 00 
+#			 (Bit 7-0)
+w 30 3b 05 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 43
+w 30 3c 00 
+#			 (Bit 23-16)
+w 30 3d 00 
+#			 (Bit 15-8)
+w 30 3e 00 
+#			 (Bit 7-0)
+w 30 3f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 44
+w 30 40 00 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 45
+w 30 44 00 
+#			 (Bit 23-16)
+w 30 45 00 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 46
+w 30 48 10 
+#			 (Bit 23-16)
+w 30 49 00 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 04 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 47
+w 30 4c 18 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e e0 
+#			 (Bit 7-0)
+w 30 4f 04 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 48
+w 30 50 59 
+#			 (Bit 23-16)
+w 30 51 00 
+#			 (Bit 15-8)
+w 30 52 00 
+#			 (Bit 7-0)
+w 30 53 0d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 49
+w 30 54 59 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 0e 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 50
+w 30 58 00 
+#			 (Bit 23-16)
+w 30 59 00 
+#			 (Bit 15-8)
+w 30 5a 00 
+#			 (Bit 7-0)
+w 30 5b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 51
+w 30 5c 00 
+#			 (Bit 23-16)
+w 30 5d 00 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 52
+w 30 60 44 
+#			 (Bit 23-16)
+w 30 61 00 
+#			 (Bit 15-8)
+w 30 62 60 
+#			 (Bit 7-0)
+w 30 63 0b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 53
+w 30 64 44 
+#			 (Bit 23-16)
+w 30 65 00 
+#			 (Bit 15-8)
+w 30 66 80 
+#			 (Bit 7-0)
+w 30 67 05 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 54
+w 30 68 0c 
+#			 (Bit 23-16)
+w 30 69 00 
+#			 (Bit 15-8)
+w 30 6a 80 
+#			 (Bit 7-0)
+w 30 6b 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 55
+w 30 6c 58 
+#			 (Bit 23-16)
+w 30 6d 60 
+#			 (Bit 15-8)
+w 30 6e 00 
+#			 (Bit 7-0)
+w 30 6f 09 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 56
+w 30 70 06 
+#			 (Bit 23-16)
+w 30 71 00 
+#			 (Bit 15-8)
+w 30 72 80 
+#			 (Bit 7-0)
+w 30 73 0c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 57
+w 30 74 58 
+#			 (Bit 23-16)
+w 30 75 70 
+#			 (Bit 15-8)
+w 30 76 00 
+#			 (Bit 7-0)
+w 30 77 0c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 58
+w 30 78 44 
+#			 (Bit 23-16)
+w 30 79 00 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 0b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 59
+w 30 7c 0c 
+#			 (Bit 23-16)
+w 30 7d 00 
+#			 (Bit 15-8)
+w 30 7e 80 
+#			 (Bit 7-0)
+w 30 7f 0d 
+#			--------------------------------------------------------------- page 3 is selected
+w 30 00 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 60
+w 30 08 58 
+#			 (Bit 23-16)
+w 30 09 60 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 1c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 61
+w 30 0c 06 
+#			 (Bit 23-16)
+w 30 0d 00 
+#			 (Bit 15-8)
+w 30 0e 80 
+#			 (Bit 7-0)
+w 30 0f 0c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 62
+w 30 10 58 
+#			 (Bit 23-16)
+w 30 11 70 
+#			 (Bit 15-8)
+w 30 12 00 
+#			 (Bit 7-0)
+w 30 13 0c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 63
+w 30 14 44 
+#			 (Bit 23-16)
+w 30 15 00 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 06 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 64
+w 30 18 00 
+#			 (Bit 23-16)
+w 30 19 00 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 65
+w 30 1c 0c 
+#			 (Bit 23-16)
+w 30 1d 00 
+#			 (Bit 15-8)
+w 30 1e 80 
+#			 (Bit 7-0)
+w 30 1f 01 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 66
+w 30 20 58 
+#			 (Bit 23-16)
+w 30 21 60 
+#			 (Bit 15-8)
+w 30 22 00 
+#			 (Bit 7-0)
+w 30 23 22 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 67
+w 30 24 06 
+#			 (Bit 23-16)
+w 30 25 00 
+#			 (Bit 15-8)
+w 30 26 80 
+#			 (Bit 7-0)
+w 30 27 0c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 68
+w 30 28 58 
+#			 (Bit 23-16)
+w 30 29 70 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 0c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 69
+w 30 2c 00 
+#			 (Bit 23-16)
+w 30 2d 00 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 70
+w 30 30 00 
+#			 (Bit 23-16)
+w 30 31 00 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 71
+w 30 34 00 
+#			 (Bit 23-16)
+w 30 35 00 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 72
+w 30 38 20 
+#			 (Bit 23-16)
+w 30 39 01 
+#			 (Bit 15-8)
+w 30 3a 80 
+#			 (Bit 7-0)
+w 30 3b 01 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 73
+w 30 3c 58 
+#			 (Bit 23-16)
+w 30 3d 60 
+#			 (Bit 15-8)
+w 30 3e 00 
+#			 (Bit 7-0)
+w 30 3f 0c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 74
+w 30 40 59 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 14 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 75
+w 30 44 59 
+#			 (Bit 23-16)
+w 30 45 00 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 15 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 76
+w 30 48 58 
+#			 (Bit 23-16)
+w 30 49 70 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 15 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 77
+w 30 4c 00 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 78
+w 30 50 44 
+#			 (Bit 23-16)
+w 30 51 00 
+#			 (Bit 15-8)
+w 30 52 80 
+#			 (Bit 7-0)
+w 30 53 0b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 79
+w 30 54 44 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 80 
+#			 (Bit 7-0)
+w 30 57 05 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 80
+w 30 58 20 
+#			 (Bit 23-16)
+w 30 59 04 
+#			 (Bit 15-8)
+w 30 5a 60 
+#			 (Bit 7-0)
+w 30 5b 02 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 81
+w 30 5c 58 
+#			 (Bit 23-16)
+w 30 5d 60 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 17 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 82
+w 30 60 58 
+#			 (Bit 23-16)
+w 30 61 60 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 13 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 83
+w 30 64 58 
+#			 (Bit 23-16)
+w 30 65 60 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 09 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 84
+w 30 68 44 
+#			 (Bit 23-16)
+w 30 69 00 
+#			 (Bit 15-8)
+w 30 6a 00 
+#			 (Bit 7-0)
+w 30 6b 0b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 85
+w 30 6c 20 
+#			 (Bit 23-16)
+w 30 6d 04 
+#			 (Bit 15-8)
+w 30 6e 60 
+#			 (Bit 7-0)
+w 30 6f 02 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 86
+w 30 70 58 
+#			 (Bit 23-16)
+w 30 71 60 
+#			 (Bit 15-8)
+w 30 72 00 
+#			 (Bit 7-0)
+w 30 73 17 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 87
+w 30 74 58 
+#			 (Bit 23-16)
+w 30 75 60 
+#			 (Bit 15-8)
+w 30 76 00 
+#			 (Bit 7-0)
+w 30 77 12 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 88
+w 30 78 58 
+#			 (Bit 23-16)
+w 30 79 60 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 09 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 89
+w 30 7c 44 
+#			 (Bit 23-16)
+w 30 7d 00 
+#			 (Bit 15-8)
+w 30 7e 00 
+#			 (Bit 7-0)
+w 30 7f 06 
+#			--------------------------------------------------------------- page 4 is selected
+w 30 00 04 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 90
+w 30 08 58 
+#			 (Bit 23-16)
+w 30 09 60 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 0c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 91
+w 30 0c 58 
+#			 (Bit 23-16)
+w 30 0d 70 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 14 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 92
+w 30 10 58 
+#			 (Bit 23-16)
+w 30 11 60 
+#			 (Bit 15-8)
+w 30 12 00 
+#			 (Bit 7-0)
+w 30 13 16 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 93
+w 30 14 58 
+#			 (Bit 23-16)
+w 30 15 60 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 11 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 94
+w 30 18 58 
+#			 (Bit 23-16)
+w 30 19 60 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 09 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 95
+w 30 1c 20 
+#			 (Bit 23-16)
+w 30 1d 04 
+#			 (Bit 15-8)
+w 30 1e 60 
+#			 (Bit 7-0)
+w 30 1f 02 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 96
+w 30 20 4c 
+#			 (Bit 23-16)
+w 30 21 01 
+#			 (Bit 15-8)
+w 30 22 60 
+#			 (Bit 7-0)
+w 30 23 09 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 97
+w 30 24 4c 
+#			 (Bit 23-16)
+w 30 25 04 
+#			 (Bit 15-8)
+w 30 26 60 
+#			 (Bit 7-0)
+w 30 27 06 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 98
+w 30 28 59 
+#			 (Bit 23-16)
+w 30 29 00 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 25 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 99
+w 30 2c 59 
+#			 (Bit 23-16)
+w 30 2d 00 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 24 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 100
+w 30 30 58 
+#			 (Bit 23-16)
+w 30 31 60 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 25 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 101
+w 30 34 10 
+#			 (Bit 23-16)
+w 30 35 00 
+#			 (Bit 15-8)
+w 30 36 a0 
+#			 (Bit 7-0)
+w 30 37 08 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 102
+w 30 38 44 
+#			 (Bit 23-16)
+w 30 39 00 
+#			 (Bit 15-8)
+w 30 3a 60 
+#			 (Bit 7-0)
+w 30 3b 05 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 103
+w 30 3c 44 
+#			 (Bit 23-16)
+w 30 3d 00 
+#			 (Bit 15-8)
+w 30 3e 80 
+#			 (Bit 7-0)
+w 30 3f 06 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 104
+w 30 40 00 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 105
+w 30 44 00 
+#			 (Bit 23-16)
+w 30 45 00 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 106
+w 30 48 00 
+#			 (Bit 23-16)
+w 30 49 00 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 107
+w 30 4c 44 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 06 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 108
+w 30 50 58 
+#			 (Bit 23-16)
+w 30 51 60 
+#			 (Bit 15-8)
+w 30 52 00 
+#			 (Bit 7-0)
+w 30 53 24 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 109
+w 30 54 44 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 01 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 110
+w 30 58 00 
+#			 (Bit 23-16)
+w 30 59 00 
+#			 (Bit 15-8)
+w 30 5a 00 
+#			 (Bit 7-0)
+w 30 5b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 111
+w 30 5c 00 
+#			 (Bit 23-16)
+w 30 5d 00 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 112
+w 30 60 00 
+#			 (Bit 23-16)
+w 30 61 00 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 113
+w 30 64 10 
+#			 (Bit 23-16)
+w 30 65 00 
+#			 (Bit 15-8)
+w 30 66 a0 
+#			 (Bit 7-0)
+w 30 67 08 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 114
+w 30 68 18 
+#			 (Bit 23-16)
+w 30 69 04 
+#			 (Bit 15-8)
+w 30 6a c0 
+#			 (Bit 7-0)
+w 30 6b 08 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 115
+w 30 6c 64 
+#			 (Bit 23-16)
+w 30 6d 00 
+#			 (Bit 15-8)
+w 30 6e c0 
+#			 (Bit 7-0)
+w 30 6f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 116
+w 30 70 0c 
+#			 (Bit 23-16)
+w 30 71 07 
+#			 (Bit 15-8)
+w 30 72 40 
+#			 (Bit 7-0)
+w 30 73 02 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 117
+w 30 74 64 
+#			 (Bit 23-16)
+w 30 75 30 
+#			 (Bit 15-8)
+w 30 76 20 
+#			 (Bit 7-0)
+w 30 77 27 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 118
+w 30 78 00 
+#			 (Bit 23-16)
+w 30 79 00 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 119
+w 30 7c 00 
+#			 (Bit 23-16)
+w 30 7d 00 
+#			 (Bit 15-8)
+w 30 7e 00 
+#			 (Bit 7-0)
+w 30 7f 00 
+#			--------------------------------------------------------------- page 5 is selected
+w 30 00 05 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 120
+w 30 08 58 
+#			 (Bit 23-16)
+w 30 09 60 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 28 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 121
+w 30 0c 20 
+#			 (Bit 23-16)
+w 30 0d 05 
+#			 (Bit 15-8)
+w 30 0e 80 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 122
+w 30 10 58 
+#			 (Bit 23-16)
+w 30 11 60 
+#			 (Bit 15-8)
+w 30 12 00 
+#			 (Bit 7-0)
+w 30 13 29 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 123
+w 30 14 38 
+#			 (Bit 23-16)
+w 30 15 05 
+#			 (Bit 15-8)
+w 30 16 80 
+#			 (Bit 7-0)
+w 30 17 09 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 124
+w 30 18 58 
+#			 (Bit 23-16)
+w 30 19 60 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 2a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 125
+w 30 1c 38 
+#			 (Bit 23-16)
+w 30 1d 05 
+#			 (Bit 15-8)
+w 30 1e 80 
+#			 (Bit 7-0)
+w 30 1f 09 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 126
+w 30 20 58 
+#			 (Bit 23-16)
+w 30 21 60 
+#			 (Bit 15-8)
+w 30 22 00 
+#			 (Bit 7-0)
+w 30 23 2b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 127
+w 30 24 38 
+#			 (Bit 23-16)
+w 30 25 05 
+#			 (Bit 15-8)
+w 30 26 80 
+#			 (Bit 7-0)
+w 30 27 09 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 128
+w 30 28 64 
+#			 (Bit 23-16)
+w 30 29 03 
+#			 (Bit 15-8)
+w 30 2a 40 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 129
+w 30 2c 64 
+#			 (Bit 23-16)
+w 30 2d 20 
+#			 (Bit 15-8)
+w 30 2e 60 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 130
+w 30 30 00 
+#			 (Bit 23-16)
+w 30 31 00 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 131
+w 30 34 00 
+#			 (Bit 23-16)
+w 30 35 00 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 132
+w 30 38 00 
+#			 (Bit 23-16)
+w 30 39 00 
+#			 (Bit 15-8)
+w 30 3a 00 
+#			 (Bit 7-0)
+w 30 3b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 133
+w 30 3c 10 
+#			 (Bit 23-16)
+w 30 3d 00 
+#			 (Bit 15-8)
+w 30 3e 00 
+#			 (Bit 7-0)
+w 30 3f 09 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 134
+w 30 40 18 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 e0 
+#			 (Bit 7-0)
+w 30 43 06 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 135
+w 30 44 18 
+#			 (Bit 23-16)
+w 30 45 00 
+#			 (Bit 15-8)
+w 30 46 e0 
+#			 (Bit 7-0)
+w 30 47 09 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 136
+w 30 48 58 
+#			 (Bit 23-16)
+w 30 49 60 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 07 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 137
+w 30 4c 18 
+#			 (Bit 23-16)
+w 30 4d 01 
+#			 (Bit 15-8)
+w 30 4e 40 
+#			 (Bit 7-0)
+w 30 4f 0d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 138
+w 30 50 44 
+#			 (Bit 23-16)
+w 30 51 00 
+#			 (Bit 15-8)
+w 30 52 c0 
+#			 (Bit 7-0)
+w 30 53 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 139
+w 30 54 10 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 20 
+#			 (Bit 7-0)
+w 30 57 0b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 140
+w 30 58 10 
+#			 (Bit 23-16)
+w 30 59 13 
+#			 (Bit 15-8)
+w 30 5a 60 
+#			 (Bit 7-0)
+w 30 5b 0a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 141
+w 30 5c 44 
+#			 (Bit 23-16)
+w 30 5d 00 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 142
+w 30 60 10 
+#			 (Bit 23-16)
+w 30 61 00 
+#			 (Bit 15-8)
+w 30 62 20 
+#			 (Bit 7-0)
+w 30 63 0a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 143
+w 30 64 10 
+#			 (Bit 23-16)
+w 30 65 13 
+#			 (Bit 15-8)
+w 30 66 60 
+#			 (Bit 7-0)
+w 30 67 0b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 144
+w 30 68 00 
+#			 (Bit 23-16)
+w 30 69 00 
+#			 (Bit 15-8)
+w 30 6a 00 
+#			 (Bit 7-0)
+w 30 6b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 145
+w 30 6c 40 
+#			 (Bit 23-16)
+w 30 6d 00 
+#			 (Bit 15-8)
+w 30 6e e0 
+#			 (Bit 7-0)
+w 30 6f 0a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 146
+w 30 70 18 
+#			 (Bit 23-16)
+w 30 71 03 
+#			 (Bit 15-8)
+w 30 72 20 
+#			 (Bit 7-0)
+w 30 73 0d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 147
+w 30 74 1c 
+#			 (Bit 23-16)
+w 30 75 03 
+#			 (Bit 15-8)
+w 30 76 00 
+#			 (Bit 7-0)
+w 30 77 0a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 148
+w 30 78 18 
+#			 (Bit 23-16)
+w 30 79 03 
+#			 (Bit 15-8)
+w 30 7a 60 
+#			 (Bit 7-0)
+w 30 7b 0d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 149
+w 30 7c 1c 
+#			 (Bit 23-16)
+w 30 7d 03 
+#			 (Bit 15-8)
+w 30 7e 40 
+#			 (Bit 7-0)
+w 30 7f 0a 
+#			--------------------------------------------------------------- page 6 is selected
+w 30 00 06 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 150
+w 30 08 44 
+#			 (Bit 23-16)
+w 30 09 00 
+#			 (Bit 15-8)
+w 30 0a 60 
+#			 (Bit 7-0)
+w 30 0b 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 151
+w 30 0c 10 
+#			 (Bit 23-16)
+w 30 0d 00 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 0c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 152
+w 30 10 18 
+#			 (Bit 23-16)
+w 30 11 01 
+#			 (Bit 15-8)
+w 30 12 40 
+#			 (Bit 7-0)
+w 30 13 0f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 153
+w 30 14 44 
+#			 (Bit 23-16)
+w 30 15 00 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 154
+w 30 18 00 
+#			 (Bit 23-16)
+w 30 19 00 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 155
+w 30 1c 18 
+#			 (Bit 23-16)
+w 30 1d 01 
+#			 (Bit 15-8)
+w 30 1e 40 
+#			 (Bit 7-0)
+w 30 1f 0f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 156
+w 30 20 10 
+#			 (Bit 23-16)
+w 30 21 00 
+#			 (Bit 15-8)
+w 30 22 00 
+#			 (Bit 7-0)
+w 30 23 0c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 157
+w 30 24 40 
+#			 (Bit 23-16)
+w 30 25 00 
+#			 (Bit 15-8)
+w 30 26 e0 
+#			 (Bit 7-0)
+w 30 27 0b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 158
+w 30 28 64 
+#			 (Bit 23-16)
+w 30 29 50 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 0c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 159
+w 30 2c 00 
+#			 (Bit 23-16)
+w 30 2d 00 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 160
+w 30 30 00 
+#			 (Bit 23-16)
+w 30 31 00 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 161
+w 30 34 44 
+#			 (Bit 23-16)
+w 30 35 00 
+#			 (Bit 15-8)
+w 30 36 60 
+#			 (Bit 7-0)
+w 30 37 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 162
+w 30 38 18 
+#			 (Bit 23-16)
+w 30 39 03 
+#			 (Bit 15-8)
+w 30 3a 60 
+#			 (Bit 7-0)
+w 30 3b 0f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 163
+w 30 3c 1c 
+#			 (Bit 23-16)
+w 30 3d 03 
+#			 (Bit 15-8)
+w 30 3e 40 
+#			 (Bit 7-0)
+w 30 3f 0b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 164
+w 30 40 44 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 165
+w 30 44 18 
+#			 (Bit 23-16)
+w 30 45 03 
+#			 (Bit 15-8)
+w 30 46 20 
+#			 (Bit 7-0)
+w 30 47 0f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 166
+w 30 48 1c 
+#			 (Bit 23-16)
+w 30 49 03 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 0b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 167
+w 30 4c 00 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 168
+w 30 50 00 
+#			 (Bit 23-16)
+w 30 51 00 
+#			 (Bit 15-8)
+w 30 52 00 
+#			 (Bit 7-0)
+w 30 53 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 169
+w 30 54 00 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 170
+w 30 58 10 
+#			 (Bit 23-16)
+w 30 59 00 
+#			 (Bit 15-8)
+w 30 5a 00 
+#			 (Bit 7-0)
+w 30 5b 0e 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 171
+w 30 5c 20 
+#			 (Bit 23-16)
+w 30 5d 05 
+#			 (Bit 15-8)
+w 30 5e c0 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 172
+w 30 60 64 
+#			 (Bit 23-16)
+w 30 61 40 
+#			 (Bit 15-8)
+w 30 62 80 
+#			 (Bit 7-0)
+w 30 63 02 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 173
+w 30 64 00 
+#			 (Bit 23-16)
+w 30 65 00 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 174
+w 30 68 24 
+#			 (Bit 23-16)
+w 30 69 05 
+#			 (Bit 15-8)
+w 30 6a c0 
+#			 (Bit 7-0)
+w 30 6b 08 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 175
+w 30 6c 00 
+#			 (Bit 23-16)
+w 30 6d 00 
+#			 (Bit 15-8)
+w 30 6e 00 
+#			 (Bit 7-0)
+w 30 6f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 176
+w 30 70 00 
+#			 (Bit 23-16)
+w 30 71 00 
+#			 (Bit 15-8)
+w 30 72 00 
+#			 (Bit 7-0)
+w 30 73 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 177
+w 30 74 00 
+#			 (Bit 23-16)
+w 30 75 00 
+#			 (Bit 15-8)
+w 30 76 00 
+#			 (Bit 7-0)
+w 30 77 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 178
+w 30 78 10 
+#			 (Bit 23-16)
+w 30 79 01 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 179
+w 30 7c 18 
+#			 (Bit 23-16)
+w 30 7d 00 
+#			 (Bit 15-8)
+w 30 7e e0 
+#			 (Bit 7-0)
+w 30 7f 03 
+#			--------------------------------------------------------------- page 7 is selected
+w 30 00 07 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 180
+w 30 08 18 
+#			 (Bit 23-16)
+w 30 09 03 
+#			 (Bit 15-8)
+w 30 0a e0 
+#			 (Bit 7-0)
+w 30 0b 12 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 181
+w 30 0c 6c 
+#			 (Bit 23-16)
+w 30 0d 03 
+#			 (Bit 15-8)
+w 30 0e c0 
+#			 (Bit 7-0)
+w 30 0f 11 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 182
+w 30 10 6c 
+#			 (Bit 23-16)
+w 30 11 04 
+#			 (Bit 15-8)
+w 30 12 00 
+#			 (Bit 7-0)
+w 30 13 14 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 183
+w 30 14 10 
+#			 (Bit 23-16)
+w 30 15 00 
+#			 (Bit 15-8)
+w 30 16 20 
+#			 (Bit 7-0)
+w 30 17 10 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 184
+w 30 18 1c 
+#			 (Bit 23-16)
+w 30 19 03 
+#			 (Bit 15-8)
+w 30 1a a0 
+#			 (Bit 7-0)
+w 30 1b 10 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 185
+w 30 1c 1c 
+#			 (Bit 23-16)
+w 30 1d 04 
+#			 (Bit 15-8)
+w 30 1e 20 
+#			 (Bit 7-0)
+w 30 1f 15 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 186
+w 30 20 00 
+#			 (Bit 23-16)
+w 30 21 00 
+#			 (Bit 15-8)
+w 30 22 00 
+#			 (Bit 7-0)
+w 30 23 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 187
+w 30 24 00 
+#			 (Bit 23-16)
+w 30 25 00 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 188
+w 30 28 00 
+#			 (Bit 23-16)
+w 30 29 00 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 189
+w 30 2c 10 
+#			 (Bit 23-16)
+w 30 2d 00 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 13 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 190
+w 30 30 18 
+#			 (Bit 23-16)
+w 30 31 00 
+#			 (Bit 15-8)
+w 30 32 e0 
+#			 (Bit 7-0)
+w 30 33 13 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 191
+w 30 34 18 
+#			 (Bit 23-16)
+w 30 35 00 
+#			 (Bit 15-8)
+w 30 36 e0 
+#			 (Bit 7-0)
+w 30 37 13 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 192
+w 30 38 18 
+#			 (Bit 23-16)
+w 30 39 00 
+#			 (Bit 15-8)
+w 30 3a 60 
+#			 (Bit 7-0)
+w 30 3b 19 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 193
+w 30 3c 1c 
+#			 (Bit 23-16)
+w 30 3d 00 
+#			 (Bit 15-8)
+w 30 3e 80 
+#			 (Bit 7-0)
+w 30 3f 1b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 194
+w 30 40 10 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 20 
+#			 (Bit 7-0)
+w 30 43 18 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 195
+w 30 44 10 
+#			 (Bit 23-16)
+w 30 45 00 
+#			 (Bit 15-8)
+w 30 46 20 
+#			 (Bit 7-0)
+w 30 47 56 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 196
+w 30 48 1c 
+#			 (Bit 23-16)
+w 30 49 00 
+#			 (Bit 15-8)
+w 30 4a 40 
+#			 (Bit 7-0)
+w 30 4b 18 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 197
+w 30 4c 18 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 60 
+#			 (Bit 7-0)
+w 30 4f 57 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 198
+w 30 50 1c 
+#			 (Bit 23-16)
+w 30 51 00 
+#			 (Bit 15-8)
+w 30 52 80 
+#			 (Bit 7-0)
+w 30 53 5b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 199
+w 30 54 1c 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 40 
+#			 (Bit 7-0)
+w 30 57 56 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 200
+w 30 58 10 
+#			 (Bit 23-16)
+w 30 59 30 
+#			 (Bit 15-8)
+w 30 5a 00 
+#			 (Bit 7-0)
+w 30 5b 1a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 201
+w 30 5c 00 
+#			 (Bit 23-16)
+w 30 5d 00 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 202
+w 30 60 00 
+#			 (Bit 23-16)
+w 30 61 00 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 203
+w 30 64 10 
+#			 (Bit 23-16)
+w 30 65 30 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 5a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 204
+w 30 68 18 
+#			 (Bit 23-16)
+w 30 69 05 
+#			 (Bit 15-8)
+w 30 6a e0 
+#			 (Bit 7-0)
+w 30 6b 3f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 205
+w 30 6c 1c 
+#			 (Bit 23-16)
+w 30 6d 06 
+#			 (Bit 15-8)
+w 30 6e 00 
+#			 (Bit 7-0)
+w 30 6f 1c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 206
+w 30 70 1c 
+#			 (Bit 23-16)
+w 30 71 05 
+#			 (Bit 15-8)
+w 30 72 e0 
+#			 (Bit 7-0)
+w 30 73 1a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 207
+w 30 74 1c 
+#			 (Bit 23-16)
+w 30 75 06 
+#			 (Bit 15-8)
+w 30 76 00 
+#			 (Bit 7-0)
+w 30 77 3d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 208
+w 30 78 1c 
+#			 (Bit 23-16)
+w 30 79 06 
+#			 (Bit 15-8)
+w 30 7a 20 
+#			 (Bit 7-0)
+w 30 7b 1e 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 209
+w 30 7c 1c 
+#			 (Bit 23-16)
+w 30 7d 06 
+#			 (Bit 15-8)
+w 30 7e 20 
+#			 (Bit 7-0)
+w 30 7f 3b 
+#			--------------------------------------------------------------- page 8 is selected
+w 30 00 08 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 210
+w 30 08 1c 
+#			 (Bit 23-16)
+w 30 09 06 
+#			 (Bit 15-8)
+w 30 0a 40 
+#			 (Bit 7-0)
+w 30 0b 20 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 211
+w 30 0c 1c 
+#			 (Bit 23-16)
+w 30 0d 06 
+#			 (Bit 15-8)
+w 30 0e 40 
+#			 (Bit 7-0)
+w 30 0f 39 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 212
+w 30 10 1c 
+#			 (Bit 23-16)
+w 30 11 06 
+#			 (Bit 15-8)
+w 30 12 60 
+#			 (Bit 7-0)
+w 30 13 26 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 213
+w 30 14 1c 
+#			 (Bit 23-16)
+w 30 15 06 
+#			 (Bit 15-8)
+w 30 16 60 
+#			 (Bit 7-0)
+w 30 17 33 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 214
+w 30 18 1c 
+#			 (Bit 23-16)
+w 30 19 06 
+#			 (Bit 15-8)
+w 30 1a 80 
+#			 (Bit 7-0)
+w 30 1b 22 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 215
+w 30 1c 1c 
+#			 (Bit 23-16)
+w 30 1d 06 
+#			 (Bit 15-8)
+w 30 1e 80 
+#			 (Bit 7-0)
+w 30 1f 37 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 216
+w 30 20 1c 
+#			 (Bit 23-16)
+w 30 21 06 
+#			 (Bit 15-8)
+w 30 22 a0 
+#			 (Bit 7-0)
+w 30 23 24 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 217
+w 30 24 1c 
+#			 (Bit 23-16)
+w 30 25 06 
+#			 (Bit 15-8)
+w 30 26 a0 
+#			 (Bit 7-0)
+w 30 27 35 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 218
+w 30 28 1c 
+#			 (Bit 23-16)
+w 30 29 06 
+#			 (Bit 15-8)
+w 30 2a c0 
+#			 (Bit 7-0)
+w 30 2b 28 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 219
+w 30 2c 1c 
+#			 (Bit 23-16)
+w 30 2d 06 
+#			 (Bit 15-8)
+w 30 2e c0 
+#			 (Bit 7-0)
+w 30 2f 31 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 220
+w 30 30 1c 
+#			 (Bit 23-16)
+w 30 31 06 
+#			 (Bit 15-8)
+w 30 32 e0 
+#			 (Bit 7-0)
+w 30 33 2a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 221
+w 30 34 1c 
+#			 (Bit 23-16)
+w 30 35 06 
+#			 (Bit 15-8)
+w 30 36 e0 
+#			 (Bit 7-0)
+w 30 37 2f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 222
+w 30 38 1c 
+#			 (Bit 23-16)
+w 30 39 07 
+#			 (Bit 15-8)
+w 30 3a 00 
+#			 (Bit 7-0)
+w 30 3b 1b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 223
+w 30 3c 1c 
+#			 (Bit 23-16)
+w 30 3d 07 
+#			 (Bit 15-8)
+w 30 3e 00 
+#			 (Bit 7-0)
+w 30 3f 3e 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 224
+w 30 40 1c 
+#			 (Bit 23-16)
+w 30 41 07 
+#			 (Bit 15-8)
+w 30 42 20 
+#			 (Bit 7-0)
+w 30 43 23 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 225
+w 30 44 1c 
+#			 (Bit 23-16)
+w 30 45 07 
+#			 (Bit 15-8)
+w 30 46 20 
+#			 (Bit 7-0)
+w 30 47 36 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 226
+w 30 48 1c 
+#			 (Bit 23-16)
+w 30 49 07 
+#			 (Bit 15-8)
+w 30 4a 40 
+#			 (Bit 7-0)
+w 30 4b 1f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 227
+w 30 4c 1c 
+#			 (Bit 23-16)
+w 30 4d 07 
+#			 (Bit 15-8)
+w 30 4e 40 
+#			 (Bit 7-0)
+w 30 4f 3a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 228
+w 30 50 1c 
+#			 (Bit 23-16)
+w 30 51 07 
+#			 (Bit 15-8)
+w 30 52 60 
+#			 (Bit 7-0)
+w 30 53 27 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 229
+w 30 54 1c 
+#			 (Bit 23-16)
+w 30 55 07 
+#			 (Bit 15-8)
+w 30 56 60 
+#			 (Bit 7-0)
+w 30 57 32 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 230
+w 30 58 1c 
+#			 (Bit 23-16)
+w 30 59 07 
+#			 (Bit 15-8)
+w 30 5a 80 
+#			 (Bit 7-0)
+w 30 5b 21 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 231
+w 30 5c 1c 
+#			 (Bit 23-16)
+w 30 5d 07 
+#			 (Bit 15-8)
+w 30 5e 80 
+#			 (Bit 7-0)
+w 30 5f 38 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 232
+w 30 60 1c 
+#			 (Bit 23-16)
+w 30 61 07 
+#			 (Bit 15-8)
+w 30 62 a0 
+#			 (Bit 7-0)
+w 30 63 1d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 233
+w 30 64 1c 
+#			 (Bit 23-16)
+w 30 65 07 
+#			 (Bit 15-8)
+w 30 66 a0 
+#			 (Bit 7-0)
+w 30 67 3c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 234
+w 30 68 1c 
+#			 (Bit 23-16)
+w 30 69 07 
+#			 (Bit 15-8)
+w 30 6a c0 
+#			 (Bit 7-0)
+w 30 6b 25 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 235
+w 30 6c 1c 
+#			 (Bit 23-16)
+w 30 6d 07 
+#			 (Bit 15-8)
+w 30 6e c0 
+#			 (Bit 7-0)
+w 30 6f 34 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 236
+w 30 70 1c 
+#			 (Bit 23-16)
+w 30 71 07 
+#			 (Bit 15-8)
+w 30 72 e0 
+#			 (Bit 7-0)
+w 30 73 29 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 237
+w 30 74 1c 
+#			 (Bit 23-16)
+w 30 75 07 
+#			 (Bit 15-8)
+w 30 76 e0 
+#			 (Bit 7-0)
+w 30 77 30 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 238
+w 30 78 1c 
+#			 (Bit 23-16)
+w 30 79 08 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 2b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 239
+w 30 7c 1c 
+#			 (Bit 23-16)
+w 30 7d 08 
+#			 (Bit 15-8)
+w 30 7e 00 
+#			 (Bit 7-0)
+w 30 7f 2e 
+#			--------------------------------------------------------------- page 9 is selected
+w 30 00 09 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 240
+w 30 08 1c 
+#			 (Bit 23-16)
+w 30 09 08 
+#			 (Bit 15-8)
+w 30 0a 20 
+#			 (Bit 7-0)
+w 30 0b 2c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 241
+w 30 0c 1c 
+#			 (Bit 23-16)
+w 30 0d 08 
+#			 (Bit 15-8)
+w 30 0e 20 
+#			 (Bit 7-0)
+w 30 0f 2d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 242
+w 30 10 00 
+#			 (Bit 23-16)
+w 30 11 00 
+#			 (Bit 15-8)
+w 30 12 00 
+#			 (Bit 7-0)
+w 30 13 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 243
+w 30 14 00 
+#			 (Bit 23-16)
+w 30 15 00 
+#			 (Bit 15-8)
+w 30 16 00 
+#			 (Bit 7-0)
+w 30 17 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 244
+w 30 18 00 
+#			 (Bit 23-16)
+w 30 19 00 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 245
+w 30 1c 10 
+#			 (Bit 23-16)
+w 30 1d 00 
+#			 (Bit 15-8)
+w 30 1e 00 
+#			 (Bit 7-0)
+w 30 1f 44 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 246
+w 30 20 18 
+#			 (Bit 23-16)
+w 30 21 05 
+#			 (Bit 15-8)
+w 30 22 e0 
+#			 (Bit 7-0)
+w 30 23 7f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 247
+w 30 24 1c 
+#			 (Bit 23-16)
+w 30 25 06 
+#			 (Bit 15-8)
+w 30 26 00 
+#			 (Bit 7-0)
+w 30 27 5c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 248
+w 30 28 1c 
+#			 (Bit 23-16)
+w 30 29 05 
+#			 (Bit 15-8)
+w 30 2a e0 
+#			 (Bit 7-0)
+w 30 2b 5a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 249
+w 30 2c 1c 
+#			 (Bit 23-16)
+w 30 2d 06 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 7d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 250
+w 30 30 1c 
+#			 (Bit 23-16)
+w 30 31 06 
+#			 (Bit 15-8)
+w 30 32 20 
+#			 (Bit 7-0)
+w 30 33 5e 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 251
+w 30 34 1c 
+#			 (Bit 23-16)
+w 30 35 06 
+#			 (Bit 15-8)
+w 30 36 20 
+#			 (Bit 7-0)
+w 30 37 7b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 252
+w 30 38 1c 
+#			 (Bit 23-16)
+w 30 39 06 
+#			 (Bit 15-8)
+w 30 3a 40 
+#			 (Bit 7-0)
+w 30 3b 60 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 253
+w 30 3c 1c 
+#			 (Bit 23-16)
+w 30 3d 06 
+#			 (Bit 15-8)
+w 30 3e 40 
+#			 (Bit 7-0)
+w 30 3f 79 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 254
+w 30 40 1c 
+#			 (Bit 23-16)
+w 30 41 06 
+#			 (Bit 15-8)
+w 30 42 60 
+#			 (Bit 7-0)
+w 30 43 66 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 255
+w 30 44 1c 
+#			 (Bit 23-16)
+w 30 45 06 
+#			 (Bit 15-8)
+w 30 46 60 
+#			 (Bit 7-0)
+w 30 47 73 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 256
+w 30 48 1c 
+#			 (Bit 23-16)
+w 30 49 06 
+#			 (Bit 15-8)
+w 30 4a 80 
+#			 (Bit 7-0)
+w 30 4b 62 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 257
+w 30 4c 1c 
+#			 (Bit 23-16)
+w 30 4d 06 
+#			 (Bit 15-8)
+w 30 4e 80 
+#			 (Bit 7-0)
+w 30 4f 77 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 258
+w 30 50 1c 
+#			 (Bit 23-16)
+w 30 51 06 
+#			 (Bit 15-8)
+w 30 52 a0 
+#			 (Bit 7-0)
+w 30 53 64 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 259
+w 30 54 1c 
+#			 (Bit 23-16)
+w 30 55 06 
+#			 (Bit 15-8)
+w 30 56 a0 
+#			 (Bit 7-0)
+w 30 57 75 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 260
+w 30 58 1c 
+#			 (Bit 23-16)
+w 30 59 06 
+#			 (Bit 15-8)
+w 30 5a c0 
+#			 (Bit 7-0)
+w 30 5b 68 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 261
+w 30 5c 1c 
+#			 (Bit 23-16)
+w 30 5d 06 
+#			 (Bit 15-8)
+w 30 5e c0 
+#			 (Bit 7-0)
+w 30 5f 71 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 262
+w 30 60 1c 
+#			 (Bit 23-16)
+w 30 61 06 
+#			 (Bit 15-8)
+w 30 62 e0 
+#			 (Bit 7-0)
+w 30 63 6a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 263
+w 30 64 1c 
+#			 (Bit 23-16)
+w 30 65 06 
+#			 (Bit 15-8)
+w 30 66 e0 
+#			 (Bit 7-0)
+w 30 67 6f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 264
+w 30 68 1c 
+#			 (Bit 23-16)
+w 30 69 07 
+#			 (Bit 15-8)
+w 30 6a 00 
+#			 (Bit 7-0)
+w 30 6b 5b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 265
+w 30 6c 1c 
+#			 (Bit 23-16)
+w 30 6d 07 
+#			 (Bit 15-8)
+w 30 6e 00 
+#			 (Bit 7-0)
+w 30 6f 7e 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 266
+w 30 70 1c 
+#			 (Bit 23-16)
+w 30 71 07 
+#			 (Bit 15-8)
+w 30 72 20 
+#			 (Bit 7-0)
+w 30 73 63 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 267
+w 30 74 1c 
+#			 (Bit 23-16)
+w 30 75 07 
+#			 (Bit 15-8)
+w 30 76 20 
+#			 (Bit 7-0)
+w 30 77 76 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 268
+w 30 78 1c 
+#			 (Bit 23-16)
+w 30 79 07 
+#			 (Bit 15-8)
+w 30 7a 40 
+#			 (Bit 7-0)
+w 30 7b 5f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 269
+w 30 7c 1c 
+#			 (Bit 23-16)
+w 30 7d 07 
+#			 (Bit 15-8)
+w 30 7e 40 
+#			 (Bit 7-0)
+w 30 7f 7a 
+#			--------------------------------------------------------------- page 10 is selected
+w 30 00 0a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 270
+w 30 08 1c 
+#			 (Bit 23-16)
+w 30 09 07 
+#			 (Bit 15-8)
+w 30 0a 60 
+#			 (Bit 7-0)
+w 30 0b 67 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 271
+w 30 0c 1c 
+#			 (Bit 23-16)
+w 30 0d 07 
+#			 (Bit 15-8)
+w 30 0e 60 
+#			 (Bit 7-0)
+w 30 0f 72 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 272
+w 30 10 1c 
+#			 (Bit 23-16)
+w 30 11 07 
+#			 (Bit 15-8)
+w 30 12 80 
+#			 (Bit 7-0)
+w 30 13 61 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 273
+w 30 14 1c 
+#			 (Bit 23-16)
+w 30 15 07 
+#			 (Bit 15-8)
+w 30 16 80 
+#			 (Bit 7-0)
+w 30 17 78 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 274
+w 30 18 1c 
+#			 (Bit 23-16)
+w 30 19 07 
+#			 (Bit 15-8)
+w 30 1a a0 
+#			 (Bit 7-0)
+w 30 1b 5d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 275
+w 30 1c 1c 
+#			 (Bit 23-16)
+w 30 1d 07 
+#			 (Bit 15-8)
+w 30 1e a0 
+#			 (Bit 7-0)
+w 30 1f 7c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 276
+w 30 20 1c 
+#			 (Bit 23-16)
+w 30 21 07 
+#			 (Bit 15-8)
+w 30 22 c0 
+#			 (Bit 7-0)
+w 30 23 65 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 277
+w 30 24 1c 
+#			 (Bit 23-16)
+w 30 25 07 
+#			 (Bit 15-8)
+w 30 26 c0 
+#			 (Bit 7-0)
+w 30 27 74 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 278
+w 30 28 1c 
+#			 (Bit 23-16)
+w 30 29 07 
+#			 (Bit 15-8)
+w 30 2a e0 
+#			 (Bit 7-0)
+w 30 2b 69 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 279
+w 30 2c 1c 
+#			 (Bit 23-16)
+w 30 2d 07 
+#			 (Bit 15-8)
+w 30 2e e0 
+#			 (Bit 7-0)
+w 30 2f 70 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 280
+w 30 30 1c 
+#			 (Bit 23-16)
+w 30 31 08 
+#			 (Bit 15-8)
+w 30 32 00 
+#			 (Bit 7-0)
+w 30 33 6b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 281
+w 30 34 1c 
+#			 (Bit 23-16)
+w 30 35 08 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 6e 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 282
+w 30 38 1c 
+#			 (Bit 23-16)
+w 30 39 08 
+#			 (Bit 15-8)
+w 30 3a 20 
+#			 (Bit 7-0)
+w 30 3b 6c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 283
+w 30 3c 1c 
+#			 (Bit 23-16)
+w 30 3d 08 
+#			 (Bit 15-8)
+w 30 3e 20 
+#			 (Bit 7-0)
+w 30 3f 6d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 284
+w 30 40 00 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 285
+w 30 44 00 
+#			 (Bit 23-16)
+w 30 45 00 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 286
+w 30 48 00 
+#			 (Bit 23-16)
+w 30 49 00 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 287
+w 30 4c 10 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 84 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 288
+w 30 50 18 
+#			 (Bit 23-16)
+w 30 51 08 
+#			 (Bit 15-8)
+w 30 52 60 
+#			 (Bit 7-0)
+w 30 53 83 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 289
+w 30 54 1c 
+#			 (Bit 23-16)
+w 30 55 08 
+#			 (Bit 15-8)
+w 30 56 80 
+#			 (Bit 7-0)
+w 30 57 85 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 290
+w 30 58 1c 
+#			 (Bit 23-16)
+w 30 59 08 
+#			 (Bit 15-8)
+w 30 5a 80 
+#			 (Bit 7-0)
+w 30 5b 82 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 291
+w 30 5c 1c 
+#			 (Bit 23-16)
+w 30 5d 08 
+#			 (Bit 15-8)
+w 30 5e 60 
+#			 (Bit 7-0)
+w 30 5f 84 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 292
+w 30 60 1c 
+#			 (Bit 23-16)
+w 30 61 08 
+#			 (Bit 15-8)
+w 30 62 a0 
+#			 (Bit 7-0)
+w 30 63 81 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 293
+w 30 64 1c 
+#			 (Bit 23-16)
+w 30 65 08 
+#			 (Bit 15-8)
+w 30 66 a0 
+#			 (Bit 7-0)
+w 30 67 86 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 294
+w 30 68 1c 
+#			 (Bit 23-16)
+w 30 69 08 
+#			 (Bit 15-8)
+w 30 6a c0 
+#			 (Bit 7-0)
+w 30 6b 80 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 295
+w 30 6c 1c 
+#			 (Bit 23-16)
+w 30 6d 08 
+#			 (Bit 15-8)
+w 30 6e c0 
+#			 (Bit 7-0)
+w 30 6f 87 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 296
+w 30 70 18 
+#			 (Bit 23-16)
+w 30 71 09 
+#			 (Bit 15-8)
+w 30 72 20 
+#			 (Bit 7-0)
+w 30 73 88 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 297
+w 30 74 1c 
+#			 (Bit 23-16)
+w 30 75 09 
+#			 (Bit 15-8)
+w 30 76 20 
+#			 (Bit 7-0)
+w 30 77 8a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 298
+w 30 78 1c 
+#			 (Bit 23-16)
+w 30 79 09 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 8d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 299
+w 30 7c 4c 
+#			 (Bit 23-16)
+w 30 7d 09 
+#			 (Bit 15-8)
+w 30 7e 00 
+#			 (Bit 7-0)
+w 30 7f 8b 
+#			--------------------------------------------------------------- page 11 is selected
+w 30 00 0b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 300
+w 30 08 00 
+#			 (Bit 23-16)
+w 30 09 00 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 301
+w 30 0c 5c 
+#			 (Bit 23-16)
+w 30 0d 90 
+#			 (Bit 15-8)
+w 30 0e 60 
+#			 (Bit 7-0)
+w 30 0f 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 302
+w 30 10 18 
+#			 (Bit 23-16)
+w 30 11 08 
+#			 (Bit 15-8)
+w 30 12 60 
+#			 (Bit 7-0)
+w 30 13 43 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 303
+w 30 14 1c 
+#			 (Bit 23-16)
+w 30 15 08 
+#			 (Bit 15-8)
+w 30 16 60 
+#			 (Bit 7-0)
+w 30 17 44 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 304
+w 30 18 1c 
+#			 (Bit 23-16)
+w 30 19 08 
+#			 (Bit 15-8)
+w 30 1a 80 
+#			 (Bit 7-0)
+w 30 1b 45 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 305
+w 30 1c 10 
+#			 (Bit 23-16)
+w 30 1d 00 
+#			 (Bit 15-8)
+w 30 1e 40 
+#			 (Bit 7-0)
+w 30 1f 94 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 306
+w 30 20 1c 
+#			 (Bit 23-16)
+w 30 21 08 
+#			 (Bit 15-8)
+w 30 22 80 
+#			 (Bit 7-0)
+w 30 23 42 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 307
+w 30 24 1c 
+#			 (Bit 23-16)
+w 30 25 08 
+#			 (Bit 15-8)
+w 30 26 a0 
+#			 (Bit 7-0)
+w 30 27 41 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 308
+w 30 28 1c 
+#			 (Bit 23-16)
+w 30 29 08 
+#			 (Bit 15-8)
+w 30 2a a0 
+#			 (Bit 7-0)
+w 30 2b 46 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 309
+w 30 2c 1c 
+#			 (Bit 23-16)
+w 30 2d 08 
+#			 (Bit 15-8)
+w 30 2e c0 
+#			 (Bit 7-0)
+w 30 2f 40 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 310
+w 30 30 1c 
+#			 (Bit 23-16)
+w 30 31 08 
+#			 (Bit 15-8)
+w 30 32 c0 
+#			 (Bit 7-0)
+w 30 33 47 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 311
+w 30 34 18 
+#			 (Bit 23-16)
+w 30 35 09 
+#			 (Bit 15-8)
+w 30 36 20 
+#			 (Bit 7-0)
+w 30 37 48 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 312
+w 30 38 1c 
+#			 (Bit 23-16)
+w 30 39 09 
+#			 (Bit 15-8)
+w 30 3a 20 
+#			 (Bit 7-0)
+w 30 3b 4a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 313
+w 30 3c 1c 
+#			 (Bit 23-16)
+w 30 3d 09 
+#			 (Bit 15-8)
+w 30 3e 00 
+#			 (Bit 7-0)
+w 30 3f 4d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 314
+w 30 40 4c 
+#			 (Bit 23-16)
+w 30 41 09 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 4b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 315
+w 30 44 00 
+#			 (Bit 23-16)
+w 30 45 00 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 316
+w 30 48 5c 
+#			 (Bit 23-16)
+w 30 49 90 
+#			 (Bit 15-8)
+w 30 4a 40 
+#			 (Bit 7-0)
+w 30 4b 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 317
+w 30 4c 00 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 318
+w 30 50 00 
+#			 (Bit 23-16)
+w 30 51 00 
+#			 (Bit 15-8)
+w 30 52 00 
+#			 (Bit 7-0)
+w 30 53 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 319
+w 30 54 00 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 320
+w 30 58 10 
+#			 (Bit 23-16)
+w 30 59 00 
+#			 (Bit 15-8)
+w 30 5a 40 
+#			 (Bit 7-0)
+w 30 5b 54 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 321
+w 30 5c 18 
+#			 (Bit 23-16)
+w 30 5d 09 
+#			 (Bit 15-8)
+w 30 5e 40 
+#			 (Bit 7-0)
+w 30 5f 8b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 322
+w 30 60 1c 
+#			 (Bit 23-16)
+w 30 61 09 
+#			 (Bit 15-8)
+w 30 62 40 
+#			 (Bit 7-0)
+w 30 63 8a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 323
+w 30 64 1c 
+#			 (Bit 23-16)
+w 30 65 09 
+#			 (Bit 15-8)
+w 30 66 60 
+#			 (Bit 7-0)
+w 30 67 88 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 324
+w 30 68 00 
+#			 (Bit 23-16)
+w 30 69 00 
+#			 (Bit 15-8)
+w 30 6a 00 
+#			 (Bit 7-0)
+w 30 6b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 325
+w 30 6c 5c 
+#			 (Bit 23-16)
+w 30 6d 90 
+#			 (Bit 15-8)
+w 30 6e 60 
+#			 (Bit 7-0)
+w 30 6f 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 326
+w 30 70 18 
+#			 (Bit 23-16)
+w 30 71 09 
+#			 (Bit 15-8)
+w 30 72 40 
+#			 (Bit 7-0)
+w 30 73 4b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 327
+w 30 74 1c 
+#			 (Bit 23-16)
+w 30 75 09 
+#			 (Bit 15-8)
+w 30 76 40 
+#			 (Bit 7-0)
+w 30 77 4a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 328
+w 30 78 1c 
+#			 (Bit 23-16)
+w 30 79 09 
+#			 (Bit 15-8)
+w 30 7a 60 
+#			 (Bit 7-0)
+w 30 7b 48 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 329
+w 30 7c 10 
+#			 (Bit 23-16)
+w 30 7d 00 
+#			 (Bit 15-8)
+w 30 7e 40 
+#			 (Bit 7-0)
+w 30 7f 93 
+#			--------------------------------------------------------------- page 12 is selected
+w 30 00 0c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 330
+w 30 08 18 
+#			 (Bit 23-16)
+w 30 09 08 
+#			 (Bit 15-8)
+w 30 0a e0 
+#			 (Bit 7-0)
+w 30 0b 81 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 331
+w 30 0c 5c 
+#			 (Bit 23-16)
+w 30 0d 90 
+#			 (Bit 15-8)
+w 30 0e 40 
+#			 (Bit 7-0)
+w 30 0f 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 332
+w 30 10 18 
+#			 (Bit 23-16)
+w 30 11 09 
+#			 (Bit 15-8)
+w 30 12 00 
+#			 (Bit 7-0)
+w 30 13 8a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 333
+w 30 14 1c 
+#			 (Bit 23-16)
+w 30 15 09 
+#			 (Bit 15-8)
+w 30 16 20 
+#			 (Bit 7-0)
+w 30 17 8b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 334
+w 30 18 4c 
+#			 (Bit 23-16)
+w 30 19 09 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 8c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 335
+w 30 1c 10 
+#			 (Bit 23-16)
+w 30 1d 00 
+#			 (Bit 15-8)
+w 30 1e 40 
+#			 (Bit 7-0)
+w 30 1f 53 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 336
+w 30 20 1c 
+#			 (Bit 23-16)
+w 30 21 09 
+#			 (Bit 15-8)
+w 30 22 20 
+#			 (Bit 7-0)
+w 30 23 88 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 337
+w 30 24 18 
+#			 (Bit 23-16)
+w 30 25 08 
+#			 (Bit 15-8)
+w 30 26 e0 
+#			 (Bit 7-0)
+w 30 27 41 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 338
+w 30 28 5c 
+#			 (Bit 23-16)
+w 30 29 90 
+#			 (Bit 15-8)
+w 30 2a 60 
+#			 (Bit 7-0)
+w 30 2b 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 339
+w 30 2c 18 
+#			 (Bit 23-16)
+w 30 2d 09 
+#			 (Bit 15-8)
+w 30 2e 00 
+#			 (Bit 7-0)
+w 30 2f 4a 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 340
+w 30 30 1c 
+#			 (Bit 23-16)
+w 30 31 09 
+#			 (Bit 15-8)
+w 30 32 20 
+#			 (Bit 7-0)
+w 30 33 4b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 341
+w 30 34 4c 
+#			 (Bit 23-16)
+w 30 35 09 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 4c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 342
+w 30 38 10 
+#			 (Bit 23-16)
+w 30 39 00 
+#			 (Bit 15-8)
+w 30 3a 40 
+#			 (Bit 7-0)
+w 30 3b 92 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 343
+w 30 3c 1c 
+#			 (Bit 23-16)
+w 30 3d 09 
+#			 (Bit 15-8)
+w 30 3e 20 
+#			 (Bit 7-0)
+w 30 3f 48 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 344
+w 30 40 00 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 00 
+#			 (Bit 7-0)
+w 30 43 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 345
+w 30 44 5c 
+#			 (Bit 23-16)
+w 30 45 90 
+#			 (Bit 15-8)
+w 30 46 40 
+#			 (Bit 7-0)
+w 30 47 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 346
+w 30 48 18 
+#			 (Bit 23-16)
+w 30 49 09 
+#			 (Bit 15-8)
+w 30 4a 40 
+#			 (Bit 7-0)
+w 30 4b 8c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 347
+w 30 4c 1c 
+#			 (Bit 23-16)
+w 30 4d 09 
+#			 (Bit 15-8)
+w 30 4e 40 
+#			 (Bit 7-0)
+w 30 4f 88 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 348
+w 30 50 1c 
+#			 (Bit 23-16)
+w 30 51 09 
+#			 (Bit 15-8)
+w 30 52 60 
+#			 (Bit 7-0)
+w 30 53 8b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 349
+w 30 54 10 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 40 
+#			 (Bit 7-0)
+w 30 57 52 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 350
+w 30 58 5c 
+#			 (Bit 23-16)
+w 30 59 90 
+#			 (Bit 15-8)
+w 30 5a 60 
+#			 (Bit 7-0)
+w 30 5b 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 351
+w 30 5c 00 
+#			 (Bit 23-16)
+w 30 5d 00 
+#			 (Bit 15-8)
+w 30 5e 00 
+#			 (Bit 7-0)
+w 30 5f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 352
+w 30 60 00 
+#			 (Bit 23-16)
+w 30 61 00 
+#			 (Bit 15-8)
+w 30 62 00 
+#			 (Bit 7-0)
+w 30 63 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 353
+w 30 64 00 
+#			 (Bit 23-16)
+w 30 65 00 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 354
+w 30 68 10 
+#			 (Bit 23-16)
+w 30 69 00 
+#			 (Bit 15-8)
+w 30 6a 40 
+#			 (Bit 7-0)
+w 30 6b 91 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 355
+w 30 6c 18 
+#			 (Bit 23-16)
+w 30 6d 09 
+#			 (Bit 15-8)
+w 30 6e 40 
+#			 (Bit 7-0)
+w 30 6f 4c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 356
+w 30 70 1c 
+#			 (Bit 23-16)
+w 30 71 09 
+#			 (Bit 15-8)
+w 30 72 40 
+#			 (Bit 7-0)
+w 30 73 48 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 357
+w 30 74 1c 
+#			 (Bit 23-16)
+w 30 75 09 
+#			 (Bit 15-8)
+w 30 76 60 
+#			 (Bit 7-0)
+w 30 77 4b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 358
+w 30 78 18 
+#			 (Bit 23-16)
+w 30 79 08 
+#			 (Bit 15-8)
+w 30 7a 40 
+#			 (Bit 7-0)
+w 30 7b 6c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 359
+w 30 7c 5c 
+#			 (Bit 23-16)
+w 30 7d 90 
+#			 (Bit 15-8)
+w 30 7e 40 
+#			 (Bit 7-0)
+w 30 7f 03 
+#			--------------------------------------------------------------- page 13 is selected
+w 30 00 0d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 360
+w 30 08 18 
+#			 (Bit 23-16)
+w 30 09 08 
+#			 (Bit 15-8)
+w 30 0a 60 
+#			 (Bit 7-0)
+w 30 0b 87 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 361
+w 30 0c 1c 
+#			 (Bit 23-16)
+w 30 0d 08 
+#			 (Bit 15-8)
+w 30 0e 80 
+#			 (Bit 7-0)
+w 30 0f 80 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 362
+w 30 10 4c 
+#			 (Bit 23-16)
+w 30 11 08 
+#			 (Bit 15-8)
+w 30 12 60 
+#			 (Bit 7-0)
+w 30 13 7f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 363
+w 30 14 10 
+#			 (Bit 23-16)
+w 30 15 00 
+#			 (Bit 15-8)
+w 30 16 40 
+#			 (Bit 7-0)
+w 30 17 51 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 364
+w 30 18 1c 
+#			 (Bit 23-16)
+w 30 19 08 
+#			 (Bit 15-8)
+w 30 1a 80 
+#			 (Bit 7-0)
+w 30 1b 86 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 365
+w 30 1c 1c 
+#			 (Bit 23-16)
+w 30 1d 08 
+#			 (Bit 15-8)
+w 30 1e a0 
+#			 (Bit 7-0)
+w 30 1f 85 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 366
+w 30 20 1c 
+#			 (Bit 23-16)
+w 30 21 08 
+#			 (Bit 15-8)
+w 30 22 a0 
+#			 (Bit 7-0)
+w 30 23 81 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 367
+w 30 24 1c 
+#			 (Bit 23-16)
+w 30 25 08 
+#			 (Bit 15-8)
+w 30 26 c0 
+#			 (Bit 7-0)
+w 30 27 84 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 368
+w 30 28 1c 
+#			 (Bit 23-16)
+w 30 29 08 
+#			 (Bit 15-8)
+w 30 2a c0 
+#			 (Bit 7-0)
+w 30 2b 82 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 369
+w 30 2c 18 
+#			 (Bit 23-16)
+w 30 2d 09 
+#			 (Bit 15-8)
+w 30 2e 20 
+#			 (Bit 7-0)
+w 30 2f 8c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 370
+w 30 30 1c 
+#			 (Bit 23-16)
+w 30 31 09 
+#			 (Bit 15-8)
+w 30 32 20 
+#			 (Bit 7-0)
+w 30 33 8b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 371
+w 30 34 1c 
+#			 (Bit 23-16)
+w 30 35 09 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 88 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 372
+w 30 38 4c 
+#			 (Bit 23-16)
+w 30 39 09 
+#			 (Bit 15-8)
+w 30 3a 00 
+#			 (Bit 7-0)
+w 30 3b 89 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 373
+w 30 3c 18 
+#			 (Bit 23-16)
+w 30 3d 08 
+#			 (Bit 15-8)
+w 30 3e 40 
+#			 (Bit 7-0)
+w 30 3f 2c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 374
+w 30 40 5c 
+#			 (Bit 23-16)
+w 30 41 90 
+#			 (Bit 15-8)
+w 30 42 60 
+#			 (Bit 7-0)
+w 30 43 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 375
+w 30 44 18 
+#			 (Bit 23-16)
+w 30 45 08 
+#			 (Bit 15-8)
+w 30 46 60 
+#			 (Bit 7-0)
+w 30 47 47 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 376
+w 30 48 1c 
+#			 (Bit 23-16)
+w 30 49 08 
+#			 (Bit 15-8)
+w 30 4a 80 
+#			 (Bit 7-0)
+w 30 4b 40 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 377
+w 30 4c 4c 
+#			 (Bit 23-16)
+w 30 4d 08 
+#			 (Bit 15-8)
+w 30 4e 60 
+#			 (Bit 7-0)
+w 30 4f 3f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 378
+w 30 50 10 
+#			 (Bit 23-16)
+w 30 51 00 
+#			 (Bit 15-8)
+w 30 52 40 
+#			 (Bit 7-0)
+w 30 53 90 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 379
+w 30 54 1c 
+#			 (Bit 23-16)
+w 30 55 08 
+#			 (Bit 15-8)
+w 30 56 80 
+#			 (Bit 7-0)
+w 30 57 46 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 380
+w 30 58 1c 
+#			 (Bit 23-16)
+w 30 59 08 
+#			 (Bit 15-8)
+w 30 5a a0 
+#			 (Bit 7-0)
+w 30 5b 45 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 381
+w 30 5c 1c 
+#			 (Bit 23-16)
+w 30 5d 08 
+#			 (Bit 15-8)
+w 30 5e a0 
+#			 (Bit 7-0)
+w 30 5f 41 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 382
+w 30 60 1c 
+#			 (Bit 23-16)
+w 30 61 08 
+#			 (Bit 15-8)
+w 30 62 c0 
+#			 (Bit 7-0)
+w 30 63 44 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 383
+w 30 64 1c 
+#			 (Bit 23-16)
+w 30 65 08 
+#			 (Bit 15-8)
+w 30 66 c0 
+#			 (Bit 7-0)
+w 30 67 42 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 384
+w 30 68 18 
+#			 (Bit 23-16)
+w 30 69 09 
+#			 (Bit 15-8)
+w 30 6a 20 
+#			 (Bit 7-0)
+w 30 6b 4c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 385
+w 30 6c 1c 
+#			 (Bit 23-16)
+w 30 6d 09 
+#			 (Bit 15-8)
+w 30 6e 20 
+#			 (Bit 7-0)
+w 30 6f 4b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 386
+w 30 70 1c 
+#			 (Bit 23-16)
+w 30 71 09 
+#			 (Bit 15-8)
+w 30 72 00 
+#			 (Bit 7-0)
+w 30 73 48 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 387
+w 30 74 4c 
+#			 (Bit 23-16)
+w 30 75 09 
+#			 (Bit 15-8)
+w 30 76 00 
+#			 (Bit 7-0)
+w 30 77 49 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 388
+w 30 78 00 
+#			 (Bit 23-16)
+w 30 79 00 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 389
+w 30 7c 5c 
+#			 (Bit 23-16)
+w 30 7d 90 
+#			 (Bit 15-8)
+w 30 7e 40 
+#			 (Bit 7-0)
+w 30 7f 03 
+#			--------------------------------------------------------------- page 14 is selected
+w 30 00 0e 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 390
+w 30 08 00 
+#			 (Bit 23-16)
+w 30 09 00 
+#			 (Bit 15-8)
+w 30 0a 00 
+#			 (Bit 7-0)
+w 30 0b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 391
+w 30 0c 00 
+#			 (Bit 23-16)
+w 30 0d 00 
+#			 (Bit 15-8)
+w 30 0e 00 
+#			 (Bit 7-0)
+w 30 0f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 392
+w 30 10 00 
+#			 (Bit 23-16)
+w 30 11 00 
+#			 (Bit 15-8)
+w 30 12 00 
+#			 (Bit 7-0)
+w 30 13 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 393
+w 30 14 10 
+#			 (Bit 23-16)
+w 30 15 00 
+#			 (Bit 15-8)
+w 30 16 40 
+#			 (Bit 7-0)
+w 30 17 4f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 394
+w 30 18 18 
+#			 (Bit 23-16)
+w 30 19 09 
+#			 (Bit 15-8)
+w 30 1a 40 
+#			 (Bit 7-0)
+w 30 1b 89 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 395
+w 30 1c 1c 
+#			 (Bit 23-16)
+w 30 1d 09 
+#			 (Bit 15-8)
+w 30 1e 40 
+#			 (Bit 7-0)
+w 30 1f 8b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 396
+w 30 20 1c 
+#			 (Bit 23-16)
+w 30 21 09 
+#			 (Bit 15-8)
+w 30 22 60 
+#			 (Bit 7-0)
+w 30 23 8c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 397
+w 30 24 10 
+#			 (Bit 23-16)
+w 30 25 00 
+#			 (Bit 15-8)
+w 30 26 40 
+#			 (Bit 7-0)
+w 30 27 50 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 398
+w 30 28 00 
+#			 (Bit 23-16)
+w 30 29 00 
+#			 (Bit 15-8)
+w 30 2a 00 
+#			 (Bit 7-0)
+w 30 2b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 399
+w 30 2c 5c 
+#			 (Bit 23-16)
+w 30 2d 90 
+#			 (Bit 15-8)
+w 30 2e 60 
+#			 (Bit 7-0)
+w 30 2f 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 400
+w 30 30 18 
+#			 (Bit 23-16)
+w 30 31 09 
+#			 (Bit 15-8)
+w 30 32 40 
+#			 (Bit 7-0)
+w 30 33 49 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 401
+w 30 34 1c 
+#			 (Bit 23-16)
+w 30 35 09 
+#			 (Bit 15-8)
+w 30 36 40 
+#			 (Bit 7-0)
+w 30 37 4b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 402
+w 30 38 1c 
+#			 (Bit 23-16)
+w 30 39 09 
+#			 (Bit 15-8)
+w 30 3a 60 
+#			 (Bit 7-0)
+w 30 3b 4c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 403
+w 30 3c 10 
+#			 (Bit 23-16)
+w 30 3d 00 
+#			 (Bit 15-8)
+w 30 3e 40 
+#			 (Bit 7-0)
+w 30 3f 8f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 404
+w 30 40 18 
+#			 (Bit 23-16)
+w 30 41 08 
+#			 (Bit 15-8)
+w 30 42 e0 
+#			 (Bit 7-0)
+w 30 43 85 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 405
+w 30 44 5c 
+#			 (Bit 23-16)
+w 30 45 90 
+#			 (Bit 15-8)
+w 30 46 40 
+#			 (Bit 7-0)
+w 30 47 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 406
+w 30 48 18 
+#			 (Bit 23-16)
+w 30 49 09 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 8b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 407
+w 30 4c 1c 
+#			 (Bit 23-16)
+w 30 4d 09 
+#			 (Bit 15-8)
+w 30 4e 20 
+#			 (Bit 7-0)
+w 30 4f 89 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 408
+w 30 50 4c 
+#			 (Bit 23-16)
+w 30 51 09 
+#			 (Bit 15-8)
+w 30 52 00 
+#			 (Bit 7-0)
+w 30 53 87 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 409
+w 30 54 10 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 40 
+#			 (Bit 7-0)
+w 30 57 4f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 410
+w 30 58 1c 
+#			 (Bit 23-16)
+w 30 59 09 
+#			 (Bit 15-8)
+w 30 5a 20 
+#			 (Bit 7-0)
+w 30 5b 8c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 411
+w 30 5c 18 
+#			 (Bit 23-16)
+w 30 5d 08 
+#			 (Bit 15-8)
+w 30 5e e0 
+#			 (Bit 7-0)
+w 30 5f 45 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 412
+w 30 60 5c 
+#			 (Bit 23-16)
+w 30 61 90 
+#			 (Bit 15-8)
+w 30 62 60 
+#			 (Bit 7-0)
+w 30 63 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 413
+w 30 64 18 
+#			 (Bit 23-16)
+w 30 65 09 
+#			 (Bit 15-8)
+w 30 66 00 
+#			 (Bit 7-0)
+w 30 67 4b 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 414
+w 30 68 1c 
+#			 (Bit 23-16)
+w 30 69 09 
+#			 (Bit 15-8)
+w 30 6a 20 
+#			 (Bit 7-0)
+w 30 6b 49 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 415
+w 30 6c 4c 
+#			 (Bit 23-16)
+w 30 6d 09 
+#			 (Bit 15-8)
+w 30 6e 00 
+#			 (Bit 7-0)
+w 30 6f 47 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 416
+w 30 70 10 
+#			 (Bit 23-16)
+w 30 71 00 
+#			 (Bit 15-8)
+w 30 72 40 
+#			 (Bit 7-0)
+w 30 73 8e 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 417
+w 30 74 1c 
+#			 (Bit 23-16)
+w 30 75 09 
+#			 (Bit 15-8)
+w 30 76 20 
+#			 (Bit 7-0)
+w 30 77 4c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 418
+w 30 78 00 
+#			 (Bit 23-16)
+w 30 79 00 
+#			 (Bit 15-8)
+w 30 7a 00 
+#			 (Bit 7-0)
+w 30 7b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 419
+w 30 7c 5c 
+#			 (Bit 23-16)
+w 30 7d 90 
+#			 (Bit 15-8)
+w 30 7e 40 
+#			 (Bit 7-0)
+w 30 7f 03 
+#			--------------------------------------------------------------- page 15 is selected
+w 30 00 0f 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 420
+w 30 08 18 
+#			 (Bit 23-16)
+w 30 09 09 
+#			 (Bit 15-8)
+w 30 0a 40 
+#			 (Bit 7-0)
+w 30 0b 87 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 421
+w 30 0c 1c 
+#			 (Bit 23-16)
+w 30 0d 09 
+#			 (Bit 15-8)
+w 30 0e 40 
+#			 (Bit 7-0)
+w 30 0f 8c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 422
+w 30 10 1c 
+#			 (Bit 23-16)
+w 30 11 09 
+#			 (Bit 15-8)
+w 30 12 60 
+#			 (Bit 7-0)
+w 30 13 89 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 423
+w 30 14 10 
+#			 (Bit 23-16)
+w 30 15 00 
+#			 (Bit 15-8)
+w 30 16 40 
+#			 (Bit 7-0)
+w 30 17 4e 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 424
+w 30 18 00 
+#			 (Bit 23-16)
+w 30 19 00 
+#			 (Bit 15-8)
+w 30 1a 00 
+#			 (Bit 7-0)
+w 30 1b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 425
+w 30 1c 5c 
+#			 (Bit 23-16)
+w 30 1d 90 
+#			 (Bit 15-8)
+w 30 1e 60 
+#			 (Bit 7-0)
+w 30 1f 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 426
+w 30 20 18 
+#			 (Bit 23-16)
+w 30 21 09 
+#			 (Bit 15-8)
+w 30 22 40 
+#			 (Bit 7-0)
+w 30 23 47 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 427
+w 30 24 1c 
+#			 (Bit 23-16)
+w 30 25 09 
+#			 (Bit 15-8)
+w 30 26 40 
+#			 (Bit 7-0)
+w 30 27 4c 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 428
+w 30 28 1c 
+#			 (Bit 23-16)
+w 30 29 09 
+#			 (Bit 15-8)
+w 30 2a 60 
+#			 (Bit 7-0)
+w 30 2b 49 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 429
+w 30 2c 10 
+#			 (Bit 23-16)
+w 30 2d 00 
+#			 (Bit 15-8)
+w 30 2e 40 
+#			 (Bit 7-0)
+w 30 2f 8d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 430
+w 30 30 5c 
+#			 (Bit 23-16)
+w 30 31 90 
+#			 (Bit 15-8)
+w 30 32 40 
+#			 (Bit 7-0)
+w 30 33 03 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 431
+w 30 34 00 
+#			 (Bit 23-16)
+w 30 35 00 
+#			 (Bit 15-8)
+w 30 36 00 
+#			 (Bit 7-0)
+w 30 37 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 432
+w 30 38 00 
+#			 (Bit 23-16)
+w 30 39 00 
+#			 (Bit 15-8)
+w 30 3a 00 
+#			 (Bit 7-0)
+w 30 3b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 433
+w 30 3c 00 
+#			 (Bit 23-16)
+w 30 3d 00 
+#			 (Bit 15-8)
+w 30 3e 00 
+#			 (Bit 7-0)
+w 30 3f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 434
+w 30 40 10 
+#			 (Bit 23-16)
+w 30 41 00 
+#			 (Bit 15-8)
+w 30 42 40 
+#			 (Bit 7-0)
+w 30 43 4d 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 435
+w 30 44 00 
+#			 (Bit 23-16)
+w 30 45 00 
+#			 (Bit 15-8)
+w 30 46 00 
+#			 (Bit 7-0)
+w 30 47 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 436
+w 30 48 00 
+#			 (Bit 23-16)
+w 30 49 00 
+#			 (Bit 15-8)
+w 30 4a 00 
+#			 (Bit 7-0)
+w 30 4b 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 437
+w 30 4c 00 
+#			 (Bit 23-16)
+w 30 4d 00 
+#			 (Bit 15-8)
+w 30 4e 00 
+#			 (Bit 7-0)
+w 30 4f 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 438
+w 30 50 02 
+#			 (Bit 23-16)
+w 30 51 00 
+#			 (Bit 15-8)
+w 30 52 00 
+#			 (Bit 7-0)
+w 30 53 00 
+#			 (Bit 31-24) ------------ MSB DAC INST No. 439
+w 30 54 00 
+#			 (Bit 23-16)
+w 30 55 00 
+#			 (Bit 15-8)
+w 30 56 00 
+#			 (Bit 7-0)
+w 30 57 00 
+#			--------------------------------------------------------------- book 0 is selected
+w 30 00 00 
+w 30 7f 00 
+#			--------------------------------------------------------------- page 1 is selected
+w 30 00 01 
+#			# reg[  0][  1][  1] = 0x00	; Disable weak AVDD to DVDD connection
+w 30 01 00 
+#			# reg[  0][  1][121] = 0x33	; MicPGA Quick Charge = 1.1/0.5 ms
+w 30 79 33 
+#			# reg[  0][  1][122] = 0x01	; Set the REF charging time to 30ms
+w 30 7a 01 
+#			# reg[  0][  1][ 33] = 0x28	; CP Clock Divider = 4 (8MHz/(6*4)) = 333kHz
+w 30 21 28 
+#			# reg[  0][  1][ 34] = 0x33	; Buffered AVSS_SENSE, 1x current, DC offset
+w 30 22 33 
+#			# reg[  0][  1][ 35] = 0x30	; CP Auto-power enabled, Dynamic offset corr.
+w 30 23 30 
+#			--------------------------------------------------------------- page 0 is selected
+w 30 00 00 
+#			# reg[  0][  0][  4] = 0x33	; DAC_CLKIN / ADC_CLKIN = PLL_CLK
+w 30 04 33 
+#			# reg[  0][  0][  5] = 0x00	; PLL_CLKIN = MCLK1, PLL low range
+w 30 05 00 
+#			# reg[  0][  0][  6] = 0x91	; PLL on, P=1, R=1
+w 30 06 91 
+#			# reg[  0][  0][  8] = 0x00	; D = 0000 (MSB)
+w 30 08 00 
+#			# reg[  0][  0][  9] = 0x00	; D = 0000 (LSB)
+w 30 09 00 
+#			# reg[  0][  0][  7] = 0x08	; J=8
+w 30 07 08 
+#			# reg[  0][  0][ 13] = 0x00	; DOSR = 128 (MSB)
+w 30 0d 00 
+#			# reg[  0][  0][ 14] = 0x80	; DOSR = 128 (LSB)
+w 30 0e 80 
+#			# reg[  0][  0][ 18] = 0x02	; NADC = 2, divider powered off
+w 30 12 02 
+#			# reg[  0][  0][ 19] = 0x88	; MADC = 8, divider powered on
+w 30 13 88 
+#			# reg[  0][  0] [20] = 0x80	; AOSR = 128
+w 30 14 80 
+#			# reg[  0][  0][ 12] = 0x88	; MDAC = 8, divider powered on
+w 30 0c 88 
+#			# reg[  0][  0][ 11] = 0x82	; NDAC = 2, divider powered off; NDAC = 2, divider powered on
+w 30 0b 82 
+#			# reg[0][0][82] = 0
+w 30 52 00 
+#			# reg[0][0][83] = 0
+w 30 53 00 
+#			# reg[0][0][86] = 32
+w 30 56 20 
+#			# reg[0][0][87] = 254
+w 30 57 fe 
+#			# reg[0][0][88] = 0
+w 30 58 00 
+#			# reg[0][0][89] = 104
+w 30 59 68 
+#			# reg[0][0][90] = 168
+w 30 5a a8 
+#			# reg[0][0][91] = 6
+w 30 5b 06 
+#			# reg[0][0][92] = 0
+w 30 5c 00 
