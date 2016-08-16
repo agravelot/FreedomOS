@@ -39,7 +39,7 @@ tmp/*
 output/*
 download/*
 rom/
-SignApk/*
+build/keys/*
 
 !download/*SuperSU*.zip
 !download/*BEATS*.zip
@@ -49,4 +49,3 @@ SignApk/*
 !output/EMPTY_DIRECTORY
 !download/EMPTY_DIRECTORY
 !rom/EMPTY_DIRECTORY
-!SignApk/signapk.jar
