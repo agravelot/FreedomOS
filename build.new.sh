@@ -38,17 +38,19 @@ function initialize {
   top_root=$PWD
   rom_root=${top_root}/rom
   build_root=${top_root}/build
-  tools_root=${top_root}/tools
+  working_root=${top_root}/working
   assets_root=${top_root}/assets
   output_root=${top_root}/output
   download_root=${top_root}/download
+  device_root=${build_root}/device
+  
   build_log=${output_root}/build.log
   config_file=${top_root}/.build.conf
   confirm_build=0
 
   # create folder structure
   cd ${top_root}
-  test -d ${build_root} || mkdir -p ${build_root}
+  test -d ${working_root} || mkdir -p ${working_root}
   test -d ${rom_root} || mkdir -p ${rom_root}
   test -d ${output_root} || mkdir -p ${output_root}
 
@@ -94,7 +96,7 @@ function configure {
   read -p "Enter your device codename: " device
   echo
 
-  if [ ! -f ${top_root}/device/${device}/${device}.fos ]; then
+  if [ ! -f ${device_root}/${device}/${device}.fos ]; then
     echo "Can not find ${device}.fos file!"
     exit
   fi
@@ -133,7 +135,7 @@ function configure {
 
 function review {
   # Set environment based on current config
-  source ${top_root}/device/${device}/${device}.fos
+  source ${device_root}/${device}/${device}.fos
   output_file="FreedomOS-${CODENAME}-${BUILD_TYPE}-${VERSION}.zip"
 
 
@@ -171,13 +173,13 @@ function review {
 
 function cleanup {
   echo "> Starting cleanup..." 2>&1 | tee -a ${build_log}
-  if mount | grep "${build_root}/mount" > /dev/null;
+  if mount | grep "${working_root}/mount" > /dev/null;
   then
   	echo ">> Unmount rom" 2>&1 | tee -a ${build_log}
-  	umount ${build_root}/mount/ >> ${build_log} 2>&1
+  	umount ${working_root}/mount/ >> ${build_log} 2>&1
   fi
-  echo ">> Cleaning ${build_root} ..." 2>&1 | tee -a ${build_log}
-  rm -rvf ${build_root}/* >> ${build_log} 2>&1
+  echo ">> Cleaning ${working_root} ..." 2>&1 | tee -a ${build_log}
+  rm -rvf ${working_root}/* >> ${build_log} 2>&1
 
 
   echo ">> Cleaning ${output_root} ..." 2>&1 | tee -a ${build_log}
@@ -199,11 +201,11 @@ function update_tools {
   echo "> Updating sdat2img tools ..." 2>&1 | tee -a ${build_log}
   if curl -Is ${SDAT2IMG_LINK} | grep "200 OK" &> /dev/null
   then
-    curl -o ${tools_root}/bin/sdat2img.py ${SDAT2IMG_LINK} >> ${build_log} 2>&1
+    curl -o ${build_root}/tools/sdat2img.py ${SDAT2IMG_LINK} >> ${build_log} 2>&1
   else
     echo "sdat2img tools mirror is OFFLINE! sdat2img tools not updated!" 2>&1 | tee -a ${build_log}
   fi
-  chmod +x ${tools_root}/bin/*
+  chmod +x ${build_root}/tools/*
 }
 
 function download_rom {

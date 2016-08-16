@@ -7,90 +7,90 @@ function build_oneplus {
   # Building Process
 
   echo ">> Copying ${ROM_NAME} needed files" 2>&1 | tee -a ${build_log}
-  rsync -vr ${rom_root}/${device}/${ROM_NAME}/* ${build_root}/ --exclude='system.transfer.list' --exclude='system.new.dat' --exclude='system.patch.dat' --exclude='META-INF/' >> ${build_log} 2>&1
-  mkdir -p ${build_root}/mount >> ${build_log} 2>&1
-  mkdir -p ${build_root}/system >> ${build_log} 2>&1
+  rsync -vr ${rom_root}/${device}/${ROM_NAME}/* ${working_root}/ --exclude='system.transfer.list' --exclude='system.new.dat' --exclude='system.patch.dat' --exclude='META-INF/' >> ${build_log} 2>&1
+  mkdir -p ${working_root}/mount >> ${build_log} 2>&1
+  mkdir -p ${working_root}/system >> ${build_log} 2>&1
 
   echo ">> Extracting system.new.dat" 2>&1 | tee -a ${build_log}
-  ${tools_root}/bin/sdat2img.py ${rom_root}/${device}/${ROM_NAME}/system.transfer.list ${rom_root}/${device}/${ROM_NAME}/system.new.dat ${build_root}/system.img >> ${build_log} 2>&1
+  ${build_root}/tools/sdat2img.py ${rom_root}/${device}/${ROM_NAME}/system.transfer.list ${rom_root}/${device}/${ROM_NAME}/system.new.dat ${working_root}/system.img >> ${build_log} 2>&1
 
   echo ">> Mounting system.img" 2>&1 | tee -a ${build_log}
-  mount -t ext4 -o loop ${build_root}/system.img ${build_root}/mount/ >> ${build_log} 2>&1
+  mount -t ext4 -o loop ${working_root}/system.img ${working_root}/mount/ >> ${build_log} 2>&1
 
   echo ">>> Extracting system files" 2>&1 | tee -a ${build_log}
-  cp -rvf ${build_root}/mount/* ${build_root}/system/ >> ${build_log} 2>&1
+  cp -rvf ${working_root}/mount/* ${working_root}/system/ >> ${build_log} 2>&1
 
   echo ">> Cleaning build root " 2>&1 | tee -a ${build_log}
-  if mount | grep "${build_root}/mount" > /dev/null;
+  if mount | grep "${working_root}/mount" > /dev/null;
   then
       echo ">> Unmounting system.img" 2>&1 | tee -a ${build_log}
       sleep 2
-      umount ${build_root}/mount/ >> ${build_log} 2>&1
+      umount ${working_root}/mount/ >> ${build_log} 2>&1
   fi
-  rm -rvf ${build_root}/mount >> ${build_log} 2>&1
-  rm -rvf ${build_root}/system.* >> ${build_log} 2>&1
+  rm -rvf ${working_root}/mount >> ${build_log} 2>&1
+  rm -rvf ${working_root}/system.* >> ${build_log} 2>&1
 
   echo "> Removing unneeded system files" 2>&1 | tee -a ${build_log}
   for i in ${CLEAN_LIST}
   do
-    rm -rvf ${build_root}${i} >> ${build_log} 2>&1
+    rm -rvf ${working_root}${i} >> ${build_log} 2>&1
   done
 
   echo
   echo "> Patching system files" 2>&1 | tee -a ${build_log}
-  cp -rvf ${assets_root}/system/${ARCH}/* ${build_root}/system >> ${build_log} 2>&1
+  cp -rvf ${assets_root}/system/${ARCH}/* ${working_root}/system >> ${build_log} 2>&1
 
   #echo
   #echo "Copying data files:"
-  #cp -rvf data ${build_root}/data
+  #cp -rvf data ${working_root}/data
 
   echo ">> Add aroma" 2>&1 | tee -a ${build_log}
-  mkdir -p ${build_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
-  cp -vR ${top_root}/device/${device}/aroma/* ${build_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
+  mkdir -p ${working_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
+  cp -vR ${device_root}/${device}/aroma/* ${working_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
 
   echo ">> Add tools" 2>&1 | tee -a ${build_log}
-  mkdir -p ${build_root}/tools >> ${build_log} 2>&1
+  mkdir -p ${working_root}/tools >> ${build_log} 2>&1
   for i in ${TOOLS_LIST}
   do
-    cp -rvf ${assets_root}/tools/${i} ${build_root}/tools/ >> ${build_log} 2>&1
+    cp -rvf ${assets_root}/tools/${i} ${working_root}/tools/ >> ${build_log} 2>&1
   done
 
   echo ">> Add FreedomOS wallpapers by badboy47" 2>&1 | tee -a ${build_log}
-  mkdir -p ${build_root}/media/wallpaper >> ${build_log} 2>&1
-  cp -v ${top_root}/media/wallpaper/* ${build_root}/media/wallpaper >> ${build_log} 2>&1
+  mkdir -p ${working_root}/media/wallpaper >> ${build_log} 2>&1
+  cp -v ${assets_root}/media/wallpaper/* ${working_root}/media/wallpaper >> ${build_log} 2>&1
 
   echo ">> Set Assert in updater-script" 2>&1 | tee -a ${build_log}
-  sed -i.bak "s:!assert!:$ASSERT:" ${build_root}/META-INF/com/google/android/updater-script >> ${build_log} 2>&1
+  sed -i.bak "s:!assert!:$ASSERT:" ${working_root}/META-INF/com/google/android/updater-script >> ${build_log} 2>&1
 
   echo ">> Set VERSION in aroma" 2>&1 | tee -a ${build_log}
-  sed -i.bak "s:!VERSION!:$VERSION:" ${build_root}/META-INF/com/google/android/aroma-config >> ${build_log} 2>&1
+  sed -i.bak "s:!VERSION!:$VERSION:" ${working_root}/META-INF/com/google/android/aroma-config >> ${build_log} 2>&1
 
   echo ">> Set device in aroma" 2>&1 | tee -a ${build_log}
-  sed -i.bak "s:!device!:${device}:" ${build_root}/META-INF/com/google/android/aroma-config >> ${build_log} 2>&1
+  sed -i.bak "s:!device!:${device}:" ${working_root}/META-INF/com/google/android/aroma-config >> ${build_log} 2>&1
 
   echo ">> Set date in aroma" 2>&1 | tee -a ${build_log}
-  sed -i.bak "s:!date!:$(date +"%d%m%y"):" ${build_root}/META-INF/com/google/android/aroma-config >> ${build_log} 2>&1
+  sed -i.bak "s:!date!:$(date +"%d%m%y"):" ${working_root}/META-INF/com/google/android/aroma-config >> ${build_log} 2>&1
 
   echo ">> Set date in en.lang" 2>&1 | tee -a ${build_log}
-  sed -i.bak "s:!date!:$(date +"%d%m%y"):" ${build_root}/META-INF/com/google/android/aroma/langs/en.lang >> ${build_log} 2>&1
+  sed -i.bak "s:!date!:$(date +"%d%m%y"):" ${working_root}/META-INF/com/google/android/aroma/langs/en.lang >> ${build_log} 2>&1
 
   echo ">> Set date in fr.lang" 2>&1 | tee -a ${build_log}
-  sed -i.bak "s:!date!:$(date +"%d%m%y"):" ${build_root}/META-INF/com/google/android/aroma/langs/fr.lang >> ${build_log} 2>&1
+  sed -i.bak "s:!date!:$(date +"%d%m%y"):" ${working_root}/META-INF/com/google/android/aroma/langs/fr.lang >> ${build_log} 2>&1
 
-  rm -rvf ${build_root}/META-INF/com/google/android/aroma-config.bak >> ${build_log} 2>&1
-  rm -rvf ${build_root}/META-INF/com/google/android/aroma/langs/*.lang.bak >> ${build_log} 2>&1
+  rm -rvf ${working_root}/META-INF/com/google/android/aroma-config.bak >> ${build_log} 2>&1
+  rm -rvf ${working_root}/META-INF/com/google/android/aroma/langs/*.lang.bak >> ${build_log} 2>&1
 
   ## user release build
   if [ "$BUILD" = 1 ];
   then
-    cd ${build_root}/
+    cd ${working_root}/
 
     echo "> Making zip file" 2>&1 | tee -a ${build_log}
     zip -r9 "FreedomOS-$CODENAME-nevax-$VERSION.zip" * -x "*EMPTY_DIRECTORY*" >> ${build_log} 2>&1
     cd ${top_root}
 
     echo ">> Copy Unsigned in output folder" 2>&1 | tee -a ${build_log}
-    cp -v ${build_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip ${output_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip >> ${build_log} 2>&1
+    cp -v ${working_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip ${output_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip >> ${build_log} 2>&1
 
     echo ">> testing zip integrity" 2>&1 | tee -a ${build_log}
     zip -T ${output_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip >> ${build_log} 2>&1
@@ -99,8 +99,8 @@ function build_oneplus {
     openssl md5 "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip" |cut -f 2 -d " " > "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip.md5" >> ${build_log} 2>&1
 
     echo ">> SignApk....." 2>&1 | tee -a ${build_log}
-    chmod +x ${tools_root}/bin/signapk.jar >> ${build_log} 2>&1
-    java -jar "${tools_root}/bin/signapk.jar" "${tools_root}/keys/certificate.pem" "${tools_root}/keys/key.pk8" "${build_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip" "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" >> ${build_log} 2>&1
+    chmod +x ${build_root}/bin/signapk.jar >> ${build_log} 2>&1
+    java -jar "${build_root}/bin/signapk.jar" "${build_root}/keys/certificate.pem" "${build_root}/keys/key.pk8" "${working_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip" "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" >> ${build_log} 2>&1
 
     echo ">> Generating md5 hash" 2>&1 | tee -a ${build_log}
     openssl md5 "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip.md5" >> ${build_log} 2>&1
@@ -112,7 +112,7 @@ function build_oneplus {
   ## debug build
   if [ "$BUILD" = 2 ];
   then
-    cd ${build_root}/
+    cd ${working_root}/
 
     echo "> Making zip file" 2>&1 | tee -a ${build_log}
     zip -r1 "FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" * -x "*EMPTY_DIRECTORY*" >> ${build_log} 2>&1
@@ -122,7 +122,7 @@ function build_oneplus {
 
     cd ${top_root}
     echo ">> Move unsigned zip file in output folder" 2>&1 | tee -a ${build_log}
-    mv -v "${build_root}/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" "${output_root}/" >> ${build_log} 2>&1
+    mv -v "${working_root}/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" "${output_root}/" >> ${build_log} 2>&1
 
     echo ">> Generating md5 hash"
     openssl md5 "${output_root}/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" |cut -f 2 -d " " > "${output_root}/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip.md5" >> ${build_log} 2>&1
@@ -131,7 +131,7 @@ function build_oneplus {
 
   echo
   echo "> Cleaning build root" 2>&1 | tee -a ${build_log}
-  rm -rvf ${build_root}/* >> ${build_log} 2>&1
+  rm -rvf ${working_root}/* >> ${build_log} 2>&1
 
   echo ">" 2>&1 | tee -a ${build_log}
   echo "> Build finished! You can find the build here: ${output_root}/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" 2>&1 | tee -a ${build_log}

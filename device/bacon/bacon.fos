@@ -1,9 +1,0 @@
-# FreedomOS conf file
-
-ARCH=arm
-CODENAME=bacon
-DEVICE=bacon
-ASSERT=bacon
-ROM_NAME=
-ROM_LINK=https://s3.amazonaws.com/oxygenos.oneplus.net/$ROM_NAME.zip
-ROM_ZIP=
