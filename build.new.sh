@@ -38,7 +38,7 @@ function initialize {
   top_root=$PWD
   rom_root=${top_root}/rom
   build_root=${top_root}/build
-  working_root=${top_root}/working
+  tmp_root=${top_root}/tmp
   assets_root=${top_root}/assets
   output_root=${top_root}/output
   download_root=${top_root}/download
@@ -50,7 +50,7 @@ function initialize {
 
   # create folder structure
   cd ${top_root}
-  test -d ${working_root} || mkdir -p ${working_root}
+  test -d ${tmp_root} || mkdir -p ${tmp_root}
   test -d ${rom_root} || mkdir -p ${rom_root}
   test -d ${output_root} || mkdir -p ${output_root}
 
@@ -173,13 +173,13 @@ function review {
 
 function cleanup {
   echo "> Starting cleanup..." 2>&1 | tee -a ${build_log}
-  if mount | grep "${working_root}/mount" > /dev/null;
+  if mount | grep "${tmp_root}/mount" > /dev/null;
   then
   	echo ">> Unmount rom" 2>&1 | tee -a ${build_log}
-  	umount ${working_root}/mount/ >> ${build_log} 2>&1
+  	umount ${tmp_root}/mount/ >> ${build_log} 2>&1
   fi
-  echo ">> Cleaning ${working_root} ..." 2>&1 | tee -a ${build_log}
-  rm -rvf ${working_root}/* >> ${build_log} 2>&1
+  echo ">> Cleaning ${tmp_root} ..." 2>&1 | tee -a ${build_log}
+  rm -rvf ${tmp_root}/* >> ${build_log} 2>&1
 
 
   echo ">> Cleaning ${output_root} ..." 2>&1 | tee -a ${build_log}
