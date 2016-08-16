@@ -223,7 +223,7 @@ done
 
 echo
 echo "Patching system files:"
-cp -rvf system/* tmp/system
+cp -rvf assets/system/${ARCH}/* tmp/system
 
 #echo
 #echo "Copying data files:"
@@ -235,19 +235,17 @@ mkdir -p tmp/META-INF/com/google/android/
 cp -vR device/$DEVICE/aroma/* tmp/META-INF/com/google/android/
 echo
 echo "Add tools"
-cp -vR "tools" "tmp/"
-echo
-echo "Add SuperSU"
-mkdir tmp/supersu
-cp -v download/$SU.zip tmp/supersu/supersu.zip
+#cp -vR "tools" "tmp/"
+mkdir tmp/tools
+for i in ${TOOLS_LIST}
+do
+	cp -rvf assets/tools/${i} tmp/tools/
+done
 
 echo
 echo "Add FreedomOS wallpapers by badboy47"
 mkdir -p tmp/media/wallpaper
 cp -v media/wallpaper/* tmp/media/wallpaper
-echo
-echo "Add Divine"
-unzip -o "download/$DIVINE.zip" -d "tmp/tools/divine/"
 
 echo
 echo "Set Assert in updater-script"

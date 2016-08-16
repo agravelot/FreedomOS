@@ -1,6 +1,6 @@
 # FreedomOS conf file
 
-ARCH=ARM64
+ARCH=arm64
 CODENAME=op3
 DEVICE=OnePlus3
 ASSERT=OnePlus3
@@ -26,4 +26,20 @@ CLEAN_LIST="
 /system/reserve
 /system/bin/install-recovery.sh
 /system/recovery-from-boot.p
+"
+
+# tools to add to the rom, (/assets/tools/)
+TOOLS_LIST="
+adb.sh
+addon
+clean.sh
+divine
+dpi.sh
+elementalx
+fonts
+google_dns.sh
+hosts
+multi_window.sh
+supersu
+v4a_profiles_irs
 "
