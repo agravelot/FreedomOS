@@ -7,7 +7,7 @@ function build_oneplus {
   mkdir -p ${build_root}/system >> ${build_log} 2>&1
 
   echo ">> Extracting system.new.dat" 2>&1 | tee -a ${build_log}
-  ${download_root}/sdat2img.py ${rom_root}/${device}/${ROM_NAME}/system.transfer.list ${rom_root}/${device}/${ROM_NAME}/system.new.dat ${build_root}/system.img >> ${build_log} 2>&1
+  ${tools_root}/bin/sdat2img.py ${rom_root}/${device}/${ROM_NAME}/system.transfer.list ${rom_root}/${device}/${ROM_NAME}/system.new.dat ${build_root}/system.img >> ${build_log} 2>&1
 
   echo ">> Mounting system.img" 2>&1 | tee -a ${build_log}
   mount -t ext4 -o loop ${build_root}/system.img ${build_root}/mount/ >> ${build_log} 2>&1
@@ -47,7 +47,7 @@ function build_oneplus {
   mkdir -p ${build_root}/tools >> ${build_log} 2>&1
   for i in ${TOOLS_LIST}
   do
-    cp -rvf ${assets_root}/tools/${i} ${build_root}/tools/
+    cp -rvf ${assets_root}/tools/${i} ${build_root}/tools/ >> ${build_log} 2>&1
   done
 
   echo ">> Add FreedomOS wallpapers by badboy47" 2>&1 | tee -a ${build_log}

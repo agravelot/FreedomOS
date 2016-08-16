@@ -199,11 +199,11 @@ function update_tools {
   echo "> Updating sdat2img tools ..." 2>&1 | tee -a ${build_log}
   if curl -Is ${SDAT2IMG_LINK} | grep "200 OK" &> /dev/null
   then
-    curl -o ${tools_root}/sdat2img.py ${SDAT2IMG_LINK} >> ${build_log} 2>&1
+    curl -o ${tools_root}/bin/sdat2img.py ${SDAT2IMG_LINK} >> ${build_log} 2>&1
   else
     echo "sdat2img tools mirror is OFFLINE! sdat2img tools not updated!" 2>&1 | tee -a ${build_log}
   fi
-  chmod +x ${tools_root}/*
+  chmod +x ${tools_root}/bin/*
 }
 
 function download_rom {
