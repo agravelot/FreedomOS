@@ -3,8 +3,7 @@
 # Author : Nevax
 # Contributor : TimVNL
 
-source _build_op2.sh
-source _build_op3.sh
+source _build_op.sh
 
 # trap ctrl-c and call ctrl_c()
 trap ctrl_c INT
