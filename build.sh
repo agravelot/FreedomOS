@@ -183,11 +183,11 @@ fi
 echo "Updating sdat2img tools"
 if curl -Is $SDAT2IMG_LINK | grep "200 OK" &> /dev/null
 then
-  curl -o download/sdat2img.py $SDAT2IMG_LINK
+  curl -o build/tools/sdat2img.py $SDAT2IMG_LINK
 else
   echo "$yellowt sdat2img tools mirror is OFFLINE! sdat2img tools not updated $normal"
 fi
-chmod +x download/sdat2img.py
+chmod +x build/tools/*
 
 echo
 echo "Copy $ROM_NAME needed files:"
@@ -196,7 +196,7 @@ mkdir -p tmp/mount
 mkdir -p tmp/system
 echo
 echo "Extracting system.new.dat:"
-download/sdat2img.py rom/$DEVICE/$ROM_NAME/system.transfer.list rom/$DEVICE/$ROM_NAME/system.new.dat tmp/system.img
+build/tools/sdat2img.py rom/$DEVICE/$ROM_NAME/system.transfer.list rom/$DEVICE/$ROM_NAME/system.new.dat tmp/system.img
 echo
 echo "Mounting system.img:"
 mount -t ext4 -o loop tmp/system.img tmp/mount/
@@ -290,8 +290,8 @@ then
   openssl md5 "output/FreedomOS-$CODENAME-nevax-$VERSION.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-nevax-$VERSION.zip.md5"
   echo
   echo "SignApk....."
-	chmod +x SignApk/signapk.jar
-  java -jar "SignApk/signapk.jar" "SignApk/certificate.pem" "SignApk/key.pk8" "tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip" "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip"
+	chmod +x build/tools/signapk.jar
+  java -jar "build/tools/signapk.jar" "build/keys/certificate.pem" "build/keys/key.pk8" "tmp/FreedomOS-$CODENAME-nevax-$VERSION.zip" "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip"
   echo
   echo "Generating md5 hash"
   openssl md5 "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "output/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip.md5"
