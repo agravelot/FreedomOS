@@ -1,7 +1,7 @@
 #!/bin/bash
-# FreedomOS build script
+# FreedomOS main build script
 # Author : Nevax
-# Contributor : TimVNL
+# Contributors : TimVNL, Mavy
 
 source _build_op.sh
 

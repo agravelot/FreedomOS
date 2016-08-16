@@ -1,3 +1,8 @@
+!/bin/bash
+# FreedomOS device build script
+# Author : Nevax
+# Contributors : TimVNL, Mavy
+
 function build_oneplus {
   # Building Process
 
