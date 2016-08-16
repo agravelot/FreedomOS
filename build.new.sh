@@ -42,7 +42,7 @@ function initialize {
   assets_root=${top_root}/assets
   output_root=${top_root}/output
   download_root=${top_root}/download
-  device_root=${build_root}/device
+  device_root=${top_root}/device
   
   build_log=${output_root}/build.log
   config_file=${top_root}/.build.conf
