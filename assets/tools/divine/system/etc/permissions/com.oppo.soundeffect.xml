@@ -1,0 +1,4 @@
+<permissions>
+	<feature name="oppo.dolby.support" />
+	<feature name="oppo.dirac.support" />
+</permissions>

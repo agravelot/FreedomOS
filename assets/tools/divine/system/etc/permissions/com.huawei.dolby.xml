@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+  <library name="android.media.dolby" file="/system/framework/dolby.jar"/>
+  <library name="android.media.audiofx.dolbymobileaudioeffect" file="/system/framework/dolby.jar"/>
+</permissions>

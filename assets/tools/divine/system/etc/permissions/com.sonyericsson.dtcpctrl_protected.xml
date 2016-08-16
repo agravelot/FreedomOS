@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.sonyericsson.dtcpctrl_protected.api"
+        file="/system/framework/com.sonyericsson.dtcpctrl_protected_impl.jar"/>
+</permissions>
