@@ -217,7 +217,7 @@ function download_rom {
     then
       #TODO Ask user for delete or change name of the old corrupted zip
       rm -vf ${download_root}/${ROM_NAME}.zip >> ${build_log} 2>&1
-      curl -o ${download_root}/${ROM_NAME}.zip ${ROM_LINK} >> ${build_log} 2>&1
+      curl -o ${download_root}/${ROM_NAME}.zip ${ROM_LINK} | tee -a ${build_log}
     else
       die "${ROM_NAME} mirror OFFLINE! Check your connection" "10"
     fi
@@ -236,11 +236,8 @@ function download_rom {
 }
 
 function extract_rom {
-  echo
   echo "> Extracting ROM ..." 2>&1 | tee -a ${build_log}
-  echo
   if [ ! -f ${rom_root}/${device}/${ROM_NAME}/system.new.dat ]; then
-    echo
     echo ">> Extracting rom zip" 2>&1 | tee -a ${build_log}
     mkdir -p ${rom_root}/${device}/${ROM_NAME} >> ${build_log} 2>&1
     unzip -o ${download_root}/${ROM_NAME}.zip -d ${rom_root}/${device}/${ROM_NAME} >> ${build_log} 2>&1

@@ -36,7 +36,6 @@ function build_oneplus {
     rm -rvf ${tmp_root}${i} >> ${build_log} 2>&1
   done
 
-  echo
   echo "> Patching system files" 2>&1 | tee -a ${build_log}
   cp -rvf ${assets_root}/system/${ARCH}/* ${tmp_root}/system >> ${build_log} 2>&1
 
@@ -129,7 +128,6 @@ function build_oneplus {
     FINAL_ZIP=FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION
   fi
 
-  echo
   echo "> Cleaning tmp folder" 2>&1 | tee -a ${build_log}
   rm -rvf ${tmp_root} >> ${build_log} 2>&1
 
