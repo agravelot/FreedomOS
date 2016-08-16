@@ -130,8 +130,8 @@ function build_oneplus {
   fi
 
   echo
-  echo "> Cleaning build root" 2>&1 | tee -a ${build_log}
-  rm -rvf ${tmp_root}/* >> ${build_log} 2>&1
+  echo "> Cleaning tmp folder" 2>&1 | tee -a ${build_log}
+  rm -rvf ${tmp_root} >> ${build_log} 2>&1
 
   echo ">" 2>&1 | tee -a ${build_log}
   echo "> Build finished! You can find the build here: ${output_root}/FreedomOS-$CODENAME-$BUILD_TYPE-$VERSION.zip" 2>&1 | tee -a ${build_log}
