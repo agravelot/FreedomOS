@@ -41,9 +41,6 @@ download/*
 rom/
 build/keys/*
 
-!download/*SuperSU*.zip
-!download/*BEATS*.zip
-!download/Xposed*.apk
 !system/EMPTY_DIRECTORY
 !tmp/EMPTY_DIRECTORY
 !output/EMPTY_DIRECTORY
