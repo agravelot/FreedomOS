@@ -1,0 +1,9 @@
+
+
+<b>Agreement:</b>
+
+<*>You are installing this at your own risk</*>
+
+<*>I am not responsible for any damages or problems that may occur by using this kernel</*>
+
+<*>By using this kernel, you agree with the above terms!</*>
