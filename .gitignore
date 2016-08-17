@@ -39,7 +39,8 @@ tmp/*
 output/*
 download/*
 rom/
-build/keys/*
+.build.conf
+tools/*
 
 !system/EMPTY_DIRECTORY
 !tmp/EMPTY_DIRECTORY
