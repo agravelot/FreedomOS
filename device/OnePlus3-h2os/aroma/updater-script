@@ -20,6 +20,7 @@
 #ui_print("/ /_/ /___/ /   youtube.com/nevaxtuto        ");
 #ui_print("\____//____/   twitter.com/nevax07           ");
 
+set_progress(0.000000);
 # -- - ASSERT - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then getprop("ro.build.product") == "!assert!" ||
@@ -27,12 +28,11 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
             getprop("ro.build.product") + "\".");
 endif;
 
-set_progress(0.000000);
 
 #ifelse(is_mounted("/system"), unmount("/system"));
 #ifelse(is_mounted("/data"), unmount("/data"));
-#ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
-#ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
+ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
+ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
 
 set_progress(0.01);
 ui_print(" ");
@@ -79,18 +79,24 @@ delete_recursive("/sdcard/DCIM/.thumbnails");
 delete_recursive("/sdcard/LazyList");
 delete_recursive("/sdcard/LOST.DIR");
 delete_recursive("/sdcard/tmp");
-run_program("/tmp/tools/clean_apps.sh");
+run_program("/tmp/tools/clean.sh");
 
-ui_print("   Wiping Cache");
+ui_print("   Wiping Cache / Dalvik");
 delete_recursive("/cache");
+delete_recursive("/data/dalvik-cache/*");
 
 ui_print(" ");
 ui_print("@Installing FreedomOS");
 ui_print(" ");
 
-set_progress(0.05);
-show_progress(0.45, 60);
+set_progress(0.10);
+ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
+
+show_progress(0.57, 130000);
+ui_print("   Extracting System");
 block_image_update("/dev/block/bootdevice/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat");
+
+mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
 
 # -- - radio update tasks - -- #
 
@@ -274,9 +280,6 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
   then
     run_program("/system/bin/echo", "DEBUG: No audio mod");
 endif;
-
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
 
 # -- - XPOSED - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1")
@@ -783,10 +786,12 @@ endif;
 
 ui_print(" ");
 ui_print("@Installing SuperSU");
-run_program("/system/bin/echo", "DEBUG: Extracting SU");
-package_extract_dir("supersu", "/tmp/supersu");
-run_program("/system/bin/echo", "DEBUG: Unzip SU");
-run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
+#run_program("/system/bin/echo", "DEBUG: Extracting SU");
+#package_extract_dir("tools/supersu", "/tmp/supersu");
+#run_program("/system/bin/echo", "DEBUG: Unzip SU");
+#run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
+run_program("/system/bin/echo", "DEBUG: Move supersu to /tmp/tools/supersu ->  /tmp/supersu ");
+run_program("/sbin/busybox", "mv", "/tmp/tools/supersu", "/tmp/supersu");
 run_program("/system/bin/echo", "DEBUG: Start SU install script");
 run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
 
