@@ -98,8 +98,8 @@ function build_oneplus {
     openssl md5 "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip" |cut -f 2 -d " " > "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip.md5" >> ${build_log} 2>&1
 
     echo ">> SignApk....." 2>&1 | tee -a ${build_log}
-    chmod +x ${build_root}/bin/signapk.jar >> ${build_log} 2>&1
-    java -jar "${build_root}/bin/signapk.jar" "${build_root}/keys/certificate.pem" "${build_root}/keys/key.pk8" "${tmp_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip" "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" >> ${build_log} 2>&1
+    chmod +x ${build_root}/tools/signapk.jar >> ${build_log} 2>&1
+    java -jar "${build_root}/tools/signapk.jar" "${build_root}/keys/certificate.pem" "${build_root}/keys/key.pk8" "${tmp_root}/FreedomOS-$CODENAME-nevax-$VERSION.zip" "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" >> ${build_log} 2>&1
 
     echo ">> Generating md5 hash" 2>&1 | tee -a ${build_log}
     openssl md5 "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip" |cut -f 2 -d " " > "${output_root}/FreedomOS-$CODENAME-nevax-$VERSION-signed.zip.md5" >> ${build_log} 2>&1
