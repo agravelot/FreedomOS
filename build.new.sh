@@ -61,6 +61,7 @@ function initialize {
   source ${scripts_root}/dat_to_dat.sh
   source ${scripts_root}/dat_to_files.sh
   source ${scripts_root}/make_zip.sh
+  source ${scripts_root}/add_files
 
   if [ ! -f "${config_file}" ]; then
     configure
@@ -256,6 +257,8 @@ if [ $confirm_build -eq 1 ]; then
   download_rom
   extract_rom
   build
+  add_files
+  make_zip
 fi
 
 exit
