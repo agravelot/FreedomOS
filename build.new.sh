@@ -61,7 +61,7 @@ function initialize {
   source ${scripts_root}/dat_to_dat.sh
   source ${scripts_root}/dat_to_files.sh
   source ${scripts_root}/make_zip.sh
-  source ${scripts_root}/add_files
+  source ${scripts_root}/add_files.sh
 
   if [ ! -f "${config_file}" ]; then
     configure
