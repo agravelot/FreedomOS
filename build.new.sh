@@ -238,7 +238,6 @@ function download_rom {
 }
 
 function extract_rom {
-  echo "> Extracting ROM ..." 2>&1 | tee -a ${build_log}
   if [ ! -f ${rom_root}/${device}/${ROM_NAME}/system.new.dat ]; then
     echo ">> Extracting rom zip" 2>&1 | tee -a ${build_log}
     mkdir -p ${rom_root}/${device}/${ROM_NAME} >> ${build_log} 2>&1
