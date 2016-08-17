@@ -4,7 +4,7 @@
 # Contributors : TimVNL, Mavy
 
 function add_files {
-  
+
   echo ">> Add aroma" 2>&1 | tee -a ${build_log}
   mkdir -p ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
   cp -vR ${device_root}/${device}/aroma/* ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
@@ -24,7 +24,7 @@ function add_files {
   sed -i.bak "s:!assert!:$ASSERT:" ${tmp_root}/META-INF/com/google/android/updater-script >> ${build_log} 2>&1
 
   echo ">> Set VERSION in aroma" 2>&1 | tee -a ${build_log}
-  sed -i.bak "s:!VERSION!:$VERSION:" ${tmp_root}/META-INF/com/google/android/aroma-config >> ${build_log} 2>&1
+  sed -i.bak "s:!version!:$VERSION:" ${tmp_root}/META-INF/com/google/android/aroma-config >> ${build_log} 2>&1
 
   echo ">> Set device in aroma" 2>&1 | tee -a ${build_log}
   sed -i.bak "s:!device!:${device}:" ${tmp_root}/META-INF/com/google/android/aroma-config >> ${build_log} 2>&1
