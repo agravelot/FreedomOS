@@ -187,7 +187,7 @@ function cleanup {
 
   echo ">> Cleaning ${output_root} ..." 2>&1 | tee -a ${build_log}
   #TODO: Delete only the file with the same name
-  rm -fv ${output_root}/${output_file}.zip >> ${build_log} 2>&1
+  rm -fv ${output_root}/${output_file} >> ${build_log} 2>&1
   rm -fv ${output_root}/${output_file}.md5 >> ${build_log} 2>&1
 }
 
