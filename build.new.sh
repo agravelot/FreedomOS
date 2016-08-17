@@ -141,7 +141,7 @@ function configure {
 function review {
   # Set environment based on current config
   source ${device_root}/${device}/${device}.fos
-  output_file="FreedomOS-${CODENAME}-${BUILD_TYPE}-${VERSION}.zip"
+  output_file="FreedomOS-${CODENAME}-${BUILD_TYPE}-${VERSION}"
 
   # Show Build review
   banner
@@ -187,8 +187,8 @@ function cleanup {
 
   echo ">> Cleaning ${output_root} ..." 2>&1 | tee -a ${build_log}
   #TODO: Delete only the file with the same name
-  rm -fv ${output_root}/${output_file} >> ${build_log} 2>&1
-  rm -fv ${output_root}/${output_file}.md5 >> ${build_log} 2>&1
+  rm -fv ${output_root}/${output_file}.zip >> ${build_log} 2>&1
+  rm -fv ${output_root}/${output_file}.zip.md5 >> ${build_log} 2>&1
 }
 
 function build {
