@@ -55,6 +55,8 @@ function dat_to_dat {
   echo ">> Converting ext4 to dat file" 2>&1 | tee -a ${build_log}
   ${build_root}/tools/rimg2sdat system_new.img >> ${build_log} 2>&1
 
+  touch ${tmp_root}/system.patch.dat
+
   echo "> Clean unneeded tmp files" 2>&1 | tee -a ${build_log}
   if mount | grep "${tmp_root}/mount" > /dev/null;
   then
