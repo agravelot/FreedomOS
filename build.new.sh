@@ -3,8 +3,6 @@
 # Author : Nevax
 # Contributors : TimVNL, Mavy
 
-source _build_op.sh
-
 # trap ctrl-c and call ctrl_c()
 trap ctrl_c INT
 
@@ -38,12 +36,13 @@ function initialize {
   top_root=$PWD
   rom_root=${top_root}/rom
   build_root=${top_root}/build
+  scripts_root=${build_root}/scripts
   tmp_root=${top_root}/tmp
   assets_root=${top_root}/assets
   output_root=${top_root}/output
   download_root=${top_root}/download
   device_root=${top_root}/device
-  
+
   build_log=${output_root}/build.log
   config_file=${top_root}/.build.conf
   confirm_build=0
@@ -57,6 +56,9 @@ function initialize {
   # test log file
   touch ${build_log}
   rm -f ${build_log}
+
+  # Initialize environtment
+  source ${scripts_root}/_build_op.sh
 
   if [ ! -f "${config_file}" ]; then
     configure
