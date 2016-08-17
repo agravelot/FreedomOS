@@ -4,7 +4,7 @@
 # Contributors : TimVNL, Mavy
 
 function dat_to_files {
-  
+
   # Building Process
   echo "> $device build starting now with $BUILD_METHOD build method." 2>&1 | tee -a ${build_log}
 
@@ -35,7 +35,7 @@ function dat_to_files {
   echo "> Removing unneeded system files" 2>&1 | tee -a ${build_log}
   for i in ${CLEAN_LIST}
   do
-    rm -rvf ${tmp_root}${i} >> ${build_log} 2>&1
+    rm -rvf ${tmp_root}/system/${i} >> ${build_log} 2>&1
   done
 
   echo "> Patching system files" 2>&1 | tee -a ${build_log}
