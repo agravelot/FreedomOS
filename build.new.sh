@@ -116,7 +116,7 @@ function configure {
 
   case $BUILD in
   1)
-    BUILD_TYPE=user-release
+    BUILD_TYPE=nevax
     echo "user-release selected"
     ;;
   *)
