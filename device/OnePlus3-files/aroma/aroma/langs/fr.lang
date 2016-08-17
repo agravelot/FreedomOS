@@ -1,0 +1,274 @@
+﻿#########################################################
+#	FreedomOS language file
+#
+#	English by: Nevax
+#
+#
+#
+
+text_ok=OK
+text_next=Suivant
+text_back=Retour
+text_yes=Oui
+text_no=Non
+text_about=Information
+text_quit=Quitter l'installation
+text_quit_msg=Êtes-vous sûr de vouloir quitter ?
+
+welcome.title=Bienvenue
+welcome.title2=Informations sur la ROM
+welcome.text1=Vous êtes sur le point d'utiliser
+welcome.version=Version
+welcome.device=Périphérique
+welcome.updated=Date MAJ
+welcome.microblog=YouTube
+welcome.developer=Développeur
+welcome.next=Presser suivant pour continuer l'installation...
+
+changelog.title=Changelogs
+changelog.desc=FreedomOS Changelogs
+language.title=Selection de la langue
+language.text=Sélectionner le language à utiliser
+language.english=English
+language.english.info=Using English
+language.french=France
+language.french.info=Utiliser le Français
+
+welcome.microblog=Youtube
+rom.data=!date!
+text_finish=Terminer
+model.title=Modèle
+
+by=par
+
+main.tittle=Selectionner un menu pour poursuivre l'installation
+main.install=Installer
+main.install.info=Continuer l'installation
+main.sys=Information système
+main.sys.info=Montrer les informations système
+main.changelog.info=FreedomOS changelogs
+main.exit=Quitter
+main.exit.info=Quitter l'installateur FreedomOS
+
+install_mod.tittle=Choisissez votre mode d'installation
+install_mod.tittle2=Choisissez vos paramètres
+install_mod.sub_tittle=Installer
+
+assert.tittle=Vérifier l'assert_yes
+assert_yes=Oui (Recommandé)
+assert_no=Non
+addon.tittle=Sauvegarder/Réstaurer /system/addon.d/
+addon_yes=Oui
+info.addon_yes=Recommandédirty flash
+addon_no=Non
+info.addon_no=Pour flash propre
+
+info.custom=Méthode FreedomOS
+info.stock=Stock d'origine, non modifié
+info.assert_yes=Vérifie la variant dans le build.prop
+info.assert_no=Ne pas vérifier la variante
+
+sys.title=Information système
+sys.info.wait=Récupération des informations système...
+sys.info.title=Informations système
+sys.info.title2=Vos informations système.
+sys.info.model=Modèle
+sys.info.name=Nom
+sys.info.manu=Fabricant
+sys.info.cpu=CPU
+sys.info.lcd=Densité LCD
+sys.info.storage=Taille mémoire
+sys.info.storage.free=Libre
+
+pre.install.title=Prêt pour installation
+pre.install=L'outil est prêt pour l'installation.
+pre.install2=Appuyer <b>Installer Maintenant</b> pour débuter l'installation.
+pre.install3=Si vous souhaitez vérifier ou modifier vos paramètres d'installation, appuyer sur <b>Retour</b>.
+
+# -- - GOOGLE APPS - -- #
+
+gapps.tittle=Google Apps
+gapps.tittle2=Select the Google applications you want
+
+calculator=Calculette
+calendar=Calendrier
+call_log=Google Call Backup
+chrome=Chrome
+drive=Drive
+gmail=Gmail
+gmail_exchange=Gmail Exchange
+google=Google
+hangouts=Hangouts
+maps=Maps
+messenger=Messenger
+photos=Photos
+play_music=Play Musique
+tts=Text-to-Speech
+tallback=Tallback
+play_movies=Play Vidéos
+youtube=YouTube
+
+info.calculator=0010 1010
+info.calendar=Clandrier Google
+info.call_log=Envoie votre historique d'appel à Google
+info.chrome=Navigateur web
+info.drive=Service cloud
+info.gmail=Cleint mail
+info.gmail_exchange=Support d'exchange pour Gmail
+info.google=Google Now
+info.hangouts=Méssagerie instantané
+info.maps=Navigation en temps réel, trafic, transports
+info.photos=Application de gestion des photos numériques
+info.play_music=Application Google Play Musique
+info.tts=Cause écran noir au premier démarrage si retiré !!!
+info.tallback=Cause écran noir au premier démarrage si retiré !!!
+info.play_movies=Application Google Play Films
+info.youtube=Application YouTube
+
+# -- - SYSTEM APPS - -- #
+
+apps.tittle=System applications
+apps.tittle2=Select the system applications you want
+
+anthal=AntHalService
+android_pay=Andoroid Pay
+basic_dream=Veille intéractif
+bt_midi=BT Midi Service
+bt_test=BTtestmode
+desk_clock=DeskClock
+document=Documents
+download_provider=Géstionnaire de téléchargement
+engineering=EngineeringMode
+eng_special_test=EngSpecialTest
+facelock=Dévérouiller avec son visage
+galaxy=Galaxy
+holo_spiral=Fond d'écran animé
+anim_wallpaper=Support fond d'écran animé
+log_kit=LogKitSdService
+music=Application de musique OnePlus
+noise_feild=Fond d'écran animé
+oneplus_wallpapers=OnePlus fond d'écran
+oem_test=OemAutoTestServer
+oem_log=OEMLogKit
+oneplus_camera=Camera OnePlus
+oneplus_gallery=Galerie OnePlus
+ota=OTA OnePlus
+oneplus_wizard=SetupWizard OnePlus
+phase_beam=Fond d'écran animé
+sensor_test=SensorTestTool
+protips=Quelques astuces
+swiftkey=Swiftkey
+tags=Tags NFC
+wifi_test=WifiRfTestApk
+
+info.anthal=Pour les périphriques sport/santé/fitness
+info.android_pay=Paiement par NFC
+info.basic_dream=Veille intéractif
+info.bt_midi=Support Bluetooth MIDI
+info.bt_test=Bluetooth testing
+info.desk_clock=Alarme, horloge et chronomètre
+info.document=Géstionnaire de fichier
+info.download_provider=Application de télécargement
+info.engineering=Pamaètres de développement
+info.eng_special_test=Paramètres divers
+info.facelock=Unlock with your face
+info.galaxy=Fond d'écran animé
+info.holo_spiral=Fond d'écran animé
+info.anim_wallpaper=Support fond d'écran animé
+info.log_kit=Log
+info.music=OnePlus music app
+info.noise_feild=Fond d'écran animé
+info.oneplus_wallpapers=Quelques fonds d'écran
+info.oem_test=Application de test OnePlus
+info.oem_log=Log OnePlus
+info.oneplus_camera=Prendre des photos et vidéos
+info.oneplus_gallery=Regarder vos photos et vidéos
+info.ota=Mise à jour système (non recommandé)
+info.oneplus_wizard=Initialisation OnePlus
+info.phase_beam=Fond d'écran animé
+info.protips=ProTips
+info.sensor_test=Application de test des capteurs
+info.swiftkey=Clavier Swiftkey
+info.tags=Tag NFC
+info.wifi_test=Test Wifi
+info.dive_icon=Pack d'icône de OnePlus
+info.rifon_icon=Pack d'icône de OnePlus
+
+mod.ttile=Mod supplémentaire
+mod.ttile2=Selectionner les mod que vous souhaitez
+
+dpi.tittle=Change le DPI
+dpi.tittle2=Point par pouce
+dpi.500=DPI système à 500
+dpi.490=DPI système à 490
+dpi.480=DPI système à 480
+dpi.470=DPI système à 470
+dpi.460=DPI système à 460
+dpi.450=DPI système à 450
+dpi.440=DPI système à 440
+dpi.430=DPI système à 430
+dpi.420=DPI système à 420
+dpi.410=DPI système à 410
+dpi.400=DPI système à 400
+dpi.390=DPI système à 390
+dpi.380=DPI système à 380
+dpi.370=DPI système à 370
+dpi.360=DPI système à 360
+dpi.350=DPI système à 350
+
+mod.title=Installation mod supplémentaire
+mod.tittle2=Root, mod audio, bloqueur de pub & xposed...
+mod.tittle3=Extra mod
+
+supersu=Installer SuperSU
+divine=Viper4Android + Dolby Atmos
+xposed=Material Design Xposed Installer
+adaway=Adaway
+adb=Activer ADB
+dns=Google DNS
+fos_wallpapers=Fond d'écran FreedomOS
+emoji_one=EmojiOne
+multi_window=Multi Fenêtre
+
+info.supersu=SuperSU v2.76 par Chainfire
+info.divine=Divine beats par Theroyalseeker
+info.xposed=Application Xposed seulement par DVD android
+info.adaway=Bloqueur de publicité pour Android
+info.adb=Android Debugging Bridge
+info.dns=DNS 8.8.8.8/8.8.4.4
+info.fos_wallpapers=Conçu par @badboy47
+info.emoji_one=The Open Emoji Standard
+info.multi_window=Active le Multi Window
+
+
+# -- - THEME - -- #
+theme.tittle=Theme Engine
+theme.tittle2=Slectionnez votre theme engine
+
+notheme=Aucun Theme engine
+layer=RRO Layers [obsolète]
+substratum=Substratum
+
+info.notheme=J'aime le stock
+info.layer=Layers Manager
+info.substratum=Le remplacent de Layers
+
+# -- - KERNEL - -- #
+
+kernel.tittle=Kernel
+kernel.tittle2=Selectionnez votre kernel.
+kernel_stock=Stock Kernel
+info.kernel_stock=Le stock de OnePlus
+elementalx=ElementalX
+info.elementalx=Developed by @flar2
+
+# -- - INSTALLER - -- #
+install=Installation de FreedomOS
+install.now=Installer Maintenant
+install.finish=Cela va prendre un moment...
+install.finish.title=L'installation est terminé.
+installing.title=Installation...
+finish.title=Félicitation!
+finish.msg=FreedomOS a été correctement installé.
+finish.status=Résultat d'installation :
+finish.reboot=Redémarrer votre périphérique maintenant.
