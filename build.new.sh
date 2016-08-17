@@ -58,7 +58,9 @@ function initialize {
   rm -f ${build_log}
 
   # Initialize environtment
-  source ${scripts_root}/_build_op.sh
+  source ${scripts_root}/dat_to_dat.sh
+  source ${scripts_root}/dat_to_files.sh
+  source ${scripts_root}/make_zip.sh
 
   if [ ! -f "${config_file}" ]; then
     configure
@@ -189,11 +191,10 @@ function cleanup {
 }
 
 function build {
-  echo "> $device build starting now." 2>&1 | tee -a ${build_log}
-
-  case $device in
-    OnePlus3) build_oneplus ;;
-    OnePlus2) build_oneplus ;;
+  case $BUILD_METHOD in
+    dat_to_dat) dat_to_dat ;;
+    dat_to_files) dat_to_files ;;
+    *) die "Unknow build methiod" "11";;
   esac
 }
 
