@@ -89,9 +89,14 @@ ui_print(" ");
 ui_print("@Installing FreedomOS");
 ui_print(" ");
 
-set_progress(0.05);
-show_progress(0.45, 60);
+set_progress(0.10);
+ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
+
+show_progress(0.57, 130000);
+ui_print("   Extracting System");
 block_image_update("/dev/block/bootdevice/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat");
+
+mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
 
 # -- - radio update tasks - -- #
 
@@ -275,9 +280,6 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
   then
     run_program("/system/bin/echo", "DEBUG: No audio mod");
 endif;
-
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
 
 # -- - XPOSED - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1")
