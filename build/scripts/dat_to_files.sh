@@ -33,11 +33,16 @@ function dat_to_files {
   rm -rvf ${tmp_root}/system.* >> ${build_log} 2>&1
 
   echo "> Removing unneeded system files" 2>&1 | tee -a ${build_log}
-  for i in ${CLEAN_LIST}
+  for i in ${CLEAN_SYSTEM_LIST}
   do
     rm -rvf ${tmp_root}/system/${i} >> ${build_log} 2>&1
   done
 
   echo "> Patching system files" 2>&1 | tee -a ${build_log}
-  cp -rvf ${assets_root}/system/${ARCH}/* ${tmp_root}/system >> ${build_log} 2>&1
+  for i in ${ADD_SYSTEM_LIST}
+  do
+    mkdir -p ${tmp_root}/system/${i}
+    cp -rvf ${assets_root}/system/${ARCH}/${i} ${tmp_root}/system/${i} >> ${build_log} 2>&1
+  done
+
 }

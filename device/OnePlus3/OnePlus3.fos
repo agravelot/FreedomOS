@@ -12,7 +12,7 @@ BUILD_METHOD=dat_to_dat
 SYSTEMIMAGE_PARTITION_SIZE=3154116608
 
 # Files/folders to remove from the original stock image
-CLEAN_LIST="
+CLEAN_SYSTEM_LIST="
 app/Maps
 app/CalendarGoogle
 app/CalculatorGoogle
@@ -34,6 +34,30 @@ bin/fmfactorytestserver
 bin/install-recovery.sh
 recovery-from-boot.p
 "
+
+ADD_SYSTEM_LIST="
+app/Adaway
+app/Layers
+app/Substratum
+app/XposedInstaller
+app/Maps
+app/CalendarGoogle
+app/CalculatorGoogle
+app/Messenger
+app/YouTube
+app/Music2
+app/Photos
+app/Hangouts
+app/Drive
+app/Chrome
+app/Gmail2
+app/SwiftKey
+app/WebViewGoogle
+app/talkback
+priv-app/Velvet
+"
+
+
 # tools to add to the rom, (/assets/tools/)
 TOOLS_LIST="
 adb.sh
