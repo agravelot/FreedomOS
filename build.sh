@@ -191,7 +191,6 @@ function cleanup {
   rm -rvf ${tmp_root}/* >> ${build_log} 2>&1
 
   echo ">> Cleaning ${output_root} ..." 2>&1 | tee -a ${build_log}
-  #TODO: Delete only the file with the same name
   rm -fv ${output_root}/${output_file}.zip >> ${build_log} 2>&1
   rm -fv ${output_root}/${output_file}.zip.md5 >> ${build_log} 2>&1
 }
@@ -223,7 +222,7 @@ function download_rom {
     if curl -Is ${ROM_LINK} | grep "200 OK" &> /dev/null
     then
       #TODO Ask user for delete or change name of the old corrupted zip
-      rm -vf ${download_root}/${ROM_NAME}.zip >> ${build_log} 2>&1
+      mv -vf ${download_root}/${ROM_NAME}.zip ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
       curl -o ${download_root}/${ROM_NAME}.zip ${ROM_LINK} | tee -a ${build_log}
     else
       die "${ROM_NAME} mirror OFFLINE! Check your connection" "10"
