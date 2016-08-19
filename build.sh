@@ -63,6 +63,10 @@ function initialize {
   source ${scripts_root}/make_zip.sh
   source ${scripts_root}/add_files.sh
 
+  HOST_ARCH=`uname -m`
+  HOST_OS=`uname -s`
+  HOST_OS_EXTRA=`uname -a`
+
   if [ ! -f "${config_file}" ]; then
     configure
   fi
@@ -116,8 +120,8 @@ function configure {
 
   case $BUILD in
   1)
-    BUILD_TYPE=nevax
-    echo "user-release selected"
+    BUILD_TYPE=release
+    echo "release selected"
     ;;
   *)
     BUILD=2
@@ -145,21 +149,21 @@ function review {
 
   # Show Build review
   banner
-  echo "Build review:"
-  echo
-  echo "Device target: ${device}"
-  echo "Build type: ${BUILD_TYPE}"
-  echo "Build version: ${VERSION}"
-  echo "Arch: ${ARCH}"
-  echo "Codename: ${CODENAME}"
-  echo "Assert: ${ASSERT}"
-  echo "ROM name: ${ROM_NAME}"
-  echo "ROM Link: ${ROM_LINK}"
-  echo "ROM MD5: ${ROM_MD5}"
-  echo "SuperSU zip: ${SU}"
-  echo "Xposed apk: ${XPOSED_APK}"
-  echo "Audio mod: ${DIVINE}"
-  echo "Output file: ${output_file}"
+  echo "============================================"
+  echo "TARGET_DEVICE=${device}"
+  echo "BUILD_TYPE=${BUILD_TYPE}"
+  echo "VERSION=${VERSION}"
+  echo "TARGET_ARCH=${TARGET_ARCH}"
+  echo "CODENAME=${CODENAME}"
+  echo "ASSERT=${ASSERT}"
+  echo "ROM_NAME=${ROM_NAME}"
+  echo "ROM_LINK=${ROM_LINK}"
+  echo "ROM_MD5=${ROM_MD5}"
+  echo "HOST_ARCH=${HOST_ARCH}"
+  echo "HOST_OS=${HOST_OS}"
+  echo "HOST_OS_EXTRA=${HOST_OS_EXTRA}"
+  echo "OUTPUT_FILE=${output_file}"
+  echo "============================================"
   echo
 
   if [[ "yes" == $(confirm "All options correct?") ]]

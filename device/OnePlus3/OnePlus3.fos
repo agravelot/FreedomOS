@@ -1,6 +1,6 @@
 # FreedomOS conf file
 
-ARCH=arm64
+TARGET_ARCH=arm64
 CODENAME=op3
 DEVICE=OnePlus3
 ASSERT=OnePlus3

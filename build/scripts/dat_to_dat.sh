@@ -25,11 +25,11 @@ function dat_to_dat {
   cp ${tmp_root}/boot.img ${tmp_root}/boot/boot.img
   cd ${tmp_root}/boot
   echo ">> Getting kernel informations" 2>&1 | tee -a ${build_log}
-  ${build_root}/tools/abootimg -i boot.img >> ${build_log} 2>&1
+  ${build_root}/tools/${HOST_ARCH}/abootimg -i boot.img >> ${build_log} 2>&1
   echo ">>> Extracting kernel" 2>&1 | tee -a ${build_log}
-  ${build_root}/tools/abootimg -x boot.img >> ${build_log} 2>&1
+  ${build_root}/tools/${HOST_ARCH}/abootimg -x boot.img >> ${build_log} 2>&1
   echo ">>> Extracting ramdisk" 2>&1 | tee -a ${build_log}
-  ${build_root}/tools/abootimg-unpack-initrd initrd.img >> ${build_log} 2>&1
+  ${build_root}/tools/${HOST_ARCH}/abootimg-unpack-initrd initrd.img >> ${build_log} 2>&1
   echo ">>> Copy needed files" 2>&1 | tee -a ${build_log}
   cp ${tmp_root}/boot/ramdisk/file_contexts ${tmp_root}/
 
@@ -50,7 +50,7 @@ function dat_to_dat {
   for i in ${ADD_SYSTEM_LIST}
   do
     mkdir -p ${tmp_root}/mount/${i}
-    cp -rvf ${assets_root}/system/${ARCH}/${i} ${tmp_root}/mount/${i} >> ${build_log} 2>&1
+    cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i} ${tmp_root}/mount/${i} >> ${build_log} 2>&1
   done
 
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}
