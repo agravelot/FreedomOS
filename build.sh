@@ -148,23 +148,24 @@ function review {
   output_file="FreedomOS-${CODENAME}-${BUILD_TYPE}-${VERSION}"
 
   # Show Build review
-  banner
-  echo "============================================"
-  echo "TARGET_DEVICE=${device}"
-  echo "BUILD_TYPE=${BUILD_TYPE}"
-  echo "VERSION=${VERSION}"
-  echo "TARGET_ARCH=${TARGET_ARCH}"
-  echo "CODENAME=${CODENAME}"
-  echo "ASSERT=${ASSERT}"
-  echo "ROM_NAME=${ROM_NAME}"
-  echo "ROM_LINK=${ROM_LINK}"
-  echo "ROM_MD5=${ROM_MD5}"
-  echo "HOST_ARCH=${HOST_ARCH}"
-  echo "HOST_OS=${HOST_OS}"
-  echo "HOST_OS_EXTRA=${HOST_OS_EXTRA}"
-  echo "OUTPUT_FILE=${output_file}"
-  echo "============================================"
-  echo
+  banner 2>&1 | tee -a ${build_log}
+  echo "============================================" 2>&1 | tee -a ${build_log}
+  echo "TARGET_DEVICE=${device}" 2>&1 | tee -a ${build_log}
+  echo "BUILD_TYPE=${BUILD_TYPE}" 2>&1 | tee -a ${build_log}
+  echo "VERSION=${VERSION}" 2>&1 | tee -a ${build_log}
+  echo "TARGET_ARCH=${TARGET_ARCH}" 2>&1 | tee -a ${build_log}
+  echo "CODENAME=${CODENAME}" 2>&1 | tee -a ${build_log}
+  echo "ASSERT=${ASSERT}" 2>&1 | tee -a ${build_log}
+  echo "ROM_NAME=${ROM_NAME}" 2>&1 | tee -a ${build_log}
+  echo "ROM_LINK=${ROM_LINK}" 2>&1 | tee -a ${build_log}
+  echo "ROM_MD5=${ROM_MD5}" 2>&1 | tee -a ${build_log}
+  echo "HOST_ARCH=${HOST_ARCH}" 2>&1 | tee -a ${build_log}
+  echo "HOST_OS=${HOST_OS}" 2>&1 | tee -a ${build_log}
+  echo "HOST_OS_EXTRA=${HOST_OS_EXTRA}" 2>&1 | tee -a ${build_log}
+  echo "OUPUT_DIR=${output_root}/" 2>&1 | tee -a ${build_log}
+  echo "OUTPUT_FILE=${output_file}.zip" 2>&1 | tee -a ${build_log}
+  echo "============================================" 2>&1 | tee -a ${build_log}
+  echo 2>&1 | tee -a ${build_log}
 
   if [[ "yes" == $(confirm "All options correct?") ]]
   then
