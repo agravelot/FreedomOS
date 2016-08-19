@@ -24,13 +24,11 @@ function dat_to_dat {
   mkdir -p ${tmp_root}/boot
   cp ${tmp_root}/boot.img ${tmp_root}/boot/boot.img >> ${build_log} 2>&1
   cd ${tmp_root}/boot >> ${build_log} 2>&1
-  echo ">> Getting kernel informations" 2>&1 | tee -a ${build_log}
-  ${build_root}/tools/${HOST_ARCH}/abootimg -i boot.img >> ${build_log} 2>&1
   echo ">>> Extracting kernel" 2>&1 | tee -a ${build_log}
-  ${build_root}/tools/${HOST_ARCH}/abootimg -x boot.img >> ${build_log} 2>&1
-  echo ">>> Extracting ramdisk" 2>&1 | tee -a ${build_log}
-  ${build_root}/tools/${HOST_ARCH}/abootimg-unpack-initrd initrd.img >> ${build_log} 2>&1
-  echo ">>> Copy needed files" 2>&1 | tee -a ${build_log}
+  ${build_root}/tools/${HOST_ARCH}/unpackbootimg -i boot.img -o . >> ${build_log} 2>&1
+  echo ">>>> Extracting ramdisk" 2>&1 | tee -a ${build_log}
+  ${build_root}/tools/${HOST_ARCH}/abootimg-unpack-initrd boot.img-ramdisk.gz >> ${build_log} 2>&1
+  echo ">>>> Getting file_contexts" 2>&1 | tee -a ${build_log}
   cp ${tmp_root}/boot/ramdisk/file_contexts ${tmp_root}/ >> ${build_log} 2>&1
 
   cd ${tmp_root}
@@ -54,7 +52,7 @@ function dat_to_dat {
   done
 
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}
-  ${build_root}/tools/make_ext4fs -T 0 -S file_contexts -l ${SYSTEMIMAGE_PARTITION_SIZE} -a system system_new.img mount/ >> ${build_log} 2>&1
+  ${build_root}/tools/${HOST_ARCH}/make_ext4fs -T 0 -S file_contexts -l ${SYSTEMIMAGE_PARTITION_SIZE} -a system system_new.img mount/ >> ${build_log} 2>&1
 
   echo ">> Converting ext4 to dat file" 2>&1 | tee -a ${build_log}
   ${build_root}/tools/rimg2sdat system_new.img >> ${build_log} 2>&1
