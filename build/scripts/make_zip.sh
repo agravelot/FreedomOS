@@ -21,7 +21,7 @@ function make_zip {
     zip -T ${output_root}/${output_file}.zip >> ${build_log} 2>&1
 
     echo ">> Generating md5 hash" 2>&1 | tee -a ${build_log}
-    openssl md5 "${output_root}/${output_file}.zip" |cut -f 2 -d " " > "${output_root}/${output_file}.zip.md5"
+    openssl md5 "${output_root}/${output_file}.zip" |cut -f 2 -d " " > "${output_root}/${output_file}.zip.md5" 2>&1 | tee -a ${build_log}
 
     echo ">> SignApk....." 2>&1 | tee -a ${build_log}
     chmod +x ${build_root}/tools/signapk.jar >> ${build_log} 2>&1
