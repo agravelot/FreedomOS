@@ -3,9 +3,9 @@
 ![alt tag](https://raw.githubusercontent.com/Nevax07/FreedomOS/master/assets/media/oneplus3/png/small_banner.png)
 
 ## Required
-- Linux.
+- Linux 64bits (others architectures are experimental).
 - 30Go of free space.
-- Packages : `rsync python zip curl openssl`
+- Packages : `rsync python zip curl openssl ncurses`
 - ext4 mount support with loop option.
 - root access.
 - Optional packages:
