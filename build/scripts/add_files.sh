@@ -5,9 +5,15 @@
 
 function add_files {
 
-  echo ">> Add aroma" 2>&1 | tee -a ${build_log}
+  echo ">> Add META-INF files" 2>&1 | tee -a ${build_log}
   mkdir -p ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
-  cp -vR ${device_root}/${device}/aroma/* ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
+  cp -vrf ${device_root}/${device}/aroma/* ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
+
+  echo ">>> Add aroma bin" 2>&1 | tee -a ${build_log}
+  cp -vf ${assets_root}/META-INF/update-binary/${AROMA_VERSION}/update-binary ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
+
+  echo ">>> Add update-binary bin" 2>&1 | tee -a ${build_log}
+  cp -vf ${assets_root}/META-INF/update-binary-installer/${BUILD_METHOD}/update-binary-installer ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
 
   echo ">> Add tools" 2>&1 | tee -a ${build_log}
   mkdir -p ${tmp_root}/tools >> ${build_log} 2>&1
