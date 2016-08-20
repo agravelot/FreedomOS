@@ -107,8 +107,7 @@ function configure {
   echo
 
   if [ ! -f ${device_root}/${device}/${device}.fos ]; then
-    echo "Can not find ${device}.fos file!"
-    exit
+    die "Can not find ${device}.fos file!" "3"
   fi
 
   # Choose build method option
