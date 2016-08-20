@@ -38,18 +38,22 @@ function dat_to_dat {
   echo ">> Mounting ext4 system.img" 2>&1 | tee -a ${build_log}
   mount -t ext4 -o loop ${tmp_root}/system.img ${tmp_root}/mount/ >> ${build_log} 2>&1
 
-  echo ">>> Removing unneeded system files" 2>&1 | tee -a ${build_log}
-  for i in ${CLEAN_SYSTEM_LIST}
-  do
-    rm -rvf ${tmp_root}/mount/${i} >> ${build_log} 2>&1
-  done
+  if [ ! -z "${CLEAN_SYSTEM_LIST}" ]; then
+    echo ">>> Removing unneeded system files" 2>&1 | tee -a ${build_log}
+    for i in ${CLEAN_SYSTEM_LIST}
+    do
+      rm -rvf ${tmp_root}/mount/${i} >> ${build_log} 2>&1
+    done
+  fi
 
-  echo ">>> Patching system files" 2>&1 | tee -a ${build_log}
-  for i in ${ADD_SYSTEM_LIST}
-  do
-    mkdir -p ${tmp_root}/mount/${i}  >> ${build_log} 2>&1
-    cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i} ${tmp_root}/mount/${i} >> ${build_log} 2>&1
-  done
+  if [ ! -z "${ADD_SYSTEM_LIST}" ]; then
+    echo ">>> Patching system files" 2>&1 | tee -a ${build_log}
+    for i in ${ADD_SYSTEM_LIST}
+    do
+      mkdir -p ${tmp_root}/mount/${i}  >> ${build_log} 2>&1
+      cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i} ${tmp_root}/mount/${i} >> ${build_log} 2>&1
+    done
+  fi
 
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}
   ${build_root}/tools/${HOST_ARCH}/make_ext4fs -T 0 -S file_contexts -l ${SYSTEMIMAGE_PARTITION_SIZE} -a system system_new.img mount/ >> ${build_log} 2>&1

@@ -32,17 +32,20 @@ function dat_to_files {
   rm -rvf ${tmp_root}/mount >> ${build_log} 2>&1
   rm -rvf ${tmp_root}/system.* >> ${build_log} 2>&1
 
-  echo "> Removing unneeded system files" 2>&1 | tee -a ${build_log}
-  for i in ${CLEAN_SYSTEM_LIST}
-  do
-    rm -rvf ${tmp_root}/system/${i} >> ${build_log} 2>&1
-  done
+  if [ ! -z "${CLEAN_SYSTEM_LIST}" ]; then
+    echo "> Removing unneeded system files" 2>&1 | tee -a ${build_log}
+    for i in ${CLEAN_SYSTEM_LIST}
+    do
+      rm -rvf ${tmp_root}/system/${i} >> ${build_log} 2>&1
+    done
+  fi
 
-  echo "> Patching system files" 2>&1 | tee -a ${build_log}
-  for i in ${ADD_SYSTEM_LIST}
-  do
-    mkdir -p ${tmp_root}/system/${i}
-    cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i} ${tmp_root}/system/${i} >> ${build_log} 2>&1
-  done
-
+  if [ ! -z "${ADD_SYSTEM_LIST}" ]; then
+    echo "> Patching system files" 2>&1 | tee -a ${build_log}
+    for i in ${ADD_SYSTEM_LIST}
+    do
+      mkdir -p ${tmp_root}/system/${i}
+      cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i} ${tmp_root}/system/${i} >> ${build_log} 2>&1
+    done
+  fi
 }
