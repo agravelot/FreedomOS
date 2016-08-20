@@ -23,6 +23,12 @@ function add_files {
   echo ">> Set Assert in updater-script" 2>&1 | tee -a ${build_log}
   sed -i.bak "s:!assert!:$ASSERT:" ${tmp_root}/META-INF/com/google/android/updater-script >> ${build_log} 2>&1
 
+  if [ ! -z $ASSERT_2 ];
+  then
+    echo ">> Set Assert in updater-script" 2>&1 | tee -a ${build_log}
+    sed -i.bak "s:!assert2!:$ASSERT_2:" ${tmp_root}/META-INF/com/google/android/updater-script >> ${build_log} 2>&1
+  fi
+
   echo ">> Set VERSION in aroma" 2>&1 | tee -a ${build_log}
   sed -i.bak "s:!version!:$VERSION:" ${tmp_root}/META-INF/com/google/android/aroma-config >> ${build_log} 2>&1
 
