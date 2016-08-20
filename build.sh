@@ -221,8 +221,6 @@ function download_rom {
 
     if curl -Is ${ROM_LINK} | grep "200 OK" &> /dev/null
     then
-      #TODO Ask user for delete or change name of the old corrupted zip
-      mv -vf ${download_root}/${ROM_NAME}.zip ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
       curl -o ${download_root}/${ROM_NAME}.zip ${ROM_LINK} | tee -a ${build_log}
     else
       die "${ROM_NAME} mirror OFFLINE! Check your connection" "10"
@@ -234,7 +232,7 @@ function download_rom {
       echo ">>> MD5 ${ROM_NAME}.zip checksums OK." 2>&1 | tee -a ${build_log}
     else
       echo ">>> File ${ROM_NAME}.zip is corrupt, restarting download" 2>&1 | tee -a ${build_log}
-      rm -vf ${download_root}/${ROM_NAME}.zip >> ${build_log} 2>&1
+      mv -vf ${download_root}/${ROM_NAME}.zip ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
       download_rom
     fi
   fi
