@@ -1,22 +1,9 @@
 TODO
-  Add arg support "build.sh -d OnePlus3 -v 1.3 ..." verbose / push / flash
   Add more divine mod
   f2fs?
-  script adb pull adaway & more..
-  Gapps update
-  Custom kernel
   No sleep ?
   system/etc GPS NTP server
   apktool
   Pull update system app
   More ringtone/notif ?
-  Try SU 2.74 & 76
-  Make translation
-  Check OOS start pull apps
-  New dpi with arg + avoid duplicate
-  RM from list
-
-openssl genrsa -out key.pem 1024
-openssl req -new -key key.pem -out request.pem
-openssl x509 -req -days 9999 -in request.pem -signkey key.pem -out certificate.pem
-openssl pkcs8 -topk8 -outform DER -in key.pem -inform PEM -out key.pk8 -nocrypt
+  comeback supersu option
