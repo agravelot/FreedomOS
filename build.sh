@@ -52,6 +52,7 @@ function initialize {
   test -d ${tmp_root} || mkdir -p ${tmp_root}
   test -d ${rom_root} || mkdir -p ${rom_root}
   test -d ${output_root} || mkdir -p ${output_root}
+  test -d ${download_root} || mkdir -p ${download_root}
 
   # test log file
   touch ${build_log}
