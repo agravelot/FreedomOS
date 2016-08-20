@@ -227,7 +227,7 @@ function download_rom {
       die "${ROM_NAME} mirror OFFLINE! Check your connection" "10"
     fi
   else
-    echo ">> Checking MD5 of ${ROM_NAME}" 2>&1 | tee -a ${build_log}
+    echo ">> Checking MD5 of ${ROM_NAME}.zip" 2>&1 | tee -a ${build_log}
 
     if [[ ${ROM_MD5} == $(md5sum ${download_root}/${ROM_NAME}.zip | cut -d ' ' -f 1) ]]; then
       echo ">>> MD5 ${ROM_NAME}.zip checksums OK." 2>&1 | tee -a ${build_log}
