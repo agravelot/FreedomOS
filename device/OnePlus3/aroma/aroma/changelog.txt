@@ -1,3 +1,7 @@
+comeback to dat
+remove com.touchtype with swiftkey
+a lot of under the hood modification, see gitlab
+
 1.4.1
   UPDATE: ElementalX 0.11.
   ADD: Wipe dalvik-cache during flash.
