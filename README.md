@@ -4,7 +4,7 @@
 
 ## Note for pull requests and issues
 
-I refuse all pull requests and issues coming from Githubu, use [Gitlab](https://gitlab.com/Nevax/FreedomOS).
+I refuse all pull requests and issues coming from Github, use [Gitlab](https://gitlab.com/Nevax/FreedomOS).
 
 ## Required
 - Linux 64bits (others architectures are experimental).
