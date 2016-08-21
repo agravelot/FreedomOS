@@ -31,6 +31,8 @@ It will download all the needed files (~1.4Go) and start building your project.
 Once you have the needed files, you don't need to re-download them.
 
 ## Join the beta team
-We use Slack, just give me your email address in PM on XDA and i will invite you in the team.
+We use Slack, just send me your email address in private message on XDA and i will send your an invitation to join the team.
 
-XDA thread : http://forum.xda-developers.com/oneplus-3/development/rom-freedomos-1-0-t3409348
+Check your email.
+
+[XDA thread](http://forum.xda-developers.com/oneplus-3/development/rom-freedomos-1-0-t3409348)
