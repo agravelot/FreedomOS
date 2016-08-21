@@ -2,6 +2,10 @@
 
 ![alt tag](https://raw.githubusercontent.com/Nevax07/FreedomOS/master/assets/media/oneplus3/png/small_banner.png)
 
+## Note to pull request and issues
+
+I refuse all pull requests and issues coming from Githubu, use [Gitlab](https://gitlab.com/Nevax/FreedomOS).
+
 ## Required
 - Linux 64bits (others architectures are experimental).
 - 30Go of free space.
