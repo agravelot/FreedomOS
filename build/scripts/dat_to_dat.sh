@@ -47,12 +47,17 @@ function dat_to_dat {
   fi
 
   if [ ! -z "${ADD_SYSTEM_LIST}" ]; then
-    echo ">>> Patching system files" 2>&1 | tee -a ${build_log}
+    echo ">>> Patching system files for ${TARGET_ARCH}" 2>&1 | tee -a ${build_log}
     for i in ${ADD_SYSTEM_LIST}
     do
       mkdir -p ${tmp_root}/mount/${i}  >> ${build_log} 2>&1
       cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i}/* ${tmp_root}/mount/${i} >> ${build_log} 2>&1
     done
+  fi
+
+  if [ -d "${assets_root}/system/${DEVICE}" ]; then
+    echo ">>> Patching system files for ${DEVICE}" 2>&1 | tee -a ${build_log}
+    cp -rvf ${assets_root}/system/${DEVICE}/* ${tmp_root}/mount/ >> ${build_log} 2>&1
   fi
 
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}
