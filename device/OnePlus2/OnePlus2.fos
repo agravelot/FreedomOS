@@ -50,18 +50,18 @@ recovery-from-boot.p
 # Set the files/folder you want to add to your system partition.
 # The files are in the assets/system/$TARGET_ARCH/
 ADD_SYSTEM_LIST="
-app/Maps
+app/Adaway
+app/Layers
+app/Substratum
+app/XposedInstaller
 app/CalendarGoogle
 app/CalculatorGoogle
 app/Messenger
-app/YouTube
 app/Music2
 app/Photos
-app/Hangouts
 app/Drive
 app/Chrome
 app/Gmail2
-app/SwiftKey
 app/WebViewGoogle
 app/talkback
 priv-app/Velvet
