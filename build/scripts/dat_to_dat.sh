@@ -51,7 +51,7 @@ function dat_to_dat {
     for i in ${ADD_SYSTEM_LIST}
     do
       mkdir -p ${tmp_root}/mount/${i}  >> ${build_log} 2>&1
-      cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i} ${tmp_root}/mount/${i} >> ${build_log} 2>&1
+      cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i}/* ${tmp_root}/mount/${i} >> ${build_log} 2>&1
     done
   fi
 

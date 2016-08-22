@@ -45,7 +45,7 @@ function dat_to_files {
     for i in ${ADD_SYSTEM_LIST}
     do
       mkdir -p ${tmp_root}/system/${i}
-      cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i} ${tmp_root}/system/${i} >> ${build_log} 2>&1
+      cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i}/* ${tmp_root}/system/${i} >> ${build_log} 2>&1
     done
   fi
 }
