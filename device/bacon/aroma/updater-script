@@ -548,18 +548,37 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   #DiVINE BEATS
-  if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
+  if
+    (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
     then
-      show_progress(0.10, 673);
-      ui_print("   Installing Audio mod");
+      show_progress(0.81, "-10000");
+      ui_print(" ");
+      ui_print("@  Installing Viper4Android + Dolby Atmos ");
+      ui_print(" ");
+      ui_print("===================================");
+      ui_print("           DivineBeats v7.0         ");
+      ui_print("              Evolution             ");
+      ui_print("             Dolby Atmos            ");
+      ui_print("===================================");
+
+      ui_print("TheRoyalSeeker presents DivineBeats v7.0 Evolution");
+      ui_print("Thank you for sharing it @TheRoyalSeeker");
+      ui_print("Ultimate sound just seconds away");
+      ui_print(" ");
+      ui_print("- Making system compatible...");
+      ifelse(is_mounted("/system"), unmount("/system"));
+  #unmount("/data");
+      run_program("/sbin/busybox", "mount", "/data");
+  #run_program("/sbin/busybox", "mount", "/system");
+      mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
       delete_recursive("/system/priv-app/AudioFX");
       delete_recursive("/system/app/ViPER4Android_FX_A4.x");
       delete_recursive("/system/app/Viper4Android");
       delete_recursive("/system/app/Material_Dark_V4A");
       delete_recursive("/system/priv-app/Material_Dark_V4A");
       delete_recursive("/data/app/com.vipercn.viper4android_v2-1");
-      delete("/system/lib/soundfx/libv4a_fx_ics.so");
-      delete("/system/lib/soundfx/libv4a_fx_jb.so");
+      delete ("/system/lib/soundfx/libv4a_fx_ics.so");
+      delete ("/system/lib/soundfx/libv4a_fx_jb.so");
       delete_recursive("/system/app/As");
       delete_recursive("/system/app/AsUI");
       delete_recursive("/system/priv-app/As");
@@ -570,17 +589,22 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       delete_recursive("/system/priv-app/Ds");
       delete_recursive("/system/priv-app/DsUI");
       delete_recursive("/system/priv-app/SemcMusic");
-      delete("/system/priv-app/TRSmods.apk");
+      delete ("/system/priv-app/TRSmods.apk");
       delete_recursive("/sdcard/DBEngine");
       package_extract_dir("tools/divine/system", "/system");
 
-      #mount("yaffs2", "MTD", "modextras", "/extras");
-      #package_extract_dir("tools/divine/extras", "/extras");
-
+  #mount("yaffs2", "MTD", "modextras", "/extras");
+  #package_extract_dir("tools/divine/extras", "/extras");
       package_extract_file("tools/divine/runme.sh", "/tmp/runme.sh");
       set_metadata("/tmp/runme.sh", "uid", 0, "gid", 0, "fmode", 0777);
       run_program("/tmp/runme.sh");
       delete ("/tmp/runme.sh");
+
+      package_extract_file("tools/divine/libsprocessing.sh",
+                           "/tmp/libsprocessing.sh");
+      set_metadata("/tmp/libsprocessing.sh", "uid", 0, "gid", 0, "fmode", 0777);
+      run_program("/tmp/libsprocessing.sh");
+      delete ("/tmp/libsprocessing.sh");
 
       package_extract_file("tools/divine/deepbuffer.sh", "/tmp/deepbuffer.sh");
       set_metadata("/tmp/deepbuffer.sh", "uid", 0, "gid", 0, "fmode", 0777);
@@ -588,8 +612,11 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       delete ("/tmp/deepbuffer.sh");
 
       set_progress(0.820000);
+      ui_print("- Setting permissions");
+      set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
       set_metadata("/system/etc/init.d/batsav", "uid", 0, "gid", 2000, "fmode", 0755);
-      set_metadata("/system/app/MaxxAudioService.apk", "uid", 0, "gid", 0, "fmode", 06755);
+      set_metadata("/system/app/MaxxAudioService.apk", "uid", 0, "gid", 0, "fmode",
+                   06755);
       set_metadata_recursive("/system/app/GoogleLyricsPlugin", "uid", 0, "gid", 0,
                              "dmode", 0755, "fmode", 0644);
       set_metadata_recursive("/system/app/SemcMetadataCleanup", "uid", 0, "gid", 0,
@@ -634,12 +661,15 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755,
                              "fmode", 0755);
 
+      ui_print("Your device sound is going to be revolutionized      ");
+      ui_print("Installing Viper4Android Profiles and IRS by A.R.I.S.E & Rika");
       package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
-  endif;
-
-  if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
-    then
-      run_program("/system/bin/echo", "DEBUG: No audio mod");
+      set_metadata_recursive("/sdcard/Viper4Android", "uid",
+                             1023, "gid", 1023, "dmode", 0755, "fmode", 0644);
+      run_program("/sbin/busybox", "umount", "/system");
+      run_program("/sbin/busybox", "umount", "/data");
+      ui_print("Installation complete");
+      ui_print("NO NEED TO Wipe Caches, just reboot");
   endif;
 
   #XPOSED

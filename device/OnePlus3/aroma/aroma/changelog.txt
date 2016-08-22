@@ -1,4 +1,4 @@
-  CHANGE : Return with the system.new.dat installation for avoiding some installations problems.
+  CHANGE : Retrun with the system.new.dat installation.
   ADD: Remove com.touchtype with SwiftKey [OPTION]
   UPDATE: ElementalX 0.14
   UPDATE: CalendarGoogle
@@ -8,16 +8,6 @@
   UPDATE: Substratum
   UPDATE: SwiftKey
   UPDATE: YouTube
-  UPDATE: DiVINEBEATS 7.5 Beta @TheRoyalSeeker
-  UPDATE: New and updated Huawei P9 libs.
-  UPDATE: New vivo X-Play libs.
-  UPDATE: LG G5 libs included.
-  UPDATE: SRS optimized.
-  UPDATE: Fully optimized Sony DSEE HX .
-  UPDATE: Removed useless files from Divine Beats. This makes our mod slimmer.
-  FIX: Fixed Bluetooth problem.
-  FIX: Tried to fix the cracking sound some users were facing.
-  FIX: Fix sound issue with soundcloud and some others apps.
   A lot of under the hood modification, see gitlab.
 
 1.4.1
