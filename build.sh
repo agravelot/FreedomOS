@@ -24,8 +24,8 @@ function die {
   err="Unknown error!"
   test "$1" && err=$1
   cd ${top_root}
-  echo "$err"
-  echo "Check the build log: ${build_log}"
+  echo "${bold}${redt}${err}${normal}"
+  echo "${bold}${redt}Check the build log: ${build_log}${normal}"
   exit -1
 }
 
@@ -46,6 +46,26 @@ function initialize {
   build_log=${output_root}/build.log
   config_file=${top_root}/.build.conf
   confirm_build=0
+
+  redt=$(tput setaf 1)
+  redb=$(tput setab 1)
+  greent=$(tput setaf 2)
+  greenb=$(tput setab 2)
+  yellowt=$(tput setaf 3)
+  yellowb=$(tput setab 3)
+  bluet=$(tput setaf 4)
+  blueb=$(tput setab 4)
+  magentat=$(tput setaf 5)
+  magentab=$(tput setab 5)
+  cyant=$(tput setaf 6)
+  cyanb=$(tput setab 6)
+  whiteb=$(tput setab 7)
+  bold=$(tput bold)
+  italic=$(tput sitm)
+  stand=$(tput smso)
+  underline=$(tput smul)
+  normal=$(tput sgr0)
+  clears=$(tput clear)
 
   # create folder structure
   cd ${top_root}
@@ -83,7 +103,7 @@ function initialize {
 function banner() {
   tput clear
   echo "----------------------------------------"
-  echo " FreedomOS build script by Nevax $normal"
+  echo "${bold}${redt} FreedomOS build script by Nevax ${normal}"
   echo "----------------------------------------"
   echo
 }

@@ -23,7 +23,7 @@ function make_zip {
     echo ">> Generating md5 hash" 2>&1 | tee -a ${build_log}
     openssl md5 "${output_root}/${output_file}.zip" |cut -f 2 -d " " > "${output_root}/${output_file}.zip.md5" 2>&1 | tee -a ${build_log}
 
-    echo ">> SignApk....." 2>&1 | tee -a ${build_log}
+    echo ">> Signature of the ZIP file" 2>&1 | tee -a ${build_log}
     chmod +x ${build_root}/tools/signapk.jar >> ${build_log} 2>&1
     java -jar "${build_root}/tools/signapk.jar" "${build_root}/keys/certificate.pem" "${build_root}/keys/key.pk8" "${output_root}/${output_file}.zip" "${output_root}/${output_file}-signed.zip" >> ${build_log} 2>&1
 
@@ -58,6 +58,6 @@ function make_zip {
   rm -rvf ${tmp_root} >> ${build_log} 2>&1
 
   echo ">" 2>&1 | tee -a ${build_log}
-  echo "> Build finished! You can find the build here: ${output_root}/${output_file}.zip" 2>&1 | tee -a ${build_log}
-  echo "> You can find the log file here: ${build_log}" 2>&1 | tee -a ${build_log}
+  echo "${greent}${bold}-> Build finished! You can find the build here: ${output_root}/${output_file}.zip ${normal}" 2>&1 | tee -a ${build_log}
+  echo "${greent}${bold}-> You can find the log file here: ${build_log} ${normal}" 2>&1 | tee -a ${build_log}
 }
