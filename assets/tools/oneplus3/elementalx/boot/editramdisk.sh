@@ -17,6 +17,11 @@ if [ $(grep -c "import /init.elementalx.rc" /tmp/ramdisk/init.rc) == 0 ]; then
    sed -i "/import \/init\.environ\.rc/aimport /init.elementalx.rc" /tmp/ramdisk/init.rc
 fi
 
+#Don't let bfq become default scheduler
+if [ $(grep -c "setprop sys.io.scheduler \"bfq\"" /tmp/ramdisk/init.qcom.power.rc) == 1 ]; then
+   sed -i "/setprop sys\.io\.scheduler \"bfq\"/d" /tmp/ramdisk/init.qcom.power.rc
+fi
+
 #Copy wifi module to ramdisk
 cp /tmp/wlan.ko /tmp/ramdisk/sbin/wlan.ko
 chmod 0644 /tmp/ramdisk/sbin/wlan.ko

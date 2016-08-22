@@ -1,5 +1,6 @@
   CHANGE : Retrun with the system.new.dat installation.
   ADD: Remove com.touchtype with SwiftKey [OPTION]
+  UPDATE: ElementalX 0.14
   A lot of under the hood modification, see gitlab.
 
 1.4.1
