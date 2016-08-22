@@ -652,8 +652,8 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
     delete_recursive("/system/app/Material_Dark_V4A");
     delete_recursive("/system/priv-app/Material_Dark_V4A");
     delete_recursive("/data/app/com.vipercn.viper4android_v2-1");
-    delete ("/system/lib/soundfx/libv4a_fx_ics.so");
-    delete ("/system/lib/soundfx/libv4a_fx_jb.so");
+    delete("/system/lib/soundfx/libv4a_fx_ics.so");
+    delete("/system/lib/soundfx/libv4a_fx_jb.so");
     delete_recursive("/system/app/As");
     delete_recursive("/system/app/AsUI");
     delete_recursive("/system/priv-app/As");
@@ -664,7 +664,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
     delete_recursive("/system/priv-app/Ds");
     delete_recursive("/system/priv-app/DsUI");
     delete_recursive("/system/priv-app/SemcMusic");
-    delete ("/system/priv-app/TRSmods.apk");
+    delete("/system/priv-app/TRSmods.apk");
     delete_recursive("/sdcard/DBEngine");
     package_extract_dir("tools/divine/system", "/system");
 
@@ -675,11 +675,6 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
     set_metadata("/tmp/runme.sh", "uid", 0, "gid", 0, "fmode", 0777);
     run_program("/tmp/runme.sh");
     delete ("/tmp/runme.sh");
-
-    package_extract_file("tools/divine/libsprocessing.sh", "/tmp/libsprocessing.sh");
-    set_metadata("/tmp/libsprocessing.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    run_program("/tmp/libsprocessing.sh");
-    delete ("/tmp/libsprocessing.sh");
 
     package_extract_file("tools/divine/deepbuffer.sh", "/tmp/deepbuffer.sh");
     set_metadata("/tmp/deepbuffer.sh", "uid", 0, "gid", 0, "fmode", 0777);

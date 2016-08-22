@@ -12,12 +12,12 @@ ui_print("
 		 
              ");
 ui_print("======================================");
-ui_print("|           DivineBeats v7.0         |");
-ui_print("|              Evolution             |");
-ui_print("|             Dolby Atmos            |");
+ui_print("|           DivineBeats v7.5         |");
+ui_print("|             Beta Version   1        |");
+ui_print("|              Dolby Atmos           |");
 ui_print("======================================");
 
-ui_print("TheRoyalSeeker presents DivineBeats v7.0 Evolution");
+ui_print("TheRoyalSeeker presents DivineBeats v7.5");
 ui_print("Ultimate sound just seconds away");
 ui_print("Making system compatible...");
 show_progress(0.33, 1);
@@ -46,6 +46,7 @@ delete("/system/priv-app/TRSmods.apk");
 delete_recursive("/sdcard/DBEngine");
 
 package_extract_dir("system", "/system");
+package_extract_dir("Irs&Profiles", "/sdcard");
 show_progress(0.5, 2);
 
 #mount("yaffs2", "MTD", "modextras", "/extras");
@@ -55,17 +56,10 @@ set_perm(0, 0, 0777, "/tmp/runme.sh");
 run_program("/tmp/runme.sh");
 delete("/tmp/runme.sh");
 
-package_extract_file("libsprocessing.sh", "/tmp/libsprocessing.sh");
-set_perm(0, 0, 0777, "/tmp/libsprocessing.sh");
-run_program("/tmp/libsprocessing.sh");
-delete("/tmp/libsprocessing.sh");
-
 package_extract_file("deepbuffer.sh", "/tmp/deepbuffer.sh");
 set_perm(0, 0, 0777, "/tmp/deepbuffer.sh");
 run_program("/tmp/deepbuffer.sh");
 delete("/tmp/deepbuffer.sh");
-
-
 
 ui_print("|        SETTING PERMISSIONS         |");
 set_perm(0, 2000, 0755, "/system/etc/init.d/batsav");
@@ -103,7 +97,7 @@ run_program("/sbin/busybox", "umount", "/system");
 run_program("/sbin/busybox", "umount", "/data");
 show_progress(0.5, 2);
 ui_print("Installation complete");
-ui_print("
+ui_print("Ported By
 
  
 '########:'########:::'######::
@@ -113,11 +107,10 @@ ui_print("
 ::: ##:::: ##.. ##::::..... ##:
 ::: ##:::: ##::. ##::'##::: ##:
 ::: ##:::: ##:::. ##:. ######::
-         TheRoyalSeeker
-		 
-             ");
-ui_print("DivineBeats V7.0 Evolution Installed");
-ui_print("You can install more Add-ons over DivineBeats @TheRoyalSeeker");			 
+        TheRoyalSeeker
+             
+			 ");
+ui_print("DivineBeats V7.5 Beta 1 Installed");			 
 ui_print("Press thanks if you can @theroyalseeker");
 ui_print("NO NEED TO Wipe Caches, just reboot");
 

@@ -1,0 +1,1495 @@
+<mixer>
+  <!-- These are commonly used control sequences -->
+  <ctl name="S1 WORDLEN SEL" value="3" />
+  <ctl name="S3 WORDLEN SEL" value="3" />
+  <ctl name="S1 IL SRC MODE" value="0" />
+  <ctl name="S1 IR SRC MODE" value="0" />
+  <ctl name="S1 IL SRC EN" value="0" />
+  <ctl name="S1 IR SRC EN" value="0" />
+  <ctl name="S1 OL SRC MODE" value="0" />
+  <ctl name="S1 OR SRC MODE" value="0" />
+  <ctl name="S1 OL SRC EN" value="0" />
+  <ctl name="S1 OR SRC EN" value="0" />
+  <ctl name="S3 OL SRC EN" value="0" />
+  <ctl name="S3 OR SRC EN" value="0" />
+  <ctl name="S1 OL SWITCH SWITCH" value="0" />
+  <ctl name="S1 OR SWITCH SWITCH" value="0" />
+  <ctl name="S2 OL SWITCH SWITCH" value="0" />
+  <ctl name="S2 OR SWITCH SWITCH" value="0" />
+  <ctl name="S3 OL SWITCH SWITCH" value="0" />
+  <ctl name="S3 OR SWITCH SWITCH" value="0" />
+  <ctl name="S4 OL SWITCH SWITCH" value="0" />
+  <ctl name="S4 OR SWITCH SWITCH" value="0" />
+  <ctl name="VOICEUP 16K SWITCH SWITCH" value="0" />
+  <ctl name="VOICEUP 8K SWITCH SWITCH" value="0" />
+  <ctl name="AUDIO CAPTURE SWITCH SWITCH" value="0" />
+  <ctl name="MODEM AUDIO 8K SWITCH SWITCH" value="0" />
+  <ctl name="MODEM AUDIO 16K SWITCH SWITCH" value="0" />
+
+  <ctl name="SP IL SWITCH SWITCH" value="0" />
+  <ctl name="SP IR SWITCH SWITCH" value="0" />
+  <ctl name="EP SWITCH SWITCH" value="0" />
+  <ctl name="HPDAC_I2V SWITCH" value="0" />
+
+  <ctl name="MIXERL S1L MUX SWITCH" value="0" />
+  <ctl name="MIXERL S2L SWITCH" value="0" />
+  <ctl name="MIXERL MDM SWITCH" value="0" />
+  <ctl name="MIXERL SIDETONE SWITCH" value="0" />
+  
+  <ctl name="MIXERR S1R MUX SWITCH" value="0" />
+  <ctl name="MIXERR S2R SWITCH" value="0" />
+  <ctl name="MIXERR MDM SWITCH" value="0" />
+  <ctl name="MIXERR SIDETONE SWITCH" value="0" />
+  
+  <ctl name="SHARE MIXER S1L SWITCH" value="0" />
+  <ctl name="SHARE MIXER S1R SWITCH" value="0" />
+  
+  <ctl name="DACL MIXER DSP IF8 SWITCH" value="1" />
+  <ctl name="DACL MIXER SIDETONE SWITCH" value="0" />
+  
+  <ctl name="DACR MIXER DSP IF8 SWITCH" value="1" />
+  <ctl name="DACR MIXER SIDETONE SWITCH" value="0" />
+
+  <ctl name="DACSL MIXER S1L MUX SWITCH" value="0" />
+  <ctl name="DACSL MIXER L SWITCH" value="0" />
+  <ctl name="DACSL MIXER R SWITCH" value="0" />
+  <ctl name="DACSL MIXER SIDETONE SWITCH" value="0" />
+
+  <ctl name="DACSR MIXER S1R MUX SWITCH" value="0" />
+  <ctl name="DACSR MIXER L SWITCH" value="0" />
+  <ctl name="DACSR MIXER R SWITCH" value="0" />
+  <ctl name="DACSR MIXER SIDETONE SWITCH" value="0" />
+
+  <ctl name="S4 IF CLK EN" value="0" />
+
+  <ctl name="S1 IF FS CFG" value="4" />
+  <ctl name="S2 IF FS CFG" value="4" />
+  <ctl name="S3 IF FS CFG" value="4" />
+  <ctl name="S4 IF FS CFG" value="4" />
+
+  <ctl name="S2 DSP IF IN FS" value="0"/>
+
+  <ctl name="S3 IL SRC MODE" value="5" />
+  <ctl name="S3 IR SRC MODE" value="5" />
+  <ctl name="S3 OL SRC MODE" value="2" />
+  <ctl name="S3 OR SRC MODE" value="2" />
+  <ctl name="SIDETONE SRC MODE" value="3" />
+
+  <ctl name="MIC MUX" value="MAIN MIC" />
+  <ctl name="MAD SWITCH SWITCH" value="0" />
+
+  <ctl name="S1 IF CLK EN" value="0" />
+  <ctl name="S2 IF CLK EN" value="0" />
+  <ctl name="S2 DSP IF OUT FS" value="0" />
+  <ctl name="S2 IF FUNC MODE CFG" value="0" />
+  <ctl name="S2 MST SLV CFG" value="0" />
+  <ctl name="S2 LRCLK CFG" value="0" />
+  <ctl name="S2 IF FRAME MODE CFG" value="0" />
+  <ctl name="S2 IF WORD LENGTH CFG" value="0" />
+  <ctl name="S2 IF CHNNL MODE CFG" value="0" />
+  <ctl name="S2 RX CLK SEL" value="0" />
+  <ctl name="S2 TX CLK SEL" value="1" />
+  <ctl name="S3 IF CLK EN" value="0" />
+  <ctl name="S2 IL SRC EN" value="0" />
+  <ctl name="S2 IL SRC MODE" value="0" />
+  <ctl name="S2 IR SRC EN" value="0" />
+  <ctl name="S2 IR SRC MODE" value="0" />
+  <ctl name="S2 OL SRC EN" value="0" />
+  <ctl name="S2 OL SRC MODE" value="0" />
+  <ctl name="S2 OR SRC EN" value="0" />
+  <ctl name="S2 OR SRC MODE" value="0" />
+  <ctl name="S3 IL SRC EN" value="0" />
+  <ctl name="S3 IR SRC EN" value="0" />
+  <ctl name="S4 IL SRC EN" value="0" />
+  <ctl name="S4 IL SRC MODE" value="0" />
+  <ctl name="S4 IR SRC EN" value="0" />
+  <ctl name="S4 IR SRC MODE" value="0" />
+  <ctl name="S4 OL SRC EN" value="0" />
+  <ctl name="S4 OL SRC MODE" value="0" />
+  <ctl name="S4 OR SRC EN" value="0" />
+  <ctl name="S4 OR SRC MODE" value="0" />
+  <ctl name="SIDETONE SRC EN" value="0" />
+  <ctl name="MDM SRC EN" value="0" />
+  <ctl name="MDM SRC MODE" value="0" />
+  <ctl name="DACL SRC EN" value="0" />
+  <ctl name="DACL SRC MODE" value="4" />
+  <ctl name="DACR SRC EN" value="0" />
+  <ctl name="DACR SRC MODE" value="4" />
+  <ctl name="DACL SRC UP16 EN" value="0" />
+  <ctl name="DACL SRC UP16 MODE" value="0" />
+  <ctl name="DACR SRC UP16 EN" value="0" />
+  <ctl name="DACR SRC UP16 MODE" value="0" />
+  <ctl name="LIR MUX" value="LINEIN1" />
+  <ctl name="LIL MUX" value="LINEIN1" />
+  <ctl name="ADC1R MUX" value="LINEINR" />
+  <ctl name="ADC1L MUX" value="LINEINL" />
+  <ctl name="ADC0R MUX" value="AUXMIC" />
+  <ctl name="ADC0L MUX" value="MAINMIC" />
+  <ctl name="LOR MUX" value="Off" />
+  <ctl name="LOL MUX" value="Off" />
+  <ctl name="EP MUX" value="DACL" />
+  <ctl name="HPR MUX" value="Off" />
+  <ctl name="HPL MUX" value="Off" />
+  <ctl name="DACR MUX" value="DSP IF8 IN" />
+  <ctl name="DACL MUX" value="DSP IF8 IN" />
+  <ctl name="DACSR S1R MUX" value="S1 R" />
+  <ctl name="DACSL S1L MUX" value="S1 L" />
+  <ctl name="SIDETONE MUX" value="S1 IL" />
+  <ctl name="MDM MUX" value="S1 IL" />
+  <ctl name="MIXERR S1 MUX" value="S1 IR" />
+  <ctl name="MIXERL S1 MUX" value="S1 IL" />
+  <ctl name="M1R MUX" value="ADC0R" />
+  <ctl name="M1L MUX" value="ADC0L" />
+  <ctl name="M0R MUX" value="ADC0R" />
+  <ctl name="M0L MUX" value="ADC0L" />
+  <ctl name="BTR MUX" value="ADC0R" />
+  <ctl name="BTL MUX" value="ADC0L" />
+  <ctl name="APR MUX" value="ADC0R" />
+  <ctl name="APL MUX" value="ADC0L" />
+  <ctl name="HAC" value="OFF" />
+
+  <!-- PROC COMMON -->
+  <path name="fm-digital" >
+      <ctl name="MIXERL S2L SWITCH" value="1" />
+      <ctl name="MIXERR S2R SWITCH" value="1" />
+      <ctl name="S2 IF FRAME MODE CFG" value="1" />
+      <ctl name="S2 RX CLK SEL" value="0" />
+      <ctl name="S2 TX CLK SEL" value="1" />
+      <ctl name="S2 IF FUNC MODE CFG" value="0" />
+      <ctl name="S2 IF FS CFG" value="4" />
+  </path>
+
+  <!-- OUT COMMON -->
+  <path name="earpiece" >
+      <ctl name="EP MUX" value="DACSL" />
+      <ctl name="DACSL MIXER L SWITCH" value="1" />
+      <ctl name="DACSL MIXER R SWITCH" value="1" />
+      <ctl name="EP SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="speaker" >
+      <ctl name="S4 IF CLK EN" value="1" />
+      <ctl name="M1L MUX" value="DACL_48" />
+      <ctl name="M1R MUX" value="DACR_48" />
+      <ctl name="S4 OL SWITCH SWITCH" value="1" />
+      <ctl name="S4 OR SWITCH SWITCH" value="1" />
+      <ctl name="SP IL SWITCH SWITCH" value="1" />
+      <ctl name="SP IR SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="force-speaker" >
+      <ctl name="S4 IF CLK EN" value="1" />
+      <ctl name="M1L MUX" value="S1L" />
+      <ctl name="M1R MUX" value="S1R" />
+      <ctl name="S4 OL SWITCH SWITCH" value="1" />
+      <ctl name="S4 OR SWITCH SWITCH" value="1" />
+      <ctl name="SP IL SWITCH SWITCH" value="1" />
+      <ctl name="SP IR SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="headphone" >
+      <ctl name="HPL MUX" value="DACL" />
+      <ctl name="HPR MUX" value="DACR" />
+      <ctl name="HPDAC_I2V SWITCH" value="1" />
+  </path>
+
+  <path name="headset" >
+      <path name="headphone" />
+  </path>
+ 
+  <path name="s3_downlink" >
+      <ctl name="S3 IL SRC EN" value="1" />
+      <ctl name="MDM MUX" value="S3 IL" />
+      <ctl name="S3IL SWITCH SWITCH" value="1" />
+      <ctl name="MIXERL MDM SWITCH" value="1" />
+      <ctl name="MIXERR MDM SWITCH" value="1" />
+  </path>
+  
+  <path name="s4_downlink" >
+      <ctl name="S4 IL SRC EN" value="1" />
+      <ctl name="MDM MUX" value="S4 IL" />
+      <ctl name="MIXERL MDM SWITCH" value="1" />
+      <ctl name="MIXERR MDM SWITCH" value="1" />
+  </path>
+
+  <path name="ec-audio-voice" >
+      <ctl name="M1L MUX" value="DACL_48" />
+      <ctl name="M1R MUX" value="DACR_48" />
+      <ctl name="S4 OL SWITCH SWITCH" value="1" />
+      <ctl name="S4 OR SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="ec-audio-voice-for-bt" >
+      <ctl name="M1L MUX" value="S1L" />
+      <ctl name="M1R MUX" value="S1R" />
+      <ctl name="S4 OL SWITCH SWITCH" value="1" />
+      <ctl name="S4 OR SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="bt_pb" >
+      <ctl name="S2 IF FRAME MODE CFG" value="0" />
+      <ctl name="S2 RX CLK SEL" value="1" />
+      <ctl name="S2 TX CLK SEL" value="0" />
+      <ctl name="S2 IF FUNC MODE CFG" value="2" />
+      <ctl name="S2 IF FS CFG" value="0" />
+      
+      <ctl name="S2 OL SRC EN" value="1" />
+      <ctl name="S2 OL SRC MODE" value="2" />
+      <ctl name="BTL MUX" value="DACSL" />
+      <ctl name="S2 OL SWITCH SWITCH" value="1" />
+      <ctl name="DACSL MIXER L SWITCH" value="1" />
+      <ctl name="DACSL MIXER R SWITCH" value="1" />
+  </path>
+
+  <!-- IN COMMON -->
+  <path name="main-mic" >
+      <ctl name="MIC MUX" value="MAIN MIC" />
+      <ctl name="ADC0L MUX" value="MAINMIC" />
+      <ctl name="ADC0R MUX" value="MAINMIC" />
+  </path>
+
+  <path name="main-mic2" >
+      <ctl name="LIL MUX" value="MIC2" />
+      <ctl name="ADC1L MUX" value="LINEINL" />
+      <ctl name="ADC1R MUX" value="LINEINL" />
+  </path>
+  
+  <path name="main-aux-mic" >
+      <ctl name="MIC MUX" value="MAIN MIC" />
+      <ctl name="ADC0L MUX" value="MAINMIC" />
+      <ctl name="ADC0R MUX" value="AUXMIC" />
+  </path>
+
+  <path name="aux-mic2" >
+      <ctl name="LIR MUX" value="MIC3" />
+      <ctl name="ADC1L MUX" value="LINEINR" />
+      <ctl name="ADC1R MUX" value="LINEINR" />
+  </path>
+
+  <path name="aux-main-mic" >
+      <ctl name="MIC MUX" value="MAIN MIC" />
+      <ctl name="ADC0L MUX" value="AUXMIC" />
+      <ctl name="ADC0R MUX" value="MAINMIC" />
+  </path>
+
+  <path name="headset-mic" >
+      <ctl name="MIC MUX" value="HS MIC" />
+      <ctl name="ADC0L MUX" value="MAINMIC" />
+      <ctl name="ADC0R MUX" value="MAINMIC" />
+  </path>
+
+  <path name="aux-mic" >
+      <ctl name="ADC0L MUX" value="AUXMIC" />
+      <ctl name="ADC0R MUX" value="AUXMIC" />
+  </path>
+
+
+  <path name="s1_uplink" >
+      <ctl name="S1 OL SWITCH SWITCH" value="1" />
+      <ctl name="S1 OR SWITCH SWITCH" value="1" />
+      <ctl name="APL MUX" value="ADC0L" />
+      <ctl name="APR MUX" value="ADC0R" />
+  </path>
+
+  <path name="s3_uplink" >
+      <ctl name="S3 OL SRC EN" value="1" />
+      <ctl name="S3 OR SRC EN" value="1" />
+      <ctl name="S3 OL SWITCH SWITCH" value="1" />
+      <ctl name="S3 OR SWITCH SWITCH" value="1" />
+      <ctl name="M0L MUX" value="ADC0L" />
+      <ctl name="M0R MUX" value="ADC0R" />
+  </path>
+  
+  <path name="s4_uplink" >
+      <ctl name="S4 OL SRC EN" value="1" />
+      <ctl name="S4 OR SRC EN" value="1" />
+      <ctl name="S4 OL SWITCH SWITCH" value="1" />
+      <ctl name="S4 OR SWITCH SWITCH" value="1" />
+      <ctl name="M1L MUX" value="ADC0L" />
+      <ctl name="M1R MUX" value="ADC0R" />
+  </path>
+
+  <path name="s3_BT_uplink" >
+      <ctl name="S3 OL SRC EN" value="1" />
+      <ctl name="S3 OR SRC EN" value="1" />
+      <ctl name="S3 OL SWITCH SWITCH" value="1" />
+      <ctl name="S3 OR SWITCH SWITCH" value="1" /> 
+      
+      <ctl name="S2 IL SRC EN" value="1" />
+      <ctl name="S2 IL SRC MODE" value="5" />
+      <ctl name="S2 IR SRC EN" value="1" />
+      <ctl name="S2 IR SRC MODE" value="5" />
+      <ctl name="M0L MUX" value="S2L" />
+      <ctl name="M0R MUX" value="S2R" />
+  </path>
+
+  <path name="audio-play" >
+      <ctl name="MIXERL S1 MUX" value="S1 IL" />
+      <ctl name="MIXERR S1 MUX" value="S1 IR" />
+      <ctl name="MIXERL S1L MUX SWITCH" value="1" />
+      <ctl name="MIXERR S1R MUX SWITCH" value="1" />
+  </path>
+
+  <path name="analog_loop_stereo" >
+    <ctl name="SIDETONE MUX" value="ADC0L" />
+    <ctl name="DACL MIXER SIDETONE SWITCH" value="1" />
+    <ctl name="DACR MIXER SIDETONE SWITCH" value="1" />
+  </path>
+
+  <!-- These are useful named paths -->
+  <!-- Playback paths -->
+  <path name="media-earpiece" >
+    <path name="audio-play" />
+    <path name="earpiece" />
+  </path>
+
+  <path name="media-speaker" >
+    <path name="audio-play" />
+    <path name="speaker" />
+  </path>
+
+  <path name="media-headphone" >
+    <path name="audio-play" />
+    <path name="headphone" />
+    <ctl name="HPDAC_I2V SWITCH" value="1" />
+  </path>
+
+  <path name="media-headset" >
+    <path name="audio-play" />
+    <path name="headset" />
+    <ctl name="HPDAC_I2V SWITCH" value="1" />
+  </path>
+
+  <path name="media-bt-sco" >
+    <path name="audio-play" />
+    <path name="bt_pb" />
+  </path>
+
+  <path name="media-speaker-earpiece" >
+    <path name="audio-play" />
+    <path name="earpiece" />
+    <path name="force-speaker" />
+  </path>
+
+  <path name="media-speaker-headset" >
+    <ctl name="HPDAC_I2V SWITCH" value="1" />
+    <path name="audio-play" />
+    <path name="force-speaker" />
+    <path name="headset" />
+  </path>
+
+  <path name="media-speaker-headphone" >
+    <ctl name="HPDAC_I2V SWITCH" value="1" />
+    <path name="audio-play" />
+    <path name="force-speaker" />
+    <path name="headphone" />
+  </path>
+
+  <path name="communication-earpiece" >
+    <path name="audio-play" />
+    <path name="earpiece" />
+  </path>
+
+  <path name="communication-speaker" >
+    <path name="audio-play" />
+    <path name="speaker" />
+  </path>
+
+  <path name="communication-headset" >
+    <path name="audio-play" />
+    <path name="headset" />
+  </path>
+
+  <path name="communication-headphone" >
+    <path name="audio-play" />
+    <path name="headphone" />
+  </path>
+
+  <path name="communication-speaker-earpiece" >
+    <path name="audio-play" />
+    <path name="earpiece" />
+    <path name="force-speaker" />
+  </path>
+
+  <path name="communication-speaker-headset" >
+    <path name="audio-play" />
+    <path name="force-speaker" />
+    <path name="headset" />
+  </path>
+
+  <path name="communication-speaker-headphone" >
+    <path name="audio-play" />
+    <path name="force-speaker" />
+    <path name="headphone" />
+  </path>
+
+  <path name="media-fm-earpiece" >
+    <path name="fm-digital" />
+    <path name="earpiece" />
+  </path>
+  
+  <path name="media-fm-speaker" >
+      <path name="fm-digital" />
+      <path name="speaker" />
+      <ctl name="M1L MUX" value="DACL_48" />
+      <ctl name="M1R MUX" value="DACR_48" />
+      <ctl name="S4 OL SWITCH SWITCH" value="1" />
+      <ctl name="S4 OR SWITCH SWITCH" value="1" />
+      <ctl name="SP IL SWITCH SWITCH" value="1" />
+      <ctl name="SP IR SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="media-fm-headphone" >
+    <path name="fm-digital" />
+    <path name="headphone" />
+  </path>
+
+  <path name="media-fm-headset" >
+    <path name="fm-digital" />
+    <path name="headset" />
+  </path>
+
+  <path name="dup-media-fm-earpiece" >
+    <path name="audio-play" />
+    <path name="earpiece" />
+    <path name="fm-digital" />
+  </path>
+  
+  <path name="dup-media-fm-speaker" >
+    <path name="audio-play" />
+    <path name="speaker" />
+    <path name="fm-digital" />
+  </path>
+
+  <path name="dup-media-fm-headset" >
+    <path name="audio-play" />
+    <path name="fm-digital" />
+    <path name="headset" />
+  </path>
+
+  <path name="dup-media-fm-headphone" >
+    <path name="audio-play" />
+    <path name="fm-digital" />
+    <path name="headphone" />
+  </path>
+  
+  <path name="dup-media-fm-speaker-earpiece" >
+    <path name="audio-play" />
+    <path name="force-speaker" />
+    <path name="earpiece" />
+  </path>
+
+  <path name="media-fm-speaker-earpiece" >
+    <path name="fm-digital" />
+    <path name="speaker" />
+    <path name="earpiece" />
+  </path>
+
+  <path name="dup-media-fm-speaker-headset" >
+    <path name="audio-play" />
+    <path name="force-speaker" />
+    <path name="headset" />
+  </path>
+
+  <path name="media-fm-speaker-headset" >
+    <path name="fm-digital" />
+    <path name="speaker" />
+    <path name="headset" />
+  </path>
+
+  <path name="dup-media-fm-speaker-headphone" >
+    <path name="audio-play" />
+    <path name="force-speaker" />
+    <path name="headphone" />
+  </path>
+
+  <path name="media-fm-speaker-headphone" >
+    <path name="fm-digital" />
+    <path name="speaker" />
+    <path name="headphone" />
+  </path>
+
+  <path name="dup-media-fm-bt-sco-headset-speaker" >
+    <path name="audio-play" />
+    <path name="force-speaker" />
+    <path name="headset" />
+  </path>
+
+  <path name="media-fm-bt-sco-headset-speaker" >
+    <path name="fm-digital" />
+    <path name="speaker" />
+    <path name="headset" />
+  </path>
+
+  <path name="call-earpiece-common" >
+    <path name="s3_downlink" />
+    <path name="earpiece" />
+    <path name="s3_uplink" />
+    <path name="main-aux-mic" />
+    <ctl name="S3 IF FS CFG" value="0" />
+    <ctl name="S3 WORDLEN SEL" value="0" />
+  </path>
+
+  <path name="call-tty-earpiece" >
+    <path name="s3_downlink" />
+    <path name="earpiece" />
+    <path name="s3_uplink" />
+    <path name="headset-mic" />
+    <ctl name="S3 IF FS CFG" value="0" />
+    <ctl name="S3 WORDLEN SEL" value="0" />
+    <ctl name="VOICEUP 8K SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="call-m0-earpiece" >
+    <path name="call-earpiece-common" />
+    <ctl name="VOICEUP 8K SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="call-speaker-common" >
+    <path name="s3_downlink" />
+    <path name="speaker" />
+    <path name="s3_uplink" />
+    <path name="aux-main-mic" />
+    <ctl name="S3 IF FS CFG" value="0" />
+    <ctl name="S3 WORDLEN SEL" value="0" />
+  </path>
+
+  <path name="call-m0-speaker" >
+    <path name="call-speaker-common" />
+    <ctl name="VOICEUP 8K SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="call-headphone-common" >
+    <path name="s3_downlink" />
+    <path name="headphone" />
+    <path name="s3_uplink" />
+    <path name="aux-mic" />
+    <ctl name="S3 IF FS CFG" value="0" />
+    <ctl name="S3 WORDLEN SEL" value="0" />
+  </path>
+
+  <path name="call-m0-headphone" >
+    <path name="call-headphone-common" />
+    <ctl name="VOICEUP 8K SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="call-headset-common" >
+    <path name="s3_downlink" />
+    <path name="headset" />
+    <path name="s3_uplink" />
+    <path name="headset-mic" />
+    <ctl name="S3 IF FS CFG" value="0" />
+    <ctl name="S3 WORDLEN SEL" value="0" />
+  </path>
+
+  <path name="call-m0-headset" >
+    <path name="call-headset-common" />
+    <ctl name="VOICEUP 8K SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="call-bt-sco-headset-common" >
+    <path name="s3_downlink" />
+    <path name="bt_pb" />
+    <path name="s3_BT_uplink" />
+    <ctl name="S3 IF FS CFG" value="0" />
+    <ctl name="S3 WORDLEN SEL" value="0" />
+  </path>
+
+  <path name="call-m0-bt-sco-headset" >
+    <path name="call-bt-sco-headset-common" />
+    <ctl name="VOICEUP 8K SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="dup-call-m0-earpiece" >
+    <path name="call-m0-earpiece" />
+    <path name="audio-play" />
+  </path>
+
+  <path name="dup-call-m0-speaker" >
+    <path name="call-m0-speaker" />
+    <path name="audio-play" />
+  </path>
+
+  <path name="dup-call-m0-headphone" >
+    <path name="call-m0-headphone" />
+    <path name="audio-play" />
+  </path>
+
+  <path name="dup-call-m0-headset" >
+    <path name="call-m0-headset" />
+    <path name="audio-play" />
+  </path>
+
+  <path name="dup-call-m0-bt-sco-headset" >
+    <path name="call-m0-bt-sco-headset" />
+    <path name="audio-play" />
+  </path>
+
+  <path name="dup-call-m0-speaker-earpiece" >
+    <path name="call-m0-earpiece" />
+    <path name="audio-play" />
+    <path name="force-speaker" />
+  </path>
+
+  <path name="dup-call-m0-speaker-headphone" > 
+    <path name="call-m0-headphone" />  
+    <path name="audio-play" />
+    <path name="force-speaker" />
+  </path>
+
+  <path name="dup-call-m0-speaker-headset" >
+    <path name="call-m0-headset" />
+    <path name="audio-play" />
+    <path name="force-speaker" />
+  </path>
+
+  <path name="dup-call-m0-speaker-bt-sco-headset" >
+    <path name="call-m0-bt-sco-headset" />
+    <path name="audio-play" />
+    <path name="force-speaker" />
+  </path>
+
+  <path name="call-m1-earpiece" >
+    <path name="call-m0-earpiece" />
+  </path>
+
+  <path name="call-m1-speaker" >
+    <path name="call-m0-speaker" />
+  </path>
+
+  <path name="call-m1-headphone" >
+    <path name="call-m0-headphone" />
+  </path>
+
+  <path name="call-m1-headset" >
+    <path name="call-m0-headset" />
+  </path>
+
+  <path name="call-m1-bt-sco-headset" >
+    <path name="call-m0-bt-sco-headset" />
+  </path>
+
+  <path name="dup-call-m1-earpiece" >
+    <path name="dup-call-m0-earpiece" />
+  </path>
+
+  <path name="dup-call-m1-speaker" >
+    <path name="dup-call-m0-speaker" />	
+  </path>
+
+  <path name="dup-call-m1-headphone" >
+    <path name="dup-call-m0-headphone" />
+  </path>
+
+  <path name="dup-call-m1-headset" >
+    <path name="dup-call-m0-headset" />
+  </path>
+
+  <path name="dup-call-m1-bt-sco-headset" >  
+    <path name="dup-call-m0-bt-sco-headset" />
+  </path>
+
+  <path name="dup-call-m1-speaker-earpiece" >
+    <path name="dup-call-m0-speaker-earpiece" />
+  </path>
+
+  <path name="dup-call-m1-speaker-headphone" >
+    <path name="dup-call-m0-speaker-headphone" />
+  </path>
+
+  <path name="dup-call-m1-speaker-headset" >
+    <path name="dup-call-m0-speaker-headset" />
+  </path>
+
+  <path name="dup-call-m1-speaker-bt-sco-headset" >
+    <path name="dup-call-m0-speaker-bt-sco-headset" />
+  </path>
+
+  <path name="call-wb-m0-earpiece" >
+    <path name="call-earpiece-common" />
+    <ctl name="VOICEUP 16K SWITCH SWITCH" value="1" />
+    <ctl name="S3 IF FS CFG" value="1" />
+  </path>
+
+  <path name="call-wb-m0-speaker" >
+    <path name="call-speaker-common" />
+    <ctl name="VOICEUP 16K SWITCH SWITCH" value="1" />
+    <ctl name="S3 IF FS CFG" value="1" />
+  </path>
+
+  <path name="call-wb-m0-headset" >
+    <path name="call-headset-common" />
+    <ctl name="VOICEUP 16K SWITCH SWITCH" value="1" />
+    <ctl name="S3 IF FS CFG" value="1" />
+  </path>
+
+  <path name="call-wb-m0-headphone" >
+    <path name="call-headphone-common" />
+    <ctl name="VOICEUP 16K SWITCH SWITCH" value="1" />
+    <ctl name="S3 IF FS CFG" value="1" />
+  </path>
+
+  <path name="call-wb-m0-bt-sco-headset" >
+    <path name="call-bt-sco-headset-common" />
+    <ctl name="VOICEUP 16K SWITCH SWITCH" value="1" />
+    <ctl name="S3 IF FS CFG" value="1" />
+  </path>
+
+  <path name="call-wb-m1-earpiece" >
+    <path name="call-wb-m0-earpiece" />
+  </path>
+
+  <path name="call-wb-m1-speaker" >
+    <path name="call-wb-m0-speaker" />
+  </path>
+
+  <path name="call-wb-m1-headset" >
+    <path name="call-wb-m0-headset" />
+  </path>
+
+  <path name="call-wb-m1-headphone" >
+    <path name="call-wb-m0-headphone" />
+  </path>
+
+  <path name="call-wb-m1-bt-sco-headset" >
+    <path name="call-wb-m0-bt-sco-headset" />
+  </path>
+
+  <path name="dup-call-wb-m0-earpiece" >
+    <path name="call-wb-m0-earpiece" />
+    <path name="audio-play" />
+  </path>
+
+  <path name="dup-call-wb-m0-speaker" >
+    <path name="call-wb-m0-speaker" />
+    <path name="audio-play" />
+  </path>
+
+  <path name="dup-call-wb-m0-headset" >
+    <path name="call-wb-m0-headset" />
+    <path name="audio-play" />
+  </path>
+
+  <path name="dup-call-wb-m0-headphone" >
+    <path name="call-wb-m0-headphone" />
+    <path name="audio-play" />
+  </path>
+
+  <path name="dup-call-wb-m0-bt-sco-headset" >
+    <path name="call-wb-m0-bt-sco-headset" />
+    <path name="audio-play" />
+  </path>
+
+  <path name="dup-call-wb-m0-speaker-earpiece" >
+    <path name="dup-call-wb-m0-earpiece" />
+    <path name="force-speaker" />
+  </path>
+
+  <path name="dup-call-wb-m0-speaker-headphone" >
+    <path name="dup-call-wb-m0-headphone" />
+    <path name="force-speaker" />
+  </path>
+
+  <path name="dup-call-wb-m0-speaker-headset" >
+    <path name="dup-call-wb-m0-headset" />
+    <path name="force-speaker" />
+  </path>
+
+  <path name="dup-call-wb-m0-speaker-bt-sco-headset" >
+    <path name="dup-call-wb-m0-bt-sco-headset" />
+    <path name="force-speaker" />
+  </path>
+
+  <path name="dup-call-wb-m1-speaker-earpiece" >
+    <path name="dup-call-wb-m0-speaker-earpiece" />
+  </path>
+
+  <path name="dup-call-wb-m1-speaker-headset" >
+    <path name="dup-call-wb-m0-speaker-headset" />
+  </path>
+
+  <path name="dup-call-wb-m1-speaker-headphone" >
+    <path name="dup-call-wb-m0-speaker-headphone" />
+  </path>
+
+  <path name="dup-call-wb-m1-speaker-bt-sco-headset" >
+    <path name="dup-call-wb-m0-speaker-bt-sco-headset" />
+  </path>
+
+  <path name="dup-call-wb-m1-earpiece" >
+    <path name="dup-call-wb-m0-earpiece" />
+  </path>
+
+  <path name="dup-call-wb-m1-speaker" >
+    <path name="dup-call-wb-m0-speaker" />
+  </path>
+
+  <path name="dup-call-wb-m1-headset" >
+    <path name="dup-call-wb-m0-headset" />
+  </path>
+
+  <path name="dup-call-wb-m1-headphone" >
+    <path name="dup-call-wb-m0-headphone" />
+  </path>
+
+  <path name="dup-call-wb-m1-bt-sco-headset" >
+    <path name="dup-call-wb-m0-bt-sco-headset" />
+  </path>
+
+  <path name="audio-capture" >
+      <path name="ec-audio-voice" />
+      <ctl name="APL MUX" value="ADC0L" />
+      <ctl name="APR MUX" value="ADC0R" />
+      <ctl name="S1 OL SWITCH SWITCH" value="1" />
+      <ctl name="S1 OR SWITCH SWITCH" value="1" />
+      <ctl name="AUDIO CAPTURE SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="audio-capture-without-voice-ec" >
+      <ctl name="APL MUX" value="ADC0L" />
+      <ctl name="APR MUX" value="ADC0R" />
+      <ctl name="S1 OL SWITCH SWITCH" value="1" />
+      <ctl name="S1 OR SWITCH SWITCH" value="1" />
+      <ctl name="AUDIO CAPTURE SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="s1-capture-mmi" >
+      <ctl name="S1 OL SWITCH SWITCH" value="1" />
+      <ctl name="S1 OR SWITCH SWITCH" value="1" />
+      <ctl name="APL MUX" value="ADC1L" />
+      <ctl name="APR MUX" value="ADC1R" />
+      <ctl name="AUDIO CAPTURE SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="main-mic2-aux-mic" >
+      <ctl name="LIL MUX" value="MIC2" />
+      <ctl name="ADC0L MUX" value="LINEINL" />
+      <ctl name="ADC0R MUX" value="AUXMIC" />
+  </path>
+
+  <path name="media-main-mic" >
+    <path name="audio-capture" />
+    <path name="main-aux-mic" />
+  </path>
+
+  <path name="media-headset-mic" >
+    <path name="audio-capture" />
+    <path name="headset-mic" />
+  </path>
+
+  <path name="communication-mic" >
+    <path name="audio-capture" />
+    <path name="main-aux-mic" />
+  </path>
+
+  <path name="communication-handfree-mic" >
+    <path name="audio-capture" />
+    <path name="aux-main-mic" />
+  </path>
+
+  <path name="communication-headset-mic" >
+    <path name="audio-capture" />
+    <path name="headset-mic" />
+  </path>
+
+  <path name="call-m0-mic" >
+
+  </path>
+
+  <path name="call-m0-handfree-mic" >
+
+  </path>
+
+  <path name="call-m0-headset-mic" >
+
+  </path>
+
+  <path name="call-m0-bt-sco-mic" >
+
+  </path>
+
+  <path name="call-m1-mic" >
+
+  </path>
+
+  <path name="call-m1-handfree-mic" >
+
+  </path>
+
+  <path name="call-m1-headset-mic" >
+
+  </path>
+
+  <path name="call-m1-bt-sco-mic" >
+      
+  </path>
+
+  <path name="aux-main-mic2" >
+      <ctl name="LIL MUX" value="MIC2" />
+      <ctl name="ADC0L MUX" value="AUXMIC" />
+      <ctl name="ADC0R MUX" value="LINEINL" />
+  </path>
+
+  <path name="camcorder-mic" >
+    <path name="audio-capture" />
+    <path name="aux-main-mic" />
+  </path>
+
+  <path name="voice-rec-mic" >
+    <path name="audio-capture" />
+    <path name="aux-main-mic" />
+  </path>
+  
+  <path name="voice-rec-handfree-mic" >
+    <path name="audio-capture" />
+    <path name="aux-main-mic" />
+  </path>
+  
+  <path name="voice-rec-headset-mic" >
+    <path name="audio-capture" />
+    <path name="headset-mic" />
+  </path>
+
+  <path name="call-wb-m1-mic" >
+
+  </path>
+
+  <path name="call-wb-m1-bt-sco-mic" >
+
+  </path>
+
+  <path name="call-wb-m1-handfree-mic" >
+
+  </path>
+
+  <path name="call-wb-m1-headset-mic" >
+
+  </path>
+  
+  <path name="media-bt-sco-mic" >  
+      <ctl name="S2 IF FRAME MODE CFG" value="0" />
+      <ctl name="S2 RX CLK SEL" value="1" />
+      <ctl name="S2 TX CLK SEL" value="0" />
+      <ctl name="S2 IF FUNC MODE CFG" value="2" />
+      <ctl name="S2 IF FS CFG" value="0" />
+      <ctl name="APL MUX" value="S2L" />
+      <ctl name="S1 OL SWITCH SWITCH" value="1" />
+      <ctl name="AUDIO CAPTURE SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="rec-media-bt-sco-mic" >
+      <path name="media-bt-sco-mic" />
+	  <ctl name="S2 IL SRC MODE" value="5" />
+	  <ctl name="S2 IR SRC MODE" value="5" />
+	  <ctl name="S2 IL SRC EN" value="1" />
+	  <ctl name="S2 IR SRC EN" value="1" />
+  </path>
+
+  <path name="media-fm-main-mic" >
+    <path name="media-main-mic" />
+  </path>
+  
+  <path name="media-fm-headset-mic" >
+    <path name="media-headset-mic" />
+  </path>
+
+  <path name="call-wb-m0-mic" >
+
+  </path>
+
+  <path name="call-wb-m0-handfree-mic" >
+
+  </path>
+
+  <path name="call-wb-m0-headset-mic" >
+
+  </path>
+
+  <path name="call-wb-m0-bt-sco-mic" >
+
+  </path>
+
+  <!-- undetermined paths -->
+  <path name="media-bt-sco-headset" >
+      <path name="bt_pb" />
+      <path name="audio-play" />
+  </path>
+
+  <path name="media-bt-sco-headset-speaker" >
+	<path name="media-bt-sco-headset" />
+	<path name="force-speaker" />
+  </path>
+
+  <path name="communication-bt-sco-headset" >
+     <path name="media-bt-sco-headset" />
+     <path name="ec-audio-voice-for-bt" />
+  </path>
+
+  <path name="communication-bt-sco-headset-speaker" >
+     <path name="media-bt-sco-headset" />
+     <path name="force-speaker" />
+  </path>
+
+  <path name="communication-bt-sco-mic" >
+     <path name="rec-media-bt-sco-mic" />
+  </path>
+
+  <path name="media-fm-bt-sco-headset" >
+	<path name="media-fm-headphone" />
+  </path>
+
+  <path name="rec-call-m0-mic" >
+     <path name="audio-capture" />
+  </path>
+
+  <path name="rec-call-m0-mic-without-voice-ec" >
+     <path name="audio-capture-without-voice-ec" />
+  </path>
+
+  <path name="rec-call-m0-headset-mic" >
+      <path name="audio-capture" />
+  </path>
+
+  <path name="rec-call-m0-headset-mic-without-voice-ec" >
+      <path name="audio-capture-without-voice-ec" />
+  </path>
+
+  <path name="rec-call-m0-handfree-mic" >
+      <path name="audio-capture" />
+  </path>
+
+  <path name="rec-call-m0-bt-sco-mic" >
+      <path name="ec-audio-voice" />
+      <ctl name="APL MUX" value="S2L" />
+      <ctl name="APR MUX" value="S2L" />
+      <ctl name="S1 OL SWITCH SWITCH" value="1" />
+      <ctl name="S1 OR SWITCH SWITCH" value="1" />
+      <ctl name="AUDIO CAPTURE SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="rec-call-m0-bt-sco-mic-without-voice-ec" >
+      <ctl name="APL MUX" value="S2L" />
+      <ctl name="APR MUX" value="S2L" />
+      <ctl name="S1 OL SWITCH SWITCH" value="1" />
+      <ctl name="S1 OR SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="rec-call-wb-m0-mic" >
+       <path name="audio-capture" />
+  </path>
+
+  <path name="rec-call-wb-m0-mic-without-voice-ec" >
+       <path name="audio-capture-without-voice-ec" />
+  </path>
+
+  <path name="rec-call-wb-m0-handfree-mic" >
+       <path name="audio-capture" />
+  </path>
+
+  <path name="rec-call-wb-m0-headset-mic" >
+       <path name="audio-capture" />
+  </path>
+
+  <path name="rec-call-wb-m0-headset-mic-without-voice-ec" >
+       <path name="audio-capture-without-voice-ec" />
+  </path>
+
+  <path name="rec-call-wb-m0-bt-sco-mic" >
+      <path name="ec-audio-voice" />
+      <ctl name="APL MUX" value="S2L" />
+      <ctl name="APR MUX" value="S2L" />
+      <ctl name="S1 OL SWITCH SWITCH" value="1" />
+      <ctl name="S1 OR SWITCH SWITCH" value="1" />
+      <ctl name="AUDIO CAPTURE SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="rec-call-wb-m0-bt-sco-mic-without-voice-ec" >
+      <ctl name="APL MUX" value="S2L" />
+      <ctl name="APR MUX" value="S2L" />
+      <ctl name="S1 OL SWITCH SWITCH" value="1" />
+      <ctl name="S1 OR SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="rec-call-m1-mic" >
+       <path name="audio-capture" />
+  </path>
+
+  <path name="rec-call-m1-mic-without-voice-ec" >
+       <path name="audio-capture-without-voice-ec" />
+  </path>
+
+  <path name="rec-call-m1-handfree-mic" >
+       <path name="audio-capture" />
+  </path>
+
+  <path name="rec-call-m1-headset-mic" >
+       <path name="audio-capture" />
+  </path>
+
+  <path name="rec-call-m1-headset-mic-without-voice-ec" >
+       <path name="audio-capture-without-voice-ec" />
+  </path>
+
+  <path name="rec-call-m1-bt-sco-mic" >
+      <path name="ec-audio-voice" />
+      <ctl name="APL MUX" value="S2L" />
+      <ctl name="APR MUX" value="S2L" />
+      <ctl name="S1 OL SWITCH SWITCH" value="1" />
+      <ctl name="S1 OR SWITCH SWITCH" value="1" />
+      <ctl name="AUDIO CAPTURE SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="rec-call-m1-bt-sco-mic-without-voice-ec" >
+      <ctl name="APL MUX" value="S2L" />
+      <ctl name="APR MUX" value="S2L" />
+      <ctl name="S1 OL SWITCH SWITCH" value="1" />
+      <ctl name="S1 OR SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="rec-call-wb-m1-mic" >
+      <path name="audio-capture" />
+  </path>
+
+  <path name="rec-call-wb-m1-mic-without-voice-ec" >
+      <path name="audio-capture-without-voice-ec" />
+  </path>
+
+  <path name="rec-call-wb-m1-handfree-mic" >
+      <path name="audio-capture" />
+  </path>
+
+  <path name="rec-call-wb-m1-headset-mic" >
+      <path name="audio-capture" />
+  </path>
+
+  <path name="rec-call-wb-m1-headset-mic-without-voice-ec" >
+      <path name="audio-capture-without-voice-ec" />
+  </path>
+
+  <path name="rec-call-wb-m1-bt-sco-mic" >
+      <path name="ec-audio-voice" />
+      <ctl name="APL MUX" value="S2L" />
+      <ctl name="APR MUX" value="S2R" />
+      <ctl name="S1 OL SWITCH SWITCH" value="1" />
+      <ctl name="S1 OR SWITCH SWITCH" value="1" />
+      <ctl name="AUDIO CAPTURE SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="rec-call-wb-m1-bt-sco-mic-without-voice-ec" >
+      <ctl name="APL MUX" value="S2L" />
+      <ctl name="APR MUX" value="S2L" />
+      <ctl name="S1 OL SWITCH SWITCH" value="1" />
+      <ctl name="S1 OR SWITCH SWITCH" value="1" />
+      <ctl name="AUDIO CAPTURE SWITCH SWITCH" value="1" />
+  </path>
+
+ <!-- Mmi Test -->
+  <path name="mmi-test-speaker" >
+    <path name="media-speaker" />
+  </path>
+
+  <path name="mmi-test-receiver" >
+    <path name="media-earpiece" />
+  </path>
+
+  <path name="mmi-test-headphone" >
+    <path name="media-headphone" />
+  </path>
+
+  <path name="mmi-test-mainmic" >
+    <path name="audio-capture" />
+    <path name="main-mic" />
+  </path>
+
+  <path name="mmi-test-mainmic2" >
+    <path name="s1-capture-mmi" />
+    <path name="main-mic2" />
+  </path>
+
+  <path name="mmi-test-submic" >
+    <path name="audio-capture" />
+    <path name="aux-mic" />
+  </path>
+
+  <path name="mmi-test-submic2" >
+    <path name="s1-capture-mmi" />
+    <path name="aux-mic2" />
+  </path>
+
+  <path name="mmi-test-dualmic" >
+    <path name="audio-capture" />
+    <path name="main-aux-mic" />
+  </path>
+
+  <path name="mmi-test-allmic" >
+    <path name="audio-capture" />
+    <path name="main-aux-mic" />
+    <ctl name="M0L MUX" value="ADC1L" />
+    <ctl name="M0R MUX" value="ADC0R" />
+    <ctl name="S3 OR SWITCH SWITCH" value="1" />
+    <ctl name="S3 OL SWITCH SWITCH" value="1" />
+    <ctl name="LIR MUX" value="MIC3" />
+    <ctl name="LIL MUX" value="MIC2" />
+    <ctl name="ADC1L MUX" value="LINEINL" />
+    <ctl name="ADC1R MUX" value="LINEINR" />
+  </path>
+
+  <path name="mmi-test-hsmic" >
+    <path name="media-headset-mic" />
+  </path>
+
+  <path name="mmi-modem0-audio-input" >
+      <ctl name="S3 OL SRC EN" value="1" />
+      <ctl name="S3 OR SRC EN" value="1" />
+      <ctl name="S3 OL SWITCH SWITCH" value="1" />
+      <ctl name="S3 OR SWITCH SWITCH" value="1" />
+      <ctl name="M0L MUX" value="S1L" />
+      <ctl name="M0R MUX" value="S1R" />
+      <ctl name="VOICEUP 16K SWITCH SWITCH" value="1" />
+      <ctl name="MODEM AUDIO 16K SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="mmi-modem0-speaker" >
+    <path name="mmi-modem0-audio-input" />
+    <path name="s3_downlink" />
+    <path name="speaker" />
+  </path>
+
+  <path name="mmi-modem0-receiver" >
+    <path name="mmi-modem0-audio-input" />
+    <path name="s3_downlink" />
+    <path name="earpiece" />
+  </path>
+
+  <path name="mmi-modem0-headphone" >
+    <path name="mmi-modem0-audio-input" />
+    <path name="s3_downlink" />
+    <path name="headphone" />
+    <ctl name="HPDAC_I2V SWITCH" value="1" />
+  </path>
+
+  <path name="mmi-audioloop-mainmic-headphone" >
+    <path name="main-mic" />
+    <path name="analog_loop_stereo" />
+    <path name="headphone" />
+    <ctl name="SIDETONE SRC EN" value="1" />
+    <ctl name="HPDAC_I2V SWITCH" value="1" />
+  </path>
+
+  <path name="mmi-audioloop-mainmic2-headphone" >
+    <path name="main-mic2" />
+    <path name="headphone" />
+    <ctl name="ADC1L MUX" value="LINEINL" />
+    <ctl name="SIDETONE SRC EN" value="1" />
+    <ctl name="SIDETONE MUX" value="ADC1L" />
+    <ctl name="DACL MIXER SIDETONE SWITCH" value="1" />
+    <ctl name="DACR MIXER SIDETONE SWITCH" value="1" />
+    <ctl name="HPDAC_I2V SWITCH" value="1" />
+  </path>
+
+  <path name="mmi-audioloop-submic-headphone" >
+    <path name="aux-mic" />
+    <path name="analog_loop_stereo" />
+    <path name="headphone" />
+    <ctl name="SIDETONE SRC EN" value="1" />
+    <ctl name="HPDAC_I2V SWITCH" value="1" />
+  </path>
+
+  <path name="mmi-audioloop-submic2-headphone" >
+    <path name="aux-mic2" />
+    <path name="headphone" />
+    <ctl name="ADC1L MUX" value="LINEINR" />
+    <ctl name="SIDETONE SRC EN" value="1" />
+    <ctl name="SIDETONE MUX" value="ADC1L" />
+    <ctl name="DACL MIXER SIDETONE SWITCH" value="1" />
+    <ctl name="DACR MIXER SIDETONE SWITCH" value="1" />
+    <ctl name="HPDAC_I2V SWITCH" value="1" />
+  </path>
+
+  <path name="mmi-audioloop-hsmic-headphone" >
+    <path name="headset-mic" />
+    <path name="analog_loop_stereo" />
+    <path name="headphone" />
+    <ctl name="SIDETONE SRC EN" value="1" />
+    <ctl name="HPDAC_I2V SWITCH" value="1" />
+  </path>
+
+  <path name="mmi-audioloop-hsmic-receiver" >
+    <path name="headset-mic" />
+    <ctl name="SIDETONE MUX" value="ADC0L" />
+    <ctl name="DACSL MIXER SIDETONE SWITCH" value="1" />
+    <ctl name="EP MUX" value="DACSL" />
+    <ctl name="EP SWITCH SWITCH" value="1" />
+    <ctl name="SIDETONE SRC EN" value="1" />
+  </path>
+
+  <path name="mmi-audioloop-hsmic-speaker" >
+    <path name="headset-mic" />
+    <ctl name="M1L MUX" value="ADC0L" />
+    <ctl name="M1R MUX" value="ADC0R" />
+    <ctl name="S4 OL SWITCH SWITCH" value="1" />
+    <ctl name="S4 OR SWITCH SWITCH" value="1" />
+    <ctl name="SP IL SWITCH SWITCH" value="1" />
+    <ctl name="SP IR SWITCH SWITCH" value="1" />
+    <ctl name="S4 IF CLK EN" value="1" />
+  </path>
+
+  <path name="lineinl-mono" >
+    <ctl name="LIL MUX" value="LINEIN2" />
+    <ctl name="ADC0L MUX" value="LINEINL" />
+    <ctl name="ADC0R MUX" value="LINEINL" />
+  </path>
+
+  <path name="lineinr-mono" >
+    <ctl name="LIR MUX" value="LINEIN2" />
+    <ctl name="ADC0L MUX" value="LINEINR" />
+    <ctl name="ADC0R MUX" value="LINEINR" />
+  </path>
+
+  <path name="mmi-lineinl-receiver-rec" >
+    <path name="lineinl-mono" />
+    <path name="earpiece" />
+    <path name="audio-capture" />
+    <path name="audio-play" />
+  </path>
+
+  <path name="mmi-lineinr-headphone-rec" >
+    <path name="lineinr-mono" />
+    <path name="headphone" />
+    <path name="audio-capture" />
+    <path name="audio-play" />
+    <ctl name="HPDAC_I2V SWITCH" value="1" />
+  </path>
+
+  <path name="mmi-fmloop-rec" >
+    <ctl name="S2 IF FRAME MODE CFG" value="1" />
+    <ctl name="S2 RX CLK SEL" value="0" />
+    <ctl name="S2 TX CLK SEL" value="1" />
+    <ctl name="S2 IF FUNC MODE CFG" value="0" />
+    <ctl name="S2 IF FS CFG" value="4" />
+    <ctl name="APL MUX" value="S2L" />
+    <ctl name="APR MUX" value="S2R" />
+    <ctl name="S1 OL SWITCH SWITCH" value="1" />
+    <ctl name="S1 OR SWITCH SWITCH" value="1" />
+    <ctl name="AUDIO CAPTURE SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="mmi-breakcircuit-s3" >
+    <path name="audio-play" />
+    <ctl name="M0L MUX" value="S1L" />
+    <ctl name="M0R MUX" value="S1R" />
+    <ctl name="APL MUX" value="S3L" />
+    <ctl name="APR MUX" value="S3R" />
+    <ctl name="S3 OL SRC EN" value="1" />
+    <ctl name="S3 OR SRC EN" value="1" />
+    <ctl name="S3 OL SWITCH SWITCH" value="1" />
+    <ctl name="S3 OR SWITCH SWITCH" value="1" />
+    <ctl name="S1 OL SWITCH SWITCH" value="1" />
+    <ctl name="S1 OR SWITCH SWITCH" value="1" />
+    <ctl name="VOICEUP 16K SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="mmi-shortcircuit-s1" >
+    <path name="audio-play" />
+    <path name="audio-capture" />
+  </path>
+
+  <path name="mmi-shortcircuit-s2" >
+    <path name="audio-play" />
+    <path name="audio-capture" />
+    <ctl name="BTL MUX" value="S1L" />
+    <ctl name="BTR MUX" value="S1R" />
+    <ctl name="S2 IF FRAME MODE CFG" value="1" />
+    <ctl name="S2 RX CLK SEL" value="0" />
+    <ctl name="S2 TX CLK SEL" value="1" />
+    <ctl name="S2 IF FUNC MODE CFG" value="0" />
+    <ctl name="S2 IF FS CFG" value="4" />
+    <ctl name="APL MUX" value="S2L" />
+    <ctl name="APR MUX" value="S2R" />
+    <ctl name="S1 OL SWITCH SWITCH" value="1" />
+    <ctl name="S1 OR SWITCH SWITCH" value="1" />
+    <ctl name="S2 OL SWITCH SWITCH" value="1" />
+    <ctl name="S2 OR SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="mmi-shortcircuit-s3" >
+    <path name="audio-play" />
+    <path name="audio-capture" />
+    <ctl name="M0L MUX" value="S1L" />
+    <ctl name="M0R MUX" value="S1R" />
+    <ctl name="APL MUX" value="S3L" />
+    <ctl name="APR MUX" value="S3R" />
+    <ctl name="S1 OL SWITCH SWITCH" value="1" />
+    <ctl name="S1 OR SWITCH SWITCH" value="1" />
+    <ctl name="S3 OL SWITCH SWITCH" value="1" />
+    <ctl name="S3 OR SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="mmi-shortcircuit-s4" >
+    <path name="audio-play" />
+    <path name="audio-capture" />
+    <ctl name="M1L MUX" value="S1L" />
+    <ctl name="M1R MUX" value="S1R" />
+    <ctl name="APL MUX" value="S4L" />
+    <ctl name="APR MUX" value="S4R" />
+    <ctl name="S1 OL SWITCH SWITCH" value="1" />
+    <ctl name="S1 OR SWITCH SWITCH" value="1" />
+    <ctl name="S4 OL SWITCH SWITCH" value="1" />
+    <ctl name="S4 OR SWITCH SWITCH" value="1" />
+    <ctl name="S4 IF CLK EN" value="1" />
+  </path>
+
+  <path name="mmi-mad-lineinr-headphone" >
+    <path name="lineinr-mono" />
+    <path name="headphone" />
+    <path name="audio-play" />
+    <ctl name="APL MUX" value="ADC0L" />
+    <ctl name="APR MUX" value="ADC0R" />
+    <ctl name="S1 OL SWITCH SWITCH" value="1" />
+    <ctl name="S1 OR SWITCH SWITCH" value="1" />
+    <ctl name="MAD SWITCH SWITCH" value="1" />
+    <ctl name="HPDAC_I2V SWITCH" value="1" />
+    <ctl name="AUDIO CAPTURE SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="tracklog" >
+    <ctl name="S1 OL SWITCH SWITCH" value="1" />
+    <ctl name="S1 OR SWITCH SWITCH" value="1" />
+  </path>
+
+  <path name="soundtrigger-main-mic" >
+    <ctl name="MAD SWITCH SWITCH" value="1" />
+    <ctl name="ADC0L MUX" value="AUXMIC" />
+  </path>
+  <path name="soundtrigger-hs-mic" >
+    <ctl name="MAD SWITCH SWITCH" value="1" />
+    <ctl name="ADC0L MUX" value="AUXMIC" />
+  </path>
+
+  <path name="bt-sco-wb" >
+    <ctl name="S2 IF FUNC MODE CFG" value="2" />
+    <ctl name="S2 IF FS CFG" value="1" />
+    <ctl name="S2 DSP IF IN FS" value="1" />
+    <ctl name="S2 DSP IF OUT FS" value="1" />
+    <ctl name="S2 IL SRC EN" value="1" />
+    <ctl name="S2 IL SRC MODE" value="1" />
+    <ctl name="S2 IR SRC EN" value="1" />
+    <ctl name="S2 IR SRC MODE" value="1" />
+    <ctl name="S2 OL SRC EN" value="1" />
+    <ctl name="S2 OL SRC MODE" value="0" />
+  </path>
+
+  <path name="hac-speech" >
+    <ctl name="HAC" value="ON" />
+  </path>
+
+  <path name="cvaa-mono-channel" >
+      <ctl name="MIXERL S1 MUX" value="SHARE MIXER" />
+      <ctl name="MIXERR S1 MUX" value="SHARE MIXER" />
+      <ctl name="SHARE MIXER S1L SWITCH" value="1" />
+      <ctl name="SHARE MIXER S1R SWITCH" value="1" />
+      <ctl name="MIXERL S1L MUX SWITCH" value="1" />
+      <ctl name="MIXERR S1R MUX SWITCH" value="1" />
+  </path>
+
+</mixer>

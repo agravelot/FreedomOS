@@ -1,0 +1,37 @@
+<pop>
+  <up>
+	<num name="num" value="10"/>
+	<ctl name="S1 OL SWITCH SWITCH"/>
+	<ctl name="S1 OR SWITCH SWITCH"/>
+	<ctl name="S2 OL SWITCH SWITCH"/>
+	<ctl name="S2 OR SWITCH SWITCH"/>
+	<ctl name="S3 OL SWITCH SWITCH"/>
+	<ctl name="S3 OR SWITCH SWITCH"/>
+	<ctl name="S4 OL SWITCH SWITCH"/>
+	<ctl name="S4 OR SWITCH SWITCH"/>
+	<ctl name="SP IL SWITCH SWITCH"/>
+	<ctl name="SP IR SWITCH SWITCH"/>
+  </up>
+  <down>
+	<num name="num" value="10"/>
+	<ctl name="S1 OL SWITCH SWITCH"/>
+	<ctl name="S1 OR SWITCH SWITCH"/>
+	<ctl name="S2 OL SWITCH SWITCH"/>
+	<ctl name="S2 OR SWITCH SWITCH"/>
+	<ctl name="S3 OL SWITCH SWITCH"/>
+	<ctl name="S3 OR SWITCH SWITCH"/>
+	<ctl name="S4 OL SWITCH SWITCH"/>
+	<ctl name="S4 OR SWITCH SWITCH"/>
+	<ctl name="SP IL SWITCH SWITCH"/>
+	<ctl name="SP IR SWITCH SWITCH"/>
+  </down>
+  <force>
+    <force_num name="num" value="6"/>
+    <force_ctl name="MAIN PGA GAIN"/>
+    <force_ctl name="AUX PGA GAIN"/>
+    <force_ctl name="MAIN MIC BOOST"/>
+    <force_ctl name="AUX MIC BOOST"/>
+    <force_ctl name="LINEL PGA GAIN"/>
+    <force_ctl name="LINEINL BOOST"/>
+  </force>
+</pop>
