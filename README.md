@@ -7,8 +7,8 @@
 I refuse all pull requests and issues coming from Github, use [Gitlab](https://gitlab.com/Nevax/FreedomOS).
 
 ## Required
-- Linux 64bits (others architectures are experimental).
-- 30Go of free space.
+- Linux x64 (others architectures are experimental).
+- 30GiB of free space.
 - Packages : `rsync python zip curl openssl ncurses`
 - ext4 mount support with loop option.
 - root access.
@@ -27,7 +27,7 @@ Build the project:
 bash build.sh
 ```
 
-It will download all the needed files (~1.4Go) and start building your project.
+It will download all the needed files (~1.4GiB) and start building your project.
 Once you have the needed files, you don't need to re-download them.
 
 ## Join the beta team
