@@ -18,11 +18,10 @@ ui_print("----------------------------------------------------------- ");
 ui_print(" ");
 ui_print(" ");
 
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
-  then getprop("ro.build.product") == "!assert!" ||
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
+  then getprop("ro.build.product") == "!assert!" || getprop("ro.build.product") == "!assert2!" ||
       abort("This package is for \"!assert!\" devices; this is a \"" +
             getprop("ro.build.product") + "\".");
-            ui_print("Assert : OK");
 endif;
 
 set_progress(0.000000);
