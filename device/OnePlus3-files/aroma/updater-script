@@ -731,7 +731,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
     package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
 endif;
 
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "0" )
   then
     run_program("/system/bin/echo", "DEBUG: No audio mod");
 endif;
