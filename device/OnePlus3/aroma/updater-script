@@ -173,12 +173,36 @@ ui_print("@Applying Your Settings");
 ui_print(" ");
 
 # -- - STOCK KERNEL - -- #
-if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="1")
-  then
-  ui_print("   Installing Stock Kernel");
-endif;
+
+ui_print("   Installing Patched Stock Kernel");
 
 package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
+
+run_program("/system/bin/echo", "DEBUG: Extracting patch");
+package_extract_dir("tools/kernel/config", "/tmp");
+set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
+
+run_program("/tmp/busybox", "fstrim", "/cache");
+run_program("/tmp/busybox", "fstrim", "/data");
+
+package_extract_dir("tools/kernel/boot", "/tmp");
+
+run_program("/system/bin/echo", "DEBUG: Set permissions");
+set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "fmode", 0777);
+set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
+set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
+set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "fmode", 0777);
+set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "fmode", 0777);
+
+ui_print("   Customizing ramdisk");
+run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
+run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
+run_program("/tmp/cmdline.sh");
+run_program("/tmp/editramdisk.sh");
+run_program("/tmp/makebootimg.sh");
+
+ui_print("   Installing kernel");
+run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
 
 
 # -- - DIVINE BEATS - -- #

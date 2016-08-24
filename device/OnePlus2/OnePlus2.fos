@@ -77,6 +77,7 @@ common/dpi.sh
 common/fonts
 common/google_dns.sh
 common/hosts
+common/kernel
 common/multi_window.sh
 common/supersu
 common/v4a_profiles_irs
