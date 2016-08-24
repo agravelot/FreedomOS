@@ -140,7 +140,7 @@ function configure {
 
   case $BUILD in
   1)
-    BUILD_TYPE=release
+    BUILD_TYPE=nevax
     echo "release selected"
     ;;
   *)
