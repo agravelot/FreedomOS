@@ -5,12 +5,13 @@
   UPDATE: New and improved OnePlus apps, including clock, weather, and file manager
   UPDATE: Improved camera software
   UPDATE: More robust settings and and customization feature
-
-  NOTE: Those apps have been removed by myself, for liberate some space in the system partition.
   REMOVE: Google Maps
   REMOVE: Google Play Music
   REMOVE: Hangouts
+  FIX: Bad audio from OxygenOS 3.5 Community Build.
 
+  NOTE: Those Google apps have been removed by myself, for liberate some space in the system partition.
+        They are still present in the aroma, but dummy.
   NOTE: Changing the dpi makes an odd ui, not recommanded.
   NOTE: You’ll notice some of these new features right away, but the big changes have taken place behind the scenes.
    We’ve streamlined our platform, and OxygenOS 3.5 includes a lot of backend enhancements that will streamline our processes.
@@ -36,8 +37,8 @@
     - Disable system verification.
     - noatime mount flag
     - Compatible with the others custom kernels.
-  ADD: SuperSU installation is now optional, the system can boot without this one with the new kernel patch [OPTION]
-  ADD: Remove com.touchtype with SwiftKey [OPTION]
+  ADD: SuperSU installation is now optional, the system can boot without this one, thanks to the kernel patch [OPTION].
+  ADD: Remove com.touchtype with SwiftKey [OPTION].
   ADD: FreedomOS splash boot, thanks @kickoff for the image.
   UPDATE: ElementalX 0.14
   UPDATE: CalendarGoogle
@@ -49,7 +50,6 @@
   UPDATE: YouTube
   DELETE: Stock recovery theme files.
   A lot of under the hood modification, see gitlab.
-
 
 1.4.1
   UPDATE: ElementalX 0.11.
