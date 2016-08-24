@@ -5,6 +5,7 @@
     - Compatible with the others custom kernels.
   ADD: SuperSU installation is now optional, the system can boot without this one with the new kernel patch [OPTION]
   ADD: Remove com.touchtype with SwiftKey [OPTION]
+  ADD: FreedomOS splash boot, thanks @kickoff for the image.
   UPDATE: ElementalX 0.14
   UPDATE: CalendarGoogle
   UPDATE: Drive
