@@ -2,7 +2,8 @@
   CHANGE: Retrun with the system.new.dat installation.
   ADD: FreedomOS patched kernel:
     - Disable force encryption.
-    - Disable system verification by kernel.
+    - Disable system verification.
+    - noatime mount flag
     - Compatible with the others custom kernels.
   ADD: SuperSU installation is now optional, the system can boot without this one with the new kernel patch [OPTION]
   ADD: Remove com.touchtype with SwiftKey [OPTION]

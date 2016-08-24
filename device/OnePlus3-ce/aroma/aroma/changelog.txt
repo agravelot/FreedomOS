@@ -1,32 +1,40 @@
 1.5-CE (Community Edition)
-  UPDATE:Several UI improvements
-  UPDATE:New and improved OnePlus apps, including clock, weather, and file manager
-  UPDATE:Improved camera software
-  UPDATE:More robust settings and and customization feature
+  **UNSTABLE build, use instead the 1.4.2 build for stability.**
+
+  UPDATE: Several UI improvements
+  UPDATE: New and improved OnePlus apps, including clock, weather, and file manager
+  UPDATE: Improved camera software
+  UPDATE: More robust settings and and customization feature
+
+  NOTE: Those apps have been removed by myself, for liberate some space in the system partition.
   REMOVE: Google Maps
   REMOVE: Google Play Music
   REMOVE: Hangouts
 
+  NOTE: Changing the dpi makes an odd ui, not recommanded.
   NOTE: You’ll notice some of these new features right away, but the big changes have taken place behind the scenes.
    We’ve streamlined our platform, and OxygenOS 3.5 includes a lot of backend enhancements that will streamline our processes.
    The big goal here is to improve the speed and frequency of updates moving forward.
    Please follow the links below for the experience survey and bug reporting sheet.
    https://goo.gl/forms/2rTKCrwincvKBuj32 - Feedback on UI/UX
    https://goo.gl/forms/FbRojFvSXqkLwsPD2 - Bug reporting sheet
-   NOTE: Rolling back to official FreedomOS 1.4.2 versions require wiping data and cache.
-   NOTE:
+  NOTE: Rolling back to official FreedomOS =<1.4.2 versions can require wiping data and cache.
+  NOTE:
    - Android Pay is not currently supported
    - Only English is currently supported in several OnePlus apps
    - Some performance issues
    - Some UI issues when using custom themes
    - System UI tuner is unstable (do not use); using the system UI tuner could cause serious issues that can only be resolved via factory reset
    - You will need to re-register your fingerprints if you have fingerprint authentication enabled
+   - The sound quality isn't great as it should be.
+   - The wifi doesn't work with ElementalX 0.14.
 
 1.4.2
   CHANGE: Retrun with the system.new.dat installation.
   ADD: FreedomOS patched kernel:
     - Disable force encryption.
-    - Disable system verification by kernel.
+    - Disable system verification.
+    - noatime mount flag
     - Compatible with the others custom kernels.
   ADD: SuperSU installation is now optional, the system can boot without this one with the new kernel patch [OPTION]
   ADD: Remove com.touchtype with SwiftKey [OPTION]
