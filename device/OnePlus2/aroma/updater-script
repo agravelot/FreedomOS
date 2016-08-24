@@ -206,7 +206,7 @@ run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevi
 
 
 # -- - DIVINE BEATS - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
   then
     show_progress(0.10, 673);
     ui_print("   Installing Audio mod");
@@ -300,19 +300,19 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1" )
     package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
 endif;
 
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "0" )
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "0" )
   then
     run_program("/system/bin/echo", "DEBUG: No audio mod");
 endif;
 
 # -- - XPOSED - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1")
   then
     set_progress(0.880000);
     ui_print("   Install Xposed Installer");
 endif;
 
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "0")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "0")
   then
     set_progress(0.880000);
     run_program("/system/bin/echo", "DEBUG: Uninstall Xposed");
@@ -320,7 +320,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "0")
 endif;
 
 # -- - ADAWAY - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
   then
     set_progress(0.900000);
   	ui_print("   Installing Adaway");
@@ -331,7 +331,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1")
   	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "fmode", 0644);
 endif;
 
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "0")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "0")
   then
     set_progress(0.900000);
     run_program("/system/bin/echo", "DEBUG: Uninstall Adaway");
@@ -339,7 +339,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "0")
 endif;
 
 # -- - ADB - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.5") == "1")
   then
     set_progress(0.920000);
     ui_print("   Enabling ADB");
@@ -347,7 +347,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
 endif;
 
   # -- - GOOGLE DNS - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.5") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "1")
   then
     set_progress(0.925000);
     ui_print("   Setting Google DNS");
@@ -355,7 +355,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.5") == "1")
 endif;
 
 # -- - WALLPAPER - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
   then
     set_progress(0.930000);
     ui_print("   Extracting FreedomOS Wallpapers  (@badboy47)");
@@ -363,7 +363,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "1")
 endif;
 
 # -- - EMOJI ONE - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
   then
     set_progress(0.935000);
     ui_print("   Installing EmojiOne");
@@ -372,7 +372,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
 endif;
 
 # -- - MULTI WINDOW - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
   then
     ui_print("   Enabling Multi Window");
     run_program("/tmp/tools/multi_window.sh");
@@ -809,16 +809,15 @@ endif;
 
 # -- - ROOT - -- #
 
-ui_print(" ");
-ui_print("@Installing SuperSU");
-#run_program("/system/bin/echo", "DEBUG: Extracting SU");
-#package_extract_dir("tools/supersu", "/tmp/supersu");
-#run_program("/system/bin/echo", "DEBUG: Unzip SU");
-#run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
-run_program("/system/bin/echo", "DEBUG: Move supersu to /tmp/tools/supersu ->  /tmp/supersu ");
-run_program("/sbin/busybox", "mv", "/tmp/tools/supersu", "/tmp/supersu");
-run_program("/system/bin/echo", "DEBUG: Start SU install script");
-run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
+  then
+  ui_print(" ");
+  ui_print("@Installing SuperSU");
+  run_program("/system/bin/echo", "DEBUG: Move supersu to /tmp/tools/supersu ->  /tmp/supersu ");
+  run_program("/sbin/busybox", "mv", "/tmp/tools/supersu", "/tmp/supersu");
+  run_program("/system/bin/echo", "DEBUG: Start SU install script");
+  run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
+endif;
 
 set_progress(0.990000);
 ui_print(" ");

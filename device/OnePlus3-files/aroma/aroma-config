@@ -229,6 +229,7 @@ checkbox(
   "<~mod.tittle>", "<~mod.tittle2>", "@personalize", "mod.prop",
 
   "<~mod.tittle3>", "", 2,
+    "<~supersu>", "<~info.supersu>", 1,
     "<~divine>", "<~info.divine>", 1,
     "<~xposed>", "<~info.xposed>", 0,
     "<~adaway>", "<~info.adaway>", 1,
