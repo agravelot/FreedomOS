@@ -44,8 +44,8 @@ ui_print("   Mounting System");
 #run_program("/sbin/busybox", "mount", "/system");
 mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
 ui_print("   Mounting Data");
-#run_program("/sbin/busybox", "mount", "/data");
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
+run_program("/sbin/busybox", "mount", "/data");
+#mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
 
 ui_print("   Extracting Temporary Files");
 show_progress(0.03, 1600);
@@ -207,6 +207,7 @@ set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
 set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
 set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "fmode", 0777);
 set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "fmode", 0777);
+set_metadata("/tmp/clean.sh", "uid", 0, "gid", 0, "fmode", 0777);
 
 ui_print("   Customizing ramdisk");
 run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
@@ -217,6 +218,8 @@ run_program("/tmp/makebootimg.sh");
 
 ui_print("   Installing kernel");
 run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
+
+run_program("/tmp/clean.sh");
 
 
 # -- - DIVINE BEATS - -- #

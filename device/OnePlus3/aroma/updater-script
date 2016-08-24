@@ -207,6 +207,7 @@ set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
 set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
 set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "fmode", 0777);
 set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "fmode", 0777);
+set_metadata("/tmp/clean.sh", "uid", 0, "gid", 0, "fmode", 0777);
 
 ui_print("   Customizing ramdisk");
 run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
@@ -218,6 +219,7 @@ run_program("/tmp/makebootimg.sh");
 ui_print("   Installing kernel");
 run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
 
+run_program("/tmp/clean.sh");
 
 # -- - ELEMENTALX - -- #
 if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
