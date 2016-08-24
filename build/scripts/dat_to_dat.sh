@@ -78,7 +78,6 @@ function dat_to_dat {
   rm -rvf ${tmp_root}/mount >> ${build_log} 2>&1
   rm -rvf ${tmp_root}/system.img >> ${build_log} 2>&1
   rm -rvf ${tmp_root}/system_new.img >> ${build_log} 2>&1
-  rm -rvf ${tmp_root}/file_contexts >> ${build_log} 2>&1
   rm -rvf ${tmp_root}/boot >> ${build_log} 2>&1
   rm -rvf ${tmp_root}/system >> ${build_log} 2>&1
 }
