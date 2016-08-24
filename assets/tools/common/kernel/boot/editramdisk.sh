@@ -23,6 +23,11 @@ fi
 if  grep -qr "verify," /tmp/ramdisk/fstab.qcom; then
    sed -i "s/verify,//" /tmp/ramdisk/fstab.qcom
 fi
+
+if  ! grep -qr "noatime," /tmp/ramdisk/fstab.qcom; then
+   sed -i "s/ro,/ro,noatime,/" /tmp/ramdisk/fstab.qcom
+fi
+
 #Remove verify flag
 if  grep -qr ",verify" /tmp/ramdisk/charger.fstab.qcom; then
    sed -i "s/,verify//" /tmp/ramdisk/charger.fstab.qcom
@@ -31,6 +36,10 @@ fi
 #Remove verify flag
 if  grep -qr "verify," /tmp/ramdisk/charger.fstab.qcom; then
    sed -i "s/verify,//" /tmp/ramdisk/charger.fstab.qcom
+fi
+
+if  ! grep -qr "noatime," /tmp/ramdisk/charger.fstab.qcom; then
+   sed -i "s/ro,/ro,noatime,/" /tmp/ramdisk/charger.fstab.qcom
 fi
 
 #Remove verify flag
@@ -43,8 +52,12 @@ if  grep -qr "verify," /tmp/ramdisk/fstab_nodata.qcom; then
    sed -i "s/verify,//" /tmp/ramdisk/fstab_nodata.qcom
 fi
 
+if  ! grep -qr "noatime," /tmp/ramdisk/fstab_nodata.qcom; then
+   sed -i "s/ro,/ro,noatime,/" /tmp/ramdisk/fstab_nodata.qcom
+fi
+
 #Remove verity key
-rm /tmp/ramdisk/verity_key
+rm -f /tmp/ramdisk/verity_key
 
 #echo "persist.service.adb.enable=1" >> /tmp/ramdisk/default.prop
 #echo "persist.service.debuggable=1" >> /tmp/ramdisk/default.prop
