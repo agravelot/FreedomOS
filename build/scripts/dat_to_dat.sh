@@ -55,9 +55,11 @@ function dat_to_dat {
     done
   fi
 
-  if [ -d "${assets_root}/system/${DEVICE}" ]; then
-    echo ">>> Patching system files for ${DEVICE}" 2>&1 | tee -a ${build_log}
-    cp -rvf ${assets_root}/system/${DEVICE}/* ${tmp_root}/mount/ >> ${build_log} 2>&1
+  if [ ! -z $PATCH_SYSYEM ]; then
+    if [ -d "${assets_root}/system/${PATCH_SYSYEM}" ]; then
+      echo ">>> Patching system files with ${PATCH_SYSYEM}" 2>&1 | tee -a ${build_log}
+      cp -rvf ${assets_root}/system/${PATCH_SYSYEM}/* ${tmp_root}/mount/ >> ${build_log} 2>&1
+    fi
   fi
 
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}
