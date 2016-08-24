@@ -192,7 +192,7 @@ ui_print("@Applying Your Settings");
 ui_print(" ");
 
 # -- - KERNEL PATCH - -- #
-ui_print("   Installing FreedomOS Pathched Kernel");
+ui_print("   Installing FreedomOS Patched Kernel");
 run_program("/system/bin/echo", "DEBUG: Extracting patch");
 package_extract_dir("tools/kernel/config", "/tmp");
 set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
