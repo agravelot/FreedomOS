@@ -71,7 +71,6 @@ common/addon
 common/clean.sh
 common/divine
 common/dpi.sh
-oneplus3/elementalx
 common/fonts
 common/google_dns.sh
 common/hosts
@@ -79,4 +78,6 @@ common/kernel
 common/multi_window.sh
 common/supersu
 common/v4a_profiles_irs
+oneplus3/elementalx
+oneplus3/splash/splash-fos.bin
 "
