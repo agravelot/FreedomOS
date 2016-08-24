@@ -3,6 +3,9 @@
   UPDATE:New and improved OnePlus apps, including clock, weather, and file manager
   UPDATE:Improved camera software
   UPDATE:More robust settings and and customization feature
+  REMOVE: Google Maps
+  REMOVE: Google Play Music
+  REMOVE: Hangouts
 
   NOTE: You’ll notice some of these new features right away, but the big changes have taken place behind the scenes.
    We’ve streamlined our platform, and OxygenOS 3.5 includes a lot of backend enhancements that will streamline our processes.

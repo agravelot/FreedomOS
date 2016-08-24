@@ -54,14 +54,11 @@ app/Adaway
 app/Layers
 app/Substratum
 app/XposedInstaller
-app/Maps
 app/CalendarGoogle
 app/CalculatorGoogle
 app/Messenger
 app/YouTube
-app/Music2
 app/Photos
-app/Hangouts
 app/Drive
 app/Chrome
 app/Gmail2
