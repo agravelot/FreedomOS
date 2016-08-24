@@ -45,6 +45,7 @@ bin/fmfactorytest
 bin/fmfactorytestserver
 bin/install-recovery.sh
 recovery-from-boot.p
+etc/recovery-resource.dat
 "
 
 # Set the files/folder you want to add to your system partition.

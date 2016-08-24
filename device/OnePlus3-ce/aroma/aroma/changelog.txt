@@ -47,6 +47,7 @@
   UPDATE: Substratum
   UPDATE: SwiftKey
   UPDATE: YouTube
+  DELETE: Stock recovery theme files.
   A lot of under the hood modification, see gitlab.
 
 
