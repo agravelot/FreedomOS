@@ -23,6 +23,7 @@ BUILD_METHOD=dat_to_dat
 SYSTEMIMAGE_PARTITION_SIZE=2684354560
 
 PATCH_SYSYEM=audiofix-op2
+BOOTANIMATION=1080p
 
 # Files / folders to remove from the original stock image.
 # You can easily debloat your rom from here.

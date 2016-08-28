@@ -60,6 +60,15 @@ function dat_to_dat {
       echo ">>> Patching system files with ${PATCH_SYSYEM}" 2>&1 | tee -a ${build_log}
       cp -rvf ${assets_root}/system/${PATCH_SYSYEM}/* ${tmp_root}/mount/ >> ${build_log} 2>&1
     fi
+  if [ ! -z "${BOOTANIMATION}" ]; then
+    echo ">>> Adding bootanimation ${BOOTANIMATION}" 2>&1 | tee -a ${build_log}
+    mkdir -p ${tmp_root}/bootanimation >> ${build_log} 2>&1
+    cp -rvf ${assets_root}/media/bootanimation/${BOOTANIMATION}/* ${tmp_root}/bootanimation >> ${build_log} 2>&1
+    cd ${tmp_root}/bootanimation >> ${build_log} 2>&1
+    zip ${tmp_root}/bootanimation/bootanimation.zip * -r0 >> ${build_log} 2>&1
+    cd - >> ${build_log} 2>&1
+    mv -fv  ${tmp_root}/bootanimation/bootanimation.zip ${tmp_root}/mount/media/ >> ${build_log} 2>&1
+    rm -rvf ${tmp_root}/bootanimation >> ${build_log} 2>&1
   fi
 
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}
