@@ -1,3 +1,15 @@
+1.4.3
+  RERVERT: "Update aroma to 3.00b1", now we comeback on a more stable build (less freeze).
+  CHANGE: All your gapps update will no more be remove by default, but only if selected in the AROMA.
+  REVERT: "All gapps update", see note.
+  UPDATE: Splash screen
+  ADD: FreedomOS bootanimation
+
+  NOTE : Some users experience some issues with the installation of the new gapps.
+  The new gapps was not added with the perfect method.
+  For doing the job perfectly, i need to compile the gapps by myself with his odex file.
+  I don't want to do that, so comeback with the OnePlus gapps.
+
 1.5-CE (Community Edition)
   **Use instead the 1.4.2 build for stability.**
 
@@ -28,6 +40,7 @@
    - System UI tuner is unstable (do not use); using the system UI tuner could cause serious issues that can only be resolved via factory reset
    - You will need to re-register your fingerprints if you have fingerprint authentication enabled
    - The wifi doesn't work with ElementalX 0.14.
+   - Don't forget to launch SuperSU app at your first boot.
 
 1.4.2
   CHANGE: Retrun with the system.new.dat installation.

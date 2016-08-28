@@ -1,3 +1,47 @@
+1.4.3
+  RERVERT: "Update aroma to 3.00b1", now we comeback on a more stable build (less freeze).
+  CHANGE: All your gapps update will no more be remove by default, but only if selected in the AROMA.
+  REVERT: "All gapps update", see note.
+  UPDATE: Splash screen
+  ADD: FreedomOS bootanimation
+
+  NOTE : Some users experience some issues with the installation of the new gapps.
+  The new gapps was not added with the perfect method.
+  For doing the job perfectly, i need to compile the gapps by myself with his odex file.
+  I don't want to do that, so comeback with the OnePlus gapps.
+
+1.5-CE (Community Edition)
+  **Use instead the 1.4.2 build for stability.**
+
+  UPDATE: Several UI improvements
+  UPDATE: New and improved OnePlus apps, including clock, weather, and file manager
+  UPDATE: Improved camera software
+  UPDATE: More robust settings and and customization feature
+  REMOVE: Google Maps
+  REMOVE: Google Play Music
+  REMOVE: Hangouts
+  FIX: Bad audio quality from OxygenOS 3.5 Community Build.
+
+  NOTE: Those Google apps have been removed by myself, for liberate some space in the system partition.
+        They are still present in the aroma, but dummy.
+  NOTE: Changing the dpi makes an odd ui, not recommanded.
+  NOTE: You’ll notice some of these new features right away, but the big changes have taken place behind the scenes.
+   We’ve streamlined our platform, and OxygenOS 3.5 includes a lot of backend enhancements that will streamline our processes.
+   The big goal here is to improve the speed and frequency of updates moving forward.
+   Please follow the links below for the experience survey and bug reporting sheet.
+   https://goo.gl/forms/2rTKCrwincvKBuj32 - Feedback on UI/UX
+   https://goo.gl/forms/FbRojFvSXqkLwsPD2 - Bug reporting sheet
+  NOTE: With this build, rolling back to FreedomOS =<1.4.2 versions can require wiping data and cache.
+  NOTE:
+   - Android Pay is not currently supported
+   - Only English is currently supported in several OnePlus apps
+   - Some performance issues
+   - Some UI issues when using custom themes
+   - System UI tuner is unstable (do not use); using the system UI tuner could cause serious issues that can only be resolved via factory reset
+   - You will need to re-register your fingerprints if you have fingerprint authentication enabled
+   - The wifi doesn't work with ElementalX 0.14.
+   - Don't forget to launch SuperSU app at your first boot.
+
 1.4.2
   CHANGE: Retrun with the system.new.dat installation.
   ADD: FreedomOS patched kernel:
@@ -5,8 +49,8 @@
     - Disable system verification.
     - noatime mount flag
     - Compatible with the others custom kernels.
-  ADD: SuperSU installation is now optional, the system can boot without this one with the new kernel patch [OPTION]
-  ADD: Remove com.touchtype with SwiftKey [OPTION]
+  ADD: SuperSU installation is now optional, the system can boot without this one, thanks to the kernel patch [OPTION].
+  ADD: Remove com.touchtype with SwiftKey [OPTION].
   ADD: FreedomOS splash boot, thanks @kickoff for the image.
   UPDATE: ElementalX 0.14
   UPDATE: CalendarGoogle

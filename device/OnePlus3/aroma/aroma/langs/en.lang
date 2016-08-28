@@ -244,16 +244,24 @@ info.emoji_one=The Open Emoji Standard
 info.multi_window=Enable Multi Window
 
 # -- - THEME - -- #
-theme.tittle=Theme Engine
-theme.tittle2=Select your theme engine
+theme.tittle=Theme
+theme.tittle2=Select your theme settings
 
+theme.tittle3=Select yout theme engine
 notheme=Don't install theme engine
 layer=RRO Layers [deprecated]
 substratum=Substratum
 
-info.notheme=I love stock
+info.notheme=
 info.layer=RRO Layers Manager
 info.substratum=The new Theme Engine
+
+splash.tittle=Select your bootanimation
+stock_boot=OxygenOS boot animation
+fos_boot=FreedomOS boot animation
+
+stock_boot.info=Boot screen + boot animation
+fos_boot.info=Boot screen + boot animation
 
 # -- - KERNEL - -- #
 
