@@ -55,11 +55,14 @@ function dat_to_dat {
     done
   fi
 
-  if [ ! -z $PATCH_SYSYEM ]; then
-    if [ -d "${assets_root}/system/${PATCH_SYSYEM}" ]; then
-      echo ">>> Patching system files with ${PATCH_SYSYEM}" 2>&1 | tee -a ${build_log}
-      cp -rvf ${assets_root}/system/${PATCH_SYSYEM}/* ${tmp_root}/mount/ >> ${build_log} 2>&1
-    fi
+  if [ ! -z "${PATCH_SYSYEM}" ]; then
+    for i in ${PATCH_SYSYEM}
+    do
+      echo ">>> Adding ${i} patch" 2>&1 | tee -a ${build_log}
+      cp -rvf ${assets_root}/system/${i}/* ${tmp_root}/mount/ >> ${build_log} 2>&1
+    done
+  fi
+
   if [ ! -z "${BOOTANIMATION}" ]; then
     echo ">>> Adding bootanimation ${BOOTANIMATION}" 2>&1 | tee -a ${build_log}
     mkdir -p ${tmp_root}/bootanimation >> ${build_log} 2>&1
