@@ -1,0 +1,10 @@
+ui_print("");
+ui_print("Original OnePlus boot screen");
+ui_print("Author: Nevax");
+ui_print("");
+package_extract_file("splash-stock.bin", "/dev/block/sde17");
+ui_print("");
+show_progress(0.100000, 0);
+
+
+
