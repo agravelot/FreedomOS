@@ -4,6 +4,7 @@
   REVERT: "All gapps update", see note.
   UPDATE: Splash screen
   ADD: FreedomOS bootanimation
+  UPDATE: ElementalX 0.15
 
   NOTE : Some users experience some issues with the installation of the new gapps.
   The new gapps was not updated with the perfect method.
