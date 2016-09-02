@@ -1,3 +1,15 @@
+1.5.1-CE
+  UPDATE: OxygenOS 3.5.1 Community Build
+  ADD: Accent color
+  ADD: Battery icon customization
+  ADD: LED customization
+  ADD: Display sRGB
+  ADD: Night mode
+  OPTIMIZE: Dark mode theme optimized
+  FIX: General bug fixes
+
+  NOTE: This build contain also the 1.4.3 changelog.
+
 1.4.3
   RERVERT: "Update aroma to 3.00b1", now we comeback on a more stable build (less freeze).
   CHANGE: All your gapps update will no more be removed by default, but only if selected in the AROMA.

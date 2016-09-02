@@ -9,10 +9,11 @@ DEVICE=OnePlus3
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT=OnePlus3
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus3Oxygen_16_OTA_001_all_1608221857_298f55dcebac4115
-ROM_LINK=http://104.155.94.1/$ROM_NAME.zip
+
+ROM_NAME=OnePlus3Oxygen_16_OTA_002_all_1608301010_6ee96e2225c34a71
+ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=420bac747f6257d942246b77e5f2d742
+ROM_MD5=68cf22aa523b6575e67fefa9492ae4b5
 
 # Set the version of the aroma installer, this is not the version of FreedomOS!
 # see assets/META-INF/aroma/$AROMA_VERSION
