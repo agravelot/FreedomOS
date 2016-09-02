@@ -1,13 +1,13 @@
 1.4.3
   RERVERT: "Update aroma to 3.00b1", now we comeback on a more stable build (less freeze).
-  CHANGE: All your gapps update will no more be remove by default, but only if selected in the AROMA.
+  CHANGE: All your gapps update will no more be removed by default, but only if selected in the AROMA.
   REVERT: "All gapps update", see note.
   UPDATE: Splash screen
   ADD: FreedomOS bootanimation
 
   NOTE : Some users experience some issues with the installation of the new gapps.
-  The new gapps was not added with the perfect method.
-  For doing the job perfectly, i need to compile the gapps by myself with his odex file.
+  The new gapps was not updated with the perfect method.
+  For doing the job perfectly, i need to compile the gapps by myself with his odex files.
   I don't want to do that, so comeback with the OnePlus gapps.
 
 1.5-CE (Community Edition)
