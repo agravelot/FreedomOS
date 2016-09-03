@@ -8,11 +8,12 @@
   OPTIMIZE: Dark mode theme optimized
   FIX: General bug fixes
   REMOVE: OnePlus Bug Report
-  FIX: OnePlus OTA uninstallation, no more IMEI leak
+  FIX: OnePlus OTA uninstallation, no more IMEI leaks
   FIX: File manager uninstallation
   FIX: OnePlus Music uninstallation
   FIX: Calculator uninstallation
   REMOVE: ElementalX option
+  REMOVE: Audio patch for 3.5, the sound quality is now better with this build.
 
   NOTE: This build contain also the 1.4.3 changelog.
 
@@ -23,11 +24,23 @@
   UPDATE: Splash screen
   ADD: FreedomOS bootanimation
   UPDATE: ElementalX 0.15
+  UPDATE: V4A 2.5.0.5
+    UPDATE: New UI
+    ADD: cross-channel ("quad channel") convolver support. This allows faithful reproduction of sound-field effects requiring such cross-channel convolution, such as simulation of speaker soundfield on headphones, or crosstalk cancellation (stereo widening) on stereo speakers.
+    ADD: FET compressor (new compressor / limiter simulating operation of FET circuits)
+    ADD: Support for custom settings storage path (no more looking everywhere in the phone for the settings directory!)
+    FIX: Miscellaneous bug fixes.
+  ADD: 6 brand new IRS for cross-channel ("quad channel") convolver.
 
   NOTE : Some users experience some issues with the installation of the new gapps.
   The new gapps was not updated with the perfect method.
   For doing the job perfectly, i need to compile the gapps by myself with his odex files.
   I don't want to do that, so comeback with the OnePlus gapps.
+
+  NOTE: The 6 IRSes explained:
+  "Widefield" / "Vivid": widefield impulses offer a wider stereo field while vivid impulses offer more solid out-of-head center imaging.
+  44100/48000/192000Hz: choose the right IRS based on the sample rate shown in V4A's driver status while headphones are plugged into your Android and playing.
+  More info here: http://forum.xda-developers.com/showpost.php?p=68473076&postcount=23583
 
 1.5-CE (Community Edition)
   **Use instead the 1.4.2 build for stability.**

@@ -5,43 +5,23 @@
   UPDATE: Splash screen
   ADD: FreedomOS bootanimation
   UPDATE: ElementalX 0.15
+  UPDATE: V4A 2.5.0.5
+    UPDATE: New UI
+    ADD: cross-channel ("quad channel") convolver support. This allows faithful reproduction of sound-field effects requiring such cross-channel convolution, such as simulation of speaker soundfield on headphones, or crosstalk cancellation (stereo widening) on stereo speakers.
+    ADD: FET compressor (new compressor / limiter simulating operation of FET circuits)
+    ADD: Support for custom settings storage path (no more looking everywhere in the phone for the settings directory!)
+    FIX: Miscellaneous bug fixes.
+  ADD: 6 brand new IRSes for cross-channel ("quad channel") convolver.
 
   NOTE : Some users experience some issues with the installation of the new gapps.
   The new gapps was not updated with the perfect method.
   For doing the job perfectly, i need to compile the gapps by myself with his odex files.
   I don't want to do that, so comeback with the OnePlus gapps.
 
-1.5-CE (Community Edition)
-  **Use instead the 1.4.2 build for stability.**
-
-  UPDATE: Several UI improvements
-  UPDATE: New and improved OnePlus apps, including clock, weather, and file manager
-  UPDATE: Improved camera software
-  UPDATE: More robust settings and and customization feature
-  REMOVE: Google Maps
-  REMOVE: Google Play Music
-  REMOVE: Hangouts
-  FIX: Bad audio quality from OxygenOS 3.5 Community Build.
-
-  NOTE: Those Google apps have been removed by myself, for liberate some space in the system partition.
-        They are still present in the aroma, but dummy.
-  NOTE: Changing the dpi makes an odd ui, not recommanded.
-  NOTE: You’ll notice some of these new features right away, but the big changes have taken place behind the scenes.
-   We’ve streamlined our platform, and OxygenOS 3.5 includes a lot of backend enhancements that will streamline our processes.
-   The big goal here is to improve the speed and frequency of updates moving forward.
-   Please follow the links below for the experience survey and bug reporting sheet.
-   https://goo.gl/forms/2rTKCrwincvKBuj32 - Feedback on UI/UX
-   https://goo.gl/forms/FbRojFvSXqkLwsPD2 - Bug reporting sheet
-  NOTE: With this build, rolling back to FreedomOS =<1.4.2 versions can require wiping data and cache.
-  NOTE:
-   - Android Pay is not currently supported
-   - Only English is currently supported in several OnePlus apps
-   - Some performance issues
-   - Some UI issues when using custom themes
-   - System UI tuner is unstable (do not use); using the system UI tuner could cause serious issues that can only be resolved via factory reset
-   - You will need to re-register your fingerprints if you have fingerprint authentication enabled
-   - The wifi doesn't work with ElementalX 0.14.
-   - Don't forget to launch SuperSU app at your first boot.
+  NOTE: The 6 IRSes explained:
+  "Widefield" / "Vivid": widefield impulses offer a wider stereo field while vivid impulses offer more solid out-of-head center imaging.
+  44100/48000/192000Hz: choose the right IRS based on the sample rate shown in V4A's driver status while headphones are plugged into your Android and playing.
+  More info here: http://forum.xda-developers.com/showpost.php?p=68473076&postcount=23583
 
 1.4.2
   CHANGE: Retrun with the system.new.dat installation.
