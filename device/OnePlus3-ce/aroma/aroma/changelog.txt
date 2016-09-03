@@ -1,4 +1,4 @@
-1.5.1-CE
+1.6-CE
   UPDATE: OxygenOS 3.5.1 Community Build
   ADD: Accent color
   ADD: Battery icon customization
