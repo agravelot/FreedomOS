@@ -9,6 +9,7 @@ rm /tmp/boot.img-ramdisk.gz
 
 #cp -R /tmp/patch/* .
 
+## fstab.qcom
 #Don't force encryption
 if  grep -qr forceencrypt /tmp/ramdisk/fstab.qcom; then
    sed -i "s/forceencrypt/encryptable/" /tmp/ramdisk/fstab.qcom
@@ -28,6 +29,7 @@ if  ! grep -qr "noatime," /tmp/ramdisk/fstab.qcom; then
    sed -i "s/ro,/ro,noatime,/" /tmp/ramdisk/fstab.qcom
 fi
 
+## charger.fstab.qcom
 #Remove verify flag
 if  grep -qr ",verify" /tmp/ramdisk/charger.fstab.qcom; then
    sed -i "s/,verify//" /tmp/ramdisk/charger.fstab.qcom
@@ -42,6 +44,7 @@ if  ! grep -qr "noatime," /tmp/ramdisk/charger.fstab.qcom; then
    sed -i "s/ro,/ro,noatime,/" /tmp/ramdisk/charger.fstab.qcom
 fi
 
+## fstab_nodata.qcom
 #Remove verify flag
 if  grep -qr ",verify" /tmp/ramdisk/fstab_nodata.qcom; then
    sed -i "s/,verify//" /tmp/ramdisk/fstab_nodata.qcom
@@ -54,6 +57,12 @@ fi
 
 if  ! grep -qr "noatime," /tmp/ramdisk/fstab_nodata.qcom; then
    sed -i "s/ro,/ro,noatime,/" /tmp/ramdisk/fstab_nodata.qcom
+fi
+
+## default.prop
+# Set FOS version
+if  grep -qr "ro.oxygen.version=" /tmp/ramdisk/default.prop; then
+   sed -i "s/ro.oxygen.version=.*/ro.oxygen.version=!version!/" /tmp/ramdisk/default.prop
 fi
 
 #Remove verity key
