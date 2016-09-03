@@ -31,6 +31,7 @@
     ADD: Support for custom settings storage path (no more looking everywhere in the phone for the settings directory!)
     FIX: Miscellaneous bug fixes.
   ADD: 6 brand new IRS for cross-channel ("quad channel") convolver.
+  UPDATE: SuperSU 2.78
 
   NOTE : Some users experience some issues with the installation of the new gapps.
   The new gapps was not updated with the perfect method.

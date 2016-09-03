@@ -4,16 +4,21 @@ MODE=$1
 
 log_print() {
   echo "($MODE) $1"
+  echo "($MODE) $1" >> /dev/.launch_daemonsu.log
   log -p i -t launch_daemonsu "($MODE) $1"
 }
 
+log_print "start"
+
 if [ `mount | grep " /data " >/dev/null 2>&1; echo $?` -ne 0 ]; then
   # /data not mounted yet, we will be called again later
+  log_print "abort: /data not mounted #1"
   exit
 fi
 
 if [ `mount | grep " /data " | grep "tmpfs" >/dev/null 2>&1; echo $?` -eq 0 ]; then
   # /data not mounted yet, we will be called again later
+  log_print "abort: /data not mounted #2"
   exit
 fi
 
@@ -21,12 +26,13 @@ if [ `cat /proc/mounts | grep /su >/dev/null 2>&1; echo $?` -eq 0 ]; then
   if [ -d "/su/bin" ]; then
     if [ `ps | grep -v "launch_daemonsu.sh" | grep "daemonsu" >/dev/null 2>&1; echo $?` -eq 0 ]; then
       # nothing to do here
+      log_print "abort: daemonsu already running"
       exit
     fi
   fi
 fi
 
-setprop sukernel.daemonsu.launch $1
+setprop sukernel.daemonsu.launch $MODE
 
 loopsetup() {
   LOOPDEVICE=
@@ -36,23 +42,30 @@ loopsetup() {
       break
     fi
   done
+
+  log_print "loopsetup($1): $LOOPDEVICE"
 }
 
 resize() {
   if [ `ls  -l /data/su.img | grep " 33554432 " >/dev/null 2>&1; echo $?` -eq 0 ]; then
+    log_print "resizing /data/su.img from 32M to 96M"
     e2fsck -p -f /data/su.img
     resize2fs /data/su.img 96M
   fi
 }
 
 if [ ! -d "/su/bin" ]; then
+  log_print "/su not mounted yet"
+
   # not mounted yet, do our thing
   REBOOT=false
 
   # copy boot image backups
+  log_print "copying boot image backups from /cache to /data"
   cp -f /cache/stock_boot_* /data/. 2>/dev/null
 
   if [ -f "/data/su.img" ]; then
+    log_print "/data/su.img found"
     e2fsck -p -f /data/su.img
 
     # make sure the image is the right size
@@ -201,6 +214,7 @@ if [ ! -d "/su/bin" ]; then
 
   # exit if all mount attempts have failed, script is likely to be called again
   if [ `cat /proc/mounts | grep /su >/dev/null 2>&1; echo $?` -ne 0 ]; then
+    log_print "abort: mount failed"
     exit
   fi
 
@@ -221,13 +235,16 @@ fi
 # start daemon
 if [ "$MODE" != "post-fs-data" ]; then
   # if launched by service, replace this process (exec)
+  log_print "exec daemonsu"
   exec /su/bin/daemonsu --auto-daemon
 else
   # if launched by exec, fork (non-exec) and wait for su.d to complete executing
+  log_print "fork daemonsu"
   /su/bin/daemonsu --auto-daemon
 
   # wait for a while for su.d to complete
   if [ -d "/su/su.d" ]; then
+    log_print "waiting for su.d"
     for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16; do
       # su.d finished ?
       if [ -f "/dev/.su.d.complete" ]; then
@@ -246,4 +263,5 @@ else
       done
     done
   fi
+  log_print "end"
 fi

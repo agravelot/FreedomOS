@@ -1,0 +1,9 @@
+# Samsung Galaxy Note 7 Exynos, SM-N930x
+#
+# fs/exec.c #1096 is_rkp_priv_task()
+#     if (cred->uid.val <= (uid_t)RKP_CRED_SYS_ID || cred->euid.val <= (uid_t)RKP_CRED_SYS_ID || cred->gid.val <= (gid_t)RKP_CRED_SYS_ID || cred->egid.val <= (gid_t)RKP_CRED_SYS_ID)
+#     if (cred->uid.val == (uid_t)RKP_CRED_SYS_ID && cred->euid.val != (uid_t)RKP_CRED_SYS_ID && cred->gid.val != (gid_t)RKP_CRED_SYS_ID && cred->egid.val == (gid_t)RKP_CRED_SYS_ID)
+#
+# Custom kernel: CONFIG_RKP_NS_PROT=n
+#
+replace 49010054011440B93FA00F71E9000054010840B93FA00F7189000054001840B91FA00F7188010054 A1020054011440B93FA00F7140020054010840B93FA00F71E0010054001840B91FA00F7181010054

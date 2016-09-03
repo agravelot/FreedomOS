@@ -1331,6 +1331,10 @@ else
       fi
     fi
 
+    # might return 1 even if we do not want to abort
+    ui_print "- Applying hex patches"
+    /su/bin/sukernel --hexpatch $COM/hexpatch /sutmp/boot.img /sutmp/boot.img
+
     if [ -f "/data/custom_boot_image_patch.sh" ]; then
         check_zero_def "- Calling user boot image patch script" "sh /data/custom_boot_image_patch.sh /sutmp/boot.img"
     fi
