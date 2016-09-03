@@ -258,7 +258,7 @@ info.substratum=Le remplacent de Layers
 kernel.tittle=Kernel
 kernel.tittle2=Selectionnez votre kernel.
 kernel_stock=Stock Kernel
-info.kernel_stock=Le stock de OnePlus
+info.kernel_stock=Le stock de OnePlus avec patch FOS
 elementalx=ElementalX
 info.elementalx=Developed by @flar2
 

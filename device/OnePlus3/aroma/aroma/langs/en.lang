@@ -268,7 +268,7 @@ fos_boot.info=Boot screen + boot animation
 kernel.tittle=Kernel
 kernel.tittle2=Select your kernel.
 kernel_stock=Stock Kernel
-info.kernel_stock=The Original by OnePlus
+info.kernel_stock=The Original by OnePlus with FOS patch
 elementalx=ElementalX
 info.elementalx=Developed by @flar2
 
