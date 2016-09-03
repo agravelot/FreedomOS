@@ -7,6 +7,10 @@
   ADD: Night mode
   OPTIMIZE: Dark mode theme optimized
   FIX: General bug fixes
+  FIX: OnePlus OTA uninstallation, no more IMEI leak
+  FIX: File manager uninstallation
+  FIX: OnePlus Music uninstallation
+  FIX: Calculator uninstallation
   REMOVE: ElementalX option
 
   NOTE: This build contain also the 1.4.3 changelog.

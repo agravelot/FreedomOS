@@ -567,7 +567,7 @@ ui_print(" ");
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.1") == "0")
   then
     ui_print("   Removing Google Calculator");
-  	delete_recursive("/system/app/CalculatorGoogle");
+  	delete_recursive("/system/app/Calculator");
     run_program("/system/bin/rm", "-R", "/data/app/com.google.android.calculator-*");
 endif;
 
@@ -706,6 +706,7 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.7") == "0")
   then
   ui_print("   Removing DocumentsUI");
   delete_recursive("/system/app/DocumentsUI");
+  delete_recursive("/system/app/OPFilemanager");
 endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.8") == "0")
@@ -762,6 +763,7 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.16") == "0")
   then
     ui_print("   Removing Music");
   	delete_recursive("/system/app/Music");
+    delete_recursive("/system/app/OPMusic");
 endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.17") == "0")
@@ -805,7 +807,7 @@ endif;
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.23") == "0")
   then
   ui_print("   Removing OnePlusOta");
-  delete_recursive("/system/priv-app/OnePlusOta");
+  delete_recursive("/system/app/OPBackup");
 endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.24") == "0")
