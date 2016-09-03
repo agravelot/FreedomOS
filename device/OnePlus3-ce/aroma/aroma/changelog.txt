@@ -7,6 +7,7 @@
   ADD: Night mode
   OPTIMIZE: Dark mode theme optimized
   FIX: General bug fixes
+  REMOVE: OnePlus Bug Report
   FIX: OnePlus OTA uninstallation, no more IMEI leak
   FIX: File manager uninstallation
   FIX: OnePlus Music uninstallation
