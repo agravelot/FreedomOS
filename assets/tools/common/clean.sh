@@ -9,3 +9,6 @@ chown -R media_rw:media_rw /data/media
 echo "DEBUG: Remove Password"
 rm /data/system/gatekeeper*
 rm /data/system/locksettings*
+
+echo "Delete local.prop"
+rm /data/local.prop
