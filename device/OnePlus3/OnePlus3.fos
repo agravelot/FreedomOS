@@ -30,6 +30,7 @@ BOOTANIMATION=1080p
 # Files / folders to remove from the original stock image.
 # You can easily debloat your rom from here.
 CLEAN_SYSTEM_LIST="
+app/Videos
 bin/fmfactorytest
 bin/fmfactorytestserver
 bin/install-recovery.sh
