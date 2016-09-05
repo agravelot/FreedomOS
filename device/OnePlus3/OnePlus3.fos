@@ -40,7 +40,12 @@ etc/recovery-resource.dat
 
 # Set the files/folder you want to add to your system partition.
 # The files are in the assets/system/$TARGET_ARCH/
-ADD_SYSTEM_LIST=""
+ADD_SYSTEM_LIST="
+app/Adaway
+app/Layers
+app/Substratum
+app/XposedInstaller
+"
 
 # tools to add to the rom, (/assets/tools/)
 TOOLS_LIST="
