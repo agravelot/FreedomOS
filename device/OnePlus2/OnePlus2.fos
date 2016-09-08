@@ -38,22 +38,7 @@ oneplus3/*
 # Files / folders to remove from the original stock image.
 # You can easily debloat your rom from here.
 CLEAN_SYSTEM_LIST="
-app/Maps
-app/CalendarGoogle
-app/CalculatorGoogle
-app/Messenger
-app/YouTube
-app/Music2
 app/Videos
-app/Photos
-app/Hangouts
-app/Drive
-app/Chrome
-app/Gmail2
-app/SwiftKey
-app/WebViewGoogle
-app/talkback
-priv-app/Velvet
 bin/fmfactorytest
 bin/fmfactorytestserver
 bin/install-recovery.sh
@@ -68,17 +53,6 @@ app/Adaway
 app/Layers
 app/Substratum
 app/XposedInstaller
-app/CalendarGoogle
-app/CalculatorGoogle
-app/Messenger
-app/Music2
-app/Photos
-app/Drive
-app/Chrome
-app/Gmail2
-app/WebViewGoogle
-app/talkback
-priv-app/Velvet
 "
 
 # tools to add to the rom, (/assets/tools/)
