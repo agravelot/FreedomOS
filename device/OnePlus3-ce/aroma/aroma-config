@@ -244,9 +244,14 @@ checkbox(
 selectbox(
   "<~theme.tittle>", "<~theme.tittle2>", "@default", "theme.prop",
 
-  "<~notheme>", "<~info.notheme>", 0,
-  "<~layer>", "<~info.layer>", 0,
-  "<~substratum>", "<~info.substratum>", 1
+  "<~theme.tittle3>", "", 2,
+    "<~notheme>", "<~info.notheme>", 0,
+    "<~layer>", "<~info.layer>", 0,
+    "<~substratum>", "<~info.substratum>", 1,
+  "<~splash.tittle>", "", 2,
+    "<~fos_splash>", "<~fos_splash.info>", 1,
+    "<~oos_splash>", "<~oos_splash.info>", 0,
+    "<~no_splash>", "<~no_splash.info>", 0
 );
 
 # -- - KERNEL - -- #

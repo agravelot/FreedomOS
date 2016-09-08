@@ -158,8 +158,6 @@ set_progress(0.700000);
 package_extract_file("firmware-update/BTFM.bin",
                      "/dev/block/bootdevice/by-name/bluetooth");
 
-package_extract_file("tools/splash-fos.bin", "/dev/block/sde17");
-
 # -- - Restoring Addon.d - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   then
@@ -420,6 +418,22 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="3")
     ui_print("   Installing Substratum");
     run_program("/system/bin/echo", "DEBUG: Uninstall Layers");
     delete_recursive("/system/app/Layers");
+endif;
+
+# -- - FOS SPLASH - -- #
+if (file_getprop("/tmp/aroma/theme.prop", "selected.2")=="1")
+  then
+    set_progress(0.955000);
+    ui_print("   Installing FreedomOS Bootscreen");
+    package_extract_file("tools/splash-fos.bin", "/dev/block/sde17");
+endif;
+
+# -- - OOS SPLASH - -- #
+if (file_getprop("/tmp/aroma/theme.prop", "selected.2")=="2")
+  then
+    set_progress(0.955000);
+    ui_print("   Installing OxygenOS Bootscreen");
+    package_extract_file("tools/splash-stock.bin", "/dev/block/sde17");
 endif;
 
 # -- - DPI - -- #

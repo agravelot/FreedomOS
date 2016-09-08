@@ -249,9 +249,15 @@ notheme=Aucun Theme engine
 layer=RRO Layers [obsolète]
 substratum=Substratum
 
-info.notheme=J'aime le stock
+info.notheme=
 info.layer=Layers Manager
 info.substratum=Le remplacent de Layers
+
+splash.tittle=Sélectionner votre écran d'allumage
+splash.tittle=Ce n'est pas l'animation de démarrage
+fos_splash=écran d'allumage FreedomOS
+oos_splash=écran d'allumage OxygenOS
+no_splash=Laisse votre actuel
 
 # -- - KERNEL - -- #
 

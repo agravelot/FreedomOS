@@ -255,6 +255,12 @@ info.notheme=I love stock
 info.layer=RRO Layers Manager
 info.substratum=The new Theme Engine
 
+splash.tittle=Select your boot screen
+splash.tittle=This is not the bootanimation
+fos_splash=FreedomOS Bootscreen
+oos_splash=OxygenOS Bootscreen
+no_splash=Let your current Bootscreen
+
 # -- - KERNEL - -- #
 
 kernel.tittle=Kernel

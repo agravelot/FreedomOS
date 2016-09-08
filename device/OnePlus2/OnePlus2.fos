@@ -90,4 +90,5 @@ common/multi_window.sh
 common/v4a_profiles_irs
 oneplus2/supersu
 oneplus2/splash/splash-fos.bin
+oneplus2/splash/oos-bootscreen/splash-stock.bin
 "
