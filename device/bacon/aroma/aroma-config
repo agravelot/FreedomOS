@@ -51,20 +51,25 @@ anisplash(1, "splash/0", 500, "splash/10", 30, "splash/20", 30,
               "splash/60", 30, "splash/70", 30, "splash/80", 30,
               "splash/90", 30, "splash/100", 1000);
 
-#SELECT LANGUAGE
-selectbox("<~language.title>", "<~language.text>", "@agreement",
-          "language.prop",
+# -- - SELECT LANGUAGE - -- #
+selectbox(
+  "<~language.title>", "<~language.text>", "@agreement", "language.prop",
+  "<~language.french>", "<~language.french.info>", 0,
+  "<~language.english>", "<~language.english.info>", 1,
+  "<~language.italian>", "<~language.italian.info>", 0
+);
 
-          "<~language.french>", "<~language.french.info>", 0,
-          "<~language.english>", "<~language.english.info>", 1);
-
-#SET LANGUAGE
-if
-  prop("language.prop", "selected.0") == "1" then loadlang("langs/fr.lang");
+# -- - SET LANGUAGE - -- #
+if prop("language.prop", "selected.0") == "1" then
+  loadlang("langs/fr.lang");
 endif;
 
-if
-  prop("language.prop", "selected.0") == "2" then loadlang("langs/en.lang");
+if prop("language.prop", "selected.0") == "2" then
+  loadlang("langs/en.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "3" then
+  loadlang("langs/it.lang");
 endif;
 
 #Welcome

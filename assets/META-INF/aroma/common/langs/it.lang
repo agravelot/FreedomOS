@@ -1,0 +1,288 @@
+#########################################################
+#	FreedomOS language file
+#
+#	Italian by xEvoRayJiN
+#
+#
+#
+
+text_ok=OK
+text_next=Avanti
+text_back=Indietro
+text_yes=Si
+text_no=No
+text_about=Informazioni
+text_calibrating=Programma di Calibrazione
+text_quit=Esci dall’installazione
+text_quit_msg=Sei sicuro?
+
+welcome.title=Benvenuto
+welcome.title2=Informazioni della Rom
+welcome.text1=Stai per usare
+welcome.version=Versione
+welcome.device=Device
+welcome.updated=Aggiornato
+welcome.microblog=YouTube
+welcome.developer=Sviluppatore
+welcome.next=Premi Avanti per continuare l’installazione...
+
+changelog.title=Changelogs
+changelog.desc=FreedomOS Changelogs
+language.title=Seleziona lingua
+language.text=Seleziona lingua da usare
+language.english=English
+language.english.info=Using English
+language.french=France
+language.french.info=Utiliser le Français
+language.italian=Italiano
+language.italian.info=Utilizzare Italiano
+rom.data=!date!
+text_finish=Finito
+model.title=Modello telefono
+
+by=Da
+
+main.tittle=Perfavore, seleziona il sotto menù per iniziare l’installazione
+main.install=Installa
+main.install.info=Continua per installare le mod
+main.sys=Informazioni di sistema
+main.sys.info=Mostra informazioni del device
+main.changelog.info=FreedomOS changelogs
+main.exit=Esci
+main.exit.info=Esci dall’installer FreedomOS
+
+install_mod.tittle=Installer FreedomOS
+install_mod.tittle2=Seleziona le tue impostazioni
+install_mod.sub_tittle=Metodo di installazione
+
+assert.tittle=Checking the assert
+assert_yes=Si (Raccomandato)
+assert_no=No
+addon.tittle=Backup/Restore /system/addon.d/
+addon_yes=Si
+info.addon_yes=Raccomandato per un dirty flash
+addon_no=No
+info.addon_no=Per installazione pulita
+
+info.custom=The Freedom way
+info.stock=Oneplus Stock originale, No root
+info.assert_yes=Controlla varianti nel build.prop
+info.assert_no=Non controllare varianti nel build.prop
+
+sys.title=Informazioni sistema
+sys.info.wait=Ricevendo informazioni dal sistema...
+sys.info.title=Informazioni sistema
+sys.info.title2=Informazioni sul sistema del tuo device.
+sys.info.model=Modello
+sys.info.name=Nome
+sys.info.manu=Manufacturer
+sys.info.cpu=CPU
+sys.info.lcd=Densità LCD
+sys.info.storage=Taglia Memoria
+sys.info.storage.free=Libera
+
+pre.install.title=Pronto per l’installazione
+pre.install=Il Wizard è pronto per continuare l’installazione.
+pre.install2=Premi <b>Installa Ora</b> per continuare l’installazione.
+pre.install3=se vuoi controllare o cambiare ogni tua impostazione di installazione premi <b>Indietro</b>.
+
+# -- - GOOGLE APPS - -- #
+
+gapps.tittle=Google Apps
+gapps.tittle2=Seleziona le Google Apps che vuoi
+
+calculator=Calcolatrice
+calendar=Calendario
+call_log=Google Call Backup
+chrome=Chrome
+drive=Drive
+gmail=Gmail
+gmail_exchange=Gmail Exchange
+google=Google
+hangouts=Hangouts
+maps=Maps
+messenger=Messenger
+photos=Foto
+play_music=Play Music
+tts=Text-to-Speech
+tallback=Tallback
+play_movies=Play Movies
+youtube=YouTube
+
+info.calculator=0010 1010
+info.calendar=Google Calendario
+info.call_log=Invia il tuo storico chiamate a Google
+info.chrome=Web browser
+info.drive=Servizio Cloud
+info.gmail=Email client
+info.gmail_exchange=Supporta exchange for Gmail
+info.google=Google Now
+info.hangouts=App Im
+info.maps=Navigatore in tempo reale, traffico, trasporti
+info.messenger=Google SMS/MMS apps.
+info.photos=Applicazioni per gestire foto digitali
+info.play_music=Applicazione Google Play Music
+info.tts=Causa lo schermo nero al primo avvio se rimosso!!
+info.tallback=Causa lo schermo nero al primo avvio se rimosso!!
+info.play_movies=Applicazione Google Play Movies
+info.youtube=Applicazione Youtube
+
+# -- - SYSTEM APPS - -- #
+
+apps.tittle=System Apps
+apps.tittle2=Select the system Apps you want
+
+anthal=AntHalService
+android_pay=Android Pay
+basic_dream=Basic Dream
+bt_midi=BT Midi Service
+bt_test=BTtestmode
+desk_clock=DeskClock
+document=Documents
+download_provider=Download Provider
+engineering=EngineeringMode
+eng_special_test=EngSpecialTest
+facelock=Facelock
+galaxy=Galaxy
+holo_spiral=Holo Spiral
+anim_wallpaper=Animated Wallpaper
+log_kit=LogKitSdService
+music=Music
+noise_feild=Noised Feild
+oneplus_wallpapers=OnePlus Wallpapers
+oem_test=OemAutoTestServer
+oem_log=OEMLogKit
+oneplus_camera=OnePlus Camera
+oneplus_gallery=OnePlus Galleria
+ota=OnePlus OTA
+oneplus_wizard=OnePlus SetupWizard
+phase_beam=Phase Beam
+protips=Protips
+sensor_test=SensorTestTool
+swiftkey=Swiftkey
+tags=Tags
+wifi_test=WifiRfTestApk
+dive_icon=Dive Icon Pack
+rifon_icon=Rifon Icon Pack
+
+info.anthal=Per sport/fitness/dispositivi di salute
+info.android_pay=Pagamenti NFC
+info.basic_dream=Screensaver
+info.bt_midi=Supporto Bluetooth MIDI
+info.bt_test=Bluetooth test
+info.desk_clock=Allarme, orologio e timer
+info.document=File Manager
+info.download_provider=Files downloader
+info.engineering=Varie impostazioni sviluppatore
+info.eng_special_test=Miscellaneous testing
+info.facelock=Sblocca con il viso
+info.galaxy=Wallpaper animato
+info.holo_spiral=Wallpaper animato
+info.anim_wallpaper=Supporto per wallpaper animati
+info.log_kit=Logging
+info.music=App OnePlus musica
+info.noise_feild=Wallpaper Animato
+info.oneplus_wallpapers=Qualche Wallpaper
+info.oem_test=OEM testing application
+info.oem_log=Logging
+info.oneplus_camera=Scatta foto e video
+info.oneplus_gallery=Guarda foto e video
+info.ota=OnePlus system update (non raccomandato)
+info.oneplus_wizard=SetupWizard coming after Google
+info.phase_beam=Wallpaper animato
+info.protips=Qualche consiglio
+info.sensor_test=Sensor testing application
+info.swiftkey=Swiftkey keyboard
+info.tags=NFC Tags
+info.wifi_test=Wifi Testing
+info.dive_icon=Icons pack da OnePlus
+info.rifon_icon=Icons pack da OnePlus
+
+mod.title=Extra mod
+mod.title2=Seleziona la mod extra che vuoi
+
+dpi.tittle=Cambia i dpi
+dpi.tittle2=Punti per pollice
+dpi.500=Imposta i DPI a 500
+dpi.490=Imposta i DPI a 490
+dpi.480=Imposta i DPI a 480
+dpi.470=Imposta i DPI a 470
+dpi.460=Imposta i DPI a 460
+dpi.450=Imposta i DPI a 450
+dpi.440=Imposta i DPI a 440
+dpi.430=Imposta i DPI a 430
+dpi.420=Imposta i DPI a 420
+dpi.410=Imposta i DPI a 410
+dpi.400=Imposta i DPI a 400
+dpi.390=Imposta i DPI a 390
+dpi.380=Imposta i DPI a 380
+dpi.370=Imposta i DPI a 370
+dpi.360=Imposta i DPI a 360
+dpi.350=Imposta i DPI a 350
+
+mod.tittle=Installa mod extra
+mod.tittle2=Root, audio mod, ads blocker e xposed...
+mod.tittle3=Extra mod
+
+supersu=Installa SuperSU
+divine=Viper4Android + Dolby Atmos
+xposed=Material Design Xposed Installer
+adaway=Adaway
+adb=Abilita ADB
+dns=Google DNS
+fos_wallpapers=FreedomOS wallpapers
+emoji_one=EmojiOne
+multi_window=Multi Window
+
+info.supersu=SuperSU v2.78 by Chainfire
+info.divine=Divine beats by Theroyalseeker
+info.xposed=Xposed Installer solo applicazione by DVD android
+info.adaway=Ad-Blocker fper Android
+info.adb=Android Debugging Bridge
+info.dns=Imposta DNS 8.8.8.8/8.8.4.4
+info.fos_wallpapers=Designed by @badboy47
+info.emoji_one=L’ Open Emoji Standard
+info.multi_window=Abilita Multi Window
+
+# -- - THEME - -- #
+theme.tittle=Tema
+theme.tittle2=Seleziona le impostazioni dei temi
+theme.tittle3=Seleziona il tuo motore dei temi
+
+theme.tittle3=Seleziona il tuo motore dei temi
+notheme=Non installare motore dei temi
+layer=RRO Layers [Abbandonato]
+substratum=Substratum
+
+info.notheme=
+info.layer=RRO Layers Manager
+info.substratum=Il nuovo motore dei temi
+
+splash.tittle=Seleziona la tua bootscreen, Non bootanimation
+fos_splash=FreedomOS Bootscreen
+oos_splash=OxygenOS Bootscreen
+no_splash=Lascia la tua attuale Bootscreen
+
+info.fos_splash=
+info.oos_splash=
+info.no_splash=
+
+# -- - KERNEL - -- #
+
+kernel.tittle=Kernel
+kernel.tittle2=Seleziona il tuo kernel.
+kernel_stock=Stock Kernel
+info.kernel_stock=L’ Originale da OnePlus con le patch FOS
+elementalx=ElementalX
+info.elementalx=Sviluppato da @flar2
+
+# -- - INSTALLER - -- #
+install=Installandp FreedomOS
+install.now=Installando Ora
+install.finish=Potrebbe impiegare un po’..
+install.finish.title=L’installazione è terminata.
+installing.title=Installazione..
+finish.title=Congratulazioni!
+finish.msg=FreedomOS è stata installata correttamente sul tuo telefono.
+finish.status=Risultato installazione:
+finish.reboot=Riavvia il tuo device ora.

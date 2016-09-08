@@ -61,7 +61,8 @@ anisplash(
 selectbox(
   "<~language.title>", "<~language.text>", "@agreement", "language.prop",
   "<~language.french>", "<~language.french.info>", 0,
-  "<~language.english>", "<~language.english.info>", 1
+  "<~language.english>", "<~language.english.info>", 1,
+  "<~language.english>", "<~language.english.info>", 0
 );
 
 # -- - SET LANGUAGE - -- #
@@ -71,6 +72,10 @@ endif;
 
 if prop("language.prop", "selected.0") == "2" then
   loadlang("langs/en.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "3" then
+  loadlang("langs/it.lang");
 endif;
 
 # -- - WELCOME - -- #
