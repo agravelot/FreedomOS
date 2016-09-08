@@ -249,9 +249,9 @@ selectbox(
     "<~layer>", "<~info.layer>", 0,
     "<~substratum>", "<~info.substratum>", 1,
   "<~splash.tittle>", "", 2,
-    "<~fos_splash>", "<~fos_splash.info>", 1,
-    "<~oos_splash>", "<~oos_splash.info>", 0,
-    "<~no_splash>", "<~no_splash.info>", 0
+    "<~fos_splash>", "", 1,
+    "<~oos_splash>", "", 0,
+    "<~no_splash>", "", 0
 );
 
 # -- - KERNEL - -- #
