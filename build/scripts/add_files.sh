@@ -15,6 +15,13 @@ function add_files {
   echo ">>> Add update-binary bin" 2>&1 | tee -a ${build_log}
   cp -vf ${assets_root}/META-INF/update-binary-installer/${BUILD_METHOD}/update-binary-installer ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
 
+  echo ">>> Add aroma config files" 2>&1 | tee -a ${build_log}
+  for i in ${aroma_list}
+  do
+    mkdir -p ${tmp_root}/META-INF/com/google/android/aroma/
+    cp -rvf ${assets_root}/META-INF/aroma/${i} ${tmp_root}/META-INF/com/google/android/aroma/ >> ${build_log} 2>&1
+  done
+
   echo ">> Add tools" 2>&1 | tee -a ${build_log}
   mkdir -p ${tmp_root}/tools >> ${build_log} 2>&1
   for i in ${TOOLS_LIST}
