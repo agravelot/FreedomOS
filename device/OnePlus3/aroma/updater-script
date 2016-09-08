@@ -28,30 +28,27 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
             getprop("ro.build.product") + "\".");
 endif;
 
-
-#ifelse(is_mounted("/system"), unmount("/system"));
-#ifelse(is_mounted("/data"), unmount("/data"));
-ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
-ifelse(is_mounted("/data"), run_program("/sbin/busybox", "umount", "/data"));
-
 set_progress(0.01);
 ui_print(" ");
 ui_print("@Pre-installing Process");
 ui_print(" ");
 
-set_progress(0.02);
-ui_print("   Mounting System");
-#run_program("/sbin/busybox", "mount", "/system");
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
-ui_print("   Mounting Data");
-run_program("/sbin/busybox", "mount", "/data");
-#mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
-
 ui_print("   Extracting Temporary Files");
 show_progress(0.03, 1600);
 delete_recursive("/tmp/tools");
 package_extract_dir("tools", "/tmp/tools");
-set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
+set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
+
+ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
+ifelse(is_mounted("/data"), run_program("/tmp/tools/busybox", "umount", "/data"));
+
+set_progress(0.032);
+ui_print("   Mounting System");
+run_program("/tmp/tools/busybox", "mount", "/system");
+#mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+ui_print("   Mounting Data");
+run_program("/tmp/tools/busybox", "mount", "/data");
+#mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
 
 # -- - Backup addond - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
@@ -90,13 +87,13 @@ ui_print("@Installing FreedomOS");
 ui_print(" ");
 
 set_progress(0.10);
-ifelse(is_mounted("/system"), run_program("/sbin/busybox", "umount", "/system"));
+ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 
 show_progress(0.57, 130000);
 ui_print("   Extracting System");
 block_image_update("/dev/block/bootdevice/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat");
 
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+run_program("/tmp/tools/busybox", "mount", "/system");
 
 # -- - radio update tasks - -- #
 
@@ -158,7 +155,6 @@ set_progress(0.700000);
 package_extract_file("firmware-update/BTFM.bin",
                      "/dev/block/bootdevice/by-name/bluetooth");
 
-
 # -- - Restoring Addon.d - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   then
@@ -178,11 +174,11 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
   then
   ui_print(" ");
   ui_print("@Installing SuperSU");
-  run_program("/system/bin/echo", "DEBUG: Move supersu to /tmp/tools/supersu ->  /tmp/supersu ");
-  run_program("/sbin/busybox", "mv", "/tmp/tools/supersu", "/tmp/supersu");
-  run_program("/system/bin/echo", "DEBUG: Start SU install script");
-  run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
-  mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+  run_program("/tmp/tools/busybox", "echo", "DEBUG: Move supersu to /tmp/tools/supersu ->  /tmp/supersu ");
+  run_program("/tmp/tools/busybox", "mv", "/tmp/tools/supersu", "/tmp/supersu");
+  run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");
+  run_program("/tmp/tools/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
+  run_program("/tmp/tools/busybox", "mount", "/system");
 endif;
 
 # -- - MOD - -- #
@@ -193,7 +189,7 @@ ui_print(" ");
 
 # -- - KERNEL PATCH - -- #
 ui_print("   Installing FreedomOS Patched Kernel");
-run_program("/system/bin/echo", "DEBUG: Extracting patch");
+run_program("/tmp/tools/busybox", "echo", "DEBUG: Extracting patch");
 package_extract_dir("tools/kernel/config", "/tmp");
 set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
 
@@ -202,7 +198,7 @@ run_program("/tmp/busybox", "fstrim", "/data");
 
 package_extract_dir("tools/kernel/boot", "/tmp");
 
-run_program("/system/bin/echo", "DEBUG: Set permissions");
+run_program("/tmp/tools/busybox", "echo", "DEBUG: Set permissions");
 set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "fmode", 0777);
 set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
 set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
@@ -319,7 +315,7 @@ endif;
 
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "0" )
   then
-    run_program("/system/bin/echo", "DEBUG: No audio mod");
+    run_program("/tmp/tools/busybox", "echo", "DEBUG: No audio mod");
 endif;
 
 # -- - XPOSED - -- #
@@ -332,7 +328,7 @@ endif;
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "0")
   then
     set_progress(0.880000);
-    run_program("/system/bin/echo", "DEBUG: Uninstall Xposed");
+    run_program("/tmp/tools/busybox", "echo", "DEBUG: Uninstall Xposed");
     delete_recursive("/system/app/XposedInstaller");
 endif;
 
@@ -351,7 +347,7 @@ endif;
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "0")
   then
     set_progress(0.900000);
-    run_program("/system/bin/echo", "DEBUG: Uninstall Adaway");
+    run_program("/tmp/tools/busybox", "echo", "DEBUG: Uninstall Adaway");
     delete_recursive("/system/app/Adaway");
 endif;
 
@@ -396,7 +392,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
 endif;
 
 # -- - NO THEME - -- #
-if (file_getprop("/tmp/aroma/theme.prop", "selected.1")=="1")
+if (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="1")
   then
     run_program("/system/bin/echo", "DEBUG: No theme selected");
     delete_recursive("/system/app/Substratum");
@@ -404,7 +400,7 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.1")=="1")
 endif;
 
 # -- - LAYERS - -- #
-if (file_getprop("/tmp/aroma/theme.prop", "selected.1")=="2")
+if (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="2")
   then
     set_progress(0.940000);
     ui_print("   Installing ROO Layers Manager");
@@ -413,7 +409,7 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.1")=="2")
 endif;
 
 # -- - SUBSTRATUM - -- #
-if (file_getprop("/tmp/aroma/theme.prop", "selected.1")=="3")
+if (file_getprop("/tmp/aroma/theme.prop", "selected.0")=="3")
   then
     set_progress(0.950000);
     ui_print("   Installing Substratum");
@@ -541,7 +537,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
     ui_print(" ");
     ui_print("@Installing ElementalX");
     ui_print(" ");
-    run_program("/system/bin/echo", "DEBUG: Extracting EX files");
+    run_program("/tmp/tools/busybox", "echo", "DEBUG: Extracting EX files");
     package_extract_dir("tools/elementalx/config", "/tmp");
     set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
 
@@ -550,7 +546,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
 
     package_extract_dir("tools/elementalx/boot", "/tmp");
 
-    run_program("/system/bin/echo", "DEBUG: Set permissions");
+    run_program("/tmp/tools/busybox", "echo", "DEBUG: Set permissions");
     set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "fmode", 0777);
     set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
     set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
@@ -582,15 +578,15 @@ ui_print(" ");
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.1") == "0")
   then
     ui_print("   Removing Google Calculator");
-  	delete_recursive("/system/app/CalculatorGoogle");
-    run_program("/system/bin/rm", "-R", "/data/app/com.google.android.calculator-*");
+  	delete_recursive("/system/app/Calculator");
+    run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.calculator-*");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.2") == "0")
   then
     ui_print("   Removing Google Calendar ");
     delete_recursive("/system/app/CalendarGoogle");
-    run_program("/system/bin/rm", "-R", "/data/app/com.google.android.calendar-*");
+    run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.calendar-*");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.3") == "0")
@@ -603,21 +599,21 @@ if (file_getprop("/tmp/aroma/gapps.prop", "item.1.4") == "0")
   then
     ui_print("   Removing Google Chrome ");
     delete_recursive("/system/app/Chrome");
-    run_program("/system/bin/rm", "-R", "/data/app/com.android.chrome-*");
+    run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.android.chrome-*");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.5") == "0")
   then
     ui_print("   Removing Google Drive ");
     delete_recursive("/system/app/Drive");
-    run_program("/system/bin/rm", "-R", "/data/app/com.google.android.apps.docs-*");
+    run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.apps.docs-*");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.6") == "0")
   then
     ui_print("   Removing Gmail ");
     delete_recursive("/system/app/Gmail2");
-    run_program("/system/bin/rm", "-R", "/data/app/com.google.android.gm-*");
+    run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.gm-*");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.7") == "0")
@@ -630,49 +626,49 @@ if (file_getprop("/tmp/aroma/gapps.prop", "item.1.8") == "0")
   then
     ui_print("   Removing Google ");
 		delete_recursive("/system/priv-app/Velvet");
-    run_program("/system/bin/rm", "-R", "/data/app/com.google.android.googlequicksearchbox-*");
+    run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.googlequicksearchbox-*");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.9") == "0")
   then
     ui_print("   Removing Google Hangouts ");
     delete_recursive("/system/app/Hangouts");
-    run_program("/system/bin/rm", "-R", "/data/app/com.google.android.talk-*");
+    run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.talk-*");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.10") == "0")
   then
     ui_print("   Removing Google Maps ");
     delete_recursive("/system/app/Maps");
-    run_program("/system/bin/rm", "-R", "/data/app/com.google.android.apps.maps-*");
+    run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.apps.maps-*");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.11") == "0")
   then
     ui_print("   Removing Messenger ");
     delete_recursive("/system/app/Messenger");
-    run_program("/system/bin/rm", "-R", "/data/app/com.google.android.apps.messaging-*");
+    run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.apps.messaging-*");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.12") == "0")
   then
     ui_print("   Removing Google Photos ");
     delete_recursive("/system/app/Photos");
-    run_program("/system/bin/rm", "-R", "/data/app/com.google.android.apps.photos-*");
+    run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.apps.photos-*");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.13") == "0")
   then
     ui_print("   Removing Google Play Music ");
     delete_recursive("/system/app/Music2");
-    run_program("/system/bin/rm", "-R", "/data/app/com.google.android.music-*");
+    run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.music-*");
 endif;
 
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.14") == "0")
   then
     ui_print("   Removing YouTube");
     delete_recursive("/system/app/YouTube");
-    run_program("/system/bin/rm", "-R", "/data/app/com.google.android.youtube-*");
+    run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.youtube-*");
 endif;
 
 # -- - System Apps - -- #
@@ -854,7 +850,7 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.28") == "0")
 		delete_recursive("/data/app/com.touchtype.swiftkey-1");
     delete_recursive("/system/app/SwiftKeyFactorySettings");
     delete_recursive("/system/com.touchtype");
-    run_program("/system/bin/rm", "-R", "/data/app/com.touchtype.swiftkey-*");
+    run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.touchtype.swiftkey-*");
 endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.29") == "0")
