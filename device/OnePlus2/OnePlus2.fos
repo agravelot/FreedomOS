@@ -83,6 +83,7 @@ priv-app/Velvet
 
 # tools to add to the rom, (/assets/tools/)
 TOOLS_LIST="
+arm64/busybox
 common/adb.sh
 common/addon
 common/clean.sh
