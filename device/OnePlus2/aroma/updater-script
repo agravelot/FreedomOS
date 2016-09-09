@@ -182,7 +182,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
   run_program("/system/bin/echo", "DEBUG: Move supersu to /tmp/tools/supersu ->  /tmp/supersu ");
   run_program("/sbin/busybox", "mv", "/tmp/tools/supersu", "/tmp/supersu");
   run_program("/system/bin/echo", "DEBUG: Start SU install script");
-  run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
+  run_program("/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
   mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
 endif;
 

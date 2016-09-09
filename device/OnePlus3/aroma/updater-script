@@ -177,7 +177,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
   run_program("/tmp/tools/busybox", "echo", "DEBUG: Move supersu to /tmp/tools/supersu ->  /tmp/supersu ");
   run_program("/tmp/tools/busybox", "mv", "/tmp/tools/supersu", "/tmp/supersu");
   run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");
-  run_program("/tmp/tools/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
+  run_program("/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
   run_program("/tmp/tools/busybox", "mount", "/system");
 endif;
 
