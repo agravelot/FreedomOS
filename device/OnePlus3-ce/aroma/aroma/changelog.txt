@@ -1,3 +1,15 @@
+1.6.1-CE
+  ADD: Splash option, let you choose your boot screen
+  ADD: Force 480 dpi in build.prop
+  ADD: Built-in busybox in the installer, see note
+  ADD: Italian language in aroma xda@xEvoRayJiN
+  ADD: German language in aroma xda@DanielL
+  FIX: SuperSU version in aroma
+
+  NOTE: Some TWRP doesn't have busybox built in, so i added my own busybox in the zip.
+       The installer will use it, instead of busybox coming with TWRP.
+       It should fix installations problems for some TWRP version.
+
 1.6-CE
   UPDATE: OxygenOS 3.5.1 Community Build
   ADD: Accent color

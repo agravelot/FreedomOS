@@ -1,3 +1,20 @@
+1.4.4
+  ADD: Splash option, let you choose your boot screen
+  ADD: Force 480 dpi in build.prop
+  ADD: Built-in busybox in the installer, see note
+  ADD: Italian language in aroma xda@xEvoRayJiN
+  ADD: German language in aroma xda@DanielL
+  FIX: Adaway installation
+  FIX: Layers installation
+  FIX: Substratum installation
+  FIX: XposedInstaller installation
+  FIX: Google Movies uninstallation
+  FIX: SuperSU version in aroma
+
+  NOTE: Some TWRP doesn't have busybox built in, so i added my own busybox in the zip.
+       The installer will use it, instead of busybox coming with TWRP.
+       It should fix installations problems for some TWRP version.
+
 1.4.3
   RERVERT: "Update aroma to 3.00b1", now we comeback on a more stable build (less freeze).
   CHANGE: All your gapps update will no more be remove by default, but only if selected in the AROMA.
