@@ -191,7 +191,7 @@ ui_print(" ");
 ui_print("   Installing FreedomOS Patched Kernel");
 run_program("/tmp/tools/busybox", "echo", "DEBUG: Extracting patch");
 package_extract_dir("tools/kernel/config", "/tmp");
-set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
+set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "mode", 0777);
 
 run_program("/tmp/busybox", "fstrim", "/cache");
 run_program("/tmp/busybox", "fstrim", "/data");
@@ -199,12 +199,12 @@ run_program("/tmp/busybox", "fstrim", "/data");
 package_extract_dir("tools/kernel/boot", "/tmp");
 
 run_program("/tmp/tools/busybox", "echo", "DEBUG: Set permissions");
-set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "fmode", 0777);
-set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
-set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
-set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "fmode", 0777);
-set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "fmode", 0777);
-set_metadata("/tmp/clean.sh", "uid", 0, "gid", 0, "fmode", 0777);
+set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata("/tmp/clean.sh", "uid", 0, "gid", 0, "mode", 0777);
 
 ui_print("   Customizing ramdisk");
 run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
@@ -249,23 +249,23 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
     #package_extract_dir("tools/divine/extras", "/extras");
 
     package_extract_file("tools/divine/runme.sh", "/tmp/runme.sh");
-    set_metadata("/tmp/runme.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/runme.sh", "uid", 0, "gid", 0, "mode", 0777);
     run_program("/tmp/runme.sh");
     delete ("/tmp/runme.sh");
 
     package_extract_file("tools/divine/libsprocessing.sh", "/tmp/libsprocessing.sh");
-    set_metadata("/tmp/libsprocessing.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/libsprocessing.sh", "uid", 0, "gid", 0, "mode", 0777);
     run_program("/tmp/libsprocessing.sh");
     delete ("/tmp/libsprocessing.sh");
 
     package_extract_file("tools/divine/deepbuffer.sh", "/tmp/deepbuffer.sh");
-    set_metadata("/tmp/deepbuffer.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/deepbuffer.sh", "uid", 0, "gid", 0, "mode", 0777);
     run_program("/tmp/deepbuffer.sh");
     delete ("/tmp/deepbuffer.sh");
 
     set_progress(0.820000);
-    set_metadata("/system/etc/init.d/batsav", "uid", 0, "gid", 2000, "fmode", 0755);
-    set_metadata("/system/app/MaxxAudioService.apk", "uid", 0, "gid", 0, "fmode", 06755);
+    set_metadata("/system/etc/init.d/batsav", "uid", 0, "gid", 2000, "mode", 0755);
+    set_metadata("/system/app/MaxxAudioService.apk", "uid", 0, "gid", 0, "mode", 06755);
     set_metadata_recursive("/system/app/GoogleLyricsPlugin", "uid", 0, "gid", 0,
                            "dmode", 0755, "fmode", 0644);
     set_metadata_recursive("/system/app/SemcMetadataCleanup", "uid", 0, "gid", 0,
@@ -338,10 +338,10 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
     set_progress(0.900000);
   	ui_print("   Installing Adaway");
   	ui_print("   Installing host file");
-  	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "fmode", 0777);
+  	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "mode", 0777);
   	delete("/system/etc/hosts");
   	package_extract_file("tools/hosts", "/system/etc/hosts");
-  	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "fmode", 0644);
+  	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "mode", 0644);
 endif;
 
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "0")
@@ -381,7 +381,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
     set_progress(0.935000);
     ui_print("   Installing EmojiOne");
     package_extract_file("tools/fonts/emojione-android.ttf", "/system/fonts/NotoColorEmoji.ttf");
-    set_metadata("/system/fonts/NotoColorEmoji.ttf", "uid", 0, "gid", 0,  "fmode", 0644);
+    set_metadata("/system/fonts/NotoColorEmoji.ttf", "uid", 0, "gid", 0,  "mode", 0644);
 endif;
 
 # -- - MULTI WINDOW - -- #
@@ -540,7 +540,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
     ui_print(" ");
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Extracting EX files");
     package_extract_dir("tools/elementalx/config", "/tmp");
-    set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "mode", 0777);
 
     run_program("/tmp/busybox", "fstrim", "/cache");
     run_program("/tmp/busybox", "fstrim", "/data");
@@ -548,14 +548,14 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
     package_extract_dir("tools/elementalx/boot", "/tmp");
 
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Set permissions");
-    set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "fmode", 0777);
-    set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "fmode", 0777);
-    set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "mode", 0777);
+    set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "mode", 0777);
+    set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "mode", 0777);
+    set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "mode", 0777);
+    set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "mode", 0777);
 
     ui_print("   Creating config");
-    set_metadata("/tmp/buildconfig.sh", "uid", 0, "gid", 0, "fmode", 0777);
+    set_metadata("/tmp/buildconfig.sh", "uid", 0, "gid", 0, "mode", 0777);
     run_program("/tmp/buildconfig.sh");
 
    if (file_getprop("/tmp/aroma/mods.prop","item.0.3") == "1")
