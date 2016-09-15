@@ -563,7 +563,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
      #mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
      delete("/system/lib/modules/wlan.ko");
      package_extract_file("boot/wlan.ko","/system/lib/modules/wlan.ko");
-     set_perm(0, 0, 0644, "/system/lib/modules/wlan.ko");
+     set_metadata("/system/lib/modules/wlan.ko", "uid", 0, "gid", 0, "mode", 0644);
      #unmount("/system");
    endif;
 
