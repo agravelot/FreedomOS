@@ -17,10 +17,10 @@
 ###
 
 ini_set("rom_name",             "ElementalX");
-ini_set("rom_version",          "0.20");
+ini_set("rom_version",          "0.15");
 ini_set("rom_author",           "flar2");
 ini_set("rom_device",           "OnePlus 3");
-ini_set("rom_date",             "September 13, 2016");
+ini_set("rom_date",             "August 26, 2016");
 
 ini_set("force_colorspace","rgba");
 
@@ -83,8 +83,7 @@ selectbox(
   "FIOPS","(default)",1,
   "SIO","",0,
   "BFQ","",0,
-  "noop","",0,
-  "zen","",0
+  "noop","",0
 );
 
 checkbox(
@@ -109,8 +108,7 @@ selectbox(
 checkbox(
   "\nOther settings","<@center><b>\nSelect the mods you want to install</b>\n\n</@>","","mods.prop",
   "Disable fsync","Faster fileystem performance, with risk of data loss",0,
-  "Backlight dimmer","Lower screen brightness",0,
-  "Install WiFi module","Select if you have no wifi",0
+  "Backlight dimmer","Lower screen brightness",0
 );
 
 

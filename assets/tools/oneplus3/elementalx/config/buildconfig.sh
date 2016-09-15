@@ -57,7 +57,9 @@ else
 fi
 
 #wifi module
+echo "if ! lsmod | grep wlan &> /dev/null ; then" >> $CONFIGFILE
 echo "  insmod /sbin/wlan.ko" >> $CONFIGFILE
+echo "fi" >> $CONFIGFILE
 
 echo "" >> $CONFIGFILE
 echo "on property:sys.boot_completed=1" >> $CONFIGFILE
@@ -77,8 +79,6 @@ elif [ $SCHED = 5 ]; then
   echo "write /sys/block/sda/queue/scheduler bfq"  >> $CONFIGFILE
 elif [ $SCHED = 6 ]; then
   echo "write /sys/block/sda/queue/scheduler noop"  >> $CONFIGFILE
-elif [ $SCHED = 7 ]; then
-  echo "write /sys/block/sda/queue/scheduler zen"  >> $CONFIGFILE
 fi
 
 #set readahead to 512
@@ -87,14 +87,6 @@ echo "write /sys/block/sda/queue/read_ahead_kb 512" >> $CONFIGFILE
 #reinstall options
 echo -e "##### Reinstall Options #####" > $BACKUP
 echo -e "# These settings are only applied if you run the express installer" >> $BACKUP
-
-#WiFi module
-WLAN=`grep "item.0.3" /tmp/aroma/mods.prop | cut -d '=' -f2`
-if [ $WLAN = 1 ]; then
-  echo "WLAN=1" >> $BACKUP
-else
-  echo "WLAN=0" >> $BACKUP
-fi
 
 #Maximum CPU freqs
 CPU0=$(cat /tmp/aroma/cpu0.prop | cut -d '=' -f2)

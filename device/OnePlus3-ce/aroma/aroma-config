@@ -268,8 +268,8 @@ selectbox(
 selectbox(
   "<~kernel.tittle>", "<~kernel.tittle2>", "@personalize", "kernel.prop",
 
-  "<~kernel_stock>", "<~info.kernel_stock>", 1,
-  "<~elementalx>", "<~info.elementalx>", 0
+  "<~kernel_stock>", "<~info.kernel_stock>", 1
+#  "<~elementalx>", "<~info.elementalx>", 0
 );
 
 # -- - ELEMENTALX - -- #
@@ -316,8 +316,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2") then
       "FIOPS","(default)",1,
       "SIO","",0,
       "BFQ","",0,
-      "noop","",0,
-      "zen","",0
+      "noop","",0
   );
 
   checkbox(
@@ -344,8 +343,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2") then
     "Other settings","<@center><b>Select the mods you want to install</b></@>","@elementalx","mods.prop",
 
     "Disable fsync","Faster fileystem performance, with risk of data loss",0,
-    "Backlight dimmer","Lower screen brightness",0,
-    "Install WiFi module","Select if you have no wifi",1
+    "Backlight dimmer","Lower screen brightness",0
   );
 endif;
 
