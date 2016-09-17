@@ -9,7 +9,7 @@ I refuse all pull requests and issues coming from Github, use [Gitlab](https://g
 ## Required
 - Linux x64 (others architectures are experimental).
 - 30GiB of free space.
-- Packages : `rsync python zip curl openssl ncurses`
+- Packages : `rsync python zip curl openssl ncurses cpio`
 - ext4 mount support with loop option.
 - root access.
 - Optional packages:
