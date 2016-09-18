@@ -257,9 +257,9 @@ else
           break
         fi
 
-        # sleep 16ms if usleep supported, warm up the CPU if not
-        # 16*16*16ms=4s maximum if usleep supported, else much shorter
-        usleep 16000
+        # sleep 240ms if usleep supported, warm up the CPU if not
+        # 16*16*240ms=60s maximum if usleep supported, else much shorter
+        usleep 240000
       done
     done
   fi

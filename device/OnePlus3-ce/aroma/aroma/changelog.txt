@@ -1,3 +1,4 @@
+  UPDATE: SuperSU 2.78 SR1
 1.6.1-CE
   ADD: Splash option, let you choose your boot screen
   ADD: Force 480 dpi in build.prop
