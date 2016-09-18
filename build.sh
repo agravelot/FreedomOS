@@ -81,6 +81,7 @@ function initialize {
   # Initialize environtment
   source ${scripts_root}/dat_to_dat.sh
   source ${scripts_root}/dat_to_files.sh
+  source ${scripts_root}/dat_to_img.sh
   source ${scripts_root}/make_zip.sh
   source ${scripts_root}/add_files.sh
 
@@ -219,7 +220,8 @@ function build {
   case $BUILD_METHOD in
     dat_to_dat) dat_to_dat ;;
     dat_to_files) dat_to_files ;;
-    *) die "Unknow build methiod" "11";;
+    dat_to_img) dat_to_img ;;
+    *) die "Unknow build method" "11";;
   esac
 }
 

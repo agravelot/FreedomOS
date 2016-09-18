@@ -1,9 +1,9 @@
 #!/bin/bash
 # FreedomOS build script
 # Author : Nevax
-# Contributors : TimVNL, Mavy
+#
 
-function dat_to_dat {
+function dat_to_img {
   # Building Process
   echo "> $device build starting now with $BUILD_METHOD build method." 2>&1 | tee -a ${build_log}
 
@@ -65,13 +65,10 @@ function dat_to_dat {
     rm -rvf ${tmp_root}/bootanimation >> ${build_log} 2>&1
   fi
 
+  chmod u+r -R mount/
+
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}
   ${build_root}/tools/${HOST_ARCH}/make_ext4fs -T 0 -S file_contexts -l ${SYSTEMIMAGE_PARTITION_SIZE} -a system system_new.img mount/ >> ${build_log} 2>&1
-
-  echo ">> Converting ext4 to dat file" 2>&1 | tee -a ${build_log}
-  ${build_root}/tools/rimg2sdat system_new.img >> ${build_log} 2>&1
-
-  touch ${tmp_root}/system.patch.dat
 
   echo "> Clean unneeded tmp files" 2>&1 | tee -a ${build_log}
   if mount | grep "${tmp_root}/mount" > /dev/null;
@@ -79,10 +76,12 @@ function dat_to_dat {
     echo ">> Unmount rom" 2>&1 | tee -a ${build_log}
     umount ${tmp_root}/mount/ >> ${build_log} 2>&1
   fi
+
+  rm -rvf ${tmp_root}/system.img >> ${build_log} 2>&1
+  mv ${tmp_root}/system_new.img ${tmp_root}/system.img >> ${build_log} 2>&1
+
   echo ">> Deleting files" 2>&1 | tee -a ${build_log}
   rm -rvf ${tmp_root}/mount >> ${build_log} 2>&1
-  rm -rvf ${tmp_root}/system.img >> ${build_log} 2>&1
-  rm -rvf ${tmp_root}/system_new.img >> ${build_log} 2>&1
   rm -rvf ${tmp_root}/boot >> ${build_log} 2>&1
   rm -rvf ${tmp_root}/system >> ${build_log} 2>&1
 }
