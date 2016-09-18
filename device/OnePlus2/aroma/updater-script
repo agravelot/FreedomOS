@@ -84,6 +84,7 @@ run_program("/tmp/tools/clean.sh");
 ui_print("   Wiping Cache / Dalvik");
 delete_recursive("/cache");
 delete_recursive("/data/dalvik-cache/*");
+wipe_cache();
 
 ui_print(" ");
 ui_print("@Installing FreedomOS");
