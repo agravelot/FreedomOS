@@ -894,6 +894,10 @@ endif;
 
 set_progress(0.990000);
 ui_print(" ");
+ui_print("@ README ");
+ui_print("@ Make sure you are using the modified twrp version, or your device will be brick!");
+ui_print(" Read the FAQ how to install it now.");
+ui_print(" ");
 set_progress(1.00000);
 ui_print("@Finished");
 ui_print(" ");
