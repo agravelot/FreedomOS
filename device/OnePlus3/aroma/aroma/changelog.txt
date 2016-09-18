@@ -3,16 +3,16 @@
   UPDATE: SuperSU 2.78 SR1
   UPDATE: Substratum 223
   UPDATE: OxygenOS 3.2.6
-  Optimized voice call quality of some IM applications.
-  Improved adaptive brightness performance
-  Improved camera quality
+  OPTIMIZE: Voice call quality of some IM applications.
+  OPTIMIZE: Adaptive brightness performance
+  OPTIMIZE: Camera quality
   FIX: occasional green/yellow issue
   OPTIMIZE: white balance
-  Improved 1080p video recording
-  Addressed some bluetooth connection problems for vehicles
+  OPTIMIZE: 1080p video recording
+  FIX: Addressed some bluetooth connection problems for vehicles
   Allows third party application to modify ringtone
-  Optimized battery consumption when scrolling
-  Optimized touch accuracy when playing games
+  OPTIMIZE: Battery consumption when scrolling
+  OPTIMIZE: Touch accuracy when playing games
   ADD: DozeMode switch in Developer options
   ADD: PocketMode switch in Display settings
 
