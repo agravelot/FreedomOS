@@ -137,6 +137,15 @@ if prop("menu.prop", "selected") == "4" then
 back("1");
 endif;
 
+agreebox(
+   "Terms Of Use",
+   "<@center>Please read the FreedomOS terms of use</@>",
+   "@default",
+   "" + readfile_aroma("agreement.txt"),
+   "I agree with these terms of use",
+   "<@center>You must accept the terms</@>"
+ );
+
 # -- - INSTALL OPTIONS - -- #
 ini_set("text_next", "<~text_next>");
 selectbox(
