@@ -15,6 +15,8 @@
   OPTIMIZE: Touch accuracy when playing games
   ADD: DozeMode switch in Developer options
   ADD: PocketMode switch in Display settings
+  UPDATE: XposedInstaller
+  And under the hood change, check gitlab for more information.
 
 1.4.4
   ADD: Splash option, let you choose your boot screen

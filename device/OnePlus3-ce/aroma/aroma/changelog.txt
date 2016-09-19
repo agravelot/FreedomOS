@@ -13,6 +13,8 @@
   OPTIMIZE: Dialer speed
   ADD: New modes added in control panel (night mode and battery saver)
   ADD: Support for PIN codes up to 6 digits
+  UPDATE: XposedInstaller
+  And under the hood change, check gitlab for more information.
 
   NOTE: Support f2fs support for the /data (not tested)
 
