@@ -42,7 +42,6 @@ set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0777, "fmode",
 ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 ifelse(is_mounted("/data"), run_program("/tmp/tools/busybox", "umount", "/data"));
 
-
 # -- - Backup addond - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   then
@@ -66,7 +65,7 @@ endif;
 # -- - CLEAN SYSTEM - -- #
 set_progress(0.04);
 ui_print("   Formating System");
-delete_recursive("/system");
+format("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "0", "/system");
 
 set_progress(0.08);
 ui_print("   Cleaning junk files");
