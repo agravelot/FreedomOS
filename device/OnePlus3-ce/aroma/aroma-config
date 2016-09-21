@@ -353,7 +353,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2") then
 
     "Disable fsync","Faster fileystem performance, with risk of data loss",0,
     "Backlight dimmer","Lower screen brightness",0,
-    "Install WiFi module","Select if you have no wifi",1
+    "Install WiFi module","Copies WiFi module to system partition",1
   );
 endif;
 
