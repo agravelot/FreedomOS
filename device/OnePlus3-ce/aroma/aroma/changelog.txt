@@ -3,17 +3,20 @@
   UPDATE: Substratum 223
   UPDATE: ElementalX 0.20
   UPDATE: OxygenOS 3.5.2 Community Build
-  ADD: “kill all background processes” button in recents menu
-  ADD: Long press options in messages application
-  OPTIMIZE: Incoming call notification UI
-  ADD: Manual “check for update” button
-  ADD: Additional directions for first fingerprint configuration
-  ADD: Battery Saver mode optimizations and enhancements
-  ADD: Back contacts widget in launcher
-  OPTIMIZE: Dialer speed
-  ADD: New modes added in control panel (night mode and battery saver)
-  ADD: Support for PIN codes up to 6 digits
+    ADD: “kill all background processes” button in recents menu
+    ADD: Long press options in messages application
+    OPTIMIZE: Incoming call notification UI
+    ADD: Manual “check for update” button
+    ADD: Additional directions for first fingerprint configuration
+    ADD: Battery Saver mode optimizations and enhancements
+    ADD: Back contacts widget in launcher
+    OPTIMIZE: Dialer speed
+    ADD: New modes added in control panel (night mode and battery saver)
+    ADD: Support for PIN codes up to 6 digits
   UPDATE: XposedInstaller
+  UPDATE: ElementalX 0.21
+    ADD: disable touchboost setting
+    UPDATE: upstream WiFi change
   And under the hood change, check gitlab for more information.
 
   NOTE: Support f2fs support for the /data (not tested)

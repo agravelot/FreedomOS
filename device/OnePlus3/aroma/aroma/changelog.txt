@@ -1,3 +1,8 @@
+1.5.1
+  UPDATE: ElementalX 0.21
+    ADD: disable touchboost setting
+    UPDATE: upstream WiFi change
+
 1.5
   UPDATE: ElementalX 0.20
   UPDATE: SuperSU 2.78 SR1
