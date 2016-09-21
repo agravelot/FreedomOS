@@ -2,6 +2,7 @@
   UPDATE: ElementalX 0.21
     ADD: disable touchboost setting
     UPDATE: upstream WiFi change
+  FIX: ElementalX wifi module installation (my bad)
 
 1.5
   UPDATE: ElementalX 0.20
