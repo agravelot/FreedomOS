@@ -1,6 +1,8 @@
 1.5.2
-  UPDATE: ElementalX 0.22
+  UPDATE: ElementalX 0.23
     UPDATE: OnePlus updates
+    FIX: Prevent speaker gain from resetting
+    UPDATE: Installer
 
 1.5.1
   UPDATE: ElementalX 0.21

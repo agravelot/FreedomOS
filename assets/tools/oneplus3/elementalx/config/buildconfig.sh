@@ -66,18 +66,25 @@ echo "" >> $CONFIGFILE
 #i/o scheduler
 SCHED=`grep selected.1 /tmp/aroma/disk.prop | cut -d '=' -f2`
 if [ $SCHED = 1 ]; then
+  echo "write /sys/block/dm-0/queue/scheduler cfq"  >> $CONFIGFILE
   echo "write /sys/block/sda/queue/scheduler cfq"  >> $CONFIGFILE
 elif [ $SCHED = 2 ]; then
+  echo "write /sys/block/dm-0/queue/scheduler deadline"  >> $CONFIGFILE
   echo "write /sys/block/sda/queue/scheduler deadline"  >> $CONFIGFILE
 elif [ $SCHED = 3 ]; then
+  echo "write /sys/block/dm-0/queue/scheduler fiops"  >> $CONFIGFILE
   echo "write /sys/block/sda/queue/scheduler fiops"  >> $CONFIGFILE
 elif [ $SCHED = 4 ]; then
+  echo "write /sys/block/dm-0/queue/scheduler sio"  >> $CONFIGFILE
   echo "write /sys/block/sda/queue/scheduler sio"  >> $CONFIGFILE
 elif [ $SCHED = 5 ]; then
+  echo "write /sys/block/dm-0/queue/scheduler bfq"  >> $CONFIGFILE
   echo "write /sys/block/sda/queue/scheduler bfq"  >> $CONFIGFILE
 elif [ $SCHED = 6 ]; then
+  echo "write /sys/block/dm-0/queue/scheduler noop"  >> $CONFIGFILE
   echo "write /sys/block/sda/queue/scheduler noop"  >> $CONFIGFILE
 elif [ $SCHED = 7 ]; then
+  echo "write /sys/block/dm-0/queue/scheduler zen"  >> $CONFIGFILE
   echo "write /sys/block/sda/queue/scheduler zen"  >> $CONFIGFILE
 fi
 
