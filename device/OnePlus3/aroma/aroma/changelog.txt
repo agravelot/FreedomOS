@@ -1,3 +1,7 @@
+1.5.2
+  UPDATE: ElementalX 0.22
+    UPDATE: OnePlus updates
+
 1.5.1
   UPDATE: ElementalX 0.21
     ADD: disable touchboost setting
