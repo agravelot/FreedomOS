@@ -65,6 +65,9 @@ endif;
 # -- - CLEAN SYSTEM - -- #
 set_progress(0.04);
 ui_print("   Formating System");
+run_program("/tmp/tools/busybox", "mount", "/system");
+delete_recursive("/system");
+ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 format("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "0", "/system");
 
 set_progress(0.08);
