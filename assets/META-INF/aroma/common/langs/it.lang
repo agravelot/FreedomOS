@@ -129,8 +129,8 @@ info.youtube=Applicazione Youtube
 
 # -- - SYSTEM APPS - -- #
 
-apps.tittle=System Apps
-apps.tittle2=Select the system Apps you want
+apps.tittle=App di sistema
+apps.tittle2=Seleziona le App di sistema che vuoi
 
 anthal=AntHalService
 android_pay=Android Pay
@@ -234,13 +234,13 @@ fos_wallpapers=FreedomOS wallpapers
 emoji_one=EmojiOne
 multi_window=Multi Window
 
-info.supersu=SuperSU v2.78 SR1 by Chainfire
-info.divine=Divine beats by Theroyalseeker
-info.xposed=Xposed Installer solo applicazione by DVD android
-info.adaway=Ad-Blocker fper Android
+info.supersu=SuperSU v2.78 SR1 da Chainfire
+info.divine=Divine beats da Theroyalseeker
+info.xposed=Xposed Installer solo applicazione da DVD android
+info.adaway=Ad-Blocker per Android
 info.adb=Android Debugging Bridge
 info.dns=Imposta DNS 8.8.8.8/8.8.4.4
-info.fos_wallpapers=Designed by @badboy47
+info.fos_wallpapers=Designed da @badboy47
 info.emoji_one=L’ Open Emoji Standard
 info.multi_window=Abilita Multi Window
 
