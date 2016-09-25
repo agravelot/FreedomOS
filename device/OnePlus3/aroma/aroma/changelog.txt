@@ -3,6 +3,7 @@
     UPDATE: OnePlus updates
     FIX: Prevent speaker gain from resetting
     UPDATE: Installer
+  UPDATE: Italian gitlab@yvanbonci xda@xEvoRayJiN
 
 1.5.1
   UPDATE: ElementalX 0.21
