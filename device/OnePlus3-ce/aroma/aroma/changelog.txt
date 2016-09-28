@@ -1,3 +1,18 @@
+1.8-CE
+  UPDATE: 3.5.3 Community Build
+  ADD: AOSP clock as default clock
+  ADD: Capability to uninstall some preinstalled apps, like FileManager, Weather, Recorder, MusicPlayer
+  ADD: Expanded screenshots, you can now save a long screenshot of a scrollable page to cover more contents.
+  ADD: Celluar data firewall, you can control whether an app is allowd to use cellular network or WiFi
+  ADD: Contact setting”in Priority mode
+  ADD: Setting menu adjustment in Messages, added option to vibrate phone when receiving SMS
+  ADD: Contact UI redesign
+  FIX: community build cannot flash back to official build issue
+  FIX: General bug fixes
+  And under the hood changes, check gitlab for more information.
+
+  NOTE: The f2fs is working on /data partition.
+
 1.7-CE
   UPDATE: SuperSU 2.78 SR1
   UPDATE: Substratum 223
@@ -14,10 +29,7 @@
     ADD: New modes added in control panel (night mode and battery saver)
     ADD: Support for PIN codes up to 6 digits
   UPDATE: XposedInstaller
-  UPDATE: ElementalX 0.21
-    ADD: disable touchboost setting
-    UPDATE: upstream WiFi change
-  And under the hood change, check gitlab for more information.
+  And under the hood changes, check gitlab for more information.
 
   NOTE: Support f2fs support for the /data (not tested)
 
