@@ -1,6 +1,7 @@
 #!/bin/bash
 # FreedomOS conf file
 
+ZIP_NAME=FreedomOS-CE
 # Select the architecture of your device, it will be used in the system patch (see ADD_SYSTEM_LIST bellow).
 # It must coincide with the assets/system/$TARGET_ARCH
 TARGET_ARCH=arm64

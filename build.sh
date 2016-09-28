@@ -166,7 +166,7 @@ function configure {
 function review {
   # Set environment based on current config
   source ${device_root}/${device}/${device}.fos
-  output_file="FreedomOS-${CODENAME}-${BUILD_TYPE}-${VERSION}"
+  output_file="${ZIP_NAME}-${CODENAME}-${BUILD_TYPE}-${VERSION}"
 
   # Show Build review
   banner 2>&1 | tee -a ${build_log}
