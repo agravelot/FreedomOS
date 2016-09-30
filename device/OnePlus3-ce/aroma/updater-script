@@ -67,8 +67,6 @@ set_progress(0.04);
 ui_print("   Formating System");
 run_program("/tmp/tools/busybox", "mount", "/system");
 delete_recursive("/system");
-ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
-format("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "0", "/system");
 
 set_progress(0.08);
 ui_print("   Cleaning junk files");
@@ -96,7 +94,7 @@ ui_print(" ");
 set_progress(0.10);
 show_progress(0.57, 130000);
 ui_print("   Extracting System");
-#block_image_update("/dev/block/bootdevice/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat");
+ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 package_extract_file("system.img", "/dev/block/bootdevice/by-name/system");
 
 run_program("/tmp/tools/busybox", "mount", "/system");
@@ -105,8 +103,7 @@ run_program("/tmp/tools/busybox", "mount", "/system");
 
 set_progress(0.580000);
 ui_print("   Extracting Radio");
-package_extract_file("RADIO/static_nvbk.bin",
-                     "/dev/block/bootdevice/by-name/oem_stanvbk");
+package_extract_file("RADIO/static_nvbk.bin", "/dev/block/bootdevice/by-name/oem_stanvbk");
 
 set_progress(0.590000);
 ui_print("   Extracting Frimware");
