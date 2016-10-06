@@ -1,0 +1,450 @@
+########################################
+#                                      #
+#     FreedomOS    Installer Script    #
+#       (c) 2016 by Antoine GRAVELOT   #
+#           Nevax1    xda-developers   #
+#                                      #
+########################################
+
+ui_print() {
+  echo -n -e "ui_print $1\n" >> /proc/self/fd/$OUTFD
+  echo -n -e "ui_print\n" >> /proc/self/fd/$OUTFD
+}
+
+show_progress()
+{
+	echo "progress $1 $2" > $OUTFD
+}
+
+# set_metadata <file> <uid|gid|mode|capabilities|selabel> <value> [<uid|gid|mode|capabilities|selabel_2> <value2> ...]
+set_metadata ()) {
+  file="$1";
+  shift;
+  until [ ! "$2" ]; do
+    case $1 in
+      uid) chown $2 $file;;
+      gid) chown :$2 $file;;
+      mode) chmod $2 $file;;
+      capabilities) ;;
+      selabel)
+        for i in /system/bin/toybox /system/toolbox /system/bin/toolbox; do
+          LD_LIBRARY_PATH=$SYSTEM_LIB $i chcon -h $2 $file;
+          LD_LIBRARY_PATH=$SYSTEM_LIB $i chcon $2 $file;
+        done;
+        chcon -h $2 $file;
+        chcon $2 $file;
+      ;;
+      *) ;;
+    esac;
+    shift 2;
+  done;
+}
+# set_metadata_recursive <dir> <uid|gid|dmode|fmode|capabilities|selabel> <value> [<uid|gid|dmode|fmode|capabilities|selabel_2> <value2> ...]
+set_metadata_recursive() {
+  dir="$1";
+  shift;
+  until [ ! "$2" ]; do
+    case $1 in
+      uid) chown -R $2 $dir;;
+      gid) chown -R :$2 $dir;;
+      dmode) find "$dir" -type d -exec chmod $2 {} +;;
+      fmode) find "$dir" -type f -exec chmod $2 {} +;;
+      capabilities) ;;
+      selabel)
+        for i in /system/bin/toybox /system/toolbox /system/bin/toolbox; do
+          find "$dir" -exec LD_LIBRARY_PATH=$SYSTEM_LIB $i chcon -h $2 {} +;
+          find "$dir" -exec LD_LIBRARY_PATH=$SYSTEM_LIB $i chcon $2 {} +;
+        done;
+        find "$dir" -exec chcon -h $2 "{}" +;
+        find "$dir" -exec chcon $2 "{}" +;
+      ;;
+      *) ;;
+    esac;
+    shift 2;
+  done;
+}
+
+# set_perm <owner> <group> <mode> <file> [<file2> ...]
+set_perm() {
+  uid=$1; gid=$2; mod=$3;
+  shift 3;
+  chown $uid.$gid $*; chown $uid:$gid $*;
+  chmod $mod $*;
+}
+
+# set_perm_recursive <owner> <group> <dir_mode> <file_mode> <dir> [<dir2> ...]
+set_perm_recursive() {
+  uid=$1; gid=$2; dmod=$3; fmod=$4;
+  shift 4;
+  until [ ! "$1" ]; do
+    chown -R $uid.$gid $1; chown -R $uid:$gid $1;
+    find "$1" -type d -exec chmod $dmod {} +;
+    find "$1" -type f -exec chmod $fmod {} +;
+    shift;
+  done;
+}
+
+# ch_con <context> <file> [<file2> ...]
+ch_con() {
+  con=$1;
+  shift;
+  for i in /system/bin/toybox /system/toolbox /system/bin/toolbox; do
+    LD_LIBRARY_PATH=$SYSTEM_LIB $i chcon -h u:object_r:$con:s0 $*;
+    LD_LIBRARY_PATH=$SYSTEM_LIB $i chcon u:object_r:$con:s0 $*;
+  done;
+  chcon -h u:object_r:$con:s0 $*;
+  chcon u:object_r:$con:s0 $*;
+}
+
+# ch_con_recursive <dir_context> <file_context> <dir> [<dir2> ...]
+ch_con_recursive() {
+  dcon=$1; fcon=$2;
+  shift 2;
+  until [ ! "$1" ]; do
+    for i in /system/bin/toybox /system/toolbox /system/bin/toolbox; do
+      find "$1" -type d -exec LD_LIBRARY_PATH=$SYSTEM_LIB $i chcon -h u:object_r:$dcon:s0 {} +;
+      find "$1" -type f -exec LD_LIBRARY_PATH=$SYSTEM_LIB $i chcon -h u:object_r:$fcon:s0 {} +;
+      find "$1" -type d -exec LD_LIBRARY_PATH=$SYSTEM_LIB $i chcon u:object_r:$dcon:s0 {} +;
+      find "$1" -type f -exec LD_LIBRARY_PATH=$SYSTEM_LIB $i chcon u:object_r:$fcon:s0 {} +;
+    done;
+    find "$1" -type d -exec chcon -h u:object_r:$dcon:s0 "{}" +;
+    find "$1" -type f -exec chcon -h u:object_r:$fcon:s0 "{}" +;
+    find "$1" -type d -exec chcon u:object_r:$dcon:s0 "{}" +;
+    find "$1" -type f -exec chcon u:object_r:$fcon:s0 "{}" +;
+    shift;
+  done;
+}
+
+# restore_con <file/dir> [<file2/dir2> ...]
+restore_con() {
+  for i in /system/bin/toybox /system/toolbox /system/bin/toolbox; do
+    LD_LIBRARY_PATH=$SYSTEM_LIB $i restorecon -R $*;
+  done;
+  restorecon -R $*;
+}
+
+set_perm_recursive()
+{
+	dirs=$(echo $* | $bb awk "{ print substr($0, index($0,$5)) }")
+
+	for i in $dirs; do
+		chown -R $1.$2 $i
+		chown -R $1:$2 $i
+		find "$i" -type d -exec chmod $3 {} +
+		find "$i" -type f -exec chmod $4 {} +
+	done;
+}
+
+is_mounted() {
+  if [ ! -z "$2" ]; then
+    cat /proc/mounts | grep $1 | grep $2, >/dev/null
+  else
+    cat /proc/mounts | grep $1 >/dev/null
+  fi
+  return $?
+}
+
+# file_getprop <file> <property>
+file_getprop()
+{
+	grep "^$2" "$1" | cut -d= -f2
+}
+
+# getprop <property>
+getprop()
+{
+	test -e /sbin/getprop && /sbin/getprop $1 || file_getprop /default.prop $1
+}
+
+# sha1_check <file> [<sha1_hex> [<sha1_hex2> ...]]
+sha1_check() {
+  sum=$(sha1sum $1 | cut -d  -f1;
+  if [ ! "$2" -o $(is_substring $sum "$*") == 1 ]; then
+    echo $sum;
+  fi;
+}
+
+# apply_patch <src_file> <tgt_file> <tgt_sha1> <tgt_size> [<src_sha1_1>:<patch1> [<src_sha1_2>:<patch2> ...]]
+apply_patch()
+{
+  LD_LIBRARY_PATH=$SYSTEM_LIB applypatch $*;
+}
+
+# apply_patch_check <file> [<sha1_hex> [<sha1_hex2> ...]]
+apply_patch_check()
+{
+  LD_LIBRARY_PATH=$SYSTEM_LIB applypatch -c $*;
+}
+
+# apply_patch_space <bytes>
+apply_patch_space()
+{
+ LIBRARY_PATH=$SYSTEM_LIB applypatch -s $1;
+}
+
+# backup_files <file> [<file2> ...]
+backup_files()
+{
+  until [ ! "$1" ]; do
+    test ! -e "$1.bak" && cp -pf "$1" "$1.bak";
+    shift;
+  done;
+}
+
+# restore_files <file> [<file2> ...]
+restore_files()
+{
+  until [ ! "$1" ]; do
+    mv -f "${1}.bak" "$1";
+    shift;
+  done;
+}
+
+abort()
+{
+	ui_print " "
+	ui_print "$*"
+	umount /system
+	#umount /data
+	exit 1
+}
+
+mount_all()
+{
+	if [ is_mounted /system rw]; then mount -o remount,rw /system; fi;
+	if [ is_mounted /data rw]; then mount -o remount,rw /data; fi;
+	if [ is_mounted /cache rw]; then mount -o remount,rw /cache; fi;
+	if [ is_mounted / rw]; then mount -o remount,rw /; fi;
+}
+
+toolbox_mount() {
+  RW=rw
+  if [ ! -z "$2" ]; then
+    RW=$2
+  fi
+
+  DEV=
+  POINT=
+  FS=
+  for i in `cat /etc/fstab | grep "$1"`; do
+    if [ -z "$DEV" ]; then
+      DEV=$i
+    elif [ -z "$POINT" ]; then
+      POINT=$i
+    elif [ -z "$FS" ]; then
+      FS=$i
+      break
+    fi
+  done
+  if (! is_mounted $1 $RW; then mount -t $FS -o $RW $DEV $POINT; fi
+  if (! is_mounted $1 $RW; then mount -t $FS -o $RW,remount $DEV $POINT; fi
+
+  DEV=
+  POINT=
+  FS=
+  for i in `cat /etc/recovery.fstab | grep "$1"`; do
+    if [ -z "$POINT" ]; then
+      POINT=$i
+    elif [ -z "$FS" ]; then
+      FS=$i
+    elif [ -z "$DEV" ]; then
+      DEV=$i
+      break
+    fi
+  done
+  if [ "$FS" = "emmc" ]; then
+    if (! is_mounted $1 $RW; then mount -t ext4 -o $RW $DEV $POINT; fi
+    if (! is_mounted $1 $RW; then mount -t ext4 -o $RW,remount $DEV $POINT; fi
+    if (! is_mounted $1 $RW; then mount -t f2fs -o $RW $DEV $POINT; fi
+    if (! is_mounted $1 $RW; then mount -t f2fs -o $RW,remount $DEV $POINT; fi
+  else
+    if (! is_mounted $1 $RW; then mount -t $FS -o $RW $DEV $POINT; fi
+    if (! is_mounted $1 $RW; then mount -t $FS -o $RW,remount $DEV $POINT; fi
+  fi
+
+install_mod()
+{
+	if [ -d $MOD_PATH ]; then
+		if [ -f $RUN_ME]; then
+			$RUN_ME
+		else
+			echo "Unable to find $RUN_ME";
+	else
+		echo "Unable to find $MOD_PATH";
+	fi;
+}
+
+# package_extract_file <file> <destination_file>
+package_extract_file()
+{
+	 unzip -o "$ZIPFILE" "$1" -p > "$2";
+	 echo "extract $2" > $OUTFD
+}
+
+# package_extract_dir <dir> <destination_dir>
+package_extract_dir()
+{
+	unzip -o "$ZIPFILE" "$1/*" -d "$2";
+	echo "extract $2" > $OUTFD
+}
+
+save_log()
+{
+	mkdir -p /tmp/log/;
+	cp -vf /tmp/recovery.log /tmp/log/;
+	cp -rvf /tmp/aroma /tmp/log/;
+	ar cf - /tmp/log/ | xz -zf - > /sdcard/log.tar.xz;
+}
+
+OUTFD=/proc/self/fd/$2;
+ZIP=$3;
+DIR=`dirname "$ZIP"`;
+FOS_VERSION=`cat /tmp/tools/VERSION`;
+bb=/tmp/tools/busybox;
+FOS_DIR=/tmp/fredomos/;
+MOD_LIST="/tmp/fredomos/modlist";
+
+API=$(cat /system/build.prop | grep "ro.build.version.sdk=" | dd bs=1 skip=21 count=2;
+ABI=$(cat /system/build.prop /default.prop | grep -m 1 "ro.product.cpu.abi=" | dd bs=1 skip=19 count=3;
+ABILONG=$(cat /system/build.prop /default.prop | grep -m 1 "ro.product.cpu.abi=" | dd bs=1 skip=19;
+ABI2=$(cat /system/build.prop /default.prop | grep -m 1 "ro.product.cpu.abi2=" | dd bs=1 skip=20 count=3;
+ARCH=arm64;
+# TODO : Fix, pas de rom installé donc pas de lib
+SYSTEM_LIB=/system/lib64;
+
+
+if [ -z "$bb" ]; then
+  # TWRP went full retard
+  if [ ! -f "/sbin/unzip" ]; then
+    ui_print "- BAD RECOVERY DETECTED, NO UNZIP, ABORTING";
+    exit 1;
+  fi;
+fi;
+
+mount_all
+
+package_extract_dir "tools" "/tmp/tools"
+set_metadata "$bb" "uid" 0, "gid" 0, "mode" 0777;
+
+# Add assert check
+# backup addon.d
+
+rm -rvf "/sdcard/.android_secure";
+rm -rvf "/sdcard/.bookmark_thumb1";
+rm -rvf "/sdcard/.data";
+rm -rvf "/sdcard/.tmp";
+#rm -rvf "/sdcard/Android";
+rm -rvf "/sdcard/bugreports";
+rm -rvf "/sdcard/DCIM/.thumbnails";
+rm -rvf "/sdcard/LazyList";
+rm -rvf "/sdcard/LOST.DIR";
+rm -rvf "/sdcard/tmp";
+$bb "/tmp/tools/clean.sh";
+
+ui_print "\tWiping dalvik cache"
+rm -rvf "/data/dalvik-cache/*";
+ui_print "\tWiping cache"
+# TODO Add wiping cache
+ui_print "\tWiping system"
+rm -rvf "/system/*";
+
+# Extract system
+# TODO Add install mode from config file
+package_extract_dir "system" "/system/"
+
+# Set perm
+# Set symlink
+# Set metadata
+# Radio / firmware-update
+ui_print "\tExtracting Radio";
+dd if="RADIO/static_nvbk.bin" "/dev/block/bootdevice/by-name/oem_stanvbk";
+set_progress "0.590000";
+ui_print "\tExtracting Frimware";
+dd if="firmware-update/cmnlib64.mbn" "/dev/block/bootdevice/by-name/cmnlib64";
+dd if="firmware-update/cmnlib.mbn" "/dev/block/bootdevice/by-name/cmnlib";
+dd if="firmware-update/hyp.mbn" of="/dev/block/bootdevice/by-name/hyp";
+dd if="firmware-update/pmic.elf" of="/dev/block/bootdevice/by-name/pmic";
+dd if="firmware-update/tz.mbn" of="/dev/block/bootdevice/by-name/tz";
+dd if="firmware-update/emmc_appsboot.mbn" of="/dev/block/bootdevice/by-name/aboot";
+dd if="firmware-update/devcfg.mbn" of="/dev/block/bootdevice/by-name/devcfg";
+dd if="firmware-update/keymaster.mbn" of="/dev/block/bootdevice/by-name/keymaster";
+dd if="firmware-update/xbl.elf" of="/dev/block/bootdevice/by-name/xbl";
+dd if="firmware-update/rpm.mbn" of="/dev/block/bootdevice/by-name/rpm";
+dd if="firmware-update/NON-HLOS.bin" of="/dev/block/bootdevice/by-name/modem";
+dd if="firmware-update/adspso.bin" of="/dev/block/bootdevice/by-name/dsp";
+dd if="firmware-update/BTFM.bin" of="/dev/block/bootdevice/by-name/bluetooth";
+
+# Restore addond
+
+# Stock Kernel
+dd if=boot.img of=/dev/block/bootdevice/by-name/boot;
+
+# ROOT
+$bb "/tmp/supersu/META-INF/com/google/android/update-binary" "dummy" "1" "/tmp/supersu/supersu.zip"
+mount_all
+
+# mod
+
+
+# kernel patch
+
+ui_print "\tInstalling FreedomOS Patched Kernel";
+echo "DEBUG: Extracting patch";
+package_extract_dir "tools/kernel/config" "/tmp";
+set_metadata "$bb" "uid" 0 "gid" 0 "mode" 0777;
+
+$bb fstrim /cache;
+$bb fstrim /data;
+
+package_extract_dir("tools/kernel/boot" "/tmp";
+
+$bb echo "DEBUG: Set permissions";
+set_metadata "/tmp/cmdline.sh" "uid" 0, "gid" 0 "mode" 0777;
+set_metadata "/tmp/editramdisk.sh" "uid" 0 "gid" 0 "mode" 0777;
+set_metadata "/tmp/makebootimg.sh" "uid" 0 "gid" 0 "mode" 0777;
+set_metadata "/tmp/mkbootimg" "uid" 0 "gid" 0 "mode" 0777;
+set_metadata "/tmp/unpackbootimg" "uid" 0 "gid" 0 "mode" 0777;
+set_metadata "/tmp/clean.sh" "uid" 0 "gid" 0 "mode" 0777;
+
+ui_print"\tCustomizing ramdisk";
+$bb dd if=/dev/block/bootdevice/by-name/boot of=/tmp/boot.img;
+$bb /tmp/unpackbootimg -i /tmp/boot.img -o /tmp/;
+$bb /tmp/cmdline.sh;
+$bb /tmp/editramdisk.sh;
+$bb /tmp/makebootimg.sh;
+
+ui_print "\tInstalling kernel";
+$bb dd if="/tmp/newboot.img" "of=/dev/block/bootdevice/by-name/boot";
+
+$bb "/tmp/clean.sh";
+
+
+VERIFY=$(cat /sutmp/fstab | grep verify | grep system;
+if [ $? -eq 0 ]; then
+	# verify flag found, dm-verity probably enabled, modifying /system may prevent boot
+	return;
+fi;
+
+# MOD INSTALLER
+for i in $MOD_LIST
+do
+	if [ $i == true ]; then
+		source $FOS_DIR$i
+		if [ ! -z $AROMA_VALUE]; then
+			if [ $AROMA_VALUE == "force" ]; then
+				install_mod
+			elif [ file_getprop "/tmp/aroma/$PROP_FILE" == $AROMA_VALUE ]
+				install_mod
+			else
+				echo "$i is not selected to installation";
+			fi;
+		else
+			echo "AROMA value not set for $i";
+		fi;
+	fi;
+done;
+
+
+umount /system;
+
+save_log;
