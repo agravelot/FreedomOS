@@ -1,9 +1,17 @@
+1.6
+  UPDATE: OxygenOS 3.2.7
+    FIX: Rigntone issue related to alert slider
+    Fix: Lagging under some gaming circumstances
+  
+
 1.5.2
   UPDATE: ElementalX 0.23
     UPDATE: OnePlus updates
     FIX: Prevent speaker gain from resetting
     UPDATE: Installer
   UPDATE: Italian gitlab@yvanbonci xda@xEvoRayJiN
+
+  And as always, under the hood changes, check gitlab for more informations.
 
 1.5.1
   UPDATE: ElementalX 0.21
