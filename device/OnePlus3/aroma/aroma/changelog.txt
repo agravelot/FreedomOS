@@ -1,8 +1,12 @@
+1.6.1
+    REMOVE: OnePlus DeskClock app
+    ADD: AOSP DeskClock app
+
 1.6
   UPDATE: OxygenOS 3.2.7
     FIX: Rigntone issue related to alert slider
     Fix: Lagging under some gaming circumstances
-  
+
 
 1.5.2
   UPDATE: ElementalX 0.23

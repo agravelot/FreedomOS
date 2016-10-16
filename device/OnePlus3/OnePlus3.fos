@@ -39,6 +39,7 @@ oneplus3/*
 # You can easily debloat your rom from here.
 CLEAN_SYSTEM_LIST="
 app/Videos
+app/DeskClock
 bin/fmfactorytest
 bin/fmfactorytestserver
 bin/install-recovery.sh
@@ -53,6 +54,7 @@ app/Adaway
 app/Layers
 app/Substratum
 app/XposedInstaller
+app/DeskClock
 "
 
 # tools to add to the rom, (/assets/tools/)
