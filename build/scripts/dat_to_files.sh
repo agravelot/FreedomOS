@@ -53,4 +53,6 @@ function dat_to_files {
     echo ">>> Patching system files for ${DEVICE}" 2>&1 | tee -a ${build_log}
     cp -rvf ${assets_root}/system/${DEVICE}/* ${tmp_root}/mount/ >> ${build_log} 2>&1
   fi
+
+  echo ro.sf.lcd_density=480 >> ${tmp_root}/mount/build.prop | tee -a ${build_log}
 }
