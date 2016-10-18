@@ -1,3 +1,7 @@
+
+  UPDATE: ElementalX 0.24
+    - security updates
+
 1.6.1
     REMOVE: OnePlus DeskClock app
     ADD: AOSP DeskClock app
