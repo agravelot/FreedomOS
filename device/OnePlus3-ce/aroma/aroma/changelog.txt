@@ -1,3 +1,12 @@
+1.9-CE
+  App Lock functionality
+  Fixed keyguard crashes when enabling sim card lock in multiple languages
+  Optimized accent colors in default themes
+  Optimized translations for certain languages
+  Improved the quality of expanded screenshots
+  Increased system stability
+  General bug fixes
+
 1.8-CE
   UPDATE: 3.5.3 Community Build
   ADD: AOSP clock as default clock
