@@ -1,11 +1,5 @@
 1.9-CE
-  App Lock functionality
-  Fixed keyguard crashes when enabling sim card lock in multiple languages
-  Optimized accent colors in default themes
-  Optimized translations for certain languages
-  Improved the quality of expanded screenshots
-  Increased system stability
-  General bug fixes
+  ADD: Support all TWRP versions (modified and official [READ NOTE])
   UPDATE: Emoji One 2.2.4
   REMOVE: Layers, this app is now deprecated.
   REMOVE: Some OnePlus/Google bloat apps:
@@ -20,8 +14,21 @@
     - oemlogkit
     - WifiLogger_app
 
+  UPDATE: OxygenOS 3.5.4 Community Build
+  ADD: App Lock functionality
+  FIX: Keyguard crashes when enabling sim card lock in multiple languages
+  OPTIMIZE: Accent colors in default themes
+  OPTIMIZE: Translations for certain languages
+  OPTIMIZE: Improved the quality of expanded screenshots
+  OPTIMIZE: Increased system stability
+  FIX: General bugs
+
+  NOTE: This rom support f2fs format for the /data partition, keep in mind, some recovery doesn't support it!
+        So make sure you are not using the f2fs format if you are using Official TWRP (for exemple).
+  NOTE: The built-in dpi changer is a simple program, it is only accessible through command line (Read FAQ fot How-to).
+
 1.8-CE
-  UPDATE: 3.5.3 Community Build
+  UPDATE: OxygenOS 3.5.3 Community Build
   ADD: AOSP clock as default clock
   ADD: Capability to uninstall some preinstalled apps, like FileManager, Weather, Recorder, MusicPlayer
   ADD: Expanded screenshots, you can now save a long screenshot of a scrollable page to cover more contents.
