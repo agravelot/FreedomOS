@@ -6,6 +6,7 @@
   Improved the quality of expanded screenshots
   Increased system stability
   General bug fixes
+  REMOVE: Layers, this app is now deprecated.
 
 1.8-CE
   UPDATE: 3.5.3 Community Build

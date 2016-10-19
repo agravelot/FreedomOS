@@ -70,7 +70,6 @@ PATCH_FIRMWARE=3.2.7
 # The files are in the assets/system/$TARGET_ARCH/
 ADD_SYSTEM_LIST="
 app/Adaway
-app/Layers
 app/Substratum
 app/XposedInstaller
 "
