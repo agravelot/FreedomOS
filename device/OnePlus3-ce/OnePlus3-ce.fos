@@ -64,6 +64,8 @@ recovery-from-boot.p
 etc/recovery-resource.dat
 "
 
+PATCH_FIRMWARE=3.2.7
+
 # Set the files/folder you want to add to your system partition.
 # The files are in the assets/system/$TARGET_ARCH/
 ADD_SYSTEM_LIST="

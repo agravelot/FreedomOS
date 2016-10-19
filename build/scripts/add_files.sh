@@ -72,4 +72,9 @@ function add_files {
 
   echo ">> Set VERSION in kernel" 2>&1 | tee -a ${build_log}
   sed -i "s:!version!:${ZIP_NAME}-$VERSION:" ${tmp_root}/tools/kernel/boot/editramdisk.sh >> ${build_log} 2>&1
+
+  if [ ! -z $PATCH_FIRMWARE ]; then
+    echo "> Patching [FIRMWARE $PATCH_FIRMWARE]"| tee -a ${build_log}
+    cp -rvf ${assets_root}/firmware-update/$DEVICE/${PATCH_FIRMWARE}/firmware-update ${tmp_root}/ >> ${build_log} 2>&1
+  fi
 }
