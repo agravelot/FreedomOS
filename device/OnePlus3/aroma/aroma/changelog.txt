@@ -1,5 +1,6 @@
 
   REMOVE: WiFi module option in aroma, hte module is now installed as default.
+  UPDATE: Emoji One 2.2.4
   UPDATE: ElementalX 0.24
     UPDATE: security updates
 

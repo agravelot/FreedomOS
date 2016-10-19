@@ -6,6 +6,7 @@
   Improved the quality of expanded screenshots
   Increased system stability
   General bug fixes
+  UPDATE: Emoji One 2.2.4
   REMOVE: Layers, this app is now deprecated.
 
 1.8-CE
