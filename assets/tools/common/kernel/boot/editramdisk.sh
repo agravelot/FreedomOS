@@ -87,8 +87,8 @@ if [ $DEBUG = 1 ]; then
   echo "persist.service.adb.enable=1" >> /tmp/ramdisk/default.prop
   echo "persist.service.debuggable=1" >> /tmp/ramdisk/default.prop
   echo "persist.sys.usb.config=mtp,adb" >> /tmp/ramdisk/default.prop
-  echo "ro.secure=0" >> /tmp/ramdisk/default.prop
-  echo "ro.adb.secure=0" >> /tmp/ramdisk/default.prop
+  #echo "ro.secure=0" >> /tmp/ramdisk/default.prop
+  #echo "ro.adb.secure=0" >> /tmp/ramdisk/default.prop
 fi
 
 find . | cpio -o -H newc | gzip > /tmp/boot.img-ramdisk.gz
