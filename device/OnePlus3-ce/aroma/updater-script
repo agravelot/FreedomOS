@@ -848,10 +848,6 @@ endif;
 
 set_progress(0.990000);
 ui_print(" ");
-ui_print("@ WARNING! ");
-ui_print(" Make sure you are using the modified TWRP version, ");
-ui_print(" or your device will be brick!");
-ui_print(" Read the FreedomOS forum for the instructions.");
 ui_print(" ");
 set_progress(1.00000);
 ui_print("@Finished");
