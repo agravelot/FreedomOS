@@ -8,6 +8,17 @@
   General bug fixes
   UPDATE: Emoji One 2.2.4
   REMOVE: Layers, this app is now deprecated.
+  REMOVE: Some OnePlus/Google bloat apps:
+    - EngineeringMode
+    - app/EngSpecialTest
+    - app/Hangouts
+    - app/LogKitSdService
+    - app/OemAutoTestServer
+    - app/OEMLogKit
+    - SensorTestTool
+    - WifiRfTestApk
+    - oemlogkit
+    - WifiLogger_app
 
 1.8-CE
   UPDATE: 3.5.3 Community Build

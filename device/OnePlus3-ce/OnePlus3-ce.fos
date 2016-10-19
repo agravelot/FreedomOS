@@ -55,11 +55,21 @@ oneplus3/*
 # Files / folders to remove from the original stock image.
 # You can easily debloat your rom from here.
 CLEAN_SYSTEM_LIST="
+app/EngineeringMode
+app/EngSpecialTest
+app/Hangouts
+app/LogKitSdService
+app/OemAutoTestServer
+app/OEMLogKit
 app/OPPBugReport
+app/SensorTestTool
 app/Videos
+app/WifiRfTestApk
 bin/fmfactorytest
 bin/fmfactorytestserver
 bin/install-recovery.sh
+bin/oemlogkit
+bin/WifiLogger_app
 recovery-from-boot.p
 etc/recovery-resource.dat
 "
