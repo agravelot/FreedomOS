@@ -4,6 +4,7 @@
   UPDATE: Emoji One 2.2.4
   REMOVE: Layers, this app is now deprecated.
   REMOVE: Some OnePlus/Google bloat apps:
+    - BTtestmode
     - EngineeringMode
     - app/EngSpecialTest
     - app/Hangouts

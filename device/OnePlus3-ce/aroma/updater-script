@@ -815,12 +815,6 @@ endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.22") == "0")
   then
-    ui_print("   Removing Sensor Test Tool");
-    delete_recursive("/system/app/SensorTestTool");
-endif;
-
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.23") == "0")
-  then
     ui_print("   Removing Swiftkey");
     delete_recursive("/system/app/SwiftKey");
     delete_recursive("/system/app/SwiftKeyFactorySettings");
@@ -828,19 +822,19 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.23") == "0")
     run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.touchtype.swiftkey-*");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.24") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.23") == "0")
   then
     ui_print("   Removing Tags");
 		delete_recursive("/system/priv-app/Tag");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.25") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.24") == "0")
   then
    ui_print("   Removing DivesIconPack");
    delete_recursive("/system/app/DivesIconPack");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.26") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.25") == "0")
   then
    ui_print("   Removing RifonIconPack");
    delete_recursive("/system/app/RifonIconPack");

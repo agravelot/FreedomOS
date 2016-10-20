@@ -179,7 +179,6 @@ checkbox(
     "<~android_pay>", "<~info.android_pay>", 0,
     "<~basic_dream>", "<~info.basic_dream>", 0,
     "<~bt_midi>", "<~info.bt_midi>", 0,
-    "<~bt_test>", "<~info.bt_test>", 0,
     "<~desk_clock>", "<~info.desk_clock>", 1,
     "<~document>", "<~info.document>", 1,
     "<~download_provider>", "<~info.download_provider>", 1,
