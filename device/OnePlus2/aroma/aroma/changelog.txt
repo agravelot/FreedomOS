@@ -1,3 +1,17 @@
+  REMOVE: Bugle
+  REMOVE: BTtestmode
+  REMOVE: EngineeringMode
+  REMOVE: EngSpecialTest
+  REMOVE: Hangouts
+  REMOVE: LogKitSdService
+  REMOVE: ModemTestMode
+  REMOVE: OemAutoTestServer
+  REMOVE: OEMLogKit
+  REMOVE: OPPBugReport
+  REMOVE: SensorTestTool
+  REMOVE: WifiRfTestApk
+  REMOVE: oemlogkit
+  REMOVE: WifiLogger_app
   REMOVE: Layers (deprecated)
   UPDATE: Emoji One 2.2.4
   UPDATE: Dolby Atmos Sample rate to 48000
