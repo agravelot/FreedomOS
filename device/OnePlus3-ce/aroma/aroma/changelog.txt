@@ -6,16 +6,15 @@
   REMOVE: Some OnePlus/Google bloat apps:
     - BTtestmode
     - EngineeringMode
-    - app/EngSpecialTest
-    - app/Hangouts
-    - app/LogKitSdService
-    - app/OemAutoTestServer
-    - app/OEMLogKit
+    - EngSpecialTest
+    - Hangouts
+    - LogKitSdService
+    - OemAutoTestServer
+    - OEMLogKit
     - SensorTestTool
     - WifiRfTestApk
     - oemlogkit
     - WifiLogger_app
-
   UPDATE: OxygenOS 3.5.4 Community Build
   ADD: App Lock functionality
   FIX: Keyguard crashes when enabling sim card lock in multiple languages
