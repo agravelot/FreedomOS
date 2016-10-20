@@ -1,4 +1,5 @@
 1.9-CE
+  UPDATE: Dolby Atmos Sample rate to 48000
   ADD: Support all TWRP versions (modified and official [READ NOTE])
   UPDATE: Emoji One 2.2.4
   REMOVE: Layers, this app is now deprecated.

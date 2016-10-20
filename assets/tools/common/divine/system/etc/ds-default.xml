@@ -40,7 +40,7 @@
     <include preset="ieq_open" />
   </profile>
   <!--NOTE: <tuning> with endpoint other than SPEAKER do not use the band gain, UNLESS aoon is set 1 (from 2) and plmd is set to 2 (not 4).-->
-  <tuning id="tune0" name="DEFAULT ENDPOINT" endpoint="SPEAKER" tuned_rate="44100">
+  <tuning id="tune0" name="DEFAULT ENDPOINT" endpoint="SPEAKER" tuned_rate="48000">
     <data>aobf=[43, 129, 215, 301, 431, 603, 775, 947, 1206, 1550, 2067, 2756, 3618, 4651, 5685, 7063, 8958, 11025, 13781, 18777] aobg=[2, -240, 136, 168, 148, 156, 144, 160, 160, 160, 157, 132, 134, 82, 57, 44, 33, 35, 28, 75, 78, 3, -240, 136, 168, 148, 156, 144, 160, 160, 160, 157, 132, 134, 82, 57, 44, 33, 35, 28, 75, 78] arbf=[43, 129, 215, 301, 431, 603, 775, 947, 1206, 1550, 2067, 2756, 3618, 4651, 5685, 7063, 8958, 11025, 13781, 18777] arbh=[-960, -113, -149, -169, -255, -301, -155, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] arbl=[-960, -305, -341, -361, -447, -493, -347, -192, -192, -192, -192, -192, -192, -192, -192, -192, -192, -192, -192, -192] arbi=[1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] arod=[0] artp=[12] dssa=[10]</data>
   </tuning>
   <constant>
