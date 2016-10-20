@@ -1,3 +1,4 @@
+  REMOVE: Layers (deprecated)
   UPDATE: Emoji One 2.2.4
   UPDATE: Dolby Atmos Sample rate to 48000
 
