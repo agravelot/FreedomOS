@@ -5,7 +5,6 @@
   ADD: Support all TWRP versions (modified and official [READ NOTE])
   UPDATE: Emoji One 2.2.4
   REMOVE: Layers, this app is now deprecated.
-  REMOVE: Change owner of sdcard
   REMOVE: Some OnePlus/Google bloat apps:
     - BTtestmode
     - EngineeringMode
