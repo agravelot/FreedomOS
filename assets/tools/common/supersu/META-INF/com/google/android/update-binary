@@ -262,7 +262,7 @@ if [ "$?" -eq "0" ]; then
 fi
 
 ui_print_always() {
-  echo -n -e "ui_print $1\n" >> /proc/self/fd/$OUTFD
+  echo -n -e "ui_print   $1\n" >> /proc/self/fd/$OUTFD
   echo -n -e "ui_print\n" >> /proc/self/fd/$OUTFD
 }
 
@@ -274,14 +274,14 @@ UI_PRINT_LAST=""
 
 ui_print() {
   if (! $LESSLOGGING); then
-    UI_PRINT_LAST="$1"
-    ui_print_always "$1"
+    UI_PRINT_LAST="   $1"
+    ui_print_always "   $1"
   fi
 }
 
 ui_print_less() {
   if ($LESSLOGGING); then
-    ui_print_always "$1"
+    ui_print_always "   $1"
   fi
 }
 
