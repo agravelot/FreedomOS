@@ -580,6 +580,23 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
     run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
 endif;
 
+# -- - MOXIE - -- #
+if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="3")
+  then
+    ui_print("Borking quangos...");
+    package_extract_dir("tools/moxie/kernel", "/tmp");
+    set_metadata("/tmp/mods.sh", "uid", 0, "gid", 0, "mode", 0777);
+    set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "mode", 0777);
+    set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "mode", 0777);
+    ui_print("Loosening torx screws...");
+    run_program("/tmp/mods.sh");
+    ui_print("Deploying mangos...");
+    delete_recursive("/system/lib/modules");
+    package_extract_dir("tools/moxie/system","/system");
+    set_metadata_recursive("/system/lib/modules", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644);
+    ui_print("Fork handles!!!!");
+endif;
+
 
 # -- - Google apps - -- #
 set_progress(0.940000);
