@@ -29,6 +29,7 @@
   OPTIMIZE: Improved the quality of expanded screenshots
   OPTIMIZE: Increased system stability
   FIX: General bugs
+  And a lot of under the hoods changes, check gitlab for more informations.
 
   NOTE: This rom support f2fs format for the /data partition, keep in mind, some recovery doesn't support it!
         So make sure you are not using the f2fs format if you are using Official TWRP (for exemple).
