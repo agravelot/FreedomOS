@@ -239,6 +239,17 @@ checkbox(
     "<~multi_window>", "<~info.multi_window>", 0
 );
 
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1") then
+agreebox(
+   "Warning for Audio Mods",
+   "<@center>Please read the following instructions</@>",
+   "@warning",
+   "" + readfile_aroma("warning_audio.txt"),
+   "I have read this instructions",
+   "<@center>You must read the instructions/@>"
+ );
+endif;
+
 # -- - THEME - -- #
 selectbox(
   "<~theme.tittle>", "<~theme.tittle2>", "@default", "theme.prop",
