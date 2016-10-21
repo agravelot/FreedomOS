@@ -275,6 +275,8 @@ kernel_stock=Stock Kernel
 info.kernel_stock=L’ Originale da OnePlus con le patch FOS
 elementalx=ElementalX
 info.elementalx=Sviluppato da @flar2
+moxie=Moxie Kernel
+info.moxie=Sviluppato da @bedalus
 
 # -- - INSTALLER - -- #
 install=Installando FreedomOS

@@ -1,0 +1,21 @@
+ui_print(" ");
+ui_print(" ");
+ui_print("Borking quangos...");
+package_extract_dir("kernel", "/tmp");
+set_perm(0, 0, 0777, "/tmp/mods.sh");
+set_perm(0, 0, 0777, "/tmp/mkbootimg");
+set_perm(0, 0, 0777, "/tmp/unpackbootimg");
+set_progress(0.2);
+ui_print("Loosening torx screws...");
+mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+run_program("/tmp/mods.sh");
+set_progress(0.6);
+ui_print("Deploying mangos...");
+delete_recursive("/system/lib/modules");
+package_extract_dir("system","/system");
+set_perm_recursive(0, 0, 0755, 0644, "/system/lib/modules");
+unmount("/system");
+set_progress(0.9);
+ui_print("Fork handles!!!!");
+set_progress(1.0);
+
