@@ -1,6 +1,7 @@
 
   UPDATE: Dolby Atmos Sample rate to 48kHz 
   UPDATE: Change Sample rate for tiny alsa to 48kHz
+  FIX: tiny alsa device name configuration
   ADD: Moxie v4 Kernel @bedalus
   REMOVE: WiFi module option in aroma, the module is now installed by default.
   UPDATE: Emoji One 2.2.4
