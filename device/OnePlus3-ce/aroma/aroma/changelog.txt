@@ -3,8 +3,6 @@
   UPDATE: Change Sample rate for tiny alsa to 48kHz
   FIX: tiny alsa device name configuration
   ADD: Moxie v4 Kernel @bedalus
-  ADD: ElementalX Kernel 0.24 @flar2
-  REMOVE: (ElementalX) WiFi module option in aroma, the module is now installed by default.
   ADD: Support all TWRP versions (modified and official [READ NOTE])
   UPDATE: Emoji One 2.2.4
   REMOVE: Layers, this app is now deprecated.

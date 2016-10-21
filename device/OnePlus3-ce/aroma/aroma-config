@@ -268,7 +268,6 @@ selectbox(
   "<~kernel.tittle>", "<~kernel.tittle2>", "@personalize", "kernel.prop",
 
   "<~kernel_stock>", "<~info.kernel_stock>", 1,
-  "<~elementalx>", "<~info.elementalx>", 0,
   "<~moxie>", "<~info.moxie>", 0
 );
 
