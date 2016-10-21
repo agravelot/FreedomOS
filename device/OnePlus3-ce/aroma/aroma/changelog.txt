@@ -32,8 +32,6 @@
   And a lot of under the hoods changes, check gitlab for more informations.
 
   NOTE: This rom support f2fs format for the /data partition, keep in mind, some recovery doesn't support it!
-        So make sure you are not using the f2fs format if you are using Official TWRP (for exemple).
-  NOTE: The built-in dpi changer is a simple program, it is only accessible through command line (Read FAQ fot How-to).
 
 1.8-CE
   UPDATE: OxygenOS 3.5.3 Community Build
