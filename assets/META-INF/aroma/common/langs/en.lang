@@ -288,6 +288,6 @@ install.finish=It will take awhile...
 install.finish.title=The installation has been completed.
 installing.title=Installing...
 finish.title=Congratulations!
-finish.msg=FreedomOS has been installed to your phone successfully.
+finish.msg=FreedomOS has been successfully installed.
 finish.status=Installation result:
 finish.reboot=Reboot your device now.
