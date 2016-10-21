@@ -10,5 +10,6 @@ If you want to install the audio mods, you need to:
 <*> Boot into the initialization screen.</*>
 <*> Reboot into recovery and reflash the rom with this mod.</*>
 
+To disable it, click on "< Back" button in the bottom left of your screen.
 
 Enjoy! :)
