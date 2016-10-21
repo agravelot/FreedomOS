@@ -344,8 +344,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2") then
     "Other settings","<@center><b>Select the mods you want to install</b></@>","@elementalx","mods.prop",
 
     "Disable fsync","Faster fileystem performance, with risk of data loss",0,
-    "Backlight dimmer","Lower screen brightness",0,
-    "Install WiFi module","Copies WiFi module to system partition",1
+    "Backlight dimmer","Lower screen brightness",0
   );
 endif;
 
