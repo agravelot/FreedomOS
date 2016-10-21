@@ -592,7 +592,6 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="3")
     ui_print("   Fork handles!!!!");
 endif;
 
-
 # -- - Google apps - -- #
 set_progress(0.940000);
 ui_print(" ");
