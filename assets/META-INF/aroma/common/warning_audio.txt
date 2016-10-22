@@ -4,7 +4,7 @@ You have selected to install Audio Mods & Divinine Beats Mod.
 (Viper4Android & Dolvy ATMOS)
 This option will create an issue if you are performing a <b>clean</b> flash.
 
-If you want to install the audio mods, you need to:
+If you want to install the audio mods with a clean flash, you need to:
 
 <*> Flash the rom without this mod.</*>
 <*> Boot into the initialization screen.</*>
