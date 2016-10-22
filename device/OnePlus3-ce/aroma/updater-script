@@ -635,7 +635,7 @@ endif;
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.6") == "0")
   then
     ui_print("   Removing Gmail ");
-    delete_recursive("/system/app/Gmail");
+    delete_recursive("/system/app/Gmail2");
     run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.gm-*");
 endif;
 
