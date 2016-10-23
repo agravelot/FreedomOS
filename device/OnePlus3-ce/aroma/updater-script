@@ -772,7 +772,7 @@ endif;
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.12") == "0")
   then
     ui_print("   Removing OnePlus Music");
-    delete_recursive("/reserve/OPMusic");
+    delete_recursive("/system/reserve/OPMusic");
 endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.13") == "0")
