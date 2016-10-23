@@ -229,7 +229,7 @@ checkbox(
 
   "<~mod.tittle3>", "", 2,
     "<~supersu>", "<~info.supersu>", 1,
-    "<~divine>", "<~info.divine>", 1,
+    "<~divine>", "<~info.divine>", 0,
     "<~xposed>", "<~info.xposed>", 0,
     "<~adaway>", "<~info.adaway>", 1,
     "<~adb>", "<~info.adb>", 0,
