@@ -1,5 +1,6 @@
 1.9.1-CE
   FIX: OnePlus Music uninstaller
+  ADD: Force remove FreedomOS_wallpaper folder if not ticked
 
 1.9-CE
   UPDATE: Dolby Atmos Sample rate to 48kHz

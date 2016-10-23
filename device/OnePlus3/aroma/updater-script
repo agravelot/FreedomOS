@@ -378,8 +378,15 @@ endif;
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
   then
     set_progress(0.930000);
-    ui_print("   Extracting FreedomOS Wallpapers  (@badboy47)");
+    ui_print("   Extracting FreedomOS Wallpapers");
     package_extract_dir("media/wallpaper", "/sdcard/FreedomOS_wallpaper");
+endif;
+
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "0")
+  then
+    set_progress(0.930000);
+    ui_print("   Extracting FreedomOS Wallpapers");
+    delete_recursive("/sdcard/FreedomOS_wallpaper");
 endif;
 
 # -- - EMOJI ONE - -- #
