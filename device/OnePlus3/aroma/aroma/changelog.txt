@@ -1,6 +1,6 @@
 1.6.1
     REMOVE: OnePlus DeskClock app
-    ADD: AOSP DeskClock app
+    ADD: Google DeskClock app
     ADD: Force remove FreedomOS_wallpaper folder if not ticked
     UPDATE: Dolby Atmos Sample rate to 48kHz
     UPDATE: Change Sample rate for tiny alsa to 48kHz
