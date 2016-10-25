@@ -2,13 +2,10 @@
     REMOVE: OnePlus DeskClock app
     ADD: Google DeskClock app
     ADD: Force remove FreedomOS_wallpaper folder if not ticked
-    UPDATE: Dolby Atmos Sample rate to 48kHz
-    UPDATE: Change Sample rate for tiny alsa to 48kHz
     FIX: tiny alsa device name configuration
     ADD: Moxie v4 Kernel @bedalus
     REMOVE: WiFi module option in aroma, the module is now installed by default.
     UPDATE: Emoji One 2.2.4
-    UPDATE: Dolby Atmos Sample rate to 48000
     UPDATE: ElementalX 0.24
       UPDATE: security updates
 
