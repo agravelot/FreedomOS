@@ -541,7 +541,7 @@ if (file_getprop("/tmp/aroma/dpi.prop", "selected.0") == "16")
 endif;
 
 # -- - ELEMENTALX - -- #
-if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="")
+if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
   then
     set_progress(0.980);
     ui_print(" ");
@@ -583,7 +583,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="")
 endif;
 
 # -- - MOXIE - -- #
-if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
+if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="3")
   then
     ui_print("   Borking quangos...");
     package_extract_dir("tools/moxie/kernel", "/tmp");
