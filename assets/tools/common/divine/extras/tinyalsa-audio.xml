@@ -1,6 +1,6 @@
 <tinyalsa-audio device="Android">
 	<output card="0" device="0"
-		rate="48000" channels="2" format="PCM_16"
+		rate="44100" channels="2" format="PCM_16"
 		period_size="1024" period_count="4">
 
 		<device type="default">
@@ -82,7 +82,7 @@
 	</output>
 
 	<input card="0" device="0"
-		rate="48000" channels="2" format="PCM_16"
+		rate="44100" channels="2" format="PCM_16"
 		period_size="1024" period_count="4">
 
 		<device type="builtin-mic">
