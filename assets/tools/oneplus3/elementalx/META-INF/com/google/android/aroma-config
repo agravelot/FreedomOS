@@ -17,10 +17,10 @@
 ###
 
 ini_set("rom_name",             "ElementalX");
-ini_set("rom_version",          "0.24");
+ini_set("rom_version",          "0.25");
 ini_set("rom_author",           "flar2");
 ini_set("rom_device",           "OnePlus 3");
-ini_set("rom_date",             "September 27, 2016");
+ini_set("rom_date",             "October 23, 2016");
 
 ini_set("force_colorspace","rgba");
 
