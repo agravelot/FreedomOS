@@ -3,6 +3,13 @@
   FIX: Audio tunneling effect
   ADD: Force remove FreedomOS_wallpaper folder if not ticked
   CHANGE: Audio Mods/Divine are no more installed by default to avoid errors
+  ADD: ElementalX 0.25
+    -security updates
+    -verified boot patch (@sultanxda)
+    -various optimizations
+    -firmware compatibility fix (@myfluxi)
+
+  NOTE: The ElementalX wifi module is installed by default.
 
 1.9-CE
   UPDATE: Dolby Atmos Sample rate to 48kHz

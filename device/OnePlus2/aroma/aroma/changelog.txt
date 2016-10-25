@@ -1,7 +1,5 @@
 1.0.1
   ADD: Force remove FreedomOS_wallpaper folder if not ticked
-  UPDATE: Dolby Atmos Sample rate to 48kHz
-  UPDATE: Change Sample rate for tiny alsa to 48kHz
   FIX: tiny alsa device name configuration
   REMOVE: Bugle
   REMOVE: BTtestmode
@@ -19,6 +17,8 @@
   REMOVE: WifiLogger_app
   REMOVE: Layers (deprecated)
   UPDATE: Emoji One 2.2.4
+
+  NOTE: The previous missing apps, should now be fixed.
 
 1.0
   Initial release
