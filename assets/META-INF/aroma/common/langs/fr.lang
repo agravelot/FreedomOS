@@ -28,7 +28,7 @@ welcome.next=Presser suivant pour continuer l'installation...
 changelog.title=Changelogs
 changelog.desc=FreedomOS Changelogs
 language.title=Selection de la langue
-language.text=Sélectionner le language à utiliser
+language.text=Sélectionner le langage à utiliser
 language.english=English
 language.english.info=Using English
 language.french=France
@@ -44,7 +44,7 @@ by=par
 main.tittle=Selectionner un menu pour poursuivre l'installation
 main.install=Installer
 main.install.info=Continuer l'installation
-main.sys=Information système
+main.sys=Informations système
 main.sys.info=Montrer les informations système
 main.changelog.info=FreedomOS changelogs
 main.exit=Quitter
@@ -59,13 +59,13 @@ assert_yes=Oui (Recommandé)
 assert_no=Non
 addon.tittle=Sauvegarder/Réstaurer /system/addon.d/
 addon_yes=Oui
-info.addon_yes=Recommandédirty flash
+info.addon_yes=Recommandé dirty flash
 addon_no=Non
 info.addon_no=Pour flash propre
 
 info.custom=Méthode FreedomOS
 info.stock=Stock d'origine, non modifié
-info.assert_yes=Vérifie la variant dans le build.prop
+info.assert_yes=Vérifie la variante dans le build.prop
 info.assert_no=Ne pas vérifier la variante
 
 sys.title=Information système
@@ -88,7 +88,7 @@ pre.install3=Si vous souhaitez vérifier ou modifier vos paramètres d'installat
 # -- - GOOGLE APPS - -- #
 
 gapps.tittle=Google Apps
-gapps.tittle2=Select the Google applications you want
+gapps.tittle2=Sélectionner les applis Google que vous souhaitez
 
 calculator=Calculette
 calendar=Calendrier
@@ -109,14 +109,14 @@ play_movies=Play Vidéos
 youtube=YouTube
 
 info.calculator=0010 1010
-info.calendar=Clandrier Google
-info.call_log=Envoie votre historique d'appel à Google
-info.chrome=Navigateur web
+info.calendar=Calendrier Google
+info.call_log=Envoie votre historique d'appels à Google
+info.chrome=Navigateur Web
 info.drive=Service cloud
-info.gmail=Cleint mail
+info.gmail=Client mail
 info.gmail_exchange=Support d'exchange pour Gmail
 info.google=Google Now
-info.hangouts=Méssagerie instantané
+info.hangouts=Messagerie instantanée
 info.maps=Navigation en temps réel, trafic, transports
 info.photos=Application de gestion des photos numériques
 info.play_music=Application Google Play Musique
@@ -128,7 +128,7 @@ info.youtube=Application YouTube
 # -- - SYSTEM APPS - -- #
 
 apps.tittle=System applications
-apps.tittle2=Select the system applications you want
+apps.tittle2=Sélectionner les applis Système que vous souhaitez
 
 anthal=AntHalService
 android_pay=Andoroid Pay
@@ -137,7 +137,7 @@ bt_midi=BT Midi Service
 bt_test=BTtestmode
 desk_clock=DeskClock
 document=Documents
-download_provider=Géstionnaire de téléchargement
+download_provider=Gestionnaire de téléchargements
 engineering=EngineeringMode
 eng_special_test=EngSpecialTest
 facelock=Dévérouiller avec son visage
@@ -167,7 +167,7 @@ info.basic_dream=Veille intéractif
 info.bt_midi=Support Bluetooth MIDI
 info.bt_test=Bluetooth testing
 info.desk_clock=Alarme, horloge et chronomètre
-info.document=Géstionnaire de fichier
+info.document=Gestionnaire de fichier
 info.download_provider=Application de télécargement
 info.engineering=Pamaètres de développement
 info.eng_special_test=Paramètres divers
@@ -176,7 +176,7 @@ info.galaxy=Fond d'écran animé
 info.holo_spiral=Fond d'écran animé
 info.anim_wallpaper=Support fond d'écran animé
 info.log_kit=Log
-info.music=OnePlus music app
+info.music=Application Musique OnePlus
 info.noise_feild=Fond d'écran animé
 info.oneplus_wallpapers=Quelques fonds d'écran
 info.oem_test=Application de test OnePlus
@@ -195,7 +195,7 @@ info.dive_icon=Pack d'icône de OnePlus
 info.rifon_icon=Pack d'icône de OnePlus
 
 mod.ttile=Mod supplémentaire
-mod.ttile2=Selectionner les mod que vous souhaitez
+mod.ttile2=Selectionner les mods que vous souhaitez
 
 dpi.tittle=Change le DPI
 dpi.tittle2=Point par pouce
@@ -217,7 +217,7 @@ dpi.360=DPI système à 360
 dpi.350=DPI système à 350
 
 mod.title=Installation mod supplémentaire
-mod.tittle2=Root, mod audio, bloqueur de pub & xposed...
+mod.tittle2=Root, mod audio, bloqueur de pubs & xposed...
 mod.tittle3=Extra mod
 
 supersu=Installer SuperSU
@@ -233,17 +233,17 @@ multi_window=Multi Fenêtre
 info.supersu=SuperSU v2.78 SR1 par Chainfire
 info.divine=Divine beats par Theroyalseeker
 info.xposed=Application Xposed seulement par DVD android
-info.adaway=Bloqueur de publicité pour Android
+info.adaway=Bloqueur de publicités pour Android
 info.adb=Android Debugging Bridge
 info.dns=DNS 8.8.8.8/8.8.4.4
-info.fos_wallpapers=Conçu par @badboy47
+info.fos_wallpapers=Conçus par @badboy47
 info.emoji_one=The Open Emoji Standard
 info.multi_window=Active le Multi Window
 
 
 # -- - THEME - -- #
 theme.tittle=Theme Engine
-theme.tittle2=Slectionnez votre theme engine
+theme.tittle2=Sélectionnez votre moteur de thèmes
 
 notheme=Aucun Theme engine
 layer=RRO Layers [obsolète]
