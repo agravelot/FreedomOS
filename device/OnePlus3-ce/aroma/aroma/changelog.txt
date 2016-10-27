@@ -1,3 +1,5 @@
+  UPDATE: French language
+
 1.9.1-CE
   FIX: OnePlus Music uninstaller
   FIX: Audio tunneling effect
