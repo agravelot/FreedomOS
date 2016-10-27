@@ -1,5 +1,5 @@
 1.0.1
-  UPDATE: French language
+  UPDATE: French language @xeloni
   ADD: Force remove FreedomOS_wallpaper folder if not ticked
   FIX: tiny alsa device name configuration
   REMOVE: Bugle
