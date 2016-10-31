@@ -1,4 +1,15 @@
+1.10-CE
   UPDATE: French language @xeloni
+  UPDATE: 3.5.5 OxygenOS Community Build
+  ADD: Added OnePlus FileDash functionality for convenient file transfers
+  ADD: Added ability to switch launcher layouts
+  ADD: Integration of Google Map to share locational information in messages.
+  ADD: Redesign of the phone calling UI
+  ADD: Added personalized ringtone information in contact details
+  ADD: Added ability to view the entire call history of the selected contact
+  ADD: Introduction of the OnePlus Community App
+  FIX: Increased system stability
+  FIX: General bug fixes
   UPDATE: ElementalX 0.27
   UPDATE: OnePlus updates 
 
