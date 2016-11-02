@@ -599,7 +599,7 @@ find_boot_image() {
   # from the SuperSU APK doesn't have the fstab to read from
   if [ -z "$BOOTIMAGE" ]; then
     for PARTITION in kern-a KERN-A android_boot ANDROID_BOOT kernel KERNEL boot BOOT lnx LNX; do
-      BOOTIMAGE=$(readlink /dev/block/by-name/$PARTITION || readlink /dev/block/platform/*/by-name/$PARTITION || readlink /dev/block/platform/*/*/by-name/$PARTITION)
+      BOOTIMAGE=$(readlink /dev/block/by-name/$PARTITION || readlink /dev/block/platform/*/by-name/$PARTITION || readlink /dev/block/platform/*/*/by-name/$PARTITION || readlink /dev/block/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/*/by-name/$PARTITION$SLOT_SUFFIX)
       if [ ! -z "$BOOTIMAGE" ]; then break; fi
     done
   fi
@@ -649,7 +649,7 @@ detect_systemless_required() {
   fi
 
   # detect dm-verity in use
-  for i in `LD_LIBRARY_PATH=$RAMDISKLIB $BIN/sukernel --cpio-ls /sutmp/ramdisk | grep fstab`; do
+  for i in `LD_LIBRARY_PATH=$RAMDISKLIB $BIN/sukernel --cpio-ls /sutmp/ramdisk | grep fstab | grep "^${CPIO_PREFIX}"`; do
     rm -f /sutmp/fstab
 
     check_zero "" "" "" "LD_LIBRARY_PATH=$RAMDISKLIB $BIN/sukernel --cpio-extract /sutmp/ramdisk $i /sutmp/fstab"
@@ -663,7 +663,7 @@ detect_systemless_required() {
   done
 
   # detect init loading from /data/security/current/sepolicy
-  check_zero "" "" "" "LD_LIBRARY_PATH=$RAMDISKLIB $BIN/sukernel --cpio-extract /sutmp/ramdisk init /sutmp/init"
+  check_zero "" "" "" "LD_LIBRARY_PATH=$RAMDISKLIB $BIN/sukernel --cpio-extract /sutmp/ramdisk ${CPIO_PREFIX}init /sutmp/init"
   if (! $CONTINUE); then return; fi
 
   CURRENT=$(cat /sutmp/init | grep "/data/security/current/sepolicy")
@@ -673,7 +673,7 @@ detect_systemless_required() {
   fi
 
   # extract sepolicy
-  check_zero "" "" "" "LD_LIBRARY_PATH=$RAMDISKLIB $BIN/sukernel --cpio-extract /sutmp/ramdisk sepolicy /sutmp/sepolicy"
+  check_zero "" "" "" "LD_LIBRARY_PATH=$RAMDISKLIB $BIN/sukernel --cpio-extract /sutmp/ramdisk ${CPIO_PREFIX}sepolicy /sutmp/sepolicy"
   if (! $CONTINUE); then return; fi
 
   GO=false
@@ -722,10 +722,55 @@ ui_print        "*****************"
 ui_print_always "SuperSU installer"
 ui_print        "*****************"
 
+# detect slot-based partition layout
+
+SLOT_USED=false
+SLOT_SUFFIX=$(getprop ro.boot.slot_suffix 2>/dev/null)
+SLOT_SYSTEM=
+CPIO_PREFIX=
+if [ -z "$SLOT_SUFFIX" ]; then
+  for i in `cat /proc/cmdline`; do
+    if [ "${i%=*}" = "androidboot.slot_suffix" ]; then
+      SLOT_SUFFIX=${i#*=}
+      break
+    fi
+  done
+fi
+if [ ! -z "$SLOT_SUFFIX" ]; then
+  SLOT_USED=true
+fi
+if ($SLOT_USED); then
+  SYSTEM_FSTAB=$(cat /fstab.* | grep -v "#" | grep -i "/system" | tr -s " ");
+  if (! `echo $SYSTEM_FSTAB | grep slotselect >/dev/null 2>&1`); then
+    SLOT_USED=false
+  else
+    for i in $SYSTEM_FSTAB; do
+      SLOT_SYSTEM=$i$SLOT_SUFFIX
+      break
+    done
+  fi
+fi
+if ($SLOT_USED); then
+  CPIO_PREFIX=boot/
+fi
+
 ui_print "- Mounting /system, /data and rootfs"
 
-mount -o ro /system
-toolbox_mount /system ro
+HAD_SYSTEM=false
+HAD_SYSTEM_ROOT=false
+if (`mount | grep " /system " >/dev/null 2>&1`); then
+  HAD_SYSTEM=true
+fi
+if (`mount | grep " /system_root " >/dev/null 2>&1`); then
+  HAD_SYSTEM_ROOT=true
+fi
+
+if (! $SLOT_USED); then
+  mount -o ro /system
+  toolbox_mount /system ro
+else
+  mount -o ro $SLOT_SYSTEM /system_root
+fi
 mount /data
 toolbox_mount /data
 mount -o rw,remount /
@@ -882,16 +927,22 @@ if [ "$API" -eq "$API" ]; then
     if ($SYSTEMLESS); then
       RWSYSTEM=false
     fi
-  elif [ "$API" -ge "22" ]; then
+  elif [ "$API" -ge "21" ]; then
+    # 5.1/Samsung
+    # On 5.0, auto-detect sets systemless only for 5.1/Samsung
+    # But we allow SYSTEMLESS=true override for 3rd party mods
+    # - that doesn't officially work, though!
     if [ "$SYSTEMLESS" = "detect" ]; then
-      SYSTEMLESS=true
+      SYSTEMLESS=false
+      if [ "$API" -ge "22" ]; then
+        if ($SAMSUNG); then
+          SYSTEMLESS=true
+        fi
+      fi
     fi
 
-    # 5.1/Samsung
     if ($SYSTEMLESS); then
-      if ($SAMSUNG); then
-        RWSYSTEM=false
-      fi
+      RWSYSTEM=false
     fi
   fi
 fi
@@ -1269,9 +1320,13 @@ else
     if ($CONTINUE); then
       cp_perm 0 0 0644 /sutmp/ramdisk /sutmp/ramdisk.original
 
+      check_zero_def "- Importing system_root" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-import-system-root /sutmp/ramdisk /sutmp/ramdisk"
+    fi
+
+    if ($CONTINUE); then
       ui_print "- Patching sepolicy"
 
-      check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-extract /sutmp/ramdisk sepolicy /sutmp/sepolicy"
+      check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-extract /sutmp/ramdisk ${CPIO_PREFIX}sepolicy /sutmp/sepolicy"
 
       if ($CONTINUE); then
         if ($PERMISSIVE); then
@@ -1286,13 +1341,13 @@ else
         fi
       fi
 
-      check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 644 sepolicy /sutmp/sepolicy.patched"
+      check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 644 ${CPIO_PREFIX}sepolicy /sutmp/sepolicy.patched"
     fi
 
-    check_zero_def "- Adding daemon launcher" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 700 sbin/launch_daemonsu.sh $COM/launch_daemonsu.sh"
-    check_zero_def "- Adding init script" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 750 init.supersu.rc $COM/init.supersu.rc"
+    check_zero_def "- Adding daemon launcher" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 700 ${CPIO_PREFIX}sbin/launch_daemonsu.sh $COM/launch_daemonsu.sh"
+    check_zero_def "- Adding init script" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 750 ${CPIO_PREFIX}init.supersu.rc $COM/init.supersu.rc"
 
-    check_zero_def "- Creating mount point" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-mkdir /sutmp/ramdisk /sutmp/ramdisk 755 su"
+    check_zero_def "- Creating mount point" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-mkdir /sutmp/ramdisk /sutmp/ramdisk 755 ${CPIO_PREFIX}su"
 
     COMMAND="LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --patch /sutmp/ramdisk /sutmp/ramdisk $STOCKBOOTIMAGE"
     if ($KEEPVERITY); then
@@ -1302,6 +1357,23 @@ else
       COMMAND="$COMMAND --keep-forceencrypt"
     fi
     check_zero_def "- Patching init.*.rc, fstabs, file_contexts, dm-verity" "$COMMAND"
+
+    if ($CONTINUE); then
+      if ($SLOT_USED); then
+        ui_print "- Patching init, system_root, system"
+
+        echo -n "/system_root/system" > /sutmp/system_link
+
+        check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 750 init $BIN/suinit"
+        check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-mkdir /sutmp/ramdisk /sutmp/ramdisk 755 boot/system_root"
+        check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 120755 boot/system /sutmp/system_link"
+
+        if (! $CONTINUE); then
+          ui_print_less "$UI_PRINT_LAST"
+          ui_print_always "--- Failure, aborting"
+        fi
+      fi
+    fi
 
     if [ -f "/data/custom_ramdisk_patch.sh" ]; then
         check_zero_def "- Calling user ramdisk patch script" "sh /data/custom_ramdisk_patch.sh /sutmp/ramdisk"
@@ -1317,6 +1389,30 @@ else
     fi
 
     check_zero_def "- Creating boot image" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --bootimg-replace-ramdisk $STOCKBOOTIMAGE /sutmp/ramdisk.packed /sutmp/boot.img"
+
+    if ($SLOT_USED); then
+      check_zero_def "- Extracting kernel" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --bootimg-extract-kernel $BOOTIMAGE /sutmp/kernel"
+
+      KERNEL_COMPRESSED=false
+      if ($CONTINUE); then
+        ui_print "- Decompressing kernel"
+        if (`LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --ungzip /sutmp/kernel /sutmp/kernel >/dev/null 2>/dev/null`); then
+          KERNEL_COMPRESSED=true
+        fi
+      fi
+
+      check_zero_def "- Patching kernel" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --patch-slot-kernel /sutmp/kernel /sutmp/kernel"
+
+      if ($CONTINUE); then
+        if ($KERNEL_COMPRESSED); then
+          check_zero_def "- Compressing kernel" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --gzip /sutmp/kernel /sutmp/kernel"
+        fi
+      fi
+
+      if ($CONTINUE); then
+        check_zero_def "- Replacing kernel" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --bootimg-replace-kernel /sutmp/boot.img /sutmp/kernel /sutmp/boot.img"
+      fi
+    fi
 
     if [ "$IMAGETYPE" = "chromeos" ]; then
       ui_print "- Signing boot image"
@@ -1392,7 +1488,15 @@ else
 fi
 
 ui_print "- Unmounting /system"
-umount /system
+if ($SLOT_USED); then
+  if (! $HAD_SYSTEM_ROOT); then
+    umount /system_root
+  fi
+else
+  if (! $HAD_SYSTEM); then
+    umount /system
+  fi
+fi
 
 ui_print_always "- Done !"
 exit 0

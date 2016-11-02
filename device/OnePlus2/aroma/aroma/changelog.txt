@@ -1,3 +1,18 @@
+  UPDATE: SuperSU 2.78 SR2
+  - File-based-encryption support
+  - CCMT: Add privacy policy dialog
+  - CCMT: Update translation files
+  - su+gui: support /system_root paths
+  - sukernel: add kernel binary extract/replace
+  - sukernel: add kernel cmdline extract/replace
+  - sukernel: add system_root import
+  - sukernel: add slot-kernel patch
+  - sukernel: support /boot paths
+  - suinit: new binary component
+  - launch_daemonsu: restructure to support /su in initramfs or system_root
+  - ZIP: Support systemless on 5.0 (requires 3rd party patches)
+  - ZIP: Support for A/B slot systems with / inside system partition
+
 1.0.1
   UPDATE: French language @xeloni
   ADD: Force remove FreedomOS_wallpaper folder if not ticked

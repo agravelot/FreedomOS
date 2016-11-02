@@ -54,11 +54,11 @@ resize() {
   fi
 }
 
-if [ ! -d "/su/bin" ]; then
-  log_print "/su not mounted yet"
+REBOOT=false
 
-  # not mounted yet, do our thing
-  REBOOT=false
+if [ ! -d "/su/bin" ]; then
+  # not mounted yet, and doesn't exist already, merge
+  log_print "/su not mounted yet"
 
   # copy boot image backups
   log_print "copying boot image backups from /cache to /data"
@@ -145,55 +145,59 @@ if [ ! -d "/su/bin" ]; then
 
     rm /cache/su.img
   fi
+fi
 
-  # do we have an APK to install ?
-  if [ -f "/cache/SuperSU.apk" ]; then
-    cp /cache/SuperSU.apk /data/SuperSU.apk
-    rm /cache/SuperSU.apk
-  fi
-  if [ -f "/data/SuperSU.apk" ]; then
-    log_print "installing SuperSU APK in /data"
+# do we have an APK to install ?
+if [ -f "/cache/SuperSU.apk" ]; then
+  cp /cache/SuperSU.apk /data/SuperSU.apk
+  rm /cache/SuperSU.apk
+fi
+if [ -f "/data/SuperSU.apk" ]; then
+  log_print "installing SuperSU APK in /data"
 
-    APKPATH=eu.chainfire.supersu-1
-    for i in `ls /data/app | grep eu.chainfire.supersu- | grep -v eu.chainfire.supersu.pro`; do
-      if [ `cat /data/system/packages.xml | grep $i >/dev/null 2>&1; echo $?` -eq 0 ]; then
-        APKPATH=$i
-        break;
-      fi
-    done
-    rm -rf /data/app/eu.chainfire.supersu-*
-
-    log_print "target path: /data/app/$APKPATH"
-
-    mkdir /data/app/$APKPATH
-    chown 1000.1000 /data/app/$APKPATH
-    chmod 0755 /data/app/$APKPATH
-    chcon u:object_r:apk_data_file:s0 /data/app/$APKPATH
-
-    cp /data/SuperSU.apk /data/app/$APKPATH/base.apk
-    chown 1000.1000 /data/app/$APKPATH/base.apk
-    chmod 0644 /data/app/$APKPATH/base.apk
-    chcon u:object_r:apk_data_file:s0 /data/app/$APKPATH/base.apk
-
-    rm /data/SuperSU.apk
-
-    sync
-
-    # just in case
-    REBOOT=true
-  fi
-
-  # sometimes we need to reboot, make it so
-  if ($REBOOT); then
-    log_print "rebooting"
-    if [ "$MODE" = "post-fs-data" ]; then
-      # avoid device freeze (reason unknown)
-      sh -c "sleep 5; reboot" &
-    else
-      reboot
+  APKPATH=eu.chainfire.supersu-1
+  for i in `ls /data/app | grep eu.chainfire.supersu- | grep -v eu.chainfire.supersu.pro`; do
+    if [ `cat /data/system/packages.xml | grep $i >/dev/null 2>&1; echo $?` -eq 0 ]; then
+      APKPATH=$i
+      break;
     fi
-    exit
+  done
+  rm -rf /data/app/eu.chainfire.supersu-*
+
+  log_print "target path: /data/app/$APKPATH"
+
+  mkdir /data/app/$APKPATH
+  chown 1000.1000 /data/app/$APKPATH
+  chmod 0755 /data/app/$APKPATH
+  chcon u:object_r:apk_data_file:s0 /data/app/$APKPATH
+
+  cp /data/SuperSU.apk /data/app/$APKPATH/base.apk
+  chown 1000.1000 /data/app/$APKPATH/base.apk
+  chmod 0644 /data/app/$APKPATH/base.apk
+  chcon u:object_r:apk_data_file:s0 /data/app/$APKPATH/base.apk
+
+  rm /data/SuperSU.apk
+
+  sync
+
+  # just in case
+  REBOOT=true
+fi
+
+# sometimes we need to reboot, make it so
+if ($REBOOT); then
+  log_print "rebooting"
+  if [ "$MODE" = "post-fs-data" ]; then
+    # avoid device freeze (reason unknown)
+    sh -c "sleep 5; reboot" &
+  else
+    reboot
   fi
+  exit
+fi
+
+if [ ! -d "/su/bin" ]; then
+  # not mounted yet, and doesn't exist already, mount
 
   # losetup is unreliable pre-M
   if [ `cat /proc/mounts | grep /su >/dev/null 2>&1; echo $?` -ne 0 ]; then
@@ -217,19 +221,19 @@ if [ ! -d "/su/bin" ]; then
     log_print "abort: mount failed"
     exit
   fi
+fi
 
-  # if other su binaries exist, route them to ours
-  mount -o bind /su/bin/su /sbin/su 2>/dev/null
-  mount -o bind /su/bin/su /system/bin/su 2>/dev/null
-  mount -o bind /su/bin/su /system/xbin/su 2>/dev/null
+# if other su binaries exist, route them to ours
+mount -o bind /su/bin/su /sbin/su 2>/dev/null
+mount -o bind /su/bin/su /system/bin/su 2>/dev/null
+mount -o bind /su/bin/su /system/xbin/su 2>/dev/null
 
-  # poor man's overlay on /system/xbin
-  if [ -d "/su/xbin_bind" ]; then
-    cp -f -a /system/xbin/. /su/xbin_bind
-    rm -rf /su/xbin_bind/su
-    ln -s /su/bin/su /su/xbin_bind/su
-    mount -o bind /su/xbin_bind /system/xbin
-  fi
+# poor man's overlay on /system/xbin
+if [ -d "/su/xbin_bind" ]; then
+  cp -f -a /system/xbin/. /su/xbin_bind
+  rm -rf /su/xbin_bind/su
+  ln -s /su/bin/su /su/xbin_bind/su
+  mount -o bind /su/xbin_bind /system/xbin
 fi
 
 # start daemon
