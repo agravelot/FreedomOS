@@ -12,6 +12,15 @@
   - launch_daemonsu: restructure to support /su in initramfs or system_root
   - ZIP: Support systemless on 5.0 (requires 3rd party patches)
   - ZIP: Support for A/B slot systems with / inside system partition
+  UPDATE: SuperSU 2.78 SR3
+  - Fix ‘Full Unroot’ on slot-based systems
+  - sukernel: replace system symlink with bind mount
+  - sukernel: add missing slot check for system_root import
+  - sukernel: fix ramdisk backup segmentation fault
+  - supolicy: adjust priv_app policy to be able to call su
+  - launch_daemonsu: adjust su.img size detection
+  - ZIP: improve loop device setup
+  - ZIP: add factory reset protection (FRP variable, default if slots used)
 
 1.0.1
   UPDATE: French language @xeloni

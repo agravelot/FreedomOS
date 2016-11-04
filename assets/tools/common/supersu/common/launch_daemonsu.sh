@@ -47,8 +47,20 @@ loopsetup() {
 }
 
 resize() {
-  if [ `ls  -l /data/su.img | grep " 33554432 " >/dev/null 2>&1; echo $?` -eq 0 ]; then
-    log_print "resizing /data/su.img from 32M to 96M"
+  local LAST=
+  local SIZE=
+  for i in `ls -l /data/su.img`; do
+    if [ "$LAST" = "root" ]; then
+      if [ "$i" != "root" ]; then
+        SIZE=$i
+        break;
+      fi
+    fi
+    LAST=$i
+  done
+  log_print "/data/su.img: $SIZE bytes"
+  if [ "$SIZE" -lt "96000000" ]; then
+    log_print "resizing /data/su.img to 96M"
     e2fsck -p -f /data/su.img
     resize2fs /data/su.img 96M
   fi
@@ -145,6 +157,19 @@ if [ ! -d "/su/bin" ]; then
 
     rm /cache/su.img
   fi
+
+  if [ ! -f "/data/su.img" ]; then
+    if [ -d "/.sufrp" ]; then
+      # create empty image
+      make_ext4fs -l 96M -a /su -S /.sufrp/file_contexts_image /data/su.img
+      chown 0.0 /data/su.img
+      chmod 0600 /data/su.img
+      chcon u:object_r:system_data_file:s0 /data/su.img
+
+      # make sure the new image is the right size
+      resize
+    fi
+  fi
 fi
 
 # do we have an APK to install ?
@@ -220,6 +245,13 @@ if [ ! -d "/su/bin" ]; then
   if [ `cat /proc/mounts | grep /su >/dev/null 2>&1; echo $?` -ne 0 ]; then
     log_print "abort: mount failed"
     exit
+  fi
+fi
+
+if [ ! -d "/su/bin" ]; then
+  # empty image
+  if [ -d "/.sufrp" ]; then
+    /.sufrp/frp_install
   fi
 fi
 

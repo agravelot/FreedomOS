@@ -52,6 +52,9 @@
 #   KEEPVERITY - Do not remove dm-verity (true/false, PATCHBOOTIMAGE only)
 #   KEEPFORCEENCRYPT - Do not replace forceencrypt with encryptable (true/
 #                      false, PATCHBOOTIMAGE only)
+#   FRP - Place files in boot image that allow root to survive a factory
+#         reset (true/false, PATCHBOOTIMAGE only). Reverts to su binaries
+#         from the time the ZIP was originall flashed, updates are lost.
 # Shell overrides all, /data/.supersu overrides /cache/.supersu overrides
 # /system/.supersu
 #
@@ -178,6 +181,9 @@
 # These files are injected into the boot image ramdisk:
 # 22+   common/launch_daemonsu.sh     /sbin/launch_daemonsu.sh            0700    u:object_r:rootfs:s0        required
 #
+# On devices where / is in the system partition:
+# 22+   ARCH/suinit                   /init                               0750    u:object_r:rootfs:s0        required
+#
 # The automated boot image patcher included makes the following modifications
 # to the ramdisk:
 #
@@ -202,6 +208,12 @@
 # --- Prepends /su/bin to the PATH variable
 # - Patches /file_contexts[.bin]
 # --- Adds a default context for file existing in the /su mount
+# - In case the device has the root directory inside the system partition:
+# --- /system_root contents are copied to /boot
+# --- All files mentioned above are modified in /boot instead of /
+# --- /boot/*fstab* is modified to mount / to /system_root
+# --- /system is symlinked to /system_root/system
+# --- Kernel binary is patched to load from initramfs instead of system
 #
 # In case this documentation becomes outdated, please note that the sukernel
 # tool is very chatty, and its output tells you exactly what it is doing
@@ -794,6 +806,7 @@ if [ -z "$NOOVERRIDE" ]; then
   getvar PERMISSIVE
   getvar KEEPVERITY
   getvar KEEPFORCEENCRYPT
+  getvar FRP
 fi
 if [ -z "$SYSTEMLESS" ]; then
   # detect if we need systemless, based on Android version and boot image
@@ -818,6 +831,10 @@ fi
 if [ -z "$KEEPFORCEENCRYPT" ]; then
   # we don't keep forceencrypt by default
   KEEPFORCEENCRYPT=false
+fi
+if [ -z "$FRP" ]; then
+  # enable FRP if we're using slots, implying large enough boot image
+  FRP=$SLOT_USED
 fi
 
 API=$(cat /system/build.prop | grep "ro.build.version.sdk=" | dd bs=1 skip=21 count=2)
@@ -1142,6 +1159,7 @@ else
   for SUIMGSIZE in 96M 64M 32M 16M; do
     if [ ! -f "$SUIMG" ]; then make_ext4fs -l $SUIMGSIZE -a /su -S $COM/file_contexts_image $SUIMG; fi
     if [ ! -f "$SUIMG" ]; then LD_LIBRARY_PATH=$SYSTEMLIB /system/bin/make_ext4fs -l $SUIMGSIZE -a /su -S $COM/file_contexts_image $SUIMG; fi
+    set_perm 0 0 0600 /data/su.img u:object_r:system_data_file:s0
   done
 
   if [ -f "$SUIMG" ]; then
@@ -1157,7 +1175,13 @@ else
   for LOOP in 0 1 2 3 4 5 6 7; do
     if (! is_mounted /su); then
       LOOPDEVICE=/dev/block/loop$LOOP
-      if [ ! -f "$LOOPDEVICE" ]; then
+      HAVE_LOOPDEVICE=false
+      if [ -f "$LOOPDEVICE" ]; then
+        HAVE_LOOPDEVICE=true
+      elif [ -b "$LOOPDEVICE" ]; then
+        HAVE_LOOPDEVICE=true;
+      fi
+      if (! $HAVE_LOOPDEVICE); then
         mknod $LOOPDEVICE b 7 $LOOP
       fi
       losetup $LOOPDEVICE $SUIMG
@@ -1320,7 +1344,9 @@ else
     if ($CONTINUE); then
       cp_perm 0 0 0644 /sutmp/ramdisk /sutmp/ramdisk.original
 
-      check_zero_def "- Importing system_root" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-import-system-root /sutmp/ramdisk /sutmp/ramdisk"
+      if ($SLOT_USED); then
+        check_zero_def "- Importing system_root" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-import-system-root /sutmp/ramdisk /sutmp/ramdisk"
+      fi
     fi
 
     if ($CONTINUE); then
@@ -1362,11 +1388,9 @@ else
       if ($SLOT_USED); then
         ui_print "- Patching init, system_root, system"
 
-        echo -n "/system_root/system" > /sutmp/system_link
-
         check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 750 init $BIN/suinit"
         check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-mkdir /sutmp/ramdisk /sutmp/ramdisk 755 boot/system_root"
-        check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 120755 boot/system /sutmp/system_link"
+        check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-mkdir /sutmp/ramdisk /sutmp/ramdisk 755 boot/system"
 
         if (! $CONTINUE); then
           ui_print_less "$UI_PRINT_LAST"
@@ -1376,7 +1400,20 @@ else
     fi
 
     if [ -f "/data/custom_ramdisk_patch.sh" ]; then
-        check_zero_def "- Calling user ramdisk patch script" "sh /data/custom_ramdisk_patch.sh /sutmp/ramdisk"
+      check_zero_def "- Calling user ramdisk patch script" "sh /data/custom_ramdisk_patch.sh /sutmp/ramdisk"
+    fi
+
+    if ($CONTINUE); then
+      if ($FRP); then
+        ui_print "- Factory reset protection"
+        check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-mkdir /sutmp/ramdisk /sutmp/ramdisk 0 ${CPIO_PREFIX}.sufrp"
+        check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 755 ${CPIO_PREFIX}.sufrp/frp_install $COM/frp_install"
+        check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 644 ${CPIO_PREFIX}.sufrp/file_contexts_image $COM/file_contexts_image"
+        check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 644 ${CPIO_PREFIX}.sufrp/su $BIN/su"
+        check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 644 ${CPIO_PREFIX}.sufrp/sukernel $BIN/sukernel"
+        check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 644 ${CPIO_PREFIX}.sufrp/supolicy $BIN/supolicy"
+        check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 644 ${CPIO_PREFIX}.sufrp/libsupol.so $BIN/libsupol.so"
+      fi
     fi
 
     check_zero_def "- Creating ramdisk backup" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-backup /sutmp/ramdisk.original /sutmp/ramdisk /sutmp/ramdisk"
