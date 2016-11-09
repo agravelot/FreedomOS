@@ -7,6 +7,10 @@ mkdir /tmp/ramdisk
 cp /tmp/boot.img-ramdisk.gz /tmp/ramdisk/
 cd /tmp/ramdisk/
 gunzip -c /tmp/ramdisk/boot.img-ramdisk.gz | cpio -i
+
+sed s/secure=0/secure=1/g default.prop > /tmp/foo
+sed s/persist.service.adb.enable=0/persist.service.adb.enable=1/g /tmp/foo > default.prop
+
 rm /tmp/boot.img-ramdisk.gz
 rm /tmp/ramdisk/boot.img-ramdisk.gz
 
