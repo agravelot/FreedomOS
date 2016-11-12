@@ -39,7 +39,6 @@ BUILD_METHOD=dat_to_dat
 SYSTEMIMAGE_PARTITION_SIZE=2684354560
 
 PATCH_SYSYEM="
-audiofix-op2
 bootanimation-bin
 "
 

@@ -1,3 +1,5 @@
+  REMOVE: Old audio fix
+  FIX: Inverted value in AROMA
   UPDATE: SuperSU 2.78 SR2
   - File-based-encryption support
   - CCMT: Add privacy policy dialog
