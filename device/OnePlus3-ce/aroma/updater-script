@@ -113,7 +113,7 @@ ui_print("   Extracting Radio");
 package_extract_file("RADIO/static_nvbk.bin", "/dev/block/bootdevice/by-name/oem_stanvbk");
 
 set_progress(0.590000);
-ui_print("   Extracting Frimware");
+ui_print("   Extracting Firmware");
 package_extract_file("firmware-update/cmnlib64.mbn",
                      "/dev/block/bootdevice/by-name/cmnlib64");
 
