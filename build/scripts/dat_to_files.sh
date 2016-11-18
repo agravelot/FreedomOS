@@ -53,12 +53,32 @@ function dat_to_files {
     done
   fi
 
+  if [ ! -z "${ADD_SYSTEM_COMMON_LIST}" ]; then
+    echo ">>> Patching system files [COMMON]" 2>&1 | tee -a ${build_log}
+    for i in ${ADD_SYSTEM_COMMON_LIST}
+    do
+      cp -vf ${assets_root}/system/common/${i} ${tmp_root}/mount/${i} >> ${build_log} 2>&1
+      if [ -f ${tmp_root}/mount/bin/dpi ]; then
+        chmod +x ${tmp_root}/mount/bin/dpi
+      fi
+    done
+  fi
+
   if [ ! -z "${ADD_SYSTEM_LIST}" ]; then
-    echo "> Patching system files for ${TARGET_ARCH}" 2>&1 | tee -a ${build_log}
+    echo ">>> Patching system files [${TARGET_ARCH}]" 2>&1 | tee -a ${build_log}
     for i in ${ADD_SYSTEM_LIST}
     do
       mkdir -p ${tmp_root}/system/${i}
       cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i}/* ${tmp_root}/system/${i} >> ${build_log} 2>&1
+    done
+  fi
+
+  if [ ! -z "${ADD_DATA_LIST}" ]; then
+    echo ">>> Patching system files [${TARGET_ARCH}]" 2>&1 | tee -a ${build_log}
+    for i in ${ADD_DATA_LIST}
+    do
+      mkdir -p ${tmp_root}/data/${i}  >> ${build_log} 2>&1
+      cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i}/* ${tmp_root}/data/${i} >> ${build_log} 2>&1
     done
   fi
 

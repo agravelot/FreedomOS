@@ -44,7 +44,7 @@
       -verified boot patch (@sultanxda)
       -various optimizations
       -firmware compatibility fix (@myfluxi)
-      
+
     NOTE: The ElementalX wifi module is installed by default.
 
 1.6

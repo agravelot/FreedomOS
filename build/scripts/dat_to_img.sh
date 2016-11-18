@@ -50,8 +50,16 @@ function dat_to_img {
     done
   fi
 
+  if [ ! -z "${ADD_SYSTEM_COMMON_LIST}" ]; then
+    echo ">>> Patching system files [COMMON]" 2>&1 | tee -a ${build_log}
+    for i in ${ADD_SYSTEM_COMMON_LIST}
+    do
+      cp -vf ${assets_root}/system/common/${i} ${tmp_root}/mount/${i} >> ${build_log} 2>&1
+    done
+  fi
+
   if [ ! -z "${ADD_SYSTEM_LIST}" ]; then
-    echo ">>> Patching system files for ${TARGET_ARCH}" 2>&1 | tee -a ${build_log}
+    echo ">>> Patching system files [${TARGET_ARCH}]" 2>&1 | tee -a ${build_log}
     for i in ${ADD_SYSTEM_LIST}
     do
       mkdir -p ${tmp_root}/mount/${i}  >> ${build_log} 2>&1
@@ -59,10 +67,19 @@ function dat_to_img {
     done
   fi
 
+  if [ ! -z "${ADD_DATA_LIST}" ]; then
+    echo ">>> Patching system files [${TARGET_ARCH}]" 2>&1 | tee -a ${build_log}
+    for i in ${ADD_DATA_LIST}
+    do
+      mkdir -p ${tmp_root}/data/${i}  >> ${build_log} 2>&1
+      cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i}/* ${tmp_root}/data/${i} >> ${build_log} 2>&1
+    done
+  fi
+
   if [ ! -z "${PATCH_SYSYEM}" ]; then
     for i in ${PATCH_SYSYEM}
     do
-      echo ">>> Adding ${i} patch" 2>&1 | tee -a ${build_log}
+      echo ">>> Patching system [${i}]" 2>&1 | tee -a ${build_log}
       cp -rvf ${assets_root}/system/${i}/* ${tmp_root}/mount/ >> ${build_log} 2>&1
     done
   fi
@@ -78,7 +95,7 @@ function dat_to_img {
     rm -rvf ${tmp_root}/bootanimation >> ${build_log} 2>&1
   fi
 
-  chmod u+r -R mount/
+  chmod u+rw -R mount/
   echo ro.sf.lcd_density=480 >> ${tmp_root}/mount/build.prop | tee -a ${build_log}
 
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}

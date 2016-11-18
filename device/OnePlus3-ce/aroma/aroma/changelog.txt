@@ -45,7 +45,7 @@
   FIX: Increased system stability
   FIX: General bug fixes
   UPDATE: ElementalX 0.27
-  UPDATE: OnePlus updates 
+  UPDATE: OnePlus updates
 
 1.9.1-CE
   FIX: OnePlus Music uninstaller
