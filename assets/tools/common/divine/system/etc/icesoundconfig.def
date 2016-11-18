@@ -1,0 +1,18 @@
+# Example configuration file
+#
+# To use with a standard audioflinger, set
+#
+#   fasttrack false
+#
+# To use with an ICEpower modified audioflinger, set
+#
+#   fasttrack true
+#
+# or leave blank - fasttrack true is the default.
+#
+# To control the number of output thread effects that
+# are created in fasttrack mode, set fasttrackoutputs.
+# The default is 2.
+
+# libicepowerdebuglevel 1
+configlocation /asusfw/audio

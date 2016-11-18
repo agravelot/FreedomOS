@@ -1,0 +1,2187 @@
+<mixer>
+    <!-- Here are default PGA values -->
+    <!-- digital PGA -->
+    <ctl name="S1 IL PGA GAIN" value="0" />
+    <ctl name="S1 IR PGA GAIN" value="0" />
+    <ctl name="S2 IL PGA GAIN" value="136" />
+    <ctl name="S2 IR PGA GAIN" value="136" />
+    <ctl name="S3 IL PGA GAIN" value="0" />
+    <ctl name="S3 IR PGA GAIN" value="0" />
+    <ctl name="S4 IL PGA GAIN" value="0" />
+    <ctl name="S4 IR PGA GAIN" value="0" />
+    
+    <ctl name="S1 OL PGA GAIN" value="0" />
+    <ctl name="S1 OR PGA GAIN" value="0" />
+    <ctl name="S2 OL PGA GAIN" value="0" />
+    <ctl name="S2 OR PGA GAIN" value="0" />
+    <ctl name="S3 OL PGA GAIN" value="0" />
+    <ctl name="S3 OR PGA GAIN" value="0" />
+    <ctl name="S4 OL PGA GAIN" value="0" />
+    <ctl name="S4 OR PGA GAIN" value="0" />
+
+    <ctl name="SIDE PGA GAIN" value="0" />
+
+    <ctl name="DACL PGA GAIN" value="247" />
+    <ctl name="DACR PGA GAIN" value="247" />
+
+    <ctl name="LINEL PGA GAIN" value="14" /> 
+    <ctl name="LINER PGA GAIN" value="14" />
+    <ctl name="AUX PGA GAIN" value="18" />
+    <ctl name="MAIN PGA GAIN" value="18" />
+    
+    <ctl name="MAIN MIC BOOST" value="0" />
+    <ctl name="AUX MIC BOOST" value="0" />
+    <ctl name="LINEINL BOOST" value="0" />
+    <ctl name="LINEINR BOOST" value="0" />
+
+    <ctl name="LOL PGA GAIN" value="14" />
+    <ctl name="LOL PGA MUTE" value="0" />
+    <ctl name="LOR PGA GAIN" value="14" />
+    <ctl name="LOR PGA MUTE" value="0" />
+
+    <ctl name="HPL PGA GAIN" value="24" />
+    <ctl name="HPL PGA MUTE" value="0" />
+    <ctl name="HPR PGA GAIN" value="24" />
+    <ctl name="HPR PGA MUTE" value="0" />
+
+    <ctl name="EP PGA GAIN" value="22" />
+    <ctl name="EP PGA MUTE" value="0" />
+
+    <ctl name="HP DACL MUTE" value="0" />
+    <ctl name="HP DACR MUTE" value="0" />
+
+    <ctl name="MAINPGA MUTE1" value="0" />
+    <ctl name="MAINPGA MUTE2" value="0" />
+    <ctl name="AUXPGA MUTE1" value="0" />
+    <ctl name="AUXPGA MUTE2" value="0" />
+    <ctl name="LINELPGA MUTE1" value="0" />
+    <ctl name="LINELPGA MUTE2" value="0" />
+    <ctl name="LINERPGA MUTE1" value="0" />
+    <ctl name="LINERPGA MUTE2" value="0" />
+    
+    <ctl name="DACL MIXER GAIN0" value="3" />
+    <ctl name="DACL MIXER GAIN1" value="3" />
+    <ctl name="DACR MIXER GAIN0" value="3" />
+    <ctl name="DACR MIXER GAIN1" value="3" />
+    <ctl name="SHARE MIXER GAIN1" value="3" />
+    <ctl name="SHARE MIXER GAIN2" value="3" />
+    <ctl name="SHARE MIXER GAIN3" value="0" />
+    <ctl name="SHARE MIXER GAIN4" value="0" />
+    
+    <ctl name="MIXERL GAIN1" value="3" />
+    <ctl name="MIXERL GAIN2" value="3" />
+    <ctl name="MIXERL GAIN3" value="3" />
+    <ctl name="MIXERL GAIN4" value="3" />
+    <ctl name="MIXERR GAIN1" value="3" />
+    <ctl name="MIXERR GAIN2" value="3" />
+    <ctl name="MIXERR GAIN3" value="3" />
+    <ctl name="MIXERR GAIN4" value="3" />
+
+    <!-- Playback paths -->
+    <path name="media-earpiece" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+    </path>
+
+    <path name="media-speaker" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+    </path>
+
+    <path name="media-headphone" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="HPL PGA GAIN" value="18" />
+        <ctl name="HPR PGA GAIN" value="18" />
+    </path>
+
+    <path name="media-headset" >
+        <path name="media-headphone" />
+    </path>
+
+    <path name="media-bt-sco" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+    </path>
+
+    <path name="media-speaker-earpiece" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="DACL PGA GAIN" value="0" />
+        <ctl name="DACR PGA GAIN" value="0" />
+        <ctl name="EP PGA GAIN" value="16" />
+        <ctl name="S4 OL PGA GAIN" value="0" />
+        <ctl name="S4 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="media-speaker-headset" >
+      <ctl name="S4 OL PGA GAIN" value="0" />
+      <ctl name="S4 OR PGA GAIN" value="0" />
+      <ctl name="S1 IL PGA GAIN" value="0" />
+      <ctl name="S1 IR PGA GAIN" value="0" />
+      <ctl name="DACL PGA GAIN" value="0" />
+      <ctl name="DACR PGA GAIN" value="0" />
+      <ctl name="HPL PGA GAIN" value="3" />
+      <ctl name="HPL PGA MUTE" value="0" />
+      <ctl name="HPR PGA GAIN" value="3" />
+      <ctl name="HPR PGA MUTE" value="0" />
+    </path>
+
+    <path name="media-speaker-headphone" >
+        <path name="media-speaker-headset" />
+    </path>
+
+    <path name="communication-earpiece" >
+        <path name="media-earpiece" />
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="communication-speaker" >
+        <path name="media-speaker" />
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="7" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="communication-headset" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="S3 IL PGA GAIN" value="0" />
+        <ctl name="S3 IR PGA GAIN" value="0" />
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="18" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="communication-headphone" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="S3 IL PGA GAIN" value="0" />
+        <ctl name="S3 IR PGA GAIN" value="0" />
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="communication-speaker-earpiece" >
+        <path name="media-speaker-earpiece" />
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="communication-speaker-headset" >
+        <path name="media-speaker-headset" />
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="18" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="communication-speaker-headphone" >
+        <path name="media-speaker-headset" />
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="media-fm-earpiece" >
+
+    </path>
+
+    <path name="media-fm-speaker" >
+
+    </path>
+
+    <path name="media-fm-headphone" >
+
+    </path>
+
+    <path name="media-fm-headset" >
+
+    </path>
+
+    <path name="dup-media-fm-earpiece" >
+        <path name="media-earpiece" />
+    </path>
+
+    <path name="dup-media-fm-speaker" >
+        <path name="media-speaker" />
+    </path>
+
+    <path name="dup-media-fm-headset" >
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+        <ctl name="S3 IL PGA GAIN" value="250" />
+        <ctl name="S3 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-media-fm-headphone" >
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+        <ctl name="S3 IL PGA GAIN" value="250" />
+        <ctl name="S3 IR PGA GAIN" value="250" />
+    </path>
+  
+    <path name="dup-media-fm-speaker-earpiece" >
+        <path name="media-speaker-earpiece" />
+    </path>
+
+    <path name="media-fm-speaker-earpiece" >
+    </path>
+
+    <path name="dup-media-fm-speaker-headset" >
+        <path name="media-speaker-headset" />
+    </path>
+
+    <path name="media-fm-speaker-headset" >
+    </path>
+
+    <path name="dup-media-fm-speaker-headphone" >
+        <path name="media-speaker-headset" />
+    </path>
+
+    <path name="media-fm-speaker-headphone" >
+    </path>
+
+    <path name="dup-media-fm-bt-sco-headset-speaker" >
+    </path>
+
+    <path name="media-fm-bt-sco-headset-speaker" >
+
+    </path>
+
+    <path name="call-m0-earpiece" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-m0-speaker" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="7" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-m0-headphone" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-m0-headset" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="18" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-m0-bt-sco-headset" >
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="dup-call-m0-earpiece" >
+        <path name="call-m0-earpiece" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+        <ctl name="S3 IL PGA GAIN" value="250" />
+        <ctl name="S3 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-m0-speaker" >
+        <path name="call-m0-speaker" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+        <ctl name="S3 IL PGA GAIN" value="250" />
+        <ctl name="S3 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-m0-headphone" >
+        <path name="call-m0-headphone" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+        <ctl name="S3 IL PGA GAIN" value="250" />
+        <ctl name="S3 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-m0-headset" >
+        <path name="call-m0-headset" />
+        <ctl name="S3 IL PGA GAIN" value="250" />
+        <ctl name="S3 IR PGA GAIN" value="250" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-m0-bt-sco-headset" >
+        <path name="call-m0-bt-sco-headset" />
+        <ctl name="S3 IL PGA GAIN" value="250" />
+        <ctl name="S3 IR PGA GAIN" value="250" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-m0-speaker-earpiece" >
+        <path name="call-m0-earpiece" />
+        <path name="media-speaker-earpiece" />
+    </path>
+
+    <path name="dup-call-m0-speaker-headphone" >
+        <path name="call-m0-headphone" />
+        <path name="media-speaker-headset" />
+    </path>
+
+    <path name="dup-call-m0-speaker-headset" >
+        <path name="call-m0-headset" />
+        <path name="media-speaker-headset" />
+    </path>
+
+    <path name="dup-call-m0-speaker-bt-sco-headset" >
+        <path name="call-m0-bt-sco-headset" />
+        <path name="media-speaker" />
+    </path>
+
+    <path name="call-m1-earpiece" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-m1-speaker" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="7" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-m1-headphone" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-m1-headset" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="18" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-m1-bt-sco-headset" >
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="dup-call-m1-earpiece" >
+        <path name="call-m1-earpiece" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-m1-speaker" >
+        <path name="call-m1-speaker" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-m1-headphone" >
+        <path name="call-m1-headphone" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-m1-headset" >
+        <path name="call-m1-headset" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-m1-bt-sco-headset" >
+        <path name="call-m1-bt-sco-headset" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-m1-speaker-earpiece" >
+        <path name="call-m1-earpiece" />
+        <path name="media-speaker-earpiece" />
+    </path>
+
+    <path name="dup-call-m1-speaker-headphone" >
+        <path name="call-m1-headphone" />
+        <path name="media-speaker-headset" />
+    </path>
+
+    <path name="dup-call-m1-speaker-headset" >
+        <path name="call-m1-headset" />
+        <path name="media-speaker-headset" />
+    </path>
+
+    <path name="dup-call-m1-speaker-bt-sco-headset" >
+        <path name="call-m1-bt-sco-headset" />
+        <path name="media-speaker" />
+    </path>
+
+    <path name="call-wb-m0-earpiece" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-wb-m0-speaker" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="7" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-wb-m0-headset" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="18" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-wb-m0-headphone" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-wb-m0-bt-sco-headset" >
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-wb-m1-earpiece" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-wb-m1-speaker" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="7" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-wb-m1-headset" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="18" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-wb-m1-headphone" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-wb-m1-bt-sco-headset" >
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="dup-call-wb-m0-earpiece" >
+        <path name="call-wb-m0-earpiece" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-wb-m0-speaker" >
+        <path name="call-wb-m0-speaker" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-wb-m0-headset" >
+        <path name="call-wb-m0-headset" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-wb-m0-headphone" >
+        <path name="call-wb-m0-headphone" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-wb-m0-bt-sco-headset" >
+        <path name="call-wb-m0-bt-sco-headset" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-wb-m0-speaker-earpiece" >
+        <path name="call-wb-m0-earpiece" />
+        <path name="media-speaker-earpiece" />
+    </path>
+
+    <path name="dup-call-wb-m0-speaker-headphone" >
+        <path name="call-wb-m0-headphone" />
+        <path name="media-speaker-headset" />
+    </path>
+
+    <path name="dup-call-wb-m0-speaker-headset" >
+        <path name="call-wb-m0-headset" />
+        <path name="media-speaker-headset" />
+    </path>
+
+    <path name="dup-call-wb-m0-speaker-bt-sco-headset" >
+        <path name="call-wb-m0-bt-sco-headset" />
+        <path name="media-speaker" />
+    </path>
+
+    <path name="dup-call-wb-m1-speaker-earpiece" >
+        <path name="call-wb-m1-earpiece" />
+        <path name="media-speaker-earpiece" />
+    </path>
+
+    <path name="dup-call-wb-m1-speaker-headset" >
+        <path name="call-wb-m1-headset" />
+        <path name="media-speaker-headset" />
+    </path>
+
+    <path name="dup-call-wb-m1-speaker-headphone" >
+        <path name="call-wb-m1-headphone" />
+        <path name="media-speaker-headset" />
+    </path>
+
+    <path name="dup-call-wb-m1-speaker-bt-sco-headset" >
+        <path name="call-wb-m1-bt-sco-headset" />
+        <path name="media-speaker" />
+    </path>
+
+    <path name="dup-call-wb-m1-earpiece" >
+        <path name="call-wb-m1-earpiece" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-wb-m1-speaker" >
+        <path name="call-wb-m1-speaker" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-wb-m1-headset" >
+        <path name="call-wb-m1-headset" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-wb-m1-headphone" >
+        <path name="call-wb-m1-headphone" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="dup-call-wb-m1-bt-sco-headset" >
+        <path name="call-wb-m1-bt-sco-headset" />
+        <ctl name="S1 IL PGA GAIN" value="250" />
+        <ctl name="S1 IR PGA GAIN" value="250" />
+    </path>
+
+    <path name="audio-capture" >
+    </path>
+
+    <path name="media-main-mic-four-channel" >
+        <ctl name="AUX PGA GAIN" value="18" />
+        <ctl name="MAIN PGA GAIN" value="18" />
+        <ctl name="LINEL PGA GAIN" value="28" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="media-main-mic" >
+        <ctl name="AUX PGA GAIN" value="18" />
+        <ctl name="MAIN PGA GAIN" value="18" />
+        <ctl name="LINEL PGA GAIN" value="28" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="media-headset-mic" >
+        <ctl name="AUX PGA GAIN" value="18" />
+        <ctl name="MAIN PGA GAIN" value="18" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="communication-mic" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="communication-handfree-mic" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="7" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="communication-headset-mic" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="18" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-m0-mic" >
+    </path>
+
+    <path name="call-m0-handfree-mic" >
+    </path>
+
+    <path name="call-m0-headset-mic" >
+
+    </path>
+
+    <path name="call-m0-bt-sco-mic" >
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-m1-mic" >
+    </path>
+
+    <path name="call-m1-handfree-mic" >
+    </path>
+
+    <path name="call-m1-headset-mic" >
+
+    </path>
+
+    <path name="call-m1-bt-sco-mic" >
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+    </path>
+
+    <path name="camcorder-mic" >
+        <ctl name="AUX PGA GAIN" value="18" />
+        <ctl name="MAIN PGA GAIN" value="18" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="voice-rec-mic" >
+        <ctl name="AUX PGA GAIN" value="15" />
+        <ctl name="MAIN PGA GAIN" value="15" />
+        <ctl name="LINEL PGA GAIN" value="25"/>
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+    
+    <path name="voice-rec-handfree-mic" >
+        <ctl name="AUX PGA GAIN" value="15" />
+        <ctl name="MAIN PGA GAIN" value="15" />
+        <ctl name="LINEL PGA GAIN" value="25"/>
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+  
+    <path name="voice-rec-headset-mic" >
+        <ctl name="AUX PGA GAIN" value="17" />
+        <ctl name="MAIN PGA GAIN" value="14" />
+        <ctl name="MAIN MIC BOOST" value="1" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-wb-m1-mic" >
+
+    </path>
+
+    <path name="call-wb-m1-bt-sco-mic" >
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+    </path>
+
+    <path name="call-wb-m1-handfree-mic" >
+    </path>
+
+    <path name="call-wb-m1-headset-mic" >
+
+    </path>
+
+    <path name="media-bt-sco-mic" >
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="media-fm-main-mic" >
+        <path name="media-main-mic" />
+    </path>
+  
+    <path name="media-fm-headset-mic" >
+        <path name="media-headset-mic" />
+    </path>
+
+    <path name="call-wb-m0-mic" >
+    </path>
+
+    <path name="call-wb-m0-handfree-mic" >
+    </path>
+
+    <path name="call-wb-m0-headset-mic" >
+
+    </path>
+
+    <path name="call-wb-m0-bt-sco-mic" >
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+    </path>
+
+
+    <!-- undetermined paths -->
+    <path name="media-bt-sco-headset" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+    </path>
+
+    <path name="media-bt-sco-headset-speaker" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="S4 OL PGA GAIN" value="0" />
+        <ctl name="S4 OR PGA GAIN" value="0" />
+        <ctl name="DACL PGA GAIN" value="0" />
+        <ctl name="DACR PGA GAIN" value="0" />
+    </path>
+
+    <path name="communication-bt-sco-headset" >
+        <path name="media-bt-sco-headset" />
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="communication-bt-sco-headset-speaker" >
+        <path name="media-bt-sco-headset-speaker" />
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="communication-bt-sco-mic" >
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+    </path>
+
+    <path name="media-fm-bt-sco-headset" >
+
+    </path>
+
+    <path name="rec-call-m0-mic" >
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-m0-headset-mic" >
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-m0-handfree-mic" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-m0-bt-sco-mic" >
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-wb-m0-mic" >
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-wb-m0-handfree-mic" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-wb-m0-headset-mic" >
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-wb-m0-bt-sco-mic" >
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-m1-mic" >
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-m1-handfree-mic" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-m1-headset-mic" >
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-m1-bt-sco-mic" >
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-wb-m1-mic" >
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-wb-m1-handfree-mic" >
+        <ctl name="AUX PGA GAIN" value="13" />
+        <ctl name="MAIN PGA GAIN" value="13" />
+        <ctl name="LINEL PGA GAIN" value="23"/>
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-wb-m1-headset-mic" >
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+    </path>
+
+    <path name="rec-call-wb-m1-bt-sco-mic" >
+        <ctl name="S2 IL PGA GAIN" value="0" />
+        <ctl name="S2 IR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+    </path>
+
+    <!-- Here are configs with volume level -->
+    <path name="modem0-nb-vol-0-none">  
+    </path>
+    <path name="modem0-nb-vol-0-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-nb-vol-0-speaker">   
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-nb-vol-0-headset">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-nb-vol-0-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-nb-vol-0-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-nb-vol-0-speaker-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-nb-vol-0-speaker-headset"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-nb-vol-0-speaker-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-nb-vol-0-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-nb-vol-1-none">  
+    </path>
+    <path name="modem0-nb-vol-1-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-nb-vol-1-speaker"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-nb-vol-1-headset"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-nb-vol-1-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-nb-vol-1-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-nb-vol-1-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-nb-vol-1-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-nb-vol-1-speaker-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-nb-vol-1-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-nb-vol-2-none">  
+    </path>
+    <path name="modem0-nb-vol-2-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-nb-vol-2-speaker">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-nb-vol-2-headset">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-nb-vol-2-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-nb-vol-2-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-nb-vol-2-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-nb-vol-2-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-nb-vol-2-speaker-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-nb-vol-2-speaker-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-nb-vol-3-none">  
+    </path>
+    <path name="modem0-nb-vol-3-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-nb-vol-3-speaker"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-nb-vol-3-headset">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-nb-vol-3-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-nb-vol-3-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-nb-vol-3-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-nb-vol-3-speaker-headset"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-nb-vol-3-speaker-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-nb-vol-3-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-nb-vol-4-none">   
+    </path>
+    <path name="modem0-nb-vol-4-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-nb-vol-4-speaker">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-nb-vol-4-headset">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-nb-vol-4-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-nb-vol-4-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-nb-vol-4-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-nb-vol-4-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-nb-vol-4-speaker-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-nb-vol-4-speaker-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-nb-vol-5-none">  
+    </path>
+    <path name="modem0-nb-vol-5-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-nb-vol-5-speaker">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-nb-vol-5-headset">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-nb-vol-5-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-nb-vol-5-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-nb-vol-5-speaker-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-nb-vol-5-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-nb-vol-5-speaker-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-nb-vol-5-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-wb-vol-0-none">  
+    </path>
+    <path name="modem0-wb-vol-0-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-wb-vol-0-speaker">   
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-wb-vol-0-headset">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-wb-vol-0-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-wb-vol-0-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-wb-vol-0-speaker-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-wb-vol-0-speaker-headset"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-wb-vol-0-speaker-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-wb-vol-0-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem0-wb-vol-1-none">  
+    </path>
+    <path name="modem0-wb-vol-1-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-wb-vol-1-speaker"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-wb-vol-1-headset"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-wb-vol-1-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-wb-vol-1-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-wb-vol-1-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-wb-vol-1-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-wb-vol-1-speaker-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-wb-vol-1-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem0-wb-vol-2-none">  
+    </path>
+    <path name="modem0-wb-vol-2-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-wb-vol-2-speaker">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-wb-vol-2-headset">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-wb-vol-2-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-wb-vol-2-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-wb-vol-2-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-wb-vol-2-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-wb-vol-2-speaker-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-wb-vol-2-speaker-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem0-wb-vol-3-none">  
+    </path>
+    <path name="modem0-wb-vol-3-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-wb-vol-3-speaker"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-wb-vol-3-headset">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-wb-vol-3-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-wb-vol-3-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-wb-vol-3-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-wb-vol-3-speaker-headset"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-wb-vol-3-speaker-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-wb-vol-3-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem0-wb-vol-4-none">   
+    </path>
+    <path name="modem0-wb-vol-4-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-wb-vol-4-speaker">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-wb-vol-4-headset">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-wb-vol-4-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-wb-vol-4-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-wb-vol-4-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-wb-vol-4-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-wb-vol-4-speaker-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-wb-vol-4-speaker-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem0-wb-vol-5-none">  
+    </path>
+    <path name="modem0-wb-vol-5-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-wb-vol-5-speaker">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-wb-vol-5-headset">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-wb-vol-5-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-wb-vol-5-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-wb-vol-5-speaker-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-wb-vol-5-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-wb-vol-5-speaker-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem0-wb-vol-5-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-nb-vol-0-none">  
+    </path>
+    <path name="modem1-nb-vol-0-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-nb-vol-0-speaker">   
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-nb-vol-0-headset">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-nb-vol-0-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-nb-vol-0-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-nb-vol-0-speaker-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-nb-vol-0-speaker-headset"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-nb-vol-0-speaker-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-nb-vol-0-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-nb-vol-1-none">  
+    </path>
+    <path name="modem1-nb-vol-1-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-nb-vol-1-speaker"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-nb-vol-1-headset"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-nb-vol-1-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-nb-vol-1-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-nb-vol-1-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-nb-vol-1-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-nb-vol-1-speaker-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-nb-vol-1-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-nb-vol-2-none">  
+    </path>
+    <path name="modem1-nb-vol-2-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-nb-vol-2-speaker">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-nb-vol-2-headset">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-nb-vol-2-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-nb-vol-2-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-nb-vol-2-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-nb-vol-2-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-nb-vol-2-speaker-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-nb-vol-2-speaker-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-nb-vol-3-none">  
+    </path>
+    <path name="modem1-nb-vol-3-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-nb-vol-3-speaker"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-nb-vol-3-headset">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-nb-vol-3-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-nb-vol-3-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-nb-vol-3-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-nb-vol-3-speaker-headset"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-nb-vol-3-speaker-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-nb-vol-3-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-nb-vol-4-none">   
+    </path>
+    <path name="modem1-nb-vol-4-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-nb-vol-4-speaker">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-nb-vol-4-headset">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-nb-vol-4-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-nb-vol-4-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-nb-vol-4-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-nb-vol-4-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-nb-vol-4-speaker-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-nb-vol-4-speaker-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-nb-vol-5-none">  
+    </path>
+    <path name="modem1-nb-vol-5-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-nb-vol-5-speaker">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-nb-vol-5-headset">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-nb-vol-5-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-nb-vol-5-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-nb-vol-5-speaker-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-nb-vol-5-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-nb-vol-5-speaker-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-nb-vol-5-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-wb-vol-0-none">  
+    </path>
+    <path name="modem1-wb-vol-0-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-wb-vol-0-speaker">   
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-wb-vol-0-headset">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-wb-vol-0-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-wb-vol-0-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-wb-vol-0-speaker-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-wb-vol-0-speaker-headset"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-wb-vol-0-speaker-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-wb-vol-0-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="236" />
+    </path>
+    <path name="modem1-wb-vol-1-none">  
+    </path>
+    <path name="modem1-wb-vol-1-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-wb-vol-1-speaker"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-wb-vol-1-headset"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-wb-vol-1-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-wb-vol-1-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-wb-vol-1-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-wb-vol-1-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-wb-vol-1-speaker-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-wb-vol-1-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="240" />
+    </path>
+    <path name="modem1-wb-vol-2-none">  
+    </path>
+    <path name="modem1-wb-vol-2-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-wb-vol-2-speaker">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-wb-vol-2-headset">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-wb-vol-2-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-wb-vol-2-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-wb-vol-2-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-wb-vol-2-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-wb-vol-2-speaker-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-wb-vol-2-speaker-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="244" />
+    </path>
+    <path name="modem1-wb-vol-3-none">  
+    </path>
+    <path name="modem1-wb-vol-3-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-wb-vol-3-speaker"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-wb-vol-3-headset">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-wb-vol-3-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-wb-vol-3-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-wb-vol-3-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-wb-vol-3-speaker-headset"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-wb-vol-3-speaker-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-wb-vol-3-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="248" />
+    </path>
+    <path name="modem1-wb-vol-4-none">   
+    </path>
+    <path name="modem1-wb-vol-4-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-wb-vol-4-speaker">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-wb-vol-4-headset">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-wb-vol-4-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-wb-vol-4-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-wb-vol-4-speaker-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-wb-vol-4-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-wb-vol-4-speaker-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-wb-vol-4-speaker-bt-sco">  
+       <ctl name="S3 IL PGA GAIN" value="252" />
+    </path>
+    <path name="modem1-wb-vol-5-none">  
+    </path>
+    <path name="modem1-wb-vol-5-earpiece"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-wb-vol-5-speaker">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-wb-vol-5-headset">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-wb-vol-5-headphone"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-wb-vol-5-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-wb-vol-5-speaker-earpiece">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-wb-vol-5-speaker-headset">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-wb-vol-5-speaker-headphone">  
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="modem1-wb-vol-5-speaker-bt-sco"> 
+       <ctl name="S3 IL PGA GAIN" value="0" />
+    </path>
+    <path name="fm-vol-0-speaker">  
+       <ctl name="S2 IL PGA GAIN" value="136" />
+       <ctl name="S2 IR PGA GAIN" value="136" />
+    </path>
+    <path name="fm-vol-0-wired">  
+       <ctl name="S2 IL PGA GAIN" value="136" />
+       <ctl name="S2 IR PGA GAIN" value="136" />
+    </path>
+    <path name="fm-vol-1-speaker">  
+       <ctl name="S2 IL PGA GAIN" value="209" />
+       <ctl name="S2 IR PGA GAIN" value="209" />
+    </path>
+    <path name="fm-vol-1-wired">  
+       <ctl name="S2 IL PGA GAIN" value="209" />
+       <ctl name="S2 IR PGA GAIN" value="209" />
+    </path>
+    <path name="fm-vol-2-speaker">  
+       <ctl name="S2 IL PGA GAIN" value="215" />
+       <ctl name="S2 IR PGA GAIN" value="215" />
+    </path>
+    <path name="fm-vol-2-wired">  
+       <ctl name="S2 IL PGA GAIN" value="215" />
+       <ctl name="S2 IR PGA GAIN" value="215" />
+    </path>
+    <path name="fm-vol-3-speaker"> 
+       <ctl name="S2 IL PGA GAIN" value="219" />
+       <ctl name="S2 IR PGA GAIN" value="219" />
+    </path>
+    <path name="fm-vol-3-wired"> 
+       <ctl name="S2 IL PGA GAIN" value="219" />
+       <ctl name="S2 IR PGA GAIN" value="219" />
+    </path>
+    <path name="fm-vol-4-speaker">  
+       <ctl name="S2 IL PGA GAIN" value="223" />
+       <ctl name="S2 IR PGA GAIN" value="223" />
+    </path>
+    <path name="fm-vol-4-wired">  
+       <ctl name="S2 IL PGA GAIN" value="223" />
+       <ctl name="S2 IR PGA GAIN" value="223" />
+    </path>
+    <path name="fm-vol-5-speaker"> 
+       <ctl name="S2 IL PGA GAIN" value="226" />
+       <ctl name="S2 IR PGA GAIN" value="226" />
+    </path>
+    <path name="fm-vol-5-wired">  
+       <ctl name="S2 IL PGA GAIN" value="226" />
+       <ctl name="S2 IR PGA GAIN" value="226" />
+    </path>
+    <path name="fm-vol-6-speaker"> 
+       <ctl name="S2 IL PGA GAIN" value="229" />
+       <ctl name="S2 IR PGA GAIN" value="229" />
+    </path>
+    <path name="fm-vol-6-wired">  
+       <ctl name="S2 IL PGA GAIN" value="229" />
+       <ctl name="S2 IR PGA GAIN" value="229" />
+    </path>
+    <path name="fm-vol-7-speaker">  
+       <ctl name="S2 IL PGA GAIN" value="232" />
+       <ctl name="S2 IR PGA GAIN" value="232" />
+    </path>
+    <path name="fm-vol-7-wired">  
+       <ctl name="S2 IL PGA GAIN" value="232" />
+       <ctl name="S2 IR PGA GAIN" value="232" />
+    </path>
+    <path name="fm-vol-8-speaker"> 
+       <ctl name="S2 IL PGA GAIN" value="235" />
+       <ctl name="S2 IR PGA GAIN" value="235" />
+    </path>
+    <path name="fm-vol-8-wired">  
+       <ctl name="S2 IL PGA GAIN" value="235" />
+       <ctl name="S2 IR PGA GAIN" value="235" />
+    </path>
+    <path name="fm-vol-9-speaker"> 
+       <ctl name="S2 IL PGA GAIN" value="238" />
+       <ctl name="S2 IR PGA GAIN" value="238" />
+    </path>
+    <path name="fm-vol-9-wired"> 
+       <ctl name="S2 IL PGA GAIN" value="238" />
+       <ctl name="S2 IR PGA GAIN" value="238" />
+    </path>
+    <path name="fm-vol-10-speaker"> 
+       <ctl name="S2 IL PGA GAIN" value="241" />
+       <ctl name="S2 IR PGA GAIN" value="241" />
+    </path>
+    <path name="fm-vol-10-wired"> 
+       <ctl name="S2 IL PGA GAIN" value="241" />
+       <ctl name="S2 IR PGA GAIN" value="241" />
+    </path>
+    <path name="fm-vol-11-speaker">  
+       <ctl name="S2 IL PGA GAIN" value="244" />
+       <ctl name="S2 IR PGA GAIN" value="244" />
+    </path>
+    <path name="fm-vol-11-wired"> 
+       <ctl name="S2 IL PGA GAIN" value="244" />
+       <ctl name="S2 IR PGA GAIN" value="244" />
+    </path>
+    <path name="fm-vol-12-speaker"> 
+       <ctl name="S2 IL PGA GAIN" value="247" />
+       <ctl name="S2 IR PGA GAIN" value="247" />
+    </path>
+    <path name="fm-vol-12-wired">  
+       <ctl name="S2 IL PGA GAIN" value="247" />
+       <ctl name="S2 IR PGA GAIN" value="247" />
+    </path>
+    <path name="fm-vol-13-speaker"> 
+       <ctl name="S2 IL PGA GAIN" value="250" />
+       <ctl name="S2 IR PGA GAIN" value="250" />
+    </path>
+    <path name="fm-vol-13-wired">  
+       <ctl name="S2 IL PGA GAIN" value="250" />
+       <ctl name="S2 IR PGA GAIN" value="250" />
+    </path>
+    <path name="fm-vol-14-speaker">  
+       <ctl name="S2 IL PGA GAIN" value="253" />
+       <ctl name="S2 IR PGA GAIN" value="253" />
+    </path>
+    <path name="fm-vol-14-wired">  
+       <ctl name="S2 IL PGA GAIN" value="253" />
+       <ctl name="S2 IR PGA GAIN" value="253" />
+    </path>
+    <path name="fm-vol-15-speaker"> 
+       <ctl name="S2 IL PGA GAIN" value="0" />
+       <ctl name="S2 IR PGA GAIN" value="0" />
+    </path>
+    <path name="fm-vol-15-wired"> 
+       <ctl name="S2 IL PGA GAIN" value="0" />
+       <ctl name="S2 IR PGA GAIN" value="0" />
+    </path>
+
+    <path name="mmi-test-speaker" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="S4 OL PGA GAIN" value="0" />
+        <ctl name="S4 OR PGA GAIN" value="0" />
+        <ctl name="LOL PGA GAIN" value="14" />
+        <ctl name="LOL PGA MUTE" value="0" />
+        <ctl name="LOR PGA GAIN" value="14" />
+        <ctl name="LOR PGA MUTE" value="0" />
+    </path>
+
+    <path name="mmi-test-receiver" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="EP PGA GAIN" value="16" />
+        <ctl name="EP PGA MUTE" value="0" />
+    </path>
+
+    <path name="mmi-test-headphone" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="HPL PGA GAIN" value="14" />
+        <ctl name="HPL PGA MUTE" value="0" />
+        <ctl name="HPR PGA GAIN" value="14" />
+        <ctl name="HPR PGA MUTE" value="0" />
+    </path>
+
+    <path name="mmi-test-mainmic" >
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="MAIN PGA GAIN" value="16" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+    </path>
+
+    <path name="mmi-test-submic" >
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="AUX PGA GAIN" value="16" />
+        <ctl name="AUX MIC BOOST" value="0" />
+    </path>
+
+    <path name="mmi-test-dualmic" >
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="MAIN PGA GAIN" value="16" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX PGA GAIN" value="16" />
+        <ctl name="AUX MIC BOOST" value="0" />
+    </path>
+
+  <path name="mmi-test-allmic" >
+        <ctl name="AUX PGA GAIN" value="18" />
+        <ctl name="MAIN PGA GAIN" value="18" />
+        <ctl name="LINEL PGA GAIN" value="28" />
+        <ctl name="LINEINL BOOST" value="0" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+  </path>
+
+    <path name="mmi-test-hsmic" >
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="MAIN PGA GAIN" value="14" />
+        <ctl name="MAIN MIC BOOST" value="1" />
+    </path>
+
+    <path name="mmi-modem0-speaker" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="S3 IL PGA GAIN" value="0" />
+        <ctl name="S3 IR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S4 OL PGA GAIN" value="0" />
+        <ctl name="S4 OR PGA GAIN" value="0" />
+        <ctl name="LOL PGA GAIN" value="14" />
+        <ctl name="LOL PGA MUTE" value="0" />
+        <ctl name="LOR PGA GAIN" value="14" />
+        <ctl name="LOR PGA MUTE" value="0" />
+    </path>
+
+    <path name="mmi-modem0-receiver" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="S3 IL PGA GAIN" value="0" />
+        <ctl name="S3 IR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="EP PGA GAIN" value="16" />
+        <ctl name="EP PGA MUTE" value="0" />
+    </path>
+
+    <path name="mmi-modem0-headphone" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="S3 IL PGA GAIN" value="0" />
+        <ctl name="S3 IR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="HPL PGA GAIN" value="14" />
+        <ctl name="HPL PGA MUTE" value="0" />
+        <ctl name="HPR PGA GAIN" value="14" />
+        <ctl name="HPR PGA MUTE" value="0" />
+    </path>
+
+    <path name="mmi-audioloop-mainmic-headphone" >
+        <ctl name="MAIN PGA GAIN" value="11" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="HPL PGA GAIN" value="21" />
+        <ctl name="HPL PGA MUTE" value="0" />
+        <ctl name="HPR PGA GAIN" value="21" />
+        <ctl name="HPR PGA MUTE" value="0" />
+    </path>
+
+    <path name="mmi-audioloop-submic-headphone" >
+        <ctl name="AUX PGA GAIN" value="11" />
+        <ctl name="AUX MIC BOOST" value="0" />
+        <ctl name="HPL PGA GAIN" value="21" />
+        <ctl name="HPL PGA MUTE" value="0" />
+        <ctl name="HPR PGA GAIN" value="21" />
+        <ctl name="HPR PGA MUTE" value="0" />
+    </path>
+
+    <path name="mmi-audioloop-hsmic-headphone" >
+        <ctl name="MAIN PGA GAIN" value="6" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="HPL PGA GAIN" value="26" />
+        <ctl name="HPL PGA MUTE" value="0" />
+        <ctl name="HPR PGA GAIN" value="26" />
+        <ctl name="HPR PGA MUTE" value="0" />
+    </path>
+
+    <path name="mmi-audioloop-hsmic-receiver" >
+        <ctl name="MAIN PGA GAIN" value="5" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="EP PGA GAIN" value="22" />
+        <ctl name="EP PGA MUTE" value="0" />
+    </path>
+
+    <path name="mmi-audioloop-hsmic-speaker" >
+        <ctl name="MAIN PGA GAIN" value="5" />
+        <ctl name="MAIN MIC BOOST" value="0" />
+        <ctl name="S4 OL PGA GAIN" value="0" />
+        <ctl name="S4 OR PGA GAIN" value="0" />
+        <ctl name="LOL PGA GAIN" value="16" />
+        <ctl name="LOL PGA MUTE" value="0" />
+        <ctl name="LOR PGA GAIN" value="16" />
+        <ctl name="LOR PGA MUTE" value="0" />
+    </path>
+
+    <path name="mmi-lineinl-receiver-rec" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="EP PGA GAIN" value="15" />
+        <ctl name="EP PGA MUTE" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="LINEL PGA GAIN" value="14" />
+    </path>
+
+    <path name="mmi-lineinr-headphone-rec" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="HPL PGA GAIN" value="17" />
+        <ctl name="HPL PGA MUTE" value="0" />
+        <ctl name="HPR PGA GAIN" value="17" />
+        <ctl name="HPR PGA MUTE" value="0" />
+        <ctl name="S1 OL PGA GAIN" value="0" />
+        <ctl name="S1 OR PGA GAIN" value="0" />
+        <ctl name="LINER PGA GAIN" value="14" />
+    </path>
+
+    <path name="mmi-mad-lineinr-headphone" >
+        <ctl name="LINER PGA GAIN" value="21" />
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="HPL PGA GAIN" value="14" />
+        <ctl name="HPL PGA MUTE" value="0" />
+        <ctl name="HPR PGA GAIN" value="14" />
+        <ctl name="HPR PGA MUTE" value="0" />
+    </path>
+
+    <path name="mmi-fmloop-rec" >
+        <ctl name="S1 IL PGA GAIN" value="0" />
+        <ctl name="S1 IR PGA GAIN" value="0" />
+        <ctl name="S3 OL PGA GAIN" value="0" />
+        <ctl name="S3 OR PGA GAIN" value="0" />
+        <ctl name="S3 IL PGA GAIN" value="0" />
+        <ctl name="S3 IR PGA GAIN" value="0" />
+    </path>
+
+    <path name="soundtrigger-main-mic" >
+        <ctl name="AUX PGA GAIN" value="18" />
+        <ctl name="AUX MIC BOOST" value="0" />
+    </path>
+    <path name="soundtrigger-hs-mic" >
+        <ctl name="AUX PGA GAIN" value="18" />
+        <ctl name="AUX MIC BOOST" value="0" />
+    </path>
+    <path name="bt-sco-wb" >
+    </path>
+    <path name="mmi-breakcircuit-s3" >
+    </path>
+    <path name="mmi-shortcircuit-s1" >
+    </path>
+    <path name="mmi-shortcircuit-s2" >
+    </path>
+    <path name="mmi-shortcircuit-s3" >
+    </path>
+    <path name="mmi-shortcircuit-s4" >
+    </path>
+</mixer>

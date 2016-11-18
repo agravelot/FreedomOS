@@ -1,0 +1,28 @@
+<pop>
+  <up>
+	<num name="num" value="10"/>
+	<ctl name="S1 OL SWITCH SWITCH"/>
+	<ctl name="S1 OR SWITCH SWITCH"/>
+	<ctl name="S2 OL SWITCH SWITCH"/>
+	<ctl name="S2 OR SWITCH SWITCH"/>
+	<ctl name="S3 OL SWITCH SWITCH"/>
+	<ctl name="S3 OR SWITCH SWITCH"/>
+	<ctl name="S4 OL SWITCH SWITCH"/>
+	<ctl name="S4 OR SWITCH SWITCH"/>
+	<ctl name="SP IL SWITCH SWITCH"/>
+	<ctl name="SP IR SWITCH SWITCH"/>
+  </up>
+  <down>
+	<num name="num" value="10"/>
+	<ctl name="S1 OL SWITCH SWITCH"/>
+	<ctl name="S1 OR SWITCH SWITCH"/>
+	<ctl name="S2 OL SWITCH SWITCH"/>
+	<ctl name="S2 OR SWITCH SWITCH"/>
+	<ctl name="S3 OL SWITCH SWITCH"/>
+	<ctl name="S3 OR SWITCH SWITCH"/>
+	<ctl name="S4 OL SWITCH SWITCH"/>
+	<ctl name="S4 OR SWITCH SWITCH"/>
+	<ctl name="SP IL SWITCH SWITCH"/>
+	<ctl name="SP IR SWITCH SWITCH"/>
+  </down>
+</pop>

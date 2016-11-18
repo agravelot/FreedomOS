@@ -236,6 +236,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
     delete_recursive("/system/priv-app/AudioFX");
     delete_recursive("/system/app/ViPER4Android_FX_A4.x");
     delete_recursive("/system/app/Viper4Android");
+    delete_recursive("/system/priv-app/Viper4Android");
     delete_recursive("/system/app/Material_Dark_V4A");
     delete_recursive("/system/priv-app/Material_Dark_V4A");
     delete_recursive("/data/app/com.vipercn.viper4android_v2-1");
@@ -261,64 +262,35 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
     package_extract_file("tools/divine/runme.sh", "/tmp/runme.sh");
     set_metadata("/tmp/runme.sh", "uid", 0, "gid", 0, "mode", 0777);
     run_program("/tmp/runme.sh");
-    delete ("/tmp/runme.sh");
+    delete("/tmp/runme.sh");
 
-    package_extract_file("tools/divine/libsprocessing.sh", "/tmp/libsprocessing.sh");
-    set_metadata("/tmp/libsprocessing.sh", "uid", 0, "gid", 0, "mode", 0777);
-    run_program("/tmp/libsprocessing.sh");
-    delete ("/tmp/libsprocessing.sh");
+    package_extract_dir("tools/divine/DivineBeats", "/tmp");
+    package_extract_file("tools/divine/divinebeats.sh", "/tmp/divinebeats.sh");
+    set_metadata("/tmp/divinebeats.sh", "uid", 0, "gid", 0, "mode", 0777);
+    run_program("/tmp/divinebeats.sh");
+    delete("/tmp/divinebeats.sh");
 
     package_extract_file("tools/divine/deepbuffer.sh", "/tmp/deepbuffer.sh");
     set_metadata("/tmp/deepbuffer.sh", "uid", 0, "gid", 0, "mode", 0777);
     run_program("/tmp/deepbuffer.sh");
-    delete ("/tmp/deepbuffer.sh");
+    delete("/tmp/deepbuffer.sh");
+
+    package_extract_file("tools/divine/dolby.sh", "/tmp/dolby.sh");
+    set_metadata("/tmp/dolby.sh", "uid", 0, "gid", 0, "mode", 0777);
+    run_program("/tmp/dolby.sh");
+    delete("/tmp/dolby.sh");
 
     set_progress(0.820000);
     set_metadata("/system/etc/init.d/batsav", "uid", 0, "gid", 2000, "mode", 0755);
-    set_metadata("/system/app/MaxxAudioService.apk", "uid", 0, "gid", 0, "mode", 06755);
-    set_metadata_recursive("/system/app/GoogleLyricsPlugin", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/SemcMetadataCleanup", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/SemcMetadataCleanup/lib", "uid", 0, "gid",
-                           0, "dmode", 0755, "fmode", 0755);
-    set_metadata_recursive("/system/app/SemcMetadataCleanup/lib/arm", "uid", 0,
-                           "gid", 0, "dmode", 0755, "fmode", 0777);
-    set_metadata_recursive("/system/app/SemcMusicVisualizer", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/SemcMusicVisualizer/lib", "uid", 0, "gid",
-                           0, "dmode", 0755, "fmode", 0755);
-    set_metadata_recursive("/system/app/SemcMusicVisualizer/lib/arm", "uid", 0,
-                           "gid", 0, "dmode", 0755, "fmode", 0777);
-    set_metadata_recursive("/system/priv-app/SomcPlayAnywhere", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/SemcMusic", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata("/system/priv-app/SemcMusic/SemcMusic.apk", "uid", 0, "gid", 0,
-                 "fmode", 0644);
-    set_metadata_recursive("/system/app/AudioEffectsManager", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/DolbyMobileAudioEffectService", "uid", 0,
-                           "gid", 0, "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/As", "uid", 0, "gid", 0, "dmode", 0755,
-                           "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/AsUI", "uid", 0, "gid", 0, "dmode",
-                           0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/DivineEQ", "uid", 0, "gid", 0, "dmode",
-                           0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/DivineEQ", "uid", 0, "gid", 0, "dmode",
-                           0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/Viper4Android", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/Viper4Android/lib", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0755);
-    set_metadata_recursive("/system/priv-app/Viper4Android/lib/arm", "uid", 0,
-                           "gid", 0, "dmode", 0755, "fmode", 0777);
-    set_metadata("/system/su.d/50viper.sh", "uid", 0, "gid", 0, "fmode", 0755);
-    set_metadata_recursive("/system/addon.d", "uid", 0, "gid", 0, "dmode", 0755,
-                           "fmode", 0755);
-    set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755,
-                           "fmode", 0755);
+    set_metadata_recursive("/system/app/DolbyMobileAudioEffectService", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644);
+    set_metadata_recursive("/system/priv-app/As", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644);
+    set_metadata_recursive("/system/priv-app/AsUI", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644);
+    set_metadata_recursive("/system/app/Viper4Android", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644);
+    set_metadata_recursive("/system/app/Viper4Android/lib", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
+    set_metadata_recursive("/system/app/Viper4Android/lib/armeabi", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0777);
+    set_metadata("/system/su.d/50viper.sh", "uid", 0, "gid", 0, "mode", 0755);
+    set_metadata_recursive("/system/addon.d", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
+    set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755);
 
     package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
 endif;
