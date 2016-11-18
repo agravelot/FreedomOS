@@ -36,8 +36,10 @@ language.french=France
 language.french.info=Utiliser le Français
 language.italian=Italiano
 language.italian.info=Utilizzare Italiano @xEvoRayJiN
-language.german=German @DanielL
-language.german.info=
+language.german=German
+language.german.info=@DanielL
+language.spanish=Español 
+language.spanish.info=Utilizar Español by @jgimenezpascual 
 
 rom.data=!date!
 text_finish=Finish

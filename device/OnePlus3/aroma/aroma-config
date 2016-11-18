@@ -52,7 +52,8 @@ selectbox(
   "<~language.french>", "<~language.french.info>", 0,
   "<~language.english>", "<~language.english.info>", 1,
   "<~language.italian>", "<~language.italian.info>", 0,
-  "<~language.german>", "", 0
+  "<~language.german>", "<~language.german.info>", 0,
+  "<~language.spanish>", "language.spanish.info", 0
 );
 
 # -- - SET LANGUAGE - -- #
@@ -70,6 +71,10 @@ endif;
 
 if prop("language.prop", "selected.0") == "4" then
   loadlang("langs/de.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "5" then
+  loadlang("langs/es.lang");
 endif;
 
 # -- - WELCOME - -- #

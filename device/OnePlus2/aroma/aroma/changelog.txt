@@ -1,5 +1,6 @@
   REMOVE: Old audio fix
   FIX: Inverted value in AROMA
+  ADD: Spanish language in aroma @jgimenezpascual
   UPDATE: SuperSU 2.78 SR2
   - File-based-encryption support
   - CCMT: Add privacy policy dialog

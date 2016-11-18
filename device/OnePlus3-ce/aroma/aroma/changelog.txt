@@ -1,5 +1,6 @@
   UPDATE: OxygenOS Open Beta 7
   ADD: Force read-write acess during install process
+  ADD: Spanish language in aroma @jgimenezpascual
   UPDATE: SuperSU 2.78 SR4
   - sukernel: improve FBE detection
   - suinit: TWRP compatibility on slot-based systems
