@@ -1,6 +1,4 @@
   UPDATE: OxygenOS Open Beta 7
-  UPDATE: DivineBeats v8.5 Beta
-  ADD: Viper4Android driver
   ADD: Force read-write acess during install process
   ADD: Spanish language in aroma @jgimenezpascual
   UPDATE: SuperSU 2.78 SR4
