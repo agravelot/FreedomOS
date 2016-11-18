@@ -1,3 +1,4 @@
+  UPDATE: OxygenOS Open Beta 7
   UPDATE: SuperSU 2.78 SR4
   - sukernel: improve FBE detection
   - suinit: TWRP compatibility on slot-based systems
