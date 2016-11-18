@@ -1,5 +1,3 @@
 #!/sbin/sh
 
-
-sed -i '/deep_buffer {/,/}/d' /system/etc/audio_policy.conf
-
+busybox sed -i '/deep_buffer {/,/}/s/^/#/' /system/etc/audio_policy.conf

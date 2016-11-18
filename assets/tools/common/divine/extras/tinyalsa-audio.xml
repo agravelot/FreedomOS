@@ -1,4 +1,4 @@
-<tinyalsa-audio device="Android Device">
+<tinyalsa-audio device="Android">
 	<output card="0" device="0"
 		rate="44100" channels="2" format="PCM_16"
 		period_size="1024" period_count="4">
@@ -37,7 +37,7 @@
 		</device>
 		<device type="earpiece">
 			<path type="enable">
-				<ctrl name="Receiver Playback Volume" value="36" />
+				<ctrl name="Receiver Playback Volume" value="31" />
 				<ctrl name="Receiver Playback Switch" value="on" />
 			</path>
 			<path type="disable">
@@ -47,7 +47,7 @@
 		</device>
 		<device type="speaker">
 			<path type="enable">
-				<ctrl name="Speaker Playback Volume" value="32" />
+				<ctrl name="Speaker Playback Volume" value="26" />
 				<ctrl name="Speaker Playback Switch" value="on" />
 			</path>
 			<path type="disable">
@@ -57,8 +57,8 @@
 		</device>
 		<device type="wired-headphone">
 			<path type="enable">
-				<ctrl name="Headphone Playback Volume" value="20" />
-				<ctrl name="HP Gain Playback Volume" value="4" />
+				<ctrl name="Headphone Playback Volume" value="15" />
+				<ctrl name="HP Gain Playback Volume" value="3" />
 				<ctrl name="Headphone Playback Switch" value="on" />
 			</path>
 			<path type="disable">
@@ -69,8 +69,8 @@
 		</device>
 		<device type="wired-headset">
 			<path type="enable">
-				<ctrl name="Headphone Playback Volume" value="20" />
-				<ctrl name="HP Gain Playback Volume" value="4" />
+				<ctrl name="Headphone Playback Volume" value="15" />
+				<ctrl name="HP Gain Playback Volume" value="3" />
 				<ctrl name="Headphone Playback Switch" value="on" />
 			</path>
 			<path type="disable">
@@ -87,7 +87,7 @@
 
 		<device type="builtin-mic">
 			<path type="enable">
-				<ctrl name="AD Analog Volume" value="30" />
+				<ctrl name="AD Analog Volume" value="26" />
 				<ctrl name="Mic 1 Gain Volume" value="2" />
 			</path>
 			<path type="disable">
@@ -97,7 +97,7 @@
 		</device>
 		<device type="wired-headset">
 			<path type="enable">
-				<ctrl name="AD Analog Volume" value="30" />
+				<ctrl name="AD Analog Volume" value="26" />
 				<ctrl name="Mic 2 Gain Volume" value="2" />
 			</path>
 			<path type="disable">
@@ -136,10 +136,10 @@
 		</device>
 		<device type="wired-headphone">
 			<path type="enable">
-				<ctrl name="AD Digital Volume" value="90" />
-				<ctrl name="Master Playback Volume" value="78" />
+				<ctrl name="AD Digital Volume" value="84" />
+				<ctrl name="Master Playback Volume" value="69" />
 				<ctrl name="AD Analog Volume" value="22" />
-				<ctrl name="Headphone Playback Volume" value="40" />
+				<ctrl name="Headphone Playback Volume" value="31" />
 			</path>
 			<path type="disable">
 				<ctrl name="AD Digital Volume" value="75" />
@@ -150,9 +150,9 @@
 		</device>
 		<device type="wired-headset">
 			<path type="enable">
-				<ctrl name="Master Playback Volume" value="80" />
+				<ctrl name="Master Playback Volume" value="69" />
 				<ctrl name="AD Analog Volume" value="26" />
-				<ctrl name="Headphone Playback Volume" value="40" />
+				<ctrl name="Headphone Playback Volume" value="31" />
 				<ctrl name="Mic 2 Gain Volume" value="2" />
 			</path>
 			<path type="disable">
