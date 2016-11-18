@@ -97,6 +97,7 @@ common/fonts
 common/google_dns.sh
 common/hosts
 common/kernel
+common/mount_system.sh
 common/multi_window.sh
 common/supersu
 common/v4a_profiles_irs
