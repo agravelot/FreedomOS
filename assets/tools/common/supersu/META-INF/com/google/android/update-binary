@@ -274,7 +274,7 @@ if [ "$?" -eq "0" ]; then
 fi
 
 ui_print_always() {
-  echo -n -e "ui_print   $1\n" >> /proc/self/fd/$OUTFD
+  echo -n -e "ui_print    $1\n" >> /proc/self/fd/$OUTFD
   echo -n -e "ui_print\n" >> /proc/self/fd/$OUTFD
 }
 
@@ -752,12 +752,23 @@ if [ ! -z "$SLOT_SUFFIX" ]; then
   SLOT_USED=true
 fi
 if ($SLOT_USED); then
-  SYSTEM_FSTAB=$(cat /fstab.* | grep -v "#" | grep -i "/system" | tr -s " ");
+  # /fstab.* for stock boot images, which can contain slotselect
+  # /etc/fstab for TWRP, which will contain $SLOT_SUFFIX
+
+  SYSTEM_FSTAB=$(cat /fstab.* /etc/fstab 2>/dev/null | grep -v "#" | grep -i "/system" | tr -s " ");
   if (! `echo $SYSTEM_FSTAB | grep slotselect >/dev/null 2>&1`); then
-    SLOT_USED=false
-  else
+    if (! `echo $SYSTEM_FSTAB | grep "$SLOT_SUFFIX" >/dev/null 2>&1`); then
+      SLOT_USED=false
+    fi
+  fi
+
+  if ($SLOT_USED); then
     for i in $SYSTEM_FSTAB; do
-      SLOT_SYSTEM=$i$SLOT_SUFFIX
+      if (! `echo $SYSTEM_FSTAB | grep "$SLOT_SUFFIX" >/dev/null 2>&1`); then
+        SLOT_SYSTEM=$i$SLOT_SUFFIX
+      else
+        SLOT_SYSTEM=$i
+      fi
       break
     done
   fi
@@ -769,19 +780,32 @@ fi
 ui_print "- Mounting /system, /data and rootfs"
 
 HAD_SYSTEM=false
+HAD_SYSTEM_RW=false
 HAD_SYSTEM_ROOT=false
 if (`mount | grep " /system " >/dev/null 2>&1`); then
   HAD_SYSTEM=true
+  if (`mount | grep " /system " | grep "rw" >/dev/null 2>&1`); then
+    HAD_SYSTEM_RW=true
+  fi
 fi
 if (`mount | grep " /system_root " >/dev/null 2>&1`); then
   HAD_SYSTEM_ROOT=true
 fi
 
 if (! $SLOT_USED); then
-  mount -o ro /system
-  toolbox_mount /system ro
+  if (! $HAD_SYSTEM); then
+    mount -o ro /system
+    toolbox_mount /system ro
+  fi
 else
-  mount -o ro $SLOT_SYSTEM /system_root
+  if (! $HAD_SYSTEM_ROOT); then
+    # TWRP can have this mounted wrong
+    umount /system
+
+    mkdir /system_root
+    mount -o ro $SLOT_SYSTEM /system_root
+    mount -o bind /system_root/system /system
+  fi
 fi
 mount /data
 toolbox_mount /data
@@ -809,8 +833,14 @@ if [ -z "$NOOVERRIDE" ]; then
   getvar FRP
 fi
 if [ -z "$SYSTEMLESS" ]; then
-  # detect if we need systemless, based on Android version and boot image
-  SYSTEMLESS=true
+  if (! $SLOT_USED); then
+    # detect if we need systemless, based on Android version and boot image
+    SYSTEMLESS=true
+  else
+    # unless we're on a slot-based system, as TWRP being in the same boot image will
+    # always cause the detection to default to system-mode
+    SYSTEMLESS=true
+  fi
 fi
 if [ -z "$PATCHBOOTIMAGE" ]; then
   # only if we end up doing a system-less install
@@ -1388,6 +1418,13 @@ else
       if ($SLOT_USED); then
         ui_print "- Patching init, system_root, system"
 
+        LD_LIBRARY_PATH=$RAMDISKLIB $BIN/sukernel --cpio-extract /sutmp/ramdisk sbin/twrp /sutmp/twrp
+        if [ -f "/sutmp/twrp" ]; then
+            # backup TWRP's version of init
+            check_zero_def "" "LD_LIBRARY_PATH=$RAMDISKLIB $BIN/sukernel --cpio-extract /sutmp/ramdisk init /sutmp/init_twrp"
+            check_zero_def "" "LD_LIBRARY_PATH=$RAMDISKLIB $BIN/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 750 init_twrp /sutmp/init_twrp"
+        fi
+
         check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-add /sutmp/ramdisk /sutmp/ramdisk 750 init $BIN/suinit"
         check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-mkdir /sutmp/ramdisk /sutmp/ramdisk 755 boot/system_root"
         check_zero_def "" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-mkdir /sutmp/ramdisk /sutmp/ramdisk 755 boot/system"
@@ -1527,7 +1564,15 @@ fi
 ui_print "- Unmounting /system"
 if ($SLOT_USED); then
   if (! $HAD_SYSTEM_ROOT); then
+    umount /system
     umount /system_root
+    if ($HAD_SYSTEM); then
+      if ($HAD_SYSTEM_RW); then
+        mount -o rw /system
+      else
+        mount -o ro /system
+      fi
+    fi
   fi
 else
   if (! $HAD_SYSTEM); then

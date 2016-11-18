@@ -1,5 +1,5 @@
 Signature-Version: 1.0
-SHA1-Digest-Manifest: LT79TBPy0dCrhymnqz6K0n/pu2s=
+SHA1-Digest-Manifest: A952XGqo5VyUNB2cxFLOnTvUDwU=
 Created-By: 1.0 (Android SignApk)
 
 Name: META-INF/com/google/android/updater-script
@@ -21,10 +21,10 @@ Name: x64/su
 SHA1-Digest: UthaBRoXOgo8ZmzvRIBh1dkMaYI=
 
 Name: arm64/sukernel
-SHA1-Digest: mOVcZokP3aIUiZiNbYX+YdKgg0o=
+SHA1-Digest: Q+AT6hhoo+m7iLpE0cr8j2ofLk4=
 
 Name: x86/sukernel
-SHA1-Digest: 2ZMVLyfEUnaxnIyTPXvBtVrmp4s=
+SHA1-Digest: 0iB+zjscyiCXY9NnjxBSxyk/Wz0=
 
 Name: x86/chattr
 SHA1-Digest: d0yiEf5ZywFzedOG8jPG1ienjFg=
@@ -33,7 +33,7 @@ Name: x86/chattr.pie
 SHA1-Digest: C8ut7KMVjn5rwy48gSKXGyHsalM=
 
 Name: armv7/sukernel
-SHA1-Digest: 4sotLDA910xA1uOEeQgWR0x/DFY=
+SHA1-Digest: biz7FUCLXyFzngTtgk+Q6Ld49zs=
 
 Name: armv7/supolicy
 SHA1-Digest: VJ96RK/5oWmyn0AiKa1C/EyeQoE=
@@ -51,7 +51,7 @@ Name: common/hexpatch
 SHA1-Digest: +a+mJWhj/QT/uH5dHCfwRjaauQo=
 
 Name: armv7/suinit
-SHA1-Digest: d4Nnv1pkcp+iqq2JstIXmx87OwU=
+SHA1-Digest: 5gsQEWPfkrqI8tgYwQyxH6QUurc=
 
 Name: common/chromeos/kernel.bootloader
 SHA1-Digest: TKbDK3cPUDgKAh4y/rO9bW+KC/s=
@@ -66,10 +66,10 @@ Name: mips/libsupol.so
 SHA1-Digest: Mt83z3H4whTVeH5Of1SGfzbAA5Q=
 
 Name: x86/suinit
-SHA1-Digest: Hvy0YuDAl4R91qrwGYiVFqRcs0c=
+SHA1-Digest: 3xavmvPXyisgRaqhNVb6eRfC6Y0=
 
 Name: META-INF/com/google/android/update-binary
-SHA1-Digest: IqKxTkxAf01r78Y8XxGkP44pEFQ=
+SHA1-Digest: KNq5zZ8MTWz2aF6I8sMXhYW+BBg=
 
 Name: armv7/su
 SHA1-Digest: LUpVb/IzeY5jLkkFT3UB7GMIuV8=
@@ -78,10 +78,10 @@ Name: x86/supolicy
 SHA1-Digest: ntsE6hJXDZdcE1RhIHKJ7BfpA0E=
 
 Name: mips64/suinit
-SHA1-Digest: f4GT7z1dYoOWhPZN5KVjw7LHbPk=
+SHA1-Digest: RaieN9dVx0s3ZCcxNphstw8tXC4=
 
 Name: mips64/sukernel
-SHA1-Digest: s5HEPgSBImPArXUorGdGwxUiqb4=
+SHA1-Digest: +Hp88C/KWdB7k4krTI/F1rvRqqg=
 
 Name: arm/chattr.pie
 SHA1-Digest: TRipcPCoh5V7zPuh4aPgQaCuVHA=
@@ -93,7 +93,7 @@ Name: arm/libsupol.so
 SHA1-Digest: foAsb9N15dpCtdKvuooEs7f8N8A=
 
 Name: arm64/suinit
-SHA1-Digest: MMiKoL40E9O/rCUcYJEqhcesw3M=
+SHA1-Digest: lqZxE8BBhjYSd1Xd9EN2/CMbxzY=
 
 Name: common/chromeos/kernel.keyblock
 SHA1-Digest: i7GeWsePfDhwTRG7DQGVayChFX4=
@@ -108,7 +108,7 @@ Name: common/init.supersu.rc
 SHA1-Digest: oHXJFumgmUGda4kz8NAyNHxrNIs=
 
 Name: arm/sukernel
-SHA1-Digest: /wQ5ES2yR9U47bF6f9XPdiofvO8=
+SHA1-Digest: vonGqCVC9+dHrtLmGRu7Zm9TFrY=
 
 Name: mips/chattr.pie
 SHA1-Digest: gBRBCos0XvQGncDfZqz/OzV1/dU=
@@ -123,13 +123,13 @@ Name: x86/libsupol.so
 SHA1-Digest: /RTx0QDz8CmLMwRu2eUHo+xLWQU=
 
 Name: arm/suinit
-SHA1-Digest: Mc4AJHXb3H79VuzuJMSk8f6AbWQ=
+SHA1-Digest: go4Yed9MayTFV2G9chJwdLrESXI=
 
 Name: arm64/libsupol.so
 SHA1-Digest: HzPc2L7VbKAgknyMMPX72cUjuf0=
 
 Name: x64/suinit
-SHA1-Digest: cjb/p5yiJgPB659Rfkd1zwMRrps=
+SHA1-Digest: Rs5jjRrgAqk4wFmfRpr8ukHQRDc=
 
 Name: x86/su.pie
 SHA1-Digest: 53eLNzs5OuZ0RO0Fw7oSOhMV/ec=
@@ -138,7 +138,7 @@ Name: common/chromeos/kernel.config
 SHA1-Digest: v2CDTpuV1G1SUqhbd9DAoZm75gI=
 
 Name: mips/suinit
-SHA1-Digest: w1deJiZuyihEWf6FVCbEGl0ol6I=
+SHA1-Digest: sjrYHHMNrgOAoQTfTfYpWZv0aLw=
 
 Name: mips64/libsupol.so
 SHA1-Digest: 7yMylpjAFCUf64Vipo8zLz+kwAA=
@@ -147,7 +147,7 @@ Name: x64/libsupol.so
 SHA1-Digest: C2PPtKLx3fney8z4ZuloB1+aboI=
 
 Name: x64/sukernel
-SHA1-Digest: xfwh+I9L2Fm+Z8rXgiYTS3e2EQQ=
+SHA1-Digest: i3PbF2QViP1fRGMh5zWIeNDsO0Q=
 
 Name: arm64/supolicy
 SHA1-Digest: ul2F+VIZsHiq50TWmBJRXhCquv0=
@@ -162,10 +162,10 @@ Name: common/99SuperSUDaemon
 SHA1-Digest: gIoyt2gXURK+4PwhqFITPCmoZhc=
 
 Name: common/Superuser.apk
-SHA1-Digest: /qyxQMP3SSgAHmcl4dsH49Qx08I=
+SHA1-Digest: ltyb5cvJXnhbD9YoaZX/e/RQFMc=
 
 Name: mips/sukernel
-SHA1-Digest: uQbNr9a1chSwzVsaF2nrNbxTHNk=
+SHA1-Digest: bvjCIKxqBHOkSpk5Y9iqxrtViAw=
 
 Name: common/frp_install
 SHA1-Digest: wYURtoen2YYFsBhclLAt3vRwpeg=
