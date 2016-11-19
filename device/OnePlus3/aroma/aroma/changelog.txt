@@ -1,7 +1,6 @@
   UPDATE: French language @xeloni
   UPDATE: ElementalX 0.27
   UPDATE: OnePlus updates
-  ADD: Force read-write acess during install process
   ADD: Spanish language in aroma @jgimenezpascual
   UPDATE: SuperSU 2.78 SR4
   - sukernel: improve FBE detection

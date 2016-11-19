@@ -49,7 +49,7 @@ ifelse(is_mounted("/data"), run_program("/tmp/tools/busybox", "umount", "/data")
 
 set_progress(0.032);
 ui_print("   Mounting System");
-run_program("/tmp/tools/mount_system.sh");
+run_program("/tmp/tools/busybox", "mount", "/system");
 #mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
 ui_print("   Mounting Data");
 run_program("/tmp/tools/busybox", "mount", "/data");
@@ -100,7 +100,7 @@ show_progress(0.57, 130000);
 ui_print("   Extracting System");
 block_image_update("/dev/block/bootdevice/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat");
 
-run_program("/tmp/tools/mount_system.sh");
+run_program("/tmp/tools/busybox", "mount", "/system");
 
 # -- - radio update tasks - -- #
 
@@ -185,7 +185,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
   run_program("/tmp/tools/busybox", "mv", "/tmp/tools/supersu", "/tmp/supersu");
   run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");
   run_program("/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
-  run_program("/tmp/tools/mount_system.sh");
+  run_program("/tmp/tools/busybox", "mount", "/system");
 endif;
 
 # -- - MOD - -- #
