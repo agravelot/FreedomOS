@@ -1,6 +1,7 @@
 1.11-CE
   UPDATE: OxygenOS Open Beta 7
   ADD: Spanish language in aroma @jgimenezpascual
+  UPDATE: Increase smoothness of the boot animation and reduce size ~-30%
   DELETE: Google Maps to free up some space
   UPDATE: SuperSU 2.78 SR4
   - sukernel: improve FBE detection
@@ -30,7 +31,6 @@
   - ZIP: Support systemless on 5.0 (requires 3rd party patches)
   - ZIP: Support for A/B slot systems with / inside system partition
 
-﻿
 1.10-CE
   UPDATE: French language @xeloni
   UPDATE: 3.5.5 OxygenOS Community Build
