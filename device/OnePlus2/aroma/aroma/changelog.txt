@@ -2,6 +2,7 @@
   REMOVE: Old audio fix
   FIX: Inverted value in AROMA
   ADD: Spanish language in aroma @jgimenezpascual
+  UPDATE: Xposed Installer 3.0.1
   UPDATE: Increase smoothness of the boot animation and reduce size ~-30%
   UPDATE: Adaway 3.2
   - Systemless root support - extensive work by @PerfectSlayer

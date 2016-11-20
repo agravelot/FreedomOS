@@ -1,6 +1,7 @@
 1.11.1-CE
   UPDATE: ElementalX 0.28
   -security updates
+  UPDATE: Xposed Installer 3.0.1
 
 1.11-CE
   UPDATE: OxygenOS Open Beta 7
