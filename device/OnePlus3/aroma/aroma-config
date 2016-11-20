@@ -259,7 +259,6 @@ selectbox(
 
   "<~theme.tittle3>", "", 2,
     "<~notheme>", "", 0,
-    "<~layer>", "<~info.layer>", 0,
     "<~substratum>", "<~info.substratum>", 1,
   "<~splash.tittle>", "<~splash.tittle2>", 2,
     "<~fos_splash>", "", 1,

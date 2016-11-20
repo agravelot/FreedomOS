@@ -69,7 +69,6 @@ etc/recovery-resource.dat
 # The files are in the assets/system/$TARGET_ARCH/
 ADD_SYSTEM_LIST="
 app/Adaway
-app/Layers
 app/Substratum
 app/XposedInstaller
 app/DeskClock
