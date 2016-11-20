@@ -1,3 +1,13 @@
+1.6.2
+  UPDATE: Moxie v6
+  - Bring in OnePlus updates to bring kernel up to their 3.2.6 level (latest)
+  - Synchronise device table parameters with 3T kernel sources
+  - Added Battery Life eXtender [BLX]
+  - HZ to 128: HZ is usually 100, and provides a rate at which certain tasks need to be updated. Making it 128 increases the rate slightly. Con Kolivas argues that on a desktop HZ should be 1000! Not sure what the benefit of that is, since I doubt people can detect differences of time measured in milliseconds. But 128 is a nice tweak since a lot of kernel code divides by the HZ value, and division by 128 requires less operations to return a result
+  - Remove ethernet: This reduces kernel size a great deal, and you'll see an obviously smaller download. Ethernet support is presumably required for some forms of tethering, but I suppose that most popular forms on android actually use adb or proprietary drivers
+  - CFQ tuned for SSD: CFQ was designed for rotational devices, but remains the best option for IO queuing probably due to being the most evolved algorithm. Still, improvements can be made for non-rotational devices because there is no benefit in predicting when data will be required from physically close sectors. Turning off this 'idling' increases the maximum possible IO bandwidth by a significant margin.
+  - linux 3.18.44: includes dirty cow patch
+  - GPU work moved to faster kthread: fixes some scrolling problems with certain apps
   UPDATE: French language @xeloni
   UPDATE: ElementalX 0.27
   UPDATE: OnePlus updates
