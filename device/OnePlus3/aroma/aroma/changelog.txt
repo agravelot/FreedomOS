@@ -10,6 +10,12 @@
   - GPU work moved to faster kthread: fixes some scrolling problems with certain apps
   UPDATE: ElementalX 0.28
   -security updates
+  UPDATE: Increase smoothness of the boot animation and reduce size ~-30%
+  UPDATE: Adaway 3.2
+  - Systemless root support - extensive work by @PerfectSlayer
+  - Improvements to root mounter - by @sanjay900
+  - Translations updates
+  - Various updates for support on Android 7.x
   UPDATE: French language @xeloni
   ADD: Spanish language in aroma @jgimenezpascual
   UPDATE: SuperSU 2.78 SR4

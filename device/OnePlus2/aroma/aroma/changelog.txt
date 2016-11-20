@@ -1,6 +1,13 @@
+1.0.2
   REMOVE: Old audio fix
   FIX: Inverted value in AROMA
   ADD: Spanish language in aroma @jgimenezpascual
+  UPDATE: Increase smoothness of the boot animation and reduce size ~-30%
+  UPDATE: Adaway 3.2
+  - Systemless root support - extensive work by @PerfectSlayer
+  - Improvements to root mounter - by @sanjay900
+  - Translations updates
+  - Various updates for support on Android 7.x
   UPDATE: SuperSU 2.78 SR4
   - sukernel: improve FBE detection
   - suinit: TWRP compatibility on slot-based systems
