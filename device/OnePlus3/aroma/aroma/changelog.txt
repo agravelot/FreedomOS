@@ -8,9 +8,9 @@
   - CFQ tuned for SSD: CFQ was designed for rotational devices, but remains the best option for IO queuing probably due to being the most evolved algorithm. Still, improvements can be made for non-rotational devices because there is no benefit in predicting when data will be required from physically close sectors. Turning off this 'idling' increases the maximum possible IO bandwidth by a significant margin.
   - linux 3.18.44: includes dirty cow patch
   - GPU work moved to faster kthread: fixes some scrolling problems with certain apps
+  UPDATE: ElementalX 0.28
+  -security updates
   UPDATE: French language @xeloni
-  UPDATE: ElementalX 0.27
-  UPDATE: OnePlus updates
   ADD: Spanish language in aroma @jgimenezpascual
   UPDATE: SuperSU 2.78 SR4
   - sukernel: improve FBE detection

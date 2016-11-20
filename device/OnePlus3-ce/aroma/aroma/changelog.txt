@@ -1,3 +1,7 @@
+1.11.1-CE
+  UPDATE: ElementalX 0.28
+  -security updates
+
 1.11-CE
   UPDATE: OxygenOS Open Beta 7
   ADD: Spanish language in aroma @jgimenezpascual
