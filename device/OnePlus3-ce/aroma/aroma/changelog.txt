@@ -1,5 +1,7 @@
+1.11-CE
   UPDATE: OxygenOS Open Beta 7
   ADD: Spanish language in aroma @jgimenezpascual
+  DELETE: Google Maps to free up some space
   UPDATE: SuperSU 2.78 SR4
   - sukernel: improve FBE detection
   - suinit: TWRP compatibility on slot-based systems

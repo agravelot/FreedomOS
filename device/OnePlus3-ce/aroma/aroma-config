@@ -167,7 +167,6 @@ checkbox(
      "<~gmail>", "<~info.gmail>", 1,
      "<~gmail_exchange>", "<~info.gmail_exchange>", 0,
      "<~google>", "<~info.google>", 1,
-     "<~maps>", "<~info.maps>", 1,
      "<~messenger>", "<~info.messenger>", 1,
      "<~photos>", "<~info.photos>", 1,
      "<~play_music>", "<~info.play_music>", 0,

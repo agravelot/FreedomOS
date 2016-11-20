@@ -60,6 +60,7 @@ app/EngineeringMode
 app/EngSpecialTest
 app/Hangouts
 app/LogKitSdService
+app/Maps
 app/OemAutoTestServer
 app/OEMLogKit
 app/OPPBugReport
