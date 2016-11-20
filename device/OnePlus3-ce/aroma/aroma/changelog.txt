@@ -3,6 +3,11 @@
   ADD: Spanish language in aroma @jgimenezpascual
   UPDATE: Increase smoothness of the boot animation and reduce size ~-30%
   DELETE: Google Maps to free up some space
+  UPDATE: Adaway 3.2
+  - Systemless root support - extensive work by @PerfectSlayer
+  - Improvements to root mounter - by @sanjay900
+  - Translations updates
+  - Various updates for support on Android 7.x
   UPDATE: SuperSU 2.78 SR4
   - sukernel: improve FBE detection
   - suinit: TWRP compatibility on slot-based systems
