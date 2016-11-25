@@ -1,4 +1,5 @@
 1.7
+  UPDATE: OxygenOS 3.2.8
   FIX: "failed to mount /system (invalid argument) twrp" error
   UPDATE: Xposed Installer 3.0.1
 1.6.2
