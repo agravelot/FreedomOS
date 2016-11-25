@@ -93,15 +93,14 @@ ui_print("@Installing FreedomOS");
 ui_print(" ");
 
 set_progress(0.10);
-ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
-
 show_progress(0.57, 130000);
 ui_print("   Extracting System");
-block_image_update("/dev/block/bootdevice/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat");
-
+ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
+package_extract_file("system.img", "/dev/block/bootdevice/by-name/system");
 run_program("/tmp/tools/busybox", "mount", "/system");
 
-# -- - radio update tasks - -- #
+ui_print("   Extracting Data");
+package_extract_dir("data", "/data/");
 
 set_progress(0.580000);
 ui_print("   Extracting Radio");
