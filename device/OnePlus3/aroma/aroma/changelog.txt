@@ -1,5 +1,10 @@
 1.7
   UPDATE: OxygenOS 3.2.8
+  - Added 1080P 60FPS video recording
+  - Added emergency calling for India (Triple press of power button to trigger)
+  - Optimization of Snapchat, fixed video calling and scrolling lags
+  - Increased system stability
+  - General bug fixes
   FIX: "failed to mount /system (invalid argument) twrp" error
   UPDATE: Xposed Installer 3.0.1
 1.6.2
