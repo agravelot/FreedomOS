@@ -103,7 +103,6 @@ common/adb.sh
 common/addon
 common/clean.sh
 common/divine
-common/dpi.sh
 common/fonts
 common/google_dns.sh
 common/hosts
