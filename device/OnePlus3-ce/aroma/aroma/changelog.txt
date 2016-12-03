@@ -4,6 +4,8 @@
   - Fix shell-based scripts/services possibly not being executed on 7.x firmwares
   - Add SecurityLogAgent to Samsung KNOX detection
   - sukernel: force seclabel
+  UPDATE: Firmwares binaries
+
 1.11.1-CE
   UPDATE: ElementalX 0.28
   -security updates

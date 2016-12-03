@@ -80,7 +80,7 @@ ADD_SYSTEM_COMMON_LIST="
 xbin/dpi
 "
 
-PATCH_FIRMWARE=3.2.7
+PATCH_FIRMWARE=3.2.8
 
 # Set the files/folder you want to add to your system partition.
 # The files are in the assets/system/$TARGET_ARCH/
