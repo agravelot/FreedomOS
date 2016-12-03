@@ -23,8 +23,13 @@ if [ $(grep -c "setprop sys.io.scheduler \"bfq\"" /tmp/ramdisk/init.qcom.power.r
 fi
 
 #Copy wifi module to ramdisk
-cp /tmp/wlan.ko /tmp/ramdisk/sbin/wlan.ko
-chmod 0644 /tmp/ramdisk/sbin/wlan.ko
+cp /tmp/modules.img /tmp/ramdisk/
+chmod 0644 /tmp/ramdisk/modules.img
+
+#mount modules image
+if [ $(grep -c "modules.img" /tmp/ramdisk/init.qcom.rc) == 0 ]; then
+   sed -i "/on boot/a\ \ \ \ mount ext4 loop\@\/modules\.img \/system\/lib\/modules noatime ro" /tmp/ramdisk/init.qcom.rc
+fi
 
 #copy elementalx scripts
 cp /tmp/init.elementalx.rc /tmp/ramdisk/init.elementalx.rc

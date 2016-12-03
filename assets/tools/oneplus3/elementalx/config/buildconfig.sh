@@ -56,9 +56,6 @@ else
   echo "write /sys/sweep2sleep/sweep2sleep 0" >> $CONFIGFILE
 fi
 
-#wifi module
-echo "  insmod /sbin/wlan.ko" >> $CONFIGFILE
-
 echo "" >> $CONFIGFILE
 echo "on property:sys.boot_completed=1" >> $CONFIGFILE
 echo "" >> $CONFIGFILE
@@ -88,8 +85,8 @@ elif [ $SCHED = 7 ]; then
   echo "write /sys/block/sda/queue/scheduler zen"  >> $CONFIGFILE
 fi
 
-#set readahead to 512
-echo "write /sys/block/sda/queue/read_ahead_kb 512" >> $CONFIGFILE
+#set readahead to 128
+echo "write /sys/block/sda/queue/read_ahead_kb 128" >> $CONFIGFILE
 
 #reinstall options
 echo -e "##### Reinstall Options #####" > $BACKUP

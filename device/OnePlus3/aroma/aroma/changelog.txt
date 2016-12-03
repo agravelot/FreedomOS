@@ -2,6 +2,11 @@
   - Fix shell-based scripts/services possibly not being executed on 7.x firmwares
   - Add SecurityLogAgent to Samsung KNOX detection
   - sukernel: force seclabel
+  UPDATE: ElementalX 0.30
+  - OnePlus updates
+  - security updates
+  - installer update
+  
 1.7
   UPDATE: OxygenOS 3.2.8
   - Added 1080P 60FPS video recording
@@ -11,6 +16,7 @@
   - General bug fixes
   FIX: "failed to mount /system (invalid argument) twrp" error
   UPDATE: Xposed Installer 3.0.1
+
 1.6.2
   UPDATE: Moxie v6
   - Bring in OnePlus updates to bring kernel up to their 3.2.6 level (latest)
