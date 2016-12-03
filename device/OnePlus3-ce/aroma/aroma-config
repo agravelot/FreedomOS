@@ -224,8 +224,8 @@ selectbox(
   "<~theme.tittle>", "<~theme.tittle2>", "@default", "theme.prop",
 
   "<~theme.tittle3>", "", 2,
-    "<~notheme>", "", 0,
-    "<~substratum>", "<~info.substratum>", 1,
+    "<~notheme>", "", 1,
+    "<~substratum>", "<~info.substratum>", 0,
   "<~splash.tittle>", "", 2,
     "<~fos_splash>", "", 1,
     "<~oos_splash>", "", 0,
