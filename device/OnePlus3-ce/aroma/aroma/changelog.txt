@@ -5,6 +5,8 @@
   - Add SecurityLogAgent to Samsung KNOX detection
   - sukernel: force seclabel
   REMOVE: ElementalX Kernel from aroma.
+  REMOVE: Audio mods, divine beats (Viper4Android & Dolby Atmos)
+          Will come back later.
   UPDATE: Firmwares binaries
   REMOVE: Multi Windows in aroma, it's now built-in into the rom
 

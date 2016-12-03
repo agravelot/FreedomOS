@@ -102,7 +102,6 @@ arm64/busybox
 common/adb.sh
 common/addon
 common/clean.sh
-common/divine
 common/fonts
 common/google_dns.sh
 common/hosts

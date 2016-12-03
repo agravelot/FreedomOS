@@ -228,114 +228,14 @@ run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevi
 
 run_program("/tmp/clean.sh");
 
-# -- - DIVINE BEATS - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1" )
-  then
-    show_progress(0.10, 673);
-    ui_print("   Installing Audio mod");
-    delete_recursive("/system/priv-app/AudioFX");
-    delete_recursive("/system/app/ViPER4Android_FX_A4.x");
-    delete_recursive("/system/app/Viper4Android");
-    delete_recursive("/system/app/Material_Dark_V4A");
-    delete_recursive("/system/priv-app/Material_Dark_V4A");
-    delete_recursive("/data/app/com.vipercn.viper4android_v2-1");
-    delete ("/system/lib/soundfx/libv4a_fx_ics.so");
-    delete ("/system/lib/soundfx/libv4a_fx_jb.so");
-    delete_recursive("/system/app/As");
-    delete_recursive("/system/app/AsUI");
-    delete_recursive("/system/priv-app/As");
-    delete_recursive("/system/priv-app/SoundAlive");
-    delete_recursive("/system/priv-app/AsUI");
-    delete_recursive("/system/app/Ds");
-    delete_recursive("/system/app/DsUI");
-    delete_recursive("/system/priv-app/Ds");
-    delete_recursive("/system/priv-app/DsUI");
-    delete_recursive("/system/priv-app/SemcMusic");
-    delete ("/system/priv-app/TRSmods.apk");
-    delete_recursive("/sdcard/DBEngine");
-    package_extract_dir("tools/divine/system", "/system");
-
-    #mount("yaffs2", "MTD", "modextras", "/extras");
-    #package_extract_dir("tools/divine/extras", "/extras");
-
-    package_extract_file("tools/divine/runme.sh", "/tmp/runme.sh");
-    set_metadata("/tmp/runme.sh", "uid", 0, "gid", 0, "mode", 0777);
-    run_program("/tmp/runme.sh");
-    delete ("/tmp/runme.sh");
-
-    package_extract_file("tools/divine/libsprocessing.sh", "/tmp/libsprocessing.sh");
-    set_metadata("/tmp/libsprocessing.sh", "uid", 0, "gid", 0, "mode", 0777);
-    run_program("/tmp/libsprocessing.sh");
-    delete ("/tmp/libsprocessing.sh");
-
-    package_extract_file("tools/divine/deepbuffer.sh", "/tmp/deepbuffer.sh");
-    set_metadata("/tmp/deepbuffer.sh", "uid", 0, "gid", 0, "mode", 0777);
-    run_program("/tmp/deepbuffer.sh");
-    delete ("/tmp/deepbuffer.sh");
-
-    set_progress(0.820000);
-    set_metadata("/system/etc/init.d/batsav", "uid", 0, "gid", 2000, "mode", 0755);
-    set_metadata("/system/app/MaxxAudioService.apk", "uid", 0, "gid", 0, "mode", 06755);
-    set_metadata_recursive("/system/app/GoogleLyricsPlugin", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/SemcMetadataCleanup", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/SemcMetadataCleanup/lib", "uid", 0, "gid",
-                           0, "dmode", 0755, "fmode", 0755);
-    set_metadata_recursive("/system/app/SemcMetadataCleanup/lib/arm", "uid", 0,
-                           "gid", 0, "dmode", 0755, "fmode", 0777);
-    set_metadata_recursive("/system/app/SemcMusicVisualizer", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/SemcMusicVisualizer/lib", "uid", 0, "gid",
-                           0, "dmode", 0755, "fmode", 0755);
-    set_metadata_recursive("/system/app/SemcMusicVisualizer/lib/arm", "uid", 0,
-                           "gid", 0, "dmode", 0755, "fmode", 0777);
-    set_metadata_recursive("/system/priv-app/SomcPlayAnywhere", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/SemcMusic", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata("/system/priv-app/SemcMusic/SemcMusic.apk", "uid", 0, "gid", 0,
-                 "fmode", 0644);
-    set_metadata_recursive("/system/app/AudioEffectsManager", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/DolbyMobileAudioEffectService", "uid", 0,
-                           "gid", 0, "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/As", "uid", 0, "gid", 0, "dmode", 0755,
-                           "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/AsUI", "uid", 0, "gid", 0, "dmode",
-                           0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/DivineEQ", "uid", 0, "gid", 0, "dmode",
-                           0755, "fmode", 0644);
-    set_metadata_recursive("/system/app/DivineEQ", "uid", 0, "gid", 0, "dmode",
-                           0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/Viper4Android", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0644);
-    set_metadata_recursive("/system/priv-app/Viper4Android/lib", "uid", 0, "gid", 0,
-                           "dmode", 0755, "fmode", 0755);
-    set_metadata_recursive("/system/priv-app/Viper4Android/lib/arm", "uid", 0,
-                           "gid", 0, "dmode", 0755, "fmode", 0777);
-    set_metadata("/system/su.d/50viper.sh", "uid", 0, "gid", 0, "fmode", 0755);
-    set_metadata_recursive("/system/addon.d", "uid", 0, "gid", 0, "dmode", 0755,
-                           "fmode", 0755);
-    set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755,
-                           "fmode", 0755);
-
-    package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
-endif;
-
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "0" )
-  then
-    run_program("/tmp/tools/busybox", "echo", "DEBUG: No audio mod");
-endif;
-
 # -- - XPOSED - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1")
   then
     set_progress(0.880000);
     ui_print("   Installing Xposed Installer");
 endif;
 
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "0")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "0")
   then
     set_progress(0.880000);
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Uninstall Xposed");
@@ -344,7 +244,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "0")
 endif;
 
 # -- - ADAWAY - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1")
   then
     set_progress(0.900000);
   	ui_print("   Installing Adaway");
@@ -355,7 +255,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
   	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "mode", 0644);
 endif;
 
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "0")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "0")
   then
     set_progress(0.900000);
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Uninstall Adaway");
@@ -364,7 +264,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "0")
 endif;
 
 # -- - ADB - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.5") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.4") == "1")
   then
     set_progress(0.920000);
     ui_print("   Enabling ADB");
@@ -372,7 +272,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.5") == "1")
 endif;
 
   # -- - GOOGLE DNS - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.5") == "1")
   then
     set_progress(0.925000);
     ui_print("   Setting Google DNS");
@@ -380,22 +280,21 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "1")
 endif;
 
 # -- - WALLPAPER - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "1")
   then
     set_progress(0.930000);
     ui_print("   Extracting FreedomOS Wallpapers");
     package_extract_dir("media/wallpaper", "/sdcard/FreedomOS_wallpaper");
 endif;
 
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "0")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.6") == "0")
   then
     set_progress(0.930000);
-    ui_print("   Extracting FreedomOS Wallpapers");
     delete_recursive("/sdcard/FreedomOS_wallpaper");
 endif;
 
 # -- - EMOJI ONE - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
   then
     set_progress(0.935000);
     ui_print("   Installing EmojiOne");
