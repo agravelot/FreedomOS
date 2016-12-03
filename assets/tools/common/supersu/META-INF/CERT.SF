@@ -1,5 +1,5 @@
 Signature-Version: 1.0
-SHA1-Digest-Manifest: A952XGqo5VyUNB2cxFLOnTvUDwU=
+SHA1-Digest-Manifest: YCSk7v7gSGKD2wah/tNIjaMRa9g=
 Created-By: 1.0 (Android SignApk)
 
 Name: META-INF/com/google/android/updater-script
@@ -21,10 +21,10 @@ Name: x64/su
 SHA1-Digest: UthaBRoXOgo8ZmzvRIBh1dkMaYI=
 
 Name: arm64/sukernel
-SHA1-Digest: Q+AT6hhoo+m7iLpE0cr8j2ofLk4=
+SHA1-Digest: Cr+HPtQG32k1NEYyapTnm8cVs/Y=
 
 Name: x86/sukernel
-SHA1-Digest: 0iB+zjscyiCXY9NnjxBSxyk/Wz0=
+SHA1-Digest: ub59m5pVBNh5SZzoQ0QTtvaNIzg=
 
 Name: x86/chattr
 SHA1-Digest: d0yiEf5ZywFzedOG8jPG1ienjFg=
@@ -33,7 +33,7 @@ Name: x86/chattr.pie
 SHA1-Digest: C8ut7KMVjn5rwy48gSKXGyHsalM=
 
 Name: armv7/sukernel
-SHA1-Digest: biz7FUCLXyFzngTtgk+Q6Ld49zs=
+SHA1-Digest: 22SISCC7rrex/WyE3/q7+tFJ+ro=
 
 Name: armv7/supolicy
 SHA1-Digest: VJ96RK/5oWmyn0AiKa1C/EyeQoE=
@@ -69,7 +69,7 @@ Name: x86/suinit
 SHA1-Digest: 3xavmvPXyisgRaqhNVb6eRfC6Y0=
 
 Name: META-INF/com/google/android/update-binary
-SHA1-Digest: KNq5zZ8MTWz2aF6I8sMXhYW+BBg=
+SHA1-Digest: m2q90qWdAqaMsWccSy+hTqnmJtE=
 
 Name: armv7/su
 SHA1-Digest: LUpVb/IzeY5jLkkFT3UB7GMIuV8=
@@ -81,7 +81,7 @@ Name: mips64/suinit
 SHA1-Digest: RaieN9dVx0s3ZCcxNphstw8tXC4=
 
 Name: mips64/sukernel
-SHA1-Digest: +Hp88C/KWdB7k4krTI/F1rvRqqg=
+SHA1-Digest: bEBLNCG0cMkaYGCoiiBI49690A0=
 
 Name: arm/chattr.pie
 SHA1-Digest: TRipcPCoh5V7zPuh4aPgQaCuVHA=
@@ -108,7 +108,7 @@ Name: common/init.supersu.rc
 SHA1-Digest: oHXJFumgmUGda4kz8NAyNHxrNIs=
 
 Name: arm/sukernel
-SHA1-Digest: vonGqCVC9+dHrtLmGRu7Zm9TFrY=
+SHA1-Digest: ZA/5wol6A/Nvc4gWQJRIbi0f0wc=
 
 Name: mips/chattr.pie
 SHA1-Digest: gBRBCos0XvQGncDfZqz/OzV1/dU=
@@ -147,7 +147,7 @@ Name: x64/libsupol.so
 SHA1-Digest: C2PPtKLx3fney8z4ZuloB1+aboI=
 
 Name: x64/sukernel
-SHA1-Digest: i3PbF2QViP1fRGMh5zWIeNDsO0Q=
+SHA1-Digest: ttuxR1Gbyk6LI6SAKgLSn1Z22+k=
 
 Name: arm64/supolicy
 SHA1-Digest: ul2F+VIZsHiq50TWmBJRXhCquv0=
@@ -162,10 +162,10 @@ Name: common/99SuperSUDaemon
 SHA1-Digest: gIoyt2gXURK+4PwhqFITPCmoZhc=
 
 Name: common/Superuser.apk
-SHA1-Digest: ltyb5cvJXnhbD9YoaZX/e/RQFMc=
+SHA1-Digest: KuCh1dCzVAHSc7rPQYyRqTyEHNM=
 
 Name: mips/sukernel
-SHA1-Digest: bvjCIKxqBHOkSpk5Y9iqxrtViAw=
+SHA1-Digest: 4lH0NVjoKF0rUXOxULMYxL94Ylc=
 
 Name: common/frp_install
 SHA1-Digest: wYURtoen2YYFsBhclLAt3vRwpeg=

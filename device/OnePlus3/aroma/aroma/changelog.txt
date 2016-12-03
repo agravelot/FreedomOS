@@ -1,3 +1,7 @@
+  UPDATE: SuperSU SR5
+  - Fix shell-based scripts/services possibly not being executed on 7.x firmwares
+  - Add SecurityLogAgent to Samsung KNOX detection
+  - sukernel: force seclabel
 1.7
   UPDATE: OxygenOS 3.2.8
   - Added 1080P 60FPS video recording

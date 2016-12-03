@@ -206,6 +206,8 @@
 # - Patches /init.environ.rc
 # --- Adds PATH variable if it does not exist
 # --- Prepends /su/bin to the PATH variable
+# - Patches /*.rc
+# --- Adds a seclabel to services and execs that are missing one
 # - Patches /file_contexts[.bin]
 # --- Adds a default context for file existing in the /su mount
 # - In case the device has the root directory inside the system partition:
@@ -1405,7 +1407,7 @@ else
 
     check_zero_def "- Creating mount point" "LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --cpio-mkdir /sutmp/ramdisk /sutmp/ramdisk 755 ${CPIO_PREFIX}su"
 
-    COMMAND="LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --patch /sutmp/ramdisk /sutmp/ramdisk $STOCKBOOTIMAGE"
+    COMMAND="LD_LIBRARY_PATH=$SYSTEMLIB /su/bin/sukernel --patch /sutmp/ramdisk /sutmp/ramdisk $STOCKBOOTIMAGE --sdk=$API"
     if ($KEEPVERITY); then
       COMMAND="$COMMAND --keep-verity"
     fi

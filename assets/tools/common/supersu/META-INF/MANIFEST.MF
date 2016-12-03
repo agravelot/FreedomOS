@@ -20,10 +20,10 @@ Name: x64/su
 SHA1-Digest: sNys4qSg2Lo6ylSIx0q8eWvTPlI=
 
 Name: arm64/sukernel
-SHA1-Digest: V5dQ01L0O8iSG2WP9Pa2w9HT1eY=
+SHA1-Digest: I1EzhxZdG6fVxdBzTQTTFFUBMjc=
 
 Name: x86/sukernel
-SHA1-Digest: 1WJOk+XHLQ26sU/OvRhuzN7R+Uo=
+SHA1-Digest: kBsJtcMttzF91CyiP29lkYFDVD4=
 
 Name: x86/chattr
 SHA1-Digest: +eQOboQk8DOLbKA7QigfBCqi4XY=
@@ -32,7 +32,7 @@ Name: x86/chattr.pie
 SHA1-Digest: HUwAneUqyxA+cof4C5ICXi+BnnM=
 
 Name: armv7/sukernel
-SHA1-Digest: Ax+rSCvhmnvffxt9q9s2iFPsgQo=
+SHA1-Digest: ODutwbbehqubTNHQwJdwxpj59t4=
 
 Name: armv7/supolicy
 SHA1-Digest: D2HyDXFjeG6I1sg07whad7WBDh0=
@@ -68,7 +68,7 @@ Name: x86/suinit
 SHA1-Digest: SR3Vxpwcnm2tKFLqvXXVpjLxQv8=
 
 Name: META-INF/com/google/android/update-binary
-SHA1-Digest: 3qh6d6wu4Ic0NArN++bp6cl4D3A=
+SHA1-Digest: 9YkhJzgxR1fIq366UDdbInOiUY4=
 
 Name: armv7/su
 SHA1-Digest: VrLrzstOaFwPvS3He3bEYpbLYaM=
@@ -80,7 +80,7 @@ Name: mips64/suinit
 SHA1-Digest: dYVtFZ/b0XtEsHvjAMVTl4mT7/E=
 
 Name: mips64/sukernel
-SHA1-Digest: qN7+0lDawVb4fDCcAPFn4jJhtmo=
+SHA1-Digest: h4ufF+u25rOrmSCx681VAMxBmpA=
 
 Name: arm/chattr.pie
 SHA1-Digest: qoEQYzse93l3q+ZogsUhBIhPVbw=
@@ -107,7 +107,7 @@ Name: common/init.supersu.rc
 SHA1-Digest: UbmdKppCl39FweaYDE8drDHe6fw=
 
 Name: arm/sukernel
-SHA1-Digest: VS1ZNpXDmGXFqkrbg1U6x+a98Kw=
+SHA1-Digest: uD7OT29jSrXdjvI5VrctkVjmpag=
 
 Name: mips/chattr.pie
 SHA1-Digest: ogeYjI3xhCLMro0LV/aapqg8XXY=
@@ -146,7 +146,7 @@ Name: x64/libsupol.so
 SHA1-Digest: GAN2IPAR3s9YjG3l0Pr8gx2a3OY=
 
 Name: x64/sukernel
-SHA1-Digest: QmprrARNkQE6MYaddDv3BR4a2/Y=
+SHA1-Digest: Ib5Ua8kft5+PWGiixqQbr4xeRtU=
 
 Name: arm64/supolicy
 SHA1-Digest: mpGquPqfIVe/rn2+Lb+6OoxkzHk=
@@ -161,10 +161,10 @@ Name: common/99SuperSUDaemon
 SHA1-Digest: 3AYSllvBRJ0eFpxgJghu8XgSuPQ=
 
 Name: common/Superuser.apk
-SHA1-Digest: k5iFlvhGdxz8gpUWY/aBaWGXvI0=
+SHA1-Digest: ezDZpd0ErQin5vNyxVDLJKTNcw8=
 
 Name: mips/sukernel
-SHA1-Digest: ckk1LQp9Lrfxmq5eGyVOOazdmGM=
+SHA1-Digest: /4C+K/hrHOK9MJwE6N8kUmK+5bo=
 
 Name: common/frp_install
 SHA1-Digest: EoU4dn5yRHArRmaXyJr0cSIVzqU=
