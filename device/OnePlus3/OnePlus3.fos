@@ -31,6 +31,8 @@ ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
 ROM_MD5=da145b41bf3cb5d19c70859437d3a2d9
 
+# Set Android version for selinux build script
+ANDROID_VERSION=6
 # Set the version of the aroma installer, this is not the version of FreedomOS!
 # see assets/META-INF/aroma/$AROMA_VERSION
 AROMA_VERSION=2.70

@@ -32,8 +32,17 @@ function dat_to_img {
   ${build_root}/tools/${HOST_ARCH}/unpackbootimg -i boot.img -o . >> ${build_log} 2>&1
   echo ">>>> Extracting ramdisk" 2>&1 | tee -a ${build_log}
   ${build_root}/tools/${HOST_ARCH}/abootimg-unpack-initrd boot.img-ramdisk.gz >> ${build_log} 2>&1
-  echo ">>>> Getting file_contexts" 2>&1 | tee -a ${build_log}
-  cp ${tmp_root}/boot/ramdisk/file_contexts ${tmp_root}/ >> ${build_log} 2>&1
+
+  if [[ $ANDROID_VERSION = 6 ]]; then
+    echo ">>>> Getting file_contexts" 2>&1 | tee -a ${build_log}
+    cp ${tmp_root}/boot/ramdisk/file_contexts ${tmp_root}/ >> ${build_log} 2>&1
+  elif [[ $ANDROID_VERSION = 7 ]]; then
+    echo ">>>> Getting file_contexts.bin" 2>&1 | tee -a ${build_log}
+    cp ${tmp_root}/boot/ramdisk/file_contexts.bin ${tmp_root}/ >> ${build_log} 2>&1
+    echo ">>>>> Convert into file_contexts" 2>&1 | tee -a ${build_log}
+    ${build_root}/tools/${HOST_ARCH}/sefcontext/sefcontext -o ${tmp_root}/file_contexts ${tmp_root}/file_contexts.bin >> ${build_log} 2>&1
+    rm -vf ${tmp_root}/file_contexts.bin >> ${build_log} 2>&1
+  fi
 
   cd ${tmp_root}
   echo ">> Extracting system.new.dat" 2>&1 | tee -a ${build_log}
