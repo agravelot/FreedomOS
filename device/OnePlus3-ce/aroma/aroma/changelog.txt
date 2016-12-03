@@ -1,4 +1,5 @@
 2.0-CE
+  UPDATE: Nougat build, based OpenBeta 8
   UPDATE: SuperSU SR5
   - Fix shell-based scripts/services possibly not being executed on 7.x firmwares
   - Add SecurityLogAgent to Samsung KNOX detection
