@@ -9,6 +9,7 @@
           Will come back later.
   UPDATE: Firmwares binaries
   REMOVE: Multi Windows in aroma, it's now built-in into the rom
+  REMOVE: Dpi selection in aroma, it's now built-in into the rom
 
 1.11.1-CE
   UPDATE: ElementalX 0.28

@@ -2,10 +2,13 @@
   - Fix shell-based scripts/services possibly not being executed on 7.x firmwares
   - Add SecurityLogAgent to Samsung KNOX detection
   - sukernel: force seclabel
+  UPDATE: Firmwares binaries
   UPDATE: ElementalX 0.30
   - OnePlus updates
   - security updates
   - installer update
+  REMOVE: FreedomOS 1.0 IRS/Profile
+  ADD: Arise Audiophile IRS/Profile
   
 1.7
   UPDATE: OxygenOS 3.2.8
