@@ -403,13 +403,6 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
     set_metadata("/system/fonts/NotoColorEmoji.ttf", "uid", 0, "gid", 0,  "mode", 0644);
 endif;
 
-# -- - MULTI WINDOW - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
-  then
-    ui_print("   Enabling Multi Window");
-    run_program("/tmp/tools/multi_window.sh");
-endif;
-
 # -- - NO THEME - -- #
 if (file_getprop("/tmp/aroma/theme.prop", "selected.1")=="1")
   then

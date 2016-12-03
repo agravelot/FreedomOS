@@ -217,8 +217,7 @@ checkbox(
     "<~adb>", "<~info.adb>", 0,
     "<~dns>", "<~info.dns>", 0,
     "<~fos_wallpapers>", "<~info.fos_wallpapers>", 1,
-    "<~emoji_one>", "<~info.emoji_one>", 1,
-    "<~multi_window>", "<~info.multi_window>", 0
+    "<~emoji_one>", "<~info.emoji_one>", 1
 );
 
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1") then
