@@ -363,7 +363,7 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
 
     delete("/system/lib/modules/wlan.ko");
     package_extract_file("tools/elementalx/boot/wlan.ko","/system/lib/modules/wlan.ko");
-    set_metadata_recusive("/system/lib/modules", "uid", 0, "gid", 0, "dmode", 0755, "fmode", "0644");
+    set_metadata_recursive("/system/lib/modules", "uid", 0, "gid", 0, "dmode", 0755, "fmode", "0644");
 
     ui_print("   Customizing ramdisk");
     run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
