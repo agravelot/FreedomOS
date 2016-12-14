@@ -31,6 +31,10 @@ if [ $(grep -c "modules.img" /tmp/ramdisk/init.qcom.rc) == 0 ]; then
    sed -i "/on boot/a\ \ \ \ mount ext4 loop\@\/modules\.img \/system\/lib\/modules noatime ro" /tmp/ramdisk/init.qcom.rc
 fi
 
+#allow mounting
+chmod 0750 /tmp/sepolicy-inject
+/tmp/sepolicy-inject -s init -t system_file -c dir -p mounton -P /tmp/ramdisk/sepolicy
+
 #copy elementalx scripts
 cp /tmp/init.elementalx.rc /tmp/ramdisk/init.elementalx.rc
 chmod 0750 /tmp/ramdisk/init.elementalx.rc
