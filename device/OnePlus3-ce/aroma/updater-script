@@ -422,45 +422,51 @@ endif;
 if (file_getprop("/tmp/aroma/gapps.prop", "item.1.6") == "0")
   then
     ui_print("   Removing Gmail ");
+    delete_recursive("/system/app/Duo");
+endif;
+
+if (file_getprop("/tmp/aroma/gapps.prop", "item.1.7") == "0")
+  then
+    ui_print("   Removing Gmail ");
     delete_recursive("/system/app/Gmail2");
     run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.gm-*");
 endif;
 
-if (file_getprop("/tmp/aroma/gapps.prop", "item.1.7") == "0")
+if (file_getprop("/tmp/aroma/gapps.prop", "item.1.8") == "0")
   then
     ui_print("   Removing Gmail Exchange ");
   	delete_recursive("/system/app/GmailExchange");
 endif;
 
-if (file_getprop("/tmp/aroma/gapps.prop", "item.1.8") == "0")
+if (file_getprop("/tmp/aroma/gapps.prop", "item.1.9") == "0")
   then
     ui_print("   Removing Google ");
 		delete_recursive("/system/priv-app/Velvet");
     run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.googlequicksearchbox-*");
 endif;
 
-if (file_getprop("/tmp/aroma/gapps.prop", "item.1.9") == "0")
+if (file_getprop("/tmp/aroma/gapps.prop", "item.1.10") == "0")
   then
     ui_print("   Removing Messenger ");
     delete_recursive("/system/app/Messenger");
     run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.apps.messaging-*");
 endif;
 
-if (file_getprop("/tmp/aroma/gapps.prop", "item.1.10") == "0")
+if (file_getprop("/tmp/aroma/gapps.prop", "item.1.11") == "0")
   then
     ui_print("   Removing Google Photos ");
     delete_recursive("/system/app/Photos");
     run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.apps.photos-*");
 endif;
 
-if (file_getprop("/tmp/aroma/gapps.prop", "item.1.11") == "0")
+if (file_getprop("/tmp/aroma/gapps.prop", "item.1.12") == "0")
   then
     ui_print("   Removing Google Play Music ");
     delete_recursive("/system/app/Music2");
     run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.google.android.music-*");
 endif;
 
-if (file_getprop("/tmp/aroma/gapps.prop", "item.1.12") == "0")
+if (file_getprop("/tmp/aroma/gapps.prop", "item.1.13") == "0")
   then
     ui_print("   Removing YouTube");
     delete_recursive("/system/app/YouTube");

@@ -167,6 +167,7 @@ checkbox(
      "<~call_log>", "<~info.call_log>", 1,
      "<~chrome>", "<~info.chrome>", 1,
      "<~drive>", "<~info.drive>", 1,
+     "<~duo>", "<~info.duo>", 0,
      "<~gmail>", "<~info.gmail>", 1,
      "<~gmail_exchange>", "<~info.gmail_exchange>", 0,
      "<~google>", "<~info.google>", 1,
