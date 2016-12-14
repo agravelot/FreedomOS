@@ -62,6 +62,11 @@ addon_yes=Oui
 info.addon_yes=Recommandé dirty flash
 addon_no=Non
 info.addon_no=Pour flash propre
+firmware.tittle=Sélectionnez vos micro logiciels
+fw_mm=Micro logiciels Marshmallow
+info.fw_mm=Supporte plus de variante TWRP
+fw_n=Micro logiciels Nougat
+info.fw_n=Conseillé
 
 info.custom=Méthode FreedomOS
 info.stock=Stock d'origine, non modifié

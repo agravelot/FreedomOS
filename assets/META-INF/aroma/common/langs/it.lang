@@ -63,6 +63,11 @@ addon_yes=Si
 info.addon_yes=Raccomandato per un dirty flash
 addon_no=No
 info.addon_no=Per installazione pulita
+firmware.tittle=Select your firmware
+fw_mm=Marshmallow firmwares
+info.fw_mm=Support more TWRP variant
+fw_n=Nougat firmwares
+info.fw_n=Recommended
 
 info.custom=The Freedom way
 info.stock=Oneplus Stock originale, No root

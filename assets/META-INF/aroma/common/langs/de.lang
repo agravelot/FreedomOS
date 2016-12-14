@@ -62,6 +62,11 @@ addon_yes=Ja
 info.addon_yes=Emfohlen für einen "dirty flash"
 addon_no=Nein
 info.addon_no=Für einen sauberen "flash"
+firmware.tittle=Select your firmware
+fw_mm=Marshmallow firmwares
+info.fw_mm=Support more TWRP variant
+fw_n=Nougat firmwares
+info.fw_n=Recommended
 
 info.custom=Der "Freedom-Way" (Freiheitspfad)
 info.stock=Original OnePlus Betreibssystem, nicht gerooted

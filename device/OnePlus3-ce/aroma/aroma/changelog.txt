@@ -7,6 +7,8 @@
   - Battery Performance Optimizations
   - Stability and Performance Optimizations
   - General bug fixes
+  ADD: Option to select the firmawre version (Read FAQ for more)
+
 2.0-CE
   UPDATE: Nougat build, based OpenBeta 8
   UPDATE: SuperSU SR5

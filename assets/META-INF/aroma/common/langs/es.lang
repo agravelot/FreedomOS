@@ -58,6 +58,12 @@ addon_yes=Si
 info.addon_yes=Recomendado para instalaciones "sucias" (Sin formatear el terminal)
 addon_no=No
 info.addon_no=Para instalaciones "limpias" (Formateando el terminal)
+firmware.tittle=Select your firmware
+fw_mm=Marshmallow firmwares
+info.fw_mm=Support more TWRP variant
+fw_n=Nougat firmwares
+info.fw_n=Recommended
+
 info.custom=The Freedom way
 info.stock=Rom Original OnePlus stock, sin root
 info.assert_yes=Comprobar la versión en build.prop
