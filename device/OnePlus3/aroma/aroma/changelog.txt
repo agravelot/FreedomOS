@@ -16,6 +16,7 @@
   - Add SecurityLogAgent to Samsung KNOX detection
   - sukernel: force seclabel
   UPDATE: Firmwares binaries
+  ADD: Option to install wifi module (ElementalX).
   UPDATE: ElementalX 0.32
   - cpuidle patch
   UPDATE: ElementalX 0.31

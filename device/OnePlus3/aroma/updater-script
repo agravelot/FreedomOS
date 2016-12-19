@@ -559,9 +559,13 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
     set_metadata("/tmp/buildconfig.sh", "uid", 0, "gid", 0, "mode", 0777);
     run_program("/tmp/buildconfig.sh");
 
-    delete("/system/lib/modules/wlan.ko");
-    package_extract_file("tools/elementalx/boot/wlan.ko","/system/lib/modules/wlan.ko");
-    set_metadata_recusive("/system/lib/modules", "uid", 0, "gid", 0, "dmode", 0755, "fmode", "0644");
+    if
+       file_getprop("/tmp/aroma/mods.prop","item.0.3") == "1"
+    then
+      delete("/system/lib/modules/wlan.ko");
+      package_extract_file("tools/elementalx/boot/wlan.ko","/system/lib/modules/wlan.ko");
+      set_metadata_recusive("/system/lib/modules", "uid", 0, "gid", 0, "dmode", 0755, "fmode", "0644");
+    endif;
 
     ui_print("   Customizing ramdisk");
     run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
