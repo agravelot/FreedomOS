@@ -16,6 +16,8 @@
   - Add SecurityLogAgent to Samsung KNOX detection
   - sukernel: force seclabel
   UPDATE: Firmwares binaries
+  UPDATE: ElementalX 0.32
+  - cpuidle patch
   UPDATE: ElementalX 0.31
   - security updates
   - update installer
