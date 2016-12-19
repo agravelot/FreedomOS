@@ -1,3 +1,16 @@
+1.7.1
+  UPDATE: Moxie v8
+  - Update to Linux 3.18.45 (LTS support for this kernel is due to end next month, so I'm not certain if there will be any further updates from the mainline)
+  - disabled WiFi debugging code: I saw this in franco's git and was surprised I never noticed it myself. It shrinks the code down by about half a meg
+  - random: a couple more patches courtesy of franco's git
+  - Bluetooth: I was always bothered by a compilation warning about a missing parameter in hci_sock.c so pulled in some updates from upstream and fixed it
+  - improved hash load efficiency
+  - properly round msm8996 clock rates: found in kairi_zeroblade's git. It ensures that the most efficient clock frequency is selected (incorrect rounding might select an unnecessarily higher step)
+  UPDATE: Moxie v7
+  - updated to oneplus source for 3.2.8
+  - trawled through franco's git and came up with some cypher updates
+  - linux 3.18.45
+  - patch kernel exploit 'CVE-2016-8655 Linux af_packet.c race condition (local root)', thanks to @Haggster66 (see this post and here's the patch if other devs want to use it)
   UPDATE: SuperSU SR5
   - Fix shell-based scripts/services possibly not being executed on 7.x firmwares
   - Add SecurityLogAgent to Samsung KNOX detection
