@@ -1,4 +1,6 @@
 1.7.1
+  REMOVE: Google DeskClock
+  ADD: OnePlus DeskClock
   UPDATE: Moxie v8
   - Update to Linux 3.18.45 (LTS support for this kernel is due to end next month, so I'm not certain if there will be any further updates from the mainline)
   - disabled WiFi debugging code: I saw this in franco's git and was surprised I never noticed it myself. It shrinks the code down by about half a meg
