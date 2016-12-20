@@ -288,6 +288,14 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
     set_metadata("/system/fonts/NotoColorEmoji.ttf", "uid", 0, "gid", 0,  "mode", 0644);
 endif;
 
+# -- - Google Assistant - -- #
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
+  then
+  set_progress(0.94000);
+   ui_print("   Setting up Google Assistant");
+   run_program("/tmp/tools/assistant.sh");
+endif;
+
 # -- - NO THEME - -- #
 if (file_getprop("/tmp/aroma/theme.prop", "selected.1")=="1")
   then

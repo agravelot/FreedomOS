@@ -221,6 +221,7 @@ checkbox(
     "<~dns>", "<~info.dns>", 0,
     "<~fos_wallpapers>", "<~info.fos_wallpapers>", 1,
     "<~emoji_one>", "<~info.emoji_one>", 1
+	"<~google_assistant>", "<~info.google_assistant>", 1
 );
 
 # -- - THEME - -- #

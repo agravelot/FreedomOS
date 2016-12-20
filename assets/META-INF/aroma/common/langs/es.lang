@@ -220,7 +220,9 @@ adb=Activar ADB
 dns=DNS de Google
 fos_wallpapers=Fondos de pantalla de FreedomOS
 emoji_one=EmojiOne
+google_assistant=Google Assistant
 multi_window=Multi ventanas
+
 info.supersu=SuperSU v2.78 SR5 de Chainfire
 info.divine=Divine beats de Theroyalseeker
 info.xposed=Instalador Xposed de DVD android
@@ -229,6 +231,7 @@ info.adb=Android Debugging Bridge
 info.dns=Asignar las DNS 8.8.8.8/8.8.4.4
 info.fos_wallpapers=Diseñado por @badboy47
 info.emoji_one=El emoji estándar
+info.google_assistant=Google Assistant
 info.multi_window=Habilitar la multi ventana
 # -- - THEME - -- #
 theme.tittle=Temas

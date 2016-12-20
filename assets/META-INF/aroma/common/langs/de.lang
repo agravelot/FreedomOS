@@ -238,6 +238,7 @@ adb=Aktiviere ADB
 dns=Google DNS
 fos_wallpapers=FreedomOS Wallpapers
 emoji_one=EmojiOne
+google_assistant=Google Assistant
 multi_window=Multi Window
 
 info.supersu=SuperSU v2.78 SR5 von Chainfire
@@ -248,6 +249,7 @@ info.adb=Android Debugging Bridge
 info.dns=Aktiviere DNS 8.8.8.8/8.8.4.4
 info.fos_wallpapers=Designed von @badboy47
 info.emoji_one=The Open Emoji Standard
+info.google_assistant=Google Assistant
 info.multi_window=Aktiviere Multi Window
 
 # -- - THEME - -- #

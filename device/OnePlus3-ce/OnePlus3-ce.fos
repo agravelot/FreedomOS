@@ -104,6 +104,7 @@ common/addon
 common/clean.sh
 common/fonts
 common/google_dns.sh
+common/google_assistant.sh
 common/hosts
 common/kernel
 common/supersu
