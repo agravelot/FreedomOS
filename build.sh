@@ -82,6 +82,11 @@ function initialize {
   normal=$(tput sgr0)
   clears=$(tput clear)
 
+  #Gapps
+  GAPPS_LINK="https://github.com/opengapps/arm64/releases/download/20161201/open_gapps-arm64-7.0-nano-20161201.zip
+  GAPPS_NAME="open_gapps-arm64-7.0-nano-20161201.zip"
+  GAPPS_MD5="344e8fed17049a6bfc4cc906427e956e"
+  
   # create folder structure
   cd ${top_root}
   test -d ${tmp_root} || mkdir -p ${tmp_root}
@@ -276,6 +281,30 @@ function download_rom {
   echo
 }
 
+function download_gapps {
+    echo "> Downloading & Checking gapps ..." 2>&1 | tee -a ${build_log}
+    if [ ! -f  ${download_root}/${GAPPS_NAME}.zip ]; then
+    echo ">> File ${GAPPS_NAME}.zip does not exist. Downloading ..." 2>&1 | tee -a ${build_log}
+
+    if curl -Is ${GAPPS_LINK} | grep "200 OK" &> /dev/null
+    then
+      curl -o ${download_root}/${GAPPS_NAME}.zip ${GAPPS_LINK} | tee -a ${build_log}
+    else
+      die "${GAPPS_NAME} mirror OFFLINE! Check your connection" "10"
+    fi
+  else
+    echo ">> Checking MD5 of ${GAPPS_NAME}.zip" 2>&1 | tee -a ${build_log}
+
+    if [[ ${GAPPS_MD5} == $(md5sum ${download_root}/${GAPPS_NAME}.zip | cut -d ' ' -f 1) ]]; then
+      echo ">>> MD5 ${GAPPS_NAME}.zip checksums OK." 2>&1 | tee -a ${build_log}
+    else
+      echo ">>> File ${GAPPS_NAME}.zip is corrupt, restarting download" 2>&1 | tee -a ${build_log}
+      mv -vf ${download_root}/${GAPPS_NAME}.zip ${download_root}/${GAPPS_NAME}.zip.bak >> ${build_log} 2>&1
+      download_gapps
+    fi
+  fi
+}
+
 function extract_rom {
   if [ ! -f ${rom_root}/${device}/${ROM_NAME}/system.new.dat ]; then
     echo ">> Extracting rom zip" 2>&1 | tee -a ${build_log}
@@ -293,6 +322,7 @@ if [ $confirm_build -eq 1 ]; then
   cleanup
   update_tools
   download_rom
+  download_gapps
   extract_rom
   build
   add_files
