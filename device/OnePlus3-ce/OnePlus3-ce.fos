@@ -32,6 +32,11 @@ ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
 ROM_MD5=62e9c8e8aa6cc2a33943ad11f325858e
 
+# OpenGapps
+GAPPS_NAME="open_gapps-arm64-7.0-aroma-20161220"
+GAPPS_MD5="3f9cdd3d20e044f1ff641f296f8d94ae"
+GAPPS_LINK="https://github.com/opengapps/arm64/releases/download/20161220/$GAPPS_NAME.zip"
+
 # Set Android version for selinux build script
 ANDROID_VERSION=7
 # Set the version of the aroma installer, this is not the version of FreedomOS!
