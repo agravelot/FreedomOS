@@ -183,7 +183,7 @@ ui_print(" ");
 ui_print("@Installing A.R.I.S.E");
 run_program("/tmp/tools/busybox", "echo", "DEBUG: Move arise to /tmp/tools/arise ->  /tmp/zip ");
 run_program("/tmp/tools/busybox", "mv", "/tmp/tools/arise", "/tmp/zip");
-run_program("/tmp/tools/busybox", "sh", "/tmp/arise/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/arise/dummy.zip");
+run_program("/tmp/tools/busybox", "sh", "/tmp/zip/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/arise/dummy.zip");
 
 # -- - MOD - -- #
 set_progress(0.720000);
