@@ -1,0 +1,72 @@
+#!/system/bin/sh
+#
+# ARISE Sound Systems™
+#
+# Deuteronomy™
+#
+# arisesound_setprop
+#
+# www.arisesound.com
+
+
+
+## Vivo™ V3 Max Audio ##
+
+#
+setprop ro.config.audio.speaker_boost yes
+setprop ro.mtk_audio_profiles 1
+setprop ro.mtk_audenh_support 1
+setprop ro.mtk_besloudness_support 1
+setprop ro.mtk_bessurround_support 1
+setprop ro.mtk_bt_support 1
+setprop ro.mtk_dolby_dap_support 1
+setprop ro.mtk_audio_tuning_tool_ver V1
+setprop ro.have_aacencode_feature 1
+setprop ro.mtk_audio_ape_support 1
+setprop ro.mtk_flv_playback_support 1
+setprop ro.mtk_wmv_playback_support 1
+#
+
+## Vivo™ X7 Plus Audio ##
+
+#
+setprop ro.config.hifi_config_state 2
+setprop persist.vivo.phone.hifi Have_hifi
+setprop ro.config.hifi_always_on yes
+
+## Miscellaneous Audio ##
+
+#
+#Hi-Res option for PowerAmp
+setprop ro.lenovo.hifi_support true
+#
+#Disable property for Dolby ds2
+setprop audio.dolby.ds2.enabled true
+#
+#Disable property for hard bypass
+setprop audio.dolby.ds2.hardbypass true
+#
+setprop audio.offload.pcm.enable true
+setprop audio.offload.pcm.16bit.enable true
+setprop audio.offload.pcm.24bit.enable true
+setprop tunnel.audiovideo.decode false
+setprop tunnel.decode false
+setprop lpa.decode false
+setprop lpa.releaselock false
+setprop lpa.use-stagefright false
+setprop tunnel.decode false
+setprop sys.keep_app_1 com.audlabs.viperfx
+setprop sys.keep_app_2 com.vipercn.viper4android_v2
+setprop sys.keep_app_3 com.atmos
+setprop sys.keep_app_4 com.atmos.daxappUI
+#
+
+sleep 20
+
+LOG_FILE=/data/local/arisesound_setprop_run.log;
+
+if [ -e /data/local/arisesound_setprop_run.log ]; then
+    rm /data/local/arisesound_setprop_run.log
+fi
+
+echo "arisesound_setprop has run successfully $(date +"%m-%d-%Y %H:%M:%S")" | tee -a $LOG_FILE;

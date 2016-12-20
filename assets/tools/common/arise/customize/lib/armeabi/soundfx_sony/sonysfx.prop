@@ -1,0 +1,6 @@
+
+# Sony™ Xperia Compact C AOSP and Qualcomm™ libraries
+
+# The purpose of /soundfx_sony is to provide full functionality of selected soundfx libraries while not interfering with the native soundfx libraries on the device, allowing both groups to work in harmony with no compromise to the existing system.
+
+# This /soundfx_sony folder will only appear on non-Sony™ Qualcomm™ devices.

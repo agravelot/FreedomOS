@@ -1,0 +1,3 @@
+The following is a list of models that the included license file enables DTS Sound on: 
+model_list=*
+
