@@ -83,7 +83,7 @@ function initialize {
   clears=$(tput clear)
 
   #Gapps
-  GAPPS_LINK="https://github.com/opengapps/arm64/releases/download/20161201/open_gapps-arm64-7.0-nano-20161201.zip
+  GAPPS_LINK="https://github.com/opengapps/arm64/releases/download/20161201/open_gapps-arm64-7.0-nano-20161201.zip"
   GAPPS_NAME="open_gapps-arm64-7.0-nano-20161201.zip"
   GAPPS_MD5="344e8fed17049a6bfc4cc906427e956e"
   
