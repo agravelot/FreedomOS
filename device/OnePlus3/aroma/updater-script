@@ -196,10 +196,10 @@ ui_print(" ");
 ui_print("   Installing FreedomOS Patched Kernel");
 run_program("/tmp/tools/busybox", "echo", "DEBUG: Extracting patch");
 package_extract_dir("tools/kernel/config", "/tmp");
-set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata("/tmp/tools/busybox", "uid", 0, "gid", 0, "mode", 0777);
 
-run_program("/tmp/busybox", "fstrim", "/cache");
-run_program("/tmp/busybox", "fstrim", "/data");
+run_program("/tmp/tools/busybox", "fstrim", "/cache");
+run_program("/tmp/tools/busybox", "fstrim", "/data");
 
 package_extract_dir("tools/kernel/boot", "/tmp");
 
@@ -212,14 +212,14 @@ set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "mode", 0777);
 set_metadata("/tmp/clean.sh", "uid", 0, "gid", 0, "mode", 0777);
 
 ui_print("   Customizing ramdisk");
-run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
+run_program("/tmp/tools/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
 run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
 run_program("/tmp/cmdline.sh");
 run_program("/tmp/editramdisk.sh");
 run_program("/tmp/makebootimg.sh");
 
 ui_print("   Installing kernel");
-run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
+run_program("/tmp/tools/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
 
 run_program("/tmp/clean.sh");
 
@@ -541,10 +541,10 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
     ui_print(" ");
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Extracting EX files");
     package_extract_dir("tools/elementalx/config", "/tmp");
-    set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "mode", 0777);
+    set_metadata("/tmp/tools/busybox", "uid", 0, "gid", 0, "mode", 0777);
 
-    run_program("/tmp/busybox", "fstrim", "/cache");
-    run_program("/tmp/busybox", "fstrim", "/data");
+    run_program("/tmp/tools/busybox", "fstrim", "/cache");
+    run_program("/tmp/tools/busybox", "fstrim", "/data");
 
     package_extract_dir("tools/elementalx/boot", "/tmp");
 
@@ -568,14 +568,14 @@ if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
     endif;
 
     ui_print("   Customizing ramdisk");
-    run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
+    run_program("/tmp/tools/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
     run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
     run_program("/tmp/cmdline.sh");
     run_program("/tmp/editramdisk.sh");
     run_program("/tmp/makebootimg.sh");
 
     ui_print("   Installing kernel");
-    run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
+    run_program("/tmp/tools/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
 endif;
 
 # -- - MOXIE - -- #
