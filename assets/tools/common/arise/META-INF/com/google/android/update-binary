@@ -256,9 +256,9 @@ if [ -f "$VETC/$POL" ] && [ ! "$OP3" ]; then
   $SP $VETC/$POL 0 0 0644
 fi
 
-#mkdir $ARISE
-#cd $ARISE
-#unzip -o "$ZIP"
+mkdir $ARISE
+cd $ARISE
+unzip -o "$ZIP"
 cd $ARISE
 
 if [ ! -e "$SYS$VLIB/$SRS" ] || [ ! -e "$LIB/$SRS" ]; then
