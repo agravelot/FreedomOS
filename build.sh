@@ -99,6 +99,7 @@ function initialize {
   source ${scripts_root}/dat_to_img.sh
   source ${scripts_root}/make_zip.sh
   source ${scripts_root}/add_files.sh
+  source ${scripts_root}/arise.sh
 
   HOST_ARCH=`uname -m`
   HOST_OS=`uname -s`
@@ -321,6 +322,7 @@ if [ $confirm_build -eq 1 ]; then
   extract_rom
   build
   add_files
+  build_arise
   make_zip
 fi
 
