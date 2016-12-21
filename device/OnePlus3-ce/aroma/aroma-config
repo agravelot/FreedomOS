@@ -154,7 +154,11 @@ selectbox(
   "<~firmware.tittle>", "", 2,
     "<~fw_mm>", "<~info.fw_mm>", 0,
     "<~fw_n>", "<~info.fw_n>", 1
+   "<~passwordfix.tittle>", "", 2,
+    "<~passwordfix_yes>", "<~info.passwordfix_yes>", 1,
+    "<~passwordfix_no>", "<~info.passwordfix_no>", 0,
 );
+
 
 # -- - GOOGLE APPS - -- #
 ini_set("text_next", "<~text_next>");

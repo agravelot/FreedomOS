@@ -67,6 +67,11 @@ fw_mm=Micro logiciels Marshmallow
 info.fw_mm=Supporte plus de variante TWRP
 fw_n=Micro logiciels Nougat
 info.fw_n=Conseillé
+passwordfix.tittle=Pin/Pattern workaround
+passwordfix_yes=yes
+info.passwordfix_yes=Remove Pin/Pattern backup in data partition
+passwordfix_no=no
+info.passwordfix_no=let the old file 
 
 info.custom=Méthode FreedomOS
 info.stock=Stock d'origine, non modifié
