@@ -318,7 +318,9 @@ if [ $confirm_build -eq 1 ]; then
   cleanup
   update_tools
   download_rom
-  download_gapps
+  if [ ! -z GAPPS_NAME ]; then
+    download_gapps
+  fi
   extract_rom
   build
   add_files
