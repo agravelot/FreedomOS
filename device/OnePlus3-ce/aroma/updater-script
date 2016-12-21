@@ -160,6 +160,7 @@ endif;
 
 # -- - pin/patern fix - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
+  then
     set_metadata("/tmp/clean.sh", "uid", 0, "gid", 0, "mode", 0777);
     run_program("/tmp/clean.sh");
     ui_print("   Fixing rom pin/pattern");
