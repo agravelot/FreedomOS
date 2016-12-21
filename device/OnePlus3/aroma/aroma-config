@@ -53,7 +53,7 @@ selectbox(
   "<~language.english>", "<~language.english.info>", 1,
   "<~language.italian>", "<~language.italian.info>", 0,
   "<~language.german>", "<~language.german.info>", 0,
-  "<~language.spanish>", "language.spanish.info", 0
+  "<~language.spanish>", "<~language.spanish.info>", 0
 );
 
 # -- - SET LANGUAGE - -- #
