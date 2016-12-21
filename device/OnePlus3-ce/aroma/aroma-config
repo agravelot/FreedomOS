@@ -241,14 +241,6 @@ selectbox(
     "<~no_splash>", "", 0
 );
 
-# -- - KERNEL - -- #
-selectbox(
-  "<~kernel.tittle>", "<~kernel.tittle2>", "@personalize", "kernel.prop",
-
-  "<~kernel_stock>", "<~info.kernel_stock>", 1
-#  "<~elementalx>", "<~info.elementalx>", 0
-);
-
 # -- - ELEMENTALX - -- #
 if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2") then
 

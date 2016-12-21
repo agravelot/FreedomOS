@@ -342,64 +342,6 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.2")=="2")
     package_extract_file("tools/splash-stock.bin", "/dev/block/sde17");
 endif;
 
-# -- - ELEMENTALX - -- #
-if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="2")
-  then
-    set_progress(0.980);
-    ui_print(" ");
-    ui_print("@Installing ElementalX");
-    ui_print(" ");
-    run_program("/tmp/tools/busybox", "echo", "DEBUG: Extracting EX files");
-    package_extract_dir("tools/elementalx/config", "/tmp");
-    set_metadata("/tmp/busybox", "uid", 0, "gid", 0, "mode", 0777);
-
-    run_program("/tmp/busybox", "fstrim", "/cache");
-    run_program("/tmp/busybox", "fstrim", "/data");
-
-    package_extract_dir("tools/elementalx/boot", "/tmp");
-
-    run_program("/tmp/tools/busybox", "echo", "DEBUG: Set permissions");
-    set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "mode", 0777);
-    set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "mode", 0777);
-    set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "mode", 0777);
-    set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "mode", 0777);
-    set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "mode", 0777);
-
-    ui_print("   Creating config");
-    set_metadata("/tmp/buildconfig.sh", "uid", 0, "gid", 0, "mode", 0777);
-    run_program("/tmp/buildconfig.sh");
-
-    delete("/system/lib/modules/wlan.ko");
-    package_extract_file("tools/elementalx/boot/wlan.ko","/system/lib/modules/wlan.ko");
-    set_metadata_recursive("/system/lib/modules", "uid", 0, "gid", 0, "dmode", 0755, "fmode", "0644");
-
-    ui_print("   Customizing ramdisk");
-    run_program("/tmp/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
-    run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
-    run_program("/tmp/cmdline.sh");
-    run_program("/tmp/editramdisk.sh");
-    run_program("/tmp/makebootimg.sh");
-
-    ui_print("   Installing kernel");
-    run_program("/tmp/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
-endif;
-
-# -- - MOXIE - -- #
-if (file_getprop("/tmp/aroma/kernel.prop", "selected.0")=="3")
-  then
-    ui_print("   Borking quangos...");
-    package_extract_dir("tools/moxie/kernel", "/tmp");
-    set_metadata("/tmp/mods.sh", "uid", 0, "gid", 0, "mode", 0777);
-    set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "mode", 0777);
-    set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "mode", 0777);
-    ui_print("   Loosening torx screws...");
-    run_program("/tmp/mods.sh");
-    ui_print("   Deploying mangos...");
-    delete_recursive("/system/lib/modules");
-    package_extract_dir("tools/moxie/system","/system");
-    set_metadata_recursive("/system/lib/modules", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644);
-    ui_print("   Fork handles!!!!");
-endif;
 
 # -- - Google apps - -- #
 set_progress(0.940000);
