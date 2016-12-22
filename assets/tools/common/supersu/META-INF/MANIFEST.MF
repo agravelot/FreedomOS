@@ -5,7 +5,7 @@ Name: META-INF/com/google/android/updater-script
 SHA1-Digest: Jo096EthS+3+nBqxffEDmY/Ymxo=
 
 Name: x64/supolicy
-SHA1-Digest: FSQ42F5FzW8c759m112mWSyhP1o=
+SHA1-Digest: MQCJldNrGEFSSJp//oFurLHLAtw=
 
 Name: common/launch_daemonsu.sh
 SHA1-Digest: qIZLzTt7t6kvlnPGmGLbWMJaDI0=
@@ -13,17 +13,20 @@ SHA1-Digest: qIZLzTt7t6kvlnPGmGLbWMJaDI0=
 Name: armv7/libsupol.so
 SHA1-Digest: Mnjt7DcM1TUaFUqY6a19JfVLq/0=
 
+Name: common/init.supersu.rc.24
+SHA1-Digest: qOUwa2nK9JTx7ucbkNuy0kbzpE8=
+
 Name: arm/su
-SHA1-Digest: GpCvAR3amy5YGtfECW5uxzu5pQs=
+SHA1-Digest: wt+pB9Lx64/23G8kMH1iC+Yt7UI=
 
 Name: x64/su
-SHA1-Digest: sNys4qSg2Lo6ylSIx0q8eWvTPlI=
+SHA1-Digest: 1XNHBn+CQRm4x5a8C8s0JchWATc=
 
 Name: arm64/sukernel
-SHA1-Digest: I1EzhxZdG6fVxdBzTQTTFFUBMjc=
+SHA1-Digest: +tGOyRp/mfj82rQDuP4IElPKskw=
 
 Name: x86/sukernel
-SHA1-Digest: kBsJtcMttzF91CyiP29lkYFDVD4=
+SHA1-Digest: R5E7zoqZkpnscxNih931ScdFVEM=
 
 Name: x86/chattr
 SHA1-Digest: +eQOboQk8DOLbKA7QigfBCqi4XY=
@@ -32,16 +35,16 @@ Name: x86/chattr.pie
 SHA1-Digest: HUwAneUqyxA+cof4C5ICXi+BnnM=
 
 Name: armv7/sukernel
-SHA1-Digest: ODutwbbehqubTNHQwJdwxpj59t4=
+SHA1-Digest: AsQn5Dya3CzE6fy3qqN9yHzKr74=
 
 Name: armv7/supolicy
-SHA1-Digest: D2HyDXFjeG6I1sg07whad7WBDh0=
+SHA1-Digest: /QW+HnTWLcx+AFT9XP+GIT10Ong=
 
 Name: mips64/su
-SHA1-Digest: +T2+snYgGSsij58qj0V+XJYG9XA=
+SHA1-Digest: ONcQABPKsDtfcCAOUMB3IvWyeh4=
 
 Name: mips/supolicy
-SHA1-Digest: j9NptOclyZVK+K5UTdW1S2frrF8=
+SHA1-Digest: 8tA5b6h44f2WJi+v0VO9z4Ajv/8=
 
 Name: common/000000deepsleep
 SHA1-Digest: xVb3U9CpLu3S9z7JOycfYlqoHhA=
@@ -56,7 +59,7 @@ Name: common/chromeos/kernel.bootloader
 SHA1-Digest: rcg7GeeTSRscbqD9i0bNnzLlkvw=
 
 Name: arm64/su
-SHA1-Digest: Ax+0Skya7XPqjmCNsKdUuLw8gYU=
+SHA1-Digest: wNELMmFHYteKlUQqQyuCRL0eXwM=
 
 Name: arm/chattr
 SHA1-Digest: Fkc4cFVlxcol86TUh1wc7i45TeM=
@@ -68,25 +71,25 @@ Name: x86/suinit
 SHA1-Digest: SR3Vxpwcnm2tKFLqvXXVpjLxQv8=
 
 Name: META-INF/com/google/android/update-binary
-SHA1-Digest: 9YkhJzgxR1fIq366UDdbInOiUY4=
+SHA1-Digest: Vb13ASr/+qHVAVccaU2Ie+p+7qs=
 
 Name: armv7/su
-SHA1-Digest: VrLrzstOaFwPvS3He3bEYpbLYaM=
+SHA1-Digest: ihy2eJM7kTcuQ/8Z6Z4pmMntIbY=
 
 Name: x86/supolicy
-SHA1-Digest: OSCgGjlBKw47Gt30T51sVhZblW8=
+SHA1-Digest: sbY1B1/4nSkyX9AdphIyCUfdUEg=
 
 Name: mips64/suinit
 SHA1-Digest: dYVtFZ/b0XtEsHvjAMVTl4mT7/E=
 
 Name: mips64/sukernel
-SHA1-Digest: h4ufF+u25rOrmSCx681VAMxBmpA=
+SHA1-Digest: h82e4iQ0+z6YYhJXJ1A4Xxgqsuc=
 
 Name: arm/chattr.pie
 SHA1-Digest: qoEQYzse93l3q+ZogsUhBIhPVbw=
 
 Name: arm/supolicy
-SHA1-Digest: oIOB65oSTpTJj4QpMZQ+bcNfVpA=
+SHA1-Digest: VxNTfYuTnnWgHDcV7QkRXEZl/5M=
 
 Name: arm/libsupol.so
 SHA1-Digest: NqIV9P2LCMZayTMW/zheA7WTYXc=
@@ -98,7 +101,7 @@ Name: common/chromeos/kernel.keyblock
 SHA1-Digest: zeiSVt//JG/gc0RW0507ZEaYVxU=
 
 Name: mips/su
-SHA1-Digest: PZE5hrmFnxn3VGnNySjGV0cyJcc=
+SHA1-Digest: nmMqQ/OcMA7BkBPhpMNNLbyF2gg=
 
 Name: common/install-recovery.sh
 SHA1-Digest: RQJ5Fy/ZVZiz35w8g2YffpQg4yM=
@@ -107,13 +110,13 @@ Name: common/init.supersu.rc
 SHA1-Digest: UbmdKppCl39FweaYDE8drDHe6fw=
 
 Name: arm/sukernel
-SHA1-Digest: uD7OT29jSrXdjvI5VrctkVjmpag=
+SHA1-Digest: H9EtWwvpEbzllCunKZahG42dYzM=
 
 Name: mips/chattr.pie
 SHA1-Digest: ogeYjI3xhCLMro0LV/aapqg8XXY=
 
 Name: mips64/supolicy
-SHA1-Digest: 66Lh98Hmpoc2jPWWVusQlH/XDaI=
+SHA1-Digest: XxscIh1Iyx9TSI9EuTKAL3Q7YZA=
 
 Name: common/file_contexts_image
 SHA1-Digest: nJmgRQuTQgagqQM2AWGSUAl6zRo=
@@ -131,7 +134,7 @@ Name: x64/suinit
 SHA1-Digest: jxkwEfQg6Micvfb3ngNH8BoGVPw=
 
 Name: x86/su.pie
-SHA1-Digest: RofqCJt70hkBjAkYM4mQbara6N0=
+SHA1-Digest: iBUswuYUW0ycnvspTczjjh7FD4g=
 
 Name: common/chromeos/kernel.config
 SHA1-Digest: rcg7GeeTSRscbqD9i0bNnzLlkvw=
@@ -146,13 +149,13 @@ Name: x64/libsupol.so
 SHA1-Digest: GAN2IPAR3s9YjG3l0Pr8gx2a3OY=
 
 Name: x64/sukernel
-SHA1-Digest: Ib5Ua8kft5+PWGiixqQbr4xeRtU=
+SHA1-Digest: FF7SMb5JgUe3MOdOvRs7V3ba0vI=
 
 Name: arm64/supolicy
-SHA1-Digest: mpGquPqfIVe/rn2+Lb+6OoxkzHk=
+SHA1-Digest: z9KO1kCGgVlCQVUBmsH7+ZkACNs=
 
 Name: x86/su
-SHA1-Digest: nVIw1rZTGmQ4RdrlGgtDJsTAoSQ=
+SHA1-Digest: kdMa6EZOqAJ5asdz4MMOvaSNEbc=
 
 Name: arm64/chromeos/futility
 SHA1-Digest: Evd5+Hi0p6Pk1PV8KSghtak9Cdc=
@@ -161,13 +164,13 @@ Name: common/99SuperSUDaemon
 SHA1-Digest: 3AYSllvBRJ0eFpxgJghu8XgSuPQ=
 
 Name: common/Superuser.apk
-SHA1-Digest: ezDZpd0ErQin5vNyxVDLJKTNcw8=
+SHA1-Digest: eMcvYzlQcJkGnmeE95GF9NHN1nk=
 
 Name: mips/sukernel
-SHA1-Digest: /4C+K/hrHOK9MJwE6N8kUmK+5bo=
+SHA1-Digest: 8SnczcBt0lhh57xyKc7gjN0hzD4=
 
 Name: common/frp_install
-SHA1-Digest: EoU4dn5yRHArRmaXyJr0cSIVzqU=
+SHA1-Digest: vWqZVtDP3nL3iQeb47jC39ucdME=
 
 Name: armv7/chattr.pie
 SHA1-Digest: qoEQYzse93l3q+ZogsUhBIhPVbw=
