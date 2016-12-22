@@ -866,7 +866,7 @@ if [ -z "$NOOVERRIDE" ]; then
 fi
 if [ -z "$SYSTEMLESS" ]; then
   # detect if we need systemless, based on Android version and boot image
-  SYSTEMLESS=true
+  SYSTEMLESS=detect
 fi
 if [ -z "$PATCHBOOTIMAGE" ]; then
   # only if we end up doing a system-less install
