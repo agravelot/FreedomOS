@@ -112,6 +112,7 @@ common/google_dns.sh
 common/google_assistant.sh
 common/hosts
 common/kernel
+common/no_setup.sh
 common/supersu
 common/v4a_profiles_irs
 oneplus3/splash/splash-fos.bin
