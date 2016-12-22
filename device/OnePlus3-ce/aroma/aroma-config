@@ -20,7 +20,7 @@ fontresload("0", "ttf/Roboto-Regular.ttf", "13");
 fontresload("1", "ttf/Roboto-Regular.ttf", "18");
 loadlang("langs/en.lang");
 
-# -- - VARAIBLES - -- #
+# -- - VARIABLES - -- #
 ini_set("rom_name", "FreedomOS");
 ini_set("rom_version", "!version!");
 ini_set("rom_author", "Nevax");
@@ -215,7 +215,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
 
       "gapps",     "Choose GApps which you want to add on install/exclude list",        "",                                         "group",
         "AndroidPay",     "<b>Android Pay</b>",       "",                      "check",
-        "Books",     "<b>Google Play Books</b>",       "",                      "check",
         "CalculatorGoogle",     "<b>Google Calculator</b>",       "",                      "check",
         "CalendarGoogle",     "<b>Google Calendar</b>",       "",                      "check",
         "CalSync",     "<b>Google Calendar Sync</b>",       "(installed by default when Google Calendar is NOT being installed)",                      "check",
@@ -227,31 +226,21 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
         "DialerFramework",     "<b>Dialer Framework</b>",       "Necessary for Google Dialer compatibility",                      "check",
         "DialerGoogle",     "<b>Google Dialer</b>",       "",                      "check",
         "DMAgent",     "<b>Google Apps Device Policy</b>",       "",                      "check",
-        "Docs",     "<b>Google Docs</b>",       "",                      "check",
         "Drive",     "<b>Google Drive</b>",       "",                      "check",
-        "Earth",     "<b>Google Earth</b>",       "",                      "check",
         "ExchangeGoogle",     "<b>Google Exchange Services</b>",       "",                      "check",
         "FaceDetect",     "<b>Face Detection for Media</b>",       "",                      "check",
         "FaceUnlock",     "<b>Face Unlock</b>",       "",                      "check",
-        "Fitness",     "<b>Google Fit</b>",       "",                      "check",
         "GCS",     "<b>Google Connectivity Services</b>",       "To Exclude BOTH Google Connectivity Services AND Project Fi by Google <#f00>OR</#> To Include Google Connectivity Services",                      "check",
         "Gmail",     "<b>Gmail</b>",       "",                      "check",
         "GoogleNow",     "<b>Google Now Launcher</b>",       "(Google Search Required)",                      "check",
-        "GooglePlus",     "<b>Google+</b>",       "",                      "check",
         "GoogleTTS",     "<b>Google Text-to-Speech</b>",       "",                      "check",
         "Hangouts",     "<b>Google Hangouts</b>",       "",                      "check",
         "Hotword",     "<b>OK Google Hotword Enrollment</b>",       "(automatically selected if Search will be installed)",                      "check",
         "Indic",     "<b>Google Indic Keyboard</b>",       "",                      "check",
         "Japanese",     "<b>Google Japanese Input</b>",       "",                      "check",
-        "Keep",     "<b>Google Keep</b>",       "",                      "check",
         "KeyboardGoogle",     "<b>Google Keyboard</b>",       "",                      "check",
         "Korean",     "<b>Google Korean Input</b>",       "",                      "check",
-        "Maps",     "<b>Google Maps</b>",       "",                      "check",
         "Messenger",     "<b>Messenger</b>",       "(not installed on tablet devices)",                      "check",
-        "Movies",     "<b>Google Play Movies & TV</b>",       "",                      "check",
-        "Music",     "<b>Google Play Music</b>",       "",                      "check",
-        "NewsStand",     "<b>Google Play Newsstand</b>",       "",                      "check",
-        "NewsWidget",     "<b>Google News & Weather</b>",       "",                      "check",
         "PackageInstallerGoogle",     "<b>Google PackageInstaller</b>",       "",                      "check",
         "Pinyin",     "<b>Google Pinyin Input</b>",       "",                      "check",
         "PixelIcons",     "<b>Pixel Icons</b>",       "",                      "check",
@@ -259,13 +248,9 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
         "Photos",     "<b>Google Photos</b>",       "",                      "check",
         "PlayGames",     "<b>Google Play Games</b>",       "",                      "check",
         "PrintServiceGoogle",     "<b>Print Service Recommendation Service</b>",       "",                      "check",
-        "ProjectFi",     "<b>Project Fi by Google</b>",       "",                      "check",
-        "Sheets",     "<b>Google Sheets</b>",       "",                      "check",
-        "Slides",     "<b>Google Slides</b>",       "",                      "check",
         "Search",     "<b>Google Search</b>",       "To Exclude Google Search AND Google Now Launcher AND Pixel Launcher <#f00>OR</#> To Include Google Search AND OK Google Hotword Enrollment",                      "check",
         "Speech",     "<b>Offline Speech Files</b>",       "(Required for offline voice dicatation support)",                      "check",
         "StorageManagerGoogle",     "<b>Google Storage Manager</b>",       "",                      "check",
-        "Street",     "<b>Google Street View</b>",       "",                      "check",
         "TagGoogle",     "<b>Google NFC Tags</b>",       "",                      "check",
         "Talkback",     "<b>Talkback</b>",       "",                      "check",
         "Translate",     "<b>Google Translate</b>",       "",                      "check",
@@ -285,62 +270,21 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   endif;
 
   form(
-      "Default removal bypass",
-      "Careful, you can override the default removal of Stock/AOSP applications below",
-      "@default",
-      bypass.prop,
-      "bypassrem",     "Bypass the automatic removal of Stock/AOSP apps.\nPlease only select if you are sure you want them installed alongside the Google replacement.",        "",     "group",
-        "+Browser",     "<b>+Browser</b>",      "",    "check",
-        "+CameraStock", "<b>+CameraStock</b>",  "",    "check",
-        "+Email",     "<b>+Email</b>",      "",        "check",
-        "+Gallery",     "<b>+Gallery</b>",      "",    "check",
-        "+Launcher",     "<b>+Launcher</b>",      "",  "check",
-        "+MMS",     "<b>+MMS</b>",      "",            "check",
-        "+PicoTTS",     "<b>+PicoTTS</b>",      "",    "check"
-  );
-
-  form(
       "Remove",
       "Please select which Stock/AOSP apps you want to remove\n</#>",
       "@default",
       rem.prop,
       "remove",     "Choose apps which you want to remove",        "",                                         "group",
-        "BasicDreams",     "<b>Basic Dreams Live Wallpaper</b>",       "",                      "check",
-        "Browser",     "<b>Stock/AOSP Browser</b>",       "(automatically removed when Google Chrome is installed)",                      "check",
-        "CalendarStock",     "<b>Stock/AOSP Calendar</b>",       "(automatically removed when Google Calendar is installed)",                      "check",
-        "CameraStock",     "<b>Stock/AOSP/Moto Camera</b>",       "(automatically removed when Google Camera is installed)",                      "check",
         "ClockStock",     "<b>Stock/AOSP Clock</b>",       "(automatically removed when Google Clock is installed)",                      "check",
-        "CMAccount",     "<b>CyanogenMod Account</b>",       "",                      "check",
-        "CMAudioFX",     "<b>CyanogenMod AudioFX</b>",       "",                      "check",
-        "CMFileManager",     "<b>CyanogenMod File Manager</b>",       "",                      "check",
-        "CMMusic",     "<b>CyanogenMod Music</b>",       "",                      "check",
-        "CMSetupWizard",     "<b>CyanogenMod Setup Wizard</b>",       "",                      "check",
-        "CMUpdater",     "<b>CyanogenMod Updater</b>",       "",                      "check",
-        "CMWallpapers",     "<b>CyanogenMod Wallpapers</b>",       "",                      "check",
         "DashClock",     "<b>DashClock Widget</b>",       "(a widget found in certain ROMs)",                      "check",
-        "Email",     "<b>Stock/AOSP Email</b>",       "",                      "check",
-        "ExchangeStock",     "<b>Stock/AOSP Exchange Services</b>",       "(automatically removed when Google Exchange Services is installed)",                      "check",
-        "FMRadio",     "<b>Stock/AOSP FM Radio</b>",       "(not found on all devices or ROM's)",                      "check",
-        "Galaxy",     "<b>Galaxy Live Wallpaper</b>",       "",                      "check",
-        "Gallery",     "<b>Stock/AOSP Gallery</b>",       "(automatically removed when Google Photos is installed)",                      "check",
-        "HoloSpiral",     "<b>Holo Spiral Live Wallpaper</b>",       "",                      "check",
-        "KeyboardStock",     "<b>Stock/AOSP Keyboard</b>",       "(automatically removed when Google Keyboard is installed)",                      "check",
         "Launcher",     "<b>Stock/AOSP Launcher(s)</b>",       "(automatically removed when Google Launcher is installed)",                      "check",
         "LiveWallpapers",     "<b>Live Wallpapers</b>",       "",                      "check",
         "LockClock",     "<b>Lock Clock</b>",       "(a widget found in certain ROMs)",                      "check",
         "MMS",     "<b>Stock/AOSP MMS</b>",       "(automatically removed when Google Hangouts or Messenger are installed)",                      "check",
-        "NoiseField",     "<b>NoiseField Live Wallpaper</b>",       "",                      "check",
-        "Phasebeam",     "<b>Phasebeam Live Wallpaper</b>",       "",                      "check",
-        "PhotoPhase",     "<b>PhotoPhase Live Wallpaper</b>",       "",                      "check",
-        "PhotoTable",     "<b>PhotoTable Live Wallpaper</b>",       "",                      "check",
-        "PicoTTS",     "<b>Stock/AOSP Text-to-Speech</b>",       "(automatically removed when Google TTS is installed)",                      "check",
         "SimToolKit",     "<b>Stock/AOSP Sim ToolKit</b>",       "",                      "check",
         "StorageManagerStock",     "<b>Stock/AOSP StorageManager</b>",       "",                      "check",
         "Studio",     "<b>Stock/AOSP Movie Studio</b>",       "",                      "check",
-        "SykoPath",     "<b>SykoPath Layers Manager</b>",       "(found in certain ROM's)",                      "check",
         "Terminal",     "<b>Terminal</b>",       "",                      "check",
-        "Themes",     "<b>CyanogenMod Theme Engine</b>",       "(Will break the link in Settings to Themes!)",                      "check",
-        "VisualizationWallpapers",     "<b>Visualization Live Wallpaper</b>",       "",                      "check",
         "WhisperPush",     "<b>WhisperPush</b>",       "",                      "check"
   );
   form(
@@ -806,48 +750,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   endif;
 
   if
-    prop("rem.prop", "CMAccount")=="1"
-  then
-    appendvar("gapps", "CMAccount\n");
-  endif;
-
-  if
-    prop("rem.prop", "CMAudioFX")=="1"
-  then
-    appendvar("gapps", "CMAudioFX\n");
-  endif;
-
-  if
-    prop("rem.prop", "CMMusic")=="1"
-  then
-    appendvar("gapps", "CMMusic\n");
-  endif;
-
-  if
-    prop("rem.prop", "CMFileManager")=="1"
-  then
-    appendvar("gapps", "CMFileManager\n");
-  endif;
-
-  if
-    prop("rem.prop", "CMSetupWizard")=="1"
-  then
-    appendvar("gapps", "CMSetupWizard\n");
-  endif;
-
-  if
-    prop("rem.prop", "CMUpdater")=="1"
-  then
-    appendvar("gapps", "CMUpdater\n");
-  endif;
-
-  if
-    prop("rem.prop", "CMWallpapers")=="1"
-  then
-    appendvar("gapps", "CMWallpapers\n");
-  endif;
-
-  if
     prop("rem.prop", "DashClock")=="1"
   then
     appendvar("gapps", "DashClock\n");
@@ -920,24 +822,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   endif;
 
   if
-    prop("rem.prop", "NoiseField")=="1"
-  then
-    appendvar("gapps", "NoiseField\n");
-  endif;
-
-  if
-    prop("rem.prop", "Phasebeam")=="1"
-  then
-    appendvar("gapps", "Phasebeam\n");
-  endif;
-
-  if
-    prop("rem.prop", "PhotoPhase")=="1"
-  then
-    appendvar("gapps", "PhotoPhase\n");
-  endif;
-
-  if
     prop("rem.prop", "PhotoTable")=="1"
   then
     appendvar("gapps", "PhotoTable\n");
@@ -968,12 +852,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   endif;
 
   if
-    prop("rem.prop", "SykoPath")=="1"
-  then
-    appendvar("gapps", "SykoPath\n");
-  endif;
-
-  if
     prop("rem.prop", "Terminal")=="1"
   then
     appendvar("gapps", "Terminal\n");
@@ -986,17 +864,10 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   endif;
 
   if
-    prop("rem.prop", "VisualizationWallpapers")=="1"
-  then
-    appendvar("gapps", "VisualizationWallpapers\n");
-  endif;
-
-  if
     prop("rem.prop", "WhisperPush")=="1"
   then
     appendvar("gapps", "WhisperPush\n");
   endif;
-
 
 
   # BYPASS REMOVALS
