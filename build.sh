@@ -99,6 +99,7 @@ function initialize {
   source ${scripts_root}/dat_to_img.sh
   source ${scripts_root}/make_zip.sh
   source ${scripts_root}/add_files.sh
+  source ${scripts_root}/opengapps.sh
   source ${scripts_root}/arise.sh
 
   HOST_ARCH=`uname -m`
@@ -320,6 +321,7 @@ if [ $confirm_build -eq 1 ]; then
   download_rom
   if [ ! -z GAPPS_NAME ]; then
     download_gapps
+    build_opengapps
   fi
   extract_rom
   build
