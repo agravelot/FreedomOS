@@ -159,27 +159,6 @@ selectbox(
     "<~passwordfix_no>", "<~info.passwordfix_no>", 0
 );
 
-# -- - GOOGLE APPS - -- #
-ini_set("text_next", "<~text_next>");
-checkbox(
-  "<~gapps.tittle>", "<~gapps.tittle2>", "@personalize", "gapps.prop",
-
-  "Google apps", "", 2,
-     "<~calculator>", "<~info.calculator>", 1,
-     "<~calendar>", "<~info.calendar>", 1,
-     "<~call_log>", "<~info.call_log>", 1,
-     "<~chrome>", "<~info.chrome>", 1,
-     "<~drive>", "<~info.drive>", 1,
-     "<~duo>", "<~info.duo>", 0,
-     "<~gmail>", "<~info.gmail>", 1,
-     "<~gmail_exchange>", "<~info.gmail_exchange>", 0,
-     "<~google>", "<~info.google>", 1,
-     "<~messenger>", "<~info.messenger>", 1,
-     "<~photos>", "<~info.photos>", 1,
-     "<~play_music>", "<~info.play_music>", 0,
-     "<~youtube>", "<~info.youtube>", 1
-);
-
 ##############################################
 # MENU
 ##############################################
