@@ -18,7 +18,8 @@
 
 function build_arise() {
   cd ${tmp_root}/tools/arise/ >> ${build_log} 2>&1
-  #TODO Virer les ui_print & sleep
+  sed -i '/ui_print "/d' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
+  sed -i '/sleep/d' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
   zip -r9 arise.zip * -x install.sh >> ${build_log} 2>&1
   cd - >> ${build_log} 2>&1
   rm -rvf ${tmp_root}/tools/arise/*/ >> ${build_log} 2>&1
