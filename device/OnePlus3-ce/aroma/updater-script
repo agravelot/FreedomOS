@@ -345,31 +345,6 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.2")=="2")
     package_extract_file("tools/splash-stock.bin", "/dev/block/sde17");
 endif;
 
-# -- - OPENGAPPS - -- #
-
-set_progress(0.940000);
-ui_print(" ");
-
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
-  then
-  ui_print("@Installing Open GApps");
-  ui_print(" ");
-  #run_program("/tmp/tools/opengapps/install.sh");
-  run_program("/tmp/tools/busybox", "mkdir", "/tmp/opengapps");
-  run_program("/tmp/tools/busybox", "unzip", "/tmp/tools/opengapps/opengapps.zip", "META-INF/com/google/android/*", "-d", "/tmp/opengapps");
-  #run_program("mv", "/tmp/tools/opengapps/opengapps.zip", "/tmp/ariopengappsse/opengapps.zip");
-  package_extract_dir("tools/opengapps", "/tmp/opengapps");
-  set_metadata("/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "uid", 0, "gid", 0, "mode", 0777);
-  set_metadata_recursive("/tmp/opengapps", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
-  run_program("/sbin/busybox", "sh", "/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "dummy", "1", "/tmp/opengapps/opengapps.zip");
-  run_program("/tmp/tools/busybox", "mount", "/system");
-endif;
-
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "2")
-  then
-    run_program("/tmp/tools/no_setup.sh");
-endif;
-
 # -- - SYSTEM APPS - -- #
 set_progress(0.960000);
 ui_print(" ");
@@ -525,6 +500,31 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.24") == "0")
   then
    ui_print("   Removing RifonIconPack");
    delete_recursive("/system/app/RifonIconPack");
+endif;
+
+# -- - OPENGAPPS - -- #
+
+set_progress(0.940000);
+ui_print(" ");
+
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "2")
+  then
+    run_program("/tmp/tools/no_setup.sh");
+endif;
+
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
+  then
+  ui_print("@Installing Open GApps");
+  ui_print(" ");
+  #run_program("/tmp/tools/opengapps/install.sh");
+  run_program("/tmp/tools/busybox", "mkdir", "/tmp/opengapps");
+  run_program("/tmp/tools/busybox", "unzip", "/tmp/tools/opengapps/opengapps.zip", "META-INF/com/google/android/*", "-d", "/tmp/opengapps");
+  #run_program("mv", "/tmp/tools/opengapps/opengapps.zip", "/tmp/ariopengappsse/opengapps.zip");
+  package_extract_dir("tools/opengapps", "/tmp/opengapps");
+  set_metadata("/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "uid", 0, "gid", 0, "mode", 0777);
+  set_metadata_recursive("/tmp/opengapps", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
+  run_program("/sbin/busybox", "sh", "/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "dummy", "1", "/tmp/opengapps/opengapps.zip");
+  run_program("/tmp/tools/busybox", "mount", "/system");
 endif;
 
 set_progress(0.990000);
