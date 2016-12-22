@@ -295,7 +295,7 @@ if [ $confirm_build -eq 1 ]; then
   cleanup
   update_tools
   download_rom
-  if [ ! -z GAPPS_NAME ]; then
+  if [ ! -z GAPPS_ANDROID ]; then
     build_opengapps
   fi
   extract_rom
