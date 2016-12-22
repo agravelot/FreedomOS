@@ -33,6 +33,9 @@ function build_opengapps() {
   GApps/street-arm.tar.xz
   GApps/docs-arm64.tar.xz
   GApps/fitness-all.tar.xz
+  GApps/sheets-arm64.tar.xz
+  GApps/newswidget-all.tar.xz
+  GApps/newsstand-all.tar.xz
   "
 
   # Create needed folders
