@@ -103,9 +103,8 @@ ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/syst
 package_extract_file("system.img", "/dev/block/bootdevice/by-name/system");
 run_program("/tmp/tools/busybox", "mount", "/system");
 
-ui_print("   Extracting Data");
-package_extract_dir("data", "/data/");
-
+#ui_print("   Extracting Data");
+#package_extract_dir("data", "/data/");
 
 # -- - FIRMWARES - -- #
 
@@ -214,7 +213,9 @@ run_program("/tmp/tools/busybox", "echo", "DEBUG: Extracting patch");
 package_extract_dir("tools/kernel/config", "/tmp");
 set_metadata("/tmp/tools/busybox", "uid", 0, "gid", 0, "mode", 0777);
 
+ui_print("   - Trimming cache");
 run_program("/tmp/tools/busybox", "fstrim", "/cache");
+ui_print("   - Trimming data");
 run_program("/tmp/tools/busybox", "fstrim", "/data");
 
 package_extract_dir("tools/kernel/boot", "/tmp");
@@ -226,14 +227,14 @@ set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "mode", 0777);
 set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "mode", 0777);
 set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "mode", 0777);
 
-ui_print("   Customizing ramdisk");
+ui_print("   - Customizing ramdisk");
 run_program("/tmp/tools/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
 run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
 run_program("/tmp/cmdline.sh");
 run_program("/tmp/editramdisk.sh");
 run_program("/tmp/makebootimg.sh");
 
-ui_print("   Installing kernel");
+ui_print("   - Installing kernel");
 run_program("/tmp/tools/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
 
 # -- - XPOSED - -- #
