@@ -278,30 +278,6 @@ function download_rom {
   echo
 }
 
-function download_gapps {
-    echo "> Downloading & Checking gapps ..." 2>&1 | tee -a ${build_log}
-    if [ ! -f  ${download_root}/${GAPPS_NAME}.zip ]; then
-    echo ">> File ${GAPPS_NAME}.zip does not exist. Downloading ..." 2>&1 | tee -a ${build_log}
-
-    #if curl -sLk -Is ${GAPPS_LINK} | grep "200 OK" &> /dev/null
-    #then
-      curl -sLk -o ${download_root}/${GAPPS_NAME}.zip ${GAPPS_LINK} | tee -a ${build_log}
-    #else
-    #  die "${GAPPS_NAME} mirror OFFLINE! Check your connection" "10"
-    #fi
-    else
-      echo ">> Checking MD5 of ${GAPPS_NAME}.zip" 2>&1 | tee -a ${build_log}
-
-      if [[ ${GAPPS_MD5} == $(md5sum ${download_root}/${GAPPS_NAME}.zip | cut -d ' ' -f 1) ]]; then
-        echo ">>> MD5 ${GAPPS_NAME}.zip checksums OK." 2>&1 | tee -a ${build_log}
-      else
-        echo ">>> File ${GAPPS_NAME}.zip is corrupt, restarting download" 2>&1 | tee -a ${build_log}
-        mv -vf ${download_root}/${GAPPS_NAME}.zip ${download_root}/${GAPPS_NAME}.zip.bak >> ${build_log} 2>&1
-        download_gapps
-      fi
-    fi
-}
-
 function extract_rom {
   if [ ! -f ${rom_root}/${device}/${ROM_NAME}/system.new.dat ]; then
     echo ">> Extracting rom zip" 2>&1 | tee -a ${build_log}
