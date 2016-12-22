@@ -32,6 +32,8 @@ test -d ${download_root} || mkdir -p ${download_root}
 
 GIT_URL="
 https://gitlab.com/Nevax/freedomos_opengapps.git
+https://github.com/xpirt/sdat2img.git
+https://github.com/xpirt/img2sdat.git
 "
 
 for i in ${GIT_URL}
