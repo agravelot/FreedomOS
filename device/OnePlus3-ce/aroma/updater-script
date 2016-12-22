@@ -47,25 +47,19 @@ set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0777, "fmode",
 ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 ifelse(is_mounted("/data"), run_program("/tmp/tools/busybox", "umount", "/data"));
 
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
-  then
-  set_progress(0.032);
-  ui_print("   Mounting System & Data");
-  run_program("/tmp/tools/busybox", "mount", "/system");
-  #mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
-  ui_print("   Mounting Data");
-  run_program("/tmp/tools/busybox", "mount", "/data");
-  #mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
 # -- - BACKUP ADDON.D - -- #
 
-  set_progress(0.035);
-  ui_print("   Backup up your addon.d ");
-  set_metadata_recursive("/tmp/tools/addon", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
-  run_program("/tmp/tools/addon/backuptool.sh", "backup");
-
-  ui_print("   Unmounting System");
-  ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
-endif;
+set_progress(0.032);
+ui_print("   Mounting System & Data");
+run_program("/tmp/tools/busybox", "mount", "/system");
+ui_print("   Mounting Data");
+run_program("/tmp/tools/busybox", "mount", "/data");
+set_progress(0.035);
+ui_print("   Backup up your addon.d ");
+set_metadata_recursive("/tmp/tools/addon", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
+run_program("/tmp/tools/addon/backuptool.sh", "backup");
+ui_print("   Unmounting System");
+ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 
 # -- - CLEAN SYSTEM - -- #
 set_progress(0.04);
@@ -355,17 +349,26 @@ endif;
 
 set_progress(0.940000);
 ui_print(" ");
-ui_print("@Installing Open GApps");
-ui_print(" ");
-#run_program("/tmp/tools/opengapps/install.sh");
-run_program("/tmp/tools/busybox", "mkdir", "/tmp/opengapps");
-run_program("/tmp/tools/busybox", "unzip", "/tmp/tools/opengapps/opengapps.zip", "META-INF/com/google/android/*", "-d", "/tmp/opengapps");
-#run_program("mv", "/tmp/tools/opengapps/opengapps.zip", "/tmp/ariopengappsse/opengapps.zip");
-package_extract_dir("tools/opengapps", "/tmp/opengapps");
-set_metadata("/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "uid", 0, "gid", 0, "mode", 0777);
-set_metadata_recursive("/tmp/opengapps", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
-run_program("/sbin/busybox", "sh", "/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "dummy", "1", "/tmp/opengapps/opengapps.zip");
-run_program("/tmp/tools/busybox", "mount", "/system");
+
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
+  then
+  ui_print("@Installing Open GApps");
+  ui_print(" ");
+  #run_program("/tmp/tools/opengapps/install.sh");
+  run_program("/tmp/tools/busybox", "mkdir", "/tmp/opengapps");
+  run_program("/tmp/tools/busybox", "unzip", "/tmp/tools/opengapps/opengapps.zip", "META-INF/com/google/android/*", "-d", "/tmp/opengapps");
+  #run_program("mv", "/tmp/tools/opengapps/opengapps.zip", "/tmp/ariopengappsse/opengapps.zip");
+  package_extract_dir("tools/opengapps", "/tmp/opengapps");
+  set_metadata("/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "uid", 0, "gid", 0, "mode", 0777);
+  set_metadata_recursive("/tmp/opengapps", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
+  run_program("/sbin/busybox", "sh", "/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "dummy", "1", "/tmp/opengapps/opengapps.zip");
+  run_program("/tmp/tools/busybox", "mount", "/system");
+endif;
+
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "2")
+  then
+    run_program("/tmp/tools/no_setup.sh");
+endif;
 
 # -- - SYSTEM APPS - -- #
 set_progress(0.960000);
