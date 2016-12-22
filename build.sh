@@ -296,7 +296,6 @@ if [ $confirm_build -eq 1 ]; then
   update_tools
   download_rom
   if [ ! -z GAPPS_NAME ]; then
-    download_gapps
     build_opengapps
   fi
   extract_rom
