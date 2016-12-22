@@ -183,6 +183,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
   then
   ui_print(" ");
   ui_print("@Installing A.R.I.S.E");
+  ui_print("   Installing A.R.I.S.E Sound System");
   #run_program("/tmp/tools/arise/install.sh");
   ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
   run_program("/tmp/tools/busybox", "mkdir", "/tmp/arise");
@@ -193,6 +194,8 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
   set_metadata_recursive("/tmp/arise", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
   run_program("/sbin/busybox", "sh", "/tmp/arise/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/arise/arise.zip");
   run_program("/tmp/tools/busybox", "mount", "/system");
+  ui_print("   Extracting V4A profiles & IRS");
+  package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
 endif;
 
 # -- - MOD - -- #
