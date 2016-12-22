@@ -47,7 +47,6 @@ set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0777, "fmode",
 ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 ifelse(is_mounted("/data"), run_program("/tmp/tools/busybox", "umount", "/data"));
 
-# -- - Backup addond - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   then
   set_progress(0.032);
@@ -57,6 +56,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   ui_print("   Mounting Data");
   run_program("/tmp/tools/busybox", "mount", "/data");
   #mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
+# -- - BACKUP ADDON.D - -- #
 
   set_progress(0.035);
   ui_print("   Backup up your addon.d ");
@@ -106,8 +106,8 @@ run_program("/tmp/tools/busybox", "mount", "/system");
 ui_print("   Extracting Data");
 package_extract_dir("data", "/data/");
 
-# -- - radio update tasks - -- #
 
+# -- - FIRMWARES - -- #
 
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.3") == "1")
   then
@@ -164,7 +164,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     set_metadata("/tmp/clean.sh", "uid", 0, "gid", 0, "mode", 0777);
     run_program("/tmp/clean.sh");
     ui_print("   Fixing rom pin/pattern");
- endif;
+endif;
 
 # -- - STOCK KERNEL - -- #
 
@@ -310,7 +310,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
     set_metadata("/system/fonts/NotoColorEmoji.ttf", "uid", 0, "gid", 0,  "mode", 0644);
 endif;
 
-# -- - Google Assistant - -- #
+# -- - GOOGLE ASSISTANT - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
   then
   set_progress(0.94000);
