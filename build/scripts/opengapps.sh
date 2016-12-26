@@ -56,6 +56,8 @@ function build_opengapps() {
   $(<${tmp_root}/tools/gapps-remove.txt)
   "
 
+  # Add OPInCallUI to the remove list if Google Dialer is installed
+  sed -i 's/FineOSDialer/OPInCallUI/g' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Remove all the unneeded files
   for i in ${RM_OPENGAPPS}
   do
