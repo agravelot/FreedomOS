@@ -62,6 +62,7 @@ oneplus3/*
 # Files / folders to remove from the original stock image.
 # You can easily debloat your rom from here.
 CLEAN_SYSTEM_LIST="
+app/AndroidPay
 app/BTtestmode
 app/EngineeringMode
 app/EngSpecialTest
