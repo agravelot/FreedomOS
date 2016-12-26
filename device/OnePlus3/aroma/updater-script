@@ -198,7 +198,9 @@ run_program("/tmp/tools/busybox", "echo", "DEBUG: Extracting patch");
 package_extract_dir("tools/kernel/config", "/tmp");
 set_metadata("/tmp/tools/busybox", "uid", 0, "gid", 0, "mode", 0777);
 
+ui_print("   Trimming cache");
 run_program("/tmp/tools/busybox", "fstrim", "/cache");
+ui_print("   Trimming data");
 run_program("/tmp/tools/busybox", "fstrim", "/data");
 
 package_extract_dir("tools/kernel/boot", "/tmp");

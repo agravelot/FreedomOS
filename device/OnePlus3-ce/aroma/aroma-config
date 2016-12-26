@@ -237,7 +237,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "Hangouts",     "<b>Google Hangouts</b>",       "",                      "check",
         "Hotword",     "<b>OK Google Hotword Enrollment</b>",       "(automatically selected if Search will be installed)",                      "check",
         "KeyboardGoogle",     "<b>Google Keyboard</b>",       "",                      "check",
-        "Messenger",     "<b>Messenger</b>",       "(not installed on tablet devices)",                      "check",
+        "Messenger",     "<b>Messenger</b>",       "",                      "check",
         "PackageInstallerGoogle",     "<b>Google PackageInstaller</b>",       "",                      "check",
         "PixelIcons",     "<b>Pixel Icons</b>",       "",                      "check",
         "PixelLauncher",     "<b>Pixel Launcher</b>",       "(Wallpapers and Google Search Required)",                      "check",

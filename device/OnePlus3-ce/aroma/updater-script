@@ -189,6 +189,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
   then
   ui_print(" ");
   ui_print("@Installing A.R.I.S.E");
+  ui_print(" ");
   ui_print("   Installing A.R.I.S.E Sound System");
   #run_program("/tmp/tools/arise/install.sh");
   ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
