@@ -62,6 +62,9 @@ function initialize {
   config_file=${top_root}/.build.conf
   confirm_build=0
 
+  img2sdat=${download_root}/img2sdat/img2sdat.py
+  sdat2img==${download_root}/sdat2img/sdat2img.py
+
   redt=$(tput setaf 1)
   redb=$(tput setab 1)
   greent=$(tput setaf 2)
