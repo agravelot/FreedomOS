@@ -83,10 +83,6 @@ recovery-from-boot.p
 etc/recovery-resource.dat
 "
 
-ADD_SYSTEM_COMMON_LIST="
-xbin/dpi
-"
-
 PATCH_FIRMWARE=3.2.8
 
 # Set the files/folder you want to add to your system partition.
