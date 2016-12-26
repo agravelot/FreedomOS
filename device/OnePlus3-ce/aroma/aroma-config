@@ -176,29 +176,29 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   ##############################################
   # Load Previous Choices
   ##############################################
-#  checkviewbox(
-#    "Load Previous Choices",
-#    "<b>Do you want to load your choices from a previous install?</b>\n\n",
-#    "@welcome",
-#    "Load choices", "1", "loadselections"
-#  );
-#
-#  if
-#      getvar("loadselections")=="1"
-#    then
-#      if
-#          getvar("reset")!="1"
-#      then
-#          resexec("scripts/tools.sh", "load");
-#          setvar("reset", "1");
-#      endif;
-#    else
-#      if
-#        getvar("reset")=="1" then
-#          resexec("scripts/tools.sh", "reset");
-#          setvar("reset","0");
-#      endif;
-#  endif;
+  checkviewbox(
+    "Load Previous Choices",
+    "<b>Do you want to load your choices from a previous install?</b>\n\n",
+    "@welcome",
+    "Load choices", "1", "loadselections"
+  );
+
+  if
+      getvar("loadselections")=="1"
+    then
+      if
+          getvar("reset")!="1"
+      then
+          resexec("scripts/tools.sh", "load");
+          setvar("reset", "1");
+      endif;
+    else
+      if
+        getvar("reset")=="1" then
+          resexec("scripts/tools.sh", "reset");
+          setvar("reset","0");
+      endif;
+  endif;
 
   if prop("menu.prop", "selected")=="1" then
   ##############################################
