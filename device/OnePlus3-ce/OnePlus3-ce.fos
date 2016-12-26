@@ -66,6 +66,7 @@ app/AndroidPay
 app/BTtestmode
 app/EngineeringMode
 app/EngSpecialTest
+app/FaceLock
 app/Hangouts
 app/LogKitSdService
 app/Maps

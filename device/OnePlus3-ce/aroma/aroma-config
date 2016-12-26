@@ -659,7 +659,6 @@ checkbox(
     "<~desk_clock>", "<~info.desk_clock>", 1,
     "<~document>", "<~info.document>", 1,
     "<~download_provider>", "<~info.download_provider>", 1,
-    "<~facelock>", "<~info.facelock>", 0,
     "<~galaxy>","<~info.galaxy>", 0,
     "<~holo_spiral>", "<~info.holo_spiral>", 0,
     "<~anim_wallpaper>", "<~info.anim_wallpaper>", 1,
