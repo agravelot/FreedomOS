@@ -46,7 +46,7 @@ function dat_to_dat {
 
   cd ${tmp_root}
   echo ">> Extracting system.new.dat" 2>&1 | tee -a ${build_log}
-  ${build_root}/tools/sdat2img.py ${rom_root}/${device}/${ROM_NAME}/system.transfer.list ${rom_root}/${device}/${ROM_NAME}/system.new.dat ${tmp_root}/system.img >> ${build_log} 2>&1
+  ${sdat2img_repo}/sdat2img.py ${rom_root}/${device}/${ROM_NAME}/system.transfer.list ${rom_root}/${device}/${ROM_NAME}/system.new.dat ${tmp_root}/system.img >> ${build_log} 2>&1
 
   echo ">> Mounting ext4 system.img" 2>&1 | tee -a ${build_log}
   mount -t ext4 -o loop ${tmp_root}/system.img ${tmp_root}/mount/ >> ${build_log} 2>&1
