@@ -36,6 +36,15 @@ function build_opengapps() {
   GApps/sheets-arm64.tar.xz
   GApps/newswidget-all.tar.xz
   GApps/newsstand-all.tar.xz
+  GApps/translate-arm.tar.xz
+  GApps/zhuyin-arm64.tar.xz
+  GApps/dmagent-all.tar.xz
+  GApps/pinyin-arm64.tar.xz
+  GApps/gcs-all.tar.xz
+  GApps/indic-arm64.tar.xz
+  GApps/japanese-arm64.tar.xz
+  GApps/korean-arm64.tar.xz
+  "
   "
 
   echo "> Building FreedomOS OpenGapps" 2>&1 | tee -a ${build_log}
