@@ -47,17 +47,25 @@ ifelse(is_mounted("/data"), run_program("/tmp/tools/busybox", "umount", "/data")
 
 # -- - BACKUP ADDON.D - -- #
 
-set_progress(0.032);
-ui_print("   Mounting System & Data");
-run_program("/tmp/tools/busybox", "mount", "/system");
-ui_print("   Mounting Data");
-run_program("/tmp/tools/busybox", "mount", "/data");
-set_progress(0.035);
-ui_print("   Backup up your addon.d ");
-set_metadata_recursive("/tmp/tools/addon", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
-run_program("/tmp/tools/addon/backuptool.sh", "backup");
-ui_print("   Unmounting System");
-ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
+  then
+  set_progress(0.032);
+  ui_print("   Mounting System & Data");
+  run_program("/tmp/tools/busybox", "mount", "/system");
+  #mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+  ui_print("   Mounting Data");
+  run_program("/tmp/tools/busybox", "mount", "/data");
+  #mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
+
+  set_progress(0.035);
+  ui_print("   Backup up your addon.d ");
+  set_metadata_recursive("/tmp/tools/addon", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
+  run_program("/tmp/tools/addon/backuptool.sh", "backup");
+
+  ui_print("   Unmounting System");
+  ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
+endif;
+
 
 # -- - CLEAN SYSTEM - -- #
 set_progress(0.04);
