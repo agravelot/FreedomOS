@@ -108,6 +108,14 @@ function initialize {
   HOST_OS=`uname -s`
   HOST_OS_EXTRA=`uname -a`
 
+  # Check needed repos and set permissions
+  if [[ -d ${img2sdat_repo} && -d ${img2sdat_repo} ]]; then
+      chmod +x -R ${img2sdat_repo} >> ${build_log} 2>&1
+      chmod +x -R ${sdat2img_repo} >> ${build_log} 2>&1
+  else
+      die "Unable to find needed repos, please use ./update_repos.sh" "50"
+  fi
+
   if [ ! -f "${config_file}" ]; then
     configure
   fi
