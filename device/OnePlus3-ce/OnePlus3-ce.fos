@@ -35,6 +35,7 @@ ROM_MD5=62e9c8e8aa6cc2a33943ad11f325858e
 # OpenGapps
 GAPPS_ANDROID=7.0
 GAPPS_PLATFORM=arm64
+GAPPS_TYPE=aroma
 
 # Set Android version for selinux build script
 ANDROID_VERSION=7

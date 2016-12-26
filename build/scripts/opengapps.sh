@@ -43,7 +43,7 @@ function build_opengapps() {
   mkdir -p ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
   mkdir -p ${tmp_root}/tools/opengapps/ >> ${build_log} 2>&1
   # Copy OpenGapps files from repo
-  cp -rvf ${download_root}/freedomos_opengapps/${GAPPS_PLATFORM}/${GAPPS_ANDROID}/* -d ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
+  cp -rvf ${download_root}/freedomos_opengapps/${GAPPS_TYPE}/${GAPPS_PLATFORM}/${GAPPS_ANDROID}/* -d ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
   # Get the gapps-remove.txt list
   cp -vf ${tmp_root}/tools/opengapps_tmp/gapps-remove.txt ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
   # Remove all entries for android permisions
