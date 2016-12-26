@@ -64,6 +64,7 @@ oneplus3/*
 CLEAN_SYSTEM_LIST="
 app/AndroidPay
 app/BTtestmode
+app/Duo
 app/EngineeringMode
 app/EngSpecialTest
 app/FaceLock
