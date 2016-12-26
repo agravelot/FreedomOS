@@ -29,7 +29,7 @@ ini_set("rom_device", "!device!");
 
 #UI
 ini_set("force_colorspace", "rgba");
-theme("g3");
+theme("redblack");
 
 anisplash(
   1,
