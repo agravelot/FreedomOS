@@ -525,6 +525,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
   ui_print("@Installing Open GApps");
   ui_print(" ");
+  delete_recursive("/tmp/opengapps");
   #run_program("/tmp/tools/opengapps/install.sh");
   run_program("/tmp/tools/busybox", "mkdir", "/tmp/opengapps");
   run_program("/tmp/tools/busybox", "unzip", "/tmp/tools/opengapps/opengapps.zip", "META-INF/com/google/android/*", "-d", "/tmp/opengapps");
