@@ -111,7 +111,7 @@ function dat_to_dat {
   touch ${tmp_root}/system.patch.dat
 
   echo ">> Converting ext4 to dat file" 2>&1 | tee -a ${build_log}
-  ${img2sdat} system_new.img >> ${build_log} 2>&1
+  ${img2sdat_repo}/img2sdat.py system_new.img >> ${build_log} 2>&1
 
   echo "> Clean unneeded tmp files" 2>&1 | tee -a ${build_log}
   if mount | grep "${tmp_root}/mount" > /dev/null;
