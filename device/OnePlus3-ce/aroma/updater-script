@@ -521,7 +521,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "2")
     run_program("/tmp/tools/no_setup.sh");
 endif;
 
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
   ui_print("@Installing Open GApps");
   ui_print(" ");
