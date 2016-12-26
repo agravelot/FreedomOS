@@ -46,7 +46,6 @@ function die {
 
 #set up environment variables, folder structure, and log files
 function initialize {
-  SDAT2IMG_LINK="https://raw.githubusercontent.com/xpirt/sdat2img/master/sdat2img.py"
 
   top_root=$PWD
   rom_root=${top_root}/rom
@@ -245,17 +244,6 @@ function build {
   esac
 }
 
-function update_tools {
-  echo "> Updating sdat2img tools ..." 2>&1 | tee -a ${build_log}
-  if curl -Is ${SDAT2IMG_LINK} | grep "200 OK" &> /dev/null
-  then
-    curl -o ${build_root}/tools/sdat2img.py ${SDAT2IMG_LINK} >> ${build_log} 2>&1
-  else
-    echo "sdat2img tools mirror is OFFLINE! sdat2img tools not updated!" 2>&1 | tee -a ${build_log}
-  fi
-  chmod +x ${build_root}/tools/*
-}
-
 function download_rom {
   echo "> Downloading & Checking ROM ..." 2>&1 | tee -a ${build_log}
   if [ ! -f  ${download_root}/${ROM_NAME}.zip ]; then
@@ -296,7 +284,6 @@ initialize
 if [ $confirm_build -eq 1 ]; then
   banner
   cleanup
-  update_tools
   download_rom
   if [ ! -z GAPPS_ANDROID ]; then
     build_opengapps
