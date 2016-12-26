@@ -45,7 +45,6 @@ function build_opengapps() {
   GApps/japanese-arm64.tar.xz
   GApps/korean-arm64.tar.xz
   "
-  "
 
   echo "> Building FreedomOS OpenGapps" 2>&1 | tee -a ${build_log}
   # Create needed folders
