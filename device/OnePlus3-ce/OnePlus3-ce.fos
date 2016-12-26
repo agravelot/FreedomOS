@@ -74,6 +74,7 @@ app/OPPBugReport
 app/SensorTestTool
 app/Videos
 app/WifiRfTestApk
+priv-app/OnePlusWizard
 bin/fmfactorytest
 bin/fmfactorytestserver
 bin/install-recovery.sh

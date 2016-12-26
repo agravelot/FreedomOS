@@ -670,7 +670,6 @@ checkbox(
     "<~oneplus_camera>", "<~info.oneplus_camera>", 1,
     "<~oneplus_gallery>", "<~info.oneplus_gallery>", 1,
     "<~ota>", "<~info.ota>", 0,
-    "<~oneplus_wizard>", "<~info.oneplus_wizard>", 1,
     "<~phase_beam>", "<~info.phase_beam>", 0,
     "<~protips>", "<~info.protips>", 0,
     "<~swiftkey>", "<~info.swiftkey>", 1,
