@@ -230,19 +230,15 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "ExchangeGoogle",     "<b>Google Exchange Services</b>",       "",                      "check",
         "FaceDetect",     "<b>Face Detection for Media</b>",       "",                      "check",
         "FaceUnlock",     "<b>Face Unlock</b>",       "",                      "check",
-        "GCS",     "<b>Google Connectivity Services</b>",       "To Exclude BOTH Google Connectivity Services AND Project Fi by Google <#f00>OR</#> To Include Google Connectivity Services",                      "check",
+        "GCS",     "<b>Google Connectivity Services</b>",       "",                      "check",
         "Gmail",     "<b>Gmail</b>",       "",                      "check",
         "GoogleNow",     "<b>Google Now Launcher</b>",       "(Google Search Required)",                      "check",
         "GoogleTTS",     "<b>Google Text-to-Speech</b>",       "",                      "check",
         "Hangouts",     "<b>Google Hangouts</b>",       "",                      "check",
         "Hotword",     "<b>OK Google Hotword Enrollment</b>",       "(automatically selected if Search will be installed)",                      "check",
-        "Indic",     "<b>Google Indic Keyboard</b>",       "",                      "check",
-        "Japanese",     "<b>Google Japanese Input</b>",       "",                      "check",
         "KeyboardGoogle",     "<b>Google Keyboard</b>",       "",                      "check",
-        "Korean",     "<b>Google Korean Input</b>",       "",                      "check",
         "Messenger",     "<b>Messenger</b>",       "(not installed on tablet devices)",                      "check",
         "PackageInstallerGoogle",     "<b>Google PackageInstaller</b>",       "",                      "check",
-        "Pinyin",     "<b>Google Pinyin Input</b>",       "",                      "check",
         "PixelIcons",     "<b>Pixel Icons</b>",       "",                      "check",
         "PixelLauncher",     "<b>Pixel Launcher</b>",       "(Wallpapers and Google Search Required)",                      "check",
         "Photos",     "<b>Google Photos</b>",       "",                      "check",
@@ -253,13 +249,12 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "StorageManagerGoogle",     "<b>Google Storage Manager</b>",       "",                      "check",
         "TagGoogle",     "<b>Google NFC Tags</b>",       "",                      "check",
         "Talkback",     "<b>Talkback</b>",       "",                      "check",
-        "Translate",     "<b>Google Translate</b>",       "",                      "check",
         "VRService",     "<b>Google VR Service</b>",       "",                      "check",
         "Wallpapers",     "<b>Wallpapers</b>",       "To Exclude BOTH Wallpapers AND Pixel Launcher <#f00>OR</#> To Include Wallpapers",                      "check",
         "WebViewGoogle",     "<b>Android System WebView</b>",       "",                      "check",
-        "YouTube",     "<b>YouTube</b>",       "",                      "check",
-        "Zhuyin",     "<b>Google Zhuyin Input</b>",       "",                      "check"
+        "YouTube",     "<b>YouTube</b>",       "",                      "check"
   );
+
   # Duplicate aromagapps.prop and rename it to gapps.prop - this is useful because the selections won't be erased by the complete installation (menu.prop selected ==2)
   resexec("scripts/props.sh");
   endif;
@@ -269,24 +264,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     writetmpfile("gapps.prop", " ");
   endif;
 
-  form(
-      "Remove",
-      "Please select which Stock/AOSP apps you want to remove\n</#>",
-      "@default",
-      rem.prop,
-      "remove",     "Choose apps which you want to remove",        "",                                         "group",
-        "ClockStock",     "<b>Stock/AOSP Clock</b>",       "(automatically removed when Google Clock is installed)",                      "check",
-        "DashClock",     "<b>DashClock Widget</b>",       "(a widget found in certain ROMs)",                      "check",
-        "Launcher",     "<b>Stock/AOSP Launcher(s)</b>",       "(automatically removed when Google Launcher is installed)",                      "check",
-        "LiveWallpapers",     "<b>Live Wallpapers</b>",       "",                      "check",
-        "LockClock",     "<b>Lock Clock</b>",       "(a widget found in certain ROMs)",                      "check",
-        "MMS",     "<b>Stock/AOSP MMS</b>",       "(automatically removed when Google Hangouts or Messenger are installed)",                      "check",
-        "SimToolKit",     "<b>Stock/AOSP Sim ToolKit</b>",       "",                      "check",
-        "StorageManagerStock",     "<b>Stock/AOSP StorageManager</b>",       "",                      "check",
-        "Studio",     "<b>Stock/AOSP Movie Studio</b>",       "",                      "check",
-        "Terminal",     "<b>Terminal</b>",       "",                      "check",
-        "WhisperPush",     "<b>WhisperPush</b>",       "",                      "check"
-  );
   form(
       "Advanced Options",
       "Some advanced options that most likely don't need to be used.\n</#>",
@@ -363,12 +340,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "Books")=="1"
-  then
-    appendvar("gapps", "Books\n");
-  endif;
-
-  if
     prop("gapps.prop", "CalculatorGoogle")=="1"
   then
     appendvar("gapps", "CalculatorGoogle\n");
@@ -429,12 +400,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "DMAgent")=="1"
-  then
-    appendvar("gapps", "DMAgent\n");
-  endif;
-
-  if
     prop("gapps.prop", "Docs")=="1"
   then
     appendvar("gapps", "Docs\n");
@@ -444,12 +409,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     prop("gapps.prop", "Drive")=="1"
   then
     appendvar("gapps", "Drive\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Earth")=="1"
-  then
-    appendvar("gapps", "Earth\n");
   endif;
 
   if
@@ -471,12 +430,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "Fitness")=="1"
-  then
-    appendvar("gapps", "Fitness\n");
-  endif;
-
-  if
     prop("gapps.prop", "GCS")=="1"
   then
     appendvar("gapps", "GCS\n");
@@ -494,11 +447,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     appendvar("gapps", "GoogleNow\n");
   endif;
 
-  if
-    prop("gapps.prop", "GooglePlus")=="1"
-  then
-    appendvar("gapps", "GooglePlus\n");
-  endif;
 
   if
     prop("gapps.prop", "GoogleTTS")=="1"
@@ -519,18 +467,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "Indic")=="1"
-  then
-    appendvar("gapps", "Indic\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Japanese")=="1"
-  then
-    appendvar("gapps", "Japanese\n");
-  endif;
-
-  if
     prop("gapps.prop", "Keep")=="1"
   then
     appendvar("gapps", "Keep\n");
@@ -543,57 +479,15 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "Korean")=="1"
-  then
-    appendvar("gapps", "Korean\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Maps")=="1"
-  then
-    appendvar("gapps", "Maps\n");
-  endif;
-
-  if
     prop("gapps.prop", "Messenger")=="1"
   then
     appendvar("gapps", "Messenger\n");
   endif;
 
   if
-    prop("gapps.prop", "Movies")=="1"
-  then
-    appendvar("gapps", "Movies\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Music")=="1"
-  then
-    appendvar("gapps", "Music\n");
-  endif;
-
-  if
-    prop("gapps.prop", "NewsStand")=="1"
-  then
-    appendvar("gapps", "NewsStand\n");
-  endif;
-
-  if
-    prop("gapps.prop", "NewsWidget")=="1"
-  then
-    appendvar("gapps", "NewsWidget\n");
-  endif;
-
-  if
     prop("gapps.prop", "PackageInstallerGoogle")=="1"
   then
     appendvar("gapps", "PackageInstallerGoogle\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Pinyin")=="1"
-  then
-    appendvar("gapps", "Pinyin\n");
   endif;
 
   if
@@ -633,24 +527,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "ProjectFi")=="1"
-  then
-    appendvar("gapps", "ProjectFi\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Sheets")=="1"
-  then
-    appendvar("gapps", "Sheets\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Slides")=="1"
-  then
-    appendvar("gapps", "Slides\n");
-  endif;
-
-  if
     prop("gapps.prop", "Search")=="1"
   then
     appendvar("gapps", "Search\n");
@@ -669,12 +545,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "Street")=="1"
-  then
-    appendvar("gapps", "Street\n");
-  endif;
-
-  if
     prop("gapps.prop", "TagGoogle")=="1"
   then
     appendvar("gapps", "TagGoogle\n");
@@ -684,12 +554,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     prop("gapps.prop", "Talkback")=="1"
   then
     appendvar("gapps", "Talkback\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Translate")=="1"
-  then
-    appendvar("gapps", "Translate\n");
   endif;
 
   if
@@ -710,12 +574,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     appendvar("gapps", "YouTube\n");
   endif;
 
-  if
-    prop("gapps.prop", "Zhuyin")=="1"
-  then
-    appendvar("gapps", "Zhuyin\n");
-  endif;
-
   appendvar("gapps", "\n");
 
   # REMOVALS
@@ -724,151 +582,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
     appendvar("gapps", "BasicDreams\n");
   endif;
-
-  if
-    prop("rem.prop", "Browser")=="1"
-  then
-    appendvar("gapps", "Browser\n");
-  endif;
-
-  if
-    prop("rem.prop", "CalendarStock")=="1"
-  then
-    appendvar("gapps", "CalendarStock\n");
-  endif;
-
-  if
-    prop("rem.prop", "ClockStock")=="1"
-  then
-    appendvar("gapps", "ClockStock\n");
-  endif;
-
-  if
-    prop("rem.prop", "CameraStock")=="1"
-  then
-    appendvar("gapps", "CameraStock\n");
-  endif;
-
-  if
-    prop("rem.prop", "DashClock")=="1"
-  then
-    appendvar("gapps", "DashClock\n");
-  endif;
-
-  if
-    prop("rem.prop", "Email")=="1"
-  then
-    appendvar("gapps", "Email\n");
-  endif;
-
-  if
-    prop("rem.prop", "ExchangeStock")=="1"
-  then
-    appendvar("gapps", "ExchangeStock\n");
-  endif;
-
-  if
-    prop("rem.prop", "FMRadio")=="1"
-  then
-    appendvar("gapps", "FMRadio\n");
-  endif;
-
-  if
-    prop("rem.prop", "Galaxy")=="1"
-  then
-    appendvar("gapps", "Galaxy\n");
-  endif;
-
-  if
-    prop("rem.prop", "Gallery")=="1"
-  then
-    appendvar("gapps", "Gallery\n");
-  endif;
-
-  if
-    prop("rem.prop", "HoloSpiral")=="1"
-  then
-    appendvar("gapps", "HoloSpiral\n");
-  endif;
-
-  if
-    prop("rem.prop", "KeyboardStock")=="1"
-  then
-    appendvar("gapps", "KeyboardStock\n");
-  endif;
-
-  if
-    prop("rem.prop", "Launcher")=="1"
-  then
-    appendvar("gapps", "Launcher \n");
-  endif;
-
-  if
-    prop("rem.prop", "LiveWallpapers")=="1"
-  then
-    appendvar("gapps", "LiveWallpapers\n");
-  endif;
-
-  if
-    prop("rem.prop", "LockClock")=="1"
-  then
-    appendvar("gapps", "LockClock\n");
-  endif;
-
-  if
-    prop("rem.prop", "MMS")=="1"
-  then
-    appendvar("gapps", "MMS\n");
-  endif;
-
-  if
-    prop("rem.prop", "PhotoTable")=="1"
-  then
-    appendvar("gapps", "PhotoTable\n");
-  endif;
-
-  if
-    prop("rem.prop", "PicoTTS")=="1"
-  then
-    appendvar("gapps", "PicoTTS\n");
-  endif;
-
-  if
-    prop("rem.prop", "SimToolKit")=="1"
-  then
-    appendvar("gapps", "SimToolKit\n");
-  endif;
-
-  if
-    prop("rem.prop", "StorageManagerStock")=="1"
-  then
-    appendvar("gapps", "StorageManagerStock\n");
-  endif;
-
-  if
-    prop("rem.prop", "Studio")=="1"
-  then
-    appendvar("gapps", "Studio\n");
-  endif;
-
-  if
-    prop("rem.prop", "Terminal")=="1"
-  then
-    appendvar("gapps", "Terminal\n");
-  endif;
-
-  if
-    prop("rem.prop", "Themes")=="1"
-  then
-    appendvar("gapps", "Themes\n");
-  endif;
-
-  if
-    prop("rem.prop", "WhisperPush")=="1"
-  then
-    appendvar("gapps", "WhisperPush\n");
-  endif;
-
 
   # BYPASS REMOVALS
   appendvar("gapps", "\n\n");
@@ -984,8 +697,10 @@ checkbox(
 
 # -- - THEME - -- #
 selectbox(
-  "<~theme.tittle>", "<~theme.tittle2>", "@default", "theme.prop",
-
+  "<~theme.tittle>",
+  "<~theme.tittle2>",
+  "@default",
+  "theme.prop",
   "<~theme.tittle3>", "", 2,
     "<~notheme>", "", 1,
     "<~substratum>", "<~info.substratum>", 0,
@@ -995,81 +710,6 @@ selectbox(
     "<~no_splash>", "", 0
 );
 
-# -- - ELEMENTALX - -- #
-if (file_getprop("/tmp/aroma/kernel.prop", "selected.0") == "2") then
-
-  splash(2000, "elementalx/elementalx");
-
-  agreebox(
-     "Terms Of Use",
-     "<@center>Please read the ElementalX terms of use</@>",
-     "@elementalx",
-     "" + readfile_aroma("elementalx/agreement.txt"),
-     "I agree with these terms of use",
-     "<@center>You must accept the terms</@>"
-   );
-
-  selectbox(
-    "Maximum CPU Frequency","<@center><b>Select maximum CPU frequency for the little cluster</b></@>","@elementalx","cpu0.prop",
-
-    "1728MHz","(overclocked)",0,
-    "1593MHz","(stock)",1,
-    "1478MHz","",0,
-    "1324MHz","",0,
-    "1228MHz","",0
-  );
-
-  selectbox(
-    "Maximum CPU Frequency","<@center><b>Select maximum CPU frequency for the big cluster</b></@>","@elementalx","cpu2.prop",
-
-    "2265MHz","(overclocked)",0,
-    "2150MHz","(stock)",1,
-    "1996MHz","",0,
-    "1824MHz","",0,
-    "1708MHz","",0,
-    "1555MHz","",0
-  );
-
-  selectbox(
-    "Disk Settings","","@elementalx","disk.prop",
-
-    "Select i/o scheduler","",2,
-      "CFQ","(stock)",0,
-      "deadline","",0,
-      "FIOPS","(default)",1,
-      "SIO","",0,
-      "BFQ","",0,
-      "noop","",0,
-      "zen","",0
-  );
-
-  checkbox(
-    "Wake Gestures","<@center><b>Select the screen gestures you would like to use</b></@>","@elementalx","gest.prop",
-
-    "Wake Gestures","<b>Sweep or double tap to wake up phone</b>",2,
-    "Sweep right","",0,
-    "Sweep left","",0,
-    "Sweep up","",0,
-    "Sweep down","",0,
-    "Double tap","",0
-  );
-
-  selectbox(
-    "Sweep2Sleep","<@center><b>Sweep across navbar area to put phone to sleep</b></@>","@elementalx","s2s.prop",
-
-    "Disable Sweep2Sleep","",0,
-    "Sweep right","",0,
-    "Sweep left","(default)",1,
-    "Sweep left or right","",0
-  );
-
-  checkbox(
-    "Other settings","<@center><b>Select the mods you want to install</b></@>","@elementalx","mods.prop",
-
-    "Disable fsync","Faster fileystem performance, with risk of data loss",0,
-    "Backlight dimmer","Lower screen brightness",0
-  );
-endif;
 
 # -- - Pre-Install - -- -#
 ini_set("text_next", "<~install.now>");
