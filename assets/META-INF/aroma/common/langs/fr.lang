@@ -54,7 +54,7 @@ install_mod.tittle=Choisissez votre mode d'installation
 install_mod.tittle2=Choisissez vos paramètres
 install_mod.sub_tittle=Installer
 
-assert.tittle=Vérifier l'assert_yes
+assert.tittle=Vérifier le modèle
 assert_yes=Oui (Recommandé)
 assert_no=Non
 addon.tittle=Sauvegarder/Réstaurer /system/addon.d/
@@ -68,10 +68,10 @@ info.fw_mm=Supporte plus de variante TWRP
 fw_n=Micro logiciels Nougat
 info.fw_n=Conseillé
 passwordfix.tittle=Pin/Pattern workaround
-passwordfix_yes=yes
-info.passwordfix_yes=Remove Pin/Pattern backup in data partition
-passwordfix_no=no
-info.passwordfix_no=let the old file 
+passwordfix_yes=Oui
+info.passwordfix_yes=Retirer vérouillage Pin/Pattern
+passwordfix_no=Non
+info.passwordfix_no=Laisse le vérouillage actuel
 
 info.custom=Méthode FreedomOS
 info.stock=Stock d'origine, non modifié

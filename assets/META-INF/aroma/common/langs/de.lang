@@ -68,10 +68,10 @@ info.fw_mm=Support more TWRP variant
 fw_n=Nougat firmwares
 info.fw_n=Recommended
 passwordfix.tittle=Pin/Pattern workaround
-passwordfix_yes=yes
+passwordfix_yes=Yes
 info.passwordfix_yes=Remove Pin/Pattern backup in data partition
-passwordfix_no=no
-info.passwordfix_no=let the old file 
+passwordfix_no=No
+info.passwordfix_no=Let the old file
 
 info.custom=Der "Freedom-Way" (Freiheitspfad)
 info.stock=Original OnePlus Betreibssystem, nicht gerooted
