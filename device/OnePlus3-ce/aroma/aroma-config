@@ -205,7 +205,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   # Customized installation
   ##############################################
   form(
-      "Apps",
+      "Google Apps",
       "Please select which apps you want to include or exclude</#>",
       "@default",
       aromagapps.prop,
@@ -224,7 +224,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "CloudPrint",     "<b>Google Cloud Print</b>",       "",                      "check",
         "ContactsGoogle",     "<b>Google Contacts</b>",       "",                      "check",
         "DialerFramework",     "<b>Dialer Framework</b>",       "Necessary for Google Dialer compatibility",                      "check",
-        "DialerGoogle",     "<b>Google Dialer</b>",       "",                      "check",
+        "DialerGoogle",     "<b>Google Dialer</b>",       "Will remove OnePlus dialer",                      "check",
         "DMAgent",     "<b>Google Apps Device Policy</b>",       "",                      "check",
         "Drive",     "<b>Google Drive</b>",       "",                      "check",
         "ExchangeGoogle",     "<b>Google Exchange Services</b>",       "",                      "check",
@@ -249,7 +249,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "StorageManagerGoogle",     "<b>Google Storage Manager</b>",       "",                      "check",
         "TagGoogle",     "<b>Google NFC Tags</b>",       "",                      "check",
         "Talkback",     "<b>Talkback</b>",       "",                      "check",
-        "VRService",     "<b>Google VR Service</b>",       "",                      "check",
         "Wallpapers",     "<b>Wallpapers</b>",       "To Exclude BOTH Wallpapers AND Pixel Launcher <#f00>OR</#> To Include Wallpapers",                      "check",
         "WebViewGoogle",     "<b>Android System WebView</b>",       "",                      "check",
         "YouTube",     "<b>YouTube</b>",       "",                      "check"
@@ -271,12 +270,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       extra.prop,
       "extra",     "Advanced Options",        "",                                         "group",
         "exdebug",     "<b>NoDebug</b>",       "To disable the creation of the debug log",                      "check",
-        "extest",     "<b>Test</b>",       "To perform a simulation generating a detailed log, but <u>WILL NOT MAKE ANY CHANGES</u> to your device.",                      "check",
-        "exswype",     "<b>SkipSwypelibs</b>",       "To skip/remove the installation of the Google Swype libraries for the AOSP Keyboard",                      "check",
-        "exsubstitute","<b>SubstituteSwypelibs</b>", "To overwrite the AOSP Keyboard libraries with the Google Swype libraries instead of adding",                      "check",
-        "exnopreodex",   "<b>NoPreODEX</b>",           "To disable the smart Pre-ODEX-ing on Marshmallow+ ROMs",                      "check",
-        "exclean",     "<b>ForceClean</b>",       "To ignore the detection of dirty installations and force the installer to behave as if it concerns a clean install <u>DO NOT REPORT ANY BUGS IF USED</u>",                      "check",
-        "WebViewStub",     "<b>WebViewStub</b>",       "Placeholder for Google WebView, on 7.0+ automatically used instead of WebViewGoogle if Chrome is installed",                      "check"
+        "exnopreodex",   "<b>NoPreODEX</b>",           "To disable the smart Pre-ODEX-ing on Marshmallow+ ROMs",                      "check"
   );
 
   ##############################################
@@ -557,12 +551,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "VRService")=="1"
-  then
-    appendvar("gapps", "VRService\n");
-  endif;
-
-  if
     prop("gapps.prop", "WebViewGoogle")=="1"
   then
     appendvar("gapps", "WebViewGoogle\n");
@@ -583,43 +571,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     appendvar("gapps", "BasicDreams\n");
   endif;
 
-  # BYPASS REMOVALS
   appendvar("gapps", "\n\n");
-  if
-    prop("bypass.prop", "+Browser")=="1"
-  then
-    appendvar("gapps", "+Browser\n");
-  endif;
-  if
-    prop("bypass.prop", "+CameraStock")=="1"
-  then
-    appendvar("gapps", "+CameraStock\n");
-  endif;
-  if
-    prop("bypass.prop", "+Email")=="1"
-  then
-    appendvar("gapps", "+Email\n");
-  endif;
-  if
-    prop("bypass.prop", "+Gallery")=="1"
-  then
-    appendvar("gapps", "+Gallery\n");
-  endif;
-  if
-    prop("bypass.prop", "+Launcher")=="1"
-  then
-    appendvar("gapps", "+Launcher\n");
-  endif;
-  if
-    prop("bypass.prop", "+MMS")=="1"
-  then
-    appendvar("gapps", "+MMS\n");
-  endif;
-  if
-    prop("bypass.prop", "+PicoTTS")=="1"
-  then
-    appendvar("gapps", "+PicoTTS\n");
-  endif;
 
   # WRITE CONFIG TO TEMP AND DISPLAY IT
   writetmpfile(".gapps-config", getvar("gapps"));
