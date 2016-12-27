@@ -1,6 +1,6 @@
 2.2-CE
   ADD: OpenGApps installer with aroma settings
-  ADD: Google Assistant in aroma
+  ADD: Google Assistant in aroma @genesixxbf3
   ADD: Google Dialer in aroma
   ADD: Pixel Launcher in aroma
   ADD: Busybox 1.25.1 @YashdSaraf
