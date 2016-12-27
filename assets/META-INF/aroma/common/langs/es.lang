@@ -50,6 +50,11 @@ main.exit.info=Salir del instalador de FreedomOS
 install_mod.tittle=Instalador FreedomOS
 install_mod.tittle2=Seleccione sus opciones
 install_mod.sub_tittle=Metodo de instalación
+
+gapps_yes=Yes, install Google Apps
+gapps_no=Do not install Google Apps
+info.gapps_yes=Recommended
+info.gapps_no=The system will <#f00>NOT</#> boot without GApps
 assert.tittle=Verifique la afirmación
 assert_yes=Si (Recomendado)
 assert_no=No
@@ -108,6 +113,7 @@ play_music=Play Music
 tts=Síntesis de voz de Google
 tallback=Talkback
 play_movies=Google Play Películas
+setupwizard=Google SetupWizard
 youtube=YouTube
 info.calculator=0010 1010
 info.calendar=Calendario de Google
@@ -126,6 +132,7 @@ info.play_music=Aplicación de música de Google
 info.tts=Causa pantallazos negros en el primer arranque si se quita...
 info.tallback=Causa pantallazos negros en el primer arranque si se quita...
 info.play_movies=Visor de peliculas de Google
+info.setupwizard=Initialization screen from Google
 info.youtube=Aplicación de YouTube
 # -- - SYSTEM APPS - -- #
 apps.tittle=Aplicaciones de Sistema
@@ -226,7 +233,7 @@ dns=DNS de Google
 fos_wallpapers=Fondos de pantalla de FreedomOS
 emoji_one=EmojiOne
 google_assistant=Google Assistant
-multi_window=Multi ventanas
+arise=A.R.I.S.E
 
 info.supersu=SuperSU v2.78 SR5 de Chainfire
 info.divine=Divine beats de Theroyalseeker
@@ -237,7 +244,8 @@ info.dns=Asignar las DNS 8.8.8.8/8.8.4.4
 info.fos_wallpapers=Diseñado por @badboy47
 info.emoji_one=El emoji estándar
 info.google_assistant=Google Assistant
-info.multi_window=Habilitar la multi ventana
+info.arise=A.R.I.S.E Sound System
+
 # -- - THEME - -- #
 theme.tittle=Temas
 theme.tittle2=Selecciona las opciones de tema

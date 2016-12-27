@@ -54,6 +54,10 @@ install_mod.tittle=Choisissez votre mode d'installation
 install_mod.tittle2=Choisissez vos paramètres
 install_mod.sub_tittle=Installer
 
+gapps_yes=Oui, installer les Google Apps
+gapps_no=Ne pas installer
+info.gapps_yes=Conseillé
+info.gapps_no=Le système <#f00>NE BOOT PAS</#> sans!
 assert.tittle=Vérifier le modèle
 assert_yes=Oui (Recommandé)
 assert_no=Non
@@ -117,6 +121,7 @@ play_music=Play Musique
 tts=Text-to-Speech
 tallback=Tallback
 play_movies=Play Vidéos
+setupwizard=Google SetupWizard
 youtube=YouTube
 
 info.calculator=0010 1010
@@ -135,6 +140,7 @@ info.play_music=Application Google Play Musique
 info.tts=Cause écran noir au premier démarrage si retiré !!!
 info.tallback=Cause écran noir au premier démarrage si retiré !!!
 info.play_movies=Application Google Play Films
+info.setupwizard=Initialization screen from Google
 info.youtube=Application YouTube
 
 # -- - SYSTEM APPS - -- #
@@ -240,7 +246,8 @@ adb=Activer ADB
 dns=Google DNS
 fos_wallpapers=Fond d'écran FreedomOS
 emoji_one=EmojiOne
-multi_window=Multi Fenêtre
+google_assistant=Google Assistant
+arise=A.R.I.S.E
 
 info.supersu=SuperSU v2.78 SR5 par Chainfire
 info.divine=Divine beats par Theroyalseeker
@@ -250,7 +257,8 @@ info.adb=Android Debugging Bridge
 info.dns=DNS 8.8.8.8/8.8.4.4
 info.fos_wallpapers=Conçus par @badboy47
 info.emoji_one=The Open Emoji Standard
-info.multi_window=Active le Multi Window
+info.google_assistant=Google Assistant
+info.arise=A.R.I.S.E Sound System
 
 
 # -- - THEME - -- #
