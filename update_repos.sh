@@ -49,11 +49,13 @@ do
   folder_name=${i##*/}
   folder_name=${folder_name%%.*}
   if [[ ! -d ${download_root}/${folder_name} ]]; then
-    echo "Cloning ${folder_name} repo"
+    echo "->   Cloning ${folder_name} repo"
     mkdir -p ${download_root}/${folder_name}
     git clone ${i} ${download_root}/${folder_name}
   else
-    echo "Updating ${folder_name} repo"
-    git --git-dir=${download_root}/${folder_name}/.git --work-tree=${download_root}/${folder_name} pull
+    echo "->   Updating ${folder_name} repo"
+    cd ${download_root}/${folder_name}
+    git pull
+    cd - >> /dev/null
   fi
 done
