@@ -88,6 +88,18 @@ bin/oemlogkit
 bin/WifiLogger_app
 recovery-from-boot.p
 etc/recovery-resource.dat
+app/Calculator
+app/CalendarGoogle
+priv-app/CallLogBackup
+app/Chrome
+app/Drive
+app/Gmail2
+app/GmailExchange
+priv-app/Velvet
+app/Messenger
+app/Photos
+app/Music2
+app/YouTube
 "
 
 PATCH_FIRMWARE=3.2.8
