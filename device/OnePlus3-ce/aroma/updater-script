@@ -157,6 +157,8 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   run_program("/tmp/tools/addon/backuptool.sh", "restore");
 endif;
 
+delete_recursive("/tmp/tools/addon/");
+
 # -- - pin/patern fix - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
@@ -183,6 +185,8 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
   run_program("/tmp/tools/busybox", "mount", "/system");
 endif;
 
+delete_recursive("/tmp/supersu");
+
 # -- - ARISE - -- #
 
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
@@ -201,6 +205,8 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
   set_metadata_recursive("/tmp/arise", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
   run_program("/sbin/busybox", "sh", "/tmp/arise/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/arise/arise.zip");
   run_program("/tmp/tools/busybox", "mount", "/system");
+  delete_recursive("/tmp/arise");
+  delete_recursive("/tmp/tools/arise");
   ui_print("   Extracting V4A profiles & IRS");
   package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
 endif;
@@ -240,6 +246,7 @@ run_program("/tmp/makebootimg.sh");
 
 ui_print("   - Installing kernel");
 run_program("/tmp/tools/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
+delete_recursive("/tmp/tools/kernel");
 
 # -- - XPOSED - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1")
@@ -315,6 +322,8 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
     set_metadata("/system/fonts/NotoColorEmoji.ttf", "uid", 0, "gid", 0,  "mode", 0644);
 endif;
 
+delete_recursive("/tmp/tools/fonts");
+
 # -- - GOOGLE ASSISTANT - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
   then
@@ -322,6 +331,8 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
    ui_print("   Setting up Google Assistant");
    run_program("/tmp/tools/google_assistant.sh");
 endif;
+
+delete("/tmp/tools/google_assistant.sh");
 
 # -- - NO THEME - -- #
 if (file_getprop("/tmp/aroma/theme.prop", "selected.1")=="1")
@@ -353,11 +364,15 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.2")=="2")
     package_extract_file("tools/splash-stock.bin", "/dev/block/sde17");
 endif;
 
+delete("/tmp/tools/splash-stock.bin");
+delete("/tmp/tools/splash-fos.bin");
+
 ui_print(" ");
 ui_print("@Installing Busybox");
 ui_print(" ");
 run_program("/sbin/busybox", "unzip", "/tmp/tools/busybox_installer/busybox.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/busybox_installer");
 run_program("/sbin/busybox", "sh", "/tmp/tools/busybox_installer/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/busybox_installer/busybox.zip");
+delete_recursive("/tmp/tools/busybox_installer");
 
 # -- - SYSTEM APPS - -- #
 set_progress(0.960000);
