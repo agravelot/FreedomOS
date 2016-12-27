@@ -137,9 +137,10 @@ function banner() {
 }
 
 function confirm() {
-  read -p "$1 ([y]es or [N]o): "
+  read -p "$1 ([Y/n]): "
   case $(echo $REPLY | tr '[A-Z]' '[a-z]') in
       y|yes)  echo "yes" ;;
+      "")     echo "yes" ;;
       *)      echo "no" ;;
   esac
 }
