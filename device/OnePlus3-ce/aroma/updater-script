@@ -328,7 +328,6 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.1")=="1")
   then
     run_program("/system/bin/echo", "DEBUG: No theme selected");
     delete_recursive("/system/app/Substratum");
-    delete_recursive("/data/app/Substratum");
 endif;
 
 # -- - SUBSTRATUM - -- #
@@ -336,7 +335,6 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.1")=="2")
   then
     set_progress(0.950000);
     ui_print("   Installing Substratum");
-    run_program("/system/bin/echo", "DEBUG: Uninstall Layers");
 endif;
 
 # -- - FOS SPLASH - -- #
@@ -531,4 +529,5 @@ ui_print(" ");
 ui_print(" ");
 set_progress(1.00000);
 ui_print("@Finished");
+ui_print(" Please reboot your recovery before flashing anything else!");
 ui_print(" ");
