@@ -104,6 +104,7 @@ function initialize {
   source ${scripts_root}/add_files.sh
   source ${scripts_root}/opengapps.sh
   source ${scripts_root}/arise.sh
+  source ${scripts_root}/busybox.sh
 
   HOST_ARCH=`uname -m`
   HOST_OS=`uname -s`
@@ -302,6 +303,9 @@ if [ $confirm_build -eq 1 ]; then
   build
   add_files
   build_arise
+  if [[ BUILD_BUSYBOX ]]; then
+      build_busybox
+  fi
   make_zip
 fi
 
