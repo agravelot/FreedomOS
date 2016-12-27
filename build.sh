@@ -63,6 +63,7 @@ function initialize {
 
   img2sdat_repo=${download_root}/img2sdat
   sdat2img_repo=${download_root}/sdat2img
+  busybox_repo=${download_root}/freedomos_busybox
 
   redt=$(tput setaf 1)
   redb=$(tput setab 1)
