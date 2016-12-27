@@ -47,7 +47,7 @@ function build_opengapps() {
   GApps/vrservice-arm64.tar.xz
   "
 
-  echo "> Building FreedomOS OpenGapps" 2>&1 | tee -a ${build_log}
+  echo "> Building FreedomOS OpenGApps" 2>&1 | tee -a ${build_log}
   # Create needed folders
   mkdir -p ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
   mkdir -p ${tmp_root}/tools/opengapps/ >> ${build_log} 2>&1
