@@ -35,6 +35,14 @@ https://gitlab.com/Nevax/freedomos_opengapps.git
 https://github.com/xpirt/sdat2img.git
 https://github.com/xpirt/img2sdat.git
 "
+function confirm() {
+  read -p "$1 ([Y/n]): "
+  case $(echo $REPLY | tr '[A-Z]' '[a-z]') in
+      y|yes)  echo "yes" ;;
+      "")     echo "yes" ;;
+      *)      echo "no" ;;
+  esac
+}
 
 for i in ${GIT_URL}
 do
