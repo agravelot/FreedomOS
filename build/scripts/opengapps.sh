@@ -60,10 +60,8 @@ function build_opengapps() {
   # Remove all "/system/" from gapps-remove.txt file
   sed -i 's/\/system\///g' ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
 
-  # Add gapps-remove.txt to the CLEAN_SYSTEM_LIST varaible
-  CLEAN_SYSTEM_LIST+="
-  $(<${tmp_root}/tools/gapps-remove.txt)
-  "
+  # Add gapps-remove.txt to the CLEAN_SYSTEM_LIST variable
+  CLEAN_SYSTEM_LIST+="$(<${tmp_root}/tools/gapps-remove.txt)"
 
   # Add OPInCallUI to the remove list if Google Dialer is installed
   sed -i 's/FineOSDialer/OPInCallUI/g' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
