@@ -51,6 +51,9 @@ PATCH_SYSYEM="
 bootanimation-bin
 "
 
+# Add BUSYBOX into the rom
+BUILD_BUSYBOX=true
+
 BOOTANIMATION=1080p
 
 aroma_list="
