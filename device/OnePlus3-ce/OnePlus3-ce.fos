@@ -25,8 +25,8 @@ CODENAME=op3
 DEVICE=OnePlus3
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT=OnePlus3
-# Basically, it's just the name of the downloaded zip file without the ".zip" extension.
 
+# Basically, it's just the name of the downloaded zip file without the ".zip" extension.
 ROM_NAME=OnePlus3Oxygen_16_OTA_017_all_1612141448_c46e72f660ae4891
 ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
@@ -102,6 +102,7 @@ app/Music2
 app/YouTube
 "
 
+# Add a secondary firmware files, like that it can be installed.
 PATCH_FIRMWARE=3.2.8
 
 # Set the files/folder you want to add to your system partition.
