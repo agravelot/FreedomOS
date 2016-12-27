@@ -44,6 +44,11 @@ function confirm() {
   esac
 }
 
+if [[ "yes" == $(confirm "Revert change if needed?") ]]
+then
+    revert=true
+fi
+
 for i in ${GIT_URL}
 do
   folder_name=${i##*/}
@@ -55,6 +60,10 @@ do
   else
     echo "->   Updating ${folder_name} repo"
     cd ${download_root}/${folder_name}
+    if [[ revert ]]; then
+        git stash
+        git stash drop
+    fi
     git pull
     cd - >> /dev/null
   fi
