@@ -1,4 +1,12 @@
 2.2-CE
+  UPDATE: OxygenOS Open Beta 10
+    - Added Data Saver
+    - Fixed Lock Screen Clock bug in Portrait Mode
+    - Fixed Reverting to Default Theme after Reboot
+    - Optimized Unlocking Speed using Fingerprint
+    - Optimized the quality of Expanded Screenshot
+    - Optimized WiFi Performance
+    - Optimized System Performance and Battery Consumption
   ADD: OpenGApps installer with aroma settings
   ADD: Google Assistant in aroma @genesixxbf3
   ADD: Google Dialer in aroma
