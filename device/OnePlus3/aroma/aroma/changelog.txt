@@ -1,35 +1,30 @@
-1.7.1
-  REMOVE: Google DeskClock
-  ADD: OnePlus DeskClock
-  UPDATE: Moxie v8
-  - Update to Linux 3.18.45 (LTS support for this kernel is due to end next month, so I'm not certain if there will be any further updates from the mainline)
-  - disabled WiFi debugging code: I saw this in franco's git and was surprised I never noticed it myself. It shrinks the code down by about half a meg
-  - random: a couple more patches courtesy of franco's git
-  - Bluetooth: I was always bothered by a compilation warning about a missing parameter in hci_sock.c so pulled in some updates from upstream and fixed it
-  - improved hash load efficiency
-  - properly round msm8996 clock rates: found in kairi_zeroblade's git. It ensures that the most efficient clock frequency is selected (incorrect rounding might select an unnecessarily higher step)
-  UPDATE: Moxie v7
-  - updated to oneplus source for 3.2.8
-  - trawled through franco's git and came up with some cypher updates
-  - linux 3.18.45
-  - patch kernel exploit 'CVE-2016-8655 Linux af_packet.c race condition (local root)', thanks to @Haggster66 (see this post and here's the patch if other devs want to use it)
-  UPDATE: SuperSU SR5
+2.0
+  UPDATE: OxygenOS 4.0
+  REMOVE: Moxie kernel
+  REMOVE: ElementalX kernel
+  ADD: OpenGApps installer with aroma settings
+  ADD: Google Assistant in aroma @genesixxbf3
+  ADD: Google Dialer in aroma
+  ADD: Pixel Launcher in aroma
+  ADD: Busybox 1.25.1 @YashdSaraf
+  ADD: A.R.I.S.E Sound system Deuteronomy™ 2.3.3
+  ADD: New aroma theme "redback" @kickoff
+  ADD: Ability to save/load aroma settings (GApps only for now)
+  REMOVE: OnePlus Google Apps
+  REMOVE: Google Duo
+  UPDATE: EmojiOne
+  UPDATE: SuperSU 2.79 STABLE
   - Fix shell-based scripts/services possibly not being executed on 7.x firmwares
   - Add SecurityLogAgent to Samsung KNOX detection
   - sukernel: force seclabel
-  UPDATE: Firmwares binaries
-  ADD: Option to install wifi module (ElementalX).
-  UPDATE: ElementalX 0.32
-  - cpuidle patch
-  UPDATE: ElementalX 0.31
-  - security updates
-  - update installer
-  UPDATE: ElementalX 0.30
-  - OnePlus updates
-  - security updates
-  - installer update
+  - Fix shell-based scripts/services possibly not being executed on 7.x firmwares
+  - Add SecurityLogAgent to Samsung KNOX detection
+  - sukernel: force seclabel
+  REMOVE: Google DeskClock
+  ADD: OnePlus DeskClock
   REMOVE: FreedomOS 1.0 IRS/Profile
   ADD: Arise Audiophile IRS/Profile
+  NOTE: Merge most of the FreedomOS CE features in FreedomOS
   
 1.7
   UPDATE: OxygenOS 3.2.8
