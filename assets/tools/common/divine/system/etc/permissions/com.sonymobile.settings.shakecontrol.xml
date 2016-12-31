@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<permissions>
-    <library name="com.sonymobile.settings.shakecontrol.api"
-            file="/system/framework/com.sonymobile.settings.shakecontrol.jar"/>
-</permissions>
-

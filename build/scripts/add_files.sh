@@ -42,7 +42,12 @@ function add_files {
     cp -rvf ${assets_root}/tools/${i} ${tmp_root}/tools/ >> ${build_log} 2>&1
   done
 
-  echo ">> Add FreedomOS wallpapers by badboy47" 2>&1 | tee -a ${build_log}
+  if [[ ${GAPPS_TYPE} = "aroma" ]]; then
+      echo ">> Add opengapps aroma scripts" 2>&1 | tee -a ${build_log}
+      cp -rvf ${download_root}/freedomos_opengapps/${GAPPS_TYPE}/${GAPPS_PLATFORM}/${GAPPS_ANDROID}/META-INF/com/google/android/aroma/scripts ${tmp_root}/META-INF/com/google/android/aroma/ >> ${build_log} 2>&1
+  fi
+
+  echo ">> Add FreedomOS wallpapers" 2>&1 | tee -a ${build_log}
   mkdir -p ${tmp_root}/media/wallpaper >> ${build_log} 2>&1
   cp -v ${assets_root}/media/wallpaper/* ${tmp_root}/media/wallpaper >> ${build_log} 2>&1
 

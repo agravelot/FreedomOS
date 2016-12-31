@@ -1,0 +1,6 @@
+
+# LG™ G5 AOSP and Qualcomm™ libraries
+
+# The purpose of /soundfx_lg is to provide full functionality of selected soundfx libraries while not interfering with the native soundfx libraries on the device, allowing both groups to work in harmony with no compromise to the existing system.
+
+# This /soundfx_lg folder will only appear on non-LG™ Qualcomm™ devices.

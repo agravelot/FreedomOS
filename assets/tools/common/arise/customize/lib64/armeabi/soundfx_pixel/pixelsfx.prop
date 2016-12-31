@@ -1,0 +1,6 @@
+
+# Google™ Pixel 64 bit Qualcomm™ libraries
+
+# The purpose of /soundfx_pixel is to provide full functionality of selected soundfx libraries while not interfering with the native soundfx libraries on the device, allowing both groups to work in harmony with no compromise to the existing system.
+
+# This /soundfx_pixel folder will only appear on 64 bit Nexus™/Google™ devices.

@@ -1,0 +1,1446 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<audio version="U9510" date="2013-12-20 13:34:05">
+    <!--Modem gain-->
+    <modems>
+        <modem id="0" name="modem1">
+            <values id="0" name="narrowband">
+                <value id="0" name="earpiece">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="1" name="headset">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="2" name="speaker">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="3" name="bluetooth">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="4" name="digital_speaker">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+            </values>
+            <values id="1" name="wideband">
+                <value id="0" name="earpiece">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="1" name="headset">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="2" name="speaker">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="3" name="bluetooth">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="4" name="digital_speaker">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+            </values>
+        </modem>
+        <modem id="1" name="modem2">
+            <values id="0" name="narrowband">
+                <value id="0" name="earpiece">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="1" name="headset">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="2" name="speaker">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="3" name="bluetooth">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+            </values>
+            <values id="1" name="wideband">
+                <value id="0" name="earpiece">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="1" name="headset">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="2" name="speaker">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+                <value id="3" name="bluetooth">
+                    <level id="0">-20dB</level>
+                    <level id="1">-16dB</level>
+                    <level id="2">-12dB</level>
+                    <level id="3">-8dB</level>
+                    <level id="4">-4dB</level>
+                    <level id="5">0dB</level>
+                </value>
+            </values>
+        </modem>
+    </modems>
+    <!--FM gain-->
+    <fms>
+        <!--Analog FM-->
+        <fm id="0" name="analog_fm">
+            <value id="0" name="speaker">
+                <level id="0">-45dB</level>
+                <level id="1">-42dB</level>
+                <level id="2">-39dB</level>
+                <level id="3">-36dB</level>
+                <level id="4">-33dB</level>
+                <level id="5">-30dB</level>
+                <level id="6">-27dB</level>
+                <level id="7">-24dB</level>
+                <level id="8">-21dB</level>
+                <level id="9">-18dB</level>
+                <level id="10">-15dB</level>
+                <level id="11">-12dB</level>
+                <level id="12">-9dB</level>
+                <level id="13">-6dB</level>
+                <level id="14">-3dB</level>
+                <level id="15">0dB</level>
+            </value>
+            <value id="1" name="headset">
+                <level id="0">-45dB</level>
+                <level id="1">-42dB</level>
+                <level id="2">-39dB</level>
+                <level id="3">-36dB</level>
+                <level id="4">-33dB</level>
+                <level id="5">-30dB</level>
+                <level id="6">-27dB</level>
+                <level id="7">-24dB</level>
+                <level id="8">-21dB</level>
+                <level id="9">-18dB</level>
+                <level id="10">-15dB</level>
+                <level id="11">-12dB</level>
+                <level id="12">-9dB</level>
+                <level id="13">-6dB</level>
+                <level id="14">-3dB</level>
+                <level id="15">0dB</level>
+            </value>
+        </fm>
+        <!--Digital FM-->
+        <fm id="1" name="digital_fm">
+            <value id="0" name="speaker">
+                <level id="0">0</level>
+                <level id="1">2</level>
+                <level id="2">5</level>
+                <level id="3">8</level>
+                <level id="4">12</level>
+                <level id="5">20</level>
+                <level id="6">30</level>
+                <level id="7">55</level>
+                <level id="8">80</level>
+                <level id="9">105</level>
+                <level id="10">130</level>
+                <level id="11">155</level>
+                <level id="12">180</level>
+                <level id="13">205</level>
+                <level id="14">230</level>
+                <level id="15">255</level>
+            </value>
+            <value id="1" name="headset">
+                <level id="0">0</level>
+                <level id="1">1</level>
+                <level id="2">2</level>
+                <level id="3">4</level>
+                <level id="4">6</level>
+                <level id="5">10</level>
+                <level id="6">15</level>
+                <level id="7">23</level>
+                <level id="8">37</level>
+                <level id="9">58</level>
+                <level id="10">70</level>
+                <level id="11">87</level>
+                <level id="12">109</level>
+                <level id="13">132</level>
+                <level id="14">164</level>
+                <level id="15">205</level>
+            </value>
+        </fm>
+    </fms>
+    <!--Output gain-->
+    <outputs>
+        <!--single output device-->
+        <output id="0" name="single">
+            <reg name="HI6401_S4_OL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S4_OR_GAIN_INT">0dB</reg>
+            <reg name="HI6401_DACL_AGC_TIMENNG">0x00</reg>
+            <reg name="HI6401_DACL_AGC_NGI">0x04</reg>
+            <reg name="HI6401_DACL_AGC_TIMER">0x04</reg>
+            <reg name="HI6401_DACL_AGC_NGH">0x02</reg>
+            <reg name="HI6401_DACL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_DACL_AGC_KFRAPID">0x02</reg>
+            <reg name="HI6401_DACL_AGC_KFSLOW">0x02</reg>
+            <reg name="HI6401_DACL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_DACL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_DACL_AGC_YTARGET">0x03</reg>
+            <reg name="HI6401_DACL_AGC_NGW">0x02</reg>
+            <reg name="HI6401_DACL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_DACL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_DACL_AGC_LEVELLOW">0x00</reg>
+            <reg name="HI6401_DACL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_DACL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_DACL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_DACL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_DACL_AGC_TIMEHOLD">0x02</reg>
+            <reg name="HI6401_DACL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_DACL_AGC_USER">0dB</reg>
+            <reg name="HI6401_DACR_AGC_TIMENNG">0x00</reg>
+            <reg name="HI6401_DACR_AGC_NGI">0x04</reg>
+            <reg name="HI6401_DACR_AGC_TIMER">0x04</reg>
+            <reg name="HI6401_DACR_AGC_NGH">0x02</reg>
+            <reg name="HI6401_DACR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_DACR_AGC_KFRAPID">0x02</reg>
+            <reg name="HI6401_DACR_AGC_KFSLOW">0x02</reg>
+            <reg name="HI6401_DACR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_DACR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_DACR_AGC_YTARGET">0x03</reg>
+            <reg name="HI6401_DACR_AGC_NGW">0x02</reg>
+            <reg name="HI6401_DACR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_DACR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_DACR_AGC_LEVELLOW">0x00</reg>
+            <reg name="HI6401_DACR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_DACR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_DACR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_DACR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_DACR_AGC_TIMEHOLD">0x02</reg>
+            <reg name="HI6401_DACR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_DACR_AGC_USER">0dB</reg>
+            <reg name="LINEOUTL PGA VOLUME">0dB</reg>
+            <reg name="LINEOUTL PGA MUTE">0x01</reg>
+            <reg name="LINEOUTR PGA VOLUME">0dB</reg>
+            <reg name="LINEOUTR PGA MUTE">0x01</reg>
+            <reg name="HEADSETL PGA VOLUME">-6dB</reg>
+            <reg name="HEADSETL PGA MUTE">0x0</reg>
+            <reg name="HEADSETR PGA VOLUME">-6dB</reg>
+            <reg name="HEADSETR PGA MUTE">0x0</reg>
+            <reg name="EARPIECE PGA VOLUME">1.5dB</reg>
+            <reg name="EARPIECE PGA MUTE">0x0</reg>
+        </output>
+        <!--combined output devices-->
+        <output id="1" name="combined">
+            <reg name="HI6401_S4_OL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S4_OR_GAIN_INT">0dB</reg>
+            <reg name="HI6401_DACL_AGC_TIMENNG">0x00</reg>
+            <reg name="HI6401_DACL_AGC_NGI">0x04</reg>
+            <reg name="HI6401_DACL_AGC_TIMER">0x04</reg>
+            <reg name="HI6401_DACL_AGC_NGH">0x02</reg>
+            <reg name="HI6401_DACL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_DACL_AGC_KFRAPID">0x02</reg>
+            <reg name="HI6401_DACL_AGC_KFSLOW">0x02</reg>
+            <reg name="HI6401_DACL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_DACL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_DACL_AGC_YTARGET">0x03</reg>
+            <reg name="HI6401_DACL_AGC_NGW">0x02</reg>
+            <reg name="HI6401_DACL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_DACL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_DACL_AGC_LEVELLOW">0x00</reg>
+            <reg name="HI6401_DACL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_DACL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_DACL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_DACL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_DACL_AGC_TIMEHOLD">0x02</reg>
+            <reg name="HI6401_DACL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_DACL_AGC_USER">0dB</reg>
+            <reg name="HI6401_DACR_AGC_TIMENNG">0x00</reg>
+            <reg name="HI6401_DACR_AGC_NGI">0x04</reg>
+            <reg name="HI6401_DACR_AGC_TIMER">0x04</reg>
+            <reg name="HI6401_DACR_AGC_NGH">0x02</reg>
+            <reg name="HI6401_DACR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_DACR_AGC_KFRAPID">0x02</reg>
+            <reg name="HI6401_DACR_AGC_KFSLOW">0x02</reg>
+            <reg name="HI6401_DACR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_DACR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_DACR_AGC_YTARGET">0x03</reg>
+            <reg name="HI6401_DACR_AGC_NGW">0x02</reg>
+            <reg name="HI6401_DACR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_DACR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_DACR_AGC_LEVELLOW">0x00</reg>
+            <reg name="HI6401_DACR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_DACR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_DACR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_DACR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_DACR_AGC_TIMEHOLD">0x02</reg>
+            <reg name="HI6401_DACR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_DACR_AGC_USER">0dB</reg>
+            <reg name="LINEOUTL PGA VOLUME">0dB</reg>
+            <reg name="LINEOUTL PGA MUTE">0x01</reg>
+            <reg name="LINEOUTR PGA VOLUME">0dB</reg>
+            <reg name="LINEOUTR PGA MUTE">0x01</reg>
+            <reg name="HEADSETL PGA VOLUME">-26dB</reg>
+            <reg name="HEADSETL PGA MUTE">0x01</reg>
+            <reg name="HEADSETR PGA VOLUME">-26dB</reg>
+            <reg name="HEADSETR PGA MUTE">0x01</reg>
+            <reg name="EARPIECE PGA VOLUME">1.5dB</reg>
+            <reg name="EARPIECE PGA MUTE">0x01</reg>
+        </output>
+    </outputs>
+    <!--Audio scenes-->
+    <scenes>
+        <!--common recored-->
+        <scene id="0" name="RECORD_MIC">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">8dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x0</reg>
+            <reg name="SUBMIC PGA VOLUME">8dB</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x01</reg>
+        </scene>
+        <scene id="1" name="RECORD_DOUBLE_MIC">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">8dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x01</reg>
+            <reg name="SUBMIC PGA VOLUME">8dB</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x0</reg>
+        </scene>
+        <scene id="2" name="RECORD_HEADSET">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">12dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x0</reg>
+        </scene>
+        <scene id="3" name="RECORD_BT">
+            <reg name="HI6401_S2_IL_GAIN_INT">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">1dB</reg>
+        </scene>
+        <scene id="4" name="MONO_CAMERA">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="SUBMIC PGA VOLUME">14dB</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x01</reg>
+        </scene>
+        <scene id="5" name="STEREO_CAMERA">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">14dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x1</reg>
+            <reg name="MAINMIC PGA MUTE">0x0</reg>
+            <reg name="SUBMIC PGA VOLUME">14dB</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x0</reg>
+        </scene>
+        <scene id="6" name="ANA_FM_RECORD">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+        </scene>
+        <scene id="7" name="DIG_FM_RECORD">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">0dB</reg>
+        </scene>
+        <scene id="8" name="M2_INCALL_RECORD">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">1dB</reg>
+        </scene>
+        <scene id="9" name="COMMUNICATION_EARPIECE">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">0dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x0</reg>
+            <reg name="SUBMIC PGA VOLUME">0dB</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x0</reg>
+        </scene>
+        <scene id="10" name="COMMUNICATION_SPEAKER">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">1dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">0x01</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x01</reg>
+            <reg name="SUBMIC PGA VOLUME">0x01</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x01</reg>
+        </scene>
+        <scene id="11" name="COMMUNICATION_HEADSET">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">20dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x01</reg>
+        </scene>
+        <scene id="12" name="COMMUNICATION_HEADPHONE">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">12dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x01</reg>
+            <reg name="SUBMIC PGA VOLUME">12dB</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x01</reg>
+        </scene>
+        <scene id="13" name="M1_INCALL_RECORD">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">16dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">6dB</reg>
+        </scene>
+        <scene id="14" name="COMMUNICATION_DIG_SPEAKER">
+            <reg name="HI6401_ADCL_AGC_TIMENNG">1dB</reg>
+            <reg name="HI6401_ADCL_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_USER">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_TIMENNG">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGI">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMER">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGH">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFRAPID">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_KFSLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_YTARGET">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_NGW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_LEVELLOW">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEHOLD">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_USER">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">20dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x0</reg>
+            <reg name="MAINMIC PGA MUTE">0x0</reg>
+            <reg name="SUBMIC PGA VOLUME">0dB</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x0</reg>
+        </scene>
+        <scene id="15" name="PB_EARPIECE">
+            <reg name="HI6401_DACR_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_DACL_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_BYPASS_DACR_DEEMP">0x01</reg>
+            <reg name="HI6401_BYPASS_DACL_DEEMP">0x01</reg>
+            <reg name="HI6401_S1_IL_GAIN_INT">-1dB</reg>
+            <reg name="HI6401_S1_IR_GAIN_INT">-1dB</reg>
+        </scene>
+        <scene id="16" name="PB_SPEAKER">
+            <reg name="HI6401_DACR_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_DACL_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_BYPASS_DACR_DEEMP">0x01</reg>
+            <reg name="HI6401_BYPASS_DACL_DEEMP">0x01</reg>
+            <reg name="HI6401_S1_IL_GAIN_INT">-1dB</reg>
+            <reg name="HI6401_S1_IR_GAIN_INT">-1dB</reg>
+        </scene>
+        <scene id="17" name="PB_HEADSET">
+            <reg name="HI6401_DACR_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_DACL_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_BYPASS_DACR_DEEMP">0x01</reg>
+            <reg name="HI6401_BYPASS_DACL_DEEMP">0x01</reg>
+            <reg name="HI6401_S1_IL_GAIN_INT">-4dB</reg>
+            <reg name="HI6401_S1_IR_GAIN_INT">-4dB</reg>
+        </scene>
+        <scene id="18" name="DIG_PB_SPEAKER">
+            <reg name="HI6401_S1_IL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S1_IR_GAIN_INT">0dB</reg>
+        </scene>
+        <scene id="19" name="PB_BTSCO">
+            <reg name="HI6401_S2_OL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S1_IL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S1_IR_GAIN_INT">0dB</reg>
+        </scene>
+        <scene id="20" name="PB_INCALL_EARPIECE">
+            <reg name="HI6401_DACR_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_DACL_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_BYPASS_DACR_DEEMP">0x01</reg>
+            <reg name="HI6401_BYPASS_DACL_DEEMP">0x01</reg>
+            <reg name="HI6401_S1_IL_GAIN_INT">-1dB</reg>
+            <reg name="HI6401_S1_IR_GAIN_INT">-1dB</reg>
+        </scene>
+        <scene id="21" name="PB_INCALL_SPEAKER">
+            <reg name="HI6401_DACR_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_DACL_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_BYPASS_DACR_DEEMP">0x01</reg>
+            <reg name="HI6401_BYPASS_DACL_DEEMP">0x01</reg>
+            <reg name="HI6401_S1_IL_GAIN_INT">-1dB</reg>
+            <reg name="HI6401_S1_IR_GAIN_INT">-1dB</reg>
+        </scene>
+        <scene id="22" name="PB_INCALL_HEADSET">
+            <reg name="HI6401_DACR_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_DACL_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_BYPASS_DACR_DEEMP">0x01</reg>
+            <reg name="HI6401_BYPASS_DACL_DEEMP">0x01</reg>
+            <reg name="HI6401_S1_IL_GAIN_INT">-1dB</reg>
+            <reg name="HI6401_S1_IR_GAIN_INT">-1dB</reg>
+        </scene>
+        <scene id="23" name="DIG_PB_INCALL_SPEAKER">
+            <reg name="HI6401_S1_IL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S1_IR_GAIN_INT">0dB</reg>
+        </scene>
+        <scene id="24" name="PB_INCALL_BTSCO">
+            <reg name="HI6401_S1_IL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S1_IR_GAIN_INT">0dB</reg>
+        </scene>
+        <scene id="25" name="M1_INCALL_EARPIECE">
+            <reg name="HI6401_DACV_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_S3_I_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S3_OL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S3_OR_GAIN_INT">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">0dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x0</reg>
+            <reg name="SUBMIC PGA VOLUME">0dB</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x0</reg>
+        </scene>
+        <scene id="26" name="M1_INCALL_SPEAKER">
+            <reg name="HI6401_DACV_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_S3_I_GAIN_INT">0x01</reg>
+            <reg name="HI6401_S3_OL_GAIN_INT">0x01</reg>
+            <reg name="HI6401_S3_OR_GAIN_INT">0x01</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">0x01</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x0</reg>
+            <reg name="SUBMIC PGA VOLUME">0x01</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x0</reg>
+        </scene>
+        <scene id="27" name="M1_INCALL_DIG_SPEAKER">
+            <reg name="HI6401_S3_I_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S3_OL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S3_OR_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S4_OL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S4_OR_GAIN_INT">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">4dB</reg>
+            <reg name="MAINMIC PGA BOOST">1</reg>
+            <reg name="MAINMIC PGA MUTE">0x0</reg>
+            <reg name="SUBMIC PGA VOLUME">4dB</reg>
+            <reg name="SUBMIC PGA BOOST">1</reg>
+            <reg name="SUBMIC PGA MUTE">0x0</reg>
+        </scene>
+        <scene id="28" name="M1_INCALL_HEADSET">
+            <reg name="HI6401_DACV_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_S3_I_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S3_OL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">10dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x0</reg>
+        </scene>
+        <scene id="29" name="M1_INCALL_HEADPHONE">
+            <reg name="HI6401_DACV_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_S3_I_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S3_OL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S3_OR_GAIN_INT">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">12dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x0</reg>
+            <reg name="SUBMIC PGA VOLUME">12dB</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x0</reg>
+        </scene>
+        <scene id="30" name="M1_INCALL_BT">
+            <reg name="HI6401_S2_IL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S2_OL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S3_I_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S3_OL_GAIN_INT">4dB</reg>
+        </scene>
+        <scene id="31" name="COMMUNICATION_BT">
+            <reg name="HI6401_S2_IL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S2_OL_GAIN_INT">0dB</reg>
+        </scene>
+        <scene id="32" name="M2_INCALL_EARPIECE">
+            <reg name="HI6401_DACV_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_S4_I_GAIN_INT">0x01</reg>
+            <reg name="HI6401_S4_OL_GAIN_INT">-6dB</reg>
+            <reg name="HI6401_S4_OR_GAIN_INT">-6dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">0dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x0</reg>
+            <reg name="SUBMIC PGA VOLUME">0dB</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x0</reg>
+        </scene>
+        <scene id="33" name="M2_INCALL_SPEAKER">
+            <reg name="HI6401_DACV_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_S4_I_GAIN_INT">0x01</reg>
+            <reg name="HI6401_S4_OL_GAIN_INT">-6dB</reg>
+            <reg name="HI6401_S4_OR_GAIN_INT">-6dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">0x01</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x01</reg>
+            <reg name="SUBMIC PGA VOLUME">0x01</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x01</reg>
+        </scene>
+        <scene id="34" name="M2_INCALL_HEADSET">
+            <reg name="HI6401_DACV_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_S4_I_GAIN_INT">0x01</reg>
+            <reg name="HI6401_S4_OL_GAIN_INT">-6dB</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">0x01</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x01</reg>
+        </scene>
+        <scene id="35" name="M2_INCALL_HEADPHONE">
+            <reg name="HI6401_DACV_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_S4_I_GAIN_INT">0x01</reg>
+            <reg name="HI6401_S4_OL_GAIN_INT">-6dB</reg>
+            <reg name="HI6401_S4_OR_GAIN_INT">-6dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="MAINMIC PGA VOLUME">12dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x01</reg>
+            <reg name="SUBMIC PGA VOLUME">12dB</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x01</reg>
+        </scene>
+        <scene id="36" name="M2_INCALL_BT">
+            <reg name="HI6401_S2_IL_GAIN_INT">0x01</reg>
+            <reg name="HI6401_S2_OL_GAIN_INT">0x01</reg>
+            <reg name="HI6401_S4_I_GAIN_INT">0x01</reg>
+            <reg name="HI6401_S4_OL_GAIN_INT">-6dB</reg>
+        </scene>
+    </scenes>
+    <!--Loop scenes-->
+    <loop_scenes>
+        <scene id="0" name="LOOP_MAINMIC_HEADPHONE">
+            <reg name="MAINMIC PGA VOLUME">0dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x01</reg>
+            <reg name="MAINMIC PGA MUTE">0x00</reg>
+            <reg name="HEADSETL PGA VOLUME">0dB</reg>
+            <reg name="HEADSETL PGA MUTE">0x00</reg>
+            <reg name="HEADSETR PGA VOLUME">0dB</reg>
+            <reg name="HEADSETR PGA MUTE">0x00</reg>
+        </scene>
+        <scene id="1" name="LOOP_SUBMIC_HEADPHONE">
+            <reg name="SUBMIC PGA VOLUME">0dB</reg>
+            <reg name="SUBMIC PGA BOOST">0x01</reg>
+            <reg name="SUBMIC PGA MUTE">0x00</reg>
+            <reg name="HEADSETL PGA VOLUME">0dB</reg>
+            <reg name="HEADSETL PGA MUTE">0x00</reg>
+            <reg name="HEADSETR PGA VOLUME">0dB</reg>
+            <reg name="HEADSETR PGA MUTE">0x00</reg>
+        </scene>
+        <scene id="2" name="LOOP_HSMIC_HEADPHONE">
+            <reg name="MAINMIC PGA VOLUME">18dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x00</reg>
+            <reg name="MAINMIC PGA MUTE">0x00</reg>
+            <reg name="HEADSETL PGA VOLUME">0dB</reg>
+            <reg name="HEADSETL PGA MUTE">0x00</reg>
+            <reg name="HEADSETR PGA VOLUME">0dB</reg>
+            <reg name="HEADSETR PGA MUTE">0x00</reg>
+        </scene>
+        <scene id="3" name="LOOP_HSMIC_SPEAKER">
+            <reg name="LINEOUTL PGA VOLUME">0dB</reg>
+            <reg name="LINEOUTL PGA MUTE">0x00</reg>
+            <reg name="LINEOUTR PGA VOLUME">0dB</reg>
+            <reg name="LINEOUTR PGA MUTE">0x00</reg>
+            <reg name="MAINMIC PGA VOLUME">18dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x00</reg>
+            <reg name="MAINMIC PGA MUTE">0x00</reg>
+        </scene>
+        <scene id="4" name="LOOP_HSMIC_DIG_SPEAKER">
+            <reg name="HI6401_S4_OL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S4_OR_GAIN_INT">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x00</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x00</reg>
+            <reg name="MAINMIC PGA VOLUME">18dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x00</reg>
+            <reg name="MAINMIC PGA MUTE">0x00</reg>
+        </scene>
+        <scene id="5" name="LOOP_HSMIC_RECEIVER">
+            <reg name="EARPIECE PGA VOLUME">0dB</reg>
+            <reg name="EARPIECE PGA MUTE">0x00</reg>
+            <reg name="MAINMIC PGA VOLUME">18dB</reg>
+            <reg name="MAINMIC PGA BOOST">0x00</reg>
+            <reg name="MAINMIC PGA MUTE">0x00</reg>
+        </scene>
+        <scene id="6" name="LOOP_MODEM">
+            <reg name="HI6401_S3_I_GAIN_INT">0x01</reg>
+            <reg name="HI6401_S3_OL_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S3_OR_GAIN_INT">0dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="HI6401_DACL_AGC_TIMENNG">0x00</reg>
+            <reg name="HI6401_DACL_AGC_NGI">0x04</reg>
+            <reg name="HI6401_DACL_AGC_TIMER">0x04</reg>
+            <reg name="HI6401_DACL_AGC_NGH">0x02</reg>
+            <reg name="HI6401_DACL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_DACL_AGC_KFRAPID">0x02</reg>
+            <reg name="HI6401_DACL_AGC_KFSLOW">0x02</reg>
+            <reg name="HI6401_DACL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_DACL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_DACL_AGC_YTARGET">0x03</reg>
+            <reg name="HI6401_DACL_AGC_NGW">0x02</reg>
+            <reg name="HI6401_DACL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_DACL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_DACL_AGC_LEVELLOW">0x00</reg>
+            <reg name="HI6401_DACL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_DACL_AGC_BYPASS">0x00</reg>
+            <reg name="HI6401_DACL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_DACL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_DACL_AGC_TIMEHOLD">0x02</reg>
+            <reg name="HI6401_DACL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_DACL_AGC_USER">0dB</reg>
+            <reg name="HI6401_DACR_AGC_TIMENNG">0x00</reg>
+            <reg name="HI6401_DACR_AGC_NGI">0x04</reg>
+            <reg name="HI6401_DACR_AGC_TIMER">0x04</reg>
+            <reg name="HI6401_DACR_AGC_NGH">0x02</reg>
+            <reg name="HI6401_DACR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_DACR_AGC_KFRAPID">0x02</reg>
+            <reg name="HI6401_DACR_AGC_KFSLOW">0x02</reg>
+            <reg name="HI6401_DACR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_DACR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_DACR_AGC_YTARGET">0x03</reg>
+            <reg name="HI6401_DACR_AGC_NGW">0x02</reg>
+            <reg name="HI6401_DACR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_DACR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_DACR_AGC_LEVELLOW">0x00</reg>
+            <reg name="HI6401_DACR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_DACR_AGC_BYPASS">0x00</reg>
+            <reg name="HI6401_DACR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_DACR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_DACR_AGC_TIMEHOLD">0x02</reg>
+            <reg name="HI6401_DACR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_DACR_AGC_USER">0dB</reg>
+            <reg name="HI6401_DACV_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_DACR_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_DACL_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_BYPASS_DACR_DEEMP">0x01</reg>
+            <reg name="HI6401_BYPASS_DACL_DEEMP">0x01</reg>
+            <reg name="HI6401_S1_IL_GAIN_INT">0x01</reg>
+            <reg name="HI6401_S1_IR_GAIN_INT">0x01</reg>
+            <reg name="EARPIECE PGA VOLUME">0x01</reg>
+            <reg name="EARPIECE PGA MUTE">0x01</reg>
+        </scene>
+        <scene id="7" name="LOOP_MODEM2">
+            <reg name="HI6401_S4_I_GAIN_INT">0dB</reg>
+            <reg name="HI6401_S4_OL_GAIN_INT">-6dB</reg>
+            <reg name="HI6401_S4_OR_GAIN_INT">-6dB</reg>
+            <reg name="HI6401_ADCR_AGC_HPF">0x01</reg>
+            <reg name="HI6401_ADCL_AGC_HPF">0x01</reg>
+            <reg name="HI6401_DACL_AGC_TIMENNG">0x00</reg>
+            <reg name="HI6401_DACL_AGC_NGI">0x04</reg>
+            <reg name="HI6401_DACL_AGC_TIMER">0x04</reg>
+            <reg name="HI6401_DACL_AGC_NGH">0x02</reg>
+            <reg name="HI6401_DACL_AGC_NGL">0x01</reg>
+            <reg name="HI6401_DACL_AGC_KFRAPID">0x02</reg>
+            <reg name="HI6401_DACL_AGC_KFSLOW">0x02</reg>
+            <reg name="HI6401_DACL_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_DACL_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_DACL_AGC_YTARGET">0x03</reg>
+            <reg name="HI6401_DACL_AGC_NGW">0x02</reg>
+            <reg name="HI6401_DACL_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_DACL_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_DACL_AGC_LEVELLOW">0x00</reg>
+            <reg name="HI6401_DACL_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_DACL_AGC_BYPASS">0x00</reg>
+            <reg name="HI6401_DACL_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_DACL_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_DACL_AGC_TIMEHOLD">0x02</reg>
+            <reg name="HI6401_DACL_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_DACL_AGC_USER">0dB</reg>
+            <reg name="HI6401_DACR_AGC_TIMENNG">0x00</reg>
+            <reg name="HI6401_DACR_AGC_NGI">0x04</reg>
+            <reg name="HI6401_DACR_AGC_TIMER">0x04</reg>
+            <reg name="HI6401_DACR_AGC_NGH">0x02</reg>
+            <reg name="HI6401_DACR_AGC_NGL">0x01</reg>
+            <reg name="HI6401_DACR_AGC_KFRAPID">0x02</reg>
+            <reg name="HI6401_DACR_AGC_KFSLOW">0x02</reg>
+            <reg name="HI6401_DACR_AGC_GSUPPRESS">0x01</reg>
+            <reg name="HI6401_DACR_AGC_T_AMIN">0x01</reg>
+            <reg name="HI6401_DACR_AGC_YTARGET">0x03</reg>
+            <reg name="HI6401_DACR_AGC_NGW">0x02</reg>
+            <reg name="HI6401_DACR_AGC_TIMEMUTE">0x01</reg>
+            <reg name="HI6401_DACR_AGC_GSTEPD">0x01</reg>
+            <reg name="HI6401_DACR_AGC_LEVELLOW">0x00</reg>
+            <reg name="HI6401_DACR_AGC_GWIN">0x01</reg>
+            <reg name="HI6401_DACR_AGC_BYPASS">0x00</reg>
+            <reg name="HI6401_DACR_AGC_MUTE_BYPASS">0x01</reg>
+            <reg name="HI6401_DACR_AGC_GMUTE">0x01</reg>
+            <reg name="HI6401_DACR_AGC_TIMEHOLD">0x02</reg>
+            <reg name="HI6401_DACR_AGC_TIMEDECAY">0x01</reg>
+            <reg name="HI6401_DACR_AGC_USER">0dB</reg>
+            <reg name="HI6401_DACV_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_DACR_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_DACL_SDM_DITHER">0x01</reg>
+            <reg name="HI6401_BYPASS_DACR_DEEMP">0x01</reg>
+            <reg name="HI6401_BYPASS_DACL_DEEMP">0x01</reg>
+            <reg name="HI6401_S1_IL_GAIN_INT">0x01</reg>
+            <reg name="HI6401_S1_IR_GAIN_INT">0x01</reg>
+            <reg name="EARPIECE PGA VOLUME">0x01</reg>
+            <reg name="EARPIECE PGA MUTE">0x01</reg>
+        </scene>
+    </loop_scenes>
+</audio>

@@ -55,9 +55,6 @@ function make_zip {
     echo "> Making zip file" 2>&1 | tee -a ${build_log}
     zip -r1 "${output_file}.zip" * -x "*EMPTY_DIRECTORY*" >> ${build_log} 2>&1
 
-    echo ">> testing zip integrity" 2>&1 | tee -a ${build_log}
-    zip -T "${output_file}.zip" >> ${build_log} 2>&1
-
     cd ${top_root}
     echo ">> Move unsigned zip file in output folder" 2>&1 | tee -a ${build_log}
     mv -v "${tmp_root}/${output_file}.zip" "${output_root}/" >> ${build_log} 2>&1

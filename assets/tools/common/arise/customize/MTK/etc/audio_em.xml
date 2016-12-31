@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AudioParameter>
+	<DumpOptions>
+        <Category title="Output">
+            <Option type="SetAudioCommand" cmd="0x63" check="1" uncheck="0">Stream Output Dump</Option>
+            <Option type="SetAudioCommand" cmd="0x69" check="1" uncheck="0">A2DP Stream Output Dump</Option>
+        </Category>
+        <Category title="Input">
+            <Option type="SetAudioCommand" cmd="0x6B" check="1" uncheck="0">Stream Input Dump</Option>
+        </Category>
+        <Category title="USB">
+            <Option type="SetAudioCommand" cmd="0" check="1" uncheck="0">USB Output Dump</Option>
+            <Option type="SetAudioCommand" cmd="0" check="1" uncheck="0">USB Input Dump</Option>
+        </Category>
+        <Category title="AudioMixer">
+            <Option type="SetParameters" cmd="af.track.pcm" check="1" uncheck="0">AudioTrack Buffer Dump</Option>
+            <Option type="SetParameters" cmd="af.mixer.pcm" check="1" uncheck="0">AudioMixer Buffer Dump</Option>
+            <Option type="SetParameters" cmd="af.mixer.drc.pcm" check="1" uncheck="0">AudioMixer DRC Dump</Option>
+            <Option type="SetParameters" cmd="af.timestretch.in.pcm" check="1" uncheck="0">AudioMixer Timestretch Dump</Option>
+            <Option type="SetParameters" cmd="af.offload.write.raw" check="1" uncheck="0">AudioMixer Offload Dump</Option>
+            <Option type="SetParameters" cmd="af.mixer.dwnmx.pcm" check="1" uncheck="0">AudioMixer Surround Dump</Option>
+            <Option type="SetParameters" cmd="af.resampler.pcm" check="1" uncheck="0">AudioMixer SRC Dump</Option>
+            <Option type="SetParameters" cmd="af.mixer.end.pcm" check="1" uncheck="0">AudioMixer End Dump</Option>
+            <Option type="SetParameters" cmd="af.record.dump.pcm" check="1" uncheck="0">AudioMixer Record Dump</Option>
+            <Option type="SetParameters" cmd="af.mixer.limin.pcm" check="1" uncheck="0">AudioMixer Limiter Dump</Option>
+        </Category>
+	</DumpOptions>
+
+    <SetAudioCommand>
+        <Option>0x99, 1</Option>
+        <Option>0x98, 1</Option>
+    </SetAudioCommand>
+
+    <GetAudioCommand>
+        <Option>0x64</Option>
+        <Option>0x66</Option>
+        <Option>0x68</Option>
+    </GetAudioCommand>
+
+    <SetParameters>
+        <Option>TDM_Record=0</Option>
+        <Option>SET_MODE=0</Option>
+        <Option>HAHA=0</Option>
+        <Option>Set_SpeechCall_DL_Mute=0</Option>
+        <Option>SetFmVolume=0</Option>
+        <Option>ANC_CMD=0</Option>
+        <Option>af.dumplog=1</Option>
+    </SetParameters>
+
+    <GetParameters>
+        <Option>GetFmEnable</Option>
+        <Option>GetFmTxEnable</Option>
+        <Option>DUAL_MIC_GET_GAIN</Option>
+    </GetParameters>
+</AudioParameter>

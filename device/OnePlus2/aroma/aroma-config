@@ -29,7 +29,7 @@ ini_set("rom_device", "!device!");
 
 #UI
 ini_set("force_colorspace", "rgba");
-theme("g3");
+theme("redblack");
 
 anisplash(
   1,
@@ -53,7 +53,7 @@ selectbox(
   "<~language.english>", "<~language.english.info>", 1,
   "<~language.italian>", "<~language.italian.info>", 0,
   "<~language.german>", "<~language.german.info>", 0,
-  "<~language.spanish>", "language.spanish.info", 0
+  "<~language.spanish>", "<~language.spanish.info>", 0
 );
 
 # -- - SET LANGUAGE - -- #

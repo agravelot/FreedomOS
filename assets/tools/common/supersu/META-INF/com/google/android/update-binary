@@ -837,7 +837,7 @@ fi
 if [ -z "$SYSTEMLESS" ]; then
   if (! $SLOT_USED); then
     # detect if we need systemless, based on Android version and boot image
-    SYSTEMLESS=true
+    SYSTEMLESS=detect
   else
     # unless we're on a slot-based system, as TWRP being in the same boot image will
     # always cause the detection to default to system-mode

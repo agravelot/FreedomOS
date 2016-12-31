@@ -55,6 +55,10 @@ install_mod.tittle=Installer FreedomOS
 install_mod.tittle2=Seleziona le tue impostazioni
 install_mod.sub_tittle=Metodo di installazione
 
+gapps_yes=Yes, install Google Apps
+gapps_no=Do not install Google Apps
+info.gapps_yes=Recommended
+info.gapps_no=The system will <#f00>NOT</#> boot without GApps
 assert.tittle=Checking the assert
 assert_yes=Si (Raccomandato)
 assert_no=No
@@ -68,6 +72,11 @@ fw_mm=Marshmallow firmwares
 info.fw_mm=Support more TWRP variant
 fw_n=Nougat firmwares
 info.fw_n=Recommended
+passwordfix.tittle=Pin/Pattern workaround
+passwordfix_yes=Yes
+info.passwordfix_yes=Remove Pin/Pattern backup in data partition
+passwordfix_no=No
+info.passwordfix_no=Let the old file
 
 info.custom=The Freedom way
 info.stock=Oneplus Stock originale, No root
@@ -113,6 +122,7 @@ play_music=Play Music
 tts=Text-to-Speech
 tallback=Tallback
 play_movies=Play Movies
+setupwizard=Google SetupWizard
 youtube=YouTube
 
 info.calculator=0010 1010
@@ -132,6 +142,7 @@ info.play_music=Applicazione Google Play Music
 info.tts=Causa lo schermo nero al primo avvio se rimosso!!
 info.tallback=Causa lo schermo nero al primo avvio se rimosso!!
 info.play_movies=Applicazione Google Play Movies
+info.setupwizard=Initialization screen from Google
 info.youtube=Applicazione Youtube
 
 # -- - SYSTEM APPS - -- #
@@ -239,7 +250,8 @@ adb=Abilita ADB
 dns=Google DNS
 fos_wallpapers=FreedomOS wallpapers
 emoji_one=EmojiOne
-multi_window=Multi Window
+google_assistant=Google Assistant
+arise=A.R.I.S.E
 
 info.supersu=SuperSU v2.78 SR5 da Chainfire
 info.divine=Divine beats da Theroyalseeker
@@ -249,7 +261,8 @@ info.adb=Android Debugging Bridge
 info.dns=Imposta DNS 8.8.8.8/8.8.4.4
 info.fos_wallpapers=Designed da @badboy47
 info.emoji_one=L’ Open Emoji Standard
-info.multi_window=Abilita Multi Window
+info.google_assistant=US only
+info.arise=A.R.I.S.E Sound System
 
 # -- - THEME - -- #
 theme.tittle=Tema

@@ -46,7 +46,7 @@ function dat_to_dat {
 
   cd ${tmp_root}
   echo ">> Extracting system.new.dat" 2>&1 | tee -a ${build_log}
-  ${build_root}/tools/sdat2img.py ${rom_root}/${device}/${ROM_NAME}/system.transfer.list ${rom_root}/${device}/${ROM_NAME}/system.new.dat ${tmp_root}/system.img >> ${build_log} 2>&1
+  ${sdat2img_repo}/sdat2img.py ${rom_root}/${device}/${ROM_NAME}/system.transfer.list ${rom_root}/${device}/${ROM_NAME}/system.new.dat ${tmp_root}/system.img >> ${build_log} 2>&1
 
   echo ">> Mounting ext4 system.img" 2>&1 | tee -a ${build_log}
   mount -t ext4 -o loop ${tmp_root}/system.img ${tmp_root}/mount/ >> ${build_log} 2>&1
@@ -105,15 +105,13 @@ function dat_to_dat {
     rm -rvf ${tmp_root}/bootanimation >> ${build_log} 2>&1
   fi
 
-  echo ro.sf.lcd_density=480 >> ${tmp_root}/mount/build.prop | tee -a ${build_log}
-
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}
   ${build_root}/tools/${HOST_ARCH}/make_ext4fs -T 0 -S file_contexts -l ${SYSTEMIMAGE_PARTITION_SIZE} -a system system_new.img mount/ >> ${build_log} 2>&1
 
-  echo ">> Converting ext4 to dat file" 2>&1 | tee -a ${build_log}
-  ${build_root}/tools/rimg2sdat system_new.img >> ${build_log} 2>&1
-
   touch ${tmp_root}/system.patch.dat
+
+  echo ">> Converting ext4 to dat file" 2>&1 | tee -a ${build_log}
+  ${img2sdat_repo}/img2sdat.py system_new.img >> ${build_log} 2>&1
 
   echo "> Clean unneeded tmp files" 2>&1 | tee -a ${build_log}
   if mount | grep "${tmp_root}/mount" > /dev/null;
