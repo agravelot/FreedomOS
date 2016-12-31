@@ -54,10 +54,6 @@ install_mod.tittle=FreedomOS-Installer
 install_mod.tittle2=Wähle deine Einstellungen aus
 install_mod.sub_tittle=Installations-Methode
 
-gapps_yes=Yes, install Google Apps
-gapps_no=Do not install Google Apps
-info.gapps_yes=Recommended
-info.gapps_no=The system will <#f00>NOT</#> boot without GApps
 assert.tittle=Die "Asserts" prüfen
 assert_yes=Ja (emfohlen)
 assert_no=Nein
@@ -71,11 +67,6 @@ fw_mm=Marshmallow firmwares
 info.fw_mm=Support more TWRP variant
 fw_n=Nougat firmwares
 info.fw_n=Recommended
-passwordfix.tittle=Pin/Pattern workaround
-passwordfix_yes=Yes
-info.passwordfix_yes=Remove Pin/Pattern backup in data partition
-passwordfix_no=No
-info.passwordfix_no=Let the old file
 
 info.custom=Der "Freedom-Way" (Freiheitspfad)
 info.stock=Original OnePlus Betreibssystem, nicht gerooted
@@ -121,7 +112,6 @@ play_music=Play Music
 tts=Text-to-Speech
 tallback=Tallback
 play_movies=Play Movies
-setupwizard=Google SetupWizard
 youtube=YouTube
 
 info.calculator=1010 0101
@@ -141,7 +131,6 @@ info.play_music=Google Play Music
 info.tts=Sorgt beim ersten Start für Blackscreens, wenn wenn entfernt!!
 info.tallback=Sorgt beim ersten Start für Blackscreens, wenn wenn entfernt!!
 info.play_movies=Google Play Movies
-info.setupwizard=Initialization screen from Google
 info.youtube=YouTube
 
 # -- - SYSTEM APPS - -- #
@@ -249,8 +238,7 @@ adb=Aktiviere ADB
 dns=Google DNS
 fos_wallpapers=FreedomOS Wallpapers
 emoji_one=EmojiOne
-google_assistant=Google Assistant
-arise=A.R.I.S.E
+multi_window=Multi Window
 
 info.supersu=SuperSU v2.78 SR5 von Chainfire
 info.divine=Divine beats von Theroyalseeker
@@ -260,8 +248,7 @@ info.adb=Android Debugging Bridge
 info.dns=Aktiviere DNS 8.8.8.8/8.8.4.4
 info.fos_wallpapers=Designed von @badboy47
 info.emoji_one=The Open Emoji Standard
-info.google_assistant=US only
-info.arise=A.R.I.S.E Sound System
+info.multi_window=Aktiviere Multi Window
 
 # -- - THEME - -- #
 theme.tittle=Theme

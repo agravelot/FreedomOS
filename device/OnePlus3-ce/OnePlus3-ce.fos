@@ -25,17 +25,12 @@ CODENAME=op3
 DEVICE=OnePlus3
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT=OnePlus3
-
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus3Oxygen_16_OTA_018_all_1612281257_d8107904d7734248
+
+ROM_NAME=OnePlus3Oxygen_16_OTA_017_all_1612141448_c46e72f660ae4891
 ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=c9e3a9806c51b1c662624c2baed2af2a
-
-# OpenGapps
-GAPPS_ANDROID=7.0
-GAPPS_PLATFORM=arm64
-GAPPS_TYPE=aroma
+ROM_MD5=62e9c8e8aa6cc2a33943ad11f325858e
 
 # Set Android version for selinux build script
 ANDROID_VERSION=7
@@ -51,9 +46,6 @@ PATCH_SYSYEM="
 bootanimation-bin
 "
 
-# Add BUSYBOX into the rom
-BUILD_BUSYBOX=true
-
 BOOTANIMATION=1080p
 
 aroma_list="
@@ -65,12 +57,9 @@ oneplus3/*
 # Files / folders to remove from the original stock image.
 # You can easily debloat your rom from here.
 CLEAN_SYSTEM_LIST="
-app/AndroidPay
 app/BTtestmode
-app/Duo
 app/EngineeringMode
 app/EngSpecialTest
-app/FaceLock
 app/Hangouts
 app/LogKitSdService
 app/Maps
@@ -80,7 +69,6 @@ app/OPPBugReport
 app/SensorTestTool
 app/Videos
 app/WifiRfTestApk
-priv-app/OnePlusWizard
 bin/fmfactorytest
 bin/fmfactorytestserver
 bin/install-recovery.sh
@@ -88,22 +76,12 @@ bin/oemlogkit
 bin/WifiLogger_app
 recovery-from-boot.p
 etc/recovery-resource.dat
-app/Calculator
-app/CalendarGoogle
-priv-app/CallLogBackup
-app/Chrome
-app/Drive
-app/Gmail2
-app/GmailExchange
-priv-app/Velvet
-app/Messenger
-app/Photos
-app/Music2
-app/YouTube
-app/OPBackup
 "
 
-# Add a secondary firmware files, like that it can be installed.
+ADD_SYSTEM_COMMON_LIST="
+xbin/dpi
+"
+
 PATCH_FIRMWARE=3.2.8
 
 # Set the files/folder you want to add to your system partition.
@@ -123,14 +101,11 @@ TOOLS_LIST="
 arm64/busybox
 common/adb.sh
 common/addon
-common/arise
 common/clean.sh
 common/fonts
 common/google_dns.sh
-common/google_assistant.sh
 common/hosts
 common/kernel
-common/no_setup.sh
 common/supersu
 common/v4a_profiles_irs
 oneplus3/splash/splash-fos.bin

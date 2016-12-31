@@ -1,0 +1,198 @@
+
+mount -o remount,rw / 2>/dev/null
+mount -o remount,rw / / 2>/dev/null
+mount -o remount,rw rootfs 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system /system 2>/dev/null
+busybox mount -o remount,rw / 2>/dev/null
+busybox mount -o remount,rw / / 2>/dev/null
+busybox mount -o remount,rw rootfs 2>/dev/null
+busybox mount -o remount,rw /system 2>/dev/null
+busybox mount -o remount,rw /system /system 2>/dev/null
+
+busybox sleep 20
+
+SCEPATH=/system/etc/SSCE/LOGS/
+SCE=/system/etc/SSCE/LOGS/cooling_engine.log
+
+
+busybox mkdir -p $SCEPATH
+busybox rm -f $SCE
+busybox touch $SCE
+
+busybox echo "# " | tee -a $SCE
+busybox echo "" | tee -a $SCE
+busybox echo "$( date +"%m-%d-%Y %H:%M:%S" ) Starting " | tee -a $SCE
+
+busybox sleep 10
+
+if [ -e /proc/sys/vm/oom_kill_allocating_task ];
+then
+    busybox sysctl -w vm.oom_kill_allocating_task=0
+fi
+if [ -e /proc/sys/vm/panic_on_oom ];
+then
+    busybox sysctl -w vm.panic_on_oom=0
+fi
+if [ -e /proc/sys/vm/laptop_mode ];
+then
+    busybox sysctl -w vm.laptop_mode=5
+fi
+if [ -e /proc/sys/vm/dirty_ratio ];
+then
+    busybox sysctl -w vm.dirty_ratio=90
+fi
+if [ -e /proc/sys/vm/dirty_background_ratio ];
+then
+    busybox sysctl -w vm.dirty_background_ratio=80
+fi
+if [ -e /proc/sys/vm/page_cluster ];
+then
+    busybox sysctl -w  vm.page-cluster=8
+fi
+if [ -e /proc/sys/vm/overcommit_memory ];
+then
+    busybox sysctl -w vm.overcommit_memory=1
+fi
+if [ -e /proc/sys/vm/free_order_shift ];
+then
+    busybox sysctl -w vm.free_order_shift=4
+fi
+if [ -e /proc/sys/vm/block_dump ];
+then
+    busybox sysctl -w vm.block_dump=0
+fi
+if [ -e /proc/sys/debug/sched_features ];
+then
+    busybox sysctl -w sched_features=NO_NORMALIZED_SLEEPER
+fi
+if [ -e /proc/sys/fs/lease-break-times ];
+then
+    busybox sysctl -w  fs.lease-break-time=10
+fi
+if [ -e /proc/sys/fs/nr_open ];
+then
+    busybox sysctl -w fs.nr_open=105396
+fi
+if [ -e /proc/sys/fs/inotify/max_queued_events ];
+then
+    busybox sysctl -w fs.inotify.max_queued_events=32000
+fi
+if [ -e /proc/sys/fs/inotify/max_user_instances ];
+then
+    busybox sysctl -w fs.inotify.max_user_instances=256
+fi
+if [ -e /proc/sys/fs/inotify/max_user_watches ];
+then
+    busybox sysctl -w fs.inotify.max_user_watches=10240
+fi
+if [ -e /proc/sys/fs/file-max ];
+then
+    busybox sysctl -w fs.file-max=165164
+fi
+if [ -e /proc/sys/kernel/sem ];
+then
+    busybox sysctl -w kernel.sem="500 5120000 64 2048"
+fi
+if [ -e /proc/sys/kernel/threads_max ];
+then
+    busybox sysctl -w kernel.threads_max=525810
+fi
+if [ -e /proc/sys/kernel/sched_compat_yield ];
+then
+    busybox sysctl -w kernel.sched_compat_yield=1
+fi
+if [ -e /proc/sys/kernel/panic_on_oops ];
+then
+    busybox sysctl -w kernel.panic_on_oops=1
+fi
+if [ -e /proc/sys/kernel/panic ];
+then
+    busybox sysctl -w kernel.panic=5
+fi
+if [ -e /proc/sys/kernel/msgmni ];
+then
+    busybox sysctl -w kernel.msgmni=2048
+fi
+if [ -e /proc/sys/kernel/msgmax ];
+then
+    busybox sysctl -w kernel.msgmax=64000
+fi
+if [ -e /proc/sys/kernel/shmni ];
+then
+    busybox sysctl -w kernel.shmni=4096
+fi
+if [ -e /proc/sys/kernel/shmall ];
+then
+    busybox sysctl -w kernel.shmall=2097152
+fi
+if [ -e /proc/sys/kernel/shmax ];
+then
+    busybox sysctl -w kernel.shmmax=268435456
+fi
+if [ -e /proc/sys/kernel/sched_features ];
+then
+    busybox echo sysctl -w kernel.sched_features=24189
+fi
+if [ -e /proc/sys/kernel/sched_latency_ns ];
+then
+    busybox sysctl -w kernel.sched_latency_ns=18000000
+fi
+if [ -e /proc/sys/kernel/sched_min_granularity_ns ];
+then
+    busybox sysctl -w kernel.sched_min_granularity_ns=1500000
+fi
+if [ -e /proc/sys/kernel/sched_wakeup_granularity_ns ];
+then
+    busybox sysctl -w kernel.sched_wakeup_granularity_ns=3000000
+fi
+if [ -e /proc/sys/kernel/sched_shares_ratelimit ];
+then
+    busybox sysctl -w kernel.sched_shares_ratelimit=256000
+fi
+if [ -e /proc/sys/kernel/sched_childs_run_first ];
+then
+    busybox sysctl -w kernel.sched_childs_run_first=0
+fi
+if [ -e /proc/sys/kernel/sched_rt_runtime_us ];
+then
+    busybox sysctl -w kernel.sched_rt_runtime_us=-1
+fi
+if [ -e /proc/sys/kernel/sched_rt_period_us ];
+then
+    busybox sysctl -w kernel.sched_rt_period_us=1000000
+fi
+if [ -e /proc/sys/kernel/sched_rt_runtimes_us ];
+then
+    busybox sysctl -w kernel.sched_rt_runtimes_us=95000
+fi
+
+L=256
+
+MMC=/sys/block/mmc*
+for S in $MMC;
+do
+	if [ -f $S/queue/read_ahead_kb ];
+	then
+		busybox echo "$L" > $S/queue/read_ahead_kb;
+	fi;
+	if [ -f $S/bdi/read_ahead_kb ];
+        then
+              busybox echo "$L" > $S/bdi/read_ahead_kb;
+        fi;
+done
+
+busybox echo "" | tee -a $SCE
+busybox echo "$( date +"%m-%d-%Y %H:%M:%S" ) " | tee -a $SCE
+
+mount -o remount,ro / 2>/dev/null
+mount -o remount,ro / / 2>/dev/null
+mount -o remount,ro rootfs 2>/dev/null
+mount -o remount,ro /system 2>/dev/null
+mount -o remount,ro /system /system 2>/dev/null
+busybox mount -o remount,ro / 2>/dev/null
+busybox mount -o remount,ro / / 2>/dev/null
+busybox mount -o remount,ro rootfs 2>/dev/null
+busybox mount -o remount,ro /system 2>/dev/null
+busybox mount -o remount,ro /system /system 2>/dev/null
+

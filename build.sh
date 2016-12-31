@@ -46,6 +46,7 @@ function die {
 
 #set up environment variables, folder structure, and log files
 function initialize {
+  SDAT2IMG_LINK="https://raw.githubusercontent.com/xpirt/sdat2img/master/sdat2img.py"
 
   top_root=$PWD
   rom_root=${top_root}/rom
@@ -60,10 +61,6 @@ function initialize {
   build_log=${output_root}/build.log
   config_file=${top_root}/.build.conf
   confirm_build=0
-
-  img2sdat_repo=${download_root}/img2sdat
-  sdat2img_repo=${download_root}/sdat2img
-  busybox_repo=${download_root}/freedomos_busybox
 
   redt=$(tput setaf 1)
   redb=$(tput setab 1)
@@ -102,21 +99,10 @@ function initialize {
   source ${scripts_root}/dat_to_img.sh
   source ${scripts_root}/make_zip.sh
   source ${scripts_root}/add_files.sh
-  source ${scripts_root}/opengapps.sh
-  source ${scripts_root}/arise.sh
-  source ${scripts_root}/busybox.sh
 
   HOST_ARCH=`uname -m`
   HOST_OS=`uname -s`
   HOST_OS_EXTRA=`uname -a`
-
-  # Check needed repos and set permissions
-  if [[ -d ${img2sdat_repo} && -d ${img2sdat_repo} ]]; then
-      chmod +x -R ${img2sdat_repo} >> ${build_log} 2>&1
-      chmod +x -R ${sdat2img_repo} >> ${build_log} 2>&1
-  else
-      die "Unable to find needed repos, please use ./update_repos.sh" "50"
-  fi
 
   if [ ! -f "${config_file}" ]; then
     configure
@@ -139,10 +125,9 @@ function banner() {
 }
 
 function confirm() {
-  read -p "$1 ([Y/n]): "
+  read -p "$1 ([y]es or [N]o): "
   case $(echo $REPLY | tr '[A-Z]' '[a-z]') in
       y|yes)  echo "yes" ;;
-      "")     echo "yes" ;;
       *)      echo "no" ;;
   esac
 }
@@ -255,6 +240,17 @@ function build {
   esac
 }
 
+function update_tools {
+  echo "> Updating sdat2img tools ..." 2>&1 | tee -a ${build_log}
+  if curl -Is ${SDAT2IMG_LINK} | grep "200 OK" &> /dev/null
+  then
+    curl -o ${build_root}/tools/sdat2img.py ${SDAT2IMG_LINK} >> ${build_log} 2>&1
+  else
+    echo "sdat2img tools mirror is OFFLINE! sdat2img tools not updated!" 2>&1 | tee -a ${build_log}
+  fi
+  chmod +x ${build_root}/tools/*
+}
+
 function download_rom {
   echo "> Downloading & Checking ROM ..." 2>&1 | tee -a ${build_log}
   if [ ! -f  ${download_root}/${ROM_NAME}.zip ]; then
@@ -295,17 +291,11 @@ initialize
 if [ $confirm_build -eq 1 ]; then
   banner
   cleanup
+  update_tools
   download_rom
-  if [ ! -z GAPPS_ANDROID ]; then
-    build_opengapps
-  fi
   extract_rom
   build
   add_files
-  build_arise
-  if [[ BUILD_BUSYBOX ]]; then
-      build_busybox
-  fi
   make_zip
 fi
 

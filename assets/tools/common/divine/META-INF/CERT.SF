@@ -1,0 +1,370 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA1-Digest-Manifest: l1IJ0eOZKujNryE99b+CvXTZ3Pw=
+
+Name: system/etc/soundimage/Sound_Blues.txt
+SHA1-Digest: D6WxkgZuhcdsYnzmXW7X5bFsV1o=
+
+Name: system/etc/audio/soundbooster.txt
+SHA1-Digest: Zb5aYVB4uAo+qQxGow51Xzlc63M=
+
+Name: system/etc/soundimage/Sound_Rec_Portrait.txt
+SHA1-Digest: VKuA1+XPTPLTKzP30OPO6dXNYdQ=
+
+Name: system/etc/soundimage/Sound_Original_Recording.txt
+SHA1-Digest: kowYZDd3iD5uxKaoUgMuX7wsUBs=
+
+Name: system/etc/AdieHWCodec_BEATS_HW.csv
+SHA1-Digest: qKpKc2K7sn46zOf173DwFt7Fhls=
+
+Name: system/etc/audio/situation.txt
+SHA1-Digest: NyAufweEkZuNdb4zEsP/PGgXsew=
+
+Name: system/etc/soundimage/Sound_SRS_V_HP.txt
+SHA1-Digest: NxERnxxc4csIp7brpq3a47IkUvU=
+
+Name: system/etc/soundimage/Sound_SRS_A_HP.txt
+SHA1-Digest: 433YLo1GhPV+uDGB8FkT66vW/c0=
+
+Name: system/etc/soundimage/Sound_SRS_V_SPK.txt
+SHA1-Digest: dyDuGoD1qnR0h9Nbu490sI/WnD8=
+
+Name: system/etc/audio/stream_headset.txt
+SHA1-Digest: 72jNvVXmTV98EZnq9DtqzlxlAF8=
+
+Name: system/lib/libaudioeq.so
+SHA1-Digest: zUSTdYUQg7vSAvxwkyvedMiKaa0=
+
+Name: system/etc/soundimage/Sound_Phone_Original_REC_BCLK.txt
+SHA1-Digest: 1Ku2lgpqIy1qOkK4eGX/SABUA7o=
+
+Name: system/lib/soundfx/libbeatsbass.so
+SHA1-Digest: Ycwm9VClRN8NOrE9ctf4l7J1eSo=
+
+Name: system/app/AudioEffectService.apk
+SHA1-Digest: l/ptzxUlzjXU4VRn84b+IDZkgho=
+
+Name: system/etc/TPA2051_CFG.csv
+SHA1-Digest: a5x7u3cKO8xwVGws+k1GIiSWzpM=
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: kpDgln9mt7wm8icbXEm0sKfOVmg=
+
+Name: system/etc/peqimage_ibeats.bin
+SHA1-Digest: DcmWUKDblbrkDi0WFblvdswqvVM=
+
+Name: system/etc/soundimage/Sound_Country.txt
+SHA1-Digest: mw//DQtWPILDBtkaN9KZTFp9+oE=
+
+Name: system/lib/libaudioeffect_jni.so
+SHA1-Digest: laPSAO5U2/Qnpqfw6t615OkUwdQ=
+
+Name: system/etc/soundimage/Sound_Phone_Original_SPK_BCLK.txt
+SHA1-Digest: V1mmoW7Uox0YCY8V7f3hWIkX3Vs=
+
+Name: system/framework/b1.jar
+SHA1-Digest: gnp2AXsJJXmeoink3uswpV7jOJU=
+
+Name: system/etc/soundimage/Sound_Beats.txt
+SHA1-Digest: yoRcJrqjEzDPv7R8T15iyrSYUaI=
+
+Name: system/etc/dynimage_gec_x.bin
+SHA1-Digest: XOwK4Yy0S1aKTfIW7M44Yhj3cOg=
+
+Name: system/etc/dynimage_ibeats_solo.bin
+SHA1-Digest: wzA63NiiYJuJJ/j94cHv4eZ/Lvo=
+
+Name: system/etc/dynimage_ibeats_solo_x.bin
+SHA1-Digest: lgfVAmjxrtF8iKgqLRBllp9HOL8=
+
+Name: system/etc/soundimage/Sound_Phone_Original_SPK_WB.txt
+SHA1-Digest: zwtDKzlvVO7UOfAgm+i1RyR/JPE=
+
+Name: system/etc/AdieHWCodec.csv
+SHA1-Digest: VjsKzLOg/F6NoTLACyvYavhCr6M=
+
+Name: system/etc/soundimage/Sound_Phone_Original_REC_NEL.txt
+SHA1-Digest: SQfOJDzky39zAW9kr0mDbNYhkzo=
+
+Name: system/etc/dynimage_ibeats_x.bin
+SHA1-Digest: FJ9njm1M99yOoVAcsHvYd5Oxv6U=
+
+Name: system/etc/permissions/com.sonyericsson.audioeffectif.xml
+SHA1-Digest: ErJCgrzGJjGD1zvyook06eVKPf0=
+
+Name: system/etc/audio/lmfilter.txt
+SHA1-Digest: ysMnXiSplyK9FMDp2k4/EFGWQ+M=
+
+Name: system/etc/basimage_ibeats.bin
+SHA1-Digest: s6lJ8SIQs2U0lcWaJ7mNsYDExVA=
+
+Name: system/etc/soundimage/Sound_Bass_Booster.txt
+SHA1-Digest: 1+zLF40S34j11KsC12qplPVJkcs=
+
+Name: system/etc/soundimage/Sound_Vocal_Booster.txt
+SHA1-Digest: rvVpoUqvMClfB8p/fPkAbx/95E4=
+
+Name: system/etc/audio/eqfilter.txt
+SHA1-Digest: u81s5EqAeCOSixOi6RzgXtaNUdo=
+
+Name: system/etc/soundimage/Sound_R_B.txt
+SHA1-Digest: OmwLAV4fuSRfxRW8F+5w1wa7Bug=
+
+Name: system/framework/semc_audioeffectif.jar
+SHA1-Digest: Hr0VclEwEcjFN3uxd3D4Cg4DYk0=
+
+Name: system/lib/libbeatsbass.so
+SHA1-Digest: vla2mXXvfbLk5ujYbLpWEtMIYy8=
+
+Name: system/etc/dynimage_gec.bin
+SHA1-Digest: e6YqlX1KMypQqphllGuVkS0zX4s=
+
+Name: system/etc/soundimage/srsfx_trumedia_movie.cfg
+SHA1-Digest: 3eAnx58YbPSjFChxgDb4UDcTqMc=
+
+Name: system/etc/soundimage/Sound_SRS_A_SPK.txt
+SHA1-Digest: aH1i/NvNOVDZOip9WhRkhUSJIsU=
+
+Name: system/bin/mm-audio-acdb-test
+SHA1-Digest: rjdOg4qbsYVNFcCoFo4rLCb0ZSc=
+
+Name: system/etc/peqimage_ibeats_x.bin
+SHA1-Digest: WPQ5e+spafg6Jlul+O1kTNk58zk=
+
+Name: system/etc/soundimage/Sound_Latin.txt
+SHA1-Digest: VcvjB8kEVvyBZjlk/N3pi8IDRT4=
+
+Name: system/lib/soundfx/libsrsfx.so
+SHA1-Digest: QLZ5K5vTuFKZmpaPmxE1DcxrXxI=
+
+Name: system/etc/CodecDSPID_WB.txt
+SHA1-Digest: qxdt14AaZvgRvSTFr8JfUhFiU4w=
+
+Name: system/lib/libacdbmapper.so
+SHA1-Digest: jeT9uduItD5vilqhfqdOTBMjdlI=
+
+Name: system/lib/soundfx/libxloudwrapper.so
+SHA1-Digest: Y26BRhkHGhqQ5RRFzwX2f5VYvN0=
+
+Name: system/etc/soundimage/Sound_Dolby_V_HP.txt
+SHA1-Digest: TMCrRgCt7QD+CVKtGIBf4wDBLuA=
+
+Name: system/lib/libAudioTrimmer.so
+SHA1-Digest: 0MjKqcBx3qrGvjWzsFrpRLnCZcA=
+
+Name: system/etc/basimage_ibeats_solo.bin
+SHA1-Digest: ZrxfmXCfmeR9a2GBX1TOwgBz0sE=
+
+Name: system/etc/soundimage/Sound_Phone_Original_HP_BCLK.txt
+SHA1-Digest: p1g24TnlPO+RXaBtVSO6JVEGPFM=
+
+Name: system/bin/snd8k
+SHA1-Digest: 8CYj31LU5BBm2aLsX8h5iDQVpKA=
+
+Name: system/etc/soundimage/Sound_Original_SPK_MFG.txt
+SHA1-Digest: fFNjN899COYQv8+17+8KVqD2fvQ=
+
+Name: system/lib/libsoundhoundaudio.so
+SHA1-Digest: WyFMU10cu9dFL5u6cwv1yjcbmhQ=
+
+Name: system/etc/soundimage/Sound_Phone_Original_REC_WB.txt
+SHA1-Digest: U/0TtgQ+bVMdnWrMW6qczIcTxYI=
+
+Name: system/etc/soundimage/Sound_Dolby_A_HP.txt
+SHA1-Digest: uvRGelwHqAH7big4z02mrzJQCzE=
+
+Name: system/etc/soundimage/Sound_Recording.txt
+SHA1-Digest: pXu4rMT/1xBSp/asYHmrNhXpvoo=
+
+Name: system/etc/soundimage/Sound_Dolby_V_SPK.txt
+SHA1-Digest: nBdKXxwnIoUo5pjSX2RAJIXno3s=
+
+Name: system/etc/AudioBTID.csv
+SHA1-Digest: 9IcY/Vx4G6T5ZQGPMrMS0C4rmXs=
+
+Name: system/etc/soundimage/Sound_Pop.txt
+SHA1-Digest: Shn0+tu0Mu1c4ls68V9Efp9jCkk=
+
+Name: system/etc/soundimage/Sound_MFG.txt
+SHA1-Digest: B44BXIEPXb0Zz69clP1EJSNPL9E=
+
+Name: system/etc/soundimage/Sound_Original_BCLK.txt
+SHA1-Digest: Qz0M4G8gq/6WobpZ1nzF0MyqIaQ=
+
+Name: system/etc/soundimage/Sound_Phone_Original_HP.txt
+SHA1-Digest: SJBf8G0DY1GrGxLilXHPtSvAmaY=
+
+Name: system/lib/libvoAudioFR.so
+SHA1-Digest: R9LgTFQjytUiUuaCxvNYKxSXNmk=
+
+Name: system/etc/peqimage_ibeats_solo.bin
+SHA1-Digest: ekJSC03O4gQPGO+UJBeVxtUGJ10=
+
+Name: system/etc/soundimage/Sound_Rock.txt
+SHA1-Digest: cbJGMWkr8ET9JEU/TuK/ml2zQAs=
+
+Name: system/etc/dynimage_ibeats.bin
+SHA1-Digest: HwzPLFlqSHRLJHvtpyaQxz/4nlc=
+
+Name: system/etc/basimage_gec.bin
+SHA1-Digest: 56fE8ENi5fLmNgKmI1fKw5hD71A=
+
+Name: system/etc/soundimage/srsfx_trumedia_music.cfg
+SHA1-Digest: j/klnZiZxTgDB4GxnJHd0KW6LS0=
+
+Name: system/etc/basimage_gec_x.bin
+SHA1-Digest: altYK/1CLPHzecOyU45f08qkg+w=
+
+Name: system/etc/soundimage/Sound_Dolby_A_SPK.txt
+SHA1-Digest: q5FDYKrU9WLA2VQAGjRDBoI2RRw=
+
+Name: system/etc/soundimage/Sound_Original_Rec_MFG.txt
+SHA1-Digest: Gcw95YevLPk+S9n2vVBbtayTWMg=
+
+Name: system/etc/soundimage/Sound_Original_SPK_BCLK.txt
+SHA1-Digest: 1TeBFhJ15c720W8O23TJcXKi/GY=
+
+Name: system/etc/AIC3254_REG.csv
+SHA1-Digest: GQVj7P/wBtftBzphrp/9fCkuS2g=
+
+Name: system/etc/soundimage/Sound_Classical.txt
+SHA1-Digest: 0FZNKGq9FHvXYV0Zhub+YU2I8o0=
+
+Name: system/etc/soundimage/srsfx_trumedia_voice.cfg
+SHA1-Digest: RndG81JIozmd3D7uioPQ1PeU48g=
+
+Name: system/lib/libsrsfx.so
+SHA1-Digest: mblVNausuKQt0YN4+wwMyi4tqks=
+
+Name: system/etc/audio/stream_earpiece.txt
+SHA1-Digest: Lv2VsNTpZ/14+SgYAAnDtoTBM0s=
+
+Name: system/etc/soundimage/Sound_Jazz.txt
+SHA1-Digest: l7o8gEBovVbTAOP6QN2LBLgK/W0=
+
+Name: system/etc/AIC3254_REG_XD.csv
+SHA1-Digest: sJ5r07bv8HWjORm2Zmfd+nimxdQ=
+
+Name: system/lib/libxloudwrapper.so
+SHA1-Digest: ezcucnWPVJJNRzdHNLXQ6WJU5mQ=
+
+Name: system/etc/media_profiles.xml
+SHA1-Digest: xDaDKoM2gGjzrk5aGdOaXoOEOJc=
+
+Name: system/bin/snd
+SHA1-Digest: Qz0Uoh32+kNldFeu0Q8dDIvzP1s=
+
+Name: system/etc/soundimage/Sound_Dualmic_EP.txt
+SHA1-Digest: v6OPhbcIEc4erH4qORnQKxRew4E=
+
+Name: system/bin/mm-audio-alsa-test
+SHA1-Digest: j1Cn98WlOlexInUBtIAScejEVDA=
+
+Name: system/etc/TPA2051_CFG_BEATS_HW.csv
+SHA1-Digest: ul/gbHWb50WTCoTF1406IxZpDOA=
+
+Name: system/etc/soundimage/Sound_Dualmic_SPK.txt
+SHA1-Digest: zEOv4zeNlBIwOQGcoyo7rRbTotg=
+
+Name: system/lib/soundfx/libreverbwrapper.so
+SHA1-Digest: Q/fno65KylE3QY+fPwLw1Uv6FoU=
+
+Name: add_to_buildprop.sh
+SHA1-Digest: Q9vtMuwMsRfyZeM4zZt9OkbwEKg=
+
+Name: system/etc/soundimage/srsfx_trumedia_51.cfg
+SHA1-Digest: al8Z9wGsxMvW4bPcumP22Sem6Ag=
+
+Name: system/etc/peqimage_gec.bin
+SHA1-Digest: /9Yv7oebfVOieykNHeWhuj6Y3Bw=
+
+Name: system/etc/audio/aeqcoe.txt
+SHA1-Digest: lacHmqWcJ/biO1HEPVAFKaPYTGI=
+
+Name: system/lib/libaudcal.so
+SHA1-Digest: A6vzzs3iyO+Fss1LLnUpxMptB+A=
+
+Name: system/etc/soundimage/Sound_Original_Recording_BCLK.txt
+SHA1-Digest: YNjb19nILrdKeQ4k9C6YdimAWD4=
+
+Name: system/etc/soundimage/Sound_Phone_Original_HP_WB.txt
+SHA1-Digest: 2tLpoBpSoDPEl9pKn3l2f0LssVQ=
+
+Name: system/lib/libSR_AudioIn.so
+SHA1-Digest: 6XELe9/1kCfhTgZjbUSwgPCjE/w=
+
+Name: system/etc/soundimage/Sound_Phone_Original_SPK.txt
+SHA1-Digest: iQCjXFrco4snqyVs0Stac4nrfgA=
+
+Name: system/etc/soundimage/Sound_Phone_Original_REC.txt
+SHA1-Digest: oIxECahM4aO/sL6xzRJbwYEU8p8=
+
+Name: system/lib/libreverbwrapper.so
+SHA1-Digest: u8KCnVX8Ynq4ZBBzbvtPnb4o/Ks=
+
+Name: system/etc/soundimage/Sound_Rec_Landscape.txt
+SHA1-Digest: p/JWdM+6akjo3JGnx9EX0wJ7O/0=
+
+Name: system/lib/libaudioalsa.so
+SHA1-Digest: u2tPLo9Njxb34miB/i3NIG5bYtw=
+
+Name: system/etc/audio/stream_speaker.txt
+SHA1-Digest: pWSdOJIP10W+W2lHt5ucdRcYmdA=
+
+Name: system/etc/soundimage/Sound_Dualmic.txt
+SHA1-Digest: AeRHig3CuJ+sri9sNgZRoShWK50=
+
+Name: system/etc/AIC3254_REG_DualMic.csv
+SHA1-Digest: OAQycRru9os9DVhVcNBP00WgzBw=
+
+Name: system/lib/libvisualizer.so
+SHA1-Digest: I9GsIMXzpDQXbDcTSJU64wMCdrw=
+
+Name: system/etc/peqimage_ibeats_solo_x.bin
+SHA1-Digest: iC+/BLmcMXKbpXWXdVxVtsH09WI=
+
+Name: system/etc/soundimage/srs_geq10.cfg
+SHA1-Digest: wY5XP0B2aj/PbIRuRBF+Ga5ja8E=
+
+Name: system/etc/soundimage/Sound_Treble_Booster.txt
+SHA1-Digest: 4egAU9gtrt1901MYYnS1U+gNpqc=
+
+Name: system/etc/peqimage_gec_x.bin
+SHA1-Digest: noiDueAqjfagzBY4vothzDysq5I=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: CSZ7Gyg6X76HeNNSMKPZaNDGFlI=
+
+Name: system/etc/CodecDSPID.txt
+SHA1-Digest: NcnrOrTq5WsDPVQRf7g43L3D9tE=
+
+Name: system/etc/soundimage/Sound_Original_SPK.txt
+SHA1-Digest: +48g9hFv6pOvsMPhjbVkwEu0lvM=
+
+Name: system/etc/soundimage/Sound_Recording_Mono.txt
+SHA1-Digest: WBIjCJCx6TC/wwoUwzvfLPSoEFE=
+
+Name: system/etc/basimage_ibeats_solo_x.bin
+SHA1-Digest: WSDNyt0ZbpnREyaPuDdPbrxM1S4=
+
+Name: system/etc/basimage_ibeats_x.bin
+SHA1-Digest: 7wm7dX6+K9ojSt7PR1zwlusl2QM=
+
+Name: system/lib/soundfx/libvisualizer.so
+SHA1-Digest: m4sQKH6H+q764Xu+3r8mS/tjJ6U=
+
+Name: system/lib/libbundlewrapper.so
+SHA1-Digest: HGy6FAQ47s9ASLtK957OiVBsowo=
+
+Name: system/bin/sound8x60
+SHA1-Digest: +J083zBYpd82UYlo1ZvfthUFjrk=
+
+Name: system/etc/soundimage/Sound_Piano.txt
+SHA1-Digest: UMri44EoGGGOFuqSPDeTu6eikrs=
+
+Name: system/etc/soundimage/Sound_Original.txt
+SHA1-Digest: D183Pk1fjbWifT0qdknq7bsaoA0=
+
+Name: system/etc/soundimage/Sound_New_Age.txt
+SHA1-Digest: 40HfQezhB+WaiTLo+70AKjzxyQ4=
+

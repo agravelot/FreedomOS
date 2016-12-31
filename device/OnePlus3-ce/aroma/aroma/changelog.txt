@@ -1,48 +1,3 @@
-2.2.1-CE
-  REVERT: SuperSU 2.79 SR1
-  UPDATE: SuperSU 2.79 Stable
-  CHANGE: Group Google Dialer/Framework/Contacts
-  CHANGE: Remove WebViewGoogle option in aroma, installed by default.
-
-2.2-CE
-  UPDATE: OxygenOS Open Beta 10
-    - Added Data Saver
-    - Fixed Lock Screen Clock bug in Portrait Mode
-    - Fixed Reverting to Default Theme after Reboot
-    - Optimized Unlocking Speed using Fingerprint
-    - Optimized the quality of Expanded Screenshot
-    - Optimized WiFi Performance
-    - Optimized System Performance and Battery Consumption
-  ADD: OpenGApps installer with aroma settings
-  ADD: Google Assistant in aroma @genesixxbf3
-  ADD: Google Dialer in aroma
-  ADD: Pixel Launcher in aroma
-  ADD: Busybox 1.25.1 @YashdSaraf
-  ADD: A.R.I.S.E Sound system Deuteronomy™ 2.3.3
-  ADD: New aroma theme "redback" @kickoff
-  ADD: Ability to save/load aroma settings (GApps only for now)
-  REMOVE: OnePlus Google Apps
-  REMOVE: Google Duo
-  UPDATE: EmojiOne
-  UPDATE: SuperSU 2.79 SR1
-   - Expand Samsung detection
-   - GUI: reworked portions to work with 'supersu' context on 7.0+
-   - GUI: fix binary update notice when superuser disabled by user in some cases
-   - su: reworked portions to work with 'supersu' context on 7.0+
-   - su/GUI: improve responsiveness when device busy on 7.0+
-   - sukernel: fix cpio restore failure with very short filenames
-   - sukernel: no longer patches file_contexts(.bin)
-   - sukernel: revert force seclabel (no longer needed with 'supersu' context)
-   - supolicy: add "create", "auditallow", "auditdeny" policy commands
-   - supolicy: support "*" for permission/range parameter of "allow", "deny", "auditallow", "auditdeny", "allowxperm" policy commands
-   - supolicy: -live/--file no longer apply default patches if custom patches are supplied
-   - supolicy: -sdk=X option added (required for 7.0+)
-   - supolicy: reworked all SELinux rules for 7.0+, run as 'supersu' context
-   - ZIP: Separate slotselect and system_root logic
-   - ZIP: Adjust system/system_root device and mount-point detection
-   - ZIP: Fix minor errors in documentation
-   - ZIP/frp: Explicitly label /su
-
 2.1-CE
   UPDATE: OxygenOS Open Beta 9
   - Shelf Design Optimizations
@@ -132,10 +87,10 @@
   ADD: Force remove FreedomOS_wallpaper folder if not ticked
   CHANGE: Audio Mods/Divine are no more installed by default to avoid errors
   ADD: ElementalX 0.25
-   -security updates
-   -verified boot patch (@sultanxda)
-   -various optimizations
-   -firmware compatibility fix (@myfluxi)
+    -security updates
+    -verified boot patch (@sultanxda)
+    -various optimizations
+    -firmware compatibility fix (@myfluxi)
 
   NOTE: The ElementalX wifi module is installed by default.
 
@@ -147,17 +102,17 @@
   UPDATE: Emoji One 2.2.4
   REMOVE: Layers, this app is now deprecated.
   REMOVE: Some OnePlus/Google bloat apps:
-   - BTtestmode
-   - EngineeringMode
-   - EngSpecialTest
-   - Hangouts
-   - LogKitSdService
-   - OemAutoTestServer
-   - OEMLogKit
-   - SensorTestTool
-   - WifiRfTestApk
-   - oemlogkit
-   - WifiLogger_app
+    - BTtestmode
+    - EngineeringMode
+    - EngSpecialTest
+    - Hangouts
+    - LogKitSdService
+    - OemAutoTestServer
+    - OEMLogKit
+    - SensorTestTool
+    - WifiRfTestApk
+    - oemlogkit
+    - WifiLogger_app
   UPDATE: OxygenOS 3.5.4 Community Build
   ADD: App Lock functionality
   FIX: Keyguard crashes when enabling sim card lock in multiple languages
@@ -297,10 +252,10 @@
 1.4.2
   CHANGE: Retrun with the system.new.dat installation.
   ADD: FreedomOS patched kernel:
-   - Disable force encryption.
-   - Disable system verification.
-   - noatime mount flag
-   - Compatible with the others custom kernels.
+    - Disable force encryption.
+    - Disable system verification.
+    - noatime mount flag
+    - Compatible with the others custom kernels.
   ADD: SuperSU installation is now optional, the system can boot without this one, thanks to the kernel patch [OPTION].
   ADD: Remove com.touchtype with SwiftKey [OPTION].
   ADD: FreedomOS splash boot, thanks @kickoff for the image.
@@ -426,27 +381,27 @@
   Adding FreedomOS wallpapers designed by @badboy47.
       |-> Available in /sdcard/FreedomOS_wallpaper.
   Updated to OxygenOS 3.2.2:
-    - Improved notification management in doze.
-    - Addressed alert slider/silent mode issue.
-    - Disabled fingerprint sensor while in pocket.
-    - Added NFC toggle in quick settings.
-    - Improved noise cancellation in video recording.
-    - Updated 4K video recording codec.
-    - Added latest security patches and various optimizations.
+      - Improved notification management in doze.
+      - Addressed alert slider/silent mode issue.
+      - Disabled fingerprint sensor while in pocket.
+      - Added NFC toggle in quick settings.
+      - Improved noise cancellation in video recording.
+      - Updated 4K video recording codec.
+      - Added latest security patches and various optimizations.
 
 1.1.2
   Update to OxygenOS 3.2.1.
-    - Fixed some notification issues
-    - Addressed SIM recognition issue
-    - Enabled sRGB mode in developer options
-    - Improved RAM management
-    - Improved GPS performance
-    - Enhanced audio playback quality
-    - Updated custom icon packs
-    - Improved camera quality/functionality
-    - Fixed some issues in Gallery
-    - Implemented latest Google security patches
-    - Fixed bugs in Clock/Music apps
+      - Fixed some notification issues
+      - Addressed SIM recognition issue
+      - Enabled sRGB mode in developer options
+      - Improved RAM management
+      - Improved GPS performance
+      - Enhanced audio playback quality
+      - Updated custom icon packs
+      - Improved camera quality/functionality
+      - Fixed some issues in Gallery
+      - Implemented latest Google security patches
+      - Fixed bugs in Clock/Music apps
   Fix wrong indicated version of SuperSU in aroma.
 
 1.1.1
@@ -470,16 +425,16 @@
   Splash screen for aroma, thanks @badboy47 for the original work.
   Add 13 more options for debloat
   Update to OxygenOS 3.2 :
-      -  Enabled sRGB mode in developer options
-      -  Improved RAM management
-      -  Improved GPS performance
-      -  Enhanced audio playback quality
-      -  Updated custom icon packs
-      -  Fixed some issues with notifications
-      -  Improved camera quality/functionality
-      -  Fixed some issues in Gallery
-      -  Latest Google security patches
-      -  Fixed bugs in Clock/Music apps
+        -  Enabled sRGB mode in developer options
+        -  Improved RAM management
+        -  Improved GPS performance
+        -  Enhanced audio playback quality
+        -  Updated custom icon packs
+        -  Fixed some issues with notifications
+        -  Improved camera quality/functionality
+        -  Fixed some issues in Gallery
+        -  Latest Google security patches
+        -  Fixed bugs in Clock/Music apps
 
 1.0.1
   Update French, few lines were missing.

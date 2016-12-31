@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+ <library name="com.sonyericsson.metadatacleanup.api" file="/system/framework/com.sonyericsson.metadatacleanup.jar"/>
+ <library name="com.sonyericsson.metadatacleanup.api_4" file="/system/framework/com.sonyericsson.metadatacleanup.jar"/>
+ <library name="com.sonyericsson.metadatacleanup.api_5" file="/system/framework/com.sonyericsson.metadatacleanup.jar"/>
+ <library name="com.sonyericsson.metadatacleanup.api_6" file="/system/framework/com.sonyericsson.metadatacleanup.jar"/>
+</permissions>
+

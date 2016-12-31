@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="semc_audioeffectif"
+             file="/system/framework/com.sonyericsson.audioeffect.jar"/>
+    <library name="com.sonymobile.audioeffect"
+             file="/system/framework/com.sonyericsson.audioeffect.jar"/>
+    <library name="com.sonymobile.audioeffect_2"
+             file="/system/framework/com.sonyericsson.audioeffect.jar"/>
+    <library name="com.sonyericsson.audioeffect"
+             file="/system/framework/com.sonyericsson.audioeffect.jar"/> 
+</permissions>

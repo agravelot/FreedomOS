@@ -1,0 +1,20 @@
+Header, Vigor_soundeffet_2011_0325
+## Group for phone ##
+Phone_Default,
+Phone_Handset_Dualmic,
+Phone_Speaker_Dualmic,
+Phone_Headset,
+
+## Group for playback ## 
+Playback_Default,/system/etc/soundimage/Sound_Original.txt
+Playback_Speaker_Default,
+Playback_Headset_Beats,
+
+## Group for recording ##
+Record_Default,
+Record_V_Mono,
+Record_V_IMIC_Landscape_Stereo,
+Record_V_IMIC_Protrait_Stereo,
+Record_A_IMIC_Mono,
+Record_A_EMIC_Mono,
+
