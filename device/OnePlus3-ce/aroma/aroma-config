@@ -222,9 +222,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "Chrome",     "<b>Google Chrome</b>",       "",                      "check",
         "ClockGoogle",     "<b>Google Clock</b>",       "",                      "check",
         "CloudPrint",     "<b>Google Cloud Print</b>",       "",                      "check",
-        "ContactsGoogle",     "<b>Google Contacts</b>",       "",                      "check",
-        "DialerFramework",     "<b>Dialer Framework</b>",       "Necessary for Google Dialer compatibility",                      "check",
-        "DialerGoogle",     "<b>Google Dialer</b>",       "Will remove OnePlus dialer",                      "check",
+        "DialerCombo",     "<b>Google Contacts + Google Dialer</b>",       "Will remove OnePlus dialer & contacts, <#f00>SIM2</#> not supported",                      "check",
         "DMAgent",     "<b>Google Apps Device Policy</b>",       "",                      "check",
         "Drive",     "<b>Google Drive</b>",       "",                      "check",
         "ExchangeGoogle",     "<b>Google Exchange Services</b>",       "",                      "check",
@@ -376,21 +374,11 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "ContactsGoogle")=="1"
-  then
-    appendvar("gapps", "ContactsGoogle\n");
-  endif;
-
-  if
-    prop("gapps.prop", "DialerFramework")=="1"
+    prop("gapps.prop", "DialerCombo")=="1"
   then
     appendvar("gapps", "DialerFramework\n");
-  endif;
-
-  if
-    prop("gapps.prop", "DialerGoogle")=="1"
-  then
     appendvar("gapps", "DialerGoogle\n");
+    appendvar("gapps", "ContactsGoogle\n");
   endif;
 
   if
