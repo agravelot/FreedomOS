@@ -1,0 +1,31 @@
+
+# ARISE Sound Systems™
+#
+# /system/lib/soundfx/proxy_alternatives
+#
+# www.arisesound.com
+
+
+
+/system/lib/soundfx/libeffectproxy.so will be an abstraction of the SW and HW effects, which is not always natively compatible with ViPER4Android on a given device resulting in no ViPER4Android processing being the only issue.
+
+
+The stock libeffectproxy.so on a device is, often times, updated with each firmware image, meaning that an incompatible libeffectproxy.so is likely temporary.
+
+
+This inactive folder is provided for times the stock libeffectproxy.so on the device is incapacitating ViPER4Android's processing function.
+
+
+To experiment with an alternative libeffectproxy.so provided in this directory, copy the desired /proxy_alternatives/lib/soundfx/libeffectproxy_*.so and paste into /system/lib/soundfx on the device. The alternative libraries are named uniquely to describe its source.
+
+
+Rename or move the original /system/lib/soundfx/libeffectproxy.so to the /stock folder in this directory for convenient access to the stock libeffectproxy.so. At this time, the alternative libeffectproxy.so can be named appropriately resulting in /system/lib/soundfx/libeffectproxy.so.
+
+
+Be aware that not every alternative proxy has a 64 bit version of the proxy. A 64 bit device can certainly use a selected proxy without its 64 bit library if not available.
+
+
+Before rebooting the device to finish the procedure, ensure that 0644 permissions are set for the new proxy and ensure correct spelling.
+
+
+This only provides a fix for a very specific scenario so it will not cure all issues/bugs experienced with ViPER4Android. If libeffectproxy.so is not the cause for an issue, provide a detailed report on our thread and  we'll get you sorted in no time. :good:

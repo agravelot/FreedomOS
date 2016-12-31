@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="EffectEnable" value="true" />
+ <boolean name="ActivateArkamysOnBluetooth" value="true" />
+ <int name="defaultSpeakerPreset" value="2" />
+	<int name="defaultHeadphonePreset" value="2" />
+</map>
