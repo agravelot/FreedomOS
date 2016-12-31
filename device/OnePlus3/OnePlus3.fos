@@ -25,14 +25,20 @@ CODENAME=op3
 DEVICE=OnePlus3
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT=OnePlus3
+
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
 ROM_NAME=OnePlus3Oxygen_16_OTA_017_all_1611182000_fbe1471194d64b3e
 ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
 ROM_MD5=da145b41bf3cb5d19c70859437d3a2d9
 
+# OpenGapps
+GAPPS_ANDROID=7.0
+GAPPS_PLATFORM=arm64
+GAPPS_TYPE=aroma
+
 # Set Android version for selinux build script
-ANDROID_VERSION=6
+ANDROID_VERSION=7
 # Set the version of the aroma installer, this is not the version of FreedomOS!
 # see assets/META-INF/aroma/$AROMA_VERSION
 AROMA_VERSION=2.70
@@ -45,6 +51,9 @@ PATCH_SYSYEM="
 bootanimation-bin
 "
 
+# Add BUSYBOX into the rom
+BUILD_BUSYBOX=true
+
 BOOTANIMATION=1080p
 
 aroma_list="
@@ -53,18 +62,48 @@ $BOOTANIMATION/*
 oneplus3/*
 "
 
-PATCH_FIRMWARE=""
-
 # Files / folders to remove from the original stock image.
 # You can easily debloat your rom from here.
 CLEAN_SYSTEM_LIST="
+app/AndroidPay
+app/BTtestmode
+app/Duo
+app/EngineeringMode
+app/EngSpecialTest
+app/FaceLock
+app/Hangouts
+app/LogKitSdService
+app/Maps
+app/OemAutoTestServer
+app/OEMLogKit
+app/OPPBugReport
+app/SensorTestTool
 app/Videos
+app/WifiRfTestApk
+priv-app/OnePlusWizard
 bin/fmfactorytest
 bin/fmfactorytestserver
 bin/install-recovery.sh
+bin/oemlogkit
+bin/WifiLogger_app
 recovery-from-boot.p
 etc/recovery-resource.dat
+app/Calculator
+app/CalendarGoogle
+priv-app/CallLogBackup
+app/Chrome
+app/Drive
+app/Gmail2
+app/GmailExchange
+priv-app/Velvet
+app/Messenger
+app/Photos
+app/Music2
+app/YouTube
 "
+
+# Add a secondary firmware files, like that it can be installed.
+PATCH_FIRMWARE=3.2.8
 
 # Set the files/folder you want to add to your system partition.
 # The files are in the assets/system/$TARGET_ARCH/
@@ -74,23 +113,25 @@ app/Substratum
 app/XposedInstaller
 "
 
+# Set the files/folder you want to add to your system partition.
+# The files are in the assets/system/$TARGET_ARCH/
+ADD_DATA_LIST=""
+
 # tools to add to the rom, (/assets/tools/)
 TOOLS_LIST="
 arm64/busybox
 common/adb.sh
 common/addon
+common/arise
 common/clean.sh
-common/divine
-common/dpi.sh
 common/fonts
 common/google_dns.sh
+common/google_assistant.sh
 common/hosts
 common/kernel
-common/multi_window.sh
+common/no_setup.sh
 common/supersu
 common/v4a_profiles_irs
-oneplus3/elementalx
-oneplus3/moxie
 oneplus3/splash/splash-fos.bin
 oneplus3/splash/oos-bootscreen/splash-stock.bin
 "
