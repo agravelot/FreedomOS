@@ -602,7 +602,6 @@ checkbox(
     "<~oneplus_wallpapers>", "<~info.oneplus_wallpapers>", 1,
     "<~oneplus_camera>", "<~info.oneplus_camera>", 1,
     "<~oneplus_gallery>", "<~info.oneplus_gallery>", 1,
-    "<~ota>", "<~info.ota>", 0,
     "<~phase_beam>", "<~info.phase_beam>", 0,
     "<~protips>", "<~info.protips>", 0,
     "<~swiftkey>", "<~info.swiftkey>", 1,
