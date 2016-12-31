@@ -248,7 +248,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "TagGoogle",     "<b>Google NFC Tags</b>",       "",                      "check",
         "Talkback",     "<b>Talkback</b>",       "",                      "check",
         "Wallpapers",     "<b>Wallpapers</b>",       "To Exclude BOTH Wallpapers AND Pixel Launcher <#f00>OR</#> To Include Wallpapers",                      "check",
-        "WebViewGoogle",     "<b>Android System WebView</b>",       "",                      "check",
         "YouTube",     "<b>YouTube</b>",       "",                      "check"
   );
 
@@ -539,17 +538,13 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "WebViewGoogle")=="1"
-  then
-    appendvar("gapps", "WebViewGoogle\n");
-  endif;
-
-  if
     prop("gapps.prop", "YouTube")=="1"
   then
     appendvar("gapps", "YouTube\n");
   endif;
 
+  # Force WebViewGoogle installation
+  appendvar("gapps", "WebViewGoogle\n");
   appendvar("gapps", "\n");
 
   # REMOVALS
