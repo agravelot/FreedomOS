@@ -1,3 +1,9 @@
+2.2.1-CE
+  REVERT: SuperSU 2.79 SR1
+  UPDATE: SuperSU 2.79 Stable
+  CHANGE: Group Google Dialer/Framework/Contacts
+  CHANGE: Remove WebViewGoogle option in aroma, installed by default.
+
 2.2-CE
   UPDATE: OxygenOS Open Beta 10
     - Added Data Saver
