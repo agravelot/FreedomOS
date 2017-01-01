@@ -20,19 +20,13 @@ gunzip -c /tmp/ramdisk/boot.img-ramdisk.gz | cpio -i
 rm /tmp/ramdisk/boot.img-ramdisk.gz
 rm /tmp/boot.img-ramdisk.gz
 
-#cp -R /tmp/patch/* .
-
-## fstab.qcom
-#Don't force encryption
-if  grep -qr forceencrypt /tmp/ramdisk/fstab.qcom; then
-   sed -i "s/forceencrypt/encryptable/" /tmp/ramdisk/fstab.qcom
-fi
-
 if  ! grep -qr "noatime," /tmp/ramdisk/fstab_nodata.qcom; then
    sed -i "s/ro,/ro,noatime,/" /tmp/ramdisk/fstab_nodata.qcom
 fi
 # Disable dm-verity
 . /tmp/tools/kernel/boot/no-dm-verity.sh
+# Disable force ecryption
+. /tmp/tools/kernel/boot/no-force-encrypt.sh
 
 ## default.prop
 # Set FOS version
