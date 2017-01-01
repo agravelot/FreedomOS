@@ -108,10 +108,11 @@ function dat_to_dat {
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}
   ${build_root}/tools/${HOST_ARCH}/make_ext4fs -T 0 -S file_contexts -l ${SYSTEMIMAGE_PARTITION_SIZE} -a system system_new.img mount/ >> ${build_log} 2>&1
 
-  touch ${tmp_root}/system.patch.dat
+  echo ">> Converting ext4 raw image to sparse image" 2>&1 | tee -a ${build_log}
+  ${build_root}/tools/${HOST_ARCH}/img2simg system_new.img system_new_sparse.img
 
-  echo ">> Converting ext4 to dat file" 2>&1 | tee -a ${build_log}
-  ${img2sdat_repo}/img2sdat.py system_new.img >> ${build_log} 2>&1
+  echo ">> Converting sparse image to sparse data" 2>&1 | tee -a ${build_log}
+  ${build_root}/scripts/img2sdat.sh ${tmp_root}/system_new_sparse.img 4 >> ${build_log} 2>&1
 
   echo "> Clean unneeded tmp files" 2>&1 | tee -a ${build_log}
   if mount | grep "${tmp_root}/mount" > /dev/null;
@@ -122,7 +123,7 @@ function dat_to_dat {
   echo ">> Deleting files" 2>&1 | tee -a ${build_log}
   rm -rvf ${tmp_root}/mount >> ${build_log} 2>&1
   rm -rvf ${tmp_root}/system.img >> ${build_log} 2>&1
-  rm -rvf ${tmp_root}/system_new.img >> ${build_log} 2>&1
+  rm -rvf ${tmp_root}/system_new* >> ${build_log} 2>&1
   rm -rvf ${tmp_root}/boot >> ${build_log} 2>&1
   rm -rvf ${tmp_root}/system >> ${build_log} 2>&1
 }
