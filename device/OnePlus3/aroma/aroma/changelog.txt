@@ -1,5 +1,13 @@
 2.0
   UPDATE: OxygenOS 4.0
+   - Upgraded to Android 7.0 Nougat
+   - New Notifications Design
+   - New Settings Menu Design
+   - Multi-Window View
+   - Notification Direct Reply
+   - Custom DPI Support
+   - Added Status Bar Icon Options
+   - Improved Shelf Customization
   REMOVE: Moxie kernel
   REMOVE: ElementalX kernel
   ADD: OpenGApps installer with aroma settings
@@ -24,8 +32,8 @@
   ADD: OnePlus DeskClock
   REMOVE: FreedomOS 1.0 IRS/Profile
   ADD: Arise Audiophile IRS/Profile
-  NOTE: Merge most of the FreedomOS CE features in FreedomOS
-  
+  NOTE: I'm merging most of the FreedomOS CE features in FreedomOS
+
 1.7
   UPDATE: OxygenOS 3.2.8
   - Added 1080P 60FPS video recording
