@@ -81,7 +81,7 @@ fi
 #Remove verity key
 rm -f /tmp/ramdisk/verity_key
 
-DEBUG=`grep "item.1.5" /tmp/aroma/mod.prop | cut -d '=' -f2`
+DEBUG=`grep "item.1.4" /tmp/aroma/mod.prop | cut -d '=' -f2`
 # if debug release
 if [ $DEBUG = 1 ]; then
   echo "persist.service.adb.enable=1" >> /tmp/ramdisk/default.prop
