@@ -24,7 +24,7 @@ TARGET_ARCH=arm64
 CODENAME=op3
 DEVICE=OnePlus3
 # It will be used for the assert verification at the beginning of installation of the ROM.
-ASSERT=OnePlus3
+ASSERT="OnePlus 3T"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
 ROM_NAME=OnePlus3TOxygen_28_OTA_035_all_1612310259_2dc0c
