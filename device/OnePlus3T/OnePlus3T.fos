@@ -105,7 +105,7 @@ app/YouTube
 "
 
 # Add a secondary firmware files, like that it can be installed.
-PATCH_FIRMWARE=3.2.8
+PATCH_FIRMWARE=""
 
 # Set the files/folder you want to add to your system partition.
 # The files are in the assets/system/$TARGET_ARCH/
