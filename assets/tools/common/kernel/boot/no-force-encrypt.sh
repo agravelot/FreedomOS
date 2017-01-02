@@ -26,8 +26,6 @@ for fstab in fstab.*; do
 	found_fstab=true
 done
 
-cd -
-
 $found_fstab || echo "Unable to find the fstab!"
 
 exit 0

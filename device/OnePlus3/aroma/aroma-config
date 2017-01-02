@@ -260,16 +260,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     writetmpfile("gapps.prop", " ");
   endif;
 
-  form(
-      "Advanced Options",
-      "Some advanced options that most likely don't need to be used.\n</#>",
-      "@default",
-      extra.prop,
-      "extra",     "Advanced Options",        "",                                         "group",
-        "exdebug",     "<b>NoDebug</b>",       "To disable the creation of the debug log",                      "check",
-        "exnopreodex",   "<b>NoPreODEX</b>",           "To disable the smart Pre-ODEX-ing on Marshmallow+ ROMs",                      "check"
-  );
-
   ##############################################
   # Write the gapps-config file
   ##############################################

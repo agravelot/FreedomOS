@@ -24,19 +24,20 @@ if  ! grep -qr "noatime," /tmp/ramdisk/fstab_nodata.qcom; then
    sed -i "s/ro,/ro,noatime,/" /tmp/ramdisk/fstab_nodata.qcom
 fi
 # Disable dm-verity
-. /tmp/tools/kernel/boot/no-dm-verity.sh
+sh /tmp/tools/kernel/boot/no-dm-verity.sh
 # Disable force ecryption
-. /tmp/tools/kernel/boot/no-force-encrypt.sh
+sh /tmp/tools/kernel/boot/no-force-encrypt.sh
 
-## default.prop
+cd /tmp/ramdisk/
 # Set FOS version
 if  grep -qr "ro.oxygen.version=" /tmp/ramdisk/default.prop; then
    sed -i "s/ro.oxygen.version=.*/ro.oxygen.version=!version!/" /tmp/ramdisk/default.prop
 fi
 
+echo "" >> /tmp/ramdisk/init.rc
+echo "setenforce 0" >> /tmp/ramdisk/init.rc
 
 DEBUG=`grep "item.1.4" /tmp/aroma/mod.prop | cut -d '=' -f2`
-# if debug release
 if [ $DEBUG = 1 ]; then
   echo "persist.service.adb.enable=1" >> /tmp/ramdisk/default.prop
   echo "persist.service.debuggable=1" >> /tmp/ramdisk/default.prop
