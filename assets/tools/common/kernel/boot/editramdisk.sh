@@ -34,9 +34,10 @@ if  grep -qr "ro.oxygen.version=" /tmp/ramdisk/default.prop; then
    sed -i "s/ro.oxygen.version=.*/ro.oxygen.version=!version!/" /tmp/ramdisk/default.prop
 fi
 
+echo "" >> /tmp/ramdisk/init.rc
+echo "setenforce 0" >> /tmp/ramdisk/init.rc
 
 DEBUG=`grep "item.1.4" /tmp/aroma/mod.prop | cut -d '=' -f2`
-# if debug release
 if [ $DEBUG = 1 ]; then
   echo "persist.service.adb.enable=1" >> /tmp/ramdisk/default.prop
   echo "persist.service.debuggable=1" >> /tmp/ramdisk/default.prop
