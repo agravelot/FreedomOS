@@ -43,7 +43,7 @@ ANDROID_VERSION=7
 # Set the version of the aroma installer, this is not the version of FreedomOS!
 # see assets/META-INF/aroma/$AROMA_VERSION
 AROMA_VERSION=2.70
-BUILD_METHOD=dat_to_img
+BUILD_METHOD=dat_to_dat
 # SYSTEMIMAGE_PARTITION_SIZE is the size of your system partition, you can get this value in the TWRP source of your device.
 # https://github.com/dianlujitao/android_device_oneplus_oneplus3/search?utf8=✓&q=BOARD_SYSTEMIMAGE_PARTITION_SIZE&type=Code
 SYSTEMIMAGE_PARTITION_SIZE=3154116608
