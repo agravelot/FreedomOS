@@ -33,8 +33,6 @@ done
 
 $found_fstab || echo "Unable to find the fstab!"
 
-cd -
-
 setprop ro.config.dmverity false
 rm -f /tmp/ramdisk/verity_key
 rm -f /tmp/ramdisk/sbin/firmware_key.cer
