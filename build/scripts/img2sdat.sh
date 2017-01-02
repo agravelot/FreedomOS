@@ -16,7 +16,7 @@
 # FreedomOS build script
 # Contributors :
 
-cp -rf ../download/img2sdat /tmp/img2sdat
+cp -rf ../build/tools/img2sdat /tmp/img2sdat
 chmod u+x /tmp/img2sdat/*
 PYTHONPATH="$PYTHONPATH:/tmp/img2sdat" exec /tmp/img2sdat/img2sdat.py  "$@"
 rm -rf /tmp/img2sdat
