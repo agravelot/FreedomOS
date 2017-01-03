@@ -45,6 +45,7 @@ function build_opengapps() {
   GApps/japanese-arm64.tar.xz
   GApps/korean-arm64.tar.xz
   GApps/vrservice-arm64.tar.xz
+  GApps/googlenow-all.tar.xz
   "
 
   echo "> Building FreedomOS OpenGApps" 2>&1 | tee -a ${build_log}
