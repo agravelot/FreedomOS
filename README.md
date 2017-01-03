@@ -9,7 +9,7 @@ I refuse all pull requests and issues coming from Github, use [Gitlab](https://g
 ## Required
 - Linux x64 (others architectures are not currently supported).
 - 30GiB of free space or more.
-- Packages : `rsync python zip curl openssl ncurses cpio`
+- Packages : `rsync python python2 zip curl openssl ncurses cpio python-virtualenv`
 - Python version 3 is needed.
 - Optional packages:
 - `adb` for pulling updated apps and pushing rom with automatic flash.
