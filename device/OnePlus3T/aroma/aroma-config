@@ -230,7 +230,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "FaceUnlock",     "<b>Face Unlock</b>",       "",                      "check",
         "GCS",     "<b>Google Connectivity Services</b>",       "",                      "check",
         "Gmail",     "<b>Gmail</b>",       "",                      "check",
-        "GoogleNow",     "<b>Google Now Launcher</b>",       "(Google Search Required)",                      "check",
         "GoogleTTS",     "<b>Google Text-to-Speech</b>",       "",                      "check",
         "Hangouts",     "<b>Google Hangouts</b>",       "",                      "check",
         "Hotword",     "<b>OK Google Hotword Enrollment</b>",       "(automatically selected if Search will be installed)",                      "check",
