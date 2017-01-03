@@ -34,9 +34,10 @@
   ADD: Arise Audiophile IRS/Profile
   FIX: Permissive state with Nougat kernel
   UPDATE: Build binaries from aosp source
-  REMOVE: GoogleNow Luancher (Pixel Launcher is better)
+  REMOVE: GoogleNow Launcher (Pixel Launcher is better)
   CHANGE: Build with sparsed data system partition
   NOTE: The battery should be fixed (this is not due of SuperSU)
+        This update is HIGHLY recommended!
   NOTE: I'm merging most of the FreedomOS CE features in FreedomOS
 
 1.7
