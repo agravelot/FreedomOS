@@ -3,6 +3,11 @@
   UPDATE: SuperSU 2.79 Stable
   CHANGE: Group Google Dialer/Framework/Contacts
   CHANGE: Remove WebViewGoogle option in aroma, installed by default.
+  FIX: Permissive state with Nougat kernel
+  UPDATE: Build binaries from aosp source
+  REMOVE: GoogleNow Luancher (Pixel Launcher is better)
+  CHANGE: Build with sparsed data system partition
+  NOTE: The battery should be fixed (this is not due of SuperSU)
 
 2.2-CE
   UPDATE: OxygenOS Open Beta 10
