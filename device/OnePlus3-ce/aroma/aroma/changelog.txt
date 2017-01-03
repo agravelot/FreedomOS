@@ -7,6 +7,7 @@
   UPDATE: Build binaries from aosp source
   REMOVE: GoogleNow Launcher (Pixel Launcher is better)
   CHANGE: Build with sparsed data system partition
+  CHANGE: Simplification of the aroma installer
   NOTE: The battery should be fixed (this is not due of SuperSU)
         This update is HIGHLY recommended!
 
