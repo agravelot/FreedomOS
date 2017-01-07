@@ -1,3 +1,12 @@
+2.1
+  UPDATE: OxygenOS 4.0.1
+  UPDATE: APN Settings for select Carriers
+  FIX: Proximity Sensor bug during calls
+  UPDATE: Increased System Stability
+  UPDATE: Re-rendered bootanimation, lighter, smooth as butter.
+  UPDATE: YouTube
+  UPDATE: Google Calendar
+
 2.0
   UPDATE: OxygenOS 4.0
    - Upgraded to Android 7.0 Nougat
