@@ -71,7 +71,8 @@ function build_opengapps() {
   # Remove all set progress, to let FreedomOS aroma controller it
   sed -i '/set_progress/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Remove ugly Opengapps header (sorry it's very ugly with aroma)
-  sed -ie '1056,1071d;' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  # TODO: Do not use line numbers
+  sed -ie '1051,1066d;' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
 
   # Remove all the unneeded files
   for i in ${RM_OPENGAPPS}
