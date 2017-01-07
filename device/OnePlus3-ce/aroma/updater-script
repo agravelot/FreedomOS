@@ -347,24 +347,10 @@ if (file_getprop("/tmp/aroma/theme.prop", "selected.1")=="2")
     ui_print("   Installing Substratum");
 endif;
 
-# -- - FOS SPLASH - -- #
-if (file_getprop("/tmp/aroma/theme.prop", "selected.2")=="1")
-  then
-    set_progress(0.955000);
-    ui_print("   Installing FreedomOS Bootscreen");
-    package_extract_file("tools/splash-fos.bin", "/dev/block/sde17");
-endif;
-
-# -- - OOS SPLASH - -- #
-if (file_getprop("/tmp/aroma/theme.prop", "selected.2")=="2")
-  then
-    set_progress(0.955000);
-    ui_print("   Installing OxygenOS Bootscreen");
-    package_extract_file("tools/splash-stock.bin", "/dev/block/sde17");
-endif;
-
+set_progress(0.955000);
+ui_print("   Installing OxygenOS Bootscreen");
+package_extract_file("tools/splash-stock.bin", "/dev/block/sde17");
 delete("/tmp/tools/splash-stock.bin");
-delete("/tmp/tools/splash-fos.bin");
 
 ui_print(" ");
 ui_print("@Installing Busybox");

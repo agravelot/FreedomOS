@@ -623,11 +623,7 @@ selectbox(
   "theme.prop",
   "<~theme.tittle3>", "", 2,
     "<~notheme>", "", 1,
-    "<~substratum>", "<~info.substratum>", 0,
-  "<~splash.tittle>", "", 2,
-    "<~fos_splash>", "", 1,
-    "<~oos_splash>", "", 0,
-    "<~no_splash>", "", 0
+    "<~substratum>", "<~info.substratum>", 0
 );
 
 
