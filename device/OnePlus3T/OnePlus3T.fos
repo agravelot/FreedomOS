@@ -56,11 +56,11 @@ bootanimation-bin
 # Add BUSYBOX into the rom
 BUILD_BUSYBOX=true
 
-BOOTANIMATION=1080p
+BOOTANIMATION=350
 
 aroma_list="
 common/*
-$BOOTANIMATION/*
+1080p/*
 oneplus3/*
 "
 
