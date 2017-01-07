@@ -1,4 +1,5 @@
 1.0.2
+  UPDATE: Re-rendered bootanimation, lighter, smooth as butter.
   REMOVE: Old audio fix
   FIX: Inverted value in AROMA
   ADD: Spanish language in aroma @jgimenezpascual
