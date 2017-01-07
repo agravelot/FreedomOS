@@ -222,7 +222,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "Chrome",     "<b>Google Chrome</b>",       "",                      "check",
         "ClockGoogle",     "<b>Google Clock</b>",       "",                      "check",
         "CloudPrint",     "<b>Google Cloud Print</b>",       "",                      "check",
-        "DialerCombo",     "<b>Google Contacts + Google Dialer</b>",       "Will remove OnePlus dialer & contacts, <#f00>SIM2</#> not supported",                      "check",
+        "DialerCombo",     "<b>Google Contacts + Google Dialer</b>",       "<#f00>EXPERIMENTAL</#>, read the FAQ",                      "check",
         "DMAgent",     "<b>Google Apps Device Policy</b>",       "",                      "check",
         "Drive",     "<b>Google Drive</b>",       "",                      "check",
         "ExchangeGoogle",     "<b>Google Exchange Services</b>",       "",                      "check",
