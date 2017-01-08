@@ -21,6 +21,10 @@ Clone the repo:
 ```bash
 git clone https://gitlab.com/Nevax/FreedomOS.git -b master
 ```
+Get needed repos:
+```bash
+bash ./update_repos.sh
+```
 Build the project:
 ```bash
 bash build.sh
