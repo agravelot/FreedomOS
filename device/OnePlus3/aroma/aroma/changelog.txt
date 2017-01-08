@@ -6,6 +6,7 @@
   UPDATE: Re-rendered bootanimation, lighter, smooth as butter.
   UPDATE: YouTube
   UPDATE: Google Calendar
+  REMOVE: FreedomOS bootscreen
 
 2.0
   UPDATE: OxygenOS 4.0

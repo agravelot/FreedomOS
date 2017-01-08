@@ -41,6 +41,7 @@
   - launch_daemonsu: restructure to support /su in initramfs or system_root
   - ZIP: Support systemless on 5.0 (requires 3rd party patches)
   - ZIP: Support for A/B slot systems with / inside system partition
+  REMOVE: FreedomOS bootscreen
 
 1.0.1
   UPDATE: French language @xeloni
