@@ -243,7 +243,6 @@ mod.tittle2=Root, audio mod, ads blocker e xposed...
 mod.tittle3=Extra mod
 
 supersu=Installa SuperSU
-divine=Viper4Android + Dolby Atmos
 xposed=Material Design Xposed Installer
 adaway=Adaway
 adb=Abilita ADB
@@ -253,8 +252,7 @@ emoji_one=EmojiOne
 google_assistant=Google Assistant
 arise=A.R.I.S.E
 
-info.supersu=SuperSU v2.78 SR5 da Chainfire
-info.divine=Divine beats da Theroyalseeker
+info.supersu=SuperSU da Chainfire
 info.xposed=Xposed Installer solo applicazione da DVD android
 info.adaway=Ad-Blocker per Android
 info.adb=Android Debugging Bridge
