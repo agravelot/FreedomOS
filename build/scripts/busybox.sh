@@ -23,6 +23,10 @@ function build_busybox() {
     cp -rvf ${busybox_repo}/* ${tmp_root}/tools/busybox_installer_tmp/ >> ${build_log} 2>&1
     # remove some "=" so fit with the aroma screen
     sed -i 's/================================================/============================================/g' ${tmp_root}/tools/busybox_installer_tmp/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
+    # Remove ui_print "Unmounting /system --"
+    sed -i '/Unmounting \/system/d' ${tmp_root}/tools/busybox_installer_tmp/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
+    # Remove unmount system partition $_sbumt /system
+    sed -i '/_sbumt \/system/d' ${tmp_root}/tools/busybox_installer_tmp/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
     cd ${tmp_root}/tools/busybox_installer_tmp/ >> ${build_log} 2>&1
     # Making nes zip
     zip -r9 busybox.zip * >> ${build_log} 2>&1
