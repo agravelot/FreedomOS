@@ -1,3 +1,6 @@
+2.2.2-CE
+  FIX: System apps customization
+
 2.2.1-CE
   REVERT: SuperSU 2.79 SR1
   UPDATE: SuperSU 2.79 Stable
