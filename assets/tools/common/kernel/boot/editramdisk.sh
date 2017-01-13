@@ -20,22 +20,13 @@ gunzip -c /tmp/ramdisk/boot.img-ramdisk.gz | cpio -i
 rm /tmp/ramdisk/boot.img-ramdisk.gz
 rm /tmp/boot.img-ramdisk.gz
 
-if  ! grep -qr "noatime," /tmp/ramdisk/fstab_nodata.qcom; then
-   sed -i "s/ro,/ro,noatime,/" /tmp/ramdisk/fstab_nodata.qcom
-fi
-# Disable dm-verity
-sh /tmp/tools/kernel/boot/no-dm-verity.sh
-# Disable force ecryption
-sh /tmp/tools/kernel/boot/no-force-encrypt.sh
-
 cd /tmp/ramdisk/
 # Set FOS version
 if  grep -qr "ro.oxygen.version=" /tmp/ramdisk/default.prop; then
    sed -i "s/ro.oxygen.version=.*/ro.oxygen.version=!version!/" /tmp/ramdisk/default.prop
 fi
 
-echo "" >> /tmp/ramdisk/init.rc
-echo "setenforce 0" >> /tmp/ramdisk/init.rc
+echo -e "\nsetenforce 0\n" >> /tmp/ramdisk/init.rc
 
 DEBUG=`grep "item.1.4" /tmp/aroma/mod.prop | cut -d '=' -f2`
 if [ $DEBUG = 1 ]; then
@@ -44,6 +35,15 @@ if [ $DEBUG = 1 ]; then
   echo "persist.sys.usb.config=mtp,adb" >> /tmp/ramdisk/default.prop
   #echo "ro.secure=0" >> /tmp/ramdisk/default.prop
   #echo "ro.adb.secure=0" >> /tmp/ramdisk/default.prop
+fi
+
+# If no supersu installation, remove the dm-verity and disable force encryption.
+# Else, supersu will do that during the installation process.
+if [[ $1 = "nosu" ]]; then
+    # Disable dm-verity
+    sh /tmp/tools/kernel/boot/no-dm-verity.sh
+    # Disable force ecryption
+    sh /tmp/tools/kernel/boot/no-force-encrypt.sh
 fi
 
 find . | cpio -o -H newc | gzip > /tmp/boot.img-ramdisk.gz
