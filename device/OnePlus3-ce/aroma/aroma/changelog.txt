@@ -1,4 +1,6 @@
 2.2.2-CE
+  UPDATE: Busybox 1.26.1
+  FIX: Minor error in aroma installer
   FIX: System apps customization
   FIX: Survival of the kernel patch for supersu update
   NOTE: Using the rom without the kernel patch will cause major battery drain!
