@@ -1,5 +1,7 @@
 2.2.2-CE
   FIX: System apps customization
+  FIX: Survival of the kernel patch for supersu update
+  NOTE: Using the rom without the kernel patch will cause major battery drain!
 
 2.2.1-CE
   REVERT: SuperSU 2.79 SR1

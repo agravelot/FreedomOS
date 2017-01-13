@@ -1,5 +1,7 @@
 2.1.1
   FIX: System apps customization
+  FIX: Survival of the kernel patch for supersu update
+  NOTE: Using the rom without the kernel patch will cause major battery drain!
 
 2.1
   UPDATE: OxygenOS 4.0.1
