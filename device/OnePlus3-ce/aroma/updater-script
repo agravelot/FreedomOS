@@ -414,17 +414,23 @@ endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.7") == "0")
   then
+  ui_print("   Removing EasterEgg");
+  delete_recursive("/system/app/EasterEgg");
+endif;
+
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.8") == "0")
+  then
     ui_print("   Removing Galaxy4");
   	delete_recursive("/system/app/Galaxy4");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.8") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.9") == "0")
   then
     ui_print("   Removing Holo Spiral");
   	delete_recursive("/system/app/HoloSpiralWallpaper");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.9") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.10") == "0")
   then
     ui_print("   Removing Live wallpapers");
   	delete_recursive("/system/app/LiveWallpapers");
@@ -432,50 +438,68 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.9") == "0")
     delete_recursive("/system/app/LiveWallpapersPicker");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.10") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.11") == "0")
   then
     ui_print("   Removing OnePlus Music");
     delete_recursive("/system/reserve/OPMusic");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.11") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.12") == "0")
   then
     ui_print("   Removing Noise Feild");
   	delete_recursive("/system/app/NoiseField");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.12") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.13") == "0")
+  then
+    ui_print("   Removing OnePlus Community");
+    delete_recursive("/system/reserve/OPForum")
+endif;
+
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.14") == "0")
   then
     ui_print("   Removing OnePlus Wallpapers");
     delete_recursive("/system/app/OnePlusWallpapers")
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.13") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.15") == "0")
   then
   ui_print("   Removing OnePlus Camera");
   delete_recursive("/system/priv-app/OnePlusCamera");
   delete_recursive("/system/priv-app/OnePlusCameraService");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.14") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.16") == "0")
   then
   ui_print("   Removing OnePlus Gallery");
   delete_recursive("/system/priv-app/OnePlusGallery");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.15") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.17") == "0")
   then
     ui_print("   Removing PhaseBeam");
 		delete_recursive("/system/app/PhaseBeam");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.16") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.18") == "0")
   then
     ui_print("   Removing Protips");
 	  delete_recursive("/system/app/Protips");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.17") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.19") == "0")
+  then
+    ui_print("   Removing OnePlus SMS");
+	  delete_recursive("/system/priv-app/OPMms");
+endif;
+
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.20") == "0")
+  then
+    ui_print("   Removing Sound Recoder");
+	  delete_recursive("/system/reserve/SoundRecorder");
+endif;
+
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.21") == "0")
   then
     ui_print("   Removing Swiftkey");
     delete_recursive("/system/app/SwiftKey");
@@ -484,19 +508,25 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.17") == "0")
     run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.touchtype.swiftkey-*");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.18") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.22") == "0")
   then
     ui_print("   Removing Tags");
 		delete_recursive("/system/priv-app/Tag");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.19") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.23") == "0")
+  then
+    ui_print("   Removing Weather");
+		delete_recursive("/system/reserve/Weather");
+endif;
+
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.24") == "0")
   then
    ui_print("   Removing DivesIconPack");
    delete_recursive("/system/app/DivesIconPack");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.20") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.25") == "0")
   then
    ui_print("   Removing RifonIconPack");
    delete_recursive("/system/app/RifonIconPack");
