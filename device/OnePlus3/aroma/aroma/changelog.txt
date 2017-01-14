@@ -3,13 +3,14 @@
   REMOVE: moviesvrmode in Google apps
   REMOVE: photosvrmode in Google apps
   REMOVE: NFCTestMode
-  FIX: Document uninstallation option
-  FIX: DownloadProvider uninstallation option
   ADD: Easter Egg option in aroma
   ADD: OnePlus Cummunity option in aroma
   ADD: OnePlus SMS option in aroma
   ADD: OnePlus Sound Recoder option in aroma
   ADD: OnePlus Weather option in aroma
+  FIX: Document uninstallation option
+  FIX: DownloadProvider uninstallation option
+  FIX: "Complete installation" option in Google Apps
   FIX: Minor error in aroma installer
   FIX: System apps customization
   FIX: Survival of the kernel patch for supersu update

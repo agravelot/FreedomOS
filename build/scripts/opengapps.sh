@@ -20,34 +20,34 @@ function build_opengapps() {
 
   # Set unneeded Open Gapps files
   RM_OPENGAPPS="
-  Core/setupwizardtablet-all.tar.xz
-  GApps/books-all.tar.xz
-  GApps/earth-arm64.tar.xz
-  GApps/googleplus-arm.tar.xz
-  GApps/keep-arm64.tar.xz
-  GApps/movies-arm.tar.xz
-  GApps/music-all.tar.xz
-  GApps/projectfi-all.tar.xz
-  GApps/slides-arm64.tar.xz
-  GApps/maps-arm64.tar.xz
-  GApps/street-arm.tar.xz
-  GApps/docs-arm64.tar.xz
-  GApps/fitness-all.tar.xz
-  GApps/sheets-arm64.tar.xz
-  GApps/newswidget-all.tar.xz
-  GApps/newsstand-all.tar.xz
-  GApps/translate-arm.tar.xz
-  GApps/zhuyin-arm64.tar.xz
-  GApps/dmagent-all.tar.xz
-  GApps/pinyin-arm64.tar.xz
-  GApps/gcs-all.tar.xz
-  GApps/indic-arm64.tar.xz
-  GApps/japanese-arm64.tar.xz
-  GApps/korean-arm64.tar.xz
-  GApps/vrservice-arm64.tar.xz
-  GApps/moviesvrmode-arm.tar.xz
-  GApps/photosvrmode-arm64.tar.xz
-  GApps/googlenow-all.tar.xz
+  setupwizardtablet
+  books
+  earth
+  googleplus
+  keep
+  movies
+  music
+  projectfi
+  slides
+  maps
+  street
+  docs
+  fitness
+  sheets
+  newswidget
+  newsstand
+  translate
+  zhuyin
+  dmagent
+  pinyin
+  gcs
+  indic
+  japanese
+  korean
+  vrservice
+  moviesvrmode
+  photosvrmode
+  googlenow
   "
 
   echo "> Building FreedomOS OpenGApps" 2>&1 | tee -a ${build_log}
@@ -79,7 +79,9 @@ function build_opengapps() {
   # Remove all the unneeded files
   for i in ${RM_OPENGAPPS}
   do
-    rm -rvf ${tmp_root}/tools/opengapps_tmp/${i} >> ${build_log} 2>&1
+    rm -rvf ${tmp_root}/tools/opengapps_tmp/Core/${i}* >> ${build_log} 2>&1
+    rm -rvf ${tmp_root}/tools/opengapps_tmp/GApps/${i}* >> ${build_log} 2>&1
+    sed -i 0,/${i}/{/${i}/d} ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   done
 
   cd ${tmp_root}/tools/opengapps_tmp/
