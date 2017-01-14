@@ -96,7 +96,7 @@ ui_print("@Installing FreedomOS");
 ui_print(" ");
 
 set_progress(0.10);
-show_progress(0.50, 420000); 
+show_progress(0.50, 420000);
 ui_print("   Extracting System");
 ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 block_image_update("/dev/block/bootdevice/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat") || abort("E1001: Failed to update system image.");
@@ -142,10 +142,48 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     ui_print("   Fixing rom pin/pattern");
 endif;
 
-# -- - STOCK KERNEL - -- #
-
-ui_print("   Installing Stock Kernel");
+# -- - KERNEL PATCH - -- #
+ui_print("   Installing FreedomOS Patched Kernel");
 package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
+run_program("/tmp/tools/busybox", "echo", "DEBUG: Extracting patch");
+package_extract_dir("tools/kernel/config", "/tmp");
+set_metadata("/tmp/tools/busybox", "uid", 0, "gid", 0, "mode", 0777);
+
+package_extract_dir("tools/kernel/boot", "/tmp");
+
+run_program("/tmp/tools/busybox", "echo", "DEBUG: Set permissions");
+set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "mode", 0777);
+
+ui_print("   - Customizing ramdisk");
+run_program("/tmp/tools/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
+run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
+run_program("/tmp/cmdline.sh");
+
+# If supersu, patch the kernel without dm-verity patch and forceencryption patch
+# SuperSU will do that
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
+  then
+  run_program("/tmp/editramdisk.sh", "su");
+endif;
+
+# If no supersu, patch the kernel with dm-verity and forceencryption Disable
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "0")
+  then
+  run_program("/tmp/editramdisk.sh", "nosu");
+endif;
+
+run_program("/tmp/makebootimg.sh");
+run_program("/tmp/tools/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
+delete_recursive("/tmp/tools/kernel");
+
+ui_print("   Trimming cache");
+run_program("/tmp/tools/busybox", "fstrim", "/cache");
+ui_print("   Trimming data");
+run_program("/tmp/tools/busybox", "fstrim", "/data");
 
 # -- - ROOT - -- #
 
@@ -191,37 +229,6 @@ set_progress(0.720000);
 ui_print(" ");
 ui_print("@Applying Your Settings");
 ui_print(" ");
-
-# -- - KERNEL PATCH - -- #
-ui_print("   Installing FreedomOS Patched Kernel");
-run_program("/tmp/tools/busybox", "echo", "DEBUG: Extracting patch");
-package_extract_dir("tools/kernel/config", "/tmp");
-set_metadata("/tmp/tools/busybox", "uid", 0, "gid", 0, "mode", 0777);
-
-ui_print("   - Trimming cache");
-run_program("/tmp/tools/busybox", "fstrim", "/cache");
-ui_print("   - Trimming data");
-run_program("/tmp/tools/busybox", "fstrim", "/data");
-
-package_extract_dir("tools/kernel/boot", "/tmp");
-
-run_program("/tmp/tools/busybox", "echo", "DEBUG: Set permissions");
-set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "mode", 0777);
-set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "mode", 0777);
-set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "mode", 0777);
-set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "mode", 0777);
-set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "mode", 0777);
-
-ui_print("   - Customizing ramdisk");
-run_program("/tmp/tools/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
-run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
-run_program("/tmp/cmdline.sh");
-run_program("/tmp/editramdisk.sh");
-run_program("/tmp/makebootimg.sh");
-
-ui_print("   - Installing kernel");
-run_program("/tmp/tools/busybox", "dd", "if=/tmp/newboot.img", "of=/dev/block/bootdevice/by-name/boot");
-delete_recursive("/tmp/tools/kernel");
 
 # -- - XPOSED - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1")
@@ -369,28 +376,37 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.5") == "0")
   then
   ui_print("   Removing Documents");
   delete_recursive("/system/app/DocumentsUI");
+  delete_recursive("/system/priv-app/DocumentsUI");
   delete_recursive("/system/app/OPFilemanager");
+  delete_recursive("/system/reserve/OPFilemanager");
 endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.6") == "0")
   then
   ui_print("   Removing Download Provider");
   delete_recursive("/system/app/DownloadProviderUi");
+  delete_recursive("/system/priv-app/DownloadProvider");
 endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.7") == "0")
+  then
+  ui_print("   Removing EasterEgg");
+  delete_recursive("/system/app/EasterEgg");
+endif;
+
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.8") == "0")
   then
     ui_print("   Removing Galaxy4");
   	delete_recursive("/system/app/Galaxy4");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.8") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.9") == "0")
   then
     ui_print("   Removing Holo Spiral");
   	delete_recursive("/system/app/HoloSpiralWallpaper");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.9") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.10") == "0")
   then
     ui_print("   Removing Live wallpapers");
   	delete_recursive("/system/app/LiveWallpapers");
@@ -398,50 +414,68 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.9") == "0")
     delete_recursive("/system/app/LiveWallpapersPicker");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.10") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.11") == "0")
   then
     ui_print("   Removing OnePlus Music");
     delete_recursive("/system/reserve/OPMusic");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.11") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.12") == "0")
   then
     ui_print("   Removing Noise Feild");
   	delete_recursive("/system/app/NoiseField");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.12") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.13") == "0")
+  then
+    ui_print("   Removing OnePlus Community");
+    delete_recursive("/system/reserve/OPForum")
+endif;
+
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.14") == "0")
   then
     ui_print("   Removing OnePlus Wallpapers");
     delete_recursive("/system/app/OnePlusWallpapers")
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.13") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.15") == "0")
   then
   ui_print("   Removing OnePlus Camera");
   delete_recursive("/system/priv-app/OnePlusCamera");
   delete_recursive("/system/priv-app/OnePlusCameraService");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.14") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.16") == "0")
   then
   ui_print("   Removing OnePlus Gallery");
   delete_recursive("/system/priv-app/OnePlusGallery");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.15") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.17") == "0")
   then
     ui_print("   Removing PhaseBeam");
 		delete_recursive("/system/app/PhaseBeam");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.16") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.18") == "0")
   then
     ui_print("   Removing Protips");
 	  delete_recursive("/system/app/Protips");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.17") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.19") == "0")
+  then
+    ui_print("   Removing OnePlus SMS");
+	  delete_recursive("/system/priv-app/OPMms");
+endif;
+
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.20") == "0")
+  then
+    ui_print("   Removing Sound Recoder");
+	  delete_recursive("/system/reserve/SoundRecorder");
+endif;
+
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.21") == "0")
   then
     ui_print("   Removing Swiftkey");
     delete_recursive("/system/app/SwiftKey");
@@ -450,19 +484,25 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.17") == "0")
     run_program("/tmp/tools/busybox", "rm", "-R", "/data/app/com.touchtype.swiftkey-*");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.18") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.22") == "0")
   then
     ui_print("   Removing Tags");
 		delete_recursive("/system/priv-app/Tag");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.19") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.23") == "0")
+  then
+    ui_print("   Removing Weather");
+		delete_recursive("/system/reserve/Weather");
+endif;
+
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.24") == "0")
   then
    ui_print("   Removing DivesIconPack");
    delete_recursive("/system/app/DivesIconPack");
 endif;
 
-if (file_getprop("/tmp/aroma/apps.prop", "item.1.20") == "0")
+if (file_getprop("/tmp/aroma/apps.prop", "item.1.25") == "0")
   then
    ui_print("   Removing RifonIconPack");
    delete_recursive("/system/app/RifonIconPack");

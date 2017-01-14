@@ -1,6 +1,6 @@
 # FreedomOS
 
-![alt tag](https://raw.githubusercontent.com/Nevax07/FreedomOS/master/assets/media/oneplus3/png/small_banner.png)
+![alt text](assets/media/oneplus3/png/big-banner-nougat.png)
 
 ## Note for pull requests and issues
 

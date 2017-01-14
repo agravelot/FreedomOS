@@ -1,3 +1,21 @@
+2.2.2-CE
+  UPDATE: Busybox 1.26.1
+  REMOVE: moviesvrmode in Google apps
+  REMOVE: photosvrmode in Google apps
+  REMOVE: NFCTestMode
+  ADD: Easter Egg option in aroma
+  ADD: OnePlus Cummunity option in aroma
+  ADD: OnePlus SMS option in aroma
+  ADD: OnePlus Sound Recoder option in aroma
+  ADD: OnePlus Weather option in aroma
+  FIX: Document uninstallation option
+  FIX: DownloadProvider uninstallation option
+  FIX: "Complete installation" option in Google Apps
+  FIX: Minor error in aroma installer
+  FIX: System apps customization
+  FIX: Survival of the kernel patch for supersu update
+  NOTE: Using the rom without the kernel patch will cause major battery drain!
+
 2.2.1-CE
   REVERT: SuperSU 2.79 SR1
   UPDATE: SuperSU 2.79 Stable
