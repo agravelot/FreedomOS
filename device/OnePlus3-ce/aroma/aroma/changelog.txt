@@ -1,5 +1,7 @@
 2.2.2-CE
   UPDATE: Busybox 1.26.1
+  REMOVE: moviesvrmode in Google apps
+  REMOVE: photosvrmode in Google apps
   REMOVE: NFCTestMode
   FIX: Minor error in aroma installer
   FIX: System apps customization

@@ -45,6 +45,8 @@ function build_opengapps() {
   GApps/japanese-arm64.tar.xz
   GApps/korean-arm64.tar.xz
   GApps/vrservice-arm64.tar.xz
+  GApps/moviesvrmode-arm.tar.xz
+  GApps/photosvrmode-arm64.tar.xz
   GApps/googlenow-all.tar.xz
   "
 
@@ -81,7 +83,7 @@ function build_opengapps() {
   done
 
   cd ${tmp_root}/tools/opengapps_tmp/
-  # Make new zip 
+  # Make new zip
   zip -r9 ${tmp_root}/tools/opengapps/opengapps.zip * >> ${build_log} 2>&1
   cd - >> ${build_log}
   rm -rvf ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
