@@ -1,5 +1,6 @@
 2.1.1
   UPDATE: Busybox 1.26.1
+  REMOVE: NFCTestMode
   FIX: Minor error in aroma installer
   FIX: System apps customization
   FIX: Survival of the kernel patch for supersu update
