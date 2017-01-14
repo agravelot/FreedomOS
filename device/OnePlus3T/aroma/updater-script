@@ -96,7 +96,7 @@ ui_print("@Installing FreedomOS");
 ui_print(" ");
 
 set_progress(0.10);
-show_progress(0.50, 420000); 
+show_progress(0.50, 420000);
 ui_print("   Extracting System");
 ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 block_image_update("/dev/block/bootdevice/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat") || abort("E1001: Failed to update system image.");
@@ -376,13 +376,16 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.5") == "0")
   then
   ui_print("   Removing Documents");
   delete_recursive("/system/app/DocumentsUI");
+  delete_recursive("/system/priv-app/DocumentsUI");
   delete_recursive("/system/app/OPFilemanager");
+  delete_recursive("/system/reserve/OPFilemanager");
 endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.6") == "0")
   then
   ui_print("   Removing Download Provider");
   delete_recursive("/system/app/DownloadProviderUi");
+  delete_recursive("/system/priv-app/DownloadProvider");
 endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.7") == "0")

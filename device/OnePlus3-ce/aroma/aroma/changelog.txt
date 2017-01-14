@@ -3,6 +3,8 @@
   REMOVE: moviesvrmode in Google apps
   REMOVE: photosvrmode in Google apps
   REMOVE: NFCTestMode
+  FIX: Document uninstallation option
+  FIX: DownloadProvider uninstallation option
   FIX: Minor error in aroma installer
   FIX: System apps customization
   FIX: Survival of the kernel patch for supersu update

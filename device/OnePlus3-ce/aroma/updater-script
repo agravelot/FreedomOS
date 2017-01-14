@@ -400,13 +400,16 @@ if (file_getprop("/tmp/aroma/apps.prop", "item.1.5") == "0")
   then
   ui_print("   Removing Documents");
   delete_recursive("/system/app/DocumentsUI");
+  delete_recursive("/system/priv-app/DocumentsUI");
   delete_recursive("/system/app/OPFilemanager");
+  delete_recursive("/system/reserve/OPFilemanager");
 endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.6") == "0")
   then
   ui_print("   Removing Download Provider");
   delete_recursive("/system/app/DownloadProviderUi");
+  delete_recursive("/system/priv-app/DownloadProvider");
 endif;
 
 if (file_getprop("/tmp/aroma/apps.prop", "item.1.7") == "0")
