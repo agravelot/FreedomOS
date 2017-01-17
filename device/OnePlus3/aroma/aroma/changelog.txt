@@ -1,6 +1,7 @@
 2.1.2
   FIX: SetupWizard
   FIX: Useless option "GCS" in aroma, since it's not build with the rom
+  FIX: Assert value for latest TWRP
 
 2.1.1
   UPDATE: Busybox 1.26.1

@@ -27,9 +27,9 @@
 
 set_progress(0.000000);
 # -- - ASSERT - -- #
-getprop("ro.build.product") == "!assert!" ||
+getprop("ro.display.series") == "!assert!" ||
       abort("This package is for \"!assert!\" devices; this is a \"" +
-            getprop("ro.build.product") + "\".");
+            getprop("ro.display.series") + "\".");
 
 set_progress(0.01);
 ui_print(" ");
