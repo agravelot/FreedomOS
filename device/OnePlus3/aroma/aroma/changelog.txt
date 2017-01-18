@@ -1,7 +1,14 @@
-2.1.2
+2.2
+  UPDATE: OxygenOS 4.0.2
+  UPDATE: APN Settings for select Carriers
+  FIX: Proximity Sensor bug during calls
+  UPDATE: Increased System Stability
+  FIX: Google Play Store download bug
+  UPDATE: Increased System Stability
   FIX: SetupWizard
   FIX: Useless option "GCS" in aroma, since it's not build with the rom
   FIX: Assert value for latest TWRP
+  REMOVE: Bootanimation patched binary
 
 2.1.1
   UPDATE: Busybox 1.26.1
