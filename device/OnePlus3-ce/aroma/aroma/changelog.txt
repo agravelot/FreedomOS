@@ -1,4 +1,4 @@
-2.2.3-CE
+2.3-CE
   UPDATE: OxygenOS Open Beta 11
     - UI optimizations
     - Improved Shelf Customization
