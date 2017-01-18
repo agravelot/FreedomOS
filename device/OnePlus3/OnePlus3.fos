@@ -29,7 +29,7 @@ ASSERT="OnePlus 3"
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
 ROM_NAME=OnePlus3Oxygen_16_OTA_039_all_1701140133_89fcc9baba94e4c
 #ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
-ROM_LINK=http://otafsc.h2os.com/patch/amazone2/GLO/OnePlus3Oxygen/OnePlus3Oxygen_16.A.37_GLO_037_1701041839/$ROM_NAME.zip
+ROM_LINK=http://otafsc.h2os.com/patch/amazone2/GLO/OnePlus3Oxygen/OnePlus3Oxygen_16.A.39_GLO_039_1701140133/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
 ROM_MD5=00fd3d7a0b1283b4fb6105424de82498
 
