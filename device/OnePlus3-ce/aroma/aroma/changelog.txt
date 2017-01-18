@@ -1,7 +1,15 @@
 2.2.3-CE
+  UPDATE: OxygenOS Open Beta 11
+    - UI optimizations
+    - Improved Shelf Customization
+    - Updated APN Settings for select Carriers
+    - Fixed Proximity Sensor bug during calls
+    - Fixed Google Play Store download bug
+    - Increased System Stability
   FIX: SetupWizard
   FIX: Useless option "GCS" in aroma, since it's not build with the rom
   FIX: Assert value for latest TWRP
+  REMOVE: Bootanimation patched binary
 
 2.2.2-CE
   UPDATE: Busybox 1.26.1
