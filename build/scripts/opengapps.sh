@@ -66,15 +66,15 @@ function build_opengapps() {
   # Add gapps-remove.txt to the CLEAN_SYSTEM_LIST variable
   CLEAN_SYSTEM_LIST+="$(<${tmp_root}/tools/gapps-remove.txt)"
 
+  # Remove ugly Opengapps header (sorry it's very ugly with aroma)
+  # TODO: Do not use line numbers
+  sed -ie '1057,1072d;' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Add OPInCallUI to the remove list if Google Dialer is installed
   sed -i 's/FineOSDialer/OPInCallUI/g' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Disable RAM clear after installation, the installer will do that later.
   sed -i '/-maxdepth 0 ! -path/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Remove all set progress, to let FreedomOS aroma controller it
   sed -i '/set_progress/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
-  # Remove ugly Opengapps header (sorry it's very ugly with aroma)
-  # TODO: Do not use line numbers
-  sed -ie '1051,1066d;' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
 
   # Remove all the unneeded files
   for i in ${RM_OPENGAPPS}
