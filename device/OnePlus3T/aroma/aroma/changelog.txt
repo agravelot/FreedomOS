@@ -1,2 +1,12 @@
+1.1
+  UPDATE: OxygenOS 4.0.2
+  - Added Status Bar Icon options
+  - Improved Shelf Customization
+  - Updated APN Settings for select Carriers
+  - Fixed Proximity Sensor bug during calls
+  - Fixed Google Play Store download bug
+  - Increased System Stability
+  REMOVE: Bootanimation patched binary
+
 1.0
   Initial release
