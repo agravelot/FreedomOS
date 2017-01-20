@@ -1,0 +1,326 @@
+#########################################################
+#	FreedomOS language file
+#
+#	Türkçe by: Mevlüt TOPÇU
+#
+#
+#
+
+text_ok=TAMAM
+text_next=İleri
+text_back=Geri
+text_yes=Evet
+text_no=Hayır
+text_about=Hakkında
+text_calibrating=Kalibrasyon Araçları
+text_quit=Kurulumu Kapat
+text_quit_msg=Emin misiniz ?
+
+welcome.title=Hoşgeldiniz
+welcome.title2=ROM bilgileri
+welcome.text1=Kullandıklarınız hakkında
+welcome.version=Sürüm
+welcome.device=Cihaz
+welcome.updated=Güncellenmiş
+welcome.microblog=YouTube
+welcome.developer=Geliştirici
+welcome.next=Yüklemeye Devam Etmek İçin İleri'ye basın...
+
+changelog.title=Değişiklikler
+changelog.desc=FreedomOS Değişiklikleri
+language.title=Dil seçin
+language.text=Yükleme dili seçin
+language.english=English
+language.english.info=Using English
+language.french=France
+language.french.info=Utiliser le Français
+language.italian=Italiano
+language.italian.info=Utilizzare Italiano @xEvoRayJiN
+language.german=German
+language.german.info=@DanielL
+language.spanish=Español
+language.spanish.info=Utilizar Español by @jgimenezpascual
+language.turkish=Türkçe
+language.turksh.info=Türkçe kullanın - @Mevlüt TOPÇU
+
+rom.data=!tarih!
+text_finish=Bitti
+model.title=Telefon Modeli
+
+by=by
+
+main.tittle=Kurulumu başlatmak için lütfen aşağıdaki menüden birini seçin
+main.install=Yükle
+main.install.info=Modu yüklemeye devam et
+main.sys=Sistem bilgisi
+main.sys.info=Aygıt bilgilerini göster
+main.changelog.info=FreedomOS değişiklikleri
+main.exit=Çıkış
+main.exit.info=FreedomOS yükleyiciden çık
+
+install_mod.tittle=FreedomOS yükleyici
+install_mod.tittle2=Ayarlarınızı seçin
+install_mod.sub_tittle=Kurulum yöntemi
+
+gapps_yes=Evet, Google Uygulamarını yükle
+gapps_no=Google Uygulamarını yükleme
+info.gapps_yes=Tavsiye edilen
+info.gapps_no=Sistem Google uygulamaları olmadan önyükleme <#f00>YAPMAZ</#>
+assert.tittle=Kontrolü onayla
+assert_yes=Evet (Önerilen)
+assert_no=Hayır
+addon.tittle=Yedekle/Geri Yükle /system/addon.d/
+addon_yes=Evet
+info.addon_yes=Kirli flaş için önerilir
+addon_no=Hayır
+info.addon_no=Temiz flaş için
+firmware.tittle=Ürün yazılımınızı seçin
+fw_mm=Marshmallow yazılımları
+info.fw_mm=Daha fazla TWRP varyantını destekler
+fw_n=Nougat yazılımları
+info.fw_n=Tavsiye edilen
+passwordfix.tittle=Pin/Desen geçici çözümü
+passwordfix_yes=Evet
+info.passwordfix_yes=Veri bölümünden Pin/Desen yedeklemesini kaldır
+passwordfix_no=Hayır
+info.passwordfix_no=Eski dosyalara izin ver
+
+info.custom=Özgürlük yolunda
+info.stock=Orijinal OnePlus stok yazılımı, root erişimi yok
+info.assert_yes=Build.prop içindeki varyantı kontrol et
+info.assert_no=Varyantı build.prop'te kontrol etme
+
+sys.title=Sistem bilgisi
+sys.info.wait=Sistem bilgisi alınıyor...
+sys.info.title=Sistem bilgileri
+sys.info.title2=Cihazınızın sistem bilgileri.
+sys.info.model=Model
+sys.info.name=Ad
+sys.info.manu=Üretici firma
+sys.info.cpu=İŞLEMCİ
+sys.info.lcd=LCD Yoğunluğu
+sys.info.storage=Depolama Alanı Boyutu
+sys.info.storage.free=Kullanılabilir
+
+pre.install.title=Yüklemeye hazır
+pre.install=Sihirbaz kuruluma başlamaya hazır.
+pre.install2=Kuruluma başlamak için <b>Şimdi Yükle</b>'ye basın.
+pre.install3=Yükleme ayarlarınızı gözden geçirmek veya değiştirmek isterseniz <b>Geri</b>'ye basın.
+
+# -- - GOOGLE APPS - -- #
+
+gapps.tittle=Google Uygulamaları
+gapps.tittle2=İstediğiniz Google Uygulamalarını seçin
+
+calculator=Hesap Makinesi
+calendar=Takvim
+call_log=Google Çağrı Yedekleme
+chrome=Chrome
+drive=Drive
+duo= Duo
+gmail=Gmail
+gmail_exchange=Gmail Exchange
+google=Google
+hangouts=Hangouts
+maps=Haritalar
+messenger=Messenger
+photos=Fotoğraflar
+play_music=Play Müzik
+tts=Text-to-Speech
+tallback=Tallback
+play_movies=Play Filmler
+setupwizard=Google Kurulum Sihirbazı
+youtube=YouTube
+
+info.calculator=0010 1010
+info.calendar=Google Takvim
+info.call_log=Arama geçmişinizi Google'a gönderin
+info.chrome=Web tarayıcı
+info.drive=Bulut hizmeti
+info.duo=Görüntülü arama uygulaması
+info.gmail=E-posta istemcisi
+info.gmail_exchange=Gmail için destek değişimi
+info.google=Google Asistan
+info.hangouts=Anlık mesajlaşma
+info.maps=Gerçek zamanlı navigasyon, trafik, nakliye
+info.messenger=Google SMS/MMS uygulaması
+info.photos=Dijital fotoğraf yönetimi uygulaması
+info.play_music=Google Play Müzik uygulaması
+info.tts=Kaldırıldığında ilk açılışta siyah ekranlara neden olur !!
+info.tallback=Kaldırıldığında ilk açılışta siyah ekranlara neden olur !!
+info.play_movies=Google Play Filmler uygulaması
+info.setupwizard=Google başlatma ekranı
+info.youtube=YouTube uygulaması
+
+# -- - SYSTEM APPS - -- #
+
+apps.tittle=Sistem uygulamaları
+apps.tittle2=Yüklemek istediğiniz sistem uygulamalarını seçin
+
+anthal=AntHalService
+android_pay=Android Pay
+basic_dream=Basic Dream
+bt_midi=BT Midi Service
+bt_test=BTtestmode
+desk_clock=DeskClock
+document=Dökümanalr
+download_provider=İndirme Sağlayıcı
+engineering=Mühendislik Modu
+eng_special_test=EngSpecialTest
+easter_egg=Easter Egg
+facelock=Facelock
+galaxy=Galaxy
+holo_spiral=Holo Spiral
+anim_wallpaper=Animated Wallpaper
+log_kit=LogKitSdService
+music=Müzik
+noise_feild=Noised Feild
+oneplus_forum=OnePlus Topluluğu
+oneplus_wallpapers=OnePlus Duvar Kağıtları
+oem_test=OemAutoTestServer
+oem_log=OEMLogKit
+oneplus_camera=OnePlus Kamera
+oneplus_gallery=OnePlus Galeri
+ota=OnePlus OTA
+oneplus_wizard=OnePlus Kurulum sihirbazı
+phase_beam=Phase Beam
+protips=Protips
+sensor_test=SensorTestTool
+sms=OnePlus SMS
+sound_recorder=Ses kaydedici
+swiftkey=Swiftkey
+tags=Tags
+weather=OnePlus Hava Durumu
+wifi_test=WifiRfTestApk
+dive_icon=Dive Simge Paketi
+rifon_icon=Rifon Simge Paketi
+
+info.anthal=Spor/fitness/sağlık cihazları için
+info.android_pay=NFC ödemeleri
+info.basic_dream=Ekran koruyucusu
+info.bt_midi=Bluetooth MIDI Desteği
+info.bt_test=Bluetooth testi
+info.desk_clock=Alarm, saat ve zamanlayıcı
+info.document=Dosya Yöneticisi
+info.download_provider=Dosya indirici
+info.engineering=Çeşitli geliştirici ayarları
+info.eng_special_test=Çeşitli testler
+info.easter_egg=Miyaavv!
+info.facelock=Yüzünüzle kilidi açın
+info.galaxy=Hareketli duvar kağıdı
+info.holo_spiral=Hareketli duvar kağıdı
+info.anim_wallpaper=Hareketli duvar kağıtları için destek
+info.log_kit=Günlüğe kaydetme
+info.music=OnePlus müzik uygulaması
+info.noise_feild=Hareketli duvar kağıdı
+info.oneplus_forum=OnePlus forumuna erişme
+info.oneplus_wallpapers=Bazı duvar kağıtları
+info.oem_test=OEM test uygulaması
+info.oem_log=Günlüğe kaydetme
+info.oneplus_camera=Fotoğraf ve video çekme
+info.oneplus_gallery=Resimleri ve videoları görüntüleme
+info.ota=OnePlus sistem güncellemesi (önerilmez)
+info.oneplus_wizard=Google 'dan sonra gelen Kurulum Sihirbazı
+info.phase_beam=Hareketli duvar kağıdı
+info.protips=Bazı ipuçları
+info.sensor_test=Sensör testi uygulaması
+info.sms=Orijinal OnePlus SMS uygulaması
+info.sound_recorder=OnePlus kayıt uygulaması
+info.swiftkey=Swiftkey klavye
+info.tags=NFC Etiketleri
+info.weather=OnePlus Hava Durumu uygulaması
+info.wifi_test=Wifi Testi
+info.dive_icon=OnePlus'dan simgeler paketi
+info.rifon_icon=OnePlus'dan simgeler paketi
+
+mod.title=Ekstra mod
+mod.title2=İstediğiniz ekstra modu seçin
+
+dpi.tittle=Ekran yoğunluğunu değiştir
+dpi.tittle2=İnç Başına Nokta Sayısı
+dpi.500=Ayarlanacak DPI 500
+dpi.490=Ayarlanacak DPI 490
+dpi.480=Ayarlanacak DPI 480
+dpi.470=Ayarlanacak DPI 470
+dpi.460=Ayarlanacak DPI 460
+dpi.450=Ayarlanacak DPI 450
+dpi.440=Ayarlanacak DPI 440
+dpi.430=Ayarlanacak DPI 430
+dpi.420=Ayarlanacak DPI 420
+dpi.410=Ayarlanacak DPI 410
+dpi.400=Ayarlanacak DPI 400
+dpi.390=Ayarlanacak DPI 390
+dpi.380=Ayarlanacak DPI 380
+dpi.370=Ayarlanacak DPI 370
+dpi.360=Ayarlanacak DPI 360
+dpi.350=Ayarlanacak DPI 350
+
+mod.tittle=Ek modları yükle
+mod.tittle2=Root erişimi, ses modu, reklam engelleyici ve xposed ...
+mod.tittle3=Ekstra mod
+
+supersu=SuperSU yükle
+xposed=Material Tasarım Xposed Yükleyici
+adaway=Adaway
+adb=ADB'yi etkinleştir
+dns=Google DNS
+fos_wallpapers=FreedomOS duvar kağıtları
+emoji_one=EmojiOne
+google_assistant=Google Asitan
+arise=A.R.I.S.E
+
+info.supersu=SuperSU by Chainfire
+info.xposed=Xposed Installer application only by DVD android
+info.adaway=Android için Reklam Engelleyici
+info.adb=Android Hata Ayıklama Köprüsü
+info.dns=DNS'i Ayarla 8.8.8.8/8.8.4.4
+info.fos_wallpapers=Tasarım @badboy47
+info.emoji_one=Açık Emoji Standardı
+info.google_assistant=Yalnızca ABD
+info.arise=A.R.I.S.E Ses Sistemi
+
+# -- - THEME - -- #
+
+theme.tittle=Tema
+theme.tittle2=Tema ayarlarınızı seçin
+theme.tittle3=Tema motorunuzu seçin
+
+theme.tittle3=Tema motorunuzu seçin
+notheme=Tema motoru yükleme
+layer=RRO Katmanlar [kullanımdan kaldırıldı]
+substratum=Substratum
+
+info.notheme=
+info.layer=RRO Layers Manager
+info.substratum=Yeni Tema Motoru
+
+splash.tittle=Önyükleme ekranınızı seçin, başlangıç animasyonu DEĞİL
+fos_splash=FreedomOS Önyükleme ekranı
+oos_splash=OxygenOS Önyükleme ekranı
+no_splash=Mevcut Önyükleme ekranı kalsın
+
+info.fos_splash=
+info.oos_splash=
+info.no_splash=
+
+# -- - KERNEL - -- #
+
+kernel.tittle=Çekirdek
+kernel.tittle2=Çekirdeğinizi seçin.
+kernel_stock=Stok Çekirdek
+info.kernel_stock=Orijinal OnePlus ile FOS yaması
+elementalx=ElementalX
+info.elementalx=@flar2 tarafından geliştirildi
+moxie=Moxie Çekirdek
+info.moxie=@bedalus tarafından geliştirildi
+
+# -- - INSTALLER - -- #
+install=FreedomOS Yükle
+install.now=Şimdi Yükle
+install.finish=Biraz zaman alacak ...
+install.finish.title=Kurulum tamamlandı.
+installing.title=Yükleniyor...
+finish.title=Tebrikler!
+finish.msg=FreedomOS başarıyla yüklendi.
+finish.status=Kurulum sonucu:
+finish.reboot=Şimdi cihazınızı yeniden başlatın.
