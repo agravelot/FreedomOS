@@ -1,4 +1,4 @@
-# Copyright 2016 Antoine GRAVELOT
+# Copyright 2016-2017 Antoine GRAVELOT
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -53,7 +53,8 @@ selectbox(
   "<~language.english>", "<~language.english.info>", 1,
   "<~language.italian>", "<~language.italian.info>", 0,
   "<~language.german>", "<~language.german.info>", 0,
-  "<~language.spanish>", "<~language.spanish.info>", 0
+  "<~language.spanish>", "<~language.spanish.info>", 0,
+  "<~language.turkish>", "<~language.turkish.info>", 0
 );
 
 # -- - SET LANGUAGE - -- #
@@ -75,6 +76,10 @@ endif;
 
 if prop("language.prop", "selected.0") == "5" then
   loadlang("langs/es.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "6" then
+  loadlang("langs/tr.lang");
 endif;
 
 # -- - WELCOME - -- #

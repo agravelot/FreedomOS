@@ -41,9 +41,9 @@ language.german.info=@DanielL
 language.spanish=Español
 language.spanish.info=Utilizar Español by @jgimenezpascual
 language.turkish=Türkçe
-language.turksh.info=Türkçe kullanın - @Mevlüt TOPÇU
+language.turkish.info=Türkçe kullanın - @Mevlüt TOPÇU
 
-rom.data=!tarih!
+rom.data=!date!
 text_finish=Bitti
 model.title=Telefon Modeli
 
