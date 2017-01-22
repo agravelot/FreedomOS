@@ -219,7 +219,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
   run_program("/tmp/tools/busybox", "echo", "DEBUG: Move supersu to /tmp/tools/supersu ->  /tmp/supersu ");
   run_program("/tmp/tools/busybox", "mv", "/tmp/tools/supersu", "/tmp/supersu");
   run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");
-  run_program("/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
+  run_program("/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/supersu.log", "/tmp/supersu/supersu.zip");
   run_program("/tmp/tools/busybox", "mount", "/system");
 endif;
 
@@ -241,7 +241,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
   package_extract_dir("tools/arise", "/tmp/arise");
   set_metadata("/tmp/arise/META-INF/com/google/android/update-binary", "uid", 0, "gid", 0, "mode", 0777);
   set_metadata_recursive("/tmp/arise", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
-  run_program("/sbin/busybox", "sh", "/tmp/arise/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/arise/arise.zip");
+  run_program("/sbin/busybox", "sh", "/tmp/arise/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/arise.log", "/tmp/arise/arise.zip");
   run_program("/tmp/tools/busybox", "mount", "/system");
   delete_recursive("/tmp/arise");
   delete_recursive("/tmp/tools/arise");
@@ -364,7 +364,7 @@ ui_print(" ");
 ui_print("@Installing Busybox");
 ui_print(" ");
 run_program("/sbin/busybox", "unzip", "/tmp/tools/busybox_installer/busybox.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/busybox_installer");
-run_program("/sbin/busybox", "sh", "/tmp/tools/busybox_installer/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/tools/busybox_installer/busybox.zip");
+run_program("/sbin/busybox", "sh", "/tmp/tools/busybox_installer/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/busybox.log", "/tmp/tools/busybox_installer/busybox.zip");
 delete_recursive("/tmp/tools/busybox_installer");
 
 # -- - SYSTEM APPS - -- #
