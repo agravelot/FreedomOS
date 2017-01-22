@@ -20,23 +20,23 @@ outfd=$2
 
 ui_print() {
   echo -n -e "ui_print $1\n" >> /proc/self/fd/$outfd
+  echo -n -e "ui_print $1\n" >> /tmp/fos_logs/apps_remover
 }
 
 pkg_list="$(cat /tmp/aroma/${prop})"
-#pkg_list=$(cat /tmp/aroma/sapps.prop)
 
 for pkg in $pkg_list; do
   ui_print "   Removing $pkg"
   found=false
   for dir in /system/app /system/priv-app /system/reserve /system; do
     if [[ -d $dir/$pkg ]]; then
-      echo -e "\tPackage : [$pkg], found at $dir/$pkg"
-      rm -rvf $dir/$pkg
+      echo -e "\tPackage : [$pkg], found at $dir/$pkg" >> /tmp/fos_logs/apps_remover
+      rm -rvf $dir/$pkg >> /tmp/fos_logs/apps_remover
       found=true
     fi
   done
   if [[ ! $found ]]; then
-    ui_print "   ERROR: Unable to found $pkg"
+    ui_print "   ERROR: Unable to found $pkg" >> /tmp/fos_logs/apps_remover
   fi
-  echo ""
+  echo "" >> /tmp/fos_logs/apps_remover
 done
