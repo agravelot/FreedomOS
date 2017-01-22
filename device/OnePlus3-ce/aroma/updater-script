@@ -1,4 +1,4 @@
-# Copyright 2016 Antoine GRAVELOT
+# Copyright 2016-2017 Antoine GRAVELOT
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -341,14 +341,14 @@ endif;
 delete("/tmp/tools/google_assistant.sh");
 
 # -- - NO THEME - -- #
-if (file_getprop("/tmp/aroma/theme.prop", "selected.1")=="1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.10") == "0")
   then
     run_program("/system/bin/echo", "DEBUG: No theme selected");
     delete_recursive("/system/app/Substratum");
 endif;
 
 # -- - SUBSTRATUM - -- #
-if (file_getprop("/tmp/aroma/theme.prop", "selected.1")=="2")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.10") == "1")
   then
     set_progress(0.950000);
     ui_print("   Installing Substratum");
