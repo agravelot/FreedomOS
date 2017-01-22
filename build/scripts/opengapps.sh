@@ -74,10 +74,18 @@ function build_opengapps() {
   sed -ie '1057,1072d;' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Add OPInCallUI to the remove list if Google Dialer is installed
   sed -i 's/FineOSDialer/OPInCallUI/g' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
-  # Disable RAM clear after installation, the installer will do that later.
+  # Disable /tmp clear after installation, the installer will do that later for us.
   sed -i '/-maxdepth 0 ! -path/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Remove all set progress, to let FreedomOS aroma controller it
   sed -i '/set_progress/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/- Mounting/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/- Gathering device & ROM information/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/- Performing system space calculations/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/- Removing existing\/obsolete Apps/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/- Copying Log to $log_folder/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i 's/ui_print "- /ui_print "/g' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/ui_print " "/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/ui_print "- Installation complete!"/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
 
   # Remove all the unneeded files
   for i in ${RM_OPENGAPPS}
@@ -85,6 +93,8 @@ function build_opengapps() {
     rm -rvf ${tmp_root}/tools/opengapps_tmp/Core/${i}* >> ${build_log} 2>&1
     rm -rvf ${tmp_root}/tools/opengapps_tmp/GApps/${i}* >> ${build_log} 2>&1
     sed -i 0,/${i}/{/${i}/d} ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+    sed -i '/${i}/d' ${tmp_root}/tools/opengapps_tmp/app_sizes.txt >> ${build_log} 2>&1
+    sed -i '/${i}/d' ${tmp_root}/tools/opengapps_tmp/app_densities.txt >> ${build_log} 2>&1
   done
 
   cd ${tmp_root}/tools/opengapps_tmp/

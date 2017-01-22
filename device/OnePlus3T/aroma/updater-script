@@ -159,7 +159,6 @@ set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "mode", 0777);
 set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "mode", 0777);
 set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "mode", 0777);
 
-ui_print("   - Customizing ramdisk");
 run_program("/tmp/tools/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
 run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
 run_program("/tmp/cmdline.sh");
@@ -190,8 +189,7 @@ run_program("/tmp/tools/busybox", "fstrim", "/data");
 
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
   then
-  ui_print(" ");
-  ui_print("@Installing SuperSU");
+  ui_print("   Installing SuperSU");
   run_program("/tmp/tools/busybox", "echo", "DEBUG: Move supersu to /tmp/tools/supersu ->  /tmp/supersu ");
   run_program("/tmp/tools/busybox", "mv", "/tmp/tools/supersu", "/tmp/supersu");
   run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");
@@ -201,13 +199,16 @@ endif;
 
 delete_recursive("/tmp/supersu");
 
+# -- - MOD - -- #
+set_progress(0.720000);
+ui_print(" ");
+ui_print("@Applying Your Settings");
+ui_print(" ");
+
 # -- - ARISE - -- #
 
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
   then
-  ui_print(" ");
-  ui_print("@Installing A.R.I.S.E");
-  ui_print(" ");
   ui_print("   Installing A.R.I.S.E Sound System");
   #run_program("/tmp/tools/arise/install.sh");
   ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
@@ -224,12 +225,6 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
   ui_print("   Extracting V4A profiles & IRS");
   package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
 endif;
-
-# -- - MOD - -- #
-set_progress(0.720000);
-ui_print(" ");
-ui_print("@Applying Your Settings");
-ui_print(" ");
 
 # -- - XPOSED - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.2") == "1")
@@ -336,9 +331,7 @@ ui_print("   Installing OxygenOS Bootscreen");
 package_extract_file("tools/splash-stock.bin", "/dev/block/sde17");
 delete("/tmp/tools/splash-stock.bin");
 
-ui_print(" ");
-ui_print("@Installing Busybox");
-ui_print(" ");
+ui_print("   Installing Busybox");
 run_program("/sbin/busybox", "unzip", "/tmp/tools/busybox_installer/busybox.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/busybox_installer");
 run_program("/sbin/busybox", "sh", "/tmp/tools/busybox_installer/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/busybox.log", "/tmp/tools/busybox_installer/busybox.zip");
 delete_recursive("/tmp/tools/busybox_installer");
