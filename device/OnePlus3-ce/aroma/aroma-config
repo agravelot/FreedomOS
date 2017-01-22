@@ -480,37 +480,43 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
 endif;
 
 # -- - SYSTEM APPS - -- #
-ini_set("text_next", "<~text_next>");
-checkbox(
-  "<~apps.tittle>", "<~apps.tittle2>", "@personalize", "apps.prop",
+form(
+    "System Apps",
+    "Please select which apps you want to include or exclude</#>",
+    "@default",
+    aromasapps.prop,
+    "inclorexcl",     "Choose to include or exclude the apps below",        "",                    "group",
+      "1",                    "Include",                  "Choose the apps you WANT installed from the list below.",        "select.selected",
+      "0",                    "Exclude",                  "Choose the apps you DON'T WANT installed from the list below.",  "select",
 
-  "System apps", "", 2,
-    "<~anthal>", "<~info.anthal>", 0,
-    "<~basic_dream>", "<~info.basic_dream>", 0,
-    "<~bt_midi>", "<~info.bt_midi>", 0,
-    "<~desk_clock>", "<~info.desk_clock>", 1,
-    "<~document>", "<~info.document>", 1,
-    "<~download_provider>", "<~info.download_provider>", 1,
-    "<~easter_egg>", "<~info.easter_egg>", 1,
-    "<~galaxy>","<~info.galaxy>", 0,
-    "<~holo_spiral>", "<~info.holo_spiral>", 0,
-    "<~anim_wallpaper>", "<~info.anim_wallpaper>", 1,
-    "<~music>", "<~info.music>", 1,
-    "<~noise_feild>", "<~info.noise_feild>", 0,
-    "<~oneplus_forum>", "<~info.oneplus_forum>", 1,
-    "<~oneplus_wallpapers>", "<~info.oneplus_wallpapers>", 1,
-    "<~oneplus_camera>", "<~info.oneplus_camera>", 1,
-    "<~oneplus_gallery>", "<~info.oneplus_gallery>", 1,
-    "<~phase_beam>", "<~info.phase_beam>", 0,
-    "<~protips>", "<~info.protips>", 0,
-    "<~sms>", "<~info.sms>", 1,
-    "<~sound_recorder>", "<~info.sound_recorder>", 1,
-    "<~swiftkey>", "<~info.swiftkey>", 1,
-    "<~tags>", "<~info.tags>", 1,
-    "<~weather>", "<~info.weather>", 1,
-    "<~dive_icon>", "<~info.dive_icon>", 1,
-    "<~rifon_icon>", "<~info.rifon_icon>", 1
+    "sapps",     "Choose System Apps which you want to add on install/exclude list",    "",        "group",
+      "AntHalService",          "<~anthal>",              "<~info.anthal>",             "check",
+      "BasicDreams",            "<~basic_dream>",         "<~info.basic_dream>",        "check",
+      "BluetoothMidiService",   "<~bt_midi>",             "<~info.bt_midi>",            "check",
+      "DocumentsUI",            "<~desk_clock>",          "<~info.desk_clock>",         "check",
+      "DownloadProvider",       "<~download_provider>",   "<~info.download_provider>",  "check",
+      "EasterEgg",              "<~easter_egg>",          "<~info.easter_egg>",         "check",
+      "Galaxy4",                "<~galaxy>",              "<~info.galaxy>",             "check",
+      "HoloSpiralWallpaper",    "<~holo_spiral>",         "<~info.holo_spiral>",        "check",
+      "LiveWallpapers",         "<~anim_wallpaper>",      "<~info.anim_wallpaper>",     "check",
+      "OPMusic",                "<~music>",               "<~info.music>",              "check",
+      "NoiseField",             "<~noise_feild>",         "<~info.noise_feild>",        "check",
+      "OPForum",                "<~oneplus_forum>",       "<~info.oneplus_forum>",      "check",
+      "OnePlusWallpapers",      "<~oneplus_wallpapers>",  "<~info.oneplus_wallpapers>", "check",
+      "OnePlusCamera",          "<~oneplus_camera>",      "<~info.oneplus_camera>",     "check",
+      "OnePlusGallery",         "<~oneplus_gallery>",     "<~info.oneplus_gallery>",    "check",
+      "PhaseBeam",              "<~phase_beam>",          "<~info.phase_beam>",         "check",
+      "Protips",                "<~protips>",             "<~info.protips>",            "check",
+      "OPMms",                  "<~sms>",                 "<~info.sms>",                "check",
+      "SoundRecorder",          "<~sound_recorder>",      "<~info.sound_recorder>",     "check",
+      "SwiftKey",               "<~swiftkey>",            "<~info.swiftkey>",           "check",
+      "Tag",                    "<~tags>",                "<~info.tags>",               "check",
+      "Weather",                "<~weather>",             "<~info.weather>",            "check",
+      "DivesIconPack",          "<~dive_icon>",           "<~info.dive_icon>",          "check",
+      "RifonIconPack",          "<~rifon_icon>",          "<~info.rifon_icon>",         "check"
 );
+
+resexec("scripts/gen_list.sh");
 
 # -- - MOD - -- #
 checkbox(
