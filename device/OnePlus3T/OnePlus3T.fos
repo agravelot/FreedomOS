@@ -122,6 +122,7 @@ TOOLS_LIST="
 arm64/busybox
 common/adb.sh
 common/addon
+common/apps_remover.sh
 common/arise
 common/clean.sh
 common/fonts

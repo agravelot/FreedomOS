@@ -348,6 +348,7 @@ ui_print(" ");
 ui_print("@Customizing your System Applications");
 ui_print(" ");
 
+run_program("/tmp/tools/apps_remover.sh", "sapps.prop", "1");
 
 # -- - OPENGAPPS - -- #
 set_progress(0.940000);
