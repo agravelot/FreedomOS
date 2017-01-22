@@ -1,0 +1,6 @@
+[submodule "download/freedomos_busybox"]
+	path = download/freedomos_busybox
+	url = https://gitlab.com/Nevax/freedomos_busybox.git
+[submodule "download/freedomos_opengapps"]
+	path = download/freedomos_opengapps
+	url = https://gitlab.com/Nevax/freedomos_opengapps.git

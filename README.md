@@ -4,7 +4,7 @@
 
 ## Note for pull requests and issues
 
-I refuse all pull requests and issues coming from Github, use [Gitlab](https://gitlab.com/Nevax/FreedomOS).
+I refuse all pull requests and issues coming from Github, please use [Gitlab](https://gitlab.com/Nevax/FreedomOS).
 
 ## Required
 - Linux x64 (others architectures are not currently supported).
@@ -15,6 +15,16 @@ I refuse all pull requests and issues coming from Github, use [Gitlab](https://g
 - `adb` for pulling updated apps and pushing rom with automatic flash.
 - `java` for signed the zip file.
 
+Arch based:
+```
+pacman -S rsync python python2 zip curl openssl ncurses cpio python-virtualenv
+```
+
+Debian/Ubuntu based:
+```
+apt-get install rsync python python2 zip curl openssl ncurses cpio python-virtualenv
+```
+
 ## How to build
 
 Clone the repo:
@@ -23,7 +33,7 @@ git clone https://gitlab.com/Nevax/FreedomOS.git -b master
 ```
 Get needed repos:
 ```bash
-bash ./update_repos.sh
+git pull --recurse-submodules
 ```
 Build the project:
 ```bash
