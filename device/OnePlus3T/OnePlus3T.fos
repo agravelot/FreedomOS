@@ -130,6 +130,8 @@ common/google_dns.sh
 common/google_assistant.sh
 common/hosts
 common/kernel
+common/log_folder.sh
+common/save_logs.sh
 common/no_setup.sh
 common/supersu
 common/v4a_profiles_irs

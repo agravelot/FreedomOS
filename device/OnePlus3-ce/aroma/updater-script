@@ -41,6 +41,7 @@ show_progress(0.03, 1600);
 delete_recursive("/tmp/tools");
 package_extract_dir("tools", "/tmp/tools");
 set_metadata_recursive("/tmp/tools", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
+run_program("/tmp/tools/log_folder.sh");
 
 ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 ifelse(is_mounted("/data"), run_program("/tmp/tools/busybox", "umount", "/data"));
@@ -401,8 +402,12 @@ endif;
 
 set_progress(0.990000);
 ui_print(" ");
+ui_print("@Finished");
+ui_print(" ");
+ui_print("Saving log in sdcard /sdcard/FreedomOS_log_installer.tar.gz");
+run_program("/tmp/tools/save_logs.sh");
+ui_print("You can save extra logs with Save Logs button");
 ui_print(" ");
 set_progress(1.00000);
-ui_print("@Finished");
-ui_print(" Please reboot your recovery before flashing anything else!");
+ui_print("Please reboot your recovery before flashing anything else!");
 ui_print(" ");
