@@ -214,19 +214,16 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "Chrome",     "<b>Google Chrome</b>",       "",                      "check",
         "ClockGoogle",     "<b>Google Clock</b>",       "",                      "check",
         "CloudPrint",     "<b>Google Cloud Print</b>",       "",                      "check",
-        "DialerCombo",     "<b>Google Contacts + Google Dialer</b>",       "<#f00>EXPERIMENTAL</#>, read the FAQ",                      "check",
-        "DMAgent",     "<b>Google Apps Device Policy</b>",       "",                      "check",
+        "DialerCombo",     "<b>Google Contacts + Google Dialer</b>",       "<#f00>EXPERIMENTAL, read the FAQ</#>",                      "check",
         "Drive",     "<b>Google Drive</b>",       "",                      "check",
         "ExchangeGoogle",     "<b>Google Exchange Services</b>",       "",                      "check",
         "FaceDetect",     "<b>Face Detection for Media</b>",       "",                      "check",
         "FaceUnlock",     "<b>Face Unlock</b>",       "",                      "check",
         "Gmail",     "<b>Gmail</b>",       "",                      "check",
         "GoogleTTS",     "<b>Google Text-to-Speech</b>",       "",                      "check",
-        "Hangouts",     "<b>Google Hangouts</b>",       "",                      "check",
         "Hotword",     "<b>OK Google Hotword Enrollment</b>",       "(automatically selected if Search will be installed)",                      "check",
         "KeyboardGoogle",     "<b>Google Keyboard</b>",       "",                      "check",
         "Messenger",     "<b>Messenger</b>",       "",                      "check",
-        "PackageInstallerGoogle",     "<b>Google PackageInstaller</b>",       "",                      "check",
         "PixelIcons",     "<b>Pixel Icons</b>",       "",                      "check",
         "PixelLauncher",     "<b>Pixel Launcher</b>",       "(Wallpapers and Google Search Required)",                      "check",
         "Photos",     "<b>Google Photos</b>",       "",                      "check",
@@ -234,7 +231,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "PrintServiceGoogle",     "<b>Print Service Recommendation Service</b>",       "",                      "check",
         "Search",     "<b>Google Search</b>",       "To Exclude Google Search AND Google Now Launcher AND Pixel Launcher <#f00>OR</#> To Include Google Search AND OK Google Hotword Enrollment",                      "check",
         "Speech",     "<b>Offline Speech Files</b>",       "(Required for offline voice dicatation support)",                      "check",
-        "StorageManagerGoogle",     "<b>Google Storage Manager</b>",       "",                      "check",
         "TagGoogle",     "<b>Google NFC Tags</b>",       "",                      "check",
         "Talkback",     "<b>Talkback</b>",       "",                      "check",
         "Wallpapers",     "<b>Wallpapers</b>",       "To Exclude BOTH Wallpapers AND Pixel Launcher <#f00>OR</#> To Include Wallpapers",                      "check",
@@ -248,43 +244,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   # Write the gapps-config file
   ##############################################
   setvar("gapps","");
-
-  # ADVANCED OPTIONS
-  if
-    prop("extra.prop", "exdebug")=="1"
-  then
-    appendvar("gapps", "NoDebug\n");
-  endif;
-  if
-    prop("extra.prop", "extest")=="1"
-  then
-    appendvar("gapps", "Test\n");
-  endif;
-  if
-    prop("extra.prop", "exswype")=="1"
-  then
-    appendvar("gapps", "skipswypelibs\n");
-  endif;
-  if
-    prop("extra.prop", "exsubstitute")=="1"
-  then
-    appendvar("gapps", "substituteswypelibs\n");
-  endif;
-  if
-    prop("extra.prop", "exnopreodex")=="1"
-  then
-    appendvar("gapps", "nopreodex\n");
-  endif;
-  if
-    prop("extra.prop", "exclean")=="1"
-  then
-    appendvar("gapps", "forceclean\n");
-  endif;
-  if
-    prop("extra.prop", "WebViewStub")=="1"
-  then
-    appendvar("gapps", "WebViewStub\n");
-  endif;
 
   # INCLUDE/EXCLUDE
   if
@@ -385,12 +344,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "GCS")=="1"
-  then
-    appendvar("gapps", "GCS\n");
-  endif;
-
-  if
     prop("gapps.prop", "Gmail")=="1"
   then
     appendvar("gapps", "Gmail\n");
@@ -410,21 +363,9 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "Hangouts")=="1"
-  then
-    appendvar("gapps", "Hangouts\n");
-  endif;
-
-  if
     prop("gapps.prop", "Hotword")=="1"
   then
     appendvar("gapps", "Hotword\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Keep")=="1"
-  then
-    appendvar("gapps", "Keep\n");
   endif;
 
   if
@@ -437,12 +378,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     prop("gapps.prop", "Messenger")=="1"
   then
     appendvar("gapps", "Messenger\n");
-  endif;
-
-  if
-    prop("gapps.prop", "PackageInstallerGoogle")=="1"
-  then
-    appendvar("gapps", "PackageInstallerGoogle\n");
   endif;
 
   if
@@ -494,12 +429,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "StorageManagerGoogle")=="1"
-  then
-    appendvar("gapps", "StorageManagerGoogle\n");
-  endif;
-
-  if
     prop("gapps.prop", "TagGoogle")=="1"
   then
     appendvar("gapps", "TagGoogle\n");
@@ -517,16 +446,10 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     appendvar("gapps", "YouTube\n");
   endif;
 
-  # Force WebViewGoogle installation
+  # Force Google WebViewGoogle installation, it's required by most of the apps.
+  # It will not be installed if Gogole Chrome is ticked,
   appendvar("gapps", "WebViewGoogle\n");
   appendvar("gapps", "\n");
-
-  # REMOVALS
-  if
-    prop("rem.prop", "BasicDreams")=="1"
-  then
-    appendvar("gapps", "BasicDreams\n");
-  endif;
 
   appendvar("gapps", "\n\n");
 
