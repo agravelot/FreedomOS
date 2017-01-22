@@ -74,6 +74,7 @@ app/LogKitSdService
 app/Maps
 app/OemAutoTestServer
 app/OEMLogKit
+app/OPBackup
 app/OPPBugReport
 app/SensorTestTool
 app/Videos
