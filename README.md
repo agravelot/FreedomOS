@@ -22,7 +22,7 @@ pacman -S rsync python python2 zip curl openssl ncurses cpio python-virtualenv
 
 Debian/Ubuntu based:
 ```
-apt-get install rsync python python2 zip curl openssl ncurses cpio python-virtualenv
+apt-get install rsync python zip curl openssl libncurses-dev cpio python-virtualenv
 ```
 
 ## How to build
