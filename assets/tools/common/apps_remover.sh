@@ -36,7 +36,7 @@ for pkg in $pkg_list; do
     fi
   done
   if [[ ! $found ]]; then
-    ui_print "   ERROR: Unable to found $pkg" >> /tmp/fos_logs/apps_remover
+    ui_print "   ERROR: Unable to found $pkg"
   fi
   echo "" >> /tmp/fos_logs/apps_remover
 done
