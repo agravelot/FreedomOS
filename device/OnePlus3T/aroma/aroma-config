@@ -499,6 +499,7 @@ form(
       "Galaxy4",                "<~galaxy>",              "<~info.galaxy>",             "check",
       "HoloSpiralWallpaper",    "<~holo_spiral>",         "<~info.holo_spiral>",        "check",
       "LiveWallpapers",         "<~anim_wallpaper>",      "<~info.anim_wallpaper>",     "check",
+      "OPBackup",               "<~ota>",                 "<~info.ota>",                "check",
       "OPMusic",                "<~music>",               "<~info.music>",              "check",
       "NoiseField",             "<~noise_feild>",         "<~info.noise_feild>",        "check",
       "OPForum",                "<~oneplus_forum>",       "<~info.oneplus_forum>",      "check",
