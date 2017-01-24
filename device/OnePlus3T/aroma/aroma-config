@@ -1,4 +1,4 @@
-# Copyright 2016 Antoine GRAVELOT
+# Copyright 2016-2017 Antoine GRAVELOT
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -53,7 +53,8 @@ selectbox(
   "<~language.english>", "<~language.english.info>", 1,
   "<~language.italian>", "<~language.italian.info>", 0,
   "<~language.german>", "<~language.german.info>", 0,
-  "<~language.spanish>", "<~language.spanish.info>", 0
+  "<~language.spanish>", "<~language.spanish.info>", 0,
+  "<~language.turkish>", "<~language.turkish.info>", 0
 );
 
 # -- - SET LANGUAGE - -- #
@@ -75,6 +76,10 @@ endif;
 
 if prop("language.prop", "selected.0") == "5" then
   loadlang("langs/es.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "6" then
+  loadlang("langs/tr.lang");
 endif;
 
 # -- - WELCOME - -- #
@@ -155,24 +160,12 @@ selectbox(
 #    "<~fw_mm>", "<~info.fw_mm>", 0,
     "<~fw_n>", "<~info.fw_n>", 1,
   "<~passwordfix.tittle>", "", 2,
-    "<~passwordfix_yes>", "<~info.passwordfix_yes>", 1,
-    "<~passwordfix_no>", "<~info.passwordfix_no>", 0
+    "<~passwordfix_yes>", "<~info.passwordfix_yes>", 0,
+    "<~passwordfix_no>", "<~info.passwordfix_no>", 1
 );
 
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
-  ##############################################
-  # MENU
-  ##############################################
-  menubox(
-      "Open GApps",
-      "Please select one of the choices below",
-      "@apps",
-      "menu.prop",
-      "Customized installation",   "Select which apps you want",     "@personalize",      #-- selected = 1
-      "Complete installation",     "Install the Super package",      "@default"         #-- selected = 2
-  );
-
   ##############################################
   # Load Previous Choices
   ##############################################
@@ -200,7 +193,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
       endif;
   endif;
 
-  if prop("menu.prop", "selected")=="1" then
   ##############################################
   # Customized installation
   ##############################################
@@ -222,19 +214,16 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "Chrome",     "<b>Google Chrome</b>",       "",                      "check",
         "ClockGoogle",     "<b>Google Clock</b>",       "",                      "check",
         "CloudPrint",     "<b>Google Cloud Print</b>",       "",                      "check",
-        "DialerCombo",     "<b>Google Contacts + Google Dialer</b>",       "<#f00>EXPERIMENTAL</#>, read the FAQ",                         "check",
-        "DMAgent",     "<b>Google Apps Device Policy</b>",       "",                      "check",
+        "DialerCombo",     "<b>Google Contacts + Google Dialer</b>",       "<#f00>EXPERIMENTAL, read the FAQ</#>",                      "check",
         "Drive",     "<b>Google Drive</b>",       "",                      "check",
         "ExchangeGoogle",     "<b>Google Exchange Services</b>",       "",                      "check",
         "FaceDetect",     "<b>Face Detection for Media</b>",       "",                      "check",
         "FaceUnlock",     "<b>Face Unlock</b>",       "",                      "check",
         "Gmail",     "<b>Gmail</b>",       "",                      "check",
         "GoogleTTS",     "<b>Google Text-to-Speech</b>",       "",                      "check",
-        "Hangouts",     "<b>Google Hangouts</b>",       "",                      "check",
         "Hotword",     "<b>OK Google Hotword Enrollment</b>",       "(automatically selected if Search will be installed)",                      "check",
         "KeyboardGoogle",     "<b>Google Keyboard</b>",       "",                      "check",
         "Messenger",     "<b>Messenger</b>",       "",                      "check",
-        "PackageInstallerGoogle",     "<b>Google PackageInstaller</b>",       "",                      "check",
         "PixelIcons",     "<b>Pixel Icons</b>",       "",                      "check",
         "PixelLauncher",     "<b>Pixel Launcher</b>",       "(Wallpapers and Google Search Required)",                      "check",
         "Photos",     "<b>Google Photos</b>",       "",                      "check",
@@ -242,63 +231,19 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "PrintServiceGoogle",     "<b>Print Service Recommendation Service</b>",       "",                      "check",
         "Search",     "<b>Google Search</b>",       "To Exclude Google Search AND Google Now Launcher AND Pixel Launcher <#f00>OR</#> To Include Google Search AND OK Google Hotword Enrollment",                      "check",
         "Speech",     "<b>Offline Speech Files</b>",       "(Required for offline voice dicatation support)",                      "check",
-        "StorageManagerGoogle",     "<b>Google Storage Manager</b>",       "",                      "check",
         "TagGoogle",     "<b>Google NFC Tags</b>",       "",                      "check",
         "Talkback",     "<b>Talkback</b>",       "",                      "check",
         "Wallpapers",     "<b>Wallpapers</b>",       "To Exclude BOTH Wallpapers AND Pixel Launcher <#f00>OR</#> To Include Wallpapers",                      "check",
         "YouTube",     "<b>YouTube</b>",       "",                      "check"
   );
 
-  # Duplicate aromagapps.prop and rename it to gapps.prop - this is useful because the selections won't be erased by the complete installation (menu.prop selected ==2)
+  # Duplicate aromagapps.prop and rename it to gapps.prop
   resexec("scripts/props.sh");
-  endif;
-
-  #IF COMPLETE INSTALLATION IS CHOOSEN - reset gapps.prop
-  if prop("menu.prop", "selected")=="2" then
-    writetmpfile("gapps.prop", " ");
-  endif;
 
   ##############################################
   # Write the gapps-config file
   ##############################################
   setvar("gapps","");
-
-  # ADVANCED OPTIONS
-  if
-    prop("extra.prop", "exdebug")=="1"
-  then
-    appendvar("gapps", "NoDebug\n");
-  endif;
-  if
-    prop("extra.prop", "extest")=="1"
-  then
-    appendvar("gapps", "Test\n");
-  endif;
-  if
-    prop("extra.prop", "exswype")=="1"
-  then
-    appendvar("gapps", "skipswypelibs\n");
-  endif;
-  if
-    prop("extra.prop", "exsubstitute")=="1"
-  then
-    appendvar("gapps", "substituteswypelibs\n");
-  endif;
-  if
-    prop("extra.prop", "exnopreodex")=="1"
-  then
-    appendvar("gapps", "nopreodex\n");
-  endif;
-  if
-    prop("extra.prop", "exclean")=="1"
-  then
-    appendvar("gapps", "forceclean\n");
-  endif;
-  if
-    prop("extra.prop", "WebViewStub")=="1"
-  then
-    appendvar("gapps", "WebViewStub\n");
-  endif;
 
   # INCLUDE/EXCLUDE
   if
@@ -399,12 +344,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "GCS")=="1"
-  then
-    appendvar("gapps", "GCS\n");
-  endif;
-
-  if
     prop("gapps.prop", "Gmail")=="1"
   then
     appendvar("gapps", "Gmail\n");
@@ -424,21 +363,9 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "Hangouts")=="1"
-  then
-    appendvar("gapps", "Hangouts\n");
-  endif;
-
-  if
     prop("gapps.prop", "Hotword")=="1"
   then
     appendvar("gapps", "Hotword\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Keep")=="1"
-  then
-    appendvar("gapps", "Keep\n");
   endif;
 
   if
@@ -451,12 +378,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     prop("gapps.prop", "Messenger")=="1"
   then
     appendvar("gapps", "Messenger\n");
-  endif;
-
-  if
-    prop("gapps.prop", "PackageInstallerGoogle")=="1"
-  then
-    appendvar("gapps", "PackageInstallerGoogle\n");
   endif;
 
   if
@@ -508,12 +429,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "StorageManagerGoogle")=="1"
-  then
-    appendvar("gapps", "StorageManagerGoogle\n");
-  endif;
-
-  if
     prop("gapps.prop", "TagGoogle")=="1"
   then
     appendvar("gapps", "TagGoogle\n");
@@ -531,16 +446,10 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     appendvar("gapps", "YouTube\n");
   endif;
 
-  # Force WebViewGoogle installation
+  # Force Google WebViewGoogle installation, it's required by most of the apps.
+  # It will not be installed if Gogole Chrome is ticked,
   appendvar("gapps", "WebViewGoogle\n");
   appendvar("gapps", "\n");
-
-  # REMOVALS
-  if
-    prop("rem.prop", "BasicDreams")=="1"
-  then
-    appendvar("gapps", "BasicDreams\n");
-  endif;
 
   appendvar("gapps", "\n\n");
 
@@ -571,38 +480,38 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
 endif;
 
 # -- - SYSTEM APPS - -- #
-ini_set("text_next", "<~text_next>");
-checkbox(
-  "<~apps.tittle>", "<~apps.tittle2>", "@personalize", "apps.prop",
+form(
+    "System Apps",
+    "Please select which apps you want to include or exclude</#>",
+    "@default",
+    aromasapps.prop,
+    "inclorexcl",     "Choose to include or exclude the apps below",        "",                    "group",
+      "1",                    "Include",                  "Choose the apps you WANT installed from the list below.",        "select.selected",
+      "0",                    "Exclude",                  "Choose the apps you DON'T WANT installed from the list below.",  "select",
 
-  "System apps", "", 2,
-    "<~anthal>", "<~info.anthal>", 0,
-    "<~basic_dream>", "<~info.basic_dream>", 0,
-    "<~bt_midi>", "<~info.bt_midi>", 0,
-    "<~desk_clock>", "<~info.desk_clock>", 1,
-    "<~document>", "<~info.document>", 1,
-    "<~download_provider>", "<~info.download_provider>", 1,
-    "<~easter_egg>", "<~info.easter_egg>", 1,
-    "<~galaxy>","<~info.galaxy>", 0,
-    "<~holo_spiral>", "<~info.holo_spiral>", 0,
-    "<~anim_wallpaper>", "<~info.anim_wallpaper>", 1,
-    "<~music>", "<~info.music>", 1,
-    "<~noise_feild>", "<~info.noise_feild>", 0,
-    "<~oneplus_forum>", "<~info.oneplus_forum>", 1,
-    "<~oneplus_wallpapers>", "<~info.oneplus_wallpapers>", 1,
-    "<~oneplus_camera>", "<~info.oneplus_camera>", 1,
-    "<~oneplus_gallery>", "<~info.oneplus_gallery>", 1,
-    "<~phase_beam>", "<~info.phase_beam>", 0,
-    "<~protips>", "<~info.protips>", 0,
-    "<~sms>", "<~info.sms>", 1,
-    "<~sound_recorder>", "<~info.sound_recorder>", 1,
-    "<~swiftkey>", "<~info.swiftkey>", 1,
-    "<~tags>", "<~info.tags>", 1,
-    "<~weather>", "<~info.weather>", 1,
-    "<~dive_icon>", "<~info.dive_icon>", 1,
-    "<~rifon_icon>", "<~info.rifon_icon>", 1
+    "sapps",     "Choose System Apps which you want to add on install/exclude list",    "",        "group",
+      "AntHalService",          "<~anthal>",              "<~info.anthal>",             "check",
+      "BasicDreams",            "<~basic_dream>",         "<~info.basic_dream>",        "check",
+      "BluetoothMidiService",   "<~bt_midi>",             "<~info.bt_midi>",            "check",
+      "DivesIconPack",          "<~dive_icon>",           "<~info.dive_icon>",          "check",
+      "DocumentsUI",            "<~desk_clock>",          "<~info.desk_clock>",         "check",
+      "EasterEgg",              "<~easter_egg>",          "<~info.easter_egg>",         "check",
+      "LiveWallpapers",         "<~anim_wallpaper>",      "<~info.anim_wallpaper>",     "check",
+      "OPBackup",               "<~ota>",                 "<~info.ota>",                "check",
+      "OPMusic",                "<~music>",               "<~info.music>",              "check",
+      "OPForum",                "<~oneplus_forum>",       "<~info.oneplus_forum>",      "check",
+      "OPWallpapers",           "<~oneplus_wallpapers>",  "<~info.oneplus_wallpapers>", "check",
+      "OnePlusCamera",          "<~oneplus_camera>",      "<~info.oneplus_camera>",     "check",
+      "OnePlusGallery",         "<~oneplus_gallery>",     "<~info.oneplus_gallery>",    "check",
+      "OPMms",                  "<~sms>",                 "<~info.sms>",                "check",
+      "RifonIconPack",          "<~rifon_icon>",          "<~info.rifon_icon>",         "check",
+      "SoundRecorder",          "<~sound_recorder>",      "<~info.sound_recorder>",     "check",
+      "SwiftKey",               "<~swiftkey>",            "<~info.swiftkey>",           "check",
+      "Tag",                    "<~tags>",                "<~info.tags>",               "check",
+      "Weather",                "<~weather>",             "<~info.weather>",            "check"
 );
 
+resexec("scripts/gen_list.sh");
 
 # -- - MOD - -- #
 checkbox(
@@ -617,17 +526,7 @@ checkbox(
     "<~fos_wallpapers>", "<~info.fos_wallpapers>", 1,
     "<~emoji_one>", "<~info.emoji_one>", 1,
     "<~google_assistant>", "<~info.google_assistant>", 1,
-    "<~arise>", "<~info.arise>", 1
-);
-
-# -- - THEME - -- #
-selectbox(
-  "<~theme.tittle>",
-  "<~theme.tittle2>",
-  "@default",
-  "theme.prop",
-  "<~theme.tittle3>", "", 2,
-    "<~notheme>", "", 1,
+    "<~arise>", "<~info.arise>", 1,
     "<~substratum>", "<~info.substratum>", 0
 );
 

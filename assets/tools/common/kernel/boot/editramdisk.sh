@@ -26,15 +26,15 @@ if  grep -qr "ro.oxygen.version=" /tmp/ramdisk/default.prop; then
    sed -i "s/ro.oxygen.version=.*/ro.oxygen.version=!version!/" /tmp/ramdisk/default.prop
 fi
 
-echo -e "\nsetenforce 0\n" >> /tmp/ramdisk/init.rc
-
 DEBUG=`grep "item.1.4" /tmp/aroma/mod.prop | cut -d '=' -f2`
 if [ $DEBUG = 1 ]; then
+  echo -e "\n# /* FreedomOS EDIT */" >> /tmp/ramdisk/default.prop
   echo "persist.service.adb.enable=1" >> /tmp/ramdisk/default.prop
   echo "persist.service.debuggable=1" >> /tmp/ramdisk/default.prop
   echo "persist.sys.usb.config=mtp,adb" >> /tmp/ramdisk/default.prop
   #echo "ro.secure=0" >> /tmp/ramdisk/default.prop
   #echo "ro.adb.secure=0" >> /tmp/ramdisk/default.prop
+  echo -e "# /*END EDIT */\n" >> /tmp/ramdisk/default.prop
 fi
 
 # If no supersu installation, remove the dm-verity and disable force encryption.

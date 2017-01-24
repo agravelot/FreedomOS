@@ -41,9 +41,9 @@ language.german.info=@DanielL
 language.spanish=Español
 language.spanish.info=Utilizar Español by @jgimenezpascual
 language.turkish=Türkçe
-language.turksh.info=Türkçe kullanın - @Mevlüt TOPÇU
+language.turkish.info=Türkçe kullanın - @Mevlüt TOPÇU
 
-rom.data=!tarih!
+rom.data=!date!
 text_finish=Bitti
 model.title=Telefon Modeli
 
@@ -219,7 +219,7 @@ info.oem_test=OEM test uygulaması
 info.oem_log=Günlüğe kaydetme
 info.oneplus_camera=Fotoğraf ve video çekme
 info.oneplus_gallery=Resimleri ve videoları görüntüleme
-info.ota=OnePlus sistem güncellemesi (önerilmez)
+info.ota=OnePlus sistem güncellemesi
 info.oneplus_wizard=Google 'dan sonra gelen Kurulum Sihirbazı
 info.phase_beam=Hareketli duvar kağıdı
 info.protips=Bazı ipuçları

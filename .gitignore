@@ -47,3 +47,5 @@ build/keys/*
 !tmp/EMPTY_DIRECTORY
 !output/EMPTY_DIRECTORY
 !rom/EMPTY_DIRECTORY
+!download/freedomos_busybox
+!download/freedomos_opengapps
