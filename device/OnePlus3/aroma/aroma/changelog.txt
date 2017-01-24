@@ -1,5 +1,5 @@
 2.3
-  FIX: SELinux contexts, the rom is not fully usable in Enforcing state. Read!!!!!!!!!!!!!!!!
+  FIX: SELinux contexts, the rom is not fully usable in Enforcing state. Read a9032628
   FIX: OnePlus Wallaper uninstallation
   ADD: Save installer logs in sdcard
   ADD: apt-x support, thanks to @dh.harald for the lib files
