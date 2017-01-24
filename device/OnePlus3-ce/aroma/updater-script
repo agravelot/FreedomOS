@@ -398,6 +398,7 @@ ui_print(" ");
 ui_print("@Finished");
 ui_print(" ");
 ui_print("Saving log in sdcard /sdcard/FreedomOS_log_installer.tar.gz");
+ui_print("Cleaning Temporary Files");
 run_program("/tmp/tools/save_logs.sh");
 ui_print("You can save extra logs with Save Logs button");
 ui_print(" ");

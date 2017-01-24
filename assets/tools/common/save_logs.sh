@@ -23,6 +23,5 @@ dmesg > /tmp/fos_logs/dmesg.log
 cp -r /cache /tmp/fos_logs/
 cp /default.prop /tmp/fos_logs
 cp /fstab.qcom /tmp/fos_logs
-cp /data/stock_boot_*.img.gz /tmp/fos_logs/
-cp /data/su.img /tmp/fos_logs/
 tar -czvf /sdcard/FreedomOS_log_installer.tar.gz /tmp/fos_logs/*
+find /tmp/* -maxdepth 0 ! -path /tmp/recovery.log  -exec rm -rf {} +
