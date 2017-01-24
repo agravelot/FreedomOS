@@ -503,7 +503,7 @@ form(
       "OPMusic",                "<~music>",               "<~info.music>",              "check",
       "NoiseField",             "<~noise_feild>",         "<~info.noise_feild>",        "check",
       "OPForum",                "<~oneplus_forum>",       "<~info.oneplus_forum>",      "check",
-      "OnePlusWallpapers",      "<~oneplus_wallpapers>",  "<~info.oneplus_wallpapers>", "check",
+      "OPWallpapers",           "<~oneplus_wallpapers>",  "<~info.oneplus_wallpapers>", "check",
       "OnePlusCamera",          "<~oneplus_camera>",      "<~info.oneplus_camera>",     "check",
       "OnePlusGallery",         "<~oneplus_gallery>",     "<~info.oneplus_gallery>",    "check",
       "PhaseBeam",              "<~phase_beam>",          "<~info.phase_beam>",         "check",
