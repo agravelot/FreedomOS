@@ -10,3 +10,6 @@
 [submodule "download/sdat2img"]
 	path = download/sdat2img
 	url = https://github.com/xpirt/sdat2img.git
+[submodule "download/img2sdat"]
+	path = download/img2sdat
+	url = https://github.com/xpirt/img2sdat.git
