@@ -1,3 +1,34 @@
+2.3
+  FIX: SELinux contexts, the rom is not fully usable in Enforcing state. Read!!!!!!!!!!!!!!!!
+  FIX: OnePlus Wallaper uninstallation
+  ADD: Save installer logs in sdcard
+  ADD: apt-x support, thanks to @dh.harald for the lib files
+  ADD: Turkish language, thanks to @topcu.mevlut !17
+  ADD: Option to remove OnePlus OTA app
+  ADD: Clean temporary files after installation
+  UPDATE: System apps uninstaller
+  UPDATE: Google Play Store
+  UPDATE: Google Calendar
+  UPDATE: Google Call Sync
+  UPDATE: Gmail
+  UPDATE: Google Keyboard
+  UPDATE: Google Photos
+  UPDATE: Google Search
+  UPDATE: YouTube
+  UPDATE: Put substratum in Advenced Settings
+  REMOVE: DMAgent from Google apps
+  REMOVE: Hangouts from Google apps
+  REMOVE: DownloadProvider option, required by some apps
+  REMOVE: Galaxy4
+  REMOVE: HoloSpiralWallpaper
+  REMOVE: NoiseFeild
+  REMOVE: PhaseBeam
+  REMOVE: Protips
+  REMOVE: Google Package Installer from Google apps
+  REMOVE: Google Storage Manager from Google apps
+  REMOVE: "Complete installation" option for Google Apps, it will avoid unconscious installation of Google Dialer.
+  REMOVE: Remove "setenforce 0" in init.rc
+
 2.2
   UPDATE: OxygenOS 4.0.2
   UPDATE: APN Settings for select Carriers
