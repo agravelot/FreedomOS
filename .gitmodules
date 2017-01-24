@@ -4,3 +4,6 @@
 [submodule "download/freedomos_opengapps"]
 	path = download/freedomos_opengapps
 	url = https://gitlab.com/Nevax/freedomos_opengapps.git
+[submodule "download/make_ext4fs"]
+	path = download/make_ext4fs
+	url = https://github.com/superr/make_ext4fs.git
