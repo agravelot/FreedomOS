@@ -493,28 +493,22 @@ form(
       "AntHalService",          "<~anthal>",              "<~info.anthal>",             "check",
       "BasicDreams",            "<~basic_dream>",         "<~info.basic_dream>",        "check",
       "BluetoothMidiService",   "<~bt_midi>",             "<~info.bt_midi>",            "check",
+      "DivesIconPack",          "<~dive_icon>",           "<~info.dive_icon>",          "check",
       "DocumentsUI",            "<~desk_clock>",          "<~info.desk_clock>",         "check",
-      "DownloadProvider",       "<~download_provider>",   "<~info.download_provider>",  "check",
       "EasterEgg",              "<~easter_egg>",          "<~info.easter_egg>",         "check",
-      "Galaxy4",                "<~galaxy>",              "<~info.galaxy>",             "check",
-      "HoloSpiralWallpaper",    "<~holo_spiral>",         "<~info.holo_spiral>",        "check",
       "LiveWallpapers",         "<~anim_wallpaper>",      "<~info.anim_wallpaper>",     "check",
       "OPBackup",               "<~ota>",                 "<~info.ota>",                "check",
       "OPMusic",                "<~music>",               "<~info.music>",              "check",
-      "NoiseField",             "<~noise_feild>",         "<~info.noise_feild>",        "check",
       "OPForum",                "<~oneplus_forum>",       "<~info.oneplus_forum>",      "check",
       "OPWallpapers",           "<~oneplus_wallpapers>",  "<~info.oneplus_wallpapers>", "check",
       "OnePlusCamera",          "<~oneplus_camera>",      "<~info.oneplus_camera>",     "check",
       "OnePlusGallery",         "<~oneplus_gallery>",     "<~info.oneplus_gallery>",    "check",
-      "PhaseBeam",              "<~phase_beam>",          "<~info.phase_beam>",         "check",
-      "Protips",                "<~protips>",             "<~info.protips>",            "check",
       "OPMms",                  "<~sms>",                 "<~info.sms>",                "check",
+      "RifonIconPack",          "<~rifon_icon>",          "<~info.rifon_icon>",         "check",
       "SoundRecorder",          "<~sound_recorder>",      "<~info.sound_recorder>",     "check",
       "SwiftKey",               "<~swiftkey>",            "<~info.swiftkey>",           "check",
       "Tag",                    "<~tags>",                "<~info.tags>",               "check",
-      "Weather",                "<~weather>",             "<~info.weather>",            "check",
-      "DivesIconPack",          "<~dive_icon>",           "<~info.dive_icon>",          "check",
-      "RifonIconPack",          "<~rifon_icon>",          "<~info.rifon_icon>",         "check"
+      "Weather",                "<~weather>",             "<~info.weather>",            "check"
 );
 
 resexec("scripts/gen_list.sh");
