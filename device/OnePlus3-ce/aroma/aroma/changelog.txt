@@ -1,6 +1,6 @@
 2.4-CE
-  FIX: SELinux contexts, the rom is not fully usable in Enforcing state. Read a9032628
-  FIX: OnePlus Wallaper uninstallation
+  FIX: SELinux contexts, it's now fully compatible with Enforcing state. Read commit: a9032628
+  FIX: OnePlus Wallpapers uninstallation
   ADD: Save installer logs in sdcard
   ADD: apt-x support, thanks to @dh.harald for the lib files
   ADD: Turkish language, thanks to @topcu.mevlut !17
@@ -27,7 +27,7 @@
   REMOVE: Google Package Installer from Google apps
   REMOVE: Google Storage Manager from Google apps
   REMOVE: "Complete installation" option for Google Apps, it will avoid unconscious installation of Google Dialer.
-  REMOVE: Remove "setenforce 0" in init.rc
+  REMOVE: Permissive workaround, the kernel is now booting in Enforcing mode
 
 2.3-CE
   UPDATE: OxygenOS Open Beta 11
