@@ -1,0 +1,328 @@
+#########################################################
+#	FreedomOS language file
+#
+#	Traditional Chinese by: Cheng-Lin Yang
+#
+#
+#
+
+text_ok=確定
+text_next=下一步
+text_back=上一步
+text_yes=是
+text_no=否
+text_about=關於
+text_calibrating=校正工具
+text_quit=結束安裝
+text_quit_msg=您確定嗎 ?
+
+welcome.title=歡迎
+welcome.title2=ROM相關資訊
+welcome.text1=您即將使用
+welcome.version=版本
+welcome.device=裝置
+welcome.updated=已更新
+welcome.microblog=YouTube
+welcome.developer=開發者
+welcome.next=點擊下一步繼續安裝步驟
+
+changelog.title=更新日誌
+changelog.desc=FreedomOS更新日誌
+language.title=選擇語言
+language.text=選擇安裝語言
+language.english=English
+language.english.info=Using English
+language.french=France
+language.french.info=Utiliser le Français
+language.italian=Italiano
+language.italian.info=Utilizzare Italiano @xEvoRayJiN
+language.german=German
+language.german.info=@DanielL
+language.spanish=Español
+language.spanish.info=Utilizar Español by @jgimenezpascual
+language.turkish=Türkçe
+language.turkish.info=Türkçe kullanın - @Mevlüt TOPÇU
+language.tchinese=正體中文
+language.tchinese=使用正體中文 - @clyang
+
+rom.data=!date!
+text_finish=完成
+model.title=手機型號
+
+by=由
+
+main.tittle=Please select menu below to start the Installation
+main.tittle=請選擇下方選項開始安裝
+main.install=安裝
+main.install.info=繼續安裝模組
+main.sys=系統資訊
+main.sys.info=顯示裝置資訊
+main.changelog.info=FreedomOS更新日誌
+main.exit=離開
+main.exit.info=離開FreedomOS安裝程式
+
+install_mod.tittle=FreedomOS安裝程式
+install_mod.tittle2=選擇您的設定
+install_mod.sub_tittle=安裝方式
+
+gapps_yes=是的, 請安裝Google Apps
+gapps_no=不! 請不要安裝Google Apps
+info.gapps_yes=建議
+info.gapps_no=如不安裝Google Apps, 系統將<#f00>無法</#>正常啟動
+assert.tittle=檢查assert
+assert_yes=是 (建議)
+assert_no=否
+addon.tittle=Backup/Restore /system/addon.d/
+addon_yes=是
+info.addon_yes=建議dirty flash使用
+addon_no=否
+info.addon_no=clean flash使用
+firmware.tittle=選擇firmware
+fw_mm=Marshmallow firmwares
+info.fw_mm=支援更多第三方製作的TWRP
+fw_n=Nougat firmwares
+info.fw_n=建議
+passwordfix.tittle=Pin/Pattern workaround
+passwordfix_yes=是
+info.passwordfix_yes=移除data分區中的Pin/Pattern備份
+passwordfix_no=否
+info.passwordfix_no=使用現有檔案
+
+info.custom=The Freedom way
+info.stock=原生的OnePlus, 不帶root
+info.assert_yes=檢查build.prop中的差異
+info.assert_no=不檢查build.prop中的差異
+
+sys.title=系統資訊
+sys.info.wait=取得系統資訊中...
+sys.info.title=系統資訊
+sys.info.title2=您的手機系統資訊.
+sys.info.model=型號
+sys.info.name=名稱
+sys.info.manu=製造商
+sys.info.cpu=CPU
+sys.info.lcd=螢幕解析度
+sys.info.storage=儲存容量
+sys.info.storage.free=可用容量
+
+pre.install.title=準備開始安裝
+pre.install=安裝程式已經準備開始安裝
+pre.install2=點擊<b>立刻安裝</b>鍵開始安裝.
+pre.install3=若您想檢視或更改所選的安裝設定, 請點擊<b>上一步</b>.
+
+# -- - GOOGLE APPS - -- #
+
+gapps.tittle=Google Apps
+gapps.tittle2=選擇您要安裝的Google Apps
+
+calculator=Calculator
+calendar=Calendar
+call_log=Google Call Backup
+chrome=Chrome
+drive=Drive
+duo= Duo
+gmail=Gmail
+gmail_exchange=Gmail Exchange
+google=Google
+hangouts=Hangouts
+maps=Maps
+messenger=Messenger
+photos=Photos
+play_music=Play Music
+tts=Text-to-Speech
+tallback=Tallback
+play_movies=Play Movies
+setupwizard=Google SetupWizard
+youtube=YouTube
+
+info.calculator=0010 1010
+info.calendar=Google行事曆
+info.call_log=將您的通話紀錄傳送給Google
+info.chrome=網頁瀏覽器
+info.drive=雲端儲存服務
+info.duo=視訊軟體
+info.gmail=電子郵件工具
+info.gmail_exchange=讓Gmail支援MS Exchange
+info.google=Google Now
+info.hangouts=即時通訊軟體
+info.maps=地圖, 即時導航, 交通資訊
+info.messenger=Google簡訊軟體
+info.photos=照片管理軟體
+info.play_music=Google Play Music軟體
+info.tts=若移除將導致第一次開機時黑屏!!
+info.tallback=若移除將導致第一次開機時黑屏!!
+info.play_movies=Google Play Movies軟體
+info.setupwizard=Google設定精靈
+info.youtube=YouTube軟體
+
+# -- - SYSTEM APPS - -- #
+
+apps.tittle=系統Apps
+apps.tittle2=請選擇您要安裝的系統Apps
+
+anthal=AntHalService
+android_pay=Android Pay
+basic_dream=Basic Dream
+bt_midi=BT Midi Service
+bt_test=BTtestmode
+desk_clock=時鐘
+document=Documents
+download_provider=Download Provider
+engineering=開發者模式
+eng_special_test=EngSpecialTest
+easter_egg=復活節彩蛋
+facelock=Facelock
+galaxy=Galaxy
+holo_spiral=Holo Spiral
+anim_wallpaper=動態桌布
+log_kit=LogKitSdService
+music=Music
+noise_feild=Noised Feild
+oneplus_forum=OnePlus Community
+oneplus_wallpapers=OnePlus官方桌布
+oem_test=OemAutoTestServer
+oem_log=OEMLogKit
+oneplus_camera=OnePlus相機
+oneplus_gallery=OnePlus相簿
+ota=OnePlus OTA
+oneplus_wizard=OnePlus設定精靈
+phase_beam=Phase Beam
+protips=Protips
+sensor_test=SensorTestTool
+sms=OnePlus簡訊軟體
+sound_recorder=錄音軟體
+swiftkey=Swiftkey
+tags=Tags
+weather=OnePlus天氣軟體
+wifi_test=WifiRfTestApk
+dive_icon=Dive Icon包
+rifon_icon=Rifon Icon包
+
+info.anthal=給運動/健身/健康相關裝置使用
+info.android_pay=NFC支付
+info.basic_dream=螢幕保護程式
+info.bt_midi=支援藍牙MIDI
+info.bt_test=測試藍牙
+info.desk_clock=鬧鈴, 時鐘與計時器
+info.document=檔案管理
+info.download_provider=檔案下載器
+info.engineering=各式開發者選項
+info.eng_special_test=各類測試
+info.easter_egg=喵!
+info.facelock=臉部辨識解鎖
+info.galaxy=動態桌布
+info.holo_spiral=動態桌布
+info.anim_wallpaper=支援動態桌布
+info.log_kit=紀錄log
+info.music=OnePlus官方音樂程式
+info.noise_feild=動態桌布
+info.oneplus_forum=瀏覽一加官方論壇
+info.oneplus_wallpapers=官方桌布
+info.oem_test=OEM測試工具
+info.oem_log=紀錄Log
+info.oneplus_camera=拍照與錄影
+info.oneplus_gallery=檢視照片與影片
+info.ota=OnePlus系統更新
+info.oneplus_wizard=Google設定後的設定精靈
+info.phase_beam=動態桌布
+info.protips=一些訣竅
+info.sensor_test=感測器測試程式
+info.sms=OnePlus官方簡訊程式
+info.sound_recorder=OnePlus官方錄音軟體
+info.swiftkey=Swiftkey檢盤
+info.tags=NFC標籤
+info.weather=OnePlus官方天氣軟體
+info.wifi_test=Wifi Testing
+info.dive_icon=OnePlus Icon包
+info.rifon_icon=OnePlus Icon包
+
+mod.title=增益模組
+mod.title2=選擇您要安裝的增益模組
+
+dpi.tittle=變更DPI
+dpi.tittle2=Dots Per Inch
+dpi.500=將Android的DPI設為 500
+dpi.490=將Android的DPI設為 490
+dpi.480=將Android的DPI設為 480
+dpi.470=將Android的DPI設為 470
+dpi.460=將Android的DPI設為 460
+dpi.450=將Android的DPI設為 450
+dpi.440=將Android的DPI設為 440
+dpi.430=將Android的DPI設為 430
+dpi.420=將Android的DPI設為 420
+dpi.410=將Android的DPI設為 410
+dpi.400=將Android的DPI設為 400
+dpi.390=將Android的DPI設為 390
+dpi.380=將Android的DPI設為 380
+dpi.370=將Android的DPI設為 370
+dpi.360=將Android的DPI設為 360
+dpi.350=將Android的DPI設為 350
+
+mod.tittle=安裝增益模組
+mod.tittle2=Root, 音效模組, 擋廣告 & xposed...
+mod.tittle3=增益模組
+
+supersu=安裝SuperSU
+xposed=Material Design Xposed安裝程式
+adaway=Adaway
+adb=啟用ADB
+dns=Google DNS
+fos_wallpapers=FreedomOS桌布
+emoji_one=EmojiOne
+google_assistant=Google Assistant
+arise=A.R.I.S.E
+
+info.supersu=SuperSU by Chainfire
+info.xposed=Xposed Installer application only by DVD android
+info.adaway=Android用的擋廣告軟體
+info.adb=Android Debugging Bridge
+info.dns=將DNS設為8.8.8.8/8.8.4.4
+info.fos_wallpapers=Designed by @badboy47
+info.emoji_one=The Open Emoji Standard
+info.google_assistant=美國專用
+info.arise=A.R.I.S.E音效系統
+
+# -- - THEME - -- #
+theme.tittle=主題
+theme.tittle2=選擇您的主題設定
+theme.tittle3=選擇您要用的主題引擎
+
+theme.tittle3=選擇您要用的主題引擎
+notheme=不要安裝主題引擎
+layer=RRO Layers [即將棄用]
+substratum=Substratum
+
+info.notheme=
+info.layer=RRO Layers管理器
+info.substratum=新的主題引擎
+
+splash.tittle=選擇您的開機畫面, 並非開機動畫
+fos_splash=FreedomOS開機畫面
+oos_splash=OxygenOS開機畫面
+no_splash=使用目前開機畫面
+
+info.fos_splash=
+info.oos_splash=
+info.no_splash=
+
+# -- - KERNEL - -- #
+
+kernel.tittle=Kernel
+kernel.tittle2=選擇您要使用的kernel.
+kernel_stock=原生Kernel
+info.kernel_stock=OnePlus原生Kernel + FOS補丁
+elementalx=ElementalX
+info.elementalx=Developed by @flar2
+moxie=Moxie Kernel
+info.moxie=Developed by @bedalus
+
+# -- - INSTALLER - -- #
+install=正在安裝 FreedomOS
+install.now=立刻安裝
+install.finish=這需要花一點時間...
+install.finish.title=安裝完成.
+installing.title=安裝中...
+finish.title=恭喜!
+finish.msg=FreedomOS已經成功安裝.
+finish.status=安裝結果:
+finish.reboot=立刻重起手機.
