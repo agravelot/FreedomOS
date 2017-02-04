@@ -20,6 +20,7 @@ mv /sdcard/BusyBox-YDS-installer.log /tmp/fos_logs/
 mv /sdcard/open_gapps_log.txt /tmp/fos_logs/
 mv /tmp/logs /tmp/fos_logs/opengapps
 dmesg > /tmp/fos_logs/dmesg.log
+mount > /tmp/fos_logs/mount.log
 cp -r /cache /tmp/fos_logs/
 cp /default.prop /tmp/fos_logs
 cp /fstab.qcom /tmp/fos_logs
