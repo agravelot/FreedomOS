@@ -219,7 +219,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "CalSync",     "<b>Google Calendar Sync</b>",       "(installed by default when Google Calendar is NOT being installed)",                      "check",
         "CameraGoogle",     "<b>Google Camera</b>",       "",                      "check",
         "Chrome",     "<b>Google Chrome</b>",       "",                      "check",
-        "ClockGoogle",     "<b>Google Clock</b>",       "",                      "check",
         "CloudPrint",     "<b>Google Cloud Print</b>",       "",                      "check",
         "DialerCombo",     "<b>Google Contacts + Google Dialer</b>",       "<#f00>EXPERIMENTAL, read the FAQ</#>",                      "check",
         "Drive",     "<b>Google Drive</b>",       "",                      "check",
@@ -298,12 +297,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     prop("gapps.prop", "Chrome")=="1"
   then
     appendvar("gapps", "Chrome\n");
-  endif;
-
-  if
-    prop("gapps.prop", "ClockGoogle")=="1"
-  then
-    appendvar("gapps", "ClockGoogle\n");
   endif;
 
   if

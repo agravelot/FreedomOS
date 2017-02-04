@@ -51,6 +51,7 @@ function build_opengapps() {
   dmagent
   hangouts
   storagemanagergoogle
+  clockgoogle
   "
 
   echo "> Building FreedomOS OpenGApps" 2>&1 | tee -a ${build_log}
