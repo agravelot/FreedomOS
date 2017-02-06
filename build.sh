@@ -65,6 +65,13 @@ function initialize {
   sdat2img_repo=${download_root}/sdat2img
   busybox_repo=${download_root}/freedomos_busybox
 
+  list_submodules="
+  img2sdat
+  sdat2img
+  freedomos_busybox
+  freedomos_opengapps
+  "
+
   redt=$(tput setaf 1)
   redb=$(tput setab 1)
   greent=$(tput setaf 2)
@@ -110,13 +117,11 @@ function initialize {
   HOST_OS=`uname -s`
   HOST_OS_EXTRA=`uname -a`
 
-  # Check needed repos and set permissions
-  if [[ -d ${img2sdat_repo} && -d ${img2sdat_repo} ]]; then
-      chmod +x -R ${img2sdat_repo} >> ${build_log} 2>&1
-      chmod +x -R ${sdat2img_repo} >> ${build_log} 2>&1
-  else
-      die "Unable to find needed repos, please use ./update_repos.sh" "50"
-  fi
+  for i in $list_submodules; do
+      if [[ ! -d ${download_root}/$i ]]; then
+        die "Unable to find needed submodules [$i], please read README.md" "50"
+      fi
+  done
 
   if [ ! -f "${config_file}" ]; then
     configure
