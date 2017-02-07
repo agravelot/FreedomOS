@@ -307,14 +307,14 @@ info.no_splash=
 
 # -- - KERNEL - -- #
 
-kernel.tittle=Kernel
-kernel.tittle2=選擇您要使用的kernel.
-kernel_stock=原生Kernel
-info.kernel_stock=OnePlus原生Kernel + FOS補丁
+kernel.tittle=Kernel內核
+kernel.tittle2=選擇您要使用的內核.
+kernel_stock=原生內核
+info.kernel_stock=OnePlus原生內核 + FOS補丁
 elementalx=ElementalX
-info.elementalx=Developed by @flar2
+info.elementalx=由@flar2開發
 moxie=Moxie Kernel
-info.moxie=Developed by @bedalus
+info.moxie=由@bedalus開發
 
 # -- - INSTALLER - -- #
 install=正在安裝 FreedomOS
@@ -325,4 +325,4 @@ installing.title=安裝中...
 finish.title=恭喜!
 finish.msg=FreedomOS已經成功安裝.
 finish.status=安裝結果:
-finish.reboot=立刻重起手機.
+finish.reboot=立刻重啟手機.
