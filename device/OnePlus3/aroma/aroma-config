@@ -55,7 +55,8 @@ selectbox(
   "<~language.german>", "<~language.german.info>", 0,
   "<~language.spanish>", "<~language.spanish.info>", 0,
   "<~language.turkish>", "<~language.turkish.info>", 0,
-  "<~language.tchinese>", "<~language.tchinese.info>", 0
+  "<~language.tchinese>", "<~language.tchinese.info>", 0,
+  "<~language.schinese>", "<~language.schinese.info>", 0
 );
 
 # -- - SET LANGUAGE - -- #
@@ -87,6 +88,12 @@ if prop("language.prop", "selected.0") == "7" then
   fontresload( "0", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "12" );
   fontresload( "1", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "14" );
   loadlang("langs/tc.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "8" then
+  fontresload( "0", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "12" );
+  fontresload( "1", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "14" );
+  loadlang("langs/sc.lang");
 endif;
 
 # -- - WELCOME - -- #
