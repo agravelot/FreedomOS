@@ -21,7 +21,7 @@ welcome.title2=ROM相關資訊
 welcome.text1=您即將使用
 welcome.version=版本
 welcome.device=裝置
-welcome.updated=已更新
+welcome.updated=更新日期
 welcome.microblog=YouTube
 welcome.developer=開發者
 welcome.next=點擊下一步繼續安裝步驟
@@ -43,7 +43,9 @@ language.spanish.info=Utilizar Español by @jgimenezpascual
 language.turkish=Türkçe
 language.turkish.info=Türkçe kullanın - @Mevlüt TOPÇU
 language.tchinese=正體中文
-language.tchinese=使用正體中文 - @clyang
+language.tchinese.info=使用正體中文 - @clyang
+language.schinese=简体中文
+language.schinese.info=使用简体中文 - @clyang
 
 rom.data=!date!
 text_finish=完成
@@ -222,14 +224,14 @@ info.oem_test=OEM測試工具
 info.oem_log=紀錄Log
 info.oneplus_camera=拍照與錄影
 info.oneplus_gallery=檢視照片與影片
-info.ota=OnePlus系統更新
+info.ota=OnePlus系統更新程式
 info.oneplus_wizard=Google設定後的設定精靈
 info.phase_beam=動態桌布
 info.protips=一些訣竅
 info.sensor_test=感測器測試程式
 info.sms=OnePlus官方簡訊程式
 info.sound_recorder=OnePlus官方錄音軟體
-info.swiftkey=Swiftkey檢盤
+info.swiftkey=Swiftkey鍵盤
 info.tags=NFC標籤
 info.weather=OnePlus官方天氣軟體
 info.wifi_test=Wifi Testing
@@ -307,14 +309,14 @@ info.no_splash=
 
 # -- - KERNEL - -- #
 
-kernel.tittle=Kernel
-kernel.tittle2=選擇您要使用的kernel.
-kernel_stock=原生Kernel
-info.kernel_stock=OnePlus原生Kernel + FOS補丁
+kernel.tittle=Kernel內核
+kernel.tittle2=選擇您要使用的內核.
+kernel_stock=原生內核
+info.kernel_stock=OnePlus原生內核 + FOS補丁
 elementalx=ElementalX
-info.elementalx=Developed by @flar2
+info.elementalx=由@flar2開發
 moxie=Moxie Kernel
-info.moxie=Developed by @bedalus
+info.moxie=由@bedalus開發
 
 # -- - INSTALLER - -- #
 install=正在安裝 FreedomOS
@@ -325,4 +327,4 @@ installing.title=安裝中...
 finish.title=恭喜!
 finish.msg=FreedomOS已經成功安裝.
 finish.status=安裝結果:
-finish.reboot=立刻重起手機.
+finish.reboot=立刻重啟手機.
