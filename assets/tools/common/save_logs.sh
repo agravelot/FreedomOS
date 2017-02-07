@@ -22,6 +22,7 @@ mv /tmp/logs /tmp/fos_logs/opengapps
 dmesg > /tmp/fos_logs/dmesg.log
 mount > /tmp/fos_logs/mount.log
 cp -r /cache /tmp/fos_logs/
+cp -r /tmp/aroma /tmp/fos_logs/
 cp /default.prop /tmp/fos_logs
 cp /fstab.qcom /tmp/fos_logs
 tar -czvf /sdcard/FreedomOS_log_installer.tar.gz /tmp/fos_logs/*
