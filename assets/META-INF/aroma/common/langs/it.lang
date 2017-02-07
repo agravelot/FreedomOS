@@ -36,6 +36,9 @@ language.french=France
 language.french.info=Utiliser le Français
 language.italian=Italiano
 language.italian.info=Utilizzare Italiano
+language.tchinese=正體中文
+language.tchinese.info=使用正體中文 - @clyang
+
 rom.data=!date!
 text_finish=Finito
 model.title=Modello telefono

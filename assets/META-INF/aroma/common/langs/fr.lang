@@ -33,6 +33,8 @@ language.english=English
 language.english.info=Using English
 language.french=France
 language.french.info=Utiliser le Français
+language.tchinese=正體中文
+language.tchinese.info=使用正體中文 - @clyang
 
 welcome.microblog=Youtube
 rom.data=!date!
