@@ -103,7 +103,7 @@ app/Photos
 app/Music2
 app/YouTube
 app/NFCTestMode
-../vendor/etc/in_apps
+vendor/etc/in_apps
 "
 
 # Add a secondary firmware files, like that it can be installed.
