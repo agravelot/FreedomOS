@@ -27,10 +27,10 @@ DEVICE=OnePlus3T
 ASSERT="OnePlus 3T"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus3TOxygen_28_OTA_039_all_1701140132_400a7
-ROM_LINK=http://otafsc.h2os.com/patch/amazone2/GLO/OnePlus3TOxygen/OnePlus3TOxygen_28.A.39_GLO_039_1701140132/$ROM_NAME.zip
+ROM_NAME=OnePlus3TOxygen_28_OTA_041_all_1702081824_e3a712
+ROM_LINK=http://otafsc.h2os.com/patch/amazone2/GLO/OnePlus3TOxygen/OnePlus3TOxygen_28.A.41_GLO_041_1702081824/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=a9c4b279c389dc57ec17b2808a450edf
+ROM_MD5=9444ec1db7ae7a7736dea19ea0d9cff6
 
 # OpenGapps
 GAPPS_ANDROID=7.0
