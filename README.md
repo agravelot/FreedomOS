@@ -25,11 +25,11 @@ apt-get install rsync python zip curl openssl libncurses-dev cpio python-virtual
 
 ## How to build
 
-Clone the repo:
+Clone all the required repos:
 ```bash
 git clone --recursive https://gitlab.com/Nevax/FreedomOS.git
 ```
-For updating al the repos:
+To update all the repos:
 ```bash
 git pull --recurse-submodules
 ```
@@ -39,7 +39,6 @@ bash build.sh
 ```
 
 It will download all the needed files and start building your project.
-Once you have the needed files, you don't need to re-download them.
 
 ## How to translate
 
