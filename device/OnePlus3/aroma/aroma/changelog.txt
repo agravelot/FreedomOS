@@ -1,3 +1,36 @@
+2.4
+  UPDATE: OxygenOS 4.0.3
+    - Added Wi-Fi IPv6 Support toggle
+    - Optimized Smart Wi-Fi Switcher, if turned on, device will switch to data connection if Wi-Fi signal is consistently poor
+    - Fixed crashes for Line
+    - Optimized exposure when taking night time photos
+    - Increased stability of the Camera app
+    - Updated Audio Parameters and improved the quality of audio recordings
+    - Updated APN settings for select carriers
+  FIX: Enforcing state, latest hotfix is no more needed
+  FIX: DeskClock and OPFilemanager installation
+  REMOVE: ATV bloatware apk (Amazon bloatware)
+  REMOVE: Kindle bloatware apk (Amazon bloatware)
+  REMOVE: mShop bloatware apk (Amazon bloatware)
+  UPDATE: ARISE Sound System Deuteromony 2.4
+  UPDATE: Core Google Apps
+  UPDATE: YouTube
+  UPDATE: WebViewGoogle
+  UPDATE: Google Search
+  UPDATE: Messenger
+  UPDATE: Gmail
+  UPDATE: Drive
+  UPDATE: Chrome
+  UPDATE: Google Calendar
+  UPDATE: AndroidPay
+  UPDATE: Text-to-Speech
+  ADD: Traditional Chinese language, special thanks to @clyang
+  ADD: Simplified Chinese language, special thanks to @clyang
+  ADD: Fallback fonts with support of arabic, chinese and much more
+  NOTE: As always, all the changes are available on gitlab.
+  NOTE: I have added some instructions to help translation.
+        Feel free to fork the project, all contributors are credited as it should.
+
 2.3
   FIX: SELinux contexts, it's now fully compatible with Enforcing state. Read commit: a9032628
   FIX: OnePlus Wallpapers uninstallation
