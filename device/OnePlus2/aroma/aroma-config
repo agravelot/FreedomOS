@@ -538,6 +538,36 @@ checkbox(
     "<~substratum>", "<~info.substratum>", 0
 );
 
+if
+  prop("mod.prop", "item.1.8") == "1"
+then
+  appendvar("gapps", "GoogleAssistant\n");
+endif;
+
+# -- ARISE -- #
+if
+  prop("mod.prop", "item.1.9")=="1"
+then
+    form(
+        "ARISE Settings",
+        "Please select which options you want to include with ARISE</#>",
+        "@default",
+        arise.prop,
+
+        "arise",     "Please select which options you want to include with ARISE",    "",        "group",
+          "install.v4a_2.5.0.5",      "Viper4Android 2.5.0.5",         "",         "check",
+          "install.v4a_2.3.4.0",      "Viper4Android 2.3.4.0",         "",         "check",
+          "install.arkamys",          "Arkamys",                       "",         "check",
+          "install.ICEsound",         "ICEsound",                      "",         "check",
+          "install.sony",             "Sony Music Player",             "Include TrackID",         "check",
+          "delete.deep_buffer",       "Remove deep buffer",            "",         "check",
+          "set.selinux.permissive",   "Force Permissive state",        "",         "check"
+    );
+
+    resexec("scripts/gen_arise_conf.sh");
+endif;
+
+
 # -- - Pre-Install - -- -#
 ini_set("text_next", "<~install.now>");
 viewbox( "<~pre.install.title>", "<~pre.install>\n\n" + "<~pre.install2>\n\n" + "<~pre.install3>\n\n\n\n", "@install");
