@@ -25,5 +25,6 @@ cp -r /cache /tmp/fos_logs/
 cp -r /tmp/aroma /tmp/fos_logs/
 cp /default.prop /tmp/fos_logs
 cp /fstab.qcom /tmp/fos_logs
+rm /tmp/fos_logs/cache/*_boot*
 tar -czvf /sdcard/FreedomOS_log_installer.tar.gz /tmp/fos_logs/*
 find /tmp/* -maxdepth 0 ! -path /tmp/recovery.log  -exec rm -rf {} +
