@@ -234,11 +234,9 @@ ui_print(" ");
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
   then
   ui_print("   Installing A.R.I.S.E Sound System");
-  #run_program("/tmp/tools/arise/install.sh");
   ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
   run_program("/tmp/tools/busybox", "mkdir", "/tmp/arise");
   run_program("/tmp/tools/busybox", "unzip", "/tmp/tools/arise/arise.zip", "META-INF/com/google/android/*", "-d", "/tmp/arise");
-  #run_program("mv", "/tmp/tools/arise/arise.zip", "/tmp/arise/arise.zip");
   package_extract_dir("tools/arise", "/tmp/arise");
   set_metadata("/tmp/arise/META-INF/com/google/android/update-binary", "uid", 0, "gid", 0, "mode", 0777);
   set_metadata_recursive("/tmp/arise", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
@@ -396,8 +394,6 @@ ui_print(" ");
 ui_print("@Finished");
 ui_print(" ");
 ui_print("Saving log in /sdcard/FreedomOS_log_installer.tar.gz");
-ui_print("Cleaning Temporary Files");
 run_program("/tmp/tools/save_logs.sh");
-ui_print("You can save extra logs with Save Logs button");
 set_progress(1);
 ui_print(" ");
