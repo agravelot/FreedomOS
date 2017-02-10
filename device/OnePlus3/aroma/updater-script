@@ -246,8 +246,6 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
   run_program("/tmp/tools/busybox", "mount", "/system");
   delete_recursive("/tmp/arise");
   delete_recursive("/tmp/tools/arise");
-  ui_print("   Extracting V4A profiles & IRS");
-  package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
 endif;
 
 # -- - XPOSED - -- #
