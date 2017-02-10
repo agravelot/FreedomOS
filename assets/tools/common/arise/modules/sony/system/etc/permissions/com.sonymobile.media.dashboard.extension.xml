@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.sonymobile.media.dashboard.extension.api"
+        file="/system/framework/com.sonymobile.media.dashboard.extension.jar"/>
+    <library name="com.sonymobile.media.dashboard.extension.api_2"
+        file="/system/framework/com.sonymobile.media.dashboard.extension.jar"/>
+</permissions>

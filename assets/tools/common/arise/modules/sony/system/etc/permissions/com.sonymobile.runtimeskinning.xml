@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.sonymobile.runtimeskinning.livewallpaper.hideable"
+             file="/system/framework/com.sonymobile.runtimeskinning.jar"/>
+    <library name="com.sonymobile.runtimeskinning.tdi.l"
+             file="/system/framework/com.sonymobile.runtimeskinning.jar"/>
+    <library name="com.sonymobile.runtimeskinning.sound.ringtone"
+             file="/system/framework/com.sonymobile.runtimeskinning.jar"/>
+    <library name="com.sonymobile.runtimeskinning.sound.notificaiton"
+             file="/system/framework/com.sonymobile.runtimeskinning.jar"/>
+    <library name="com.sonymobile.runtimeskinning.sound.alarm"
+             file="/system/framework/com.sonymobile.runtimeskinning.jar"/>
+    <library name="com.sonymobile.runtimeskinning.multiuser"
+             file="/system/framework/com.sonymobile.runtimeskinning.jar"/>
+    <library name="com.sonymobile.runtimeskinning.selective"
+             file="/system/framework/com.sonymobile.runtimeskinning.jar"/>
+</permissions>

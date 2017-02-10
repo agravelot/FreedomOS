@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Copyright (C) 2014 Sony Mobile Communications Inc.
+   All rights, including trade secret rights, reserved.
+-->
+<permissions>
+    <library name="com.sonymobile.datawasher"
+            file="/system/framework/com.sonymobile.datawasher.jar"/>
+</permissions>

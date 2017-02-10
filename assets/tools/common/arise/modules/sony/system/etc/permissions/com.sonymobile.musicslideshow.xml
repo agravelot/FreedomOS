@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+ <library name="com.sonymobile.musicslideshow.api" file="/system/framework/com.sonymobile.musicslideshow.jar"/>
+ <library name="com.sonymobile.musicslideshow.api_2" file="/system/framework/com.sonymobile.musicslideshow.jar"/>
+</permissions>
+

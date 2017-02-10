@@ -1,0 +1,44 @@
+#!/system/bin/sh
+#
+# ARISE Sound Systems™
+#
+# sony_setprop
+#
+# www.arisesound.com
+
+
+## Sony™ Xperia XZ Audio ##
+
+#
+# SONY effect
+#  Allocate bit for each effect.
+#  If necessary, define effect list with logical sum.
+#  EFFECT_DN        0x0001 (Dynamic Normalizer)
+#  EFFECT_SF        0x0002 (S-Force)
+#  EFFECT_CPHP      0x0004 (ClearPhase Headphone)
+#  EFFECT_CA        0x0008 (ClearAudio)
+#  EFFECT_VPT       0x0010 (VPT)
+#  EFFECT_CPSP      0x0020 (ClearPhase Speaker)
+#  EFFECT_XLOUD     0x0040 (xLOUD)
+#  EFFECT_CAPLUS    0x0080 (ClearAudio+)
+#  EFFECT_SPBUNDLE  0x0100 (Speaker Bundle)
+#  EFFECT_ALC       0x0200 (ALC)
+
+# Effect used by Speaker Bundle.
+# EFFECT_SF | EFFECT_CPSP | EFFECT_SPBUNDLE = 0x122
+setprop sony.effect.custom.sp_bundle 0x122
+
+# Effect used by ClearAudio+ headset
+# EFFECT_CA | EFFECT_VPT | EFFECT_CAPLUS | EFFECT_ALC = 0x298
+setprop sony.effect.custom.caplus_hs 0x298
+
+# Effect used by ClearAudio+ speaker
+# EFFECT_CA | EFFECT_VPT | EFFECT_CPSP | EFFECT_CAPLUS | EFFECT_ALC = 0x2B8
+setprop sony.effect.custom.caplus_sp 0x2B8
+
+# Added system property for LDAC
+setprop ro.somc.ldac.audio.supported true
+
+# Automatic Headphone Compensation (AHC)
+setprop sony.ahc.supported yes
+#

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <!-- Corresponds to version 1 in the api-git -->
+    <library name="com.sonyericsson.updatecenter.api" file="/system/framework/com.sonyericsson.updatecenter.jar"/>
+    <!-- Corresponds to version 2 in the api-git -->
+    <library name="com.sonyericsson.updatecenter.api_2" file="/system/framework/com.sonyericsson.updatecenter.jar"/>
+    <!-- Corresponds to version 3 in the api-git -->
+    <library name="com.sonyericsson.updatecenter.api_3" file="/system/framework/com.sonyericsson.updatecenter.jar"/>
+</permissions>

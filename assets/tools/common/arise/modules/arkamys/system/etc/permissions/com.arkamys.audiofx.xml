@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.arkamys.audiofx"
+            file="/system/framework/com.arkamys.audiofx.jar"/>
+</permissions>

@@ -1,0 +1,149 @@
+
+# ARISE Sound Systems™
+#
+# Deuteronomy™ 2.71 Modular Installer 20170210
+#
+# "SwanSong"
+#
+# /sdcard/arise_customize.prop
+#
+# www.arisesound.com
+
+
+
+# The ARISE™ modular installation zip works by using this file (when present in /sdcard as /sdcard/arise_customize.prop) to determine if any modules are to be installed by the value of "true" for each line below.
+
+# Any value other than "true" is the same as "false".
+
+
+
+# Add <true> to desired add-on(s): install.xxxx=true
+
+
+
+# Deuteronomy™ must be installed at least once. Once Deuteronomy™ is installed, the value of "true" can be removed for future customization without installing the core Deuteronomy™ system again.
+
+install.deuteronomy=
+
+#
+
+#
+
+# Select either ViPER4Arise™ version below to be installed or ignore to not install ViPER4Arise™ at all.
+
+install.v4a_2.5.0.5=
+
+install.v4a_2.3.4.0=
+
+#
+
+#
+
+install.v4a_profiles=
+
+
+install.atmos=
+
+
+install.ddplus=
+
+
+install.am3d=
+
+
+install.arkamys=
+
+#
+
+#
+
+## ICEsound™ START ##
+
+
+install.ICEsound=
+
+
+# Add 0, 1, 2, 3, 4, 5, or 6 for desired ICEconfig (0 removes /system/etc/icesoundconfig.def):
+
+use.ICEconfig=
+
+
+# The following ICEsound™ presets are available below. None will remove an existing preset to use no ICEsound™ preset. Enter a value exactly as shown below, for example: use.ICEsound.preset=<DEEPBASS>
+
+DEEPBASS
+DEFAULT
+KRAZY
+MOVIE
+MUSIC2
+OUTDOORS
+PURE
+WIDECLARITY
+None
+
+use.ICEsound.preset=
+
+
+## ICEsound™ END ##
+
+#
+
+#
+
+install.sony=
+
+
+install.v4a_xhifi=
+
+
+install.esira=
+
+
+install.ToolBox=
+
+
+install.musicfx=
+
+
+delete.deep_buffer=
+
+
+set.selinux.permissive=
+
+#
+
+# The ARISE™ modular installation zip works by using this file (when present in /sdcard as /sdcard/arise_customize.prop) to determine if any modules are to be UNINSTALLED by the value of "true" for each line below.
+
+# Any value other than "true" is the same as "false".
+
+
+UNINSTALL.v4a=
+
+
+UNINSALL.atmos=
+
+
+UNINSTALL.ddplus=
+
+
+UNINSTALL.arkamys=
+
+
+UNINSTALL.ICEsound=
+
+
+UNINSTALL.am3d=
+
+
+UNINSTALL.sony=
+
+
+UNINSTALL.esira=
+
+
+UNINSTALL.ToolBox=
+
+
+UNINSTALL.v4a_xhifi=
+
+
+UNINSTALL.musicfx=

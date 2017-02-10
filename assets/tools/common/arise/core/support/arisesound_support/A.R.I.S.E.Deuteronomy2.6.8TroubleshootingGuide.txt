@@ -1,0 +1,182 @@
+﻿A.R.I.S.E. Deuteronomy 2.6.8 Troubleshooting Guide
+
+
+ 
+In this guide we show you what you need to check to see why something isn’t working properly.  These include things like Viper not processing or Arkamys constantly crashing.  Ensure that you’ve flashed latest SuperSU (it doesn’t matter if system or systemless version) and that your SELinux is set to Permissive.
+
+Arkamys or ICESERVICE force crashing:
+
+When you first boot up Android and keep getting Arkamys or ICESERVICE crashing errors, take these steps to correct it:
+
+1)  Go into Settings/Applications and use the top right 3 dot menu to “Show system”
+2)  Scroll down and go into ArkamysAudio app.  Hit Storage, then the “Clear Data” button.
+3)  Scroll down further to ICEsound Service.  Again, hit Storage, then the “Clear Data” button.
+4)  Reboot.
+
+If this doesn’t fix your issue, and then only as a last resort,use Titanium Backup to freeze the app.  If you don’t have the full version of TiBu, you can use this application:  https://play.google.com/store/apps/details?id=com.vramsngrai.freezeapp&hl=en
+
+Driver I/O Error
+
+If you get a Driver I/O error, go to system/vendor/etc and rename audio_effects.conf to audio_effects.conf.bak (do NOT delete) and restart your device. When back in Android, open ViPER and install the drivers as prompted.  Reboot and profit.
+
+Streaming Media (Audio or Video) doesn’t process
+
+If ViPER doesn’t process for streaming services (Spotify/GPM/SoundCloud etc), edit your arise_addon.prop to read del.deep_buffer=true.  Place this file in the root of your internal sdcard prior to flashing Deut and then flash Deut.  If you’ve already flashed Deut, it’s perfectly fine to dirty flash the same version of Deut over itself with this fix.  Boot into Android and check for proper streaming functionality.
+
+
+ViPER is processing on speaker output but not on headphones/earbuds
+(Credit go to Nexus 6P Alpha Tester Yat Yat)
+
+Use top right 3-dot menu to exit from ViPER then remove the app from your recents list. Open ViPER back up. Headphones should start processing once again.
+
+
+
+
+ViPER doesn’t show any profiles
+
+
+Some ROMs don’t set/link the default ViPER folder in the right place.  Always check all of these locations before reporting such an issue:
+
+* sdcard/ViPER4Android (Default Location)
+* Data/media/0/ViPER4Android (Most Common)
+* Data/media/legacy/ViPER4Android
+* Data/media/emulated/legacy/ViPER4Android
+
+
+If you find the profiles in any one of these locations, simply copy them to the default location (sdcard/ViPER4Android) and re-launch ViPER4ARISE FX.  You should be able to see the profiles now.
+
+Add-Ons and Options: How Do I Install Them?! - Non-Aroma installation only!
+
+
+A.R.I.S.E. Deuteronomy 2.4 has many add-ons that you can try to enhance your listening experience. To make add-on installation easier and to have your preferences saved through ROM updates, we’ve included a new file in the add-on zip.  
+It’s called arise_addon.prop and it’s found in the root of the zip.
+Copy this file to the root of your internal storage (usually called sdcard/ or sdcard0/), and open it.
+
+
+You edit each entry that want installed with true after the equals sign (no spaces) and if you want an ICEconfig, select the number at the bottom. 
+ 
+Do not put false for things you don’t want installed; just leave them blank.  Then flash the add-ons installer in recovery normally. All the required files will be automatically installed. 
+
+Eg, If i want to install Dolby Digital Plus, set install.ddplus=true in the arise_addon.prop, place the .prop file on the root of your internal sdcard, and then flash the add-ons zip.
+
+This arise_addon.prop file is also found in the root of the Deut 2.4 sound system installer and is used to flash the optional deep buffer removal or set SELinux to permissive on boot to make ViPER4Arise FX processes on enforcing kernels.
+
+Here’s a list of the add-ons and options you can choose from:
+
+* Dolby Atmos - install.atmos=true
+* Dolby Digital Plus - install.ddplus=true
+* Zirene AM3D (Not compatible with every ROM/Android version) - install.am3d=true
+* Deep Buffer Removal (If all streaming media doesn’t process for you) - del.deep_buffer=true  *Use as a last resort if you’ve installed ICE.  Try all configs first*
+* Sony Music Suite - install.sony=true
+* ViPER4ARISE XHIFI - install.xhifi=true
+* Install ICEsound - install.ICEsound=true
+* To set which ICEconfig to install when flashing - use.ICEconfig=x  (x is the desired ICEconfig number.  Set it to 0 to delete.)
+* Permissive SELinux on boot - set.permissive=true
+
+ViPER4Android XHi-Fi keeps giving me BusyBox Error?
+
+The script calls for BusyBox to be installed in /system/xbin.  If your BusyBox is installed in su/xbin, uninstall it and choose /system/xbin.  If your BusyBox app doesn’t let you choose a location, you can use this BusyBox which installs to /system/xbin:  https://play.google.com/store/apps/details?id=ru.meefik.busybox&hl=en
+
+Reboot and you should be fixed.
+
+
+ICEsound configs were introduced in 2.4.  What are they and how do I use them?
+
+If you choose to install ICEsound with A.R.I.S.E 2.4 and ViPER4Arise FX stops processing, there’s some different configuration files to get it processing if it doesn’t work for you out of the box.  Take these steps:
+
+1) The base ICEsound installation uses config 1.  If you're not processing...on first boot, follow the delete ICE and Ark data steps from above.
+2) If you’re still not processing after reboot, go into the arise_addon.prop and change use.ICEconfig=2.  Delete both datas again and reflash the add-ons zip.
+3) Repeat step 2 for Configs 3, 4, and 5 as necessary.  You can also try to set it to 0 to not use any ICEconfig.
+4) If all else fails, you will need to manually edit each setting one by one, deleting data and rebooting each time (we know it's tedious but this is troubleshooting.)  The order should be:
+
+
+a) Change session0 to true
+b) Change fasttrack to false
+c) Change a2dp to true
+d) Change usbaudio to true
+
+
+Hopefully, it’s working now!
+
+
+
+
+
+
+Google Play Music (GPM) reports “Music temporarily unavailable.  No space available.”
+
+1)  Close GPM and remove it from your recents.
+2)  Go into Settings/Apps and go into GPM’s Storage.  Click “Clear Data.”
+3)  Restart GPM and go into the app’s settings.  Click Equalizer to verify that Viper4ARISE is your default Equalizer.  
+4)  Optional but recommended, change Quality on mobile network to High.  Profit!
+ Screenshot_20170118-005636.png  Screenshot_20170118-005750.png  Screenshot_20170118-015120.png 
+
+
+
+Poweramp isn’t processing in ViPER
+
+You have to go into Poweramp Settings/Audio/Advanced Tweaks and uncheck the box next to Direct Volume Control.
+ Screenshot_20170123-083207.png 
+
+
+
+
+
+Everythings is working, but Spotify isn’t processing
+
+Use an ICEconfig that has session0 true or manually make that entry yourself.
+
+
+Aroma specific tips
+
+
+I want to install ViPER 2.5.0.5, but I only see ViPER 2.3.4.0 offered to install?
+
+ViPER 2.5.0.5 is the base (default) version to install with Aroma.  When you select the top or middle option, this will automatically be installed.
+
+One or more of my add-ons doesn’t work after switching from ViPER 2.5.0.5 to ViPER 2.3.4.0 or vice versa
+
+While the Aroma installer allows for very quick switching between the two versions of ViPER, if you have add-ons installed with it, then you have to reflash the add-ons and any options you’ve chosen as well.  This will ensure functionality of ViPER and all your add-ons.
+
+Build 2.6.8 fixes/additions to Aroma:
+
+You added uninstall feature but I can’t install ViPER 2.5.0.5/2.3.4.0?
+
+Due to the numerous changes to the /system directory, the core sound system can not be uninstalled.  Just like previous versions, you’ll have to clean/dirty flash your ROM to clean it out of the /system directory.
+
+Is Smeejaytee’s Toolbox fixed?
+
+Yes, the most current version is in the build and no longer affects the rest of the install.  Enjoy!
+
+You added Esira back.  Is it fixed?
+
+No.  We haven’t touched it since initial release.  It will have the same bugs it always has.
+
+AM3D has never worked for me and didn’t work for me in 2.4.  Will it work now?
+
+No.  Do not install it if you’ve always had problems.  You will continue to have problems and it will drain your battery quickly as the app tries to correctly function.
+
+Known bugs:  
+
+On some devices, when you plug in your headphones, ViPER will stop processing.  We’ve commonly called this the “headphone bug.”  Despite several attempts and many hours trying to trace its cause, the Team was unable to.  If you’re continually having this problem, please install ViPER 2.3.4.0.
+
+On some HTC devices, starting any media with ViPER enabled produces an intolerable high-pitched “screeching.”  Many attempts were tried to correct this issue without any success.  If you have this problem, you’ll have to revert to your previously working version.
+
+
+ICE Processing Bug (tested by wrongway213 on Nexus 6)
+
+
+“Upon further inspection of the previously mentioned “headphone bug”, I found it to be more an ICE processing bug on my Nexus 6. What I found was that, with deep buffer removed, I needed to use iceconfig2 to make everything work with both streaming media and local playback. However, there is an issue in doing this with deepbuffer removed and a bigger issue doing so with deep buffer kept on my Nexus 6. The only workaround I have found requires the 2.5.0.5, and this issue is actually what ultimately caused me to move to new Viper. So, this will require 2.5.0.5 to use this workaround.
+Anyway, what I have to do to get V4A to process over with ICE
+With deep buffer removed: when I connect to bluetooth, I must open V4A, then exit the app thru the three dot menu in upper right, then open it again - I do not even have to swipe it out of recents. From there, it works totally fine over BT, phone speaker, and headset until a reboot, and then you must do this one time again, per boot. 
+With deep buffer kept: When I connect to aux, I must open V4A and exit the app thru the three dot menu in upper right, then open it again. Unlike with deep buffer removed, on the N6 this does not keep working while switching from BT to aux to speaker and back - the app must be exited and reopened every time you switch from one to the other.”
+
+------------
+
+
+On behalf of the entire A.R.I.S.E.Team, we want to thank you for using Deuteronomy 2.6.8 and the various add-ons.  May you have hours and hours of listening pleasure!!!
+
+
+ARISE UP!!!!!
+
+Roi007leaf and docnok63
