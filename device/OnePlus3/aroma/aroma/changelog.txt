@@ -9,10 +9,11 @@
     - Updated APN settings for select carriers
   FIX: Enforcing state, latest hotfix is no more needed
   FIX: DeskClock and OPFilemanager installation
+  FIX: Clean older ARISE installation to avoid conflicts
   REMOVE: ATV bloatware apk (Amazon bloatware)
   REMOVE: Kindle bloatware apk (Amazon bloatware)
   REMOVE: mShop bloatware apk (Amazon bloatware)
-  UPDATE: ARISE Sound System Deuteromony 2.4
+  UPDATE: ARISE Sound System Deuteromony 2.71b
   UPDATE: Core Google Apps
   UPDATE: YouTube
   UPDATE: WebViewGoogle
@@ -24,6 +25,12 @@
   UPDATE: Google Calendar
   UPDATE: AndroidPay
   UPDATE: Text-to-Speech
+  ADD: Sony Music Player (with TrackID) in aroma
+  ADD: Option to use older version of Viper4Android
+  ADD: Arkamys option
+  ADD: Deep buffer option
+  ADD: icepower option
+  ADD: Permissive option
   ADD: Traditional Chinese language, special thanks to @clyang
   ADD: Simplified Chinese language, special thanks to @clyang
   ADD: Fallback fonts with support of arabic, chinese and much more
