@@ -557,6 +557,7 @@ then
         "arise",     "Please select which options you want to include with ARISE",    "",        "group",
           "install.v4a_2.5.0.5",      "Viper4Android 2.5.0.5",         "",         "check",
           "install.v4a_2.3.4.0",      "Viper4Android 2.3.4.0",         "",         "check",
+          "install.v4a_profiles",     "V4A Profiles & Kernels",         "",         "check",
           "install.arkamys",          "Arkamys",                       "",         "check",
           "install.ICEsound",         "ICEsound",                      "",         "check",
           "install.sony",             "Sony Music Player",             "Include TrackID",         "check",
