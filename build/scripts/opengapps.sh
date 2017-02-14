@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2016 Antoine GRAVELOT
+# Copyright 2016-2017 Antoine GRAVELOT
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -89,6 +89,7 @@ function build_opengapps() {
   sed -i 's/ui_print "- /ui_print "/g' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   sed -i '/ui_print " "/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   sed -i '/ui_print "- Installation complete!"/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/app\/Calculator/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
 
   # Remove all the unneeded files
   for i in ${RM_OPENGAPPS}
