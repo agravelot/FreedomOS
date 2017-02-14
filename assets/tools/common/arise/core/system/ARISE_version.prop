@@ -1,7 +1,7 @@
 
 # ARISE Sound Systems™
 #
-# Deuteronomy™ 2.71a Modular AROMA Installer 20170210
+# Deuteronomy™ 2.75 Modular Installer 20170213
 #
 # "SwanSong™"
 #
@@ -13,16 +13,23 @@
 
 Changelog:
 
-## Deuteronomy™ 2.71b "SwanSong™" -
 
-- Added missing ViPER4Android Profile DDC folder
+
+## Deuteronomy™ 2.75 "SwanSong™" -
+
+- Updated Dolby Atmos™ modules to reflect @ahrion's latest updates.
+
+- Added libaudio3d.so from Panasonic's Arkamys™ Audio system.
+
+- Minor script corrections and improvements.
 
 ##
 
 
+
 ## Deuteronomy™ 2.71a "SwanSong™" -
 
-- Corrections to ICEsound™ Presets script paths.
+- Correction to arise_customize.prop preventing selection from being visible.
 
 ##
 
@@ -30,7 +37,7 @@ Changelog:
 
 ## Deuteronomy™ 2.71 "SwanSong™" -
 
-- Minor, uneventful text info updates.
+- Chikimonke fix.
 
 ##
 
@@ -42,8 +49,6 @@ Changelog:
 
 - Updated Arkamys™ Audio to version 4.3 from the latest ZTE™ Blade 7 firmware.
 
-- Correction to uninstallation script of ViPER4Android XHiFi module.
-
 ##
 
 
@@ -52,7 +57,7 @@ Changelog:
 
 - Various corrections to core script.
 
-- Minor correction to setprop in ToopBox™ module.
+- Minor correction to setprop in ToolBox™ module.
 
 ##
 
@@ -70,21 +75,13 @@ Changelog:
 
 - Very minor content additions.
 
-- Small correction in SDCard Permissions Fix script.
-
-##
-
-
-
-## Deuteronomy™ 2.5.2e -
-
-- Very minor corrections to ViPER4Arise™ Profiles installation script.
-
 ##
 
 
 
 ## Deuteronomy™ 2.5.2d -
+
+- Minor corrections to ICEsound™ installation/uninstallation regarding libeagle.so which has been a Huawei™ component.
 
 - Added AudioEffects to the removal portion for Motorola devices.
 
@@ -106,15 +103,9 @@ Changelog:
 
 ## Deuteronomy™ 2.5.2b -
 
-- Using MusicFX that is likely more compatible.
+- Corrections to installation scrip
 
-##
-
-
-
-## Deuteronomy™ 2.5.2a -
-
-- Various minor changes.
+- Updated outdated arisesound_setprop.
 
 ##
 
@@ -122,63 +113,7 @@ Changelog:
 
 ## Deuteronomy™ 2.5.2 -
 
-- Corrections to build.prop size comparisons.
-
-- Removed Motorola™ AudioEffects module.
-
-- Added /sdcard/arisesound_support.
-
-##
-
-
-
-## Deuteronomy™ 2.5.1c -
-
-- Enhanced device build.prop detection and definition to correct inappropriate installation locations.
-
-- Corrected error in ICEconfig 6 install script.
-
-##
-
-
-
-## Deuteronomy™ 2.5.1b -
-
-- Added Motorola™ M AudioEffects module ported by @ahrion @ARISE Sound Systems™.
-
-- Replaced the setprop in the ToolBox module with the correct setprop.
-
-- Removed options 3 and 4 from the first selection during installation.
-
-##
-
-
-
-## Deuteronomy™ 2.5.1a -
-
-- Various script changes.
-
-##
-
-
-
-## Deuteronomy™ 2.5.1 -
-
-- Various script changes/corrections.
-
-- Added /sdcard permissions script by @osm0sis.
-
-- ICEsound™ updated to 1.5 from just-released Asus™ Zenfone 3 Deluxe Japan firmware with new Pure preset.
-
-- Sony™ Music updated to 9.3.5.A.1.0.Beta.
-
-- Added /soundfx/huawei AOSP and Qualcomm™ libraries.
-
-- Asus™ Qualcomm™ audio_effects replaced with Huawei™ Qualcomm™ audio_effects.
-
-- Added some Huawei™ /firmware content.
-
-- Symlinking all /vendor/etc and /system/vendor/etc audio_effects from /system/etc.
+- Updated content to equal 2.5.2 AROMA Installer.
 
 ##
 

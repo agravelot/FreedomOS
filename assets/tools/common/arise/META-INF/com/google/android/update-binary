@@ -132,10 +132,6 @@ AFX=AudioFX
 AFXAPK=AudioFX.apk
 DSP=DSPManager
 DSPAPK=DSPManager.apk
-AEC=audio_effects.conf
-AEV=audio_effects_vendor.conf
-HTC=htc_audio_effects.conf
-PROP=arisesound_setprop
 SOMCAV=libsomcavextensionsimpl.so
 SOMCME=libsomcmediahttp.so
 OMNI=libomni_directional_algoclient_jni.so
@@ -210,7 +206,7 @@ XHIFI=ViPER4Android_XHiFi
 XHIFIAPK=ViPER4Android_XHiFi.apk
 XHIFILIB=libv4a_xhifi_ics.so
 DAP=$VEN/lib/libhwdaphal.so
-DAPLIB=libswdap-mod.so
+DAPLIB=libswdax.so
 DAXLIB=libswdax.so
 DDPLIB=libdseffect.so
 LDAC=libldacBT_enc.so
@@ -219,6 +215,7 @@ DSX=dsx_param_file.bin
 AEC=audio_effects.conf
 HTC=htc_audio_effects.conf
 AEV=audio_effects_vendor.conf
+AOE=audio_offload_effects.conf
 POL=audio_policy.conf
 POLBAK=audio_policy.conf.backup
 APC=audio_policy_configuration.xml
@@ -422,6 +419,22 @@ if [ "$INSTALLDEUT" ]; then
     fi
 
     $SP $ETC/$AEV 0 0 0644
+
+  fi
+
+  if [ -f "$VETC/$AOE" ]; then
+
+    if [ -e "$QCOM" ]; then
+
+      cp $CAFX/qc/$AEC $VETC/$AOE
+
+    else
+
+      cp $CAFX/aosp/$AEC $VETC/$AOE
+
+    fi
+
+    $SP $VETC/$AOE 0 0 0644
 
   fi
 
@@ -701,6 +714,7 @@ if [ "$INSTALLDEUT" ]; then
   $SP $LIB/DTS_HPX_MODULE.so 0 0 0644
   $SP $LIB/SrsTruMediaModule.so 0 0 0644
   $SP $LIB/libaudio-ftm.so 0 0 0644
+  $SP $LIB/libaudio3d.so 0 0 0644
   $SP $LIB/libaudioom.so 0 0 0644
   $SP $LIB/$APSS 0 0 0644
   $SP $LIB/libauroservice.so 0 0 0644
@@ -816,32 +830,18 @@ if [ "$INSTALLV4A2505" ]; then
   $SP $LIB/$V4AUTL 0 0 0644
   $SP $DEUTFX/$V4ALIB 0 0 0644
 
-  if [ -f "$ETC/$AEC" ]; then
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-    sed -i '/v4a_fx {/,/}/d' $ETC/$AEC
-    sed -i '/v4a_standard_fx {/,/}/d' $ETC/$AEC
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Library/# ViPER.WYF | www.audlabs.com | Library\n\n  v4a_fx {\n    path \/system\/lib\/soundfx\/deuteronomy\/libv4a_fx_ics.so\n  }/g' $ETC/$AEC
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Effect/# ViPER.WYF | www.audlabs.com | Effect\n\n  v4a_standard_fx {\n    library v4a_fx\n    uuid 41d3c987-e6cf-11e3-a88a-11aba5d5c51b\n  }/g' $ETC/$AEC
+    if [ -f "$CFG" ]; then
 
-  fi
+      sed -i '/v4a_fx {/,/}/d' $CFG
+      sed -i '/v4a_standard_fx {/,/}/d' $CFG
+      sed -i 's/^# ViPER.WYF | www.audlabs.com | Library/# ViPER.WYF | www.audlabs.com | Library\n\n  v4a_fx {\n    path \/system\/lib\/soundfx\/deuteronomy\/libv4a_fx_ics.so\n  }/g' $CFG
+      sed -i 's/^# ViPER.WYF | www.audlabs.com | Effect/# ViPER.WYF | www.audlabs.com | Effect\n\n  v4a_standard_fx {\n    library v4a_fx\n    uuid 41d3c987-e6cf-11e3-a88a-11aba5d5c51b\n  }/g' $CFG
 
-  if [ -f "$ETC/$HTC" ]; then
+    fi
 
-    sed -i '/v4a_fx {/,/}/d' $ETC/$HTC
-    sed -i '/v4a_standard_fx {/,/}/d' $ETC/$HTC
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Library/# ViPER.WYF | www.audlabs.com | Library\n\n  v4a_fx {\n    path \/system\/lib\/soundfx\/deuteronomy\/libv4a_fx_ics.so\n  }/g' $ETC/$HTC
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Effect/# ViPER.WYF | www.audlabs.com | Effect\n\n  v4a_standard_fx {\n    library v4a_fx\n    uuid 41d3c987-e6cf-11e3-a88a-11aba5d5c51b\n  }/g' $ETC/$HTC
-
-  fi
-
-  if [ -f "$ETC/$AEV" ]; then
-
-    sed -i '/v4a_fx {/,/}/d' $ETC/$AEV
-    sed -i '/v4a_standard_fx {/,/}/d' $ETC/$AEV
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Library/# ViPER.WYF | www.audlabs.com | Library\n\n  v4a_fx {\n    path \/system\/lib\/soundfx\/deuteronomy\/libv4a_fx_ics.so\n  }/g' $ETC/$AEV
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Effect/# ViPER.WYF | www.audlabs.com | Effect\n\n  v4a_standard_fx {\n    library v4a_fx\n    uuid 41d3c987-e6cf-11e3-a88a-11aba5d5c51b\n  }/g' $ETC/$AEV
-
-  fi
+  done
 
 fi
 
@@ -904,32 +904,18 @@ if [ "$INSTALLV4A2340" ]; then
   $SP $LIB/$V4AUTL 0 0 0644
   $SP $DEUTFX/$V4ALIB 0 0 0644
 
-  if [ -f "$ETC/$AEC" ]; then
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-    sed -i '/v4a_fx {/,/}/d' $ETC/$AEC
-    sed -i '/v4a_standard_fx {/,/}/d' $ETC/$AEC
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Library/# ViPER.WYF | www.audlabs.com | Library\n\n  v4a_fx {\n    path \/system\/lib\/soundfx\/deuteronomy\/libv4a_fx_ics.so\n  }/g' $ETC/$AEC
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Effect/# ViPER.WYF | www.audlabs.com | Effect\n\n  v4a_standard_fx {\n    library v4a_fx\n    uuid 41d3c987-e6cf-11e3-a88a-11aba5d5c51b\n  }/g' $ETC/$AEC
+    if [ -f "$CFG" ]; then
 
-  fi
+      sed -i '/v4a_fx {/,/}/d' $CFG
+      sed -i '/v4a_standard_fx {/,/}/d' $CFG
+      sed -i 's/^# ViPER.WYF | www.audlabs.com | Library/# ViPER.WYF | www.audlabs.com | Library\n\n  v4a_fx {\n    path \/system\/lib\/soundfx\/deuteronomy\/libv4a_fx_ics.so\n  }/g' $CFG
+      sed -i 's/^# ViPER.WYF | www.audlabs.com | Effect/# ViPER.WYF | www.audlabs.com | Effect\n\n  v4a_standard_fx {\n    library v4a_fx\n    uuid 41d3c987-e6cf-11e3-a88a-11aba5d5c51b\n  }/g' $CFG
 
-  if [ -f "$ETC/$HTC" ]; then
+    fi
 
-    sed -i '/v4a_fx {/,/}/d' $ETC/$HTC
-    sed -i '/v4a_standard_fx {/,/}/d' $ETC/$HTC
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Library/# ViPER.WYF | www.audlabs.com | Library\n\n  v4a_fx {\n    path \/system\/lib\/soundfx\/deuteronomy\/libv4a_fx_ics.so\n  }/g' $ETC/$HTC
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Effect/# ViPER.WYF | www.audlabs.com | Effect\n\n  v4a_standard_fx {\n    library v4a_fx\n    uuid 41d3c987-e6cf-11e3-a88a-11aba5d5c51b\n  }/g' $ETC/$HTC
-
-  fi
-
-  if [ -f "$ETC/$AEV" ]; then
-
-    sed -i '/v4a_fx {/,/}/d' $ETC/$AEV
-    sed -i '/v4a_standard_fx {/,/}/d' $ETC/$AEV
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Library/# ViPER.WYF | www.audlabs.com | Library\n\n  v4a_fx {\n    path \/system\/lib\/soundfx\/deuteronomy\/libv4a_fx_ics.so\n  }/g' $ETC/$AEV
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Effect/# ViPER.WYF | www.audlabs.com | Effect\n\n  v4a_standard_fx {\n    library v4a_fx\n    uuid 41d3c987-e6cf-11e3-a88a-11aba5d5c51b\n  }/g' $ETC/$AEV
-
-  fi
+  done
 
 fi
 
@@ -981,30 +967,6 @@ if [ "$INSTALLATMOS" ]; then
 
     fi
 
-    if [ -f "$ETC/$AEC" ]; then
-
-      sed -i '/dax {/,/}/d' $ETC/$AEC
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Library/# Dolby Laboratories, Inc. | www.dolby.com | Library\n\n  dax {\n    path \/system\/lib\/soundfx\/deuteronomy\/libswdax.so\n  }/g' $ETC/$AEC
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/# Dolby Laboratories, Inc. | www.dolby.com | Effect\n\n  dax {\n    library dax\n    uuid 9d4921da-8225-4f29-aefa-6e6f69726861\n  }/g' $ETC/$AEC
-
-    fi
-
-    if [ -f "$ETC/$HTC" ]; then
-
-      sed -i '/dax {/,/}/d' $ETC/$HTC
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Library/# Dolby Laboratories, Inc. | www.dolby.com | Library\n\n  dax {\n    path \/system\/lib\/soundfx\/deuteronomy\/libswdax.so\n  }/g' $ETC/$HTC
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/# Dolby Laboratories, Inc. | www.dolby.com | Effect\n\n  dax {\n    library dax\n    uuid 9d4921da-8225-4f29-aefa-6e6f69726861\n  }/g' $ETC/$HTC
-
-    fi
-
-    if [ -f "$ETC/$AEV" ]; then
-
-      sed -i '/dax {/,/}/d' $ETC/$AEV
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Library/# Dolby Laboratories, Inc. | www.dolby.com | Library\n\n  dax {\n    path \/system\/lib\/soundfx\/deuteronomy\/libswdax.so\n  }/g' $ETC/$AEV
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/# Dolby Laboratories, Inc. | www.dolby.com | Effect\n\n  dax {\n    library dax\n    uuid 9d4921da-8225-4f29-aefa-6e6f69726861\n  }/g' $ETC/$AEV
-
-    fi
-
   else
 
     cp -R $MODDAP/system/* $SYS
@@ -1014,47 +976,35 @@ if [ "$INSTALLATMOS" ]; then
 
     if [ "$API" -ge "21" ]; then
 
-      mkdir -p $PAPP/As
-      mkdir -p $PAPP/AsUI
-      cp $MODDAP/As.apk $PAPP/As/As.apk
-      cp $MODDAP/AsUI.apk $PAPP/AsUI/AsUI.apk
-      $SPR $PAPP/As 0 0 0755 0644
-      $SPR $PAPP/AsUI 0 0 0755 0644
+      mkdir -p $PAPP/Ax
+      mkdir -p $PAPP/AxUI
+      cp $MODDAP/Ax.apk $PAPP/Ax/Ax.apk
+      cp $MODDAP/AxUI.apk $PAPP/AxUI/AxUI.apk
+      $SPR $PAPP/Ax 0 0 0755 0644
+      $SPR $PAPP/AxUI 0 0 0755 0644
 
     else
 
-      cp $MODDAP/As.apk $APP/As.apk
-      cp $MODDAP/AsUI.apk $APP/AsUI.apk
-      $SP $APP/As.apk 0 0 0644
-      $SP $APP/AsUI.apk 0 0 0644
-
-    fi
-
-    if [ -f "$ETC/$AEC" ]; then
-
-      sed -i '/dap {/,/}/d' $ETC/$AEC
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Library/# Dolby Laboratories, Inc. | www.dolby.com | Library\n\n  dap {\n    path \/system\/lib\/soundfx\/deuteronomy\/libswdap-mod.so\n  }/g' $ETC/$AEC
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/# Dolby Laboratories, Inc. | www.dolby.com | Effect\n\n  dap {\n    library dap\n    uuid 9d4921da-8225-4f29-aefa-39537a041337\n  }/g' $ETC/$AEC
-
-    fi
-
-    if [ -f "$ETC/$HTC" ]; then
-
-      sed -i '/dap {/,/}/d' $ETC/$HTC
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Library/# Dolby Laboratories, Inc. | www.dolby.com | Library\n\n  dap {\n    path \/system\/lib\/soundfx\/deuteronomy\/libswdap-mod.so\n  }/g' $ETC/$HTC
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/# Dolby Laboratories, Inc. | www.dolby.com | Effect\n\n  dap {\n    library dap\n    uuid 9d4921da-8225-4f29-aefa-39537a041337\n  }/g' $ETC/$HTC
-
-    fi
-
-    if [ -f "$ETC/$AEV" ]; then
-
-      sed -i '/dap {/,/}/d' $ETC/$AEV
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Library/# Dolby Laboratories, Inc. | www.dolby.com | Library\n\n  dap {\n    path \/system\/lib\/soundfx\/deuteronomy\/libswdap-mod.so\n  }/g' $ETC/$AEV
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/# Dolby Laboratories, Inc. | www.dolby.com | Effect\n\n  dap {\n    library dap\n    uuid 9d4921da-8225-4f29-aefa-39537a041337\n  }/g' $ETC/$AEV
+      cp $MODDAP/Ax.apk $APP/Ax.apk
+      cp $MODDAP/AxUI.apk $APP/AxUI.apk
+      $SP $APP/Ax.apk 0 0 0644
+      $SP $APP/AxUI.apk 0 0 0644
 
     fi
 
   fi
+
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
+
+    if [ -f "$CFG" ]; then
+
+      sed -i '/dax {/,/}/d' $CFG
+      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Library/# Dolby Laboratories, Inc. | www.dolby.com | Library\n\n  dax {\n    path \/system\/lib\/soundfx\/deuteronomy\/libswdax.so\n  }/g' $CFG
+      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/# Dolby Laboratories, Inc. | www.dolby.com | Effect\n\n  dax {\n    library dax\n    uuid 9d4921da-8225-4f29-aefa-6e6f69726861\n  }/g' $CFG
+
+    fi
+
+  done
 
 fi
 
@@ -1086,32 +1036,18 @@ if [ "$INSTALLDDPLUS" ]; then
     $SP $SUD/permissive 0 0 0700
     restorecon $SUD/permissive
 
-    if [ -f "$ETC/$AEC" ]; then
+    for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-      sed -i '/ds {/,/}/d' $ETC/$AEC
-      sed -i '/dsplus {/,/}/d' $ETC/$AEC
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Library/# Dolby Laboratories, Inc. | www.dolby.com | Library\n\n  ds {\n    path \/system\/lib\/soundfx\/deuteronomy\/libdseffect.so\n  }/g' $ETC/$AEC
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/# Dolby Laboratories, Inc. | www.dolby.com | Effect\n\n  dsplus {\n    library ds\n    uuid 9d4921da-8225-4f29-aefa-39537a04bcaa\n  }/g' $ETC/$AEC
+      if [ -f "$CFG" ]; then
 
-    fi
+        sed -i '/ds {/,/}/d' $CFG
+        sed -i '/dsplus {/,/}/d' $CFG
+        sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Library/# Dolby Laboratories, Inc. | www.dolby.com | Library\n\n  ds {\n    path \/system\/lib\/soundfx\/deuteronomy\/libdseffect.so\n  }/g' $CFG
+        sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/# Dolby Laboratories, Inc. | www.dolby.com | Effect\n\n  dsplus {\n    library ds\n    uuid 9d4921da-8225-4f29-aefa-39537a04bcaa\n  }/g' $CFG
 
-    if [ -f "$ETC/$HTC" ]; then
+      fi
 
-      sed -i '/ds {/,/}/d' $ETC/$HTC
-      sed -i '/dsplus {/,/}/d' $ETC/$HTC
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Library/# Dolby Laboratories, Inc. | www.dolby.com | Library\n\n  ds {\n    path \/system\/lib\/soundfx\/deuteronomy\/libdseffect.so\n  }/g' $ETC/$HTC
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/# Dolby Laboratories, Inc. | www.dolby.com | Effect\n\n  dsplus {\n    library ds\n    uuid 9d4921da-8225-4f29-aefa-39537a04bcaa\n  }/g' $ETC/$HTC
-
-    fi
-
-    if [ -f "$ETC/$AEV" ]; then
-
-      sed -i '/ds {/,/}/d' $ETC/$AEV
-      sed -i '/dsplus {/,/}/d' $ETC/$AEV
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Library/# Dolby Laboratories, Inc. | www.dolby.com | Library\n\n  ds {\n    path \/system\/lib\/soundfx\/deuteronomy\/libdseffect.so\n  }/g' $ETC/$AEV
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/# Dolby Laboratories, Inc. | www.dolby.com | Effect\n\n  dsplus {\n    library ds\n    uuid 9d4921da-8225-4f29-aefa-39537a04bcaa\n  }/g' $ETC/$AEV
-
-    fi
+    done
 
   fi
 
@@ -1143,32 +1079,18 @@ if [ "$INSTALLARKAMYS" ]; then
 
   fi
 
-  if [ -f "$ETC/$AEC" ]; then
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-    sed -i '/arkamys {/,/}/d' $ETC/$AEC
-    sed -i '/Arkamysfx {/,/}/d' $ETC/$AEC
-    sed -i 's/^# Arkamys | www.arkamys.com | Library/# Arkamys | www.arkamys.com | Library\n\n  arkamys {\n    path \/system\/lib\/soundfx\/deuteronomy\/libarkamys.so\n  }/g' $ETC/$AEC
-    sed -i 's/^# Arkamys | www.arkamys.com | Effect/# Arkamys | www.arkamys.com | Effect\n\n  Arkamysfx {\n    library arkamys\n    uuid 17852d50-161e-11e2-892e-0800200c9a66\n  }/g' $ETC/$AEC
+    if [ -f "$CFG" ]; then
 
-  fi
+      sed -i '/arkamys {/,/}/d' $CFG
+      sed -i '/Arkamysfx {/,/}/d' $CFG
+      sed -i 's/^# Arkamys | www.arkamys.com | Library/# Arkamys | www.arkamys.com | Library\n\n  arkamys {\n    path \/system\/lib\/soundfx\/deuteronomy\/libarkamys.so\n  }/g' $CFG
+      sed -i 's/^# Arkamys | www.arkamys.com | Effect/# Arkamys | www.arkamys.com | Effect\n\n  Arkamysfx {\n    library arkamys\n    uuid 17852d50-161e-11e2-892e-0800200c9a66\n  }/g' $CFG
 
-  if [ -f "$ETC/$HTC" ]; then
+    fi
 
-    sed -i '/arkamys {/,/}/d' $ETC/$HTC
-    sed -i '/Arkamysfx {/,/}/d' $ETC/$HTC
-    sed -i 's/^# Arkamys | www.arkamys.com | Library/# Arkamys | www.arkamys.com | Library\n\n  arkamys {\n    path \/system\/lib\/soundfx\/deuteronomy\/libarkamys.so\n  }/g' $ETC/$HTC
-    sed -i 's/^# Arkamys | www.arkamys.com | Effect/# Arkamys | www.arkamys.com | Effect\n\n  Arkamysfx {\n    library arkamys\n    uuid 17852d50-161e-11e2-892e-0800200c9a66\n  }/g' $ETC/$HTC
-
-  fi
-
-  if [ -f "$ETC/$AEV" ]; then
-
-    sed -i '/arkamys {/,/}/d' $ETC/$AEV
-    sed -i '/Arkamysfx {/,/}/d' $ETC/$AEV
-    sed -i 's/^# Arkamys | www.arkamys.com | Library/# Arkamys | www.arkamys.com | Library\n\n  arkamys {\n    path \/system\/lib\/soundfx\/deuteronomy\/libarkamys.so\n  }/g' $ETC/$AEV
-    sed -i 's/^# Arkamys | www.arkamys.com | Effect/# Arkamys | www.arkamys.com | Effect\n\n  Arkamysfx {\n    library arkamys\n    uuid 17852d50-161e-11e2-892e-0800200c9a66\n  }/g' $ETC/$AEV
-
-  fi
+  done
 
 fi
 
@@ -1199,56 +1121,26 @@ if [ "$INSTALLICE" ]; then
   $SP $ETC/icesoundconfig.def 0 0 0644
   $SP $ETC/icesoundpresets.def 0 0 0644
 
-  if [ -f "$ETC/$AEC" ]; then
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-    sed -i '/icepower {/,/}/d' $ETC/$AEC
-    sed -i '/icepower_eq {/,/}/d' $ETC/$AEC
-    sed -i '/icepower_null {/,/}/d' $ETC/$AEC
-    sed -i '/icepower_load {/,/}/d' $ETC/$AEC
-    sed -i '/icepower_test {/,/}/d' $ETC/$AEC
-    sed -i '/icepower_algo {/,/}/d' $ETC/$AEC
-    sed -i 's/^# ICEpower | www.icepower.dk | Library/# ICEpower | www.icepower.dk | Library\n\n  icepower {\n    path \/system\/lib\/soundfx\/deuteronomy\/libicepower.so\n  }/g' $ETC/$AEC
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_algo {\n    library icepower\n    uuid f1c02420-777f-11e3-981f-0800200c9a66\n  }/g' $ETC/$AEC
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_test {\n    library icepower\n    uuid e5456320-5391-11e3-8f96-0800200c9a66\n  }/g' $ETC/$AEC
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_load {\n    library icepower\n    uuid bf51a790-512b-11e3-8f96-0800200c9a66\n  }/g' $ETC/$AEC
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_null {\n    library icepower\n    uuid 63509430-52aa-11e3-8f96-0800200c9a66\n  }/g' $ETC/$AEC
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_eq {\n    library icepower\n    uuid 50dbef80-4ad4-11e3-8f96-0800200c9a66\n  }/g' $ETC/$AEC
+    if [ -f "$CFG" ]; then
 
-  fi
+      sed -i '/icepower {/,/}/d' $CFG
+      sed -i '/icepower_eq {/,/}/d' $CFG
+      sed -i '/icepower_null {/,/}/d' $CFG
+      sed -i '/icepower_load {/,/}/d' $CFG
+      sed -i '/icepower_test {/,/}/d' $CFG
+      sed -i '/icepower_algo {/,/}/d' $CFG
+      sed -i 's/^# ICEpower | www.icepower.dk | Library/# ICEpower | www.icepower.dk | Library\n\n  icepower {\n    path \/system\/lib\/soundfx\/deuteronomy\/libicepower.so\n  }/g' $CFG
+      sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_algo {\n    library icepower\n    uuid f1c02420-777f-11e3-981f-0800200c9a66\n  }/g' $CFG
+      sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_test {\n    library icepower\n    uuid e5456320-5391-11e3-8f96-0800200c9a66\n  }/g' $CFG
+      sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_load {\n    library icepower\n    uuid bf51a790-512b-11e3-8f96-0800200c9a66\n  }/g' $CFG
+      sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_null {\n    library icepower\n    uuid 63509430-52aa-11e3-8f96-0800200c9a66\n  }/g' $CFG
+      sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_eq {\n    library icepower\n    uuid 50dbef80-4ad4-11e3-8f96-0800200c9a66\n  }/g' $CFG
 
-  if [ -f "$ETC/$HTC" ]; then
+    fi
 
-    sed -i '/icepower {/,/}/d' $ETC/$HTC
-    sed -i '/icepower_eq {/,/}/d' $ETC/$HTC
-    sed -i '/icepower_null {/,/}/d' $ETC/$HTC
-    sed -i '/icepower_load {/,/}/d' $ETC/$HTC
-    sed -i '/icepower_test {/,/}/d' $ETC/$HTC
-    sed -i '/icepower_algo {/,/}/d' $ETC/$HTC
-    sed -i 's/^# ICEpower | www.icepower.dk | Library/# ICEpower | www.icepower.dk | Library\n\n  icepower {\n    path \/system\/lib\/soundfx\/deuteronomy\/libicepower.so\n  }/g' $ETC/$HTC
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_algo {\n    library icepower\n    uuid f1c02420-777f-11e3-981f-0800200c9a66\n  }/g' $ETC/$HTC
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_test {\n    library icepower\n    uuid e5456320-5391-11e3-8f96-0800200c9a66\n  }/g' $ETC/$HTC
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_load {\n    library icepower\n    uuid bf51a790-512b-11e3-8f96-0800200c9a66\n  }/g' $ETC/$HTC
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_null {\n    library icepower\n    uuid 63509430-52aa-11e3-8f96-0800200c9a66\n  }/g' $ETC/$HTC
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_eq {\n    library icepower\n    uuid 50dbef80-4ad4-11e3-8f96-0800200c9a66\n  }/g' $ETC/$HTC
-
-  fi
-
-  if [ -f "$ETC/$AEV" ]; then
-
-    sed -i '/icepower {/,/}/d' $ETC/$AEV
-    sed -i '/icepower_eq {/,/}/d' $ETC/$AEV
-    sed -i '/icepower_null {/,/}/d' $ETC/$AEV
-    sed -i '/icepower_load {/,/}/d' $ETC/$AEV
-    sed -i '/icepower_test {/,/}/d' $ETC/$AEV
-    sed -i '/icepower_algo {/,/}/d' $ETC/$AEV
-    sed -i 's/^# ICEpower | www.icepower.dk | Library/# ICEpower | www.icepower.dk | Library\n\n  icepower {\n    path \/system\/lib\/soundfx\/deuteronomy\/libicepower.so\n  }/g' $ETC/$AEV
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_algo {\n    library icepower\n    uuid f1c02420-777f-11e3-981f-0800200c9a66\n  }/g' $ETC/$AEV
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_test {\n    library icepower\n    uuid e5456320-5391-11e3-8f96-0800200c9a66\n  }/g' $ETC/$AEV
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_load {\n    library icepower\n    uuid bf51a790-512b-11e3-8f96-0800200c9a66\n  }/g' $ETC/$AEV
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_null {\n    library icepower\n    uuid 63509430-52aa-11e3-8f96-0800200c9a66\n  }/g' $ETC/$AEV
-    sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_eq {\n    library icepower\n    uuid 50dbef80-4ad4-11e3-8f96-0800200c9a66\n  }/g' $ETC/$AEV
-
-  fi
+  done
 
 fi
 
@@ -1459,29 +1351,17 @@ if [ "$INSTALLAM3D" ]; then
 
   fi
 
-  if [ -f "$ETC/$AEC" ]; then
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-    sed -i '/am3daudioenhancement {/,/}/d' $ETC/$AEC
-    sed -i 's/^# AM3D | www.am3d.com | Library/# AM3D | www.am3d.com | Library\n\n  am3daudioenhancement {\n    path \/system\/lib\/soundfx\/deuteronomy\/libam3daudioenhancement.so\n  }/g' $ETC/$AEC
-    sed -i 's/^# AM3D | www.am3d.com | Effect/# AM3D | www.am3d.com | Effect\n\n  am3daudioenhancement {\n    library am3daudioenhancement\n    uuid 6723dd80-f0b7-11e0-98a2-0002a5d5c51b\n  }/g' $ETC/$AEC
+    if [ -f "$CFG" ]; then
 
-  fi
+      sed -i '/am3daudioenhancement {/,/}/d' $CFG
+      sed -i 's/^# AM3D | www.am3d.com | Library/# AM3D | www.am3d.com | Library\n\n  am3daudioenhancement {\n    path \/system\/lib\/soundfx\/deuteronomy\/libam3daudioenhancement.so\n  }/g' $CFG
+      sed -i 's/^# AM3D | www.am3d.com | Effect/# AM3D | www.am3d.com | Effect\n\n  am3daudioenhancement {\n    library am3daudioenhancement\n    uuid 6723dd80-f0b7-11e0-98a2-0002a5d5c51b\n  }/g' $CFG
 
-  if [ -f "$ETC/$HTC" ]; then
+    fi
 
-    sed -i '/am3daudioenhancement {/,/}/d' $ETC/$HTC
-    sed -i 's/^# AM3D | www.am3d.com | Library/# AM3D | www.am3d.com | Library\n\n  am3daudioenhancement {\n    path \/system\/lib\/soundfx\/deuteronomy\/libam3daudioenhancement.so\n  }/g' $ETC/$HTC
-    sed -i 's/^# AM3D | www.am3d.com | Effect/# AM3D | www.am3d.com | Effect\n\n  am3daudioenhancement {\n    library am3daudioenhancement\n    uuid 6723dd80-f0b7-11e0-98a2-0002a5d5c51b\n  }/g' $ETC/$HTC
-
-  fi
-
-  if [ -f "$ETC/$AEV" ]; then
-
-    sed -i '/am3daudioenhancement {/,/}/d' $ETC/$AEV
-    sed -i 's/^# AM3D | www.am3d.com | Library/# AM3D | www.am3d.com | Library\n\n  am3daudioenhancement {\n    path \/system\/lib\/soundfx\/deuteronomy\/libam3daudioenhancement.so\n  }/g' $ETC/$AEV
-    sed -i 's/^# AM3D | www.am3d.com | Effect/# AM3D | www.am3d.com | Effect\n\n  am3daudioenhancement {\n    library am3daudioenhancement\n    uuid 6723dd80-f0b7-11e0-98a2-0002a5d5c51b\n  }/g' $ETC/$AEV
-
-  fi
+  done
 
 fi
 
@@ -1574,6 +1454,7 @@ if [ "$INSTALLSONY" ]; then
   $SPR $FW 0 0 0755 0644
   $SPR $PERM 0 0 0755 0644
   $SP $ETC/$DSX 0 0 0644
+  $SP $ETC/media_codecs_somc.xml 0 0 0644
   $SP $LIB/$DSEE 0 0 0644
   $SP $LIB/libbt-aptX-ARM-4.2.2.so 0 0 0644
   $SP $LIB/libdlnacommonjni.so 0 0 0644
@@ -1588,6 +1469,8 @@ if [ "$INSTALLSONY" ]; then
   $SP $LIB/libsomcmediahttp.so 0 0 0644
   $SP $SUD/sony_setprop 0 0 0700
   restorecon $SUD/sony_setprop
+  rm -f $VETC/media_codecs_somc.xml
+  ln -s $ETC/media_codecs_somc.xml $VETC/media_codecs_somc.xml
 
 fi
 
@@ -1716,32 +1599,18 @@ if [ "$INSTALLV4AXHIFI" ]; then
 
   fi
 
-  if [ -f "$ETC/$AEC" ]; then
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-    sed -i '/v4a_xhifi {/,/}/d' $ETC/$AEC
-    sed -i '/v4a_standard_xhifi {/,/}/d' $ETC/$AEC
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Library/# ViPER.WYF | www.audlabs.com | Library\n\n  v4a_xhifi {\n    path \/system\/lib\/soundfx\/deuteronomy\/libv4a_xhifi_ics.so\n  }/g' $ETC/$AEC
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Effect/# ViPER.WYF | www.audlabs.com | Effect\n\n  v4a_standard_xhifi {\n    library v4a_xhifi\n    uuid d92c3a90-3e26-11e2-a25f-0800200c9a66\n  }/g' $ETC/$AEC
+    if [ -f "$CFG" ]; then
 
-  fi
+      sed -i '/v4a_xhifi {/,/}/d' $CFG
+      sed -i '/v4a_standard_xhifi {/,/}/d' $CFG
+      sed -i 's/^# ViPER.WYF | www.audlabs.com | Library/# ViPER.WYF | www.audlabs.com | Library\n\n  v4a_xhifi {\n    path \/system\/lib\/soundfx\/deuteronomy\/libv4a_xhifi_ics.so\n  }/g' $CFG
+      sed -i 's/^# ViPER.WYF | www.audlabs.com | Effect/# ViPER.WYF | www.audlabs.com | Effect\n\n  v4a_standard_xhifi {\n    library v4a_xhifi\n    uuid d92c3a90-3e26-11e2-a25f-0800200c9a66\n  }/g' $CFG
 
-  if [ -f "$ETC/$HTC" ]; then
+    fi
 
-    sed -i '/v4a_xhifi {/,/}/d' $ETC/$HTC
-    sed -i '/v4a_standard_xhifi {/,/}/d' $ETC/$HTC
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Library/# ViPER.WYF | www.audlabs.com | Library\n\n  v4a_xhifi {\n    path \/system\/lib\/soundfx\/deuteronomy\/libv4a_xhifi_ics.so\n  }/g' $ETC/$HTC
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Effect/# ViPER.WYF | www.audlabs.com | Effect\n\n  v4a_standard_xhifi {\n    library v4a_xhifi\n    uuid d92c3a90-3e26-11e2-a25f-0800200c9a66\n  }/g' $ETC/$HTC
-
-  fi
-
-  if [ -f "$ETC/$AEV" ]; then
-
-    sed -i '/v4a_xhifi {/,/}/d' $ETC/$AEV
-    sed -i '/v4a_standard_xhifi {/,/}/d' $ETC/$AEV
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Library/# ViPER.WYF | www.audlabs.com | Library\n\n  v4a_xhifi {\n    path \/system\/lib\/soundfx\/deuteronomy\/libv4a_xhifi_ics.so\n  }/g' $ETC/$AEV
-    sed -i 's/^# ViPER.WYF | www.audlabs.com | Effect/# ViPER.WYF | www.audlabs.com | Effect\n\n  v4a_standard_xhifi {\n    library v4a_xhifi\n    uuid d92c3a90-3e26-11e2-a25f-0800200c9a66\n  }/g' $ETC/$AEV
-
-  fi
+  done
 
 fi
 
@@ -1853,26 +1722,16 @@ if [ "$UNINSTALLV4A" ]; then
   rm -f $DEUTFX/$V4ALIB
   rm -f $LIB/$V4AUTL
 
-  if [ -f "$ETC/$AEC" ]; then
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-    sed -i '/v4a_fx {/,/}/d' $ETC/$AEC
-    sed -i '/v4a_standard_fx {/,/}/d' $ETC/$AEC
+    if [ -f "$CFG" ]; then
 
-  fi
+      sed -i '/v4a_fx {/,/}/d' $CFG
+      sed -i '/v4a_standard_fx {/,/}/d' $CFG
 
-  if [ -f "$ETC/$HTC" ]; then
+    fi
 
-    sed -i '/v4a_fx {/,/}/d' $ETC/$HTC
-    sed -i '/v4a_standard_fx {/,/}/d' $ETC/$HTC
-
-  fi
-
-  if [ -f "$ETC/$AEV" ]; then
-
-    sed -i '/v4a_fx {/,/}/d' $ETC/$AEV
-    sed -i '/v4a_standard_fx {/,/}/d' $ETC/$AEV
-
-  fi
+  done
 
 fi
 
@@ -1898,26 +1757,15 @@ if [ "$UNINSTALLATMOS" ]; then
   rm -f $LIB/libhwdaphal.so
   rm -f $LIB64/libhwdaphal.so
 
-  if [ -f "$ETC/$AEC" ]; then
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-    sed -i '/dax {/,/}/d' $ETC/$AEC
-    sed -i '/dap {/,/}/d' $ETC/$AEC
+    if [ -f "$CFG" ]; then
 
-  fi
+      sed -i '/dax {/,/}/d' $CFG
 
-  if [ -f "$ETC/$HTC" ]; then
+    fi
 
-    sed -i '/dax {/,/}/d' $ETC/$HTC
-    sed -i '/dap {/,/}/d' $ETC/$HTC
-
-  fi
-
-  if [ -f "$ETC/$AEV" ]; then
-
-    sed -i '/dax {/,/}/d' $ETC/$AEV
-    sed -i '/dap {/,/}/d' $ETC/$AEV
-
-  fi
+  done
 
 fi
 
@@ -1936,26 +1784,16 @@ if [ "$UNINSTALLDDPLUS" ]; then
   rm -f $DEUTFX/$DDPLIB
   rm -f $LIB/libstagefright_soft_ddpdec.so
 
-  if [ -f "$ETC/$AEC" ]; then
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-    sed -i '/ds {/,/}/d' $ETC/$AEC
-    sed -i '/dsplus {/,/}/d' $ETC/$AEC
+    if [ -f "$CFG" ]; then
 
-  fi
+      sed -i '/ds {/,/}/d' $CFG
+      sed -i '/dsplus {/,/}/d' $CFG
 
-  if [ -f "$ETC/$HTC" ]; then
+    fi
 
-    sed -i '/ds {/,/}/d' $ETC/$HTC
-    sed -i '/dsplus {/,/}/d' $ETC/$HTC
-
-  fi
-
-  if [ -f "$ETC/$AEV" ]; then
-
-    sed -i '/ds {/,/}/d' $ETC/$AEV
-    sed -i '/dsplus {/,/}/d' $ETC/$AEV
-
-  fi
+  done
 
 fi
 
@@ -1971,26 +1809,16 @@ if [ "$UNINSTALLARKAMYS" ]; then
   rm -f $APP/$ARKAPK
   rm -f $DEUTFX/$ARKLIB
 
-  if [ -f "$ETC/$AEC" ]; then
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-    sed -i '/arkamys {/,/}/d' $ETC/$AEC
-    sed -i '/Arkamysfx {/,/}/d' $ETC/$AEC
+    if [ -f "$CFG" ]; then
 
-  fi
+      sed -i '/arkamys {/,/}/d' $CFG
+      sed -i '/Arkamysfx {/,/}/d' $CFG
 
-  if [ -f "$ETC/$HTC" ]; then
+    fi
 
-    sed -i '/arkamys {/,/}/d' $ETC/$HTC
-    sed -i '/Arkamysfx {/,/}/d' $ETC/$HTC
-
-  fi
-
-  if [ -f "$ETC/$AEV" ]; then
-
-    sed -i '/arkamys {/,/}/d' $ETC/$AEV
-    sed -i '/Arkamysfx {/,/}/d' $ETC/$AEV
-
-  fi
+  done
 
 fi
 
@@ -2008,38 +1836,20 @@ if [ "$UNINSTALLICE" ]; then
   rm -f $ETC/icesoundconfig.def
   rm -f $ETC/icesoundpresets.def
 
-  if [ -f "$ETC/$AEC" ]; then
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-    sed -i '/icepower {/,/}/d' $ETC/$AEC
-    sed -i '/icepower_eq {/,/}/d' $ETC/$AEC
-    sed -i '/icepower_null {/,/}/d' $ETC/$AEC
-    sed -i '/icepower_load {/,/}/d' $ETC/$AEC
-    sed -i '/icepower_test {/,/}/d' $ETC/$AEC
-    sed -i '/icepower_algo {/,/}/d' $ETC/$AEC
+    if [ -f "$CFG" ]; then
 
-  fi
+      sed -i '/icepower {/,/}/d' $CFG
+      sed -i '/icepower_eq {/,/}/d' $CFG
+      sed -i '/icepower_null {/,/}/d' $CFG
+      sed -i '/icepower_load {/,/}/d' $CFG
+      sed -i '/icepower_test {/,/}/d' $CFG
+      sed -i '/icepower_algo {/,/}/d' $CFG
 
-  if [ -f "$ETC/$HTC" ]; then
+    fi
 
-    sed -i '/icepower {/,/}/d' $ETC/$HTC
-    sed -i '/icepower_eq {/,/}/d' $ETC/$HTC
-    sed -i '/icepower_null {/,/}/d' $ETC/$HTC
-    sed -i '/icepower_load {/,/}/d' $ETC/$HTC
-    sed -i '/icepower_test {/,/}/d' $ETC/$HTC
-    sed -i '/icepower_algo {/,/}/d' $ETC/$HTC
-
-  fi
-
-  if [ -f "$ETC/$AEV" ]; then
-
-    sed -i '/icepower {/,/}/d' $ETC/$AEV
-    sed -i '/icepower_eq {/,/}/d' $ETC/$AEV
-    sed -i '/icepower_null {/,/}/d' $ETC/$AEV
-    sed -i '/icepower_load {/,/}/d' $ETC/$AEV
-    sed -i '/icepower_test {/,/}/d' $ETC/$AEV
-    sed -i '/icepower_algo {/,/}/d' $ETC/$AEV
-
-  fi
+  done
 
 fi
 
@@ -2056,23 +1866,15 @@ if [ "$UNINSTALLAM3D" ]; then
   rm -f $APP/$AM3DAPK
   rm -f $DEUTFX/$AM3DLIB
 
-  if [ -f "$ETC/$AEC" ]; then
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-    sed -i '/am3daudioenhancement {/,/}/d' $ETC/$AEC
+    if [ -f "$CFG" ]; then
 
-  fi
+      sed -i '/am3daudioenhancement {/,/}/d' $CFG
 
-  if [ -f "$ETC/$HTC" ]; then
+    fi
 
-    sed -i '/am3daudioenhancement {/,/}/d' $ETC/$HTC
-
-  fi
-
-  if [ -f "$ETC/$AEV" ]; then
-
-    sed -i '/am3daudioenhancement {/,/}/d' $ETC/$AEV
-
-  fi
+  done
 
 fi
 
@@ -2096,6 +1898,7 @@ if [ "$UNINSTALLSONY" ]; then
   rm -rf $PAPP/$TRKID
   rm -rf $ETC/sony_effect
   rm -f $ETC/$DSX
+  rm -f $ETC/media_codecs_somc.xml
   rm -f $APP/$DLNAPK
   rm -f $APP/$KARAOKEAPK
   rm -f $APP/$LYRICAPK
@@ -2186,26 +1989,16 @@ if [ "$UNINSTALLXHIFI" ]; then
   rm -f $APP/$XHIFIAPK
   rm -f $DEUTFX/$XHIFILIB
 
-  if [ -f "$ETC/$AEC" ]; then
+  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
-    sed -i '/v4a_xhifi {/,/}/d' $ETC/$AEC
-    sed -i '/v4a_standard_xhifi {/,/}/d' $ETC/$AEC
+    if [ -f "$CFG" ]; then
 
-  fi
+      sed -i '/v4a_xhifi {/,/}/d' $CFG
+      sed -i '/v4a_standard_xhifi {/,/}/d' $CFG
 
-  if [ -f "$ETC/$HTC" ]; then
+    fi
 
-    sed -i '/v4a_xhifi {/,/}/d' $ETC/$HTC
-    sed -i '/v4a_standard_xhifi {/,/}/d' $ETC/$HTC
-
-  fi
-
-  if [ -f "$ETC/$AEV" ]; then
-
-    sed -i '/v4a_xhifi {/,/}/d' $ETC/$AEV
-    sed -i '/v4a_standard_xhifi {/,/}/d' $ETC/$AEV
-
-  fi
+  done
 
 fi
 

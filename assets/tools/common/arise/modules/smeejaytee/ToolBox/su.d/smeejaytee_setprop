@@ -55,8 +55,6 @@ setprop audio.dolby.ds2.hardbypass true
 setprop ro.config.hw_dts true
 setprop ro.config.hw_sws true
 setprop ro.config.sws_version sws3
-setprop ro.audio.monitorOrientation true
-setprop ro.audio.monitorRotation true
 setprop ro.config.hw_media_flags 3
 setprop ro.config.widevine_level3 true
 setprop drm.service.enabled true
@@ -155,4 +153,5 @@ setprop htc.audio.alc.enable 1
 setprop htc.audio.effect.dolby 1
 setprop htc.audio.effect.srs 1
 #
+
 exit 0
