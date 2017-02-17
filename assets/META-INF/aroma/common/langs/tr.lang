@@ -29,7 +29,7 @@ welcome.next=Yüklemeye Devam Etmek İçin İleri'ye basın...
 changelog.title=Değişiklikler
 changelog.desc=FreedomOS Değişiklikleri
 language.title=Dil seçin
-language.text=Yükleme dili seçin
+language.text=Yükleme dilini seçin
 language.english=English
 language.english.info=Using English
 language.french=France
@@ -47,7 +47,8 @@ language.tchinese.info=使用正體中文 - @clyang
 language.schinese=简体中文
 language.schinese.info=使用简体中文 - @clyang
 
-rom.data=!date!
+
+rom.data=!tarih!
 text_finish=Bitti
 model.title=Telefon Modeli
 
@@ -60,7 +61,7 @@ main.sys=Sistem bilgisi
 main.sys.info=Aygıt bilgilerini göster
 main.changelog.info=FreedomOS değişiklikleri
 main.exit=Çıkış
-main.exit.info=FreedomOS yükleyiciden çık
+main.exit.info=FreedomOS yükleyicisinden çık
 
 install_mod.tittle=FreedomOS yükleyici
 install_mod.tittle2=Ayarlarınızı seçin
@@ -69,7 +70,7 @@ install_mod.sub_tittle=Kurulum yöntemi
 gapps_yes=Evet, Google Uygulamarını yükle
 gapps_no=Google Uygulamarını yükleme
 info.gapps_yes=Tavsiye edilen
-info.gapps_no=Sistem Google uygulamaları olmadan önyükleme <#f00>YAPMAZ</#>
+info.gapps_no=Sistem, Google uygulamaları olmadan önyükleme <#f00>YAPMAZ</#>
 assert.tittle=Kontrolü onayla
 assert_yes=Evet (Önerilen)
 assert_no=Hayır
@@ -87,7 +88,7 @@ passwordfix.tittle=Pin/Desen geçici çözümü
 passwordfix_yes=Evet
 info.passwordfix_yes=Veri bölümünden Pin/Desen yedeklemesini kaldır
 passwordfix_no=Hayır
-info.passwordfix_no=Eski dosyalara izin ver
+info.passwordfix_no=Eski dosya kalsın
 
 info.custom=Özgürlük yolunda
 info.stock=Orijinal OnePlus stok yazılımı, root erişimi yok
@@ -291,7 +292,7 @@ theme.tittle3=Tema motorunuzu seçin
 
 theme.tittle3=Tema motorunuzu seçin
 notheme=Tema motoru yükleme
-layer=RRO Katmanlar [kullanımdan kaldırıldı]
+layer=RRO Layers [kullanımdan kaldırıldı]
 substratum=Substratum
 
 info.notheme=
