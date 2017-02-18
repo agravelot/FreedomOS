@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2016 Antoine GRAVELOT
+# Copyright 2016-2017 Antoine GRAVELOT
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,8 +28,8 @@ function build_arise() {
 
   echo ">> Building ARISE" | tee -a ${build_log}
   cd ${tmp_root}/tools/arise/ >> ${build_log} 2>&1
-  sed -i 's/\/tmp\/*/\/tmp\/fake/g' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
-  sed -i '/exit 0/d' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary
+  sed -i '/\/tmp\/\*/d' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
+  sed -i '/exit 0/d' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
 
   for i in $remove_list; do
     rm -rf ${tmp_root}/tools/arise/$i
