@@ -1,7 +1,7 @@
 
 # ARISE Sound Systems™
 #
-# Deuteronomy™ 2.75 Modular Installer 20170213
+# Deuteronomy™ 2.79 Modular Installer 20170217
 #
 # "SwanSong™"
 #
@@ -12,6 +12,26 @@
 
 
 Changelog:
+
+
+
+## Deuteronomy™ 2.79 "SwanSong™" -
+
+- New PURESHIT ICEsound™ preset prepared by @secone00 @ARISE Sound Systems™.
+
+##
+
+
+
+## Deuteronomy™ 2.77 "SwanSong™" -
+
+- ArkamysAudio.apk updated from version 4.3 to 4.5 and its library.
+
+- The "PURE" ICEsound™ preset is now installed with the ICEsound™ module. The "DEFAULT" preset still indicates the untouched, native ICEsound™ preset found in the firmware source.
+
+- Added "HOLYSHIT" ICEsound™ preset prepared by @secone00 @ARISE Sound Systems™
+
+##
 
 
 

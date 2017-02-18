@@ -1,7 +1,7 @@
 
 # ARISE Sound Systems™
 #
-# Deuteronomy™ 2.71 Modular Installer 20170210
+# Deuteronomy™ 2.77 Modular Installer 20170215
 #
 # "SwanSong"
 #
@@ -17,13 +17,19 @@
 
 
 
-# Add <true> to desired add-on(s): install.xxxx=true
+# Add "true"to desired add-on(s). Example:
+
+
+
+install.xxxx=true
 
 
 
 # Deuteronomy™ must be installed at least once. Once Deuteronomy™ is installed, the value of "true" can be removed for future customization without installing the core Deuteronomy™ system again.
 
+
 install.deuteronomy=
+
 
 #
 
@@ -31,13 +37,16 @@ install.deuteronomy=
 
 # Select either ViPER4Arise™ version below to be installed or ignore to not install ViPER4Arise™ at all.
 
+
 install.v4a_2.5.0.5=
 
 install.v4a_2.3.4.0=
 
+
 #
 
 #
+
 
 install.v4a_profiles=
 
@@ -53,9 +62,11 @@ install.am3d=
 
 install.arkamys=
 
+
 #
 
 #
+
 
 ## ICEsound™ START ##
 
@@ -63,31 +74,40 @@ install.arkamys=
 install.ICEsound=
 
 
-# Add 0, 1, 2, 3, 4, 5, or 6 for desired ICEconfig (0 removes /system/etc/icesoundconfig.def):
+# Add "0", "1", "2", "3", "4", "5", or "6" for the desired ICEsound™ configuration below. "0" will delete /system/etc/icesoundconfig.def. Example:
+
+use.ICEco**ig=0
 
 use.ICEconfig=
 
 
-# The following ICEsound™ presets are available below. None will remove an existing preset to use no ICEsound™ preset. Enter a value exactly as shown below, for example: use.ICEsound.preset=<DEEPBASS>
+# The following ICEsound™ presets are available below. <None> will remove an existing preset to use no ICEsound™ preset. Enter a value exactly as shown below. Example:
+
+use.ICEsound.pr**et=DEEPBASS
 
 DEEPBASS
 DEFAULT
+HOLYSHIT
 KRAZY
 MOVIE
 MUSIC2
 OUTDOORS
 PURE
+PURESHIT
 WIDECLARITY
 None
+
 
 use.ICEsound.preset=
 
 
 ## ICEsound™ END ##
 
+
 #
 
 #
+
 
 install.sony=
 
@@ -108,6 +128,10 @@ delete.deep_buffer=
 
 
 set.selinux.permissive=
+
+
+repair.sdcard.permissions=
+
 
 #
 
@@ -147,3 +171,6 @@ UNINSTALL.v4a_xhifi=
 
 
 UNINSTALL.musicfx=
+
+
+#

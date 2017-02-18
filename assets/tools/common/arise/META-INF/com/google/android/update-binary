@@ -127,7 +127,7 @@ SRS=libsrsprocessing.so
 QCPROC=libqcompostprocbundle.so
 APTXSCH=libaptXScheduler.so
 APTXV7A=libaptX-1.0.0-rel-Android21-ARMv7A.so
-APTXHDV7A=libaptXHD-1.0.0-int-Android21-ARMv7A.so
+APTXHDV7A=libaptXHD-1.0.0-rel-Android21-ARMv7A.so
 AFX=AudioFX
 AFXAPK=AudioFX.apk
 DSP=DSPManager
@@ -228,6 +228,7 @@ WISHLIST=$SDCARD/arise_customize.prop
 INFO=$SYS/ARISE_version.prop
 BUFFER=$(cat $WISHLIST | grep "delete.deep_buffer=true")
 PERMISSIVE=$(cat $WISHLIST | grep "set.selinux.permissive=true")
+PERMISSIONS=$(cat $WISHLIST | grep "repair.sdcard.permissions=true")
 INSTALLDEUT=$(cat $WISHLIST | grep "install.deuteronomy=true")
 INSTALLESIRA=$(cat $WISHLIST | grep "install.esira=true")
 INSTALLBEATS=$(cat $WISHLIST | grep "install.ToolBox=true")
@@ -257,20 +258,24 @@ ICE5=modules/ICE/ICEconfig/ICEconfig5/icesoundconfig.def
 ICE6=modules/ICE/ICEconfig/ICEconfig6/icesoundconfig.def
 ICEPRESETDB=$(cat $WISHLIST | grep "use.ICEsound.preset=DEEPBASS")
 ICEPRESETDF=$(cat $WISHLIST | grep "use.ICEsound.preset=DEFAULT")
+ICEPRESETHS=$(cat $WISHLIST | grep "use.ICEsound.preset=HOLYSHIT")
 ICEPRESETKZ=$(cat $WISHLIST | grep "use.ICEsound.preset=KRAZY")
 ICEPRESETMV=$(cat $WISHLIST | grep "use.ICEsound.preset=MOVIE")
 ICEPRESETM2=$(cat $WISHLIST | grep "use.ICEsound.preset=MUSIC2")
 ICEPRESETOD=$(cat $WISHLIST | grep "use.ICEsound.preset=OUTDOORS")
 ICEPRESETPR=$(cat $WISHLIST | grep "use.ICEsound.preset=PURE")
+ICEPRESETPS=$(cat $WISHLIST | grep "use.ICEsound.preset=PURESHIT")
 ICEPRESETWC=$(cat $WISHLIST | grep "use.ICEsound.preset=WIDECLARITY")
 ICEPRESETNO=$(cat $WISHLIST | grep "use.ICEsound.preset=None")
 DEEPBASS=modules/ICE/ICEpreset/DEEPBASS/icesoundpresets.def
 DEFAULT=modules/ICE/ICEpreset/DEFAULT/icesoundpresets.def
+HOLYSHIT=modules/ICE/ICEpreset/HOLYSHIT/icesoundpresets.def
 KRAZY=modules/ICE/ICEpreset/KRAZY/icesoundpresets.def
 MOVIE=modules/ICE/ICEpreset/MOVIE/icesoundpresets.def
 MUSIC2=modules/ICE/ICEpreset/MUSIC2/icesoundpresets.def
 OUTDOORS=modules/ICE/ICEpreset/OUTDOORS/icesoundpresets.def
 PURE=modules/ICE/ICEpreset/PURE/icesoundpresets.def
+PURESHIT=modules/ICE/ICEpreset/PURESHIT/icesoundpresets.def
 WIDECLARITY=modules/ICE/ICEpreset/WIDECLARITY/icesoundpresets.def
 UNINSTALLV4A=$(cat $WISHLIST | grep "UNINSTALL.v4a=true")
 UNINSTALLATMOS=$(cat $WISHLIST | grep "UNINSALL.atmos=true")
@@ -338,7 +343,7 @@ if [ ! -e "$WISHLIST" ]; then
   ui_print " "
   ui_print " "
   ui_print "Creating $WISHLIST"
-  cp arise_customize.prop $WISHLIST
+  cp -f arise_customize.prop $WISHLIST
   ui_print " "
   ui_print "Refer to $WISHLIST and try again."
   ui_print " "
@@ -389,11 +394,11 @@ if [ "$INSTALLDEUT" ]; then
 
   if [ -e "$QCOM" ]; then
 
-    cp $CAFX/qc/$AEC $ETC/$AEC
+    cp -f $CAFX/qc/$AEC $ETC/$AEC
 
   else
 
-    cp $CAFX/aosp/$AEC $ETC/$AEC
+    cp -f $CAFX/aosp/$AEC $ETC/$AEC
 
   fi
 
@@ -401,7 +406,7 @@ if [ "$INSTALLDEUT" ]; then
 
   if [ -f "$ETC/$HTC" ]; then
 
-    cp $CAFX/htc/$HTC $ETC/$HTC
+    cp -f $CAFX/htc/$HTC $ETC/$HTC
     $SP $ETC/$HTC 0 0 0644
 
   fi
@@ -410,11 +415,11 @@ if [ "$INSTALLDEUT" ]; then
 
     if [ -e "$QCOM" ]; then
 
-      cp $CAFX/qc/$AEC $ETC/$AEV
+      cp -f $CAFX/qc/$AEC $ETC/$AEV
 
     else
 
-      cp $CAFX/aosp/$AEC $ETC/$AEV
+      cp -f $CAFX/aosp/$AEC $ETC/$AEV
 
     fi
 
@@ -426,11 +431,11 @@ if [ "$INSTALLDEUT" ]; then
 
     if [ -e "$QCOM" ]; then
 
-      cp $CAFX/qc/$AEC $VETC/$AOE
+      cp -f $CAFX/qc/$AEC $VETC/$AOE
 
     else
 
-      cp $CAFX/aosp/$AEC $VETC/$AOE
+      cp -f $CAFX/aosp/$AEC $VETC/$AOE
 
     fi
 
@@ -440,23 +445,23 @@ if [ "$INSTALLDEUT" ]; then
 
   if [ "$SONY" ]; then
 
-    cp $CAFX/sony/$AEC $ETC/$AEC
+    cp -f $CAFX/sony/$AEC $ETC/$AEC
     $SP $ETC/$AEC 0 0 0644
 
   fi
 
   if [ "$HUAWEI" ] && [ ! "$ANGLER" ]; then
 
-    cp $CAFX/huawei/$AEC $ETC/$AEC
+    cp -f $CAFX/huawei/$AEC $ETC/$AEC
     $SP $ETC/$AEC 0 0 0644
 
   else
 
-    cp -R custom/huawei/system/* $SYS
+    cp -Rf custom/huawei/system/* $SYS
 
     if [ -d "$LIB64" ]; then
 
-      cp -R custom/huawei/lib64/* $LIB64
+      cp -Rf custom/huawei/lib64/* $LIB64
       $SPR $SFX64 0 0 0755 0644
       $SP $LIB64/lib_k3_ffmpeg.so 0 0 0644
       $SP $LIB64/libaudio-custom.so 0 0 0644
@@ -550,33 +555,33 @@ if [ "$INSTALLDEUT" ]; then
 
   if [ ! -e "$LIB/$APTXV7A" ]; then
 
-    cp $CARM/$APTXV7A $LIB/$APTXV7A
+    cp -f $CARM/$APTXV7A $LIB/$APTXV7A
     $SP $LIB/$APTXV7A 0 0 0644
 
   fi
 
   if [ ! -e "$LIB/$APTXHDV7A" ]; then
 
-    cp $CARM/$APTXHDV7A $LIB/$APTXHDV7A
+    cp -f $CARM/$APTXHDV7A $LIB/$APTXHDV7A
     $SP $LIB/$APTXHDV7A 0 0 0644
 
   fi
 
   if [ ! -e "$LIB/$APTXSCH" ]; then
 
-    cp $CARM/$APTXSCH $LIB/$APTXSCH
+    cp -f $CARM/$APTXSCH $LIB/$APTXSCH
     $SP $LIB/$APTXSCH 0 0 0644
 
   fi
 
   if [ ! -e "$VEN/lib/$SRS" ] && [ ! -e "$SYS/lib/$SRS" ]; then
 
-    cp $CARM/$SRS $LIB/$SRS
+    cp -f $CARM/$SRS $LIB/$SRS
     $SP $LIB/$SRS 0 0 0644
 
     if [ -d "$LIb64" ]; then
 
-      cp $CARM64/$SRS $LIB64/$SRS
+      cp -f $CARM64/$SRS $LIB64/$SRS
       $SP $LIB64/$SRS 0 0 0644
 
     fi
@@ -585,9 +590,9 @@ if [ "$INSTALLDEUT" ]; then
 
   if [ ! -e "$VEN/lib/$STAPROXY" ]; then
 
-    cp $CARM/$STAPROXY $LIB/$STAPROXY
-    cp $CARM/$STAGYP $LIB/$STAGYP
-    cp $CARM/$STA $LIB/$STA
+    cp -f $CARM/$STAPROXY $LIB/$STAPROXY
+    cp -f $CARM/$STAGYP $LIB/$STAGYP
+    cp -f $CARM/$STA $LIB/$STA
     $SP $LIB/$STAPROXY 0 0 0644
     $SP $LIB/$STAGYP 0 0 0644
     $SP $LIB/$STA 0 0 0644
@@ -598,10 +603,10 @@ if [ "$INSTALLDEUT" ]; then
 
     mkdir -p $DRC
     mkdir -p $SURR
-    cp -R $CETC/drc/* $DRC
-    cp -R $CETC/surround_sound_3mic/* $SURR
-    cp $CARM/libdrc.so $LIB/libdrc.so
-    cp $CARM/$SURRLIB $LIB/$SURRLIB
+    cp -Rf $CETC/drc/* $DRC
+    cp -Rf $CETC/surround_sound_3mic/* $SURR
+    cp -f $CARM/libdrc.so $LIB/libdrc.so
+    cp -f $CARM/$SURRLIB $LIB/$SURRLIB
     $SPR $DRC 0 0 0755 0644
     $SPR $SURR 0 0 0755 0644
     $SP $LIB/libdrc.so 0 0 0644
@@ -616,13 +621,13 @@ if [ "$INSTALLDEUT" ]; then
   if [ -e "$QCOM" ]; then
 
     mkdir -p $ASUSFX
-    cp -R $CARM/asus/* $ASUSFX
+    cp -Rf $CARM/asus/* $ASUSFX
     $SPR $ASUSFX 0 0 0755 0644
 
     if [ -d  "$LIB64" ]; then
 
       mkdir -p $ASUSFX64
-      cp -R $CARM64/asus/* $ASUSFX64
+      cp -Rf $CARM64/asus/* $ASUSFX64
       $SPR $SFX64 0 0 0755 0644
 
     fi
@@ -630,13 +635,13 @@ if [ "$INSTALLDEUT" ]; then
     if [ ! "$SONY" ]; then
 
       mkdir -p $SONYFX
-      cp -R $CARM/sony/* $SONYFX
+      cp -Rf $CARM/sony/* $SONYFX
       $SPR $SONYFX 0 0 0755 0644
 
       if [ -d "$LIB64" ]; then
 
         mkdir -p $SONYFX64
-        cp -R $CARM64/sony/* $SONYFX64
+        cp -Rf $CARM64/sony/* $SONYFX64
         $SPR $SFX64 0 0 0755 0644
 
       fi
@@ -647,15 +652,15 @@ if [ "$INSTALLDEUT" ]; then
 
   if [ "$X86" ] || [ "$X8664" ]; then
 
-    cp $CLIB86/$APSS $LIB/$APSS
-    cp $CLIB86/$FREQ $LIB/$FREQ
-    cp $CLIB86/$LATENCY $LIB/$LATENCY
-    cp $CLIB86/$TDSP $LIB/$TDSP
+    cp -f $CLIB86/$APSS $LIB/$APSS
+    cp -f $CLIB86/$FREQ $LIB/$FREQ
+    cp -f $CLIB86/$LATENCY $LIB/$LATENCY
+    cp -f $CLIB86/$TDSP $LIB/$TDSP
 
     if [ -d "$LIB64" ]; then
 
-      cp $CLIB8664/$APSS $LIB64/$APSS
-      cp $CLIB8664/$TDSP $LIB64/$TDSP
+      cp -f $CLIB8664/$APSS $LIB64/$APSS
+      cp -f $CLIB8664/$TDSP $LIB64/$TDSP
       $SP $LIB64/$APSS 0 0 0644
       $SP $LIB64/$TDSP 0 0 0644
 
@@ -663,26 +668,26 @@ if [ "$INSTALLDEUT" ]; then
 
   else
 
-    cp $CARM/$APSS $LIB/$APSS
-    cp $CARM/$FREQ $LIB/$FREQ
-    cp $CARM/$LATENCY $LIB/$LATENCY
-    cp $CARM/$TDSP $LIB/$TDSP
+    cp -f $CARM/$APSS $LIB/$APSS
+    cp -f $CARM/$FREQ $LIB/$FREQ
+    cp -f $CARM/$LATENCY $LIB/$LATENCY
+    cp -f $CARM/$TDSP $LIB/$TDSP
 
     if [ -d "$LIB64" ]; then
 
       mkdir -p $DEUTFX64
-      cp $CARM64/$BBE $DEUTFX64/$BBE
-      cp $CARM64/libaudio-ftm.so $LIB64/libaudio-ftm.so
-      cp $CARM64/libaudioom.so $LIB64/libaudioom.so
-      cp $CARM64/$APSS $LIB64/$APSS
-      cp $CARM64/libmars-parameter.so $LIB64/libmars-parameter.so
-      cp $CARM64/libmars-service.so $LIB64/libmars-service.so
-      cp $CARM64/libmars-service_jni.so $LIB64/libmars-service_jni.so
-      cp $CARM64/$SOMCAV $LIB64/$SOMCAV
-      cp $CARM64/$SOMCME $LIB64/$SOMCME
-      cp $CARM64/libstlport.so $LIB64/libstlport.so
-      cp $CARM64/$STLSH $LIB64/$STLSH
-      cp $CARM64/$TDSP $LIB64/$TDSP
+      cp -f $CARM64/$BBE $DEUTFX64/$BBE
+      cp -f $CARM64/libaudio-ftm.so $LIB64/libaudio-ftm.so
+      cp -f $CARM64/libaudioom.so $LIB64/libaudioom.so
+      cp -f $CARM64/$APSS $LIB64/$APSS
+      cp -f $CARM64/libmars-parameter.so $LIB64/libmars-parameter.so
+      cp -f $CARM64/libmars-service.so $LIB64/libmars-service.so
+      cp -f $CARM64/libmars-service_jni.so $LIB64/libmars-service_jni.so
+      cp -f $CARM64/$SOMCAV $LIB64/$SOMCAV
+      cp -f $CARM64/$SOMCME $LIB64/$SOMCME
+      cp -f $CARM64/libstlport.so $LIB64/libstlport.so
+      cp -f $CARM64/$STLSH $LIB64/$STLSH
+      cp -f $CARM64/$TDSP $LIB64/$TDSP
       $SPR $SFX64 0 0 0755 0644
       $SP $LIB64/libaudio-ftm.so 0 0 0644
       $SP $LIB64/libaudioom.so 0 0 0644
@@ -700,7 +705,7 @@ if [ "$INSTALLDEUT" ]; then
 
   fi
 
-  cp -R core/system/* $SYS
+  cp -Rf core/system/* $SYS
 
   $SPR $SFX 0 0 0755 0644
   $SPR $FW 0 0 0755 0644
@@ -759,11 +764,11 @@ if [ "$INSTALLDEUT" ]; then
   $SP $SUD/$PROP 0 0 0700
   restorecon $SUD/$PROP
 
-  cp -R core/support/* $SDCARD
+  cp -Rf core/support/* $SDCARD
 
   if [ -e "$SDCARD/$PROP" ]; then
 
-    cp $SDCARD/$PROP $SUD/$PROP
+    cp -f $SDCARD/$PROP $SUD/$PROP
     $SP $SUD/$PROP 0 0 0700
     restorecon $SUD/$PROP
 
@@ -783,7 +788,7 @@ if [ "$INSTALLV4A2505" ]; then
 
     if [ ! -e "$SUD/permissive" ]; then
 
-      cp $CSUD/$SERVER $SUD/$SERVER
+      cp -f $CSUD/$SERVER $SUD/$SERVER
       $SP $SUD/$SERVER 0 0 0700
       restorecon $SUD/$SERVER
 
@@ -792,18 +797,18 @@ if [ "$INSTALLV4A2505" ]; then
     if [ "$X86" ] || [ "$X8664" ]; then
 
       mkdir -p $PAPP/$V4A/lib/x86
-      cp $V4A2505/$V4APK $PAPP/$V4A/$V4APK
-      cp $V4A2505/lib/x86/$V4AUTL $PAPP/$V4A/lib/x86/$V4AUTL
-      cp $V4A2505/lib/x86/$V4AUTL $LIB/$V4AUTL
-      cp $V4A2505/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
+      cp -f $V4A2505/$V4APK $PAPP/$V4A/$V4APK
+      cp -f $V4A2505/lib/x86/$V4AUTL $PAPP/$V4A/lib/x86/$V4AUTL
+      cp -f $V4A2505/lib/x86/$V4AUTL $LIB/$V4AUTL
+      cp -f $V4A2505/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
 
     else
 
       mkdir -p $PAPP/$V4A/lib/arm
-      cp $V4A2505/$V4APK $PAPP/$V4A/$V4APK
-      cp $V4A2505/lib/arm/$V4AUTL $PAPP/$V4A/lib/arm/$V4AUTL
-      cp $V4A2505/lib/arm/$V4AUTL $LIB/$V4AUTL
-      cp $V4A2505/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
+      cp -f $V4A2505/$V4APK $PAPP/$V4A/$V4APK
+      cp -f $V4A2505/lib/arm/$V4AUTL $PAPP/$V4A/lib/arm/$V4AUTL
+      cp -f $V4A2505/lib/arm/$V4AUTL $LIB/$V4AUTL
+      cp -f $V4A2505/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
 
     fi
 
@@ -811,17 +816,17 @@ if [ "$INSTALLV4A2505" ]; then
 
   else
 
-    cp $V4A2505/$V4APK $APP/$V4APK
+    cp -f $V4A2505/$V4APK $APP/$V4APK
 
     if [ "$X86" ] || [ "$X8664" ]; then
 
-      cp $V4A2505/lib/x86/$V4AUTL $LIB/$V4AUTL
-      cp $V4A2505/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
+      cp -f $V4A2505/lib/x86/$V4AUTL $LIB/$V4AUTL
+      cp -f $V4A2505/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
 
     else
 
-      cp $V4A2505/lib/arm/$V4AUTL $LIB/$V4AUTL
-      cp $V4A2505/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
+      cp -f $V4A2505/lib/arm/$V4AUTL $LIB/$V4AUTL
+      cp -f $V4A2505/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
 
     fi
 
@@ -857,7 +862,7 @@ if [ "$INSTALLV4A2340" ]; then
 
     if [ ! -e "$SUD/permissive" ]; then
 
-      cp $CSUD/$SERVER $SUD/$SERVER
+      cp -f $CSUD/$SERVER $SUD/$SERVER
       $SP $SUD/$SERVER 0 0 0700
       restorecon $SUD/$SERVER
 
@@ -866,18 +871,18 @@ if [ "$INSTALLV4A2340" ]; then
     if [ "$X86" ] || [ "$X8664" ]; then
 
       mkdir -p $PAPP/$V4A/lib/x86
-      cp $V4A2340/$V4APK $PAPP/$V4A/$V4APK
-      cp $V4A2340/lib/x86/$V4AUTL $PAPP/$V4A/lib/x86/$V4AUTL
-      cp $V4A2340/lib/x86/$V4AUTL $LIB/$V4AUTL
-      cp $V4A2340/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
+      cp -f $V4A2340/$V4APK $PAPP/$V4A/$V4APK
+      cp -f $V4A2340/lib/x86/$V4AUTL $PAPP/$V4A/lib/x86/$V4AUTL
+      cp -f $V4A2340/lib/x86/$V4AUTL $LIB/$V4AUTL
+      cp -f $V4A2340/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
 
     else
 
       mkdir -p $PAPP/$V4A/lib/arm
-      cp $V4A2340/$V4APK $PAPP/$V4A/$V4APK
-      cp $V4A2340/lib/arm/$V4AUTL $PAPP/$V4A/lib/arm/$V4AUTL
-      cp $V4A2340/lib/arm/$V4AUTL $LIB/$V4AUTL
-      cp $V4A2340/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
+      cp -f $V4A2340/$V4APK $PAPP/$V4A/$V4APK
+      cp -f $V4A2340/lib/arm/$V4AUTL $PAPP/$V4A/lib/arm/$V4AUTL
+      cp -f $V4A2340/lib/arm/$V4AUTL $LIB/$V4AUTL
+      cp -f $V4A2340/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
 
     fi
 
@@ -885,17 +890,17 @@ if [ "$INSTALLV4A2340" ]; then
 
   else
 
-    cp $V4A2340/$V4APK $APP/$V4APK
+    cp -f $V4A2340/$V4APK $APP/$V4APK
 
     if [ "$X86" ] || [ "$X8664" ]; then
 
-      cp $V4A2340/lib/x86/$V4AUTL $LIB/$V4AUTL
-      cp $V4A2340/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
+      cp -f $V4A2340/lib/x86/$V4AUTL $LIB/$V4AUTL
+      cp -f $V4A2340/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
 
     else
 
-      cp $V4A2340/lib/arm/$V4AUTL $LIB/$V4AUTL
-      cp $V4A2340/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
+      cp -f $V4A2340/lib/arm/$V4AUTL $LIB/$V4AUTL
+      cp -f $V4A2340/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
 
     fi
 
@@ -928,7 +933,7 @@ if [ "$INSTALLPROFILES" ]; then
   ui_print " "
 
   mkdir -p $SDCARD/ViPER4Android
-  cp -R $PROFILES/* $SDCARD/ViPER4Android
+  cp -Rf $PROFILES/* $SDCARD/ViPER4Android
 
 fi
 
@@ -943,7 +948,7 @@ if [ "$INSTALLATMOS" ]; then
   if [ "$API" -ge "23" ]; then
 
     rm $SUD/$SERVER
-    cp -R $MODDAX/* $SYS
+    cp -Rf $MODDAX/* $SYS
     $SPR $PAPP/Ax 0 0 0755 0644
     $SPR $PAPP/AxUI 0 0 0755 0644
     $SPR $ETC/dolby 0 0 0755 0644
@@ -955,21 +960,29 @@ if [ "$INSTALLATMOS" ]; then
 
     if [ ! -e "$DAPHAL" ]; then
 
-      cp $CARM/libhwdaphal.so $LIB/libhwdaphal.so
+      cp -f $CARM/libhwdaphal.so $LIB/libhwdaphal.so
       $SP $LIB/libhwdaphal.so 0 0 0644
 
       if [ -d "$LIB64" ]; then
 
-        cp $CARM64/libhwdaphal.so $LIB64/libhwdaphal.so
+        cp -f $CARM64/libhwdaphal.so $LIB64/libhwdaphal.so
         $SP $LIB64/libhwdaphal.so 0 0 0644
 
       fi
 
     fi
 
+    if [ ! -d "$PAPP/$MFX" ] && [ ! -d "$APP/$MFX" ]; then
+
+      mkdir -p $PAPP/$MFX
+      cp -f $CAPP/$MFXAPK $PAPP/$MFX/$MFXAPK
+      $SPR $PAPP/$MFX 0 0 0755 0644
+
+    fi
+
   else
 
-    cp -R $MODDAP/system/* $SYS
+    cp -Rf $MODDAP/system/* $SYS
     $SPR $ETC/dolby 0 0 0755 0644
     $SP $DEUTFX/$DAPLIB 0 0 0644
     $SP $LIB/libdlbdapstorage.so 0 0 0644
@@ -978,17 +991,32 @@ if [ "$INSTALLATMOS" ]; then
 
       mkdir -p $PAPP/Ax
       mkdir -p $PAPP/AxUI
-      cp $MODDAP/Ax.apk $PAPP/Ax/Ax.apk
-      cp $MODDAP/AxUI.apk $PAPP/AxUI/AxUI.apk
+      cp -f $MODDAP/Ax.apk $PAPP/Ax/Ax.apk
+      cp -f $MODDAP/AxUI.apk $PAPP/AxUI/AxUI.apk
       $SPR $PAPP/Ax 0 0 0755 0644
       $SPR $PAPP/AxUI 0 0 0755 0644
 
+      if [ ! -d "$PAPP/$MFX" ] && [ ! -d "$APP/$MFX" ]; then
+
+        mkdir -p $PAPP/$MFX
+        cp -f $CAPP/$MFXAPK $PAPP/$MFX/$MFXAPK
+        $SPR $PAPP/$MFX 0 0 0755 0644
+
+      fi
+
     else
 
-      cp $MODDAP/Ax.apk $APP/Ax.apk
-      cp $MODDAP/AxUI.apk $APP/AxUI.apk
+      cp -f $MODDAP/Ax.apk $APP/Ax.apk
+      cp -f $MODDAP/AxUI.apk $APP/AxUI.apk
       $SP $APP/Ax.apk 0 0 0644
       $SP $APP/AxUI.apk 0 0 0644
+
+      if [ ! -e "$PAPP/$MFXAPK" ] && [ ! -e "$APP/$MFXAPK" ]; then
+
+        cp -f $CAPP/$MFXAPK $APP/$MFXAPK
+        $SP $APP/$MFXAPK 0 0 0644
+
+      fi
 
     fi
 
@@ -1027,7 +1055,7 @@ if [ "$INSTALLDDPLUS" ]; then
     ui_print " "
 
     rm $SUD/$SERVER
-    cp -R $MODDDP/* $SYS
+    cp -Rf $MODDDP/* $SYS
     $SPR $PAPP/Ds 0 0 0755 0644
     $SPR $PAPP/DsUI 0 0 0755 0644
     $SPR $SYS/dolby 0 0 0755 0644
@@ -1035,6 +1063,14 @@ if [ "$INSTALLDDPLUS" ]; then
     $SP $LIB/libstagefright_soft_ddpdec.so 0 0 0644
     $SP $SUD/permissive 0 0 0700
     restorecon $SUD/permissive
+
+    if [ ! -d "$PAPP/$MFX" ] && [ ! -d "$APP/$MFX" ]; then
+
+      mkdir -p $PAPP/$MFX
+      cp -f $CAPP/$MFXAPK $PAPP/$MFX/$MFXAPK
+      $SPR $PAPP/$MFX 0 0 0755 0644
+
+    fi
 
     for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
@@ -1061,7 +1097,7 @@ if [ "$INSTALLARKAMYS" ]; then
   ui_print " "
   ui_print " "
 
-  cp -R $MODARK/system/* $SYS
+  cp -Rf $MODARK/system/* $SYS
   $SP $DEUTFX/$ARKLIB 0 0 0644
   $SP $FW/com.arkamysaudio.jar 0 0 0644
   $SP $PERM/com.arkamysaudio.xml 0 0 0644
@@ -1069,12 +1105,12 @@ if [ "$INSTALLARKAMYS" ]; then
   if [ "$API" -ge "21" ]; then
 
     mkdir -p $APP/$ARK
-    cp $MODARK/$ARKAPK $APP/$ARK/$ARKAPK
+    cp -f $MODARK/$ARKAPK $APP/$ARK/$ARKAPK
     $SPR $APP/$ARK 0 0 0755 0644
 
   else
 
-    cp $MODARK/$ARKAPK $APP/$ARKAPK
+    cp -f $MODARK/$ARKAPK $APP/$ARKAPK
     $SP $APP/$ARKAPK 0 0 0644
 
   fi
@@ -1102,17 +1138,17 @@ if [ "$INSTALLICE" ]; then
   ui_print " "
   ui_print " "
 
-  cp -R $MODICE/system/* $SYS
+  cp -Rf $MODICE/system/* $SYS
 
   if [ "$API" -ge "21" ]; then
 
     mkdir -p $APP/$ICE
-    cp $MODICE/$ICEAPK $APP/$ICE/$ICEAPK
+    cp -f $MODICE/$ICEAPK $APP/$ICE/$ICEAPK
     $SPR $APP/$ICE 0 0 0755 0644
 
   else
 
-    cp $MODICE/$ICEAPK $APP/$ICEAPK
+    cp -f $MODICE/$ICEAPK $APP/$ICEAPK
     $SP $APP/$ICEAPK 0 0 0644
 
   fi
@@ -1152,7 +1188,7 @@ if [ "$ICECONFIG1" ]; then
   ui_print " "
   ui_print " "
 
-  cp $ICE1 $ETC/icesoundconfig.def
+  cp -f $ICE1 $ETC/icesoundconfig.def
   $SP $ETC/icesoundconfig.def 0 0 0644
 
 elif [ "$ICECONFIG2" ]; then
@@ -1163,7 +1199,7 @@ elif [ "$ICECONFIG2" ]; then
   ui_print " "
   ui_print " "
 
-  cp $ICE2 $ETC/icesoundconfig.def
+  cp -f $ICE2 $ETC/icesoundconfig.def
   $SP $ETC/icesoundconfig.def 0 0 0644
 
 elif [ "$ICECONFIG3" ]; then
@@ -1174,7 +1210,7 @@ elif [ "$ICECONFIG3" ]; then
   ui_print " "
   ui_print " "
 
-  cp $ICE3 $ETC/icesoundconfig.def
+  cp -f $ICE3 $ETC/icesoundconfig.def
   $SP $ETC/icesoundconfig.def 0 0 0644
 
 elif [ "$ICECONFIG4" ]; then
@@ -1185,7 +1221,7 @@ elif [ "$ICECONFIG4" ]; then
   ui_print " "
   ui_print " "
 
-  cp $ICE4 $ETC/icesoundconfig.def
+  cp -f $ICE4 $ETC/icesoundconfig.def
   $SP $ETC/icesoundconfig.def 0 0 0644
 
 elif [ "$ICECONFIG5" ]; then
@@ -1196,7 +1232,7 @@ elif [ "$ICECONFIG5" ]; then
   ui_print " "
   ui_print " "
 
-  cp $ICE5 $ETC/icesoundconfig.def
+  cp -f $ICE5 $ETC/icesoundconfig.def
   $SP $ETC/icesoundconfig.def 0 0 0644
 
 elif [ "$ICECONFIG6" ]; then
@@ -1207,7 +1243,7 @@ elif [ "$ICECONFIG6" ]; then
   ui_print " "
   ui_print " "
 
-  cp $ICE6 $ETC/icesoundconfig.def
+  cp -f $ICE6 $ETC/icesoundconfig.def
   $SP $ETC/icesoundconfig.def 0 0 0644
 
 elif [ "$ICECONFIG0" ]; then
@@ -1230,7 +1266,7 @@ if [ "$ICEPRESETDB" ]; then
   ui_print " "
   ui_print " "
 
-  cp $DEEPBASS $ETC/icesoundpresets.def
+  cp -f $DEEPBASS $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
 elif [ "$ICEPRESETDF" ]; then
@@ -1241,7 +1277,18 @@ elif [ "$ICEPRESETDF" ]; then
   ui_print " "
   ui_print " "
 
-  cp $DEFAULT $ETC/icesoundpresets.def
+  cp -f $DEFAULT $ETC/icesoundpresets.def
+  $SP $ETC/icesoundpresets.def 0 0 0644
+
+elif [ "$ICEPRESETHS" ]; then
+
+  ui_print " "
+  ui_print " "
+  ui_print "Installing HOLYSHIT ICEsound™ Preset..."
+  ui_print " "
+  ui_print " "
+
+  cp -f $HOLYSHIT $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
 elif [ "$ICEPRESETKZ" ]; then
@@ -1252,7 +1299,7 @@ elif [ "$ICEPRESETKZ" ]; then
   ui_print " "
   ui_print " "
 
-  cp $KRAZY $ETC/icesoundpresets.def
+  cp -f $KRAZY $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
 elif [ "$ICEPRESETMV" ]; then
@@ -1263,7 +1310,7 @@ elif [ "$ICEPRESETMV" ]; then
   ui_print " "
   ui_print " "
 
-  cp $MOVIE $ETC/icesoundpresets.def
+  cp -f $MOVIE $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
 elif [ "$ICEPRESETM2" ]; then
@@ -1274,7 +1321,7 @@ elif [ "$ICEPRESETM2" ]; then
   ui_print " "
   ui_print " "
 
-  cp $MUSIC2 $ETC/icesoundpresets.def
+  cp -f $MUSIC2 $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
 elif [ "$ICEPRESETOD" ]; then
@@ -1285,7 +1332,7 @@ elif [ "$ICEPRESETOD" ]; then
   ui_print " "
   ui_print " "
 
-  cp $OUTDOORS $ETC/icesoundpresets.def
+  cp -f $OUTDOORS $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
 elif [ "$ICEPRESETPR" ]; then
@@ -1296,7 +1343,18 @@ elif [ "$ICEPRESETPR" ]; then
   ui_print " "
   ui_print " "
 
-  cp $PURE $ETC/icesoundpresets.def
+  cp -f $PURE $ETC/icesoundpresets.def
+  $SP $ETC/icesoundpresets.def 0 0 0644
+
+elif [ "$ICEPRESETPS" ]; then
+
+  ui_print " "
+  ui_print " "
+  ui_print "Installing PURESHIT ICEsound™ Preset..."
+  ui_print " "
+  ui_print " "
+
+  cp -f $PURESHIT $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
 elif [ "$ICEPRESETWC" ]; then
@@ -1307,7 +1365,7 @@ elif [ "$ICEPRESETWC" ]; then
   ui_print " "
   ui_print " "
 
-  cp $WIDECLARITY $ETC/icesoundpresets.def
+  cp -f $WIDECLARITY $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
 elif [ "$ICEPRESETNO" ]; then
@@ -1330,7 +1388,7 @@ if [ "$INSTALLAM3D" ]; then
   ui_print " "
   ui_print " "
 
-  cp -R $MODAM3D/system/* $SYS
+  cp -Rf $MODAM3D/system/* $SYS
   $SPR $PRESETS 0 0 0755 0644
   $SP $DEUTFX/$AM3DLIB 0 0 0644
 
@@ -1338,15 +1396,15 @@ if [ "$INSTALLAM3D" ]; then
 
     rm -f $SUD/$SERVER
     mkdir -p $PAPP/$AM3D
-    cp $MODAM3D/$AM3DAPK $PAPP/$AM3D/$AM3DAPK
-    cp $CSUD/permissive $SUD/permissive
+    cp -f $MODAM3D/$AM3DAPK $PAPP/$AM3D/$AM3DAPK
+    cp -f $CSUD/permissive $SUD/permissive
     $SPR $PAPP/$AM3D 0 0 0755 0644
     $SP $SUD/permissive 0 0 0700
     restorecon $SUD/permissive
 
   else
 
-    cp $MODAM3D/$AM3DAPK $APP/$AM3DAPK
+    cp -f $MODAM3D/$AM3DAPK $APP/$AM3DAPK
     $SP $APP/$AM3DAPK 0 0 0644
 
   fi
@@ -1373,17 +1431,17 @@ if [ "$INSTALLSONY" ]; then
   ui_print " "
   ui_print " "
 
-  cp -R $SONYMOD/* $SYS
+  cp -Rf $SONYMOD/* $SYS
 
   if [ "$API" -ge "21" ]; then
 
-    cp -R $SONYCUST/app/* $APP
-    cp -R $SONYCUST/priv-app/* $PAPP
+    cp -Rf $SONYCUST/app/* $APP
+    cp -Rf $SONYCUST/priv-app/* $PAPP
 
-    if [ ! -e "$PAPP/$MFX/$MFXAPK" ]; then
+    if [ ! -d "$PAPP/$MFX" ] && [ ! -d "$APP/$MFX" ]; then
 
       mkdir -p $PAPP/$MFX
-      cp $CAPP/$MFXAPK $PAPP/$MFX/$MFXAPK
+      cp -f $CAPP/$MFXAPK $PAPP/$MFX/$MFXAPK
       $SPR $PAPP/$MFX 0 0 0755 0644
 
     fi
@@ -1402,8 +1460,8 @@ if [ "$INSTALLSONY" ]; then
     if [ -d "$LIB64" ]; then
 
       mkdir -p $APP/$DLNA/lib/arm64
-      cp -R $SONYCUST/lib64/* $LIB64
-      cp -R $SONYCUST/arm64/* $APP/$DLNA/lib/arm64
+      cp -Rf $SONYCUST/lib64/* $LIB64
+      cp -Rf $SONYCUST/arm64/* $APP/$DLNA/lib/arm64
       $SPR $APP/$DLNA 0 0 0755 0644
       $SP $LIB64/$DSEE 0 0 0644
       $SP $LIB64/libdlnacommonjni.so 0 0 0644
@@ -1420,23 +1478,23 @@ if [ "$INSTALLSONY" ]; then
 
   else
 
-    if [ ! -e "$PAPP/$MFXAPK" ]; then
+    if [ ! -e "$PAPP/$MFXAPK" ] && [ ! -e "$APP/$MFXAPK" ]; then
 
-      cp $SONYCUST/$MFXAPK $APP/$MFXAPK
+      cp -f $CAPP/$MFXAPK $APP/$MFXAPK
       $SP $APP/$MFXAPK 0 0 0644
 
     fi
 
-    cp $SONYCUST/app/$DLNA/$DLNAPK $APP/$DLNAPK
-    cp $SONYCUST/app/$KARAOKE/$KARAOKEAPK $APP/$KARAOKEAPK
-    cp $SONYCUST/app/$LYRIC/$LYRICAPK $APP/$LYRICAPK
-    cp $SONYCUST/app/$SOUND/$SOUNDAPK $APP/$SOUNDAPK
-    cp $SONYCUST/app/$WIKI/$WIKIAPK $APP/$WIKIAPK
-    cp $SONYCUST/app/$UNHSNTF/$UNHSNTFAPK $APP/$UNHSNTFAPK
-    cp $SONYCUST/app/$YTUBE/$YTUBEAPK $APP/$YTUBEAPK
-    cp $SONYCUST/priv-app/$MUSIC/$MUSICAPK $APP/$MUSICAPK
-    cp $SONYCUST/priv-app/$POD/$PODAPK $APP/$PODAPK
-    cp $SONYCUST/priv-app/$TRKID/$TRKIDAPK $APP/$TRKIDAPK
+    cp -f $SONYCUST/app/$DLNA/$DLNAPK $APP/$DLNAPK
+    cp -f $SONYCUST/app/$KARAOKE/$KARAOKEAPK $APP/$KARAOKEAPK
+    cp -f $SONYCUST/app/$LYRIC/$LYRICAPK $APP/$LYRICAPK
+    cp -f $SONYCUST/app/$SOUND/$SOUNDAPK $APP/$SOUNDAPK
+    cp -f $SONYCUST/app/$WIKI/$WIKIAPK $APP/$WIKIAPK
+    cp -f $SONYCUST/app/$UNHSNTF/$UNHSNTFAPK $APP/$UNHSNTFAPK
+    cp -f $SONYCUST/app/$YTUBE/$YTUBEAPK $APP/$YTUBEAPK
+    cp -f $SONYCUST/priv-app/$MUSIC/$MUSICAPK $APP/$MUSICAPK
+    cp -f $SONYCUST/priv-app/$POD/$PODAPK $APP/$PODAPK
+    cp -f $SONYCUST/priv-app/$TRKID/$TRKIDAPK $APP/$TRKIDAPK
     $SP $APP/$DLNAPK 0 0 0644
     $SP $APP/$KARAOKEAPK 0 0 0644
     $SP $APP/$LYRICAPK 0 0 0644
@@ -1485,12 +1543,12 @@ if [ "$INSTALLESIRA" ]; then
   if [ "$API" -ge "21" ]; then
 
     mkdir -p $PAPP/Esira
-    cp $CAPP/Esira.apk $PAPP/Esira/Esira.apk
+    cp -f $CAPP/Esira.apk $PAPP/Esira/Esira.apk
     $SPR $PAPP/Esira 0 0 0755 0644
 
   else
 
-    cp $CAPP/Esira.apk $APP/Esira.apk
+    cp -f $CAPP/Esira.apk $APP/Esira.apk
     $SP $APP/Esira.apk 0 0 0644
 
   fi
@@ -1508,7 +1566,7 @@ if [ "$INSTALLBEATS" ]; then
   rm -f $SUD/$PROP
   rm -f $SUD/smeejaytee*
 
-  cp -R $TOOLBOX/* $SYS
+  cp -Rf $TOOLBOX/* $SYS
   $SPR $ALSA 0 0 0755 0644
   $SPR $ETC/srs 0 0 0755 0644
   $SP $ETC/asound.conf 0 0 0644
@@ -1547,12 +1605,12 @@ if [ "$INSTALLMFX" ]; then
     if [ "$API" -ge "21" ]; then
 
       mkdir -p $PAPP/$MFX
-      cp $CAPP/$MFXAPK $PAPP/$MFX/$MFXAPK
+      cp -f $CAPP/$MFXAPK $PAPP/$MFX/$MFXAPK
       $SPR $PAPP/$MFX 0 0 0755 0644
 
     else
 
-      cp $CAPP/$MFXAPK $APP/$MFXAPK
+      cp -f $CAPP/$MFXAPK $APP/$MFXAPK
       $SP $APP/$MFXAPK 0 0 0644
 
     fi
@@ -1570,7 +1628,7 @@ if [ "$INSTALLV4AXHIFI" ]; then
   ui_print " "
   
 
-  cp $MODXHIFI/$XHIFILIB $DEUTFX/$XHIFILIB
+  cp -f $MODXHIFI/$XHIFILIB $DEUTFX/$XHIFILIB
   $SP $DEUTFX/$XHIFILIB 0 0 0644
 
   if [ "$API" -ge "21" ]; then
@@ -1585,15 +1643,15 @@ if [ "$INSTALLV4AXHIFI" ]; then
 
     rm -f $SUD/$SERVER
     mkdir -p $PAPP/$XHIFI
-    cp $CSUD/permissive $SUD/permissive
-    cp $MODXHIFI/$XHIFIAPK $PAPP/$XHIFI/$XHIFIAPK
+    cp -f $CSUD/permissive $SUD/permissive
+    cp -f $MODXHIFI/$XHIFIAPK $PAPP/$XHIFI/$XHIFIAPK
     $SPR $PAPP/$XHIFI 0 0 0755 0644
     $SP $SUD/permissive 0 0 0700
     restorecon $SUD/permissive
 
   else
 
-    cp $MODXHIFI/$XHIFIAPK $APP/$XHIFIAPK
+    cp -f $MODXHIFI/$XHIFIAPK $APP/$XHIFIAPK
   
     $SP $APP/$XHIFIAPK 0 0 0644
 
@@ -1631,7 +1689,7 @@ if [ "$BUFFER" ]; then
 
     else
 
-      cp $ETC/$POL $ETC/$POLBAK
+      cp -f $ETC/$POL $ETC/$POLBAK
       $SP $ETC/$POLBAK 0 0 0644
       sed -i '/deep_buffer {/,/}/d' $ETC/$POL
       sed -i '/raw {/,/}/d' $ETC/$POL
@@ -1649,7 +1707,7 @@ if [ "$BUFFER" ]; then
 
     else
 
-      cp $ETC/$AOP $ETC/$AOPBAK
+      cp -f $ETC/$AOP $ETC/$AOPBAK
       $SP $ETC/$POLBAK 0 0 0644
       sed -i '/deep_buffer {/,/}/d' $ETC/$AOP
       sed -i '/raw {/,/}/d' $ETC/$AOP
@@ -1667,7 +1725,7 @@ if [ "$BUFFER" ]; then
 
     else
 
-      cp $VETC/$POL $VETC/$POLBAK
+      cp -f $VETC/$POL $VETC/$POLBAK
       $SP $VETC/$POLBAK 0 0 0644
       sed -i '/deep_buffer {/,/}/d' $VETC/$POL
       sed -i '/raw {/,/}/d' $VETC/$POL
@@ -1684,7 +1742,7 @@ if [ "$BUFFER" ]; then
 
     else
 
-      cp $ETC/$APC $ETC/$APCBAK
+      cp -f $ETC/$APC $ETC/$APCBAK
       $SP $ETC/$APCBAK 0 0 0644
       sed -i 's/deep_buffer,//g' $ETC/$APC
 
@@ -1703,9 +1761,48 @@ if [ "$PERMISSIVE" ]; then
   ui_print " "
 
   rm -f $SUD/$SERVER
-  cp $CSUD/permissive $SUD/permissive
+  cp -f $CSUD/permissive $SUD/permissive
   $SP $SUD/permissive 0 0 0700
   restorecon $SUD/permissive
+
+fi
+
+if [ "$PERMISSIONS" ]; then
+
+  if [ -d "$SYS/lib64" ]; then
+    LIB=$SYS/lib64
+  else
+    LIB=$SYS/lib
+  fi
+
+  set_perm() {
+    uid=$1; gid=$2; mod=$3;
+    shift 3;
+    chown $uid.$gid $*; chown $uid:$gid $*;
+    chmod $mod $*;
+  }
+
+  set_perm_recursive() {
+    uid=$1; gid=$2; dmod=$3; fmod=$4;
+    shift 4;
+    until [ ! "$1" ]; do
+      chown -R $uid.$gid $1; chown -R $uid:$gid $1;
+      find "$1" -type d -exec chmod $dmod {} +;
+      find "$1" -type f -exec chmod $fmod {} +;
+      shift;
+    done;
+  }
+
+  restore_con() { 
+    for i in $SYS/bin/toybox $SYS/toolbox $SYS/bin/toolbox; do
+      LD_LIBRARY_PATH=$LIB $i restorecon -R $*
+    done
+    restorecon -R $*
+  }
+
+  set_perm_recursive 1023 1023 0775 0664 "/data/media"
+  set_perm 1023 1023 0770 "/data/media" "/data/media/0"
+  restore_con /data/media/0
 
 fi
 
@@ -1967,9 +2064,9 @@ if [ "$UNINSTALLBEATS" ]; then
 
   mkdir -p $ALSA
   mkdir -p $ETC/srs
-  cp -R core/usr/share/alsa/* $ALSA
-  cp -R custom/huawei/system/etc/srs/* $ETC/srs
-  cp core/su.d/$PROP $SUD/$PROP
+  cp -Rf core/usr/share/alsa/* $ALSA
+  cp -Rf custom/huawei/system/etc/srs/* $ETC/srs
+  cp -f core/su.d/$PROP $SUD/$PROP
   $SPR $ALSA 0 0 0755 0644
   $SPR $ETC/srs 0 0 0755 0644
   $SP $SUD/$PROP 0 0 0700
