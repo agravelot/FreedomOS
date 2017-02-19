@@ -352,10 +352,6 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.10") == "1")
     ui_print("   Installing Substratum");
 endif;
 
-set_progress(0.955000);
-ui_print("   Installing OxygenOS Bootscreen");
-package_extract_file("tools/splash-stock.bin", "/dev/block/sde17");
-delete("/tmp/tools/splash-stock.bin");
 # -- - APTX - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.12") == "1")
   then
