@@ -117,15 +117,17 @@ pre.install3=If you want to review or change any of your installation settings, 
 gapps.tittle=Google Apps
 gapps.tittle2=Select the Google Apps you want
 
-calculator=Calculator
-calendar=Calendar
+android_pay=<b>Android Pay</b>
+calculator=<b>Google Calculator</b>
+calendar=<b>Google Calendar</b>
 call_log=Google Call Backup
-chrome=Chrome
+chrome=<b>Chrome</b>
 drive=Drive
 duo= Duo
 gmail=Gmail
 gmail_exchange=Gmail Exchange
 google=Google
+google_camera=<b>Google Camera</b>
 hangouts=Hangouts
 maps=Maps
 messenger=Messenger
@@ -137,6 +139,7 @@ play_movies=Play Movies
 setupwizard=Google SetupWizard
 youtube=YouTube
 
+info.android_pay=NFC payments
 info.calculator=0010 1010
 info.calendar=Google Calendar
 info.call_log=Send your call history to Google
@@ -146,6 +149,7 @@ info.duo=Video calling app
 info.gmail=Email client
 info.gmail_exchange=Support exchange for Gmail
 info.google=Google Now
+info.google_camera=Take pictues and movies
 info.hangouts=Instant messaging
 info.maps=Real-time navigation, traffic, transport
 info.messenger=Google SMS/MMS apps.
@@ -163,7 +167,6 @@ apps.tittle=System Apps
 apps.tittle2=Select the system Apps you want
 
 anthal=AntHalService
-android_pay=Android Pay
 basic_dream=Basic Dream
 bt_midi=BT Midi Service
 bt_test=BTtestmode
@@ -273,6 +276,9 @@ fos_wallpapers=FreedomOS wallpapers
 emoji_one=EmojiOne
 google_assistant=Google Assistant
 arise=A.R.I.S.E
+aptx=Install APTX/APTX-HD
+40-wifi=Enable wideband Wifi
+permissive=Enable permissive
 
 info.supersu=SuperSU by Chainfire
 info.xposed=Xposed Installer application only by DVD android
@@ -283,6 +289,9 @@ info.fos_wallpapers=Designed by @badboy47
 info.emoji_one=The Open Emoji Standard
 info.google_assistant=US only
 info.arise=A.R.I.S.E Sound System
+info.aptx=Extra codecs from Qualcomm
+info.40-wifi=40MHz channel width over 2.4GHz
+info.permissive=Repack the kernel with permissive flag (Vulnerable to escalation of privileges)
 
 # -- - THEME - -- #
 theme.tittle=Theme

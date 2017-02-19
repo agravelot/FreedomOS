@@ -204,7 +204,7 @@ info.oem_test=Aplicaciones de prueba OEM
 info.oem_log=Logging
 info.oneplus_camera=Haz fotos y videos
 info.oneplus_gallery=Visualiza fotos y videos
-info.ota=Actualizador de OnePlus 
+info.ota=Actualizador de OnePlus
 info.oneplus_wizard=Asistente de configuración de Google
 info.phase_beam=Fondos de pantalla animados
 info.protips=Consejos
@@ -250,6 +250,9 @@ fos_wallpapers=Fondos de pantalla de FreedomOS
 emoji_one=EmojiOne
 google_assistant=Google Assistant
 arise=A.R.I.S.E
+aptx=Install APTX/APTX-HD
+40-wifi=Enable wideband Wifi
+permissive=Enable permissive
 
 info.supersu=SuperSU de Chainfire
 info.xposed=Instalador Xposed de DVD android
@@ -260,6 +263,9 @@ info.fos_wallpapers=Diseñado por @badboy47
 info.emoji_one=El emoji estándar
 info.google_assistant=US only
 info.arise=A.R.I.S.E Sound System
+info.aptx=Extra codecs from Qualcomm
+info.40-wifi=40MHz channel width over 2.4GHz
+info.permissive=Repack the kernel with permissive flag (Vulnerable to escalation of privileges)
 
 # -- - THEME - -- #
 theme.tittle=Temas
@@ -307,6 +313,7 @@ elementalx=ElementalX
 info.elementalx=Desarrollado por @flar2
 moxie=Moxie Kernel
 info.moxie=Desarrolado por @bedalus
+
 # -- - INSTALLER - -- #
 install=Instalación de FreedomOS
 install.now=Instalando...

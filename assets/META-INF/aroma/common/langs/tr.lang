@@ -273,6 +273,9 @@ fos_wallpapers=FreedomOS duvar kağıtları
 emoji_one=EmojiOne
 google_assistant=Google Asitan
 arise=A.R.I.S.E
+aptx=Install APTX/APTX-HD
+40-wifi=Enable wideband Wifi
+permissive=Enable permissive
 
 info.supersu=SuperSU by Chainfire
 info.xposed=Xposed Installer application only by DVD android
@@ -283,6 +286,9 @@ info.fos_wallpapers=Tasarım @badboy47
 info.emoji_one=Açık Emoji Standardı
 info.google_assistant=Yalnızca ABD
 info.arise=A.R.I.S.E Ses Sistemi
+info.aptx=Extra codecs from Qualcomm
+info.40-wifi=40MHz channel width over 2.4GHz
+info.permissive=Repack the kernel with permissive flag (Vulnerable to escalation of privileges) 
 
 # -- - THEME - -- #
 

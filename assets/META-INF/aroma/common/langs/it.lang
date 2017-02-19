@@ -266,6 +266,9 @@ fos_wallpapers=FreedomOS wallpapers
 emoji_one=EmojiOne
 google_assistant=Google Assistant
 arise=A.R.I.S.E
+aptx=Install APTX/APTX-HD
+40-wifi=Enable wideband Wifi
+permissive=Enable permissive
 
 info.supersu=SuperSU da Chainfire
 info.xposed=Xposed Installer solo applicazione da DVD android
@@ -276,6 +279,9 @@ info.fos_wallpapers=Designed da @badboy47
 info.emoji_one=L’ Open Emoji Standard
 info.google_assistant=US only
 info.arise=A.R.I.S.E Sound System
+info.aptx=Extra codecs from Qualcomm
+info.40-wifi=40MHz channel width over 2.4GHz
+info.permissive=Repack the kernel with permissive flag (Vulnerable to escalation of privileges) 
 
 # -- - THEME - -- #
 theme.tittle=Tema
