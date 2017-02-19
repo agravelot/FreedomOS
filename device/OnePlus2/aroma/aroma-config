@@ -227,7 +227,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "CameraGoogle",     "<b>Google Camera</b>",       "",                      "check",
         "Chrome",     "<b>Google Chrome</b>",       "",                      "check",
         "CloudPrint",     "<b>Google Cloud Print</b>",       "",                      "check",
-        "DialerCombo",     "<b>Google Contacts + Google Dialer</b>",       "<#f00>EXPERIMENTAL, read the FAQ</#>",                      "check",
         "Drive",     "<b>Google Drive</b>",       "",                      "check",
         "ExchangeGoogle",     "<b>Google Exchange Services</b>",       "",                      "check",
         "FaceDetect",     "<b>Face Detection for Media</b>",       "",                      "check",
@@ -310,14 +309,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     prop("gapps.prop", "CloudPrint")=="1"
   then
     appendvar("gapps", "CloudPrint\n");
-  endif;
-
-  if
-    prop("gapps.prop", "DialerCombo")=="1"
-  then
-    appendvar("gapps", "DialerFramework\n");
-    appendvar("gapps", "DialerGoogle\n");
-    appendvar("gapps", "ContactsGoogle\n");
   endif;
 
   if
