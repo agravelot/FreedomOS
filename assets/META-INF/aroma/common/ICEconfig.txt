@@ -1,0 +1,13 @@
+<b>ICEsound configuration</b>
+
+<*> The configuration file for ICEsound is currently available in five different versions.
+
+<*> Not all five will always be compatible with this device.
+
+<*> This is a way to experiment with a different configuration if ICEsound is preventing other signal processing, like ViPER4Arise for example.
+
+<*> ICEconfig 1 is the default configuration.
+
+<*> ICEconfigs 2, 3, 4, 5 and 6 are alternative configurations using different settings to hopefully provide at least one satisfactory configuration.
+
+<*> ICEconfig 0 is yet another alternative: using no ICEsound configuration file at all.

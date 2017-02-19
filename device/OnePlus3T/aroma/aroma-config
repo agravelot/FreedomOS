@@ -556,19 +556,64 @@ then
         arise.prop,
 
         "arise",     "Please select which options you want to include with ARISE",    "",        "group",
-          "install.v4a_2.5.0.5",      "Viper4Android 2.5.0.5",         "",         "check",
-          "install.v4a_2.3.4.0",      "Viper4Android 2.3.4.0",         "",         "check",
-          "install.v4a_profiles",     "V4A Profiles & Kernels",         "",         "check",
-          "install.arkamys",          "Arkamys",                       "",         "check",
-          "install.ICEsound",         "ICEsound",                      "",         "check",
-          "install.sony",             "Sony Music Player",             "Include TrackID",         "check",
-          "delete.deep_buffer",       "Remove deep buffer",            "",         "check",
-          "set.selinux.permissive",   "Force Permissive state",        "",         "check"
+          "install.v4a_2.5.0.5",      "<~v4a_new>",         "<~info.v4a_new>",         "check",
+          "install.v4a_2.3.4.0",      "<~v4a_old>",         "<~info.v4a_old>",         "check",
+          "install.v4a_profiles",     "<~v4a_profiles>",    "",                        "check",
+          "install.arkamys",          "<~arkamys>",         "<~info.arkamys>",         "check",
+          "install.ICEsound",         "<~icesound>",        "<~info.icesound>",        "check",
+          "install.sony",             "<~sony_player>",     "<~info.sony_player>",     "check",
+          "delete.deep_buffer",       "<~rm_deep_buffer>",  "<~info.rm_deep_buffer>",  "check"
     );
+
+    if file_getprop("/tmp/aroma/arise.prop","install.ICEsound") == "1"
+        then
+
+        textbox(
+          "ICEconfigs",
+          "Read Me",
+          "info",
+          readfile_aroma("ICEconfig.txt")
+        );
+
+        form(
+          "ICEsound Configuration Selection",
+          "Please Select:",
+          "icons/personalize",
+          "ICEconfig.prop",
+
+          "use.ICEconfig",     "ICE Configuration selection",        "",                    "group",
+            "0",                    "Delete current ICEconfig and don't use any at all",                  "",        "select",
+            "1",                    "ICEconfig 1",                  "",  "select.selected",
+            "2",                    "ICEconfig 2",                  "",  "select",
+            "3",                    "ICEconfig 3",                  "",  "select",
+            "4",                    "ICEconfig 4",                  "",  "select",
+            "5",                    "ICEconfig 5",                  "",  "select",
+            "6",                    "ICEconfig 6",                  "",  "select"
+        );
+
+        form(
+          "ICEsound Configuration Selection",
+          "Please Select:",
+          "personalize",
+          "ICEpreset.prop",
+
+          "use.ICEsound.preset",     "ICE Configuration selection",        "",                    "group",
+            "DEEPBASS",                    "DEEPBASS",                  "",        "select",
+            "DEFAULT",                    "DEFAULT",                  "",  "select.selected",
+            "HOLYSHIT",                    "HOLYSHIT",                  "",        "select",
+            "KRAZY",                    "KRAZY",                  "",  "select",
+            "MOVIE",                    "MOVIE",                  "",  "select",
+            "MUSIC2",                    "MUSIC2",                  "",  "select",
+            "OUTDOORS",                    "OUTDOORS",                  "",  "select",
+            "PURE",                    "PURE",                  "",  "select",
+            "PURESHIT",                    "PURESHIT",                  "",  "select",
+            "WIDECLARITY",                    "WIDECLARITY",                  "",  "select",
+            "None",                    "None",                  "",  "select"
+        );
+    endif;
 
     resexec("scripts/gen_arise_conf.sh");
 endif;
-
 
 # -- - Pre-Install - -- -#
 ini_set("text_next", "<~install.now>");
