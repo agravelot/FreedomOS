@@ -356,6 +356,12 @@ set_progress(0.955000);
 ui_print("   Installing OxygenOS Bootscreen");
 package_extract_file("tools/splash-stock.bin", "/dev/block/sde17");
 delete("/tmp/tools/splash-stock.bin");
+# -- - APTX - -- #
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.12") == "1")
+  then
+    ui_print("   Adding APTX/APTXHD support");
+    run_program("/tmp/tools/aptx/install.sh");
+endif;
 
 ui_print("   Installing Busybox");
 run_program("/sbin/busybox", "unzip", "/tmp/tools/busybox_installer/busybox.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/busybox_installer");
