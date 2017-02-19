@@ -245,6 +245,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "Speech",     "<b>Offline Speech Files</b>",       "(Required for offline voice dicatation support)",                      "check",
         "TagGoogle",     "<b>Google NFC Tags</b>",       "",                      "check",
         "Talkback",     "<b>Talkback</b>",       "",                      "check",
+        "VRService",     "<b>Google VR Service</b>",       "",                      "check",
         "Wallpapers",     "<b>Wallpapers</b>",       "To Exclude BOTH Wallpapers AND Pixel Launcher <#f00>OR</#> To Include Wallpapers",                      "check",
         "YouTube",     "<b>YouTube</b>",       "",                      "check"
   );

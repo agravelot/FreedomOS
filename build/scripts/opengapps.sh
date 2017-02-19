@@ -44,9 +44,6 @@ function build_opengapps() {
   indic
   japanese
   korean
-  vrservice
-  moviesvrmode
-  photosvrmode
   googlenow
   dmagent
   hangouts
