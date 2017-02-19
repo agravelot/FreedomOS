@@ -359,13 +359,15 @@ if [ ! "$INSTALLDEUT" ] && [ ! -e "$INFO" ]; then
   ui_print "$INFO not found!"
   ui_print " "
   ui_print " "
-  ui_print "This modular installer requires Deuteronomy™ to be installed or to be already installed."
+  ui_print "This modular installer requires the core module to be installed or to be already installed."
   ui_print " "
   ui_print " "
-  ui_print "Refer to $WISHLIST and try again. Once Deuteronomy™ is installed, the following line in $WISHLIST can be edited to remove the value of "true" for future customization without installing the core Deuteronomy™ system again:"
+  ui_print "Refer to $WISHLIST and try again.
+  ui_print " "
+  ui_print "Once the core module is installed, the following line in $WISHLIST should be edited to remove the value of "true" for future customization without installing the core module again."
   ui_print " "
   ui_print " "
-  ui_print "install.deuteronomy=true"
+  ui_print "install.core=true"
   ui_print " "
   ui_print " "
   exit 1
@@ -388,7 +390,7 @@ if [ "$INSTALLDEUT" ]; then
 
   ui_print " "
   ui_print " "
-  ui_print "Installing Core System module..."
+  ui_print "Installing Core module..."
   ui_print " "
   ui_print " "
 
