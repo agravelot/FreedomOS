@@ -307,6 +307,23 @@ info.fos_splash=
 info.oos_splash=
 info.no_splash=
 
+# AUDIO
+v4a_new=Viper4Android 2.5.0.5
+v4a_old=Viper4Android 2.3.4.0
+v4a_profiles=V4A Profiles & Kernels
+arkamys=Arkamys™
+icesound=ICEsound™
+sony_player=Sony Music Player
+rm_deep_buffer=Remove deep_buffer from audio_policy
+
+info.v4a_new=Latest version
+info.v4a_old=For old school users
+info.v4a_profiles=Various audio profiles with kernels
+info.arkamys=Arkamys™ Audio system
+info.icesound=Read carefully the included instructions
+info.sony_player=Include TrackID, Network/DLNA, podcasts
+info.rm_deep_buffer=Will fix most issues, not battery friendly!
+
 # -- - KERNEL - -- #
 
 kernel.tittle=Kernel內核
