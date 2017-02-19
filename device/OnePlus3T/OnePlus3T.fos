@@ -87,7 +87,6 @@ bin/oemlogkit
 bin/WifiLogger_app
 recovery-from-boot.p
 etc/recovery-resource.dat
-app/Calculator
 app/CalendarGoogle
 priv-app/CallLogBackup
 app/Chrome
