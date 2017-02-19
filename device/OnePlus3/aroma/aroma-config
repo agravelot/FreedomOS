@@ -537,6 +537,7 @@ checkbox(
     "<~arise>", "<~info.arise>", 1,
     "<~substratum>", "<~info.substratum>", 0,
     "<~aptx>", "<~info.aptx>", 0,
+    "<~40-wifi>", "<~info.40-wifi>", 0,
     "<~permissive>", "<~info.permissive>", 0
 );
 

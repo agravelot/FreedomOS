@@ -138,4 +138,5 @@ common/save_logs.sh
 common/no_setup.sh
 common/supersu
 oneplus3/splash/oos-bootscreen/splash-stock.bin
+common/wideband_wifi.sh
 "

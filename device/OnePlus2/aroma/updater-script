@@ -339,6 +339,13 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.12") == "1")
     run_program("/tmp/tools/aptx/install.sh");
 endif;
 
+# -- - WIDEBAND WIFI - -- #
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.12") == "1")
+  then
+    ui_print("   Enabling Wideband WiFi");
+    run_program("/tmp/tools/wideband_wifi.sh");
+endif;
+
 ui_print("   Installing Busybox");
 run_program("/sbin/busybox", "unzip", "/tmp/tools/busybox_installer/busybox.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/busybox_installer");
 run_program("/sbin/busybox", "sh", "/tmp/tools/busybox_installer/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/busybox.log", "/tmp/tools/busybox_installer/busybox.zip");
