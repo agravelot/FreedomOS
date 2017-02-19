@@ -163,6 +163,12 @@ run_program("/tmp/tools/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot",
 run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
 run_program("/tmp/cmdline.sh");
 
+# -- - PERMISSIVE FLAG - -- #
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.13") == "1")
+  then
+  run_program("/tmp/cmdline_permissive.sh");
+endif;
+
 # If supersu, patch the kernel without dm-verity patch and forceencryption patch
 # SuperSU will do that
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
