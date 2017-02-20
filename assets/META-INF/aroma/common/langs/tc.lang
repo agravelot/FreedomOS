@@ -273,9 +273,9 @@ fos_wallpapers=FreedomOS桌布
 emoji_one=EmojiOne
 google_assistant=Google Assistant
 arise=A.R.I.S.E
-aptx=Install APTX/APTX-HD
-40-wifi=Enable wideband Wifi
-permissive=Enable permissive
+aptx=安裝APTX/APTX-HD
+40-wifi=啟用wideband無線網路
+permissive=請用寬容模式(permissive)
 
 info.supersu=SuperSU by Chainfire
 info.xposed=Xposed Installer application only by DVD android
@@ -286,9 +286,9 @@ info.fos_wallpapers=Designed by @badboy47
 info.emoji_one=The Open Emoji Standard
 info.google_assistant=美國專用
 info.arise=A.R.I.S.E音效系統
-info.aptx=Extra codecs from Qualcomm
-info.40-wifi=40MHz channel width over 2.4GHz
-info.permissive=Repack the kernel with permissive flag (Vulnerable to escalation of privileges)
+info.aptx=高音質藍牙codec
+info.40-wifi=在2.4GHz上使用40MHz頻寬
+info.permissive=啟用內核的寬容標記 (易導致內核提權)
 
 # -- - THEME - -- #
 theme.tittle=主題
