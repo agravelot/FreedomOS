@@ -1,7 +1,7 @@
 
 # ARISE Sound Systems™
 #
-# Deuteronomy™ 2.81 Modular Installer 20170219
+# Deuteronomy™ 2.82 Modular Installer 20170220
 #
 # "SwanSong™"
 #
@@ -12,6 +12,16 @@
 
 
 Changelog:
+
+
+
+## Deuteronomy™ 2.82 "SwanSong™" -
+
+- deep_buffer removal change for audio_policy_configuration.xml.
+
+- Corrected the entire contents of /tmp being deleted.
+
+##
 
 
 

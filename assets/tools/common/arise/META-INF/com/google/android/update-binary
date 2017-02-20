@@ -229,7 +229,7 @@ INFO=$SYS/ARISE_version.prop
 BUFFER=$(cat $WISHLIST | grep "delete.deep_buffer=true")
 PERMISSIVE=$(cat $WISHLIST | grep "set.selinux.permissive=true")
 PERMISSIONS=$(cat $WISHLIST | grep "repair.sdcard.permissions=true")
-INSTALLDEUT=$(cat $WISHLIST | grep "install.deuteronomy=true")
+INSTALLCORE=$(cat $WISHLIST | grep "install.core=true")
 INSTALLESIRA=$(cat $WISHLIST | grep "install.esira=true")
 INSTALLBEATS=$(cat $WISHLIST | grep "install.ToolBox=true")
 INSTALLV4A2340=$(cat $WISHLIST | grep "install.v4a_2.3.4.0=true")
@@ -324,9 +324,7 @@ ui_print " "
 ui_print " "
 ui_print " "
 
-rm -rf /tmp/*
-rm -f /tmp/*
-
+rm -rf $ARISE
 mkdir $ARISE
 cd $ARISE
 unzip -o "$ZIP"
@@ -352,7 +350,7 @@ if [ ! -e "$WISHLIST" ]; then
 
 fi
 
-if [ ! "$INSTALLDEUT" ] && [ ! -e "$INFO" ]; then
+if [ ! "$INSTALLCORE" ] && [ ! -e "$INFO" ]; then
 
   ui_print " "
   ui_print " "
@@ -362,7 +360,7 @@ if [ ! "$INSTALLDEUT" ] && [ ! -e "$INFO" ]; then
   ui_print "This modular installer requires the core module to be installed or to be already installed."
   ui_print " "
   ui_print " "
-  ui_print "Refer to $WISHLIST and try again.
+  ui_print "Refer to $WISHLIST and try again."
   ui_print " "
   ui_print "Once the core module is installed, the following line in $WISHLIST should be edited to remove the value of "true" for future customization without installing the core module again."
   ui_print " "
@@ -1740,13 +1738,13 @@ if [ "$BUFFER" ]; then
 
     if [ -e "$ETC/$APCBAK" ]; then
 
-      sed -i 's/deep_buffer,//g' $ETC/$APC
+      sed -i '/Speaker/{n;s/deep_buffer,//;}' $ETC/$APC
 
     else
 
       cp -f $ETC/$APC $ETC/$APCBAK
       $SP $ETC/$APCBAK 0 0 0644
-      sed -i 's/deep_buffer,//g' $ETC/$APC
+      sed -i '/Speaker/{n;s/deep_buffer,//;}' $ETC/$APC
 
     fi
 

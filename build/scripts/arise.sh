@@ -28,7 +28,7 @@ function build_arise() {
 
   echo ">> Building ARISE" | tee -a ${build_log}
   cd ${tmp_root}/tools/arise/ >> ${build_log} 2>&1
-  sed -i '/\/tmp\/\*/d' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
+  #sed -i '/\/tmp\/\*/d' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
   sed -i '/exit 0/d' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
   sed -i '/sleep/d' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
 
