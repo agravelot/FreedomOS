@@ -275,7 +275,7 @@ google_assistant=Google Assistant
 arise=A.R.I.S.E
 aptx=安装APTX/APTX-HD
 40-wifi=启用wideband无线网路
-permissive=请用宽容模式(permissive)
+permissive=启用宽容模式(permissive)
 
 info.supersu=SuperSU by Chainfire
 info.xposed=Xposed Installer application only by DVD android
