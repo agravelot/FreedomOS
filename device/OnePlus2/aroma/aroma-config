@@ -164,22 +164,14 @@ ini_set("text_next", "<~text_next>");
 selectbox(
   "<~install_mod.tittle>", "<~install_mod.tittle2>", "@default", "install_mod.prop",
 
-  "<~gapps.tittle>", "", 2,
-    "<~gapps_yes>", "<~info.gapps_yes>", 1,
-    "<~gapps_no>", "<~info.gapps_no>", 0,
   "<~addon.tittle>", "", 2,
     "<~addon_yes>", "<~info.addon_yes>", 0,
     "<~addon_no>", "<~info.addon_no>", 1,
-  "<~firmware.tittle>", "", 2,
-#    "<~fw_mm>", "<~info.fw_mm>", 0,
-    "<~fw_n>", "<~info.fw_n>", 1,
   "<~passwordfix.tittle>", "", 2,
     "<~passwordfix_yes>", "<~info.passwordfix_yes>", 0,
     "<~passwordfix_no>", "<~info.passwordfix_no>", 1
 );
 
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
-  then
   ##############################################
   # Load Previous Choices
   ##############################################
@@ -471,12 +463,11 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     "@welcome",
     "Save Choices", "1", "saveselections"
   );
-  if
+    if
       getvar("saveselections")=="1"
     then
       resexec("scripts/tools.sh", "save");
-  endif;
-endif;
+    endif;
 
 # -- - SYSTEM APPS - -- #
 form(

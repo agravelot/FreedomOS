@@ -15,16 +15,6 @@
 #  Author : Nevax
 #
 
-#ui_print("    ______                   __              ");
-#ui_print("   / ____/_______  ___  ____/ /___  ____ ___ ");
-#ui_print("  / /_  / ___/ _ \/ _ \/ __  / __ \/ __ `__ \");
-#ui_print(" / __/ / /  /  __/  __/ /_/ / /_/ / / / / / /");
-#ui_print("/_/___/_/___//__/\___/\____/\____/_/ /_/ /_/ ");
-#ui_print("  / __ \/ ___/                               ");
-#ui_print(" / / / /\__ \    facebook.com/nevaxtuto      ");
-#ui_print("/ /_/ /___/ /   youtube.com/nevaxtuto        ");
-#ui_print("\____//____/   twitter.com/nevax07           ");
-
 set_progress(0.000000);
 # -- - ASSERT - -- #
 getprop("ro.display.series") == "!assert!" ||
@@ -48,7 +38,7 @@ ifelse(is_mounted("/data"), run_program("/tmp/tools/busybox", "umount", "/data")
 
 # -- - BACKUP ADDON.D - -- #
 
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.0") == "1")
   then
   set_progress(0.032);
   ui_print("   Mounting System & Data");
@@ -66,7 +56,6 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
   ui_print("   Unmounting System");
   ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 endif;
-
 
 # -- - CLEAN SYSTEM - -- #
 set_progress(0.04);
@@ -108,26 +97,26 @@ run_program("/tmp/tools/busybox", "mount", "/system");
 
 # -- - FIRMWARES - -- #
 
-  set_progress(0.580000);
-  ui_print("   Extracting Radio");
-  package_extract_file("RADIO/static_nvbk.bin", "/dev/block/bootdevice/by-name/oem_stanvbk");
-  ui_print("   Extracting Firmware");
-  package_extract_file("firmware-update/cmnlib64.mbn", "/dev/block/bootdevice/by-name/cmnlib64");
-  package_extract_file("firmware-update/cmnlib.mbn", "/dev/block/bootdevice/by-name/cmnlib");
-  package_extract_file("firmware-update/hyp.mbn", "/dev/block/bootdevice/by-name/hyp");
-  package_extract_file("firmware-update/pmic.elf", "/dev/block/bootdevice/by-name/pmic");
-  package_extract_file("firmware-update/tz.mbn", "/dev/block/bootdevice/by-name/tz");
-  package_extract_file("firmware-update/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/aboot");
-  package_extract_file("firmware-update/devcfg.mbn", "/dev/block/bootdevice/by-name/devcfg");
-  package_extract_file("firmware-update/keymaster.mbn", "/dev/block/bootdevice/by-name/keymaster");
-  package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/xbl");
-  package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpm");
-  package_extract_file("firmware-update/NON-HLOS.bin", "/dev/block/bootdevice/by-name/modem");
-  package_extract_file("firmware-update/adspso.bin", "/dev/block/bootdevice/by-name/dsp");
-  package_extract_file("firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
+set_progress(0.580000);
+ui_print("   Extracting Radio");
+package_extract_file("RADIO/static_nvbk.bin", "/dev/block/bootdevice/by-name/oem_stanvbk");
+ui_print("   Extracting Firmware");
+package_extract_file("firmware-update/cmnlib64.mbn", "/dev/block/bootdevice/by-name/cmnlib64");
+package_extract_file("firmware-update/cmnlib.mbn", "/dev/block/bootdevice/by-name/cmnlib");
+package_extract_file("firmware-update/hyp.mbn", "/dev/block/bootdevice/by-name/hyp");
+package_extract_file("firmware-update/pmic.elf", "/dev/block/bootdevice/by-name/pmic");
+package_extract_file("firmware-update/tz.mbn", "/dev/block/bootdevice/by-name/tz");
+package_extract_file("firmware-update/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/aboot");
+package_extract_file("firmware-update/devcfg.mbn", "/dev/block/bootdevice/by-name/devcfg");
+package_extract_file("firmware-update/keymaster.mbn", "/dev/block/bootdevice/by-name/keymaster");
+package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/xbl");
+package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpm");
+package_extract_file("firmware-update/NON-HLOS.bin", "/dev/block/bootdevice/by-name/modem");
+package_extract_file("firmware-update/adspso.bin", "/dev/block/bootdevice/by-name/dsp");
+package_extract_file("firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
 
 # -- - Restoring Addon.d - -- #
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.0") == "1")
   then
   ui_print("   Restoring your addon.d");
   run_program("/tmp/tools/addon/backuptool.sh", "restore");
@@ -138,8 +127,8 @@ delete_recursive("/tmp/tools/addon/");
 # -- - pin/patern fix - -- #
 if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
-    set_metadata("/tmp/clean.sh", "uid", 0, "gid", 0, "mode", 0777);
-    run_program("/tmp/clean.sh");
+    set_metadata("/tmp/fix_passwd.sh", "uid", 0, "gid", 0, "mode", 0777);
+    run_program("/tmp/fix_passwd.sh");
     ui_print("   Fixing rom pin/pattern");
 endif;
 
@@ -154,6 +143,7 @@ package_extract_dir("tools/kernel/boot", "/tmp");
 
 run_program("/tmp/tools/busybox", "echo", "DEBUG: Set permissions");
 set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata("/tmp/cmdline_permissive.sh", "uid", 0, "gid", 0, "mode", 0777);
 set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "mode", 0777);
 set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "mode", 0777);
 set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "mode", 0777);
@@ -356,29 +346,18 @@ ui_print(" ");
 run_program("/tmp/tools/apps_remover.sh", "sapps.prop", "1");
 
 # -- - OPENGAPPS - -- #
-set_progress(0.940000);
+ui_print("@Installing Open GApps");
 ui_print(" ");
-
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "2")
-  then
-    run_program("/tmp/tools/no_setup.sh");
-endif;
-
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
-  then
-  ui_print("@Installing Open GApps");
-  ui_print(" ");
-  delete_recursive("/tmp/opengapps");
-  #run_program("/tmp/tools/opengapps/install.sh");
-  run_program("/tmp/tools/busybox", "mkdir", "/tmp/opengapps");
-  run_program("/tmp/tools/busybox", "unzip", "/tmp/tools/opengapps/opengapps.zip", "META-INF/com/google/android/*", "-d", "/tmp/opengapps");
-  #run_program("mv", "/tmp/tools/opengapps/opengapps.zip", "/tmp/ariopengappsse/opengapps.zip");
-  package_extract_dir("tools/opengapps", "/tmp/opengapps");
-  set_metadata("/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "uid", 0, "gid", 0, "mode", 0777);
-  set_metadata_recursive("/tmp/opengapps", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
-  run_program("/sbin/busybox", "sh", "/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "dummy", "1", "/tmp/opengapps/opengapps.zip");
-  run_program("/tmp/tools/busybox", "mount", "/system");
-endif;
+delete_recursive("/tmp/opengapps");
+#run_program("/tmp/tools/opengapps/install.sh");
+run_program("/tmp/tools/busybox", "mkdir", "/tmp/opengapps");
+run_program("/tmp/tools/busybox", "unzip", "/tmp/tools/opengapps/opengapps.zip", "META-INF/com/google/android/*", "-d", "/tmp/opengapps");
+#run_program("mv", "/tmp/tools/opengapps/opengapps.zip", "/tmp/ariopengappsse/opengapps.zip");
+package_extract_dir("tools/opengapps", "/tmp/opengapps");
+set_metadata("/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata_recursive("/tmp/opengapps", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
+run_program("/sbin/busybox", "sh", "/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "dummy", "1", "/tmp/opengapps/opengapps.zip");
+run_program("/tmp/tools/busybox", "mount", "/system");
 
 set_progress(0.990000);
 ui_print(" ");
@@ -387,4 +366,4 @@ ui_print(" ");
 ui_print("Saving log in /sdcard/FreedomOS_log_installer.tar.gz");
 run_program("/tmp/tools/save_logs.sh");
 set_progress(1);
-ui_print(" ");
+ui_print("");

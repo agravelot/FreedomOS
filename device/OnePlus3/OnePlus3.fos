@@ -102,7 +102,7 @@ vendor/etc/in_apps
 "
 
 # Add a secondary firmware files, like that it can be installed.
-PATCH_FIRMWARE=3.2.8
+PATCH_FIRMWARE=""
 
 # Set the files/folder you want to add to your system partition.
 # The files are in the assets/system/$TARGET_ARCH/
@@ -126,13 +126,13 @@ common/aptx
 common/arise
 common/clean.sh
 common/fonts
+common/fix_passwd.sh
 common/google_dns.sh
 common/google_assistant.sh
 common/hosts
 common/kernel
 common/log_folder.sh
 common/save_logs.sh
-common/no_setup.sh
 common/supersu
 common/wideband_wifi.sh
 "
