@@ -99,6 +99,12 @@ app/Music2
 app/YouTube
 app/NFCTestMode 
 vendor/etc/in_apps
+priv-app/SetupWizard
+priv-app/GmsCore
+etc/permissions/com.google.android.maps.xml
+etc/permissions/com.google.android.media.effects.xml
+etc/permissions/com.google.widevine.software.drm.xml
+tts/
 "
 
 # Add a secondary firmware files, like that it can be installed.
