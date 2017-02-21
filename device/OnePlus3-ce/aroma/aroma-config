@@ -547,7 +547,8 @@ then
           "install.arkamys",          "<~arkamys>",         "<~info.arkamys>",         "check",
           "install.ICEsound",         "<~icesound>",        "<~info.icesound>",        "check",
           "install.sony",             "<~sony_player>",     "<~info.sony_player>",     "check",
-          "delete.deep_buffer",       "<~rm_deep_buffer>",  "<~info.rm_deep_buffer>",  "check"
+          "delete.deep_buffer",       "<~rm_deep_buffer>",  "<~info.rm_deep_buffer>",  "check",
+          "repair.sdcard.permissions","<~sdcard_perm>",     "<~info.sdcard_perm>",     "check"
     );
 
     if file_getprop("/tmp/aroma/arise.prop","install.ICEsound") == "1"
