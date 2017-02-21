@@ -288,7 +288,7 @@ info.google_assistant=Yalnızca ABD
 info.arise=A.R.I.S.E Ses Sistemi
 info.aptx=Extra codecs from Qualcomm
 info.40-wifi=40MHz channel width over 2.4GHz
-info.permissive=Repack the kernel with permissive flag (Vulnerable to escalation of privileges) 
+info.permissive=Repack the kernel with permissive flag (Vulnerable to privilege escalation) 
 
 # -- - THEME - -- #
 
