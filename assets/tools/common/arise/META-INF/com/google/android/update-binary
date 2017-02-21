@@ -384,7 +384,7 @@ rm -f $APP/$AFXAPK
 rm -f $APP/$DSPAPK
 rm -f $SDCARD/arise_addon.prop
 
-if [ "$INSTALLDEUT" ]; then
+if [ "$INSTALLCORE" ]; then
 
   ui_print " "
   ui_print " "

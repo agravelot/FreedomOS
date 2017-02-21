@@ -1,7 +1,7 @@
 
 # ARISE Sound Systems™
 #
-# Deuteronomy™ 2.82 Modular Installer 20170220
+# Deuteronomy™ 2.83-1 Modular Installer 20170220
 #
 # "SwanSong™"
 #
@@ -12,6 +12,16 @@
 
 
 Changelog:
+
+
+
+## Deuteronomy™ 2.83-1 "SwanSong™" -
+
+- New and improved ARISE themed AM3D ZIRENE® apk thanks to contributor and friend D rey.
+
+- Removed setprop entry breaking camera functions for some.
+
+##
 
 
 

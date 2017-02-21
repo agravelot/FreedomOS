@@ -25,7 +25,6 @@ setprop media.stagefright.enable-http true
 setprop media.stagefright.enable-aac true
 setprop media.stagefright.enable-qcp true
 setprop media.stagefright.enable-scan true
-setprop qcom.hw.aac.encoder true
 setprop mm.enable.smoothstreaming true
 setprop av.debug.disable.pers.cache true
 setprop mmp.enable.3g2 true
