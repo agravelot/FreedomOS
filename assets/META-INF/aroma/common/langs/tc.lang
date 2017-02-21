@@ -316,19 +316,19 @@ info.no_splash=
 # AUDIO
 v4a_new=Viper4Android 2.5.0.5
 v4a_old=Viper4Android 2.3.4.0
-v4a_profiles=V4A Profiles & Kernels
+v4a_profiles=V4A音效配置與音效內核
 arkamys=Arkamys™
 icesound=ICEsound™
-sony_player=Sony Music Player
-rm_deep_buffer=Remove deep_buffer from audio_policy
+sony_player=Sony音樂播放器
+rm_deep_buffer=將deep_buffer從audio_policy中移除
 
-info.v4a_new=Latest version
-info.v4a_old=For old school users
-info.v4a_profiles=Various audio profiles with kernels
-info.arkamys=Arkamys™ Audio system
-info.icesound=Read carefully the included instructions
-info.sony_player=Include TrackID, Network/DLNA, podcasts
-info.rm_deep_buffer=Will fix most issues, not battery friendly!
+info.v4a_new=最新版本
+info.v4a_old=給念舊的使用者們
+info.v4a_profiles=多種音效配置與音效內核
+info.arkamys=Arkamys™ 音效系統
+info.icesound=請仔細地閱讀內附的指示
+info.sony_player=內含TrackID, Network/DLNA, podcasts
+info.rm_deep_buffer=這會解決多數的問題, 不過會增加耗電量!
 
 # -- - KERNEL - -- #
 
