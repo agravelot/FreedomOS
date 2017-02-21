@@ -313,21 +313,21 @@ no_splash=使用目前开机画面
 # -- - AUDIO - -- #
 v4a_new=Viper4Android 2.5.0.5
 v4a_old=Viper4Android 2.3.4.0
-v4a_profiles=V4A Profiles & Kernels
+v4a_profiles=V4A音效配置与音效内核
 arkamys=Arkamys™
 icesound=ICEsound™
-sony_player=Sony Music Player
-rm_deep_buffer=Remove deep_buffer from audio_policy
-sdcard_perm=Fix sdcard permisisons
+sony_player=Sony音乐播放器
+rm_deep_buffer=将deep_buffer从audio_policy中移除
+sdcard_perm=修復sdcard权限
 
-info.v4a_new=Latest version
-info.v4a_old=For old school users
-info.v4a_profiles=Various audio profiles with kernels
-info.arkamys=Arkamys™ Audio system
-info.icesound=Read carefully the included instructions
-info.sony_player=Include TrackID, Network/DLNA, podcasts
-info.rm_deep_buffer=Will fix most issues, not battery friendly!
-info.sdcard_perm=Can add 3 - 5 minutes to the recovery session
+info.v4a_new=最新版本
+info.v4a_old=给念旧的使用者们
+info.v4a_profiles=多种音效配置与音效内核
+info.arkamys=Arkamys™ 音效系统
+info.icesound=请仔细地阅读内附的指示
+info.sony_player=内含TrackID, Network/DLNA, podcasts
+info.rm_deep_buffer=这会解决多数的问题, 不过会增加耗电量!
+info.sdcard_perm=过程约需三到五分钟完成
 
 # -- - KERNEL - -- #
 kernel.tittle=Kernel内核
