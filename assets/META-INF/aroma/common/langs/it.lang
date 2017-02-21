@@ -281,7 +281,7 @@ info.google_assistant=US only
 info.arise=A.R.I.S.E Sound System
 info.aptx=Extra codecs from Qualcomm
 info.40-wifi=40MHz channel width over 2.4GHz
-info.permissive=Repack the kernel with permissive flag (Vulnerable to privilege escalation) 
+info.permissive=Repack the kernel with permissive flag (Vulnerable to privilege escalation)
 
 # -- - THEME - -- #
 theme.tittle=Tema
@@ -302,11 +302,7 @@ fos_splash=FreedomOS Bootscreen
 oos_splash=OxygenOS Bootscreen
 no_splash=Lascia la tua attuale Bootscreen
 
-info.fos_splash=
-info.oos_splash=
-info.no_splash=
-
-# AUDIO
+# -- - AUDIO - -- #
 v4a_new=Viper4Android 2.5.0.5
 v4a_old=Viper4Android 2.3.4.0
 v4a_profiles=V4A Profiles & Kernels
@@ -314,6 +310,7 @@ arkamys=Arkamys™
 icesound=ICEsound™
 sony_player=Sony Music Player
 rm_deep_buffer=Remove deep_buffer from audio_policy
+sdcard_perm=Fix sdcard permisisons
 
 info.v4a_new=Latest version
 info.v4a_old=For old school users
@@ -322,10 +319,9 @@ info.arkamys=Arkamys™ Audio system
 info.icesound=Read carefully the included instructions
 info.sony_player=Include TrackID, Network/DLNA, podcasts
 info.rm_deep_buffer=Will fix most issues, not battery friendly!
-
+info.sdcard_perm=Can add 3 - 5 minutes to the recovery session
 
 # -- - KERNEL - -- #
-
 kernel.tittle=Kernel
 kernel.tittle2=Seleziona il tuo kernel.
 kernel_stock=Stock Kernel

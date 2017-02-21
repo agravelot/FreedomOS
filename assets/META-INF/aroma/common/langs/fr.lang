@@ -296,7 +296,7 @@ fos_splash=écran d'allumage FreedomOS
 oos_splash=écran d'allumage OxygenOS
 no_splash=Laisse votre actuel
 
-# AUDIO
+# -- - AUDIO - -- #
 v4a_new=Viper4Android 2.5.0.5
 v4a_old=Viper4Android 2.3.4.0
 v4a_profiles=V4A Profiles & Kernels
@@ -304,6 +304,7 @@ arkamys=Arkamys™
 icesound=ICEsound™
 sony_player=Lecteur de musique Sony
 rm_deep_buffer=Retire deep_buffer de l'audio_policy
+sdcard_perm=Corrige les permissions sdcard
 
 info.v4a_new=Dernière verison
 info.v4a_old=Pour les utilisateurs old school
@@ -311,10 +312,10 @@ info.v4a_profiles=Multiple Prifiles V4A et Kernels
 info.arkamys=Arkamys™ Audio system (Made in France)
 info.icesound=Lisez avec précaution les instructions suivante
 info.sony_player=Comprend TrackID, Réseau/DLNA, podcasts
-info.rm_deep_buffer=Devrait corriger la plupart des problèmes, utilisez DERNIER RECOURS!
+info.rm_deep_buffer=Devrait corriger la plupart des problèmes, à utiliser en DERNIER RECOURS!
+info.sdcard_perm=Ajoute en 3 à 5 minutes de temps d'installation
 
 # -- - KERNEL - -- #
-
 kernel.tittle=Kernel
 kernel.tittle2=Selectionnez votre kernel.
 kernel_stock=Stock Kernel
