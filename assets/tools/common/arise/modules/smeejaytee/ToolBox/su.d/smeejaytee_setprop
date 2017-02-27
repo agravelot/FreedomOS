@@ -149,8 +149,6 @@ setprop htc.audio.beats.config 1
 setprop htc.audio.beats.support2v 1
 setprop htc.audio.lpa.a2dp 1
 setprop htc.audio.alc.enable 1
-setprop htc.audio.effect.dolby 1
 setprop htc.audio.effect.srs 1
 #
-
 exit 0

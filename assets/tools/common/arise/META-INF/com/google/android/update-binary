@@ -138,7 +138,8 @@ OMNI=libomni_directional_algoclient_jni.so
 SWS=libswsprocessing.so
 SWS2=libsws2processing.so
 SWS3=libsws3processing.so
-FFMPG=libstagefright_soft_ffmpegaudiodec_hw.so
+FFMPGAUD=libstagefright_soft_ffmpegaudiodec_hw.so
+FFMPGVID=libstagefright_soft_ffmpegvideodec_hw.so
 MEDIADIRECT=libstagefright_hwextendedmediadirect.so
 ALGOJAR=com.huawei.audioalgo.jar
 TDSP=libTarsosDSP.so
@@ -149,11 +150,8 @@ STA=libstlport_sta.so
 STLSH=libstlport_shared.so
 STAPROXY=libsta_lib_third_party_staproxy_sta_proxy_loader_gyp.so
 STAGYP=libsta_lib_third_party_libsta_lib_libsta_gyp.so
-DEUTFX=$SYS/lib/soundfx/deuteronomy
-DEUTFX64=$SYS/lib64/soundfx/deuteronomy
-CLIB64=custom/lib64
-CSUD=custom/su.d
 TOOLBOX=modules/smeejaytee/ToolBox
+SMEEJAY=modules/smeejaytee
 PROFILES=modules/profiles/ViPER4Android
 MODAM3D=modules/am3d
 MODDAP=modules/dolby/dap_r6.5
@@ -170,7 +168,7 @@ MODICE=modules/ICE/ICEsound
 ICE=ICEsoundService
 ICEAPK=ICEsoundService.apk
 ICELIB=libicepower.so
-EAGLE=libeagle.so
+ICEPOWER=$DEUTFX/libicepower.so
 AM3D=AM3DZirene
 AM3DAPK=AM3DZirene.apk
 AM3DLIB=libam3daudioenhancement.so
@@ -214,6 +212,7 @@ DSEE=libsonydseehxwrapper.so
 DSX=dsx_param_file.bin
 AEC=audio_effects.conf
 HTC=htc_audio_effects.conf
+HTCBAK=htc_audio_effects.conf.backup
 AEV=audio_effects_vendor.conf
 AOE=audio_offload_effects.conf
 POL=audio_policy.conf
@@ -222,6 +221,8 @@ APC=audio_policy_configuration.xml
 APCBAK=audio_policy_configuration.xml.backup
 AOP=audio_output_policy.conf
 AOPBAK=audio_output_policy.conf.backup
+ACC=$SYS/customize/ACC/default.xml
+ACCBAK=$SYS/customize/ACC/default.xml.backup
 PROP=arisesound_setprop
 SERVER=arisesoundserver
 WISHLIST=$SDCARD/arise_customize.prop
@@ -264,7 +265,7 @@ ICEPRESETMV=$(cat $WISHLIST | grep "use.ICEsound.preset=MOVIE")
 ICEPRESETM2=$(cat $WISHLIST | grep "use.ICEsound.preset=MUSIC2")
 ICEPRESETOD=$(cat $WISHLIST | grep "use.ICEsound.preset=OUTDOORS")
 ICEPRESETPR=$(cat $WISHLIST | grep "use.ICEsound.preset=PURE")
-ICEPRESETPS=$(cat $WISHLIST | grep "use.ICEsound.preset=PURESHIT")
+ICEPRESETPS=$(cat $WISHLIST | grep "use.ICEsound.preset=(PURE)SHIT")
 ICEPRESETWC=$(cat $WISHLIST | grep "use.ICEsound.preset=WIDECLARITY")
 ICEPRESETNO=$(cat $WISHLIST | grep "use.ICEsound.preset=None")
 DEEPBASS=modules/ICE/ICEpreset/DEEPBASS/icesoundpresets.def
@@ -293,6 +294,7 @@ X86=$(cat $BUILDPROP | grep "ro.product.cpu.abi=x86")
 X8664=$(cat $BUILDPROP | grep "ro.product.cpu.abi=x86_64")
 ANGLER=$(cat $BUILDPROP | grep "ro.product.name=angler")
 SONY=$(cat $BUILDPROP | grep "ro.product.brand=Sony")
+OP3=$(cat $BUILDPROP | grep "ro.build.product=OnePlus3")
 API=$(cat $BUILDPROP | grep "ro.build.version.sdk=" | dd bs=1 skip=21 count=2)
 SP=set_perm
 SPR=set_perm_recursive
@@ -406,7 +408,16 @@ if [ "$INSTALLCORE" ]; then
 
   if [ -f "$ETC/$HTC" ]; then
 
-    cp -f $CAFX/htc/$HTC $ETC/$HTC
+    if [ -e "$SFX/libadaptsoundse.so" ]; then
+
+      cp -f $CAFX/htc/bolt/$HTC $ETC/$HTC
+
+    else
+
+      cp -f $CAFX/htc/$HTC $ETC/$HTC
+
+    fi
+
     $SP $ETC/$HTC 0 0 0644
 
   fi
@@ -467,6 +478,7 @@ if [ "$INSTALLCORE" ]; then
       $SP $LIB64/libaudio-custom.so 0 0 0644
       $SP $LIB64/libaudioalgoservice_jni.so 0 0 0644
       $SP $LIB64/libaudiodevarb.so 0 0 0644
+      $SP $LIB64/libaudioflinger.huawei.so 0 0 0644
       $SP $LIB64/libaudiotestalgo.so 0 0 0644
       $SP $LIB64/libbundlewrapper.so 0 0 0644
       $SP $LIB64/libDoreso.so 0 0 0644
@@ -483,7 +495,9 @@ if [ "$INSTALLCORE" ]; then
       $SP $LIB64/libreverbwrapper.so 0 0 0644
       $SP $LIB64/$SRS 0 0 0644
       $SP $LIB64/libstagefright_soft_dtsdec.so 0 0 0644
-      $SP $LIB64/$FFMPG 0 0 0644
+      $SP $LIB64/libstagefright_soft_ffmpegaudiodec.so 0 0 0644
+      $SP $LIB64/$FFMPGAUD 0 0 0644
+      $SP $LIB64/$FFMPGVID 0 0 0644
       $SP $LIB64/$MEDIADIRECT 0 0 0644
       $SP $LIB64/$SWS 0 0 0644
       $SP $LIB64/$SWS2 0 0 0644
@@ -501,11 +515,14 @@ if [ "$INSTALLCORE" ]; then
     $SPR $ETC/sws 0 0 0755 0644
     $SPR $HUAWEIFX 0 0 0755 0644
     $SP $BIN/dts_hpx_service 0 2000 0755
+    chown system.audio $BIN/dts_hpx_service
+    chcon object_r:dtshpxservice_service:s0 $BIN/dts_hpx_service
     $SP $FW/$ALGOJAR 0 0 0644
     $SP $LIB/lib_k3_ffmpeg.so 0 0 0644
     $SP $LIB/libaudio-custom.so 0 0 0644
     $SP $LIB/libaudioalgoservice_jni.so 0 0 0644
     $SP $LIB/libaudiodevarb.so 0 0 0644
+    $SP $LIB/libaudioflinger.huawei.so 0 0 0644
     $SP $LIB/libaudiotestalgo.so 0 0 0644
     $SP $LIB/libbundlewrapper.so 0 0 0644
     $SP $LIB/libDoreso.so 0 0 0644
@@ -531,7 +548,9 @@ if [ "$INSTALLCORE" ]; then
     $SP $LIB/libsdlaudiodriver.so 0 0 0644
     $SP $LIB/$SRS 0 0 0644
     $SP $LIB/libstagefright_soft_dtsdec.so 0 0 0644
-    $SP $LIB/$FFMPG 0 0 0644
+    $SP $LIB/libstagefright_soft_ffmpegaudiodec.so 0 0 0644
+    $SP $LIB/$FFMPGAUD 0 0 0644
+    $SP $LIB/$FFMPGVID 0 0 0644
     $SP $LIB/$MEDIADIRECT 0 0 0644
     $SP $LIB/$SWS 0 0 0644
     $SP $LIB/$SWS2 0 0 0644
@@ -680,7 +699,7 @@ if [ "$INSTALLCORE" ]; then
       cp -f $CARM64/libaudio-ftm.so $LIB64/libaudio-ftm.so
       cp -f $CARM64/libaudioom.so $LIB64/libaudioom.so
       cp -f $CARM64/$APSS $LIB64/$APSS
-      cp -f $CARM64/libmars-parameter.so $LIB64/libmars-parameter.so
+      cp -f $CARM64/libmars-audioparams.so $LIB64/libmars-audioparams.so
       cp -f $CARM64/libmars-service.so $LIB64/libmars-service.so
       cp -f $CARM64/libmars-service_jni.so $LIB64/libmars-service_jni.so
       cp -f $CARM64/$SOMCAV $LIB64/$SOMCAV
@@ -726,6 +745,8 @@ if [ "$INSTALLCORE" ]; then
   $SP $LIB/libauroservice_client.so 0 0 0644
   $SP $LIB/libaurostat.so 0 0 0644
   $SP $LIB/libbundlewrapper.so 0 0 0644
+  $SP $LIB/libdts-eagle-shared.so 0 0 0644
+  $SP $LIB/libeaglecore.so 0 0 0644
   $SP $LIB/$FREQ 0 0 0644
   $SP $LIB/libgnustl_shared.so 0 0 0644
   $SP $LIB/libharman.so 0 0 0644
@@ -786,6 +807,10 @@ if [ "$INSTALLV4A2505" ]; then
 
   if [ "$API" -ge "21" ]; then
 
+    mkdir -p $PAPP/$V4A
+    cp -f $V4A2505/$V4APK $PAPP/$V4A/$V4APK
+    $SPR $PAPP/$V4A 0 0 0755 0644
+
     if [ ! -e "$SUD/permissive" ]; then
 
       cp -f $CSUD/$SERVER $SUD/$SERVER
@@ -795,24 +820,14 @@ if [ "$INSTALLV4A2505" ]; then
     fi
 
     if [ "$X86" ] || [ "$X8664" ]; then
-
-      mkdir -p $PAPP/$V4A/lib/x86
-      cp -f $V4A2505/$V4APK $PAPP/$V4A/$V4APK
-      cp -f $V4A2505/lib/x86/$V4AUTL $PAPP/$V4A/lib/x86/$V4AUTL
-      cp -f $V4A2505/lib/x86/$V4AUTL $LIB/$V4AUTL
+      
       cp -f $V4A2505/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
 
     else
 
-      mkdir -p $PAPP/$V4A/lib/arm
-      cp -f $V4A2505/$V4APK $PAPP/$V4A/$V4APK
-      cp -f $V4A2505/lib/arm/$V4AUTL $PAPP/$V4A/lib/arm/$V4AUTL
-      cp -f $V4A2505/lib/arm/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2505/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
 
     fi
-
-    $SPR $PAPP/$V4A 0 0 0755 0644
 
   else
 
@@ -820,19 +835,16 @@ if [ "$INSTALLV4A2505" ]; then
 
     if [ "$X86" ] || [ "$X8664" ]; then
 
-      cp -f $V4A2505/lib/x86/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2505/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
 
     else
 
-      cp -f $V4A2505/lib/arm/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2505/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
 
     fi
 
   fi
 
-  $SP $LIB/$V4AUTL 0 0 0644
   $SP $DEUTFX/$V4ALIB 0 0 0644
 
   for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
@@ -860,6 +872,10 @@ if [ "$INSTALLV4A2340" ]; then
 
   if [ "$API" -ge "21" ]; then
 
+    mkdir -p $PAPP/$V4A
+    cp -f $V4A2340/$V4APK $PAPP/$V4A/$V4APK
+    $SPR $PAPP/$V4A 0 0 0755 0644
+
     if [ ! -e "$SUD/permissive" ]; then
 
       cp -f $CSUD/$SERVER $SUD/$SERVER
@@ -870,23 +886,13 @@ if [ "$INSTALLV4A2340" ]; then
 
     if [ "$X86" ] || [ "$X8664" ]; then
 
-      mkdir -p $PAPP/$V4A/lib/x86
-      cp -f $V4A2340/$V4APK $PAPP/$V4A/$V4APK
-      cp -f $V4A2340/lib/x86/$V4AUTL $PAPP/$V4A/lib/x86/$V4AUTL
-      cp -f $V4A2340/lib/x86/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2340/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
 
     else
 
-      mkdir -p $PAPP/$V4A/lib/arm
-      cp -f $V4A2340/$V4APK $PAPP/$V4A/$V4APK
-      cp -f $V4A2340/lib/arm/$V4AUTL $PAPP/$V4A/lib/arm/$V4AUTL
-      cp -f $V4A2340/lib/arm/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2340/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
 
     fi
-
-    $SPR $PAPP/$V4A 0 0 0755 0644
 
   else
 
@@ -894,19 +900,16 @@ if [ "$INSTALLV4A2340" ]; then
 
     if [ "$X86" ] || [ "$X8664" ]; then
 
-      cp -f $V4A2340/lib/x86/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2340/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
 
     else
 
-      cp -f $V4A2340/lib/arm/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2340/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
 
     fi
 
   fi
 
-  $SP $LIB/$V4AUTL 0 0 0644
   $SP $DEUTFX/$V4ALIB 0 0 0644
 
   for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
@@ -1180,7 +1183,7 @@ if [ "$INSTALLICE" ]; then
 
 fi
 
-if [ "$ICECONFIG1" ]; then
+if [ "$ICECONFIG1" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1191,7 +1194,7 @@ if [ "$ICECONFIG1" ]; then
   cp -f $ICE1 $ETC/icesoundconfig.def
   $SP $ETC/icesoundconfig.def 0 0 0644
 
-elif [ "$ICECONFIG2" ]; then
+elif [ "$ICECONFIG2" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1202,7 +1205,7 @@ elif [ "$ICECONFIG2" ]; then
   cp -f $ICE2 $ETC/icesoundconfig.def
   $SP $ETC/icesoundconfig.def 0 0 0644
 
-elif [ "$ICECONFIG3" ]; then
+elif [ "$ICECONFIG3" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1213,7 +1216,7 @@ elif [ "$ICECONFIG3" ]; then
   cp -f $ICE3 $ETC/icesoundconfig.def
   $SP $ETC/icesoundconfig.def 0 0 0644
 
-elif [ "$ICECONFIG4" ]; then
+elif [ "$ICECONFIG4" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1224,7 +1227,7 @@ elif [ "$ICECONFIG4" ]; then
   cp -f $ICE4 $ETC/icesoundconfig.def
   $SP $ETC/icesoundconfig.def 0 0 0644
 
-elif [ "$ICECONFIG5" ]; then
+elif [ "$ICECONFIG5" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1235,7 +1238,7 @@ elif [ "$ICECONFIG5" ]; then
   cp -f $ICE5 $ETC/icesoundconfig.def
   $SP $ETC/icesoundconfig.def 0 0 0644
 
-elif [ "$ICECONFIG6" ]; then
+elif [ "$ICECONFIG6" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1246,7 +1249,7 @@ elif [ "$ICECONFIG6" ]; then
   cp -f $ICE6 $ETC/icesoundconfig.def
   $SP $ETC/icesoundconfig.def 0 0 0644
 
-elif [ "$ICECONFIG0" ]; then
+elif [ "$ICECONFIG0" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1256,9 +1259,27 @@ elif [ "$ICECONFIG0" ]; then
 
   rm -f $ETC/icesoundconfig.def
 
+elif [ ! -e "$ICEPOWER" ]; then
+
+  for CONFIG in $ICECONFIG0 $ICECONFIG1 $ICECONFIG2 $ICECONFIG3 $ICECONFIG4 $ICECONFIG5 $ICECONFIG6; do
+
+    if [ "$CONFIG" ]; then
+
+      ui_print " "
+      ui_print " "
+      ui_print "ICEsound™ module must be installed in order to select ICEconfig!"
+      ui_print " "
+      ui_print "Refer to $WISHLIST and try again!"
+      ui_print " "
+      ui_print " "
+
+    fi
+
+  done
+
 fi
 
-if [ "$ICEPRESETDB" ]; then
+if [ "$ICEPRESETDB" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1269,7 +1290,7 @@ if [ "$ICEPRESETDB" ]; then
   cp -f $DEEPBASS $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
-elif [ "$ICEPRESETDF" ]; then
+elif [ "$ICEPRESETDF" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1280,7 +1301,7 @@ elif [ "$ICEPRESETDF" ]; then
   cp -f $DEFAULT $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
-elif [ "$ICEPRESETHS" ]; then
+elif [ "$ICEPRESETHS" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1291,7 +1312,7 @@ elif [ "$ICEPRESETHS" ]; then
   cp -f $HOLYSHIT $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
-elif [ "$ICEPRESETKZ" ]; then
+elif [ "$ICEPRESETKZ" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1302,7 +1323,7 @@ elif [ "$ICEPRESETKZ" ]; then
   cp -f $KRAZY $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
-elif [ "$ICEPRESETMV" ]; then
+elif [ "$ICEPRESETMV" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1313,7 +1334,7 @@ elif [ "$ICEPRESETMV" ]; then
   cp -f $MOVIE $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
-elif [ "$ICEPRESETM2" ]; then
+elif [ "$ICEPRESETM2" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1324,7 +1345,7 @@ elif [ "$ICEPRESETM2" ]; then
   cp -f $MUSIC2 $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
-elif [ "$ICEPRESETOD" ]; then
+elif [ "$ICEPRESETOD" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1335,7 +1356,7 @@ elif [ "$ICEPRESETOD" ]; then
   cp -f $OUTDOORS $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
-elif [ "$ICEPRESETPR" ]; then
+elif [ "$ICEPRESETPR" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1346,7 +1367,7 @@ elif [ "$ICEPRESETPR" ]; then
   cp -f $PURE $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
-elif [ "$ICEPRESETPS" ]; then
+elif [ "$ICEPRESETPS" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1357,7 +1378,7 @@ elif [ "$ICEPRESETPS" ]; then
   cp -f $PURESHIT $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
-elif [ "$ICEPRESETWC" ]; then
+elif [ "$ICEPRESETWC" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1368,7 +1389,7 @@ elif [ "$ICEPRESETWC" ]; then
   cp -f $WIDECLARITY $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
-elif [ "$ICEPRESETNO" ]; then
+elif [ "$ICEPRESETNO" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1377,6 +1398,24 @@ elif [ "$ICEPRESETNO" ]; then
   ui_print " "
 
   rm -f $ETC/icesoundpresets.def
+
+elif [ ! -e "$ICEPOWER" ]; then
+
+  for PRESET in $ICEPRESETDB $ICEPRESETDF $ICEPRESETHS $ICEPRESETKZ $ICEPRESETMV $ICEPRESETM2 $ICEPRESETOD $ICEPRESETPR $ICEPRESETPS $ICEPRESETWC $ICEPRESETNO; do
+
+    if [ "$PRESET" ]; then
+
+      ui_print " "
+      ui_print " "
+      ui_print "ICEsound™ module must be installed in order to select ICEpreset!"
+      ui_print " "
+      ui_print "Refer to $WISHLIST and try again!"
+      ui_print " "
+      ui_print " "
+
+    fi
+
+  done
 
 fi
 
@@ -1568,8 +1607,13 @@ if [ "$INSTALLBEATS" ]; then
 
   cp -Rf $TOOLBOX/* $SYS
   $SPR $ALSA 0 0 0755 0644
+  $SPR $ETC/snd_soc_msm 0 0 0755 0644
   $SPR $ETC/srs 0 0 0755 0644
+  $SPR $ETC/tfa 0 0 0755 0644
   $SP $ETC/asound.conf 0 0 0644
+  $SP $ETC/Headset_cal.acdb 0 0 0644
+  $SP $ETC/sound_mfg.txt 0 0 0644
+  $SP $ETC/sound_mfg_DMIC.txt 0 0 0644
   $SP $BIN/alsa_amixer 0 2000 0755
   $SP $BIN/alsa_aplay 0 2000 0755
   $SP $BIN/alsa_ctl 0 2000 0755
@@ -1577,10 +1621,62 @@ if [ "$INSTALLBEATS" ]; then
   $SP $LIB/libalsa-msm.so 0 0 0644
   $SP $LIB/libasound.so 0 0 0644
   $SP $LIB/libresample.so 0 0 0644
+  $SP $LIB/libresample.so 0 0 0644
   $SP $LIB/libsamplerate.so 0 0 0644
   $SP $LIB/libsndfile.so 0 0 0644
   $SP $SUD/smeejaytee_setprop 0 0 0700
   restorecon $SUD/smeejaytee_setprop
+
+  if [ -f "$ACC" ]; then
+
+    if [ -e "$ACCBAK" ]; then
+
+      sed -i '/<item type="integer" name="effect_manager_id">/s/-1/4/g' $SYS/customize/ACC/default.xml
+      sed -i '/<item type="boolean" name="support_harman">/s/true/false/g' $SYS/customize/ACC/default.xml
+      sed -i '/<item type="boolean" name="support_boomsound_effect">/s/true/false/g' $SYS/customize/ACC/default.xml
+      sed -i '/<item type="boolean" name="support_beats_audio">/s/true/false/g' $SYS/customize/ACC/default.xml
+
+    else
+
+      cp -f $ACC $ACCBAK
+      $SP $ACCBAK 0 0 0644
+      sed -i '/<item type="integer" name="effect_manager_id">/s/-1/4/g' $SYS/customize/ACC/default.xml
+      sed -i '/<item type="boolean" name="support_harman">/s/true/false/g' $SYS/customize/ACC/default.xml
+      sed -i '/<item type="boolean" name="support_boomsound_effect">/s/true/false/g' $SYS/customize/ACC/default.xml
+      sed -i '/<item type="boolean" name="support_beats_audio">/s/true/false/g' $SYS/customize/ACC/default.xml
+
+    fi
+
+  fi
+
+  if [ -f "$ETC/$HTC" ]; then
+
+    if [ -e "$ETC/$HTCBAK" ]; then
+
+      cp -f $SMEEJAY/$HTC $ETC/$HTC
+      $SP $ETC/$HTC 0 0 0644
+
+    else
+
+      mv -f $ETC/$HTC $ETC/$HTCBAK
+      cp -f $SMEEJAY/$HTC $ETC/$HTC
+      $SP $ETC/$HTCBAK 0 0 0644
+      $SP $ETC/$HTC 0 0 0644
+
+    fi
+
+  fi
+
+  if [ ! -d "$SDCARD/ViPER4Android" ]; then
+
+    mkdir -p $SDCARD/ViPER4Android
+    cp -Rf $SMEEJAY/ViPER4Android/* $SDCARD/ViPER4Android
+
+  else
+
+    cp -Rf $SMEEJAY/ViPER4Android/* $SDCARD/ViPER4Android
+
+  fi
 
 fi
 
@@ -1628,7 +1724,7 @@ if [ "$INSTALLV4AXHIFI" ]; then
   ui_print " "
   
 
-  cp -f $MODXHIFI/$XHIFILIB $DEUTFX/$XHIFILIB
+  cp -f $V4AXHIFI/$XHIFILIB $DEUTFX/$XHIFILIB
   $SP $DEUTFX/$XHIFILIB 0 0 0644
 
   if [ "$API" -ge "21" ]; then
@@ -1644,14 +1740,14 @@ if [ "$INSTALLV4AXHIFI" ]; then
     rm -f $SUD/$SERVER
     mkdir -p $PAPP/$XHIFI
     cp -f $CSUD/permissive $SUD/permissive
-    cp -f $MODXHIFI/$XHIFIAPK $PAPP/$XHIFI/$XHIFIAPK
+    cp -f $V4AXHIFI/$XHIFIAPK $PAPP/$XHIFI/$XHIFIAPK
     $SPR $PAPP/$XHIFI 0 0 0755 0644
     $SP $SUD/permissive 0 0 0700
     restorecon $SUD/permissive
 
   else
 
-    cp -f $MODXHIFI/$XHIFIAPK $APP/$XHIFIAPK
+    cp -f $V4AXHIFI/$XHIFIAPK $APP/$XHIFIAPK
   
     $SP $APP/$XHIFIAPK 0 0 0644
 
@@ -1734,17 +1830,43 @@ if [ "$BUFFER" ]; then
 
   fi
 
-  if [ -f "$ETC/$APC" ]; then
+  if [ "$OP3" ]; then
 
-    if [ -e "$ETC/$APCBAK" ]; then
+    if [ -f "$ETC/$APC" ]; then
 
-      sed -i '/Speaker/{n;s/deep_buffer,//;}' $ETC/$APC
+      if [ -e "$ETC/$APCBAK" ]; then
 
-    else
+        sed -i '/Speaker/{n;s/deep_buffer,//;}' $ETC/$APC
 
-      cp -f $ETC/$APC $ETC/$APCBAK
-      $SP $ETC/$APCBAK 0 0 0644
-      sed -i '/Speaker/{n;s/deep_buffer,//;}' $ETC/$APC
+      else
+
+        cp -f $ETC/$APC $ETC/$APCBAK
+        $SP $ETC/$APCBAK 0 0 0644
+        sed -i '/Speaker/{n;s/deep_buffer,//;}' $ETC/$APC
+
+      fi
+
+    fi
+
+  else
+
+    if [ -f "$ETC/$APC" ]; then
+
+      if [ -e "$ETC/$APCBAK" ]; then
+
+        sed -i 's/deep_buffer,//g' $ETC/$APC
+        sed -i 's/,deep_buffer,//g' $ETC/$APC
+        sed -i 's/,deep_buffer//g' $ETC/$APC
+
+      else
+
+        cp -f $ETC/$APC $ETC/$APCBAK
+        $SP $ETC/$APCBAK 0 0 0644
+        sed -i 's/deep_buffer,//g' $ETC/$APC
+        sed -i 's/,deep_buffer,//g' $ETC/$APC
+        sed -i 's/,deep_buffer//g' $ETC/$APC
+
+      fi
 
     fi
 
@@ -2072,6 +2194,22 @@ if [ "$UNINSTALLBEATS" ]; then
   $SP $SUD/$PROP 0 0 0700
   restorecon $SUD/$PROP
 
+  if [ -e "$ETC/$HTCBAK" ]; then
+
+    rm -f $ETC/$HTC
+    mv -f $ETC/$HTCBAK $ETC/$HTC
+    $SP $ETC/$HTC 0 0 0644
+
+  fi
+
+  if [ -e "$ACCBAK" ]; then
+
+    rm -f $ACC
+    mv -f $ACCBAK $ACC
+    $SP $ACC 0 0 0644
+
+  fi
+
 fi
 
 if [ "$UNINSTALLXHIFI" ]; then
@@ -2124,27 +2262,10 @@ fi
 
 ui_print " "
 ui_print " "
+ui_print "This session has completed."
 ui_print " "
 ui_print " "
-ui_print " "
-ui_print " "
-ui_print " "
-ui_print " "
-ui_print " "
-ui_print " "
-ui_print " "
-ui_print " "
-ui_print "               www.arisesound.com"
-ui_print " "
-ui_print " "
-ui_print " "
-ui_print " "
-ui_print " "
-ui_print " "
-ui_print " "
-ui_print " "
-ui_print " "
-ui_print " "
+ui_print ":good:"
 ui_print " "
 ui_print " "
 
