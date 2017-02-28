@@ -1,0 +1,10 @@
+#!/system/bin/sh
+#
+# ARISE Sound Systems™
+#
+# SElinux Permissive Mode script
+
+setenforce 0
+
+exit 0
+

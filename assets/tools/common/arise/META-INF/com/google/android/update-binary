@@ -2,7 +2,7 @@
 #
 # ARISE Sound Systems™ @XDA Developers
 #
-# Deuteronomy™ 2.68 Modular Installer
+# Deuteronomy™ "SwanSong™" Modular Installation
 #
 # www.arisesound.com
 
@@ -154,9 +154,7 @@ TOOLBOX=modules/smeejaytee/ToolBox
 SMEEJAY=modules/smeejaytee
 PROFILES=modules/profiles/ViPER4Android
 MODAM3D=modules/am3d
-MODDAP=modules/dolby/dap_r6.5
-MODDAX=modules/dolby/atmos
-MODDDP=modules/dolby/ddplus
+MODDDP=modules/ddplus
 V4A2340=modules/v4a_2.3.4.0
 V4A2505=modules/v4a_2.5.0.5
 V4AXHIFI=modules/v4a_xhifi
@@ -172,6 +170,7 @@ ICEPOWER=$DEUTFX/libicepower.so
 AM3D=AM3DZirene
 AM3DAPK=AM3DZirene.apk
 AM3DLIB=libam3daudioenhancement.so
+DAXLIB=libswdax.so
 V4A=ViPER4Arise
 V4APK=ViPER4Arise.apk
 V4AUTL=libV4AJniUtils.so
@@ -203,9 +202,6 @@ YTUBEAPK=YouTubePlugin.apk
 XHIFI=ViPER4Android_XHiFi
 XHIFIAPK=ViPER4Android_XHiFi.apk
 XHIFILIB=libv4a_xhifi_ics.so
-DAP=$VEN/lib/libhwdaphal.so
-DAPLIB=libswdax.so
-DAXLIB=libswdax.so
 DDPLIB=libdseffect.so
 LDAC=libldacBT_enc.so
 DSEE=libsonydseehxwrapper.so
@@ -238,7 +234,6 @@ INSTALLV4A2505=$(cat $WISHLIST | grep "install.v4a_2.5.0.5=true")
 INSTALLV4AXHIFI=$(cat $WISHLIST | grep "install.v4a_xhifi=true")
 INSTALLPROFILES=$(cat $WISHLIST | grep "install.v4a_profiles=true")
 INSTALLMFX=$(cat $WISHLIST | grep "install.musicfx=true")
-INSTALLATMOS=$(cat $WISHLIST | grep "install.atmos=true")
 INSTALLDDPLUS=$(cat $WISHLIST | grep "install.ddplus=true")
 INSTALLAM3D=$(cat $WISHLIST | grep "install.am3d=true")
 INSTALLARKAMYS=$(cat $WISHLIST | grep "install.arkamys=true")
@@ -388,6 +383,8 @@ rm -f $SDCARD/arise_addon.prop
 
 if [ "$INSTALLCORE" ]; then
 
+  ui_print " "
+  ui_print " "
   ui_print " "
   ui_print " "
   ui_print "Installing Core module..."
@@ -730,6 +727,7 @@ if [ "$INSTALLCORE" ]; then
   $SPR $FW 0 0 0755 0644
   $SPR $PERM 0 0 0755 0644
   $SPR $ALSA 0 0 0755 0644
+  $SPR $SUD 0 0 0700 0700
   $SP $SYS/ARISE_version.prop 0 0 0644
   $SP $ETC/maxxaudio_default.mps 0 0 0644
   $SP $LIB/AudioSphereModule.so 0 0 0644
@@ -782,7 +780,6 @@ if [ "$INSTALLCORE" ]; then
   $SP $LIB/libvad.so 0 0 0644
   $SP $LIB/libval_2.0.so 0 0 0644
   $SP $LIB/libval_common.so 0 0 0644
-  $SP $SUD/$PROP 0 0 0700
   restorecon $SUD/$PROP
 
   cp -Rf core/support/* $SDCARD
@@ -937,105 +934,6 @@ if [ "$INSTALLPROFILES" ]; then
 
   mkdir -p $SDCARD/ViPER4Android
   cp -Rf $PROFILES/* $SDCARD/ViPER4Android
-
-fi
-
-if [ "$INSTALLATMOS" ]; then
-
-  ui_print " "
-  ui_print " "
-  ui_print "Installing Dolby Atmos™ module..."
-  ui_print " "
-  ui_print " "
-
-  if [ "$API" -ge "23" ]; then
-
-    rm $SUD/$SERVER
-    cp -Rf $MODDAX/* $SYS
-    $SPR $PAPP/Ax 0 0 0755 0644
-    $SPR $PAPP/AxUI 0 0 0755 0644
-    $SPR $ETC/dolby 0 0 0755 0644
-    $SP $DEUTFX/$DAXLIB 0 0 0644
-    $SP $LIB/libdlbdapstorage.so 0 0 0644
-    $SP $LIB/libstagefright_soft_ddpdec.so 0 0 0644
-    $SP $SUD/permissive 0 0 0700
-    restorecon $SUD/permissive
-
-    if [ ! -e "$DAPHAL" ]; then
-
-      cp -f $CARM/libhwdaphal.so $LIB/libhwdaphal.so
-      $SP $LIB/libhwdaphal.so 0 0 0644
-
-      if [ -d "$LIB64" ]; then
-
-        cp -f $CARM64/libhwdaphal.so $LIB64/libhwdaphal.so
-        $SP $LIB64/libhwdaphal.so 0 0 0644
-
-      fi
-
-    fi
-
-    if [ ! -d "$PAPP/$MFX" ] && [ ! -d "$APP/$MFX" ]; then
-
-      mkdir -p $PAPP/$MFX
-      cp -f $CAPP/$MFXAPK $PAPP/$MFX/$MFXAPK
-      $SPR $PAPP/$MFX 0 0 0755 0644
-
-    fi
-
-  else
-
-    cp -Rf $MODDAP/system/* $SYS
-    $SPR $ETC/dolby 0 0 0755 0644
-    $SP $DEUTFX/$DAPLIB 0 0 0644
-    $SP $LIB/libdlbdapstorage.so 0 0 0644
-
-    if [ "$API" -ge "21" ]; then
-
-      mkdir -p $PAPP/Ax
-      mkdir -p $PAPP/AxUI
-      cp -f $MODDAP/Ax.apk $PAPP/Ax/Ax.apk
-      cp -f $MODDAP/AxUI.apk $PAPP/AxUI/AxUI.apk
-      $SPR $PAPP/Ax 0 0 0755 0644
-      $SPR $PAPP/AxUI 0 0 0755 0644
-
-      if [ ! -d "$PAPP/$MFX" ] && [ ! -d "$APP/$MFX" ]; then
-
-        mkdir -p $PAPP/$MFX
-        cp -f $CAPP/$MFXAPK $PAPP/$MFX/$MFXAPK
-        $SPR $PAPP/$MFX 0 0 0755 0644
-
-      fi
-
-    else
-
-      cp -f $MODDAP/Ax.apk $APP/Ax.apk
-      cp -f $MODDAP/AxUI.apk $APP/AxUI.apk
-      $SP $APP/Ax.apk 0 0 0644
-      $SP $APP/AxUI.apk 0 0 0644
-
-      if [ ! -e "$PAPP/$MFXAPK" ] && [ ! -e "$APP/$MFXAPK" ]; then
-
-        cp -f $CAPP/$MFXAPK $APP/$MFXAPK
-        $SP $APP/$MFXAPK 0 0 0644
-
-      fi
-
-    fi
-
-  fi
-
-  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
-
-    if [ -f "$CFG" ]; then
-
-      sed -i '/dax {/,/}/d' $CFG
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Library/# Dolby Laboratories, Inc. | www.dolby.com | Library\n\n  dax {\n    path \/system\/lib\/soundfx\/deuteronomy\/libswdax.so\n  }/g' $CFG
-      sed -i 's/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/# Dolby Laboratories, Inc. | www.dolby.com | Effect\n\n  dax {\n    library dax\n    uuid 9d4921da-8225-4f29-aefa-6e6f69726861\n  }/g' $CFG
-
-    fi
-
-  done
 
 fi
 
@@ -1970,7 +1868,6 @@ if [ "$UNINSTALLATMOS" ]; then
   rm -f $APP/As.apk
   rm -f $APP/AsUI.apk
   rm -f $DEUTFX/$DAXLIB
-  rm -f $DEUTFX/$DAPLIB
   rm -f $LIB/libdlbdapstorage.so
   rm -f $LIB/libstagefright_soft_ddpdec.so
   rm -f $LIB/libhwdaphal.so

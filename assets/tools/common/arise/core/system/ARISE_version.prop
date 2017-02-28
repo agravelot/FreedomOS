@@ -1,7 +1,7 @@
 
 # ARISE Sound Systems™
 #
-# Deuteronomy™ 2.89-3 Modular Installer 20170226
+# Deuteronomy™ 2.91 Modular Installer 20170228
 #
 # "SwanSong™"
 #
@@ -12,6 +12,29 @@
 
 
 Changelog:
+
+
+
+## Deuteronomy™ 2.91 "SwanSong™" -
+
+- Updates to arisesound_setprop and /sources.
+
+##
+
+
+## Deuteronomy™ 2.90 "SwanSong™" -
+
+- Removed the Dolby Atmos™  installation module from the archive. Refer to @ahrion's @XDA Developers Dolby Atmos™ Collective thread for the Dolby Atmos™ solutions he currently has available.
+
+##
+
+
+
+## Deuteronomy™ 2.89-4 "SwanSong™" -
+
+- Updated arisesound_setprop relevant to sound system.
+
+##
 
 
 

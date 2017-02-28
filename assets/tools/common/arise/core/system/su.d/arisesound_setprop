@@ -18,7 +18,6 @@ setprop media.stagefright.enable-aac true
 setprop media.stagefright.enable-qcp true
 setprop media.stagefright.enable-scan true
 setprop mm.enable.smoothstreaming true
-setprop av.debug.disable.pers.cache true
 setprop mmp.enable.3g2 true
 setprop media.aac_51_output_enabled true
 setprop audio.offload.track.enable false
@@ -27,8 +26,6 @@ setprop audio.offload.gapless.enabled true
 setprop audio.offload.multiple.enabled false
 setprop audio.safx.pbe.enabled true
 setprop audio.pp.asphere.enabled false
-#setprop ro.asus.audio.feature ar101
-#setprop ro.asus.audiowizard.config 1
 setprop audio.offload.pcm.16bit.enable true
 setprop audio.offload.pcm.24bit.enable true
 setprop audio.dolby.ds2.enabled true
@@ -41,34 +38,21 @@ setprop audio.dolby.ds2.hardbypass true
 #
 setprop mm.enable.qcom_parser 1048575
 setprop audio.parser.ip.buffer.size 262144
+setprop ro.config.hw_music_lp true
 setprop ro.config.hw_dts true
 setprop ro.config.hw_sws true
 setprop ro.config.sws_version sws3
+setprop ro.config.swsAlwaysActiveForSPK true
+setprop ro.config.hw_dts_settings true
 setprop ro.config.hw_media_flags 3
-setprop ro.config.widevine_level3 true
-setprop drm.service.enabled true
 setprop ro.config.hpx_support true
-setprop ro.dts.licensepath /system/etc/dts/
 setprop ro.config.hw_dolby true
 setprop ro.config.hw_audio_plus true
-setprop ro.config.hwinternet_audio 1
-setprop ro.media.NxpSmartPACurve VNS_QCOM_1225:1,-40:87,-4:93,-2:100,0.0:-15:
 setprop audio.musicfx.bassboost.max 500
 setprop audio.musicfx.virtualizer.max 500
 setprop use.qti.sw.alac.decoder true
 setprop use.qti.sw.ape.decoder true
 setprop flac.sw.decoder.24bit.support true
-#
-
-
-## Xiaomi™ Mi Mix Audio ##
-
-#
-setprop ro.audio.hifi true
-setprop persist.audio.hifi true
-#setprop persist.audio.hifi.volume 0
-#Navtive 44.1kHz playback
-#setprop persist.audio.native.44.1kHz true
 #
 
 

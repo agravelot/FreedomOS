@@ -1,5 +1,5 @@
 
-# ARISE Sound Systems™ 20170219
+# ARISE Sound Systems™ 20170227
 #
 # "SwanSong"
 #
@@ -48,9 +48,6 @@ install.v4a_2.3.4.0=
 
 
 install.v4a_profiles=
-
-
-install.atmos=
 
 
 install.ddplus=
