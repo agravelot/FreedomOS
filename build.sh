@@ -267,7 +267,11 @@ function download_rom {
 
     if curl -Is ${ROM_LINK} | grep "200 OK" &> /dev/null
     then
-      curl -o ${download_root}/${ROM_NAME}.zip ${ROM_LINK} | tee -a ${build_log}
+      if [ $(which aria2c) ]; then
+        aria2c ${ROM_LINK} -d ${download_root}/
+      else
+        curl -o ${download_root}/${ROM_NAME}.zip ${ROM_LINK} | tee -a ${build_log}
+      fi
     else
       die "${ROM_NAME} mirror OFFLINE! Check your connection" "10"
     fi
@@ -278,6 +282,7 @@ function download_rom {
       echo ">>> MD5 ${ROM_NAME}.zip checksums OK." 2>&1 | tee -a ${build_log}
     else
       echo ">>> File ${ROM_NAME}.zip is corrupt, restarting download" 2>&1 | tee -a ${build_log}
+      rm -rvf ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
       mv -vf ${download_root}/${ROM_NAME}.zip ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
       download_rom
     fi
