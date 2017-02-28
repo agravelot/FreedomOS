@@ -1,0 +1,3 @@
+files:
+  - source: /assets/META-INF/aroma/common/langs/
+    translation: /assets/META-INF/aroma/common/langs/%two_letters_code%.lang
