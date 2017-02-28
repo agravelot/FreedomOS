@@ -28,5 +28,6 @@ cp /fstab.* /tmp/fos_logs/
 cp /sdcard/arise_customize.prop /tmp/fos_logs/
 ls -R /system > /tmp/fos_logs/system.list
 rm /tmp/fos_logs/cache/*_boot*
+rm /tmp/fos_logs/aroma/update-binary
 tar -czvf /sdcard/FreedomOS_log_installer.tar.gz /tmp/fos_logs/*
 find /tmp/* -maxdepth 0 ! -path /tmp/recovery.log  -exec rm -rf {} +
