@@ -55,8 +55,6 @@
   ADD: Magisk v11.1, with fully safetynet support (enable Magisk Hide & Systemless hosts in app settings)
   ADD: ARISE4Magisk Module, include some sepolicy fix for FreedomOS
   ADD: VillainRom Theme support
-  ADD: Center clock for VillainRom Theme, special thanks to @kickoff
-  ADD: Not traffic indicator for VillainRom Theme, special thanks to  @kickoff
   ADD: ICEsound preset and profile selection in aroma
   ADD: Permissive option in aroma !can be overwritten by some custom kernels!
   ADD: Add wideband wifi option in aroma (not a big fan, but requested by some users)
