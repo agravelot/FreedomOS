@@ -9,7 +9,7 @@
     - Media can be grouped by month and year
     - Folders and individual media can be hidden
     - General bug fixes
-  UPDATE: ARISE Deuteronomy SwangSong 2.89-3
+  UPDATE: ARISE Deuteronomy SwangSong 2.92
     - ArkamysAudio.apk updated from version 4.3 to 4.5 and its library
     - Added libaudio3d.so from Panasonic's Arkamys™ Audio system.
     - Minor script corrections and improvements.
@@ -19,7 +19,7 @@
     - Removed setprop entry breaking camera functions for some.
     - deep_buffer removal change for audio_policy_configuration.xml.
     - Corrections to audio_policy_configuration.xml manipulation.
-    - Removed DiracSound™.
+    - Added support for user customized ICEsound™ configuration by seeking and using /sdcard/icesoundconfig.def if found.
   FIX: Enforcing state, latest hotfix is no more needed
   FIX: DeskClock and OPFilemanager installation
   FIX: Clean older ARISE installation to avoid conflicts
