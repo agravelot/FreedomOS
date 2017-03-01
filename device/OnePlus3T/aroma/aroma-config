@@ -509,7 +509,7 @@ checkbox(
   "<~mod.tittle>", "<~mod.tittle2>", "@personalize", "mod.prop",
 
   "<~mod.tittle3>", "", 2,
-    "<~supersu>", "<~info.supersu>", 1,
+    "<~root>", "<~info.root>", 1,
     "<~xposed>", "<~info.xposed>", 0,
     "<~adaway>", "<~info.adaway>", 1,
     "<~adb>", "<~info.adb>", 0,
@@ -528,6 +528,20 @@ if
   prop("mod.prop", "item.1.8") == "1"
 then
   appendvar("gapps", "GoogleAssistant\n");
+endif;
+
+if
+  prop("mod.prop", "item.1.1") == "1"
+then
+    form(
+        "Root",
+        "Choose wich root method you want to include</#>",
+        "@default",
+        aromaroot.prop,
+        "rootmethod",     "",        "",      "group",
+          "0",                    "<~supersu>",                  "<~info.supersu>",       "select.selected",
+          "1",                    "<~magisk>",                   "<~info.magisk>",        "select"
+        );
 endif;
 
 # -- ARISE -- #

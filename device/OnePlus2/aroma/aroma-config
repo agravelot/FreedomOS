@@ -509,7 +509,7 @@ checkbox(
   "<~mod.tittle>", "<~mod.tittle2>", "@personalize", "mod.prop",
 
   "<~mod.tittle3>", "", 2,
-    "<~supersu>", "<~info.supersu>", 1,
+    "<~root>", "<~info.root>", 1,
     "<~xposed>", "<~info.xposed>", 0,
     "<~adaway>", "<~info.adaway>", 1,
     "<~adb>", "<~info.adb>", 0,
@@ -600,6 +600,21 @@ then
 
     resexec("scripts/gen_arise_conf.sh");
 endif;
+
+form(
+    "<~theme.tittle>",
+    "<~theme.subtittle>",
+    "@default",
+    aromatheme.prop,
+
+    "inclorexcl",     "<~incorexcl.theme>",        "",                    "group",
+      "1",                    "<~inc.theme>",                  "<~info.inc.theme>",        "select.selected",
+      "0",                    "<~excl.theme>",                  "<~info.excl.theme>",  "select",
+
+    "theme",     "<~theme.select>",    "",        "group",
+      "centerclock",      "<~center_clock>",       "<~info.center_clock>",       "check",
+      "notraffic",        "<~no_traffic>",         "<~info.no_traffic>",         "check"
+);
 
 # -- - Pre-Install - -- -#
 ini_set("text_next", "<~install.now>");
