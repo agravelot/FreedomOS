@@ -1,0 +1,36 @@
+# Triggers
+
+on post-fs
+    start magisk_pfs
+    wait /dev/.magisk.unblock 20
+    rm /dev/.magisk.unblock
+
+on post-fs-data
+    load_persist_props
+    start magisk_pfsd
+    wait /dev/.magisk.unblock 60
+    rm /dev/.magisk.unblock
+
+on property:magisk.restart_pfsd=1
+    trigger post-fs-data
+
+# Services
+
+# launch post-fs script
+service magisk_pfs /sbin/magic_mask.sh post-fs
+    user root
+    seclabel u:r:su:s0
+    oneshot
+
+# launch post-fs-data script
+service magisk_pfsd /sbin/magic_mask.sh post-fs-data
+    user root
+    seclabel u:r:su:s0
+    oneshot
+
+# launch late_start script
+service magisk_service /sbin/magic_mask.sh service
+    class late_start
+    user root
+    seclabel u:r:su:s0
+    oneshot
