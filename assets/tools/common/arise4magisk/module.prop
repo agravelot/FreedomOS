@@ -1,7 +1,7 @@
 id=ARISE_Magisk_Module
 name=ARISE Magisk Module for FreedomOS
 version=v2
-versionCode=2.89
+versionCode=2.92
 author=Shadowghoster & Nevax
 description=Sets the needed props and selinux changes to run stock ARISE Deuteronomy 2.89 on Magisk (fixed sepolicy by Nevax)
 donate=

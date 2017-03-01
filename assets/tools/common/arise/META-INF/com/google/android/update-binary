@@ -782,8 +782,6 @@ if [ "$INSTALLCORE" ]; then
   $SP $LIB/libval_common.so 0 0 0644
   restorecon $SUD/$PROP
 
-  cp -Rf core/support/* $SDCARD
-
   if [ -e "$SDCARD/$PROP" ]; then
 
     cp -f $SDCARD/$PROP $SUD/$PROP
@@ -804,10 +802,6 @@ if [ "$INSTALLV4A2505" ]; then
 
   if [ "$API" -ge "21" ]; then
 
-    mkdir -p $PAPP/$V4A
-    cp -f $V4A2505/$V4APK $PAPP/$V4A/$V4APK
-    $SPR $PAPP/$V4A 0 0 0755 0644
-
     if [ ! -e "$SUD/permissive" ]; then
 
       cp -f $CSUD/$SERVER $SUD/$SERVER
@@ -817,14 +811,24 @@ if [ "$INSTALLV4A2505" ]; then
     fi
 
     if [ "$X86" ] || [ "$X8664" ]; then
-      
+
+      mkdir -p $PAPP/$V4A/lib/x86
+      cp -f $V4A2505/$V4APK $PAPP/$V4A/$V4APK
+      cp -f $V4A2505/lib/x86/$V4AUTL $PAPP/$V4A/lib/x86/$V4AUTL
+      cp -f $V4A2505/lib/x86/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2505/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
 
     else
 
+      mkdir -p $PAPP/$V4A/lib/arm
+      cp -f $V4A2505/$V4APK $PAPP/$V4A/$V4APK
+      cp -f $V4A2505/lib/arm/$V4AUTL $PAPP/$V4A/lib/arm/$V4AUTL
+      cp -f $V4A2505/lib/arm/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2505/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
 
     fi
+
+    $SPR $PAPP/$V4A 0 0 0755 0644
 
   else
 
@@ -832,16 +836,19 @@ if [ "$INSTALLV4A2505" ]; then
 
     if [ "$X86" ] || [ "$X8664" ]; then
 
+      cp -f $V4A2505/lib/x86/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2505/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
 
     else
 
+      cp -f $V4A2505/lib/arm/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2505/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
 
     fi
 
   fi
 
+  $SP $LIB/$V4AUTL 0 0 0644
   $SP $DEUTFX/$V4ALIB 0 0 0644
 
   for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
@@ -869,10 +876,6 @@ if [ "$INSTALLV4A2340" ]; then
 
   if [ "$API" -ge "21" ]; then
 
-    mkdir -p $PAPP/$V4A
-    cp -f $V4A2340/$V4APK $PAPP/$V4A/$V4APK
-    $SPR $PAPP/$V4A 0 0 0755 0644
-
     if [ ! -e "$SUD/permissive" ]; then
 
       cp -f $CSUD/$SERVER $SUD/$SERVER
@@ -883,13 +886,23 @@ if [ "$INSTALLV4A2340" ]; then
 
     if [ "$X86" ] || [ "$X8664" ]; then
 
+      mkdir -p $PAPP/$V4A/lib/x86
+      cp -f $V4A2340/$V4APK $PAPP/$V4A/$V4APK
+      cp -f $V4A2340/lib/x86/$V4AUTL $PAPP/$V4A/lib/x86/$V4AUTL
+      cp -f $V4A2340/lib/x86/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2340/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
 
     else
 
+      mkdir -p $PAPP/$V4A/lib/arm
+      cp -f $V4A2340/$V4APK $PAPP/$V4A/$V4APK
+      cp -f $V4A2340/lib/arm/$V4AUTL $PAPP/$V4A/lib/arm/$V4AUTL
+      cp -f $V4A2340/lib/arm/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2340/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
 
     fi
+
+    $SPR $PAPP/$V4A 0 0 0755 0644
 
   else
 
@@ -897,16 +910,19 @@ if [ "$INSTALLV4A2340" ]; then
 
     if [ "$X86" ] || [ "$X8664" ]; then
 
+      cp -f $V4A2340/lib/x86/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2340/lib/x86/$V4ALIB $DEUTFX/$V4ALIB
 
     else
 
+      cp -f $V4A2340/lib/arm/$V4AUTL $LIB/$V4AUTL
       cp -f $V4A2340/lib/arm/$V4ALIB $DEUTFX/$V4ALIB
 
     fi
 
   fi
 
+  $SP $LIB/$V4AUTL 0 0 0644
   $SP $DEUTFX/$V4ALIB 0 0 0644
 
   for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
@@ -1174,6 +1190,13 @@ elif [ ! -e "$ICEPOWER" ]; then
     fi
 
   done
+
+fi
+
+if [ -e "$SDCARD/icesoundconfig.def" ]; then
+
+  cp -f $SDCARD/icesoundconfig.def $ETC/icesoundconfig.def
+  $SP $ETC/icesoundconfig.def 0 0 0644
 
 fi
 
@@ -1547,7 +1570,7 @@ if [ "$INSTALLBEATS" ]; then
 
   fi
 
-  if [ -f "$ETC/$HTC" ]; then
+  if [ -f "$ETC/$HTC" ] && [ ! -e "$SFX/libadaptsoundse.so" ]; then
 
     if [ -e "$ETC/$HTCBAK" ]; then
 
@@ -1904,8 +1927,8 @@ if [ "$UNINSTALLDDPLUS" ]; then
 
     if [ -f "$CFG" ]; then
 
-      sed -i '/ds {/,/}/d' $CFG
-      sed -i '/dsplus {/,/}/d' $CFG
+      sed -i '/^# Dolby Laboratories, Inc. | www.dolby.com | Library/,/^# Dolby Laboratories, Inc. | Feel Every Dimension™/{/^# Dolby Laboratories, Inc. | www.dolby.com | Library/!{/^# Dolby Laboratories, Inc. | Feel Every Dimension™/!d}}' $CFG
+      sed -i '/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/,/^# Dolby Laboratories, Inc. | Feel Every Dimension™/{/^# Dolby Laboratories, Inc. | www.dolby.com | Effect/!{/^# Dolby Laboratories, Inc. | Feel Every Dimension™/!d}}' $CFG
 
     fi
 

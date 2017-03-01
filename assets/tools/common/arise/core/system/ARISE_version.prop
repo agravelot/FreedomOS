@@ -1,7 +1,7 @@
 
 # ARISE Sound Systems™
 #
-# Deuteronomy™ 2.91 Modular Installer 20170228
+# Deuteronomy™ 2.92 Modular Installer 20170301
 #
 # "SwanSong™"
 #
@@ -12,6 +12,20 @@
 
 
 Changelog:
+
+
+
+## Deuteronomy™ 2.91 "SwanSong™" -
+
+- Adjusted the Dolby Digital Plus™ uninstallation module to leave the native Dolby™ entries intact for HTC Bolt htc_audio_effects.
+
+- Added libV4AJniUtils.so back to both ViPER4Arise™ installation modules.
+
+- Added support for user customized ICEsound™ configuration by seeking and using /sdcard/icesoundconfig.def if found. This is automatic and does not refer to /sdcard/arise_customize.prop for instruction.
+
+- Removed /sdcard/arise_support from the Core installation module.
+
+##
 
 
 
