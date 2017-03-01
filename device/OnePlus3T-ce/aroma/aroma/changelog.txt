@@ -1,0 +1,646 @@
+2.5-CE
+  UPDATE: OxygenOS OpenBeta 12
+    - Upgraded to Android 7.1.1
+    - New Shot on OnePlus wallpaper option
+    - Gallery Improvements
+    - New photo editor with watermark and photo straightening options
+    - Newly added media will be highlighted in Photos section
+    - Image location will be displayed on grid view
+    - Media can be grouped by month and year
+    - Folders and individual media can be hidden
+    - General bug fixes
+  UPDATE: ARISE Deuteronomy SwangSong 2.89-3
+    - ArkamysAudio.apk updated from version 4.3 to 4.5 and its library
+    - Added libaudio3d.so from Panasonic's Arkamys™ Audio system.
+    - Minor script corrections and improvements.
+    - New PURESHIT ICEsound™ preset prepared by @secone00 @ARISE Sound Systems™
+    - The "PURE" ICEsound™ preset is now installed with the ICEsound™ module. The "DEFAULT" preset still indicates the untouched, native ICEsound™ preset found in the firmware source.
+    - Added "HOLYSHIT" ICEsound™ preset prepared by @secone00 @ARISE Sound Systems™
+    - Removed setprop entry breaking camera functions for some.
+    - deep_buffer removal change for audio_policy_configuration.xml.
+    - Corrections to audio_policy_configuration.xml manipulation.
+    - Removed DiracSound™.
+  FIX: Enforcing state, latest hotfix is no more needed
+  FIX: DeskClock and OPFilemanager installation
+  FIX: Clean older ARISE installation to avoid conflicts
+  REMOVE: ATV bloatware apk (Amazon bloatware)
+  REMOVE: Kindle bloatware apk (Amazon bloatware)
+  REMOVE: mShop bloatware apk (Amazon bloatware)
+  UPDATE: ARISE Sound System Deuteromony 2.71b
+  UPDATE: Core Google Apps
+  UPDATE: YouTube
+  UPDATE: WebViewGoogle
+  UPDATE: Google Search
+  UPDATE: Messenger
+  UPDATE: Gmail
+  UPDATE: Drive
+  UPDATE: Chrome
+  UPDATE: Google Calendar
+  UPDATE: AndroidPay
+  UPDATE: Text-to-Speech
+  UPDATE: Turkish language, fix typos !22 @topcu.mevlut
+  UPDATE: Simplified Chinese !23 !24 !25 @clyang
+  UPDATE: Traditional Chinese !23 !24 !25 @clyang
+  UPDATE: Substratum
+  UPDATE: make_ext4fs binary from my own source, includee important fixs! check my github page
+  ADD: Sony Music Player (with TrackID) in aroma
+  ADD: Option to use older version of Viper4Android
+  ADD: Arkamys option
+  ADD: Deep buffer option
+  ADD: icepower option
+  ADD: Permissive option
+  ADD: Traditional Chinese language, special thanks to @clyang
+  ADD: Simplified Chinese language, special thanks to @clyang
+  ADD: Fallback fonts with support of arabic, chinese and much more
+  ADD: Magisk v11.1, with fully safetynet support (enable Magisk Hide & Systemless hosts in app settings)
+  ADD: ARISE4Magisk Module, include some sepolicy fix for FreedomOS
+  ADD: VillainRom Theme support
+  ADD: Center clock for VillainRom Theme, special thanks to @kickoff
+  ADD: Not traffic indicator for VillainRom Theme, special thanks to  @kickoff
+  ADD: ICEsound preset and profile selection in aroma
+  ADD: Permissive option in aroma !can be overwritten by some custom kernels!
+  ADD: Add wideband wifi option in aroma (not a big fan, but requested by some users)
+  ADD: APTX-HD libs and new option in aroma (with APTX/APTX-HD)
+  ADD: Full VR support VrService, MovieVrMode, PhotosVrMode
+  ADD: OnePlus Calculator
+  ADD: sdcard permissions fix, option in aroma
+  ADD: Pixel Icons, downgraded api target to support 7.0
+  REMOVE: Google Dialer, causing a lot issues
+  REMOVE: Option to install without Google Apps
+  REMOVE: Marshmallow firmwares option in aroma
+  REMOVE: hosts files to support magisk
+
+  NOTE: If you have used or currently use Google Dialer, please consider to perform a clean flash to avoid issues.
+        Some aroma translations need to be updated, feel free to push request on gitlab (instructions available in repo).
+        Missing Arise installation to some users should be fixed now.
+        Latest modification in make_ext4fs binary will fixed green pictures issue and many more!
+        As always, check gitlab to get more information.
+        Version number bumped to follow OnePlus3 builds.
+
+2.4-CE
+  FIX: SELinux contexts, it's now fully compatible with Enforcing state. Read commit: a9032628
+  FIX: OnePlus Wallpapers uninstallation
+  ADD: Save installer logs in sdcard
+  ADD: apt-x support, thanks to @dh.harald for the lib files
+  ADD: Turkish language, thanks to @topcu.mevlut !17
+  ADD: Option to remove OnePlus OTA app
+  ADD: Clean temporary files after installation
+  UPDATE: System apps uninstaller
+  UPDATE: Google Play Store
+  UPDATE: Google Calendar
+  UPDATE: Google Call Sync
+  UPDATE: Gmail
+  UPDATE: Google Keyboard
+  UPDATE: Google Photos
+  UPDATE: Google Search
+  UPDATE: YouTube
+  UPDATE: Put substratum in Advenced Settings
+  REMOVE: DMAgent from Google apps
+  REMOVE: Hangouts from Google apps
+  REMOVE: DownloadProvider option, required by some apps
+  REMOVE: Galaxy4
+  REMOVE: HoloSpiralWallpaper
+  REMOVE: NoiseFeild
+  REMOVE: PhaseBeam
+  REMOVE: Protips
+  REMOVE: Google Package Installer from Google apps
+  REMOVE: Google Storage Manager from Google apps
+  REMOVE: "Complete installation" option for Google Apps, it will avoid unconscious installation of Google Dialer.
+  REMOVE: Permissive workaround, the kernel is now booting in Enforcing mode
+
+2.3-CE
+  UPDATE: OxygenOS Open Beta 11
+    - UI optimizations
+    - Improved Shelf Customization
+    - Updated APN Settings for select Carriers
+    - Fixed Proximity Sensor bug during calls
+    - Fixed Google Play Store download bug
+    - Increased System Stability
+  FIX: SetupWizard
+  FIX: Useless option "GCS" in aroma, since it's not build with the rom
+  FIX: Assert value for latest TWRP
+  REMOVE: Bootanimation patched binary
+
+2.2.2-CE
+  UPDATE: Busybox 1.26.1
+  REMOVE: moviesvrmode in Google apps
+  REMOVE: photosvrmode in Google apps
+  REMOVE: NFCTestMode
+  ADD: Easter Egg option in aroma
+  ADD: OnePlus Cummunity option in aroma
+  ADD: OnePlus SMS option in aroma
+  ADD: OnePlus Sound Recoder option in aroma
+  ADD: OnePlus Weather option in aroma
+  FIX: Document uninstallation option
+  FIX: DownloadProvider uninstallation option
+  FIX: "Complete installation" option in Google Apps
+  FIX: Minor error in aroma installer
+  FIX: System apps customization
+  FIX: Survival of the kernel patch for supersu update
+  NOTE: Using the rom without the kernel patch will cause major battery drain!
+
+2.2.1-CE
+  REVERT: SuperSU 2.79 SR1
+  UPDATE: SuperSU 2.79 Stable
+  CHANGE: Group Google Dialer/Framework/Contacts
+  CHANGE: Remove WebViewGoogle option in aroma, installed by default.
+  FIX: Permissive state with Nougat kernel
+  UPDATE: Build binaries from aosp source
+  REMOVE: GoogleNow Launcher (Pixel Launcher is better)
+  CHANGE: Build with sparsed data system partition
+  CHANGE: Simplification of the aroma installer
+  UPDATE: Re-rendered bootanimation, lighter, smooth as butter.
+  UPDATE: YouTube
+  UPDATE: Google Calendar
+  REMOVE: FreedomOS bootscreen
+  NOTE: The battery drain should now be fixed (this is not due of SuperSU)
+        This update is HIGHLY recommended!
+
+2.2-CE
+  UPDATE: OxygenOS Open Beta 10
+    - Added Data Saver
+    - Fixed Lock Screen Clock bug in Portrait Mode
+    - Fixed Reverting to Default Theme after Reboot
+    - Optimized Unlocking Speed using Fingerprint
+    - Optimized the quality of Expanded Screenshot
+    - Optimized WiFi Performance
+    - Optimized System Performance and Battery Consumption
+  ADD: OpenGApps installer with aroma settings
+  ADD: Google Assistant in aroma @genesixxbf3
+  ADD: Google Dialer in aroma
+  ADD: Pixel Launcher in aroma
+  ADD: Busybox 1.25.1 @YashdSaraf
+  ADD: A.R.I.S.E Sound system Deuteronomy™ 2.3.3
+  ADD: New aroma theme "redback" @kickoff
+  ADD: Ability to save/load aroma settings (GApps only for now)
+  REMOVE: OnePlus Google Apps
+  REMOVE: Google Duo
+  UPDATE: EmojiOne
+  UPDATE: SuperSU 2.79 SR1
+   - Expand Samsung detection
+   - GUI: reworked portions to work with 'supersu' context on 7.0+
+   - GUI: fix binary update notice when superuser disabled by user in some cases
+   - su: reworked portions to work with 'supersu' context on 7.0+
+   - su/GUI: improve responsiveness when device busy on 7.0+
+   - sukernel: fix cpio restore failure with very short filenames
+   - sukernel: no longer patches file_contexts(.bin)
+   - sukernel: revert force seclabel (no longer needed with 'supersu' context)
+   - supolicy: add "create", "auditallow", "auditdeny" policy commands
+   - supolicy: support "*" for permission/range parameter of "allow", "deny", "auditallow", "auditdeny", "allowxperm" policy commands
+   - supolicy: -live/--file no longer apply default patches if custom patches are supplied
+   - supolicy: -sdk=X option added (required for 7.0+)
+   - supolicy: reworked all SELinux rules for 7.0+, run as 'supersu' context
+   - ZIP: Separate slotselect and system_root logic
+   - ZIP: Adjust system/system_root device and mount-point detection
+   - ZIP: Fix minor errors in documentation
+   - ZIP/frp: Explicitly label /su
+
+2.1-CE
+  UPDATE: OxygenOS Open Beta 9
+  - Shelf Design Optimizations
+  - Added Expanded Screenshots
+  - General UI Optimizations
+  - DPI Optimizations
+  - Battery Performance Optimizations
+  - Stability and Performance Optimizations
+  - General bug fixes
+  ADD: Option to select the firmawre version (Read FAQ for more)
+  ADD: Duo application in aroma
+
+2.0-CE
+  UPDATE: Nougat build, based OpenBeta 8
+  UPDATE: SuperSU SR5
+  - Fix shell-based scripts/services possibly not being executed on 7.x firmwares
+  - Add SecurityLogAgent to Samsung KNOX detection
+  - sukernel: force seclabel
+  REMOVE: ElementalX Kernel from aroma.
+  REMOVE: Audio mods, divine beats (Viper4Android & Dolby Atmos)
+          Will come back later.
+  UPDATE: Firmwares binaries
+  REMOVE: Multi Windows in aroma, it's now built-in into the rom
+  REMOVE: Dpi selection in aroma, it's now built-in into the rom
+
+1.11.1-CE
+  UPDATE: ElementalX 0.28
+  -security updates
+  UPDATE: Xposed Installer 3.0.1
+
+1.11-CE
+  UPDATE: OxygenOS Open Beta 7
+  ADD: Spanish language in aroma @jgimenezpascual
+  UPDATE: Increase smoothness of the boot animation and reduce size ~-30%
+  DELETE: Google Maps to free up some space
+  UPDATE: Adaway 3.2
+  - Systemless root support - extensive work by @PerfectSlayer
+  - Improvements to root mounter - by @sanjay900
+  - Translations updates
+  - Various updates for support on Android 7.x
+  UPDATE: SuperSU 2.78 SR4
+  - sukernel: improve FBE detection
+  - suinit: TWRP compatibility on slot-based systems
+  - ZIP: TWRP compatibility on slot-based systems﻿
+  UPDATE: SuperSU 2.78 SR3
+  - Fix ‘Full Unroot’ on slot-based systems
+  - sukernel: replace system symlink with bind mount
+  - sukernel: add missing slot check for system_root import
+  - sukernel: fix ramdisk backup segmentation fault
+  - supolicy: adjust priv_app policy to be able to call su
+  - launch_daemonsu: adjust su.img size detection
+  - ZIP: improve loop device setup
+  - ZIP: add factory reset protection (FRP variable, default if slots used)
+  UPDATE: SuperSU 2.78 SR2
+  - File-based-encryption support
+  - CCMT: Add privacy policy dialog
+  - CCMT: Update translation files
+  - su+gui: support /system_root paths
+  - sukernel: add kernel binary extract/replace
+  - sukernel: add kernel cmdline extract/replace
+  - sukernel: add system_root import
+  - sukernel: add slot-kernel patch
+  - sukernel: support /boot paths
+  - suinit: new binary component
+  - launch_daemonsu: restructure to support /su in initramfs or system_root
+  - ZIP: Support systemless on 5.0 (requires 3rd party patches)
+  - ZIP: Support for A/B slot systems with / inside system partition
+
+1.10-CE
+  UPDATE: French language @xeloni
+  UPDATE: 3.5.5 OxygenOS Community Build
+  ADD: Added OnePlus FileDash functionality for convenient file transfers
+  ADD: Added ability to switch launcher layouts
+  ADD: Integration of Google Map to share locational information in messages.
+  ADD: Redesign of the phone calling UI
+  ADD: Added personalized ringtone information in contact details
+  ADD: Added ability to view the entire call history of the selected contact
+  ADD: Introduction of the OnePlus Community App
+  FIX: Increased system stability
+  FIX: General bug fixes
+  UPDATE: ElementalX 0.27
+  UPDATE: OnePlus updates
+
+1.9.1-CE
+  FIX: OnePlus Music uninstaller
+  FIX: Audio tunneling effect
+  ADD: Force remove FreedomOS_wallpaper folder if not ticked
+  CHANGE: Audio Mods/Divine are no more installed by default to avoid errors
+  ADD: ElementalX 0.25
+   -security updates
+   -verified boot patch (@sultanxda)
+   -various optimizations
+   -firmware compatibility fix (@myfluxi)
+
+  NOTE: The ElementalX wifi module is installed by default.
+
+1.9-CE
+  UPDATE: Dolby Atmos Sample rate to 48kHz
+  UPDATE: Change Sample rate for tiny alsa to 48kHz
+  FIX: tiny alsa device name configuration
+  ADD: Support all TWRP versions (modified and official [READ NOTE])
+  UPDATE: Emoji One 2.2.4
+  REMOVE: Layers, this app is now deprecated.
+  REMOVE: Some OnePlus/Google bloat apps:
+   - BTtestmode
+   - EngineeringMode
+   - EngSpecialTest
+   - Hangouts
+   - LogKitSdService
+   - OemAutoTestServer
+   - OEMLogKit
+   - SensorTestTool
+   - WifiRfTestApk
+   - oemlogkit
+   - WifiLogger_app
+  UPDATE: OxygenOS 3.5.4 Community Build
+  ADD: App Lock functionality
+  FIX: Keyguard crashes when enabling sim card lock in multiple languages
+  OPTIMIZE: Accent colors in default themes
+  OPTIMIZE: Translations for certain languages
+  OPTIMIZE: Improved the quality of expanded screenshots
+  OPTIMIZE: Increased system stability
+  FIX: General bugs
+  And a lot of under the hoods changes, check gitlab for more informations.
+
+  NOTE: This rom support f2fs format for the /data partition, keep in mind, some recovery doesn't support it!
+
+1.8-CE
+  UPDATE: OxygenOS 3.5.3 Community Build
+  ADD: AOSP clock as default clock
+  ADD: Capability to uninstall some preinstalled apps, like FileManager, Weather, Recorder, MusicPlayer
+  ADD: Expanded screenshots, you can now save a long screenshot of a scrollable page to cover more contents.
+  ADD: Celluar data firewall, you can control whether an app is allowd to use cellular network or WiFi
+  ADD: Contact setting in Priority mode
+  ADD: Setting menu adjustment in Messages, added option to vibrate phone when receiving SMS
+  ADD: Contact UI redesign
+  FIX: community build cannot flash back to official build issue
+  FIX: General bug fixes
+  And under the hood changes, check gitlab for more information.
+
+  NOTE: The f2fs is working on /data partition.
+
+1.7-CE
+  UPDATE: SuperSU 2.78 SR1
+  UPDATE: Substratum 223
+  UPDATE: ElementalX 0.20
+  UPDATE: OxygenOS 3.5.2 Community Build
+    ADD: “kill all background processes” button in recents menu
+    ADD: Long press options in messages application
+    OPTIMIZE: Incoming call notification UI
+    ADD: Manual “check for update” button
+    ADD: Additional directions for first fingerprint configuration
+    ADD: Battery Saver mode optimizations and enhancements
+    ADD: Back contacts widget in launcher
+    OPTIMIZE: Dialer speed
+    ADD: New modes added in control panel (night mode and battery saver)
+    ADD: Support for PIN codes up to 6 digits
+  UPDATE: XposedInstaller
+  And under the hood changes, check gitlab for more information.
+
+  NOTE: Support f2fs support for the /data (not tested)
+
+1.6.1-CE
+  ADD: Splash option, let you choose your boot screen
+  ADD: Force 480 dpi in build.prop
+  ADD: Built-in busybox in the installer, see note
+  ADD: Italian language in aroma xda@xEvoRayJiN
+  ADD: German language in aroma xda@DanielL
+  FIX: SuperSU version in aroma
+
+  NOTE: Some TWRP doesn't have busybox built in, so i added my own busybox in the zip.
+       The installer will use it, instead of busybox coming with TWRP.
+       It should fix installations problems for some TWRP version.
+
+1.6-CE
+  UPDATE: OxygenOS 3.5.1 Community Build
+  ADD: Accent color
+  ADD: Battery icon customization
+  ADD: LED customization
+  ADD: Display sRGB
+  ADD: Night mode
+  OPTIMIZE: Dark mode theme optimized
+  FIX: General bug fixes
+  REMOVE: OnePlus Bug Report
+  FIX: OnePlus OTA uninstallation, no more IMEI leaks
+  FIX: File manager uninstallation
+  FIX: OnePlus Music uninstallation
+  FIX: Calculator uninstallation
+  REMOVE: ElementalX option
+  REMOVE: Audio patch for 3.5, the sound quality is now better with this build.
+
+  NOTE: This build contain also the 1.4.3 changelog.
+
+1.4.3
+  RERVERT: "Update aroma to 3.00b1", now we comeback on a more stable build (less freeze).
+  CHANGE: All your gapps update will no more be removed by default, but only if selected in the AROMA.
+  REVERT: "All gapps update", see note.
+  UPDATE: Splash screen
+  ADD: FreedomOS bootanimation
+  UPDATE: ElementalX 0.15
+  UPDATE: V4A 2.5.0.5
+    UPDATE: New UI
+    ADD: cross-channel ("quad channel") convolver support. This allows faithful reproduction of sound-field effects requiring such cross-channel convolution, such as simulation of speaker soundfield on headphones, or crosstalk cancellation (stereo widening) on stereo speakers.
+    ADD: FET compressor (new compressor / limiter simulating operation of FET circuits)
+    ADD: Support for custom settings storage path (no more looking everywhere in the phone for the settings directory!)
+    FIX: Miscellaneous bug fixes.
+  ADD: 6 brand new IRS for cross-channel ("quad channel") convolver.
+  UPDATE: SuperSU 2.78
+
+  NOTE : Some users experience some issues with the installation of the new gapps.
+  The new gapps was not updated with the perfect method.
+  For doing the job perfectly, i need to compile the gapps by myself with his odex files.
+  I don't want to do that, so comeback with the OnePlus gapps.
+
+  NOTE: The 6 IRSes explained:
+  "Widefield" / "Vivid": widefield impulses offer a wider stereo field while vivid impulses offer more solid out-of-head center imaging.
+  44100/48000/192000Hz: choose the right IRS based on the sample rate shown in V4A's driver status while headphones are plugged into your Android and playing.
+  More info here: http://forum.xda-developers.com/showpost.php?p=68473076&postcount=23583
+
+1.5-CE (Community Edition)
+  **Use instead the 1.4.2 build for stability.**
+
+  UPDATE: Several UI improvements
+  UPDATE: New and improved OnePlus apps, including clock, weather, and file manager
+  UPDATE: Improved camera software
+  UPDATE: More robust settings and and customization feature
+  REMOVE: Google Maps
+  REMOVE: Google Play Music
+  REMOVE: Hangouts
+  FIX: Bad audio quality from OxygenOS 3.5 Community Build.
+
+  NOTE: Those Google apps have been removed by myself, for liberate some space in the system partition.
+        They are still present in the aroma, but dummy.
+  NOTE: Changing the dpi makes an odd ui, not recommanded.
+  NOTE: You’ll notice some of these new features right away, but the big changes have taken place behind the scenes.
+   We’ve streamlined our platform, and OxygenOS 3.5 includes a lot of backend enhancements that will streamline our processes.
+   The big goal here is to improve the speed and frequency of updates moving forward.
+   Please follow the links below for the experience survey and bug reporting sheet.
+   https://goo.gl/forms/2rTKCrwincvKBuj32 - Feedback on UI/UX
+   https://goo.gl/forms/FbRojFvSXqkLwsPD2 - Bug reporting sheet
+  NOTE: With this build, rolling back to FreedomOS =<1.4.2 versions can require wiping data and cache.
+  NOTE:
+   - Android Pay is not currently supported
+   - Only English is currently supported in several OnePlus apps
+   - Some performance issues
+   - Some UI issues when using custom themes
+   - System UI tuner is unstable (do not use); using the system UI tuner could cause serious issues that can only be resolved via factory reset
+   - You will need to re-register your fingerprints if you have fingerprint authentication enabled
+   - The wifi doesn't work with ElementalX 0.14.
+   - Don't forget to launch SuperSU app at your first boot.
+
+1.4.2
+  CHANGE: Retrun with the system.new.dat installation.
+  ADD: FreedomOS patched kernel:
+   - Disable force encryption.
+   - Disable system verification.
+   - noatime mount flag
+   - Compatible with the others custom kernels.
+  ADD: SuperSU installation is now optional, the system can boot without this one, thanks to the kernel patch [OPTION].
+  ADD: Remove com.touchtype with SwiftKey [OPTION].
+  ADD: FreedomOS splash boot, thanks @kickoff for the image.
+  UPDATE: ElementalX 0.14
+  UPDATE: CalendarGoogle
+  UPDATE: Drive
+  UPDATE: Layers
+  UPDATE: Messenger
+  UPDATE: Substratum
+  UPDATE: SwiftKey
+  UPDATE: YouTube
+  DELETE: Stock recovery theme files.
+  A lot of under the hood modification, see gitlab.
+
+1.4.1
+  UPDATE: ElementalX 0.11.
+  ADD: Wipe dalvik-cache during flash.
+
+1.4
+  Update to OxygenOS 3.2.4:
+  - Fixed the auto-reboot issue.
+  - Improved call quality.
+  - Implemented various fixes and carrier optimizations.
+
+1.3.2
+  ADD: Removing OnePlusWallpapers [OPTION]
+  ADD: DocumentsUI [OPTION] #6
+  ADD: DownloadProvider [OPTION] #6
+  ADD: Google Call Backup [OPTION] #6
+  ADD: Fix sdcard access for multirom users.
+  FIX: OnePlusGallery uninstallation. #5
+  FIX: Google Now (Velvet) uninstallation. #5
+  FIX: BTtestmode uninstallation. #6
+  FIX: USB OTG Support.
+  FIX: Some apps has not correctly installed.
+  UPDATE: Google
+  UPDATE: Google Calandar
+  UPDATE: Google Calculator
+  UPDATE: Google Photos
+  UPDATE: Google TallBack
+  UPDATE: Substratum
+  UPDATE: Swiftkey
+  UPDATE: hosts file.
+  REVERT: "Google apps in /data" They are now installed in /system. #3 #5
+  REVERT: "Delete /sdcard/Android" after some users requests. #7
+
+1.3.1
+  ADD: ElementalX Kernel 0.10 with the AROMA configuration. @flar2 [OPTION]
+  ADD: Wipe cache during flash
+  ADD: odex files for data apps, the first booting time is now reduced.
+  ADD: Removing DivesIconPack [OPTION]
+  ADD: Removing RifonIconPack [OPTION]
+  UPDATE: SuperSU 2.76 STABLE
+  UPDATE: AROMA 3.00b1
+  UPDATE: Google Hangouts
+  UPDATE: Google Maps
+  UPDATE: Gmail
+  UPDATE: Google Music
+  UPDATE: Swiftkey
+  UPDATE: YouTube
+  UPDATE: Xposed Installer Material
+  CHANGE: Change temp dir for supersu installation "/tmp/tools/su" -> "/tmp/supersu"
+  FIX: If you selected "No" to the assert check, it skips some steps.
+  FIX: SuperSU installation for users coming from 1.2.1 with dirty flash.
+  FIX: Gogole on Tap/Now, apk is now installed as system app.
+  FIX: su.d permissions, see 5.1.1 https://su.chainfire.eu.
+  FIX: Swiftkey uninstallation.
+  ENHANCEMENT: AROMA UI and typo.
+  REMOVE: SuperSU option, the rom was not able to boot without it.
+  NOTE: Swiftkey icon is hidden with OnePlus launcher,
+        Go to 'Settings > Language & input > Actual keyboard > Select keyboard'.
+  IMPORTANT: Latest OFFICIAL TWRP is needeed for flashing this rom!!!
+  And more, check gitlab.com/Nevax/FreedomOS .
+
+1.3
+  FIX: ViPER4Android and FreedomOS_Wallpapers folders are not writable.
+  FIX: SuperSU installation.
+  ADD: Google DNS. [OPTION].
+  ADD: Substratum theme engine. [OPTION].
+  ADD: EmojiOne 2.2. [OPTION] see more: http://emojione.com.
+  ADD: New installation process, no more system.new.dat.
+  ADD: Material Design Xposed Installer 3.0 alpha4. [OPTION].
+  ADD: OnePlus Camera [OPTION].
+  ADD: OnePlus Gallery [OPTION].
+  ADD: OnePlus OTA [OPTION].
+  ADD: OnePlus Setup Wizard [OPTION].
+  ADD: Multi Window [OPTION].
+  ADD: Most of the apps are now installed as user apps, instead of system apps.
+  ADD: AntHalService [OPTION]
+  ADD/UPDATE: Google Messenger 1.9.035 [OPTION].
+  UPDATE: Google 6.2.28.21.
+  UPDATE: Google Agenda 5.5.12-127519458.
+  UPDATE: Google Maps 9.33.1.
+  UPDATE: Google Musique 6.11.3120D.3072211.
+  UPDATE: Google Play Music 6.11.3120D.3072211.
+  UPDATE: Google Photos 1.24.0.127982639.
+  UPDATE: YouTube 11.27.53.
+  UPDATE: Swiftkey 6.3.8.77.
+  UPDATE: Removing "Removing Wifi Rf Test" also remove "WifiLogger_app" binary.
+  UPDATE: hosts file
+  DELETE: fmfactorytest binairy.
+  DELETE: fmfactorytestserver binairy.
+  DELETE: Xposed Installer alpha4.0.
+  DELETE: SHA1 System verification.
+  DELETE: Google Play Videos.
+  And more, check gitlab.com/Nevax/FreedomOS
+  NOTE: Migrate to GitLab, the change are mirrored to Github every hour.
+  Check gitlab.com/Nevax/FreedomOS
+  NOTE: Dirty flash should be now more supported thant ever, just wipe cache/dalvik.
+
+1.2.1
+  Fix system verification
+  Fix inverted checkbox
+  Fix recovery restoration
+  No more OnePlus recovery coming from the dark side
+  Fix permissions in Viper4Android folder
+
+1.2
+  Adding option for user to disable system verification after installation.
+  Adding backup/restore script for addon.d.
+  The both mean a better support for dirty flash.
+      |-> I do not recommend any dirty flash!
+  Adding FreedomOS wallpapers designed by @badboy47.
+      |-> Available in /sdcard/FreedomOS_wallpaper.
+  Updated to OxygenOS 3.2.2:
+    - Improved notification management in doze.
+    - Addressed alert slider/silent mode issue.
+    - Disabled fingerprint sensor while in pocket.
+    - Added NFC toggle in quick settings.
+    - Improved noise cancellation in video recording.
+    - Updated 4K video recording codec.
+    - Added latest security patches and various optimizations.
+
+1.1.2
+  Update to OxygenOS 3.2.1.
+    - Fixed some notification issues
+    - Addressed SIM recognition issue
+    - Enabled sRGB mode in developer options
+    - Improved RAM management
+    - Improved GPS performance
+    - Enhanced audio playback quality
+    - Updated custom icon packs
+    - Improved camera quality/functionality
+    - Fixed some issues in Gallery
+    - Implemented latest Google security patches
+    - Fixed bugs in Clock/Music apps
+  Fix wrong indicated version of SuperSU in aroma.
+
+1.1.1
+  Update French, few lines were missing.
+  New Viper4Android Profiles and IRS, A.R.I.S.E, Rika and FreedomOS.
+  Remove reboot option at the beginning of the aroma.
+  Update to SuperSU v2.76.
+  Goodbye app limitation in RAM, dummy on 1.1.
+  No more Xposed framework, flash the zip file by yourself, apk still there.
+  Welcome to RRO Layers Manager
+  Add missing information in aroma @TimV_
+  New splash screen @badboy47
+  Status bar optimized
+  Aroma ready for a kernel, released planned in august, stay tuned :) .
+  Remove Bugle in aroma, deleted in OxygenOS 3.2.0
+  Tallback & TTS removed from aroma.
+
+1.1
+  Update Adaway 3.1.1 to 3.1.2.
+  Update host file (58,692 additions, 15,444 deletions)
+  Splash screen for aroma, thanks @badboy47 for the original work.
+  Add 13 more options for debloat
+  Update to OxygenOS 3.2 :
+      -  Enabled sRGB mode in developer options
+      -  Improved RAM management
+      -  Improved GPS performance
+      -  Enhanced audio playback quality
+      -  Updated custom icon packs
+      -  Fixed some issues with notifications
+      -  Improved camera quality/functionality
+      -  Fixed some issues in Gallery
+      -  Latest Google security patches
+      -  Fixed bugs in Clock/Music apps
+
+1.0.1
+  Update French, few lines were missing.
+  More DPI choice, 500-420 > 500-350.
+  Add Android Pay and Swiftkey in Aroma Installer.
+  Better uninstaller for Live wallpapers.
+  Fix uninstaller for some apps (Like Play Music, Play Films...).
+  Update hosts file.
+  And more.. check github.
+
+1.0
+  Initial release
