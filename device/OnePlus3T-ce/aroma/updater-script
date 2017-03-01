@@ -207,7 +207,7 @@ delete_recursive("/tmp/supersu");
 if (file_getprop("/tmp/aroma/aromaroot.prop", "rootmethod") == "1")
   then
   ui_print("   Installing Magisk");
-  run_program("/tmp/magisk/install.sh");
+  run_program("/tmp/tools/magisk/install.sh");
   run_program("/tmp/tools/busybox", "echo", "DEBUG: Move magisk to /tmp/tools/magisk ->  /tmp/magisk ");
   run_program("/tmp/tools/busybox", "mv", "/tmp/tools/magisk", "/tmp/magisk");
   run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");

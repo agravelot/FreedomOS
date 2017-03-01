@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 echo "Installing Magisk apk"
-cp -rvf /tmp/magisk/Magisk /system/app/
+cp -rvf /tmp/tools/magisk/Magisk /system/app/
 cd /system/app/Magisk
 chown 1000.1000 . -R
 chown 1000:1000 . -R
