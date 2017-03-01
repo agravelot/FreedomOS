@@ -21,7 +21,7 @@ ZIP_NAME=FreedomOS-CE
 # Select the architecture of your device, it will be used in the system patch (see ADD_SYSTEM_LIST bellow).
 # It must coincide with the assets/system/$TARGET_ARCH
 TARGET_ARCH=arm64
-CODENAME=op3
+CODENAME=op3t
 DEVICE=OnePlus3T
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT="OnePlus 3T"
