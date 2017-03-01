@@ -630,6 +630,14 @@ form(
       "notraffic",        "<~no_traffic>",         "<~info.no_traffic>",         "check"
 );
 
+alert (
+ "<b>If you like my work",
+ "consider a donation to:\n"+
+ "Paypal:antoine.gravelot@hotlmail.com\n"+
+ "Really appreciated!</b>",
+ "@paypal"
+);
+
 # -- - Pre-Install - -- -#
 ini_set("text_next", "<~install.now>");
 viewbox( "<~pre.install.title>", "<~pre.install>\n\n" + "<~pre.install2>\n\n" + "<~pre.install3>\n\n\n\n", "@install");
