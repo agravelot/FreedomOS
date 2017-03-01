@@ -361,6 +361,11 @@ run_program("/sbin/busybox", "unzip", "/tmp/tools/busybox_installer/busybox.zip"
 run_program("/sbin/busybox", "sh", "/tmp/tools/busybox_installer/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/busybox.log", "/tmp/tools/busybox_installer/busybox.zip");
 delete_recursive("/tmp/tools/busybox_installer");
 
+# -- - APPLYING THEMES - -- #
+ui_print("   Applying VRThemes ");
+run_program("/tmp/tools/busybox", "mount", "/system");
+run_program("/tmp/tools/vrtheme/run.sh");
+
 # -- - SYSTEM APPS - -- #
 set_progress(0.960000);
 ui_print(" ");

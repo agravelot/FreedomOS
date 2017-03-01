@@ -615,21 +615,6 @@ then
     resexec("scripts/gen_arise_conf.sh");
 endif;
 
-form(
-    "<~theme.tittle>",
-    "<~theme.subtittle>",
-    "@default",
-    aromatheme.prop,
-
-    "inclorexcl",     "<~incorexcl.theme>",        "",                    "group",
-      "1",                    "<~inc.theme>",                  "<~info.inc.theme>",        "select.selected",
-      "0",                    "<~excl.theme>",                  "<~info.excl.theme>",  "select",
-
-    "theme",     "<~theme.select>",    "",        "group",
-      "centerclock",      "<~center_clock>",       "<~info.center_clock>",       "check",
-      "notraffic",        "<~no_traffic>",         "<~info.no_traffic>",         "check"
-);
-
 # -- - Pre-Install - -- -#
 ini_set("text_next", "<~install.now>");
 viewbox( "<~pre.install.title>", "<~pre.install>\n\n" + "<~pre.install2>\n\n" + "<~pre.install3>\n\n\n\n", "@install");

@@ -145,5 +145,6 @@ common/magisk
 common/pixel_icons
 common/save_logs.sh
 common/supersu
+common/vrtheme
 common/wideband_wifi.sh
 "
