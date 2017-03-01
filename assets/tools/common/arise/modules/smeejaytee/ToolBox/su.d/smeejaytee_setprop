@@ -1,0 +1,154 @@
+#!/system/bin/sh
+#
+# ARISE Sound Systems™
+#
+# Deuteronomy™
+#
+# smeejaytee's_setprop
+#
+# www.arisesound.com
+
+
+#ALSA#
+
+setprop AUDIODRIVER alsa
+setprop ro.sound.driver alsa
+setprop ro.audio.driver alsa
+setprop ro.sound.alsa snd_pcm
+setprop alsa.mixer.defaultGain 1.25
+setprop alsa.mixer.playback.bt.sco BTHeadset
+setprop alsa.mixer.capture.bt.sco BTHeadset
+## Asus™ Zenfone 3 Ultra Audio ##
+
+#
+#codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE
+setprop mm.enable.qcom_parser 982015
+
+#parser input buffer size(256kb) in byte stream mode
+setprop audio.parser.ip.buffer.size 262144
+
+setprop media.stagefright.enable-player true
+setprop media.stagefright.enable-http true
+setprop media.stagefright.enable-aac true
+setprop media.stagefright.enable-qcp true
+setprop media.stagefright.enable-scan true
+setprop mm.enable.smoothstreaming true
+setprop media.aac_51_output_enabled true
+setprop audio.offload.track.enable false
+setprop audio.deep_buffer.media true
+setprop audio.offload.gapless.enabled true
+setprop audio.offload.multiple.enabled false
+setprop audio.safx.pbe.enabled true
+setprop audio.pp.asphere.enabled false
+#setprop ro.asus.audio.feature ar101
+#setprop ro.asus.audiowizard.config 1
+setprop audio.offload.pcm.16bit.enable true
+setprop audio.offload.pcm.24bit.enable true
+setprop audio.dolby.ds2.enabled true
+setprop audio.dolby.ds2.hardbypass true
+#
+
+## Huawei™ MediaPad M3 Audio ##
+
+#
+setprop ro.config.hw_dts true
+setprop ro.config.hw_sws true
+setprop ro.config.sws_version sws3
+setprop ro.config.hw_media_flags 3
+setprop ro.config.widevine_level3 true
+setprop drm.service.enabled true
+setprop ro.config.keyguard_audio_video true
+#
+
+## ViPER4Arise™ Audio ##
+
+#
+setprop tunnel.decode false
+setprop lpa.decode false
+setprop lpa.use-stagefright false
+#
+
+## Miscellaneous Audio ##
+
+#
+#Hi-Res option for PowerAmp
+setprop ro.lenovo.hifi_support true
+#
+# enable lpa.a2dp for better SQ over Bluetooth
+
+setprop persist.audio.voice.clarity on
+setprop ro.lge.voice.clarity 1
+setprop ro.config.media_vol_extend ON
+setprop ro.bluetooth.dun true
+setprop ro.bluetooth.emb_wp_mode true
+setprop ro.bluetooth.hfp.ver 1.6
+setprop ro.bluetooth.sap true
+setprop ro.qualcomm.bluetooth.ftp true
+setprop ro.qualcomm.bluetooth.hfp true
+setprop ro.qualcomm.bluetooth.hsp true
+setprop ro.qualcomm.bluetooth.map true
+setprop ro.qualcomm.bluetooth.nap true
+setprop ro.qualcomm.bluetooth.opp true
+setprop ro.qualcomm.bluetooth.pbap true
+setprop net.bt.name Feel_The_Beatz
+setprop ro.config.hw_fadein true
+setprop ro.lge.audio_soundexception true
+setprop ro.mtk_audenh_support 1
+setprop ro.mtk_bessurround_support 1
+setprop ro.mtk_bt_support 1
+setprop ro.mtk_audio_tuning_tool_ver V2.2
+setprop ro.have_aacencode_feature 1
+
+#
+
+setprop dmid 3067269873
+setprop audio.ds1.metainfo.key 273
+setprop dolby.audio.sink.info Headphone
+setprop dolby.ds.dialogenhancer.state off
+setprop dolby.ds.graphiceq.state off
+setprop dolby.ds.intelligenteq.preset ieq_open
+setprop dolby.ds.intelligenteq.state on
+setprop dolby.ds.profile.name Music
+setprop dolby.ds.state on
+setprop dolby.ds.virt.bluetooth on
+setprop dolby.ds.virt.hdmi on
+setprop dolby.ds.virt.headphone_port on
+setprop dolby.ds.virt.internal_speaker off
+setprop dolby.ds.virt.miracast on
+setprop dolby.ds.virt.usb on
+setprop dolby.ds.volumeleveler.state off
+setprop dolby.monospeaker false
+setprop ro.config.hw_dolby true
+
+## Lenovo™ K3 Note MaxxAudio™ ##
+
+
+#
+
+setprop ro.lenovo.soundeffect ma
+setprop audiofx.global.enable 1
+setprop audiofx.global.dts.enable 1
+setprop audiofx.eq.preset 10
+setprop audiofx.bass.enable 1
+setprop audiofx.bass.strength 90
+setprop audiofx.treble.enable 1
+setprop audiofx.treble.strength 50
+setprop audiofx.virtualizer.enable 1
+setprop audiofx.virtualizer.strength 60
+setprop audiofx.maxxvolume.enable 1
+setprop audiofx.maxxvolume.strength 80
+
+## htc audio enhancement ##
+
+
+# Buffer size in kbytes for compress offload playback
+
+setprop audio.offload.buffer.size.kb 16
+setprop htc.audio.beats.state 1
+setprop htc.audio.beats.config 1
+setprop htc.audio.beats.support2v 1
+setprop htc.audio.lpa.a2dp 1
+setprop htc.audio.alc.enable 1
+setprop htc.audio.effect.srs 1
+#
+exit 0

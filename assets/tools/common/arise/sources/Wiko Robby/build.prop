@@ -4,18 +4,18 @@
 ro.build.id=MRA58K
 ro.build.display.id=MRA58K release-keys
 ro.build.version.incremental=1457521267
-ro.tcustom.build.version=WIKO ROBBY Version 20
-ro.custom.build.version=ROBBY Marshmallow 6.0 (20)
-ro.internal.build.version=V3750AN_MP_6.0_WIK_FR_17_20
-ro.tinternal.build.version=V3750AN_MP_6.0_WIK_FR_17_20
+ro.tcustom.build.version=
+ro.custom.build.version=ROBBY Marshmallow 6.0 (32)
+ro.internal.build.version=V3750AN_MP_6.0_WIK_FR_17_32
+ro.tinternal.build.version=V3750AN_MP_6.0_WIK_FR_17_32
 ro.build.version.sdk=23
 ro.build.version.codename=REL
 ro.build.version.all_codenames=REL
 ro.build.version.release=6.0
-ro.build.version.security_patch=2016-05-01
+ro.build.version.security_patch=2016-10-05
 ro.build.version.base_os=
-ro.build.date=2016年 05月 26日 星期四 14:14:28 CST
-ro.build.date.utc=1464243268
+ro.build.date=2016年 10月 23日 星期日 20:03:56 CST
+ro.build.date.utc=1477224236
 ro.build.type=user
 ro.build.user=android
 ro.build.host=HTSVR12
@@ -111,6 +111,8 @@ ro.opengles.version=131072
 debug.hwui.render_dirty_regions=false
 
 ro.sf.lcd_density=320
+
+ro.reset.apelauncher.enable=false
 
 #
 # ADDITIONAL_BUILD_PROPERTIES
@@ -226,10 +228,11 @@ service.wcn.coredump.mode=2
 ro.com.android.mobiledata=false
 persist.radio.mobile.data=0,0
 persist.meta.dumpdata=0
+mtk.vdec.waitkeyframeforplay=1
 ro.com.android.dateformat=dd-MM-yyyy
 ro.tinno.smallscreen=true
-ro.myos.version=3.0.0.r279
-ro.myos.releasetime=2016.05.17
+ro.myos.version=3.0.0.r447
+ro.myos.releasetime=2016.10.21
 persist.sys.timezone=Europe/Brussels
 ro.config.ringtone=Dazzle.ogg
 ro.config.notification_sound=Graceful.ogg
@@ -258,4 +261,4 @@ dalvik.vm.isa.arm.variant=cortex-a7
 dalvik.vm.isa.arm.features=default
 net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
-ro.expect.recovery_id=0xf70e5d8115ce791823e9143d54ae889cce9708f3000000000000000000000000
+ro.expect.recovery_id=0xdcefd9672b0d8cb4bf8be8ca7fe15528d4a428da000000000000000000000000

@@ -29,7 +29,7 @@ welcome.next=Yüklemeye Devam Etmek İçin İleri'ye basın...
 changelog.title=Değişiklikler
 changelog.desc=FreedomOS Değişiklikleri
 language.title=Dil seçin
-language.text=Yükleme dili seçin
+language.text=Yükleme dilini seçin
 language.english=English
 language.english.info=Using English
 language.french=France
@@ -42,8 +42,13 @@ language.spanish=Español
 language.spanish.info=Utilizar Español by @jgimenezpascual
 language.turkish=Türkçe
 language.turkish.info=Türkçe kullanın - @Mevlüt TOPÇU
+language.tchinese=正體中文
+language.tchinese.info=使用正體中文 - @clyang
+language.schinese=简体中文
+language.schinese.info=使用简体中文 - @clyang
 
-rom.data=!date!
+
+rom.data=!tarih!
 text_finish=Bitti
 model.title=Telefon Modeli
 
@@ -56,7 +61,7 @@ main.sys=Sistem bilgisi
 main.sys.info=Aygıt bilgilerini göster
 main.changelog.info=FreedomOS değişiklikleri
 main.exit=Çıkış
-main.exit.info=FreedomOS yükleyiciden çık
+main.exit.info=FreedomOS yükleyicisinden çık
 
 install_mod.tittle=FreedomOS yükleyici
 install_mod.tittle2=Ayarlarınızı seçin
@@ -65,7 +70,7 @@ install_mod.sub_tittle=Kurulum yöntemi
 gapps_yes=Evet, Google Uygulamarını yükle
 gapps_no=Google Uygulamarını yükleme
 info.gapps_yes=Tavsiye edilen
-info.gapps_no=Sistem Google uygulamaları olmadan önyükleme <#f00>YAPMAZ</#>
+info.gapps_no=Sistem, Google uygulamaları olmadan önyükleme <#f00>YAPMAZ</#>
 assert.tittle=Kontrolü onayla
 assert_yes=Evet (Önerilen)
 assert_no=Hayır
@@ -83,7 +88,7 @@ passwordfix.tittle=Pin/Desen geçici çözümü
 passwordfix_yes=Evet
 info.passwordfix_yes=Veri bölümünden Pin/Desen yedeklemesini kaldır
 passwordfix_no=Hayır
-info.passwordfix_no=Eski dosyalara izin ver
+info.passwordfix_no=Eski dosya kalsın
 
 info.custom=Özgürlük yolunda
 info.stock=Orijinal OnePlus stok yazılımı, root erişimi yok
@@ -163,7 +168,7 @@ basic_dream=Basic Dream
 bt_midi=BT Midi Service
 bt_test=BTtestmode
 desk_clock=DeskClock
-document=Dökümanalr
+document=OP File Manager
 download_provider=İndirme Sağlayıcı
 engineering=Mühendislik Modu
 eng_special_test=EngSpecialTest
@@ -259,7 +264,7 @@ mod.tittle=Ek modları yükle
 mod.tittle2=Root erişimi, ses modu, reklam engelleyici ve xposed ...
 mod.tittle3=Ekstra mod
 
-supersu=SuperSU yükle
+root=Enable root access
 xposed=Material Tasarım Xposed Yükleyici
 adaway=Adaway
 adb=ADB'yi etkinleştir
@@ -268,8 +273,12 @@ fos_wallpapers=FreedomOS duvar kağıtları
 emoji_one=EmojiOne
 google_assistant=Google Asitan
 arise=A.R.I.S.E
+aptx=Install APTX/APTX-HD
+40-wifi=Enable wideband Wifi
+permissive=Enable permissive
+substratum=Substratum
 
-info.supersu=SuperSU by Chainfire
+info.root=Required to pass SafetyNet
 info.xposed=Xposed Installer application only by DVD android
 info.adaway=Android için Reklam Engelleyici
 info.adb=Android Hata Ayıklama Köprüsü
@@ -278,33 +287,60 @@ info.fos_wallpapers=Tasarım @badboy47
 info.emoji_one=Açık Emoji Standardı
 info.google_assistant=Yalnızca ABD
 info.arise=A.R.I.S.E Ses Sistemi
-
-# -- - THEME - -- #
-
-theme.tittle=Tema
-theme.tittle2=Tema ayarlarınızı seçin
-theme.tittle3=Tema motorunuzu seçin
-
-theme.tittle3=Tema motorunuzu seçin
-notheme=Tema motoru yükleme
-layer=RRO Katmanlar [kullanımdan kaldırıldı]
-substratum=Substratum
-
-info.notheme=
-info.layer=RRO Layers Manager
+info.aptx=Extra codecs from Qualcomm
+info.40-wifi=40MHz channel width over 2.4GHz
+info.permissive=Repack the kernel with permissive flag (Vulnerable to privilege escalation)
 info.substratum=Yeni Tema Motoru
 
+# -- - ROOT - -- #
+supersu=SuperSU yükle
+magisk=Install MagiskSU
+info.supersu=@Chainfire - <#f00>Will break SafetyNet</#>
+info.magisk=@topjohnwu - <#0f0>Required to pass SafetyNet</#>
+
+# -- - THEME - -- #
 splash.tittle=Önyükleme ekranınızı seçin, başlangıç animasyonu DEĞİL
 fos_splash=FreedomOS Önyükleme ekranı
 oos_splash=OxygenOS Önyükleme ekranı
 no_splash=Mevcut Önyükleme ekranı kalsın
 
-info.fos_splash=
-info.oos_splash=
-info.no_splash=
+theme.tittle=Themes
+theme.subtittle=Choose wich themes you want to apply
+incorexcl.theme=Choose to include or exclude the themes below
+inc.theme=Include
+excl.theme=Exclude
+
+info.inc.theme=Choose the themes you WANT installed from the list below.
+info.excl.theme=Choose the themes you DON'T WANT installed from the list below.
+
+theme.select=Please select which VRTheme module you want to include
+
+center_clock=Center Clock
+no_traffic=No Traffic Indicator
+
+info.center_clock=Provided by @kickoff
+info.no_traffic=Provided by @kickoff
+
+# -- - AUDIO - -- #
+v4a_new=Viper4Android 2.5.0.5
+v4a_old=Viper4Android 2.3.4.0
+v4a_profiles=V4A Profiles & Kernels
+arkamys=Arkamys™
+icesound=ICEsound™
+sony_player=Sony Music Player
+rm_deep_buffer=Remove deep_buffer from audio_policy
+sdcard_perm=Fix sdcard permisisons
+
+info.v4a_new=Latest version
+info.v4a_old=For old school users
+info.v4a_profiles=Various audio profiles with kernels
+info.arkamys=Arkamys™ Audio system
+info.icesound=Read carefully the included instructions
+info.sony_player=Include TrackID, Network/DLNA, podcasts
+info.rm_deep_buffer=Will fix most issues, not battery friendly!
+info.sdcard_perm=Can add 3 - 5 minutes to the recovery session
 
 # -- - KERNEL - -- #
-
 kernel.tittle=Çekirdek
 kernel.tittle2=Çekirdeğinizi seçin.
 kernel_stock=Stok Çekirdek

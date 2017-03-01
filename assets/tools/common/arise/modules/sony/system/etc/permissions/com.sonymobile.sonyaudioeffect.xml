@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2015 Sony Mobile Communications Inc.
+    All rights, including trade secret rights, reserved.
+-->
+<permissions>
+    <library name="sonyaudioeffect"
+             file="/system/framework/sonyaudioeffect.jar"/>
+</permissions>
+

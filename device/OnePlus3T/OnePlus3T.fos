@@ -27,10 +27,10 @@ DEVICE=OnePlus3T
 ASSERT="OnePlus 3T"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus3TOxygen_28_OTA_039_all_1701140132_400a7
-ROM_LINK=http://otafsc.h2os.com/patch/amazone2/GLO/OnePlus3TOxygen/OnePlus3TOxygen_28.A.39_GLO_039_1701140132/$ROM_NAME.zip
+ROM_NAME=OnePlus3TOxygen_28_OTA_041_all_1702081824_e3a712
+ROM_LINK=http://otafsc.h2os.com/patch/amazone2/GLO/OnePlus3TOxygen/OnePlus3TOxygen_28.A.41_GLO_041_1702081824/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=a9c4b279c389dc57ec17b2808a450edf
+ROM_MD5=9444ec1db7ae7a7736dea19ea0d9cff6
 
 # OpenGapps
 GAPPS_ANDROID=7.0
@@ -48,9 +48,7 @@ BUILD_METHOD=dat_to_dat
 # The partition size is exactly the same between OP3 and OP3T
 SYSTEMIMAGE_PARTITION_SIZE=3154116608
 
-PATCH_SYSYEM="
-aptx
-"
+PATCH_SYSYEM=""
 
 # Add BUSYBOX into the rom
 BUILD_BUSYBOX=true
@@ -89,7 +87,6 @@ bin/oemlogkit
 bin/WifiLogger_app
 recovery-from-boot.p
 etc/recovery-resource.dat
-app/Calculator
 app/CalendarGoogle
 priv-app/CallLogBackup
 app/Chrome
@@ -101,7 +98,14 @@ app/Messenger
 app/Photos
 app/Music2
 app/YouTube
-app/NFCTestMode 
+app/NFCTestMode
+vendor/etc/in_apps
+priv-app/SetupWizard
+priv-app/GmsCore
+etc/permissions/com.google.android.maps.xml
+etc/permissions/com.google.android.media.effects.xml
+etc/permissions/com.google.widevine.software.drm.xml
+tts/
 "
 
 # Add a secondary firmware files, like that it can be installed.
@@ -125,17 +129,20 @@ arm64/busybox
 common/adb.sh
 common/addon
 common/apps_remover.sh
+common/aptx
 common/arise
+common/arise4magisk
 common/clean.sh
 common/fonts
+common/fix_passwd.sh
 common/google_dns.sh
-common/google_assistant.sh
-common/hosts
 common/kernel
 common/log_folder.sh
+common/magisk
+common/pixel_icons
 common/save_logs.sh
-common/no_setup.sh
 common/supersu
-common/v4a_profiles_irs
-oneplus3/splash/oos-bootscreen/splash-stock.bin
+common/themes
+common/vrtheme
+common/wideband_wifi.sh
 "

@@ -65,6 +65,13 @@ function initialize {
   sdat2img_repo=${download_root}/sdat2img
   busybox_repo=${download_root}/freedomos_busybox
 
+  list_submodules="
+  img2sdat
+  sdat2img
+  freedomos_busybox
+  freedomos_opengapps
+  "
+
   redt=$(tput setaf 1)
   redb=$(tput setab 1)
   greent=$(tput setaf 2)
@@ -105,18 +112,17 @@ function initialize {
   source ${scripts_root}/opengapps.sh
   source ${scripts_root}/arise.sh
   source ${scripts_root}/busybox.sh
+  source ${scripts_root}/arise4magisk.sh
 
   HOST_ARCH=`uname -m`
   HOST_OS=`uname -s`
   HOST_OS_EXTRA=`uname -a`
 
-  # Check needed repos and set permissions
-  if [[ -d ${img2sdat_repo} && -d ${img2sdat_repo} ]]; then
-      chmod +x -R ${img2sdat_repo} >> ${build_log} 2>&1
-      chmod +x -R ${sdat2img_repo} >> ${build_log} 2>&1
-  else
-      die "Unable to find needed repos, please use ./update_repos.sh" "50"
-  fi
+  for i in $list_submodules; do
+      if [[ ! -d ${download_root}/$i ]]; then
+        die "Unable to find needed submodules [$i], please read README.md" "50"
+      fi
+  done
 
   if [ ! -f "${config_file}" ]; then
     configure
@@ -262,7 +268,11 @@ function download_rom {
 
     if curl -Is ${ROM_LINK} | grep "200 OK" &> /dev/null
     then
-      curl -o ${download_root}/${ROM_NAME}.zip ${ROM_LINK} | tee -a ${build_log}
+      if [ $(which aria2c) ]; then
+        aria2c ${ROM_LINK} -d ${download_root}/
+      else
+        curl -o ${download_root}/${ROM_NAME}.zip ${ROM_LINK} | tee -a ${build_log}
+      fi
     else
       die "${ROM_NAME} mirror OFFLINE! Check your connection" "10"
     fi
@@ -273,6 +283,7 @@ function download_rom {
       echo ">>> MD5 ${ROM_NAME}.zip checksums OK." 2>&1 | tee -a ${build_log}
     else
       echo ">>> File ${ROM_NAME}.zip is corrupt, restarting download" 2>&1 | tee -a ${build_log}
+      rm -rvf ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
       mv -vf ${download_root}/${ROM_NAME}.zip ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
       download_rom
     fi
@@ -303,6 +314,7 @@ if [ $confirm_build -eq 1 ]; then
   build
   add_files
   build_arise
+  build_arise4magisk
   if [[ BUILD_BUSYBOX ]]; then
       build_busybox
   fi

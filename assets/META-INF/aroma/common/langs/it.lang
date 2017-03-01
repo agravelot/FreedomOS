@@ -36,6 +36,11 @@ language.french=France
 language.french.info=Utiliser le Français
 language.italian=Italiano
 language.italian.info=Utilizzare Italiano
+language.tchinese=正體中文
+language.tchinese.info=使用正體中文 - @clyang
+language.schinese=简体中文
+language.schinese.info=使用简体中文 - @clyang
+
 rom.data=!date!
 text_finish=Finito
 model.title=Modello telefono
@@ -156,7 +161,7 @@ basic_dream=Basic Dream
 bt_midi=BT Midi Service
 bt_test=BTtestmode
 desk_clock=DeskClock
-document=Documents
+document=OP File Manager
 download_provider=Download Provider
 engineering=EngineeringMode
 eng_special_test=EngSpecialTest
@@ -252,7 +257,7 @@ mod.tittle=Installa mod extra
 mod.tittle2=Root, audio mod, ads blocker e xposed...
 mod.tittle3=Extra mod
 
-supersu=Installa SuperSU
+root=Enable root access
 xposed=Material Design Xposed Installer
 adaway=Adaway
 adb=Abilita ADB
@@ -261,8 +266,12 @@ fos_wallpapers=FreedomOS wallpapers
 emoji_one=EmojiOne
 google_assistant=Google Assistant
 arise=A.R.I.S.E
+aptx=Install APTX/APTX-HD
+40-wifi=Enable wideband Wifi
+permissive=Enable permissive
+substratum=Substratum
 
-info.supersu=SuperSU da Chainfire
+info.root=Required to pass SafetyNet
 info.xposed=Xposed Installer solo applicazione da DVD android
 info.adaway=Ad-Blocker per Android
 info.adb=Android Debugging Bridge
@@ -271,32 +280,60 @@ info.fos_wallpapers=Designed da @badboy47
 info.emoji_one=L’ Open Emoji Standard
 info.google_assistant=US only
 info.arise=A.R.I.S.E Sound System
-
-# -- - THEME - -- #
-theme.tittle=Tema
-theme.tittle2=Seleziona le impostazioni dei temi
-theme.tittle3=Seleziona il tuo motore dei temi
-
-theme.tittle3=Seleziona il tuo motore dei temi
-notheme=Non installare motore dei temi
-layer=RRO Layers [Abbandonato]
-substratum=Substratum
-
-info.notheme=
-info.layer=RRO Layers Manager
+info.aptx=Extra codecs from Qualcomm
+info.40-wifi=40MHz channel width over 2.4GHz
+info.permissive=Repack the kernel with permissive flag (Vulnerable to privilege escalation)
 info.substratum=Il nuovo motore dei temi
 
+# -- - ROOT - -- #
+magisk=Install MagiskSU
+supersu=Installa SuperSU
+info.supersu=@Chainfire - <#f00>Will break SafetyNet</#>
+info.magisk=@topjohnwu - <#0f0>Required to pass SafetyNet</#>
+
+# -- - THEME - -- #
 splash.tittle=Seleziona la tua bootscreen, Non bootanimation
 fos_splash=FreedomOS Bootscreen
 oos_splash=OxygenOS Bootscreen
 no_splash=Lascia la tua attuale Bootscreen
 
-info.fos_splash=
-info.oos_splash=
-info.no_splash=
+theme.tittle=Themes
+theme.subtittle=Choose wich themes you want to apply
+incorexcl.theme=Choose to include or exclude the themes below
+inc.theme=Include
+excl.theme=Exclude
+
+info.inc.theme=Choose the themes you WANT installed from the list below.
+info.excl.theme=Choose the themes you DON'T WANT installed from the list below.
+
+theme.select=Please select which VRTheme module you want to include
+
+center_clock=Center Clock
+no_traffic=No Traffic Indicator
+
+info.center_clock=Provided by @kickoff
+info.no_traffic=Provided by @kickoff
+
+# -- - AUDIO - -- #
+v4a_new=Viper4Android 2.5.0.5
+v4a_old=Viper4Android 2.3.4.0
+v4a_profiles=V4A Profiles & Kernels
+arkamys=Arkamys™
+icesound=ICEsound™
+sony_player=Sony Music Player
+rm_deep_buffer=Remove deep_buffer from audio_policy
+sdcard_perm=Fix sdcard permisisons
+
+info.v4a_new=Latest version
+info.v4a_old=For old school users
+info.v4a_profiles=Various audio profiles with kernels
+info.arkamys=Arkamys™ Audio system
+info.icesound=Read carefully the included instructions
+info.sony_player=Include TrackID, Network/DLNA, podcasts
+info.rm_deep_buffer=Will fix most issues, not battery friendly!
+info.sdcard_perm=Can add 3 - 5 minutes to the recovery session
 
 # -- - KERNEL - -- #
-
 kernel.tittle=Kernel
 kernel.tittle2=Seleziona il tuo kernel.
 kernel_stock=Stock Kernel

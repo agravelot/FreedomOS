@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.sonymobile.runtimeskinning"
+             file="/system/framework/com.sonymobile.runtimeskinning.jar"/>
+    <library name="com.sonymobile.runtimeskinning_2"
+             file="/system/framework/com.sonymobile.runtimeskinning.jar"/>
+    <library name="com.sonymobile.runtimeskinning_3"
+             file="/system/framework/com.sonymobile.runtimeskinning.jar"/>
+</permissions>

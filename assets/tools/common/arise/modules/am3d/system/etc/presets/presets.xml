@@ -1,0 +1,3069 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<presets fileVersion="2.3" beatsEffectAPIVersion="2.1.0">
+	<!-- WARNING! Do not enable or disable effects on the EQ-presets because 
+		it can cause problems with the order the parameters are applied in -->
+	<eqPreset id="movie" image="movie">
+		<name><!-- ISO 6391 language codes -->
+			<en>Movie</en>
+		</name>
+		<effect name="Graphic Equalizer" id="7">
+			<parameter id="2" name="Low Bass Gain[dB]">4</parameter>
+			<parameter id="3" name="High Bass Gain[dB]">4</parameter>
+			<parameter id="4" name="Mid Gain[dB]">-1</parameter>
+			<parameter id="5" name="Low Treble Gain[dB]">3</parameter>
+			<parameter id="6" name="High Treble Gain[dB]">2</parameter>
+		</effect>
+	</eqPreset>
+	<eqPreset id="speech" image="speech">
+		<name><!-- ISO 6391 language codes -->
+			<en>Speech</en>
+		</name>
+		<effect name="Graphic Equalizer" id="7">
+			<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+			<parameter id="3" name="High Bass Gain[dB]">4</parameter>
+			<parameter id="4" name="Mid Gain[dB]">0</parameter>
+			<parameter id="5" name="Low Treble Gain[dB]">5</parameter>
+			<parameter id="6" name="High Treble Gain[dB]">-2</parameter>
+		</effect>
+	</eqPreset>
+	<eqPreset id="game" image="game">
+		<name><!-- ISO 6391 language codes -->
+			<en>Game</en>
+		</name>
+		<effect name="Graphic Equalizer" id="7">
+			<parameter id="2" name="Low Bass Gain[dB]">6</parameter>
+			<parameter id="3" name="High Bass Gain[dB]">6</parameter>
+			<parameter id="4" name="Mid Gain[dB]">-1</parameter>
+			<parameter id="5" name="Low Treble Gain[dB]">3</parameter>
+			<parameter id="6" name="High Treble Gain[dB]">3</parameter>
+		</effect>
+	</eqPreset>
+	<eqPreset id="rock" image="rock">
+		<name><!-- ISO 6391 language codes -->
+			<en>Rock</en>
+		</name>
+		<effect name="Graphic Equalizer" id="7">
+			<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+			<parameter id="3" name="High Bass Gain[dB]">3</parameter>
+			<parameter id="4" name="Mid Gain[dB]">0</parameter>
+			<parameter id="5" name="Low Treble Gain[dB]">2</parameter>
+			<parameter id="6" name="High Treble Gain[dB]">-2</parameter>
+		</effect>
+	</eqPreset>
+	<eqPreset id="pop" image="pop">
+		<name><!-- ISO 6391 language codes -->
+			<en>Pop</en>
+		</name>
+		<effect name="Graphic Equalizer" id="7">
+			<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+			<parameter id="3" name="High Bass Gain[dB]">2</parameter>
+			<parameter id="4" name="Mid Gain[dB]">-2</parameter>
+			<parameter id="5" name="Low Treble Gain[dB]">-2</parameter>
+			<parameter id="6" name="High Treble Gain[dB]">3</parameter>
+		</effect>
+	</eqPreset>
+
+	<eqPreset id="jazz" image="jazz">
+		<name><!-- ISO 6391 language codes -->
+			<en>Jazz</en>
+		</name>
+		<effect name="Graphic Equalizer" id="7">
+			<parameter id="2" name="Low Bass Gain[dB]">2</parameter>
+			<parameter id="3" name="High Bass Gain[dB]">4</parameter>
+			<parameter id="4" name="Mid Gain[dB]">-2</parameter>
+			<parameter id="5" name="Low Treble Gain[dB]">6</parameter>
+			<parameter id="6" name="High Treble Gain[dB]">4</parameter>
+		</effect>
+	</eqPreset>
+
+	<eqPreset id="classic" image="classic">
+		<name><!-- ISO 6391 language codes -->
+			<en>Classic</en>
+		</name>
+		<effect name="Graphic Equalizer" id="7">
+			<parameter id="2" name="Low Bass Gain[dB]">-3</parameter>
+			<parameter id="3" name="High Bass Gain[dB]">-1</parameter>
+			<parameter id="4" name="Mid Gain[dB]">3</parameter>
+			<parameter id="5" name="Low Treble Gain[dB]">-2</parameter>
+			<parameter id="6" name="High Treble Gain[dB]">5</parameter>
+		</effect>
+	</eqPreset>
+
+	<preset deviceId="internal speaker" speakerType="4"
+		allowedPlaybackInterfaces="ANY" presetType="0" masterEffectOn="1"
+		masterToggleButtonOff="0" image="phone" isInternalSpeaker="1">
+		<name><!-- ISO 6391 language codes -->
+			<en>Internal speaker</en>
+		</name>
+		<effect name="Dynamic Bass Boost" id="1">
+			<parameter id="2">746</parameter>
+			<parameter id="3">-5</parameter>
+			<parameter id="5">10</parameter>
+			<parameter id="6">0</parameter>
+		</effect>
+		<effect name="Transducer Eq" id="5">
+			<parameter id="0">1</parameter>
+			<folder>Foxconn</folder>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-9</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="High Pass Filter" id="11">
+			<parameter id="0">1</parameter>
+			<parameter id="2">321</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2">10000</parameter>
+			<parameter id="3">1</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Dynamic Bass Boost" id="1">
+					<parameter id="0">1</parameter>
+					<parameter id="4">-2</parameter>
+					<parameter id="5">10</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Dynamic Bass Boost" id="1">
+					<parameter id="0">1</parameter>
+					<parameter id="4">-2</parameter>
+					<parameter id="5">12</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Dynamic Bass Boost" id="1">
+					<parameter id="0">1</parameter>
+					<parameter id="4">-3</parameter>
+					<parameter id="5">14</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Dynamic Bass Boost" id="1">
+					<parameter id="0">1</parameter>
+					<parameter id="4">-4</parameter>
+					<parameter id="5">16</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">3</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">6</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">9</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">5</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">8</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+
+	<preset deviceId="Headphone" speakerType="5" presetType="0"
+		masterEffectOn="1" masterToggleButtonOff="0" image="earphone"
+		isInternalSpeaker="0">
+		<name>
+			<en>Headphone</en>
+		</name>
+		<effect name="Power Bass" id="0">
+			<parameter id="2">236</parameter>
+			<parameter id="3">0</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2">10000</parameter>
+			<parameter id="3">1</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="Virtual Surround" id="6">
+			<parameter id="2">4</parameter>
+			<parameter id="3">0</parameter>
+			<parameter id="4">0</parameter>
+			<parameter id="5">1</parameter>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-10</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="High Pass Filter" id="11">
+			<parameter id="0">1</parameter>
+			<parameter id="2">53</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">0</parameter>
+					<parameter id="4">10</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">0</parameter>
+					<parameter id="4">12</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">-1</parameter>
+					<parameter id="4">14</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">-2</parameter>
+					<parameter id="4">16</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">3</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">6</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">9</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Surround">
+			<off>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">3</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+
+	<preset deviceId="In-ear Headphone" speakerType="5" presetType="0"
+		masterEffectOn="1" masterToggleButtonOff="0" image="earphone"
+		isInternalSpeaker="0">
+		<name>
+			<en>In-ear</en>
+		</name>
+		<effect name="Power Bass" id="0">
+			<parameter id="2">236</parameter>
+			<parameter id="3">0</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2">10000</parameter>
+			<parameter id="3">1</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="Virtual Surround" id="6">
+			<parameter id="2">4</parameter>
+			<parameter id="3">0</parameter>
+			<parameter id="4">0</parameter>
+			<parameter id="5">1</parameter>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-10</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="High Pass Filter" id="11">
+			<parameter id="0">1</parameter>
+			<parameter id="2">53</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">0</parameter>
+					<parameter id="4">10</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">0</parameter>
+					<parameter id="4">12</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">-1</parameter>
+					<parameter id="4">14</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">-2</parameter>
+					<parameter id="4">16</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">3</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">6</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">9</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Surround">
+			<off>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">3</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+
+	<preset deviceId="on-ear" speakerType="5" presetType="0"
+		masterEffectOn="1" image="on_ear" isInternalSpeaker="0">
+		<name><!-- ISO 6391 language codes -->
+			<en>On-ear</en>
+		</name>
+		<effect name="Power Bass" id="0">
+			<parameter id="2">125</parameter>
+			<parameter id="4">-1</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2">7500</parameter>
+			<parameter id="3">1</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-10</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">10</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">14</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">18</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">4</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">8</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">12</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">3</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Surround">
+			<off>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+
+	<preset deviceId="over-ear" speakerType="5" presetType="0"
+		masterEffectOn="1" image="over_ear" isInternalSpeaker="0">
+		<name><!-- ISO 6391 language codes -->
+			<en>Over-ear</en>
+		</name>
+		<effect name="Power Bass" id="0">
+			<parameter id="2" name="Upper Cutoff[Hz]">85</parameter>
+			<parameter id="3" name="Headroom Gain[dB]">-1</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2" name="Highpass Cutoff[Hz]">7500</parameter>
+			<parameter id="3" name="Slope">1</parameter>
+			<parameter id="4" name="Headroom Gain[dB]">0</parameter>
+		</effect>
+		<effect name="High Pass Filter" id="11">
+			<parameter id="0">1</parameter>
+			<parameter id="2">50</parameter>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-10</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">8</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">12</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">16</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">4</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">8</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">12</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">3</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Surround">
+			<off>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+				<effect name="Tone Control" id="8">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+	<preset deviceId="portable" speakerType="4" presetType="0"
+		masterEffectOn="1" image="portable" isInternalSpeaker="0">
+		<name><!-- ISO 6391 language codes -->
+			<en>Portable</en>
+		</name>
+		<effect name="Power Bass" id="0">
+			<parameter id="2" name="Lower Cutoff[Hz]">100</parameter>
+			<parameter id="3" name="Headroom Gain[dB]">-1</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2" name="Highpass Cutoff[Hz]">7500</parameter>
+			<parameter id="4" name="Headroom Gain[dB]">0</parameter>
+		</effect>
+		<effect name="Virtual Surround" id="6">
+			<parameter id="2" name="Stereo Speaker Angle[Deg]">4</parameter>
+		</effect>
+		<effect name="High Pass Filter" id="11">
+			<parameter id="0">1</parameter>
+			<parameter id="2">100</parameter>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-10</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">9</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">12</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">15</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="3" name="Slope">0</parameter>
+					<parameter id="5" name="Max Gain[dB]">3</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="3" name="Slop">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">6</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="3" name="Slope">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">9</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">3</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Surround">
+			<off>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+	<preset deviceId="JBL J46BT" speakerType="5" presetType="0"
+		masterEffectOn="1" masterToggleButtonOff="0" image="earphone"
+		isInternalSpeaker="0">
+		<name>
+			<en>JBL J46BT</en>
+		</name>
+		<effect name="Power Bass" id="0">
+			<parameter id="2">236</parameter>
+			<parameter id="3">0</parameter>
+		</effect>
+		<effect name="Virtual Surround" id="6">
+			<parameter id="2">4</parameter>
+			<parameter id="3">0</parameter>
+			<parameter id="4">0</parameter>
+			<parameter id="5">1</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2">10000</parameter>
+			<parameter id="3">1</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-10</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="High Pass Filter" id="11">
+			<parameter id="0">1</parameter>
+			<parameter id="2">53</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">10</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">12</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">14</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">26</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">4</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">8</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">12</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Surround">
+			<off>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">3</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+	<preset deviceId="JBL Micro Wireless" speakerType="4"
+		presetType="0" masterEffectOn="1" masterToggleButtonOff="0" image="earphone"
+		isInternalSpeaker="0">
+		<name>
+			<en>JBL Micro Wireless</en>
+		</name>
+		<effect name="Power Bass" id="0">
+			<parameter id="2">148</parameter>
+		</effect>
+		<effect name="Transducer Eq" id="5">
+			<parameter id="0">1</parameter>
+			<folder>JBL_Micro_Wireless</folder>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-10</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="Bass Harmonics" id="13">
+			<parameter id="0">1</parameter>
+			<parameter id="2">80</parameter>
+			<parameter id="3">2</parameter>
+			<parameter id="4">-1</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2">10000</parameter>
+			<parameter id="3">1</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">-1</parameter>
+					<parameter id="4">11</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">-1</parameter>
+					<parameter id="4">13</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">-2</parameter>
+					<parameter id="4">15</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">24</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">4</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">8</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">12</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Surround">
+			<off>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+					<parameter id="3">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">5</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+	<preset deviceId="JBL Flip" speakerType="4" presetType="0"
+		masterEffectOn="1" masterToggleButtonOff="0" image="earphone"
+		isInternalSpeaker="0">
+		<name>
+			<en>JBL Flip</en>
+		</name>
+		<effect name="Power Bass" id="0">
+			<parameter id="2">185</parameter>
+			<parameter id="3">0</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2">9840</parameter>
+			<parameter id="3">1</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="Transducer Eq" id="5">
+			<parameter id="0">1</parameter>
+			<folder>JBL_Flip</folder>
+		</effect>
+		<effect name="Virtual Surround" id="6">
+			<parameter id="2">2</parameter>
+			<parameter id="3">0</parameter>
+			<parameter id="4">0</parameter>
+			<parameter id="5">0</parameter>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-10</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="Bass Harmonics" id="13">
+			<parameter id="0">1</parameter>
+			<parameter id="2">82</parameter>
+			<parameter id="3">2</parameter>
+			<parameter id="4">-1</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">6</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">8</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">10</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">12</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">11</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">13</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">15</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">17</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Surround">
+			<off>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+					<parameter id="3">3</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+	<preset deviceId="HK Onyx Studio" speakerType="4" presetType="0"
+		masterEffectOn="1" masterToggleButtonOff="0" image="earphone"
+		isInternalSpeaker="0">
+		<name>
+			<en>HK Onyx Studio</en>
+		</name>
+		<effect name="Power Bass" id="0">
+			<parameter id="2">90</parameter>
+			<parameter id="3">0</parameter>
+		</effect>
+		<effect name="Virtual Surround" id="6">
+			<parameter id="2">2</parameter>
+			<parameter id="3">0</parameter>
+			<parameter id="4">0</parameter>
+			<parameter id="5">0</parameter>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-10</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2">10000</parameter>
+			<parameter id="3">1</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">4</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">8</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="4">12</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">3</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">6</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">9</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Surround">
+			<off>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">3</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+	<preset deviceId="Fugoo Speaker" speakerType="4" presetType="0"
+		masterEffectOn="1" masterToggleButtonOff="0" image="earphone"
+		isInternalSpeaker="0">
+		<name>
+			<en>Fugoo Speaker</en>
+		</name>
+		<effect name="Power Bass" id="0">
+			<parameter id="2">235</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2">11995</parameter>
+			<parameter id="3">1</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="Transducer Eq" id="5">
+			<parameter id="0">1</parameter>
+			<folder>Fugoo_Speaker</folder>
+		</effect>
+		<effect name="Virtual Surround" id="6">
+			<parameter id="2">4</parameter>
+			<parameter id="3">0</parameter>
+			<parameter id="4">1</parameter>
+			<parameter id="5">0</parameter>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-12</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="Bass Harmonics" id="13">
+			<parameter id="0">1</parameter>
+			<parameter id="2">132</parameter>
+			<parameter id="3">1</parameter>
+			<parameter id="4">-2</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">0</parameter>
+					<parameter id="4">10</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">0</parameter>
+					<parameter id="4">12</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">-1</parameter>
+					<parameter id="4">14</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Power Bass" id="0">
+					<parameter id="0">1</parameter>
+					<parameter id="3">-2</parameter>
+					<parameter id="4">16</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">6</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">8</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">10</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">12</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Surround">
+			<off>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">3</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+
+	<preset deviceId="hifi" speakerType="4" presetType="0"
+		masterEffectOn="1" image="hifi" isInternalSpeaker="0">
+		<name><!-- ISO 6391 language codes -->
+			<en>HiFi</en>
+		</name>
+		<effect name="Power Bass" id="0">
+			<parameter id="2" name="Upper Cutoff[Hz]">85</parameter>
+			<parameter id="3" name="Headroom Gain[dB]">-2</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2" name="Highpass Cutoff[Hz]">7500</parameter>
+			<parameter id="4" name="Headroom Gain[dB]">0</parameter>
+		</effect>
+		<effect name="Virtual Surround" id="6">
+			<parameter id="2" name="Stereo Speaker Angle[Deg]">8</parameter> <!-- User adjustable -->
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-10</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">6</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">9</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">12</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="3" name="Slope">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">3</parameter>
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="3" name="Slop">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">6</parameter>
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="3" name="Slope">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">9</parameter>
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Surround">
+			<off>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">3</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+
+	<preset deviceId="small tv" speakerType="4" presetType="0"
+		masterEffectOn="1" image="tv" isInternalSpeaker="0">
+		<name> <!-- ISO 6391 language codes -->
+			<en>Small TV</en>
+		</name>
+		<effect name="Power Bass" id="0">
+			<parameter id="2" name="Upper Cutoff[Hz]">200</parameter>
+			<parameter id="3" name="Headroom Gain[dB]">-1</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2" name="Highpass Cutoff[Hz]">7500</parameter>
+			<parameter id="4" name="Headroom Gain[dB]">0</parameter>
+		</effect>
+		<effect name="High Pass Filter" id="11">
+			<parameter id="0">1</parameter>
+			<parameter id="2">100</parameter>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-10</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="Virtual Surround" id="6">
+			<parameter id="2" name="Stereo Speaker Angle[Deg]">4</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">9</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">12</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">15</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="3" name="Slope">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">3</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="3" name="Slop">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">6</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="3" name="Slope">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">9</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Surround">
+			<off>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">3</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="8">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="8">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+
+	<preset deviceId="large tv" speakerType="4" presetType="0"
+		masterEffectOn="1" image="tv" isInternalSpeaker="0">
+		<name> <!-- ISO 6391 language codes -->
+			<en>Large TV</en>
+		</name>
+		<effect name="Power Bass" id="0">
+			<parameter id="2" name="Upper Cutoff[Hz]">200</parameter>
+			<parameter id="3" name="Headroom Gain[dB]">-1</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2" name="Highpass Cutoff[Hz]">7500</parameter>
+			<parameter id="4" name="Headroom Gain[dB]">0</parameter>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-10</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="High Pass Filter" id="11">
+			<parameter id="0">1</parameter>
+			<parameter id="2">100</parameter>
+		</effect>
+		<effect name="Virtual Surround" id="6">
+			<parameter id="2" name="Stereo Speaker Angle[Deg]">12</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">9</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">12</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Power Bass" id="0">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="4" name="Level[dB]">15</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="3" name="Slope">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">3</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="3" name="Slop">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">6</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0" name="Enabled">1</parameter>
+					<parameter id="3" name="Slope">1</parameter>
+					<parameter id="5" name="Max Gain[dB]">9</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Surround">
+			<off>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Virtual Surround" id="6">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">3</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+
+	<preset deviceId="Bluetooth Headset" speakerType="4" presetType="0"
+		masterEffectOn="1" masterToggleButtonOff="0" image="phone"
+		isInternalSpeaker="0">
+		<name><!-- ISO 6391 language codes -->
+			<en>Bluetooth Headset</en>
+		</name>
+		<effect name="Dynamic Bass Boost" id="1">
+			<parameter id="2">746</parameter>
+			<parameter id="3">-5</parameter>
+			<parameter id="5">10</parameter>
+			<parameter id="6">0</parameter>
+		</effect>
+		<effect name="Transducer Eq" id="5">
+			<parameter id="0">1</parameter>
+			<folder>Foxconn</folder>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-9</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="High Pass Filter" id="11">
+			<parameter id="0">1</parameter>
+			<parameter id="2">321</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2">10000</parameter>
+			<parameter id="3">1</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Dynamic Bass Boost" id="1">
+					<parameter id="0">1</parameter>
+					<parameter id="4">-2</parameter>
+					<parameter id="5">10</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Dynamic Bass Boost" id="1">
+					<parameter id="0">1</parameter>
+					<parameter id="4">-2</parameter>
+					<parameter id="5">12</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Dynamic Bass Boost" id="1">
+					<parameter id="0">1</parameter>
+					<parameter id="4">-3</parameter>
+					<parameter id="5">14</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Dynamic Bass Boost" id="1">
+					<parameter id="0">1</parameter>
+					<parameter id="4">-4</parameter>
+					<parameter id="5">16</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">3</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">6</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">9</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">5</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">8</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+	<preset deviceId="Bluetooth Speaker" speakerType="4" presetType="0"
+		masterEffectOn="1" masterToggleButtonOff="0" image="phone"
+		isInternalSpeaker="0">
+		<name><!-- ISO 6391 language codes -->
+			<en>Bluetooth Speaker</en>
+		</name>
+		<effect name="Dynamic Bass Boost" id="1">
+			<parameter id="2">746</parameter>
+			<parameter id="3">-5</parameter>
+			<parameter id="5">10</parameter>
+			<parameter id="6">0</parameter>
+		</effect>
+		<effect name="Transducer Eq" id="5">
+			<parameter id="0">1</parameter>
+			<folder>Foxconn</folder>
+		</effect>
+		<effect name="Dynamic Range Compressor" id="10">
+			<parameter id="2">-9</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<effect name="High Pass Filter" id="11">
+			<parameter id="0">1</parameter>
+			<parameter id="2">321</parameter>
+		</effect>
+		<effect name="Treble Enhancement" id="4">
+			<parameter id="2">10000</parameter>
+			<parameter id="3">1</parameter>
+			<parameter id="4">0</parameter>
+		</effect>
+		<presetSetting name="Bass">
+			<off>
+				<effect name="Dynamic Bass Boost" id="1">
+					<parameter id="0">1</parameter>
+					<parameter id="4">-2</parameter>
+					<parameter id="5">10</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Dynamic Bass Boost" id="1">
+					<parameter id="0">1</parameter>
+					<parameter id="4">-2</parameter>
+					<parameter id="5">12</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Dynamic Bass Boost" id="1">
+					<parameter id="0">1</parameter>
+					<parameter id="4">-3</parameter>
+					<parameter id="5">14</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Dynamic Bass Boost" id="1">
+					<parameter id="0">1</parameter>
+					<parameter id="4">-4</parameter>
+					<parameter id="5">16</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Treble">
+			<off>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">0</parameter>
+				</effect>
+			</off>
+			<low>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">3</parameter>
+				</effect>
+			</low>
+			<med>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">6</parameter>
+				</effect>
+			</med>
+			<high>
+				<effect name="Treble Enhancement" id="4">
+					<parameter id="0">1</parameter>
+					<parameter id="5">9</parameter>
+				</effect>
+			</high>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="VoiceEnhancement">
+			<off>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Voice Enhancement" id="9">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelAlignment">
+			<off>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Level Alignment" id="3">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="LevelBoost">
+			<off>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">5</parameter>
+				</effect>
+			</off>
+			<on>
+				<effect name="Dynamic Range Compressor" id="10">
+					<parameter id="0">1</parameter>
+					<parameter id="3">8</parameter>
+				</effect>
+			</on>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="Equalizer">
+			<off>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">0</parameter>
+				</effect>
+			</off>
+			<user>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</user>
+			<preset>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="0" name="Enabled">1</parameter>
+				</effect>
+			</preset>
+			<default>off</default>
+			<userSelected>off</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerSettings">
+			<defaultSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</defaultSettings>
+			<userSelectedSettings>
+				<effect name="Graphic Equalizer" id="7">
+					<parameter id="2" name="Low Bass Gain[dB]">0</parameter>
+					<parameter id="3" name="High Bass Gain[dB]">0</parameter>
+					<parameter id="4" name="Mid Gain[dB]">0</parameter>
+					<parameter id="5" name="Low Treble Gain[dB]">0</parameter>
+					<parameter id="6" name="High Treble Gain[dB]">0</parameter>
+				</effect>
+			</userSelectedSettings>
+			<default>defaultSettings</default>
+			<userSelected>defaultSettings</userSelected>
+		</presetSetting>
+		<presetSetting name="EqualizerPreset">
+			<default>rock</default>
+			<userSelected>rock</userSelected>
+		</presetSetting>
+	</preset>
+</presets>

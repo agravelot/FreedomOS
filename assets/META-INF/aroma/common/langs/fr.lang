@@ -33,6 +33,10 @@ language.english=English
 language.english.info=Using English
 language.french=France
 language.french.info=Utiliser le Français
+language.tchinese=正體中文
+language.tchinese.info=使用正體中文 - @clyang
+language.schinese=简体中文
+language.schinese.info=使用简体中文 - @clyang
 
 welcome.microblog=Youtube
 rom.data=!date!
@@ -154,7 +158,7 @@ basic_dream=Veille intéractif
 bt_midi=BT Midi Service
 bt_test=BTtestmode
 desk_clock=DeskClock
-document=Documents
+document=OP Géstionnaire de fichier
 download_provider=Gestionnaire de téléchargements
 engineering=EngineeringMode
 eng_special_test=EngSpecialTest
@@ -208,7 +212,7 @@ info.oem_test=Application de test OnePlus
 info.oem_log=Log OnePlus
 info.oneplus_camera=Prendre des photos et vidéos
 info.oneplus_gallery=Regarder vos photos et vidéos
-info.ota=Mise à jour système 
+info.ota=Mise à jour système
 info.oneplus_wizard=Initialisation OnePlus
 info.phase_beam=Fond d'écran animé
 info.protips=ProTips
@@ -248,7 +252,7 @@ mod.title=Installation mod supplémentaire
 mod.tittle2=Root, mod audio, bloqueur de pubs & xposed...
 mod.tittle3=Extra mod
 
-supersu=Installer SuperSU
+root=Installer accès root
 xposed=Material Design Xposed Installer
 adaway=Adaway
 adb=Activer ADB
@@ -257,8 +261,12 @@ fos_wallpapers=Fond d'écran FreedomOS
 emoji_one=EmojiOne
 google_assistant=Google Assistant
 arise=A.R.I.S.E
+aptx=Installer APTX/APTX-HD
+40-wifi=Activer large bande Wifi
+permissive=Force le kernel en permissive
+substratum=Substratum
 
-info.supersu=SuperSU par Chainfire
+info.root=Requis pour passer SafetyNet
 info.xposed=Application Xposed seulement par DVD android
 info.adaway=Bloqueur de publicités pour Android
 info.adb=Android Debugging Bridge
@@ -267,28 +275,62 @@ info.fos_wallpapers=Conçus par @badboy47
 info.emoji_one=The Open Emoji Standard
 info.google_assistant=US seulement
 info.arise=A.R.I.S.E Sound System
-
-
-# -- - THEME - -- #
-theme.tittle=Theme Engine
-theme.tittle2=Sélectionnez votre moteur de thèmes
-
-notheme=Aucun Theme engine
-layer=RRO Layers [obsolète]
-substratum=Substratum
-
-info.notheme=
-info.layer=Layers Manager
+info.aptx=Extra codecs from Qualcomm
+info.40-wifi=Largeur de  canal 40MHz en 2.4GHz
+info.permissive=Repack le kernel avec le flash permissive (vulnérable à l'escalade des privilèges)
 info.substratum=Le remplacent de Layers
 
+# -- - ROOT - -- #
+supersu=Installer SuperSU
+magisk=Installer MagiskSU
+
+info.supersu=@Chainfire - <#f00>Casse le SafetyNet</#>
+info.magisk=@topjohnwu - <#0f0>Requis pour passer le SafetyNet</#>
+
+# -- - THEME - -- #
 splash.tittle=Sélectionner votre écran d'allumage
 splash.tittle=Ce n'est pas l'animation de démarrage
 fos_splash=écran d'allumage FreedomOS
 oos_splash=écran d'allumage OxygenOS
 no_splash=Laisse votre actuel
 
-# -- - KERNEL - -- #
+theme.tittle=Thèmes
+theme.subtittle=Choisissez les thèmes que vous souhaitez appliquer
+incorexcl.theme=Choisissez d'inclure ou d'exclure les thèmes ci-dessous
+inc.theme=Inclure
+excl.theme=Exclure
 
+info.inc.theme=Choisissez les thèmes que vous VOULEZ installer.
+info.excl.theme=Choisissez les thèmes que vous NE VOULEZ PAS installer.
+
+theme.select=Sélectionnez les VRTheme que vous souhaitez appliquer
+
+center_clock=Horloge centré
+no_traffic=Pas d'indicateur de trafic
+
+info.center_clock=Fourni par @kickoff
+info.no_traffic=Fourni par @kickoff
+
+# -- - AUDIO - -- #
+v4a_new=Viper4Android 2.5.0.5
+v4a_old=Viper4Android 2.3.4.0
+v4a_profiles=V4A Profiles & Kernels
+arkamys=Arkamys™
+icesound=ICEsound™
+sony_player=Lecteur de musique Sony
+rm_deep_buffer=Retire deep_buffer de l'audio_policy
+sdcard_perm=Corrige les permissions sdcard
+
+info.v4a_new=Dernière verison
+info.v4a_old=Pour les utilisateurs old school
+info.v4a_profiles=Multiple Prifiles V4A et Kernels
+info.arkamys=Arkamys™ Audio system (Made in France)
+info.icesound=Lisez avec précaution les instructions suivante
+info.sony_player=Comprend TrackID, Réseau/DLNA, podcasts
+info.rm_deep_buffer=Devrait corriger la plupart des problèmes, à utiliser en DERNIER RECOURS!
+info.sdcard_perm=Ajoute en 3 à 5 minutes de temps d'installation
+
+# -- - KERNEL - -- #
 kernel.tittle=Kernel
 kernel.tittle2=Selectionnez votre kernel.
 kernel_stock=Stock Kernel

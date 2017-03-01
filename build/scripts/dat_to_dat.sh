@@ -105,6 +105,9 @@ function dat_to_dat {
     rm -rvf ${tmp_root}/bootanimation >> ${build_log} 2>&1
   fi
 
+  echo ">> Set rom version in build.prop" 2>&1 | tee -a ${build_log}
+  sed -i "s/ro.rom.version=.*/ro.rom.version=${ZIP_NAME}-${CODENAME}-${BUILD_TYPE}-${VERSION}/" ${tmp_root}/mount/build.prop
+
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}
   ${build_root}/tools/${HOST_ARCH}/make_ext4fs -T 0 -S file_contexts -l ${SYSTEMIMAGE_PARTITION_SIZE} -a system system_new.img mount/ >> ${build_log} 2>&1
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2016 Antoine GRAVELOT
+# Copyright 2016-2017 Antoine GRAVELOT
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -44,13 +44,14 @@ function build_opengapps() {
   indic
   japanese
   korean
-  vrservice
-  moviesvrmode
-  photosvrmode
   googlenow
   dmagent
   hangouts
   storagemanagergoogle
+  clockgoogle
+  dialerframework
+  dialergoogle
+  contactsgoogle
   "
 
   echo "> Building FreedomOS OpenGApps" 2>&1 | tee -a ${build_log}
@@ -70,8 +71,10 @@ function build_opengapps() {
   CLEAN_SYSTEM_LIST+="$(<${tmp_root}/tools/gapps-remove.txt)"
 
   # Remove ugly Opengapps header (sorry it's very ugly with aroma)
-  # TODO: Do not use line numbers
-  sed -ie '1057,1072d;' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  logo_start=$(grep -nr '####' ${tmp_root}/tools/opengapps_tmp/installer.sh | gawk '{print $1}' FS=":" | head -1)
+  logo_end=$(grep -nr '####' ${tmp_root}/tools/opengapps_tmp/installer.sh | gawk '{print $1}' FS=":" | tail -1)
+  logo_end=$((logo_end+3))
+  sed -ie "$logo_start,$logo_end d;" ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Add OPInCallUI to the remove list if Google Dialer is installed
   sed -i 's/FineOSDialer/OPInCallUI/g' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Disable /tmp clear after installation, the installer will do that later for us.
@@ -86,6 +89,11 @@ function build_opengapps() {
   sed -i 's/ui_print "- /ui_print "/g' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   sed -i '/ui_print " "/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   sed -i '/ui_print "- Installation complete!"/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/Installation complete!/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/Unmounting/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/app\/Calculator/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+
+  rm -rvf ${tmp_root}/tools/opengapps_tmp/META-INF/com/google/android/aroma >> ${build_log} 2>&1
 
   # Remove all the unneeded files
   for i in ${RM_OPENGAPPS}

@@ -1,3 +1,85 @@
+2.5
+    UPDATE: ARISE Deuteronomy SwangSong 2.92
+        - ArkamysAudio.apk updated from version 4.3 to 4.5 and its library
+        - Added libaudio3d.so from Panasonic's Arkamys™ Audio system.
+        - Minor script corrections and improvements.
+        - New PURESHIT ICEsound™ preset prepared by @secone00 @ARISE Sound Systems™
+        - The "PURE" ICEsound™ preset is now installed with the ICEsound™ module. The "DEFAULT" preset still indicates the untouched, native ICEsound™ preset found in the firmware source.
+        - Added "HOLYSHIT" ICEsound™ preset prepared by @secone00 @ARISE Sound Systems™
+        - Removed setprop entry breaking camera functions for some.
+        - deep_buffer removal change for audio_policy_configuration.xml.
+        - Corrections to audio_policy_configuration.xml manipulation.
+        - Added support for user customized ICEsound™ configuration by seeking and using /sdcard/icesoundconfig.def if found.
+    UPDATE: Turkish language, fix typos !22 @topcu.mevlut
+    UPDATE: Simplified Chinese !23 !24 !25 @clyang
+    UPDATE: Traditional Chinese !23 !24 !25 @clyang
+    UPDATE: Substratum
+    UPDATE: make_ext4fs binary from my own source, includee important fixs! check my github page
+    ADD: Magisk v11.1, with fully safetynet support (enable Magisk Hide & Systemless hosts in app settings)
+    ADD: ARISE4Magisk Module, include some sepolicy fix for FreedomOS
+    ADD: VillainRom Theme support
+    ADD: Center clock for VillainRom Theme, special thanks to @kickoff
+    ADD: Not traffic indicator for VillainRom Theme, special thanks to  @kickoff
+    ADD: ICEsound preset and profile selection in aroma
+    ADD: Permissive option in aroma !can be overwritten by some custom kernels!
+    ADD: Add wideband wifi option in aroma (not a big fan, but requested by some users)
+    ADD: APTX-HD libs and new option in aroma (with APTX/APTX-HD)
+    ADD: Full VR support VrService, MovieVrMode, PhotosVrMode
+    ADD: OnePlus Calculator
+    ADD: sdcard permissions fix, option in aroma
+    ADD: Pixel Icons, downgraded api target to support 7.0
+    REMOVE: Google Dialer, causing a lot issues
+    REMOVE: Option to install without Google Apps
+    REMOVE: Marshmallow firmwares option in aroma
+    REMOVE: hosts files to support magisk
+
+    NOTE: If you have used or currently use Google Dialer, please consider to perform a clean flash to avoid issues.
+          Some aroma translations need to be updated, feel free to push request on gitlab (instructions available in repo).
+          Missing Arise installation to some users should be fixed now.
+          Latest modification in make_ext4fs binary will fixed green pictures issue and many more!
+          As always, check gitlab to get more information.
+          Version number bumped to follow OnePlus3 builds.
+
+1.3
+  UPDATE: OxygenOS 4.0.3
+    - Added Wi-Fi IPv6 Support toggle
+    - Optimized Smart Wi-Fi Switcher, if turned on, device will switch to data connection if Wi-Fi signal is consistently poor
+    - Fixed crashes for Line
+    - Optimized exposure when taking night time photos
+    - Increased stability of the Camera app
+    - Updated Audio Parameters and improved the quality of audio recordings
+    - Updated APN settings for select carriers
+  FIX: Enforcing state, latest hotfix is no more needed
+  FIX: DeskClock and OPFilemanager installation
+  FIX: Clean older ARISE installation to avoid conflicts
+  REMOVE: ATV bloatware apk (Amazon bloatware)
+  REMOVE: Kindle bloatware apk (Amazon bloatware)
+  REMOVE: mShop bloatware apk (Amazon bloatware)
+  UPDATE: ARISE Sound System Deuteromony 2.71b
+  UPDATE: Core Google Apps
+  UPDATE: YouTube
+  UPDATE: WebViewGoogle
+  UPDATE: Google Search
+  UPDATE: Messenger
+  UPDATE: Gmail
+  UPDATE: Drive
+  UPDATE: Chrome
+  UPDATE: Google Calendar
+  UPDATE: AndroidPay
+  UPDATE: Text-to-Speech
+  ADD: Sony Music Player (with TrackID) in aroma
+  ADD: Option to use older version of Viper4Android
+  ADD: Arkamys option
+  ADD: Deep buffer option
+  ADD: icepower option
+  ADD: Permissive option
+  ADD: Traditional Chinese language, special thanks to @clyang
+  ADD: Simplified Chinese language, special thanks to @clyang
+  ADD: Fallback fonts with support of arabic, chinese and much more
+  NOTE: As always, all the changes are available on gitlab.
+  NOTE: I have added some instructions to help translation.
+        Feel free to fork the project, all contributors are credited as it should.
+
 1.2
   FIX: SELinux contexts, it's now fully compatible with Enforcing state. Read commit: a9032628
   FIX: OnePlus Wallpapers uninstallation

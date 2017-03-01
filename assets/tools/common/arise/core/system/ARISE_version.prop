@@ -1,0 +1,1197 @@
+
+# ARISE Sound Systems™
+#
+# Deuteronomy™ 2.92 Modular Installer 20170301
+#
+# "SwanSong™"
+#
+# Auditory Research in Sound Enhancement™
+#
+# www.arisesound.com
+
+
+
+Changelog:
+
+
+
+## Deuteronomy™ 2.91 "SwanSong™" -
+
+- Adjusted the Dolby Digital Plus™ uninstallation module to leave the native Dolby™ entries intact for HTC Bolt htc_audio_effects.
+
+- Added libV4AJniUtils.so back to both ViPER4Arise™ installation modules.
+
+- Added support for user customized ICEsound™ configuration by seeking and using /sdcard/icesoundconfig.def if found. This is automatic and does not refer to /sdcard/arise_customize.prop for instruction.
+
+- Removed /sdcard/arise_support from the Core installation module.
+
+##
+
+
+
+## Deuteronomy™ 2.91 "SwanSong™" -
+
+- Updates to arisesound_setprop and /sources.
+
+##
+
+
+## Deuteronomy™ 2.90 "SwanSong™" -
+
+- Removed the Dolby Atmos™  installation module from the archive. Refer to @ahrion's @XDA Developers Dolby Atmos™ Collective thread for the Dolby Atmos™ solutions he currently has available.
+
+##
+
+
+
+## Deuteronomy™ 2.89-4 "SwanSong™" -
+
+- Updated arisesound_setprop relevant to sound system.
+
+##
+
+
+
+## Deuteronomy™ 2.89-3 "SwanSong™" -
+
+- Removed libbtpower.so and libultrasound.so.
+
+##
+
+
+
+## Deuteronomy™ 2.89-2 "SwanSong™" -
+
+- Experiment using standard ViPER4Arise™ installation instead of forced /system/lib/libV4AJniUtils.so and /system/priv-app/ViPER4Arise/lib/***/libV4AJniUtils.so.
+
+##
+
+
+
+## Deuteronomy™ 2.89-1 "SwanSong™" -
+
+- New arise_customize.prop! Be sure to use new arise_customize.prop in /sdcard!
+
+- Corrections to allow PURESHIT ICEsound™ preset to install when selecting "(PURE)SHIT" in /sdcard/arise_customize.prop.
+
+- Added requirement for installed ICEsound™ module in order to install/delete any selected ICEconfig and/or ICEpreset.
+
+##
+
+
+
+## Deuteronomy™ 2.89 "SwanSong™" -
+
+- Updated smeejaytee's ToolBox™ to V3.
+
+- Corrections to audio_policy_configuration.xml manipulation.
+
+- Minor script correction.
+
+##
+
+
+
+## Deuteronomy™ 2.87 "SwanSong™" -
+
+- Removed DiracSound™.
+
+- Added HTC™ Bolt audio effects configuration.
+
+- Minor script correction.
+
+##
+
+
+
+## Deuteronomy™ 2.85-1 "SwanSong™" -
+
+- Added two more DiracSound™ files from the latest Xiaomi™ Mi Mix firmware.
+
+- Fixed a small error in the symlink /vendor/lib/libbtpower.so.
+
+##
+
+
+
+## Deuteronomy™ 2.85 "SwanSong™" -
+
+- DiracSound™ and UltraSound from the latest Xiaomi™ Mi Mix firmware.
+
+- Updated Huawei™ Nova Plus DTS™ and Qualcomm™ content.
+
+- ADSP modules switched from Asus™ Zenfone 3 Ultra to Huawei™ Nova Plus.
+
+- Updated arisesound_setprop.
+
+##
+
+
+
+## Deuteronomy™ 2.83-1 "SwanSong™" -
+
+- New and improved ARISE themed AM3D ZIRENE® apk thanks to contributor and friend D rey.
+
+- Removed setprop entry breaking camera functions for some.
+
+##
+
+
+
+## Deuteronomy™ 2.82 "SwanSong™" -
+
+- deep_buffer removal change for audio_policy_configuration.xml.
+
+- Corrected the entire contents of /tmp being deleted.
+
+##
+
+
+
+## Deuteronomy™ 2.81 "SwanSong™" -
+
+- !! NEW arise_customize.prop LINE!! BE SURE TO COPY AND USE THIS ONE IF NEEDING TO INSTALL THE CORE MODULE !!
+
+- install.deuteronomy= changed to install.core in arise_customize.prop.
+
+##
+
+
+
+## Deuteronomy™ 2.79 "SwanSong™" -
+
+- New PURESHIT ICEsound™ preset prepared by @secone00 @ARISE Sound Systems™.
+
+##
+
+
+
+## Deuteronomy™ 2.77 "SwanSong™" -
+
+- ArkamysAudio.apk updated from version 4.3 to 4.5 and its library.
+
+- The "PURE" ICEsound™ preset is now installed with the ICEsound™ module. The "DEFAULT" preset still indicates the untouched, native ICEsound™ preset found in the firmware source.
+
+- Added "HOLYSHIT" ICEsound™ preset prepared by @secone00 @ARISE Sound Systems™
+
+##
+
+
+
+## Deuteronomy™ 2.75 "SwanSong™" -
+
+- Updated Dolby Atmos™ modules to reflect @ahrion's latest updates.
+
+- Added libaudio3d.so from Panasonic's Arkamys™ Audio system.
+
+- Minor script corrections and improvements.
+
+##
+
+
+
+## Deuteronomy™ 2.71a "SwanSong™" -
+
+- Correction to arise_customize.prop preventing selection from being visible.
+
+##
+
+
+
+## Deuteronomy™ 2.71 "SwanSong™" -
+
+- Chikimonke fix.
+
+##
+
+
+
+## Deuteronomy™ 2.70a "SwanSong™" -
+
+- Added a comprehensive collection of selectable ICEsound™ Presets researched, tested, and prepared by ARISE team member @Secone00.
+
+- Updated Arkamys™ Audio to version 4.3 from the latest ZTE™ Blade 7 firmware.
+
+##
+
+
+
+## Deuteronomy™ 2.70 "SwanSong™" -
+
+- Various corrections to core script.
+
+- Minor correction to setprop in ToolBox™ module.
+
+##
+
+
+
+## Deuteronomy™ 2.68 "SwanSong™" -
+
+- Two-hundred sixty-eight days ago...
+
+##
+
+
+
+## Deuteronomy™ 2.5.2e-1 -
+
+- Very minor content additions.
+
+##
+
+
+
+## Deuteronomy™ 2.5.2d -
+
+- Minor corrections to ICEsound™ installation/uninstallation regarding libeagle.so which has been a Huawei™ component.
+
+- Added AudioEffects to the removal portion for Motorola devices.
+
+##
+
+
+
+## Deuteronomy™ 2.5.2c -
+
+- /system/etc/audio_effects.conf symlinked to /system/vendor/etc or /vendor/etc even if the file does not exist or has been renamed before flashing.
+
+- Removed BusyBox installation from XHiFi module due to architecture requirements. Use preferred BusyBox installer if necessary.
+
+- Added more wallpaper in /art courtesy of @churapa.
+
+##
+
+
+
+## Deuteronomy™ 2.5.2b -
+
+- Corrections to installation scrip
+
+- Updated outdated arisesound_setprop.
+
+##
+
+
+
+## Deuteronomy™ 2.5.2 -
+
+- Updated content to equal 2.5.2 AROMA Installer.
+
+##
+
+
+
+## Deuteronomy™ 2.5 -
+
+- Introducing the modular installation method, with and without AROMA Installer.
+
+- Hefty dosage of various Huawei™ Nougat content from Nova Plus, P9 Plus, and Mate 8
+
+- The latest ToolBox from our very own smeejaytee. :good:
+
+##
+
+
+
+## Deuteronomy™ 2.4 -
+
+- Stabilized.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC7.2 -
+
+- Very small script change for testing purposes.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC7.1 -
+
+- Addressing Nexus 64 bit device detection.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC7 -
+
+- Added forgotten content.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC6.4 -
+
+- Added /sdcard/0 support.
+
+- Minor dosage of Huawei™ Mediapad M2 content.
+
+- Added select QQ™ Music libraries.
+
+- Minor setprop update.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC6.3 -
+
+- Added /sdcard0 support.
+
+- Added esira to Add-Ons zip.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC6.2 -
+
+- Adjustment to Nexus 64 bit audio_effects.
+
+- Audiophile™ X ViPER4Arise™ profile.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC6.1 -
+
+- Re-added libsrsprocessing.so.
+
+- Re-added STLPorts and STA proxies.
+
+- Adjustment to Nexus 64 bit audio_effects.
+
+- Minor corrections.
+
+- Updated /sdcard/arise_addon.prop
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC6 -
+
+- Support for Add-Ons zip beginning 20170118.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC5.3 -
+
+- Corrected various errors.
+
+- Removed libsrsprocessing.so.
+
+- Re-added Huawei™ content.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC5.2 -
+
+- Script edits
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC5.1 -
+
+- Huawei content not installed.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC5 -
+
+- Various changes.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC4 -
+
+- Hefty dosage of Huawei™ Mediapad M3 audio and effects.
+
+- Huawei™ Mate 9 Pro libhuaweiprocessing.
+
+- Extractable arise_addon.prop to place in /sdcard and edit for when the Add-Ons for Deuteronomy zip is updated.
+
+- Many other changes and retooling.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC3 -
+
+- Refocus on system core and abandonment of experimental content.
+
+- Add-On support currently under construction.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC2 -
+
+- Additional libraries and effects from Vivo™ Y51.
+
+- Additional entries added to audio_effects for native libraries and minor order rearrangement of existing entries.
+
+- Corrected the audiopolicy manipulation for audio_policy_configuration.xml when triggered using the sound system or add-on zip.
+
+- Updated Add-Ons for Deuteronomy zip with the latest LeEco™ LePro 3 Dolby Atmos™ ported by ahrion@arisesound.com.
+
+- BusyBox installed to /system/bin instead of /system/xbin when the ViPER4Android XHiFi add-on installation is triggered.
+
+- A customizable, automated trigger placement zip is now available allowing a customized Deuteronomy™ 2.4 installation in a single recovery session, even immediately after a ROM flash. To prepare:
+
+ - - Extract, Read, Edit, Rezip, and Flash!
+
+- Various changes.
+
+##
+
+
+
+## Deuteronomy™ 2.4 RC1 -
+
+- Audit
+
+- Various changes, fine tuning, and adjustments
+
+##
+
+
+
+## Deuteronomy™ 2.4 beta 5d -
+
+- Script corrections concerning 64 bit libraries.
+
+- New ArkamysAudoo and ICEsound service apk's with original SDK's.
+
++ Various corrections including the Add-Ons zip.
+
+##
+
+
+
+## Deuteronomy™ 2.4 beta 5c -
+
+- Script adjustments for successful Pixel and non-Pixel installations.
+
+- Pixel and non-Pixel support added to the Add-Ons zip.
+
+- Massive shout-out to our friend and partner @Yoinx for the many hours working with us for the preparation of 2.4 beta 5. :good:
+
+##
+
+
+
+## Deuteronomy™ 2.4 beta 4-2 -
+
+- Script corrections.
+
+##
+
+
+
+## Deuteronomy™ 2.4 beta 4-1 -
+
+- Script corrections.
+
+##
+
+
+
+## Deuteronomy™ 2.4 beta 4 -
+
+- Added AudioWizard for experimentation. Ideally, no FC or just a single FC at boot. Persistent FC will need a reboot, app data deletion, or /data installation if not already done by the sound system installation.
+
+- Various script enhancements.
+
+##
+
+
+
+## Deuteronomy™ 2.4 beta 3-3 -
+
+- Script edits.
+
+##
+
+
+
+## Deuteronomy™ 2.4 beta 3-2 -
+
+- Deleted extra space causing no SElinux context for /system/bin/dts_configurator
+
+- Script correction.
+
+##
+
+
+
+## Deuteronomy™ 2.4 beta 3-1 -
+
+- Script corrections
+
+##
+
+
+
+## Deuteronomy™ 2.4 beta 3 -
+
+- Added support for Pixel and Pixel XL devices.
+
+- Removed Audiophile™ profile installation. Extract and merge/paste manually if desired.
+
+- Added an ice trigger to /system/usr/triggers for automated installation of desired ICEsound configuration file.
+
+- Script edits and adjustments.
+
+##
+
+
+
+## Deuteronomy™ 2.4 beta 2 -
+
+- Various changes
+
+#$
+
+
+
+## Deuteronomy ™ 2.4 beta -
+
+- Asus™ Zenfone 3 Deluxe ICEsound system with three unique ICEsound configs available, installed using a user trigger .prop file if present in /system/usr/triggers during the sound system installation.
+
+- All user triggers now use the /system/usr/triggers directory.
+
+- Various other changes.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 9g -
+
+- Appropriate setting used in /system/etc/icesoundconfig.def thanks to @qwewqa. :good:
+
+- Script corrections concerning set_metadata.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 9f -
+
+- Removed native Dolby Atmos audio_effects configuration.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 9e -
+
+- Many corrections to the contents of audio_effects in the sound system zip and script corrections in the Add-On zip.
+
+- The appropriate icepower preset file is now included.
+
+- Added Huawei audio_effects.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 9d -
+
+- Returned some previously included libraries and effects to enhance sound quality.
+
+- Corrections to installation script for both the sound system and Add-Ons zips.
+
+- Expansion of audio_effects to accommodate Qualcomm ™, AOSP, native Dolby™ Atmos, HTC™ and Sony™ firmwares.
+
+- MusicFX.apk added to the Sony™ add-on for installation when not present on the device. Be advised that best results with Sony's SoundEnhancement are achieved when MusicFX is INSTALLED, yet DISABLED.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 9c -
+
+- Add-Ons are now in a separate recovery zip.
+
+- Corrections to audio_effects allocation.
+
+- Aggressive debloat.
+
+- Removed symlink.
+
+- Various changes and adjustments.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 9b -
+
+- Removed automatic Audiophile™ X ViPER4Android profile installation which caused critical /sdcard permissions for some.
+
+- Removed Dynamic Range Compression and 3mic Surround Sound processing suspected of causing microphone issues for some.
+
+- Corrected an error found in AM3D's installation when writing to /system/vendor/etc/audio_effects.conf.
+
+- Various library and apk substitutions.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 9a -
+
+- Full Sony™ Music 9.3.4 A.1.0 Suite add-on prepared by guitardedhero@arisesound.com 
+
+- Added Dolby™ Digital Plus add-on ported and graciously shared by @thereassaad @XDA Developers.
+
+- Temporarily using only two audio effects configurations.
+
+- Many various changes.
+
+##
+
+
+
+## Deuteronomy 2.4 alpha 8-8 -
+
+- Reworking of audio_effects scenarios.
+
+- Corrected errors in HTC's /system/vendor/etc/audio_effects.conf.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 8-7 -
+
+- Corrected /data/media/0/ViPER4Android permissions.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 8-6 -
+
+- Removed /system/app/DTSClientControllerService
+
+- Added the complete set of icepower effects { entries in audio_effects.
+
+- Added Audiophile™ X ViPER4Android profile into the installation.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 8-5 -
+
+- Various changes.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 8 -
+
+- Corrections to symlinking audio_effects when appropriate.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 7-8 -
+
+- audio_effects.conf symlinked to /vendor/etc when appropriate.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 7-7 -
+
+- Script edits concerning audio_effects.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 7-6 -
+
+- Audit.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 7-5 -
+
+- Corrections to audio_effects.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 7-4 -
+
+- New service apk's.
+
+- Various changes and corrections.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 7-3 -
+
+- Debloat and fine tuning.
+
+- Asus™ Zenfone 3 Ultra ICEsoundService.apk
+
+- Added Huawei™ audio_effects set.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 7-2 -
+
+- Asus™ Zenfone 3 Deluxe 570 icepower system, audio calibration database, dynamic range compression, and 3-mic surround sound processing.
+
+- audio_effects and /soundfx improvements.
+
+- Debloat of destructive libraries.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 7-1 -
+
+- Substantial simplification of audio_effects and soundfx libraries.
+
+- Various changes.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 7 -
+
+- Correct, optional AM3D™ add-on now used.
+
+- Removed the additional libeffectproxy folder.
+
+##
+
+
+
+## Dueteronomy™ 2.4 alpha 6-8 -
+
+- Various changes.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 6-7 -
+
+- Different service apk's.
+
+- Script corrections.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 6-6 -
+
+- Added /audio_effects_lg, vendor audio_effects files to try the LG™ G5 Qualcomm™ /vendor and AOSP effects instead of the stock, /audio_effects_asus files.
+
+- Adjustments to audio_effects writing.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 6-4 -
+
+- Different service apk's.
+
+- Added /system/etc/arkamys/ArkamysAudioService.xml.
+
+- Added /system/etc/icesound_info.
+
+- Minor debloat
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 6-3 -
+
+- Adjustments to audio_effects relating to v4a processing issues and Atmos™ placement.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 6-2 -
+
+- Removed the two asus.audio setprop lines.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 6-1 -
+
+- New service apk's to test compatibility progress.
+
+- Experimenting with target accuracy for the Dolby Atmos™ audio_effects entries if /system/atmos_YES.prop exists, the catalyst for the automatic Atmos™ Add-On installation.
+
+-RAW no longer removed from audio_policy.
+
+- Script enhancements and corrections.
+
+- Very minor debloat.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 6 -
+
+- Removed app data for ArkamysAudio and ICEsoundService.
+
+- Added /data/dts and /data/misc/dts.
+
+- Optimizations.
+
+- Minor debloat.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 5-3 -
+
+- Added optional AM3D™ Add-On installation using am3d_YES.prop, the same way the Dolby Atmos™ Add-On installation is performed using atmos_yes.prop.
+
+- Two deodexed apk's, ArkamysAudio and ICEsoundService, from the latest firmwares signed with auto-testkeys using ZipSigner - another attempt for apk compatibility.
+
+- Fixed a few errors found in the installation script.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 5 -
+
+- Added /system/lib/libsomcenhancements.so and /system/lib/libstagefright_soft_dsddec.so from Sony™ Xperia XZ.
+
+- Removed /system/lib/libomx-dts.so and /system/lib/libstagefright_soft_dtsdec.so.
+
+- Rearrangement of audio_effects targets.
+
+- Corrected the Dolby Atmos™ Add-On portion of the script.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 4 -
+
+- Updated ICEsoundService and ArkamysAudio from the latest firmwares.
+
+- Added Asus™ Zenfone 3 Ultra ICEsound™ and DTS™ eagle processing.
+
+- Added /system/atmos.prop for optional Dolby Atmos™ Add-On installation. When /system/atmos_YES.prop exists, the appropriate Dolby Atmos™ Add-On will automatically be installed for JellyBean - Nougat.
+
+- All audio_effects configuration files fully updated.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 3 -
+
+- Updated ArkamysAudio from the latest Nextbit™ Robin firmware.
+
+- Added ICEsoundService /data/app installation.
+
+- Added libTarsosDSP.so.
+
+- Switched to Asus™ Zenfone 3 Deluxe Advanced Digital Signal Processing.
+
+- Slight arrangement edits to audio_effects, especially htc_audio_effects.conf.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha 2 -
+
+- Edited Manifest.xml in ICEsoundService.apk in an attempt to fix FC instances.
+
+- Added Asus™ Zenfone 3 Deluxe Dynamic Range Compression and 3-mic Surround Sound processing.
+
+- Added /system/lib/libaudio3d.so courtesy of adithbalan@aqstica.
+
+##
+
+
+
+## Deuteronomy™ 2.4 alpha -
+
+- Added Asus™ Zenfone 3 Deluxe ICEsoundService and Icepower service and effects.
+
+- Added Asus™ Zenfone 3 Deluxe /system and /vendor AOSP and Qualcomm™ soundfx libraries.
+
+- Added Asus™ Zenfone 3 Deluxe SRS™ processing library.
+
+- Moderate debloat.
+
+- Various updates and edits.
+
+##
+
+
+
+## Deuteronomy™ 2.3.3 -
+
+Removed ArkamysAudio.apk installation. The apk remains in /customize/app for those wishing to experiment further.
+
+Corrected script error resulting in bootloop for Sony™ devices.
+
+##
+
+
+
+## Deuteronomy™ 2.3.2 -
+
+The latest ViPER4Arise apk by churapa@arisesound.com
+
+Removed all /lib/hw libraries.
+
+A copy of the native /system/lib/soundfx/libeffectproxy.so library is now added to /system/lib/soundfx/proxy_alternatives/proxy_originals during the installation.
+
+Removed the /data/data/com.arkamys.audio installation.
+
+##
+
+
+
+## Deuteronomy™ 2.3.1 -
+
+Added /system and /data ArkamysAudio.apk installations as well as its shared_preferences.
+
+Added select SuperPowered™ libraries.
+
+Added alternative libeffectproxy.so libraries in /system/lib/soundfx/proxy_alternatives.
+
+Added a sampling of /system and /vendor /lib/hw libraries from various firmware in the default installation.
+
+Returned the Bluetooth™ collection of codecs and libraries.
+
+MusicFX.apk no longer removed.
+
+Exynos content fully removed.
+
+##
+
+
+
+## Deuteronomy™ 2.2.3 -
+
+Added /system/lib/soundfx/libeffectproxy.so from the latest LG™ G5 firmware for all installations to restore consistent ViPER4Arise™ processing.
+
+##
+
+
+
+## Deuteronomy™ 2.2.2 -
+
+Minor debloat and script corrections.
+
+##
+
+
+
+## Deuteronomy™ 2.2.1 -
+
+Complete overhaul of /soundfx and audio_effects implementation.
+
+Added LG™ G5 libraries and effects.
+
+First attempt to sustain native Samsung audio effects such as SoundAlive and Adapt Sound.
+
+Numerous minor changes.
+
+##
+
+
+
+## Deuteronomy™ 2.2 -
+
+Focused on full support for One Plus™ 3 and HTC™ native Dolby Atmos™.
+
+Added Marlin and Sailfish support as well as better support for all other 64 bit Nexus devices.
+
+Tightened the installation to respect Sony™ devices and native content.
+
+Added a minor amount of Vivo™ X7 Plus content.
+
+Esira™ music player is now a part of the Extras for Deuteronomy™ zip.
+
+Minor change in the audio_effects effects chain.
+
+Minor debloat.
+
+##
+
+
+
+## Deuteronomy™ 2.1 -
+
+Corrected Esira™ installation.
+
+Added native Dolby™ entries to audio_effects for HTC™ since OP3's audio_effects passed the test. These entries should not conflict with DAX.
+
+Further work on all Qualcomm™ audio_effects.
+
+Extras for Deuteronomy™ is now available separately with current and up-to-date contents.
+
+Extras for Deuteronomy™ is now available separately with current and up-to-date contents.
+
+##
+
+
+
+## Deuteronomy™ 2.0.6 -
+
+More script revisions and enhancements.
+
+Added OP3 audio_effects.
+
+Added libqcompostprocbundle.so for Qualcomm™ devices without that library.
+
+##
+
+
+
+## Deuteronomy™ 2.0.5 -
+
+Removed RAW removal from the audio_policy manipulation.
+
+Fixed a couple of errors in the script concerning libhuaweiaudioprocessing.so and audio_effects_vendor.conf manipulation.
+
+Reworked and enhaced the installation script even more. 
+
+Updated the Deuteronomy sound system description and the 1.86 change log with forgotten information.
+
+##
+
+
+
+## Deuteronomy™ 2.0 -
+
+Completion of Qualcomm™ enhancements.
+
+Completion of sound system.
+
+##
+
+
+
+## Deuteronomy™ 1.92 -
+
+Restored Mediatek™ compatibility.
+
+Slight change to the audio_effects effects chain as well as custom stock and Atmos™ audio_effects configs for specific Samsung™ devices in /extras/audio_effects-configs courtesy of @phamous and @jacobh25.
+
+Minor debloat.
+
+##
+
+
+
+## Deuteronomy™ 1.86 -
+
+Added Vivo™ V3 Max Advanced Digital Signal Processing modules:
+- AudioSphere
+- DolbyMobile
+- DolbySurround
+- DTS HPX
+- SRS TruMedia
+
+Added Vivo™ V3 Max BBE™ Sonic Maximizer library and effect.
+
+Exhaustive and extensive retooling of all audio_effects sets producing the most consistent successful effect activation with the most optimum effects chain order.
+
+An even more discriminate installation script. Substantial debloat.
+
+##
+
+
+
+## Deuteronomy™ 1.51 -
+
+Added Vivo™ V3 Max Qualcomm™ and Mediatek™ sound libraries and effects.
+
+Complete overhaul of the audio_effects set with maximum functionality via the use of Qualcomm™ and non-Qualcomm™ audio_effects sets which install accordingly and appropriately.
+
+##
+
+
+
+## Deuteronomy™ -
+
+Initial release
+
+##
+
+
+
+guitardedhero, ahrion, Ben Feutrill, sonophilos, smeejaytee, ephexxis, nericollin, Paschfire, wrongway213, Roi007leaf, aki_007, R3V3NT3CH, buckmarble, BigRushDog, Yoinx, churapa, jacobh25, dingermtb, Joe0Bloggs, phamous, & mrrocketdog @
+
+http://arisesound.com
+
+
+
+The entire ARISE Sound Systems™ family @
+
+http://forum.xda-developers.com/android/software/r-s-e-sound-systems-auditory-research-t3379709
+
+##
+
+Users in search of Add-On's, specifically Dolby Atmos™ with full functionality and Graphic User Interface, can find multiple Dolby Atmos™ ports from the premium device systems currently available like Axon™ 7 Pro and LeTv™ LeMax 2 at our app porter specialist's dedicated @XDA thread at the following address:
+
+
+http://forum.xda-developers.com/android/software/soundmod-axon-7-dolby-atmos-t3412342
+
+
+ahrion @XDA Developers is a top-level ARISE Sound Systems™ member and is OP of the Dolby Atmos™ Ports Collective thread linked above. The Dolby Atmos™ zips he's made available are the perfect solution to achieving a seamless Dolby Atmos GUI installation with any ARISE™ sound system. No file in the system will be overwritten and the audio_effects set will remain intact and fully functional via the respectful patching of these files during the installation.
+
+
+No compromises and no difference whatsoever between an Add-On installation and an ARISE™ sound system with Dolby Atmos™ built-in, except for choices. The Add-On method simply opens the door to numerous build options and experimentation, from the lone processing of ViPER4Android, to the latest experimental Dolby Atmos™ port, possibly multiple simultaneous Dolby Atmos™ installations as his thread evolves, and everything in between. His thread also provides a dedicated resource for Dolby Atmos™ information and support, definitely the better option to be heard and guided by @XDA's finest regarding everything Dolby Atmos™.

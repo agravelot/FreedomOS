@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.sonymobile.settings.illumination.api"
+            file="/system/framework/com.sonymobile.settings.illumination.jar"/>
+    <library name="com.sonymobile.settings.illumination.api_2"
+            file="/system/framework/com.sonymobile.settings.illumination.jar"/>
+</permissions>
+

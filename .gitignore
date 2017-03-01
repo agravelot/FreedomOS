@@ -26,6 +26,7 @@ Thumbs.db
 *.rar
 *.tar
 *.zip
+*.zip.bak
 
 # Logs and databases #
 ######################
@@ -37,15 +38,7 @@ Thumbs.db
 NOTE
 tmp/*
 output/*
-download/*
 rom/
 .build.conf
 tools/*
 build/keys/*
-
-!system/EMPTY_DIRECTORY
-!tmp/EMPTY_DIRECTORY
-!output/EMPTY_DIRECTORY
-!rom/EMPTY_DIRECTORY
-!download/freedomos_busybox
-!download/freedomos_opengapps

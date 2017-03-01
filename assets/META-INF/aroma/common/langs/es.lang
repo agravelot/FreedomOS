@@ -35,6 +35,11 @@ language.italian=Italiano
 language.italian.info=Utilizzare Italiano @xEvoRayJiN
 language.spanish=Español
 language.spanish.info=Utilizar Español by @jgimenezpascual
+language.tchinese=正體中文
+language.tchinese.info=使用正體中文 - @clyang
+language.schinese=简体中文
+language.schinese.info=使用简体中文 - @clyang
+
 rom.data=!date!
 text_finish=Terminado
 model.title=Modelo de Teléfono
@@ -143,7 +148,7 @@ basic_dream=Basic Dream
 bt_midi=BT Midi Service
 bt_test=BTtestmode
 desk_clock=DeskClock
-document=Documentos
+document=OP File Manager
 download_provider=Proveedor de descargas
 engineering=EngineeringMode
 eng_special_test=EngSpecialTest
@@ -199,7 +204,7 @@ info.oem_test=Aplicaciones de prueba OEM
 info.oem_log=Logging
 info.oneplus_camera=Haz fotos y videos
 info.oneplus_gallery=Visualiza fotos y videos
-info.ota=Actualizador de OnePlus 
+info.ota=Actualizador de OnePlus
 info.oneplus_wizard=Asistente de configuración de Google
 info.phase_beam=Fondos de pantalla animados
 info.protips=Consejos
@@ -236,7 +241,8 @@ dpi.350=Establezca las PPI a 350
 mod.tittle=Instalando las opciones extra
 mod.tittle2=Root, opciones de sonido, bloqueador de anuncios y modulo xposed...
 mod.tittle3=Opciones extra "2"
-supersu=Instalar SuperSU
+
+root=Enable root access
 xposed=Instalador Xposed "Material Design"
 adaway=Adaway
 adb=Activar ADB
@@ -245,8 +251,12 @@ fos_wallpapers=Fondos de pantalla de FreedomOS
 emoji_one=EmojiOne
 google_assistant=Google Assistant
 arise=A.R.I.S.E
+aptx=Install APTX/APTX-HD
+40-wifi=Enable wideband Wifi
+permissive=Enable permissive
+substratum=Substratum
 
-info.supersu=SuperSU de Chainfire
+info.root=Required to pass SafetyNet
 info.xposed=Instalador Xposed de DVD android
 info.adaway=Bloqueador de anuncios para Android
 info.adb=Android Debugging Bridge
@@ -255,25 +265,61 @@ info.fos_wallpapers=Diseñado por @badboy47
 info.emoji_one=El emoji estándar
 info.google_assistant=US only
 info.arise=A.R.I.S.E Sound System
+info.aptx=Extra codecs from Qualcomm
+info.40-wifi=40MHz channel width over 2.4GHz
+info.permissive=Repack the kernel with permissive flag (Vulnerable to privilege escalation)
+info.substratum=El nuevo motor de temas
+
+# -- - ROOT - -- #
+supersu=Instalar SuperSU
+magisk=Install MagiskSU
+
+info.supersu=@Chainfire - <#f00>Will break SafetyNet</#>
+info.magisk=@topjohnwu - <#0f0>Required to pass SafetyNet</#>
 
 # -- - THEME - -- #
-theme.tittle=Temas
-theme.tittle2=Selecciona las opciones de tema
-theme.tittle3=Selecciona el motor de temas
-theme.tittle3=Selecciona el motor de temas
-notheme=No instalar ningun motor de temas
-layer=RRO Layers [obsoleto]
-substratum=Substratum
-info.notheme=
-info.layer=Configurador de RRO Layers
-info.substratum=El nuevo motor de temas
 splash.tittle=Selecciona una pantalla de arranque, NO animación de inicio
 fos_splash=FreedomOS
 oos_splash=OxygenOS
 no_splash=Dejar la actual
-info.fos_splash=
-info.oos_splash=
-info.no_splash=
+
+theme.tittle=Themes
+theme.subtittle=Choose wich themes you want to apply
+incorexcl.theme=Choose to include or exclude the themes below
+inc.theme=Include
+excl.theme=Exclude
+
+info.inc.theme=Choose the themes you WANT installed from the list below.
+info.excl.theme=Choose the themes you DON'T WANT installed from the list below.
+
+theme.select=Please select which VRTheme module you want to include
+
+center_clock=Center Clock
+no_traffic=No Traffic Indicator
+
+info.center_clock=Provided by @kickoff
+info.no_traffic=Provided by @kickoff
+
+# -- - AUDIO - -- #
+v4a_new=Viper4Android 2.5.0.5
+v4a_old=Viper4Android 2.3.4.0
+v4a_profiles=V4A Profiles & Kernels
+arkamys=Arkamys™
+icesound=ICEsound™
+sony_player=Sony Music Player
+rm_deep_buffer=Remove deep_buffer from audio_policy
+sdcard_perm=Fix sdcard permisisons
+
+info.v4a_new=Latest version
+info.v4a_old=For old school users
+info.v4a_profiles=Various audio profiles with kernels
+info.arkamys=Arkamys™ Audio system
+info.icesound=Read carefully the included instructions
+info.sony_player=Include TrackID, Network/DLNA, podcasts
+info.rm_deep_buffer=Will fix most issues, not battery friendly!
+info.sdcard_perm=Can add 3 - 5 minutes to the recovery session
+
+
 # -- - KERNEL - -- #
 kernel.tittle=Kernel
 kernel.tittle2=Seleciona el kernel.
@@ -283,6 +329,7 @@ elementalx=ElementalX
 info.elementalx=Desarrollado por @flar2
 moxie=Moxie Kernel
 info.moxie=Desarrolado por @bedalus
+
 # -- - INSTALLER - -- #
 install=Instalación de FreedomOS
 install.now=Instalando...
