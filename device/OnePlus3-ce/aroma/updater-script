@@ -366,6 +366,7 @@ set_metadata("/tmp/opengapps/META-INF/com/google/android/update-binary-installer
 set_metadata_recursive("/tmp/opengapps", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
 run_program("/sbin/busybox", "sh", "/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "dummy", "1", "/tmp/opengapps/opengapps.zip");
 run_program("/tmp/tools/busybox", "mount", "/system");
+run_program("/tmp/tools/pixel_icons/install.sh");
 
 set_progress(0.990000);
 ui_print(" ");
