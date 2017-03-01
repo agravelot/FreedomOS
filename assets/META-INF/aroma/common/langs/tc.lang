@@ -264,7 +264,7 @@ mod.tittle=安裝增益模組
 mod.tittle2=Root, 音效模組, 擋廣告 & xposed...
 mod.tittle3=增益模組
 
-root=Enable root access
+root=開啟root權限
 xposed=Material Design Xposed安裝程式
 adaway=Adaway
 adb=啟用ADB
@@ -276,7 +276,7 @@ arise=A.R.I.S.E
 aptx=安裝APTX/APTX-HD
 40-wifi=啟用wideband無線網路
 permissive=啟用寬容模式(permissive)
-substratum=Substratum
+substratum=Substratum主題引擎
 
 info.xposed=Xposed Installer application only by DVD android
 info.adaway=Android用的擋廣告軟體
@@ -293,9 +293,9 @@ info.substratum=新的主題引擎
 
 # -- - ROOT - -- #
 supersu=安裝SuperSU
-magisk=Install MagiskSU
-info.supersu=@Chainfire - <#f00>Will break SafetyNet</#>
-info.magisk=@topjohnwu - <#0f0>Required to pass SafetyNet</#>
+magisk=安裝MagiskSU
+info.supersu=@Chainfire - <#f00>無法過SafetyNet檢測</#>
+info.magisk=@topjohnwu - <#0f0>可過SafetyNet檢測</#>
 
 # -- - THEME - -- #
 splash.tittle=選擇您的開機畫面, 並非開機動畫
@@ -307,22 +307,22 @@ info.fos_splash=
 info.oos_splash=
 info.no_splash=
 
-theme.tittle=Themes
-theme.subtittle=Choose wich themes you want to apply
-incorexcl.theme=Choose to include or exclude the themes below
-inc.theme=Include
-excl.theme=Exclude
+theme.tittle=主題
+theme.subtittle=請選擇要套用的主題
+incorexcl.theme=選擇包含或是排除下列的主題
+inc.theme=包含
+excl.theme=排除
 
-info.inc.theme=Choose the themes you WANT installed from the list below.
-info.excl.theme=Choose the themes you DON'T WANT installed from the list below.
+info.inc.theme=從下列清單選取要安裝的主題
+info.excl.theme=從下列清單選取不要安裝的主題
 
-theme.select=Please select which VRTheme module you want to include
+theme.select=請選擇您想包含的VRTheme模組
 
-center_clock=Center Clock
-no_traffic=No Traffic Indicator
+center_clock=時鐘置中於狀態列列
+no_traffic=狀態列不顯示流量表
 
-info.center_clock=Provided by @kickoff
-info.no_traffic=Provided by @kickoff
+info.center_clock=由@kickoff提供
+info.no_traffic=由@kickoff提供
 
 # -- - AUDIO - -- #
 v4a_new=Viper4Android 2.5.0.5
