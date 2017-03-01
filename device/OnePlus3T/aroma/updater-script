@@ -370,6 +370,9 @@ ui_print(" ");
 run_program("/tmp/tools/apps_remover.sh", "sapps.prop", "1");
 
 # -- - OPENGAPPS - -- #
+set_progress(0.940000);
+ui_print(" ");
+
 ui_print("@Installing Open GApps");
 ui_print(" ");
 delete_recursive("/tmp/opengapps");
