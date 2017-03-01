@@ -264,7 +264,7 @@ mod.tittle=Ek modları yükle
 mod.tittle2=Root erişimi, ses modu, reklam engelleyici ve xposed ...
 mod.tittle3=Ekstra mod
 
-supersu=SuperSU yükle
+root=Enable root access
 xposed=Material Tasarım Xposed Yükleyici
 adaway=Adaway
 adb=ADB'yi etkinleştir
@@ -276,8 +276,9 @@ arise=A.R.I.S.E
 aptx=Install APTX/APTX-HD
 40-wifi=Enable wideband Wifi
 permissive=Enable permissive
+substratum=Substratum
 
-info.supersu=SuperSU by Chainfire
+info.root=Required to pass SafetyNet
 info.xposed=Xposed Installer application only by DVD android
 info.adaway=Android için Reklam Engelleyici
 info.adb=Android Hata Ayıklama Köprüsü
@@ -289,26 +290,36 @@ info.arise=A.R.I.S.E Ses Sistemi
 info.aptx=Extra codecs from Qualcomm
 info.40-wifi=40MHz channel width over 2.4GHz
 info.permissive=Repack the kernel with permissive flag (Vulnerable to privilege escalation)
-
-# -- - THEME - -- #
-
-theme.tittle=Tema
-theme.tittle2=Tema ayarlarınızı seçin
-theme.tittle3=Tema motorunuzu seçin
-
-theme.tittle3=Tema motorunuzu seçin
-notheme=Tema motoru yükleme
-layer=RRO Layers [kullanımdan kaldırıldı]
-substratum=Substratum
-
-info.notheme=
-info.layer=RRO Layers Manager
 info.substratum=Yeni Tema Motoru
 
+# -- - ROOT - -- #
+supersu=SuperSU yükle
+magisk=Install MagiskSU
+info.supersu=@Chainfire - <#f00>Will break SafetyNet</#>
+info.magisk=@topjohnwu - <#0f0>Required to pass SafetyNet</#>
+
+# -- - THEME - -- #
 splash.tittle=Önyükleme ekranınızı seçin, başlangıç animasyonu DEĞİL
 fos_splash=FreedomOS Önyükleme ekranı
 oos_splash=OxygenOS Önyükleme ekranı
 no_splash=Mevcut Önyükleme ekranı kalsın
+
+theme.tittle=Themes
+theme.subtittle=Choose wich themes you want to apply
+incorexcl.theme=Choose to include or exclude the themes below
+inc.theme=Include
+excl.theme=Exclude
+
+info.inc.theme=Choose the themes you WANT installed from the list below.
+info.excl.theme=Choose the themes you DON'T WANT installed from the list below.
+
+theme.select=Please select which VRTheme module you want to include
+
+center_clock=Center Clock
+no_traffic=No Traffic Indicator
+
+info.center_clock=Provided by @kickoff
+info.no_traffic=Provided by @kickoff
 
 # -- - AUDIO - -- #
 v4a_new=Viper4Android 2.5.0.5

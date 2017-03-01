@@ -255,7 +255,7 @@ mod.tittle=Installiere extra Mods
 mod.tittle2=Root, Audio Mod, Werbeblocker & Xposed...
 mod.tittle3=Extra mod
 
-supersu=Installiere SuperSU
+root=Enable root access
 xposed=Material Design Xposed Installer
 adaway=Adaway
 adb=Aktiviere ADB
@@ -267,8 +267,9 @@ arise=A.R.I.S.E
 aptx=Install APTX/APTX-HD
 40-wifi=Enable wideband Wifi
 permissive=Enable permissive
+substratum=Substratum
 
-info.supersu=SuperSU von Chainfire
+info.root=Required to pass SafetyNet
 info.xposed=Xposed Installer  vom DVD android
 info.adaway=WerbeBlocker für Android
 info.adb=Android Debugging Bridge
@@ -280,25 +281,37 @@ info.arise=A.R.I.S.E Sound System
 info.aptx=Extra codecs from Qualcomm
 info.40-wifi=40MHz channel width over 2.4GHz
 info.permissive=Repack the kernel with permissive flag (Vulnerable to privilege escalation)
-
-# -- - THEME - -- #
-theme.tittle=Theme
-theme.tittle2=Wähle deine Designeinstellungen
-theme.tittle3=Wähle deine Designengine
-
-theme.tittle3=Wähle deine Designengine
-notheme=Installiere keine Designengine
-layer=RRO Layers [deprecated]
-substratum=Substratum
-
-info.notheme=
-info.layer=RRO Layers Manager
 info.substratum=Das neue Designengine
 
+# -- - ROOT - -- #
+supersu=Installiere SuperSU
+magisk=Install MagiskSU
+
+info.supersu=@Chainfire - <#f00>Will break SafetyNet</#>
+info.magisk=@topjohnwu - <#0f0>Required to pass SafetyNet</#>
+
+# -- - THEME - -- #
 splash.tittle=Wähle deinen Bootscreen, NICHT bootanimation
 fos_splash=FreedomOS Bootscreen
 oos_splash=OxygenOS Bootscreen
 no_splash=Aktuellen Bootscreen weiterhin verwenden
+
+theme.tittle=Themes
+theme.subtittle=Choose wich themes you want to apply
+incorexcl.theme=Choose to include or exclude the themes below
+inc.theme=Include
+excl.theme=Exclude
+
+info.inc.theme=Choose the themes you WANT installed from the list below.
+info.excl.theme=Choose the themes you DON'T WANT installed from the list below.
+
+theme.select=Please select which VRTheme module you want to include
+
+center_clock=Center Clock
+no_traffic=No Traffic Indicator
+
+info.center_clock=Provided by @kickoff
+info.no_traffic=Provided by @kickoff
 
 # -- - AUDIO - -- #
 v4a_new=Viper4Android 2.5.0.5

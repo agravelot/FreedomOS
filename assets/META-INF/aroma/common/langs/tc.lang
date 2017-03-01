@@ -264,7 +264,7 @@ mod.tittle=安裝增益模組
 mod.tittle2=Root, 音效模組, 擋廣告 & xposed...
 mod.tittle3=增益模組
 
-supersu=安裝SuperSU
+root=Enable root access
 xposed=Material Design Xposed安裝程式
 adaway=Adaway
 adb=啟用ADB
@@ -276,8 +276,8 @@ arise=A.R.I.S.E
 aptx=安裝APTX/APTX-HD
 40-wifi=啟用wideband無線網路
 permissive=啟用寬容模式(permissive)
+substratum=Substratum
 
-info.supersu=SuperSU by Chainfire
 info.xposed=Xposed Installer application only by DVD android
 info.adaway=Android用的擋廣告軟體
 info.adb=Android Debugging Bridge
@@ -289,21 +289,15 @@ info.arise=A.R.I.S.E音效系統
 info.aptx=高音質藍牙codec
 info.40-wifi=在2.4GHz上使用40MHz頻寬
 info.permissive=啟用內核的寬容標記 (易導致內核提權)
-
-# -- - THEME - -- #
-theme.tittle=主題
-theme.tittle2=選擇您的主題設定
-theme.tittle3=選擇您要用的主題引擎
-
-theme.tittle3=選擇您要用的主題引擎
-notheme=不要安裝主題引擎
-layer=RRO Layers [即將棄用]
-substratum=Substratum
-
-info.notheme=
-info.layer=RRO Layers管理器
 info.substratum=新的主題引擎
 
+# -- - ROOT - -- #
+supersu=安裝SuperSU
+magisk=Install MagiskSU
+info.supersu=@Chainfire - <#f00>Will break SafetyNet</#>
+info.magisk=@topjohnwu - <#0f0>Required to pass SafetyNet</#>
+
+# -- - THEME - -- #
 splash.tittle=選擇您的開機畫面, 並非開機動畫
 fos_splash=FreedomOS開機畫面
 oos_splash=OxygenOS開機畫面
@@ -312,6 +306,23 @@ no_splash=使用目前開機畫面
 info.fos_splash=
 info.oos_splash=
 info.no_splash=
+
+theme.tittle=Themes
+theme.subtittle=Choose wich themes you want to apply
+incorexcl.theme=Choose to include or exclude the themes below
+inc.theme=Include
+excl.theme=Exclude
+
+info.inc.theme=Choose the themes you WANT installed from the list below.
+info.excl.theme=Choose the themes you DON'T WANT installed from the list below.
+
+theme.select=Please select which VRTheme module you want to include
+
+center_clock=Center Clock
+no_traffic=No Traffic Indicator
+
+info.center_clock=Provided by @kickoff
+info.no_traffic=Provided by @kickoff
 
 # -- - AUDIO - -- #
 v4a_new=Viper4Android 2.5.0.5

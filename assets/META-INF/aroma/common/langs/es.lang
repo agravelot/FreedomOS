@@ -241,7 +241,8 @@ dpi.350=Establezca las PPI a 350
 mod.tittle=Instalando las opciones extra
 mod.tittle2=Root, opciones de sonido, bloqueador de anuncios y modulo xposed...
 mod.tittle3=Opciones extra "2"
-supersu=Instalar SuperSU
+
+root=Enable root access
 xposed=Instalador Xposed "Material Design"
 adaway=Adaway
 adb=Activar ADB
@@ -253,8 +254,9 @@ arise=A.R.I.S.E
 aptx=Install APTX/APTX-HD
 40-wifi=Enable wideband Wifi
 permissive=Enable permissive
+substratum=Substratum
 
-info.supersu=SuperSU de Chainfire
+info.root=Required to pass SafetyNet
 info.xposed=Instalador Xposed de DVD android
 info.adaway=Bloqueador de anuncios para Android
 info.adb=Android Debugging Bridge
@@ -266,22 +268,37 @@ info.arise=A.R.I.S.E Sound System
 info.aptx=Extra codecs from Qualcomm
 info.40-wifi=40MHz channel width over 2.4GHz
 info.permissive=Repack the kernel with permissive flag (Vulnerable to privilege escalation)
+info.substratum=El nuevo motor de temas
+
+# -- - ROOT - -- #
+supersu=Instalar SuperSU
+magisk=Install MagiskSU
+
+info.supersu=@Chainfire - <#f00>Will break SafetyNet</#>
+info.magisk=@topjohnwu - <#0f0>Required to pass SafetyNet</#>
 
 # -- - THEME - -- #
-theme.tittle=Temas
-theme.tittle2=Selecciona las opciones de tema
-theme.tittle3=Selecciona el motor de temas
-theme.tittle3=Selecciona el motor de temas
-notheme=No instalar ningun motor de temas
-layer=RRO Layers [obsoleto]
-substratum=Substratum
-info.notheme=
-info.layer=Configurador de RRO Layers
-info.substratum=El nuevo motor de temas
 splash.tittle=Selecciona una pantalla de arranque, NO animación de inicio
 fos_splash=FreedomOS
 oos_splash=OxygenOS
 no_splash=Dejar la actual
+
+theme.tittle=Themes
+theme.subtittle=Choose wich themes you want to apply
+incorexcl.theme=Choose to include or exclude the themes below
+inc.theme=Include
+excl.theme=Exclude
+
+info.inc.theme=Choose the themes you WANT installed from the list below.
+info.excl.theme=Choose the themes you DON'T WANT installed from the list below.
+
+theme.select=Please select which VRTheme module you want to include
+
+center_clock=Center Clock
+no_traffic=No Traffic Indicator
+
+info.center_clock=Provided by @kickoff
+info.no_traffic=Provided by @kickoff
 
 # -- - AUDIO - -- #
 v4a_new=Viper4Android 2.5.0.5
