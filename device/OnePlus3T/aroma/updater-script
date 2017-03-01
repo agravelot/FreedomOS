@@ -38,7 +38,7 @@ ifelse(is_mounted("/data"), run_program("/tmp/tools/busybox", "umount", "/data")
 
 # -- - BACKUP ADDON.D - -- #
 
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.0") == "1")
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
   set_progress(0.032);
   ui_print("   Mounting System & Data");
@@ -116,7 +116,7 @@ package_extract_file("firmware-update/adspso.bin", "/dev/block/bootdevice/by-nam
 package_extract_file("firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
 
 # -- - Restoring Addon.d - -- #
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.0") == "1")
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
   ui_print("   Restoring your addon.d");
   run_program("/tmp/tools/addon/backuptool.sh", "restore");
@@ -125,7 +125,7 @@ endif;
 delete_recursive("/tmp/tools/addon/");
 
 # -- - pin/patern fix - -- #
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.0") == "1")
   then
     set_metadata("/tmp/fix_passwd.sh", "uid", 0, "gid", 0, "mode", 0777);
     run_program("/tmp/fix_passwd.sh");

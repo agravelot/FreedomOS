@@ -98,7 +98,7 @@ app/Messenger
 app/Photos
 app/Music2
 app/YouTube
-app/NFCTestMode 
+app/NFCTestMode
 vendor/etc/in_apps
 priv-app/SetupWizard
 priv-app/GmsCore
