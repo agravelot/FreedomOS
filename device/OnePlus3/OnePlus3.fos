@@ -130,6 +130,7 @@ common/addon
 common/apps_remover.sh
 common/aptx
 common/arise
+common/arise4magisk
 common/clean.sh
 common/fonts
 common/fix_passwd.sh

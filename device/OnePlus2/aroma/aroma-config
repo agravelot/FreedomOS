@@ -530,6 +530,20 @@ then
   appendvar("gapps", "GoogleAssistant\n");
 endif;
 
+if
+  prop("mod.prop", "item.1.1") == "1"
+then
+    form(
+        "Root",
+        "Choose wich root method you want to include</#>",
+        "@default",
+        aromaroot.prop,
+        "rootmethod",     "",        "",      "group",
+          "0",                    "<~supersu>",                  "<~info.supersu>",       "select.selected",
+          "1",                    "<~magisk>",                   "<~info.magisk>",        "select"
+        );
+endif;
+
 # -- ARISE -- #
 if
   prop("mod.prop", "item.1.9")=="1"
