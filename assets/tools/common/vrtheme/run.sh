@@ -15,7 +15,7 @@
 
 ui_print() {
   echo -n -e "ui_print $1\n" >> /proc/self/fd/$outfd
-  echo -n -e "ui_print $1\n" >> /tmp/fos_logs/themeapply
+  echo -n -e "ui_print $1\n" >> /tmp/fos_logs/themeinstall.log
 }
 
 outfd=1
@@ -40,6 +40,13 @@ else
 fi
 
 sed -i '/inclorexcl/d' /tmp/aroma/theme.prop
+
+# If no theme selected
+if [[ -z $(cat /tmp/aroma/theme.prop) ]]; then
+  exit 0
+fi
+
+ui_print("   Applying VRThemes")
 
 for theme in $(cat /tmp/aroma/theme.prop); do
 	cp -r /tmp/tools/themes/$theme/* /data/tmp/vrtheme/apply

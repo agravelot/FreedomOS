@@ -354,7 +354,6 @@ run_program("/sbin/busybox", "sh", "/tmp/tools/busybox_installer/META-INF/com/go
 delete_recursive("/tmp/tools/busybox_installer");
 
 # -- - APPLYING THEMES - -- #
-ui_print("   Applying VRThemes ");
 run_program("/tmp/tools/busybox", "mount", "/system");
 run_program("/tmp/tools/vrtheme/run.sh");
 
