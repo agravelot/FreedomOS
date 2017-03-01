@@ -136,7 +136,6 @@ common/fonts
 common/fix_passwd.sh
 common/google_dns.sh
 common/google_assistant.sh
-common/hosts
 common/kernel
 common/log_folder.sh
 common/magisk
