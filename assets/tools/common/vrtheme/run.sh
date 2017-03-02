@@ -46,7 +46,7 @@ if [[ -z $(cat /tmp/aroma/theme.prop) ]]; then
   exit 0
 fi
 
-ui_print("   Applying VRThemes")
+ui_print "   Applying VRThemes"
 
 for theme in $(cat /tmp/aroma/theme.prop); do
 	cp -r /tmp/tools/themes/$theme/* /data/tmp/vrtheme/apply
