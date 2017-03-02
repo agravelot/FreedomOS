@@ -39,8 +39,9 @@
   UPDATE: AndroidPay
   UPDATE: Text-to-Speech
   UPDATE: Turkish language, fix typos !22 @topcu.mevlut
-  UPDATE: Simplified Chinese !23 !24 !25 @clyang
-  UPDATE: Traditional Chinese !23 !24 !25 @clyang
+  UPDATE: Simplified Chinese !23 !24 !25 !28 @clyang
+  UPDATE: Traditional Chinese !23 !24 !25 !28 @clyang
+  UPDATE: Italian !29 @@YvanB
   UPDATE: Substratum
   UPDATE: make_ext4fs binary from my own source, includee important fixs! check my github page
   ADD: Sony Music Player (with TrackID) in aroma
