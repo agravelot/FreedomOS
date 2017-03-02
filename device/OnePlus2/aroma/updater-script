@@ -335,10 +335,14 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.10") == "1")
 endif;
 
 # -- - APTX - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.12") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.11") == "1")
   then
     ui_print("   Adding APTX/APTXHD support");
-    run_program("/tmp/tools/aptx/install.sh");
+endif;
+
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.11") == "0")
+  then
+    run_program("/tmp/tools/aptx/remove.sh");
 endif;
 
 # -- - WIDEBAND WIFI - -- #

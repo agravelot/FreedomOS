@@ -13,4 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-cp /tmp/tools/aptx/*.so /system/lib/
+rm -f /system/lib/*apt*.so

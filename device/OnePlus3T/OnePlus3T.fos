@@ -48,7 +48,9 @@ BUILD_METHOD=dat_to_dat
 # The partition size is exactly the same between OP3 and OP3T
 SYSTEMIMAGE_PARTITION_SIZE=3154116608
 
-PATCH_SYSYEM=""
+PATCH_SYSYEM="
+aptx
+"
 
 # Add BUSYBOX into the rom
 BUILD_BUSYBOX=true
