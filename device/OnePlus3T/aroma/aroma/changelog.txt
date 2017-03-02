@@ -11,8 +11,10 @@
         - Corrections to audio_policy_configuration.xml manipulation.
         - Added support for user customized ICEsound™ configuration by seeking and using /sdcard/icesoundconfig.def if found.
     UPDATE: Turkish language, fix typos !22 @topcu.mevlut
-    UPDATE: Simplified Chinese !23 !24 !25 @clyang
-    UPDATE: Traditional Chinese !23 !24 !25 @clyang
+    UPDATE: Simplified Chinese !23 !24 !25 !28 @clyang
+    UPDATE: Traditional Chinese !23 !24 !25 !28 @clyang
+    UPDATE: Italian !29 @@YvanB
+    UPDATE: Espagnol !30 @jgimenezpascual
     UPDATE: Substratum
     UPDATE: make_ext4fs binary from my own source, includee important fixs! check my github page
     ADD: Magisk v11.1, with fully safetynet support (enable Magisk Hide & Systemless hosts in app settings)
@@ -32,6 +34,7 @@
     REMOVE: Option to install without Google Apps
     REMOVE: Marshmallow firmwares option in aroma
     REMOVE: hosts files to support magisk
+    REMOVE: Modified busybox
 
     NOTE: If you have used or currently use Google Dialer, please consider to perform a clean flash to avoid issues.
           Some aroma translations need to be updated, feel free to push request on gitlab (instructions available in repo).

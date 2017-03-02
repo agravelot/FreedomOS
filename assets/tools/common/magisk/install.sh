@@ -13,13 +13,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 echo "Installing Magisk apk"
-cp -rvf /tmp/magisk/Magisk /system/app/
-cd /system/app/Magisk
+mount /data
+if [[ ! -d /data/app/ ]]; then
+  mkdir -p /data/app/
+fi
+cp -rvf /tmp/tools/magisk/Magisk /data/app/
+cd /data/app/Magisk
 chown 1000.1000 . -R
 chown 1000:1000 . -R
 chmod 755 -R .
 chmod 755 lib/
 find -type f -name '.apk' -exec chmod 644 {} \;
 find -type f -name '.so' -exec chmod 755 {} \;
+chcon -R -t apk_data_file /data/app/Magisk/
 cd -
 exit 0
