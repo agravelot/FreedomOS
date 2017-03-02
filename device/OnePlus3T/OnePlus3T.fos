@@ -53,7 +53,7 @@ aptx
 "
 
 # Add BUSYBOX into the rom
-BUILD_BUSYBOX=true
+BUILD_BUSYBOX=false
 
 BOOTANIMATION=350
 
