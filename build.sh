@@ -315,7 +315,7 @@ if [ $confirm_build -eq 1 ]; then
   add_files
   build_arise
   build_arise4magisk
-  if [[ BUILD_BUSYBOX ]]; then
+  if [[ "$BUILD_BUSYBOX" == ture ]]; then
       build_busybox
   fi
   make_zip
