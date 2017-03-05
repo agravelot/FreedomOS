@@ -39,19 +39,18 @@ else
   sed -i 's/=0//g' /tmp/aroma/theme.prop
 fi
 
-sed -i '/inclorexcl/d' /tmp/aroma/theme.prop
-
-# If no theme selected
-if [[ -z $(cat /tmp/aroma/theme.prop) ]]; then
+if [[ $(grep -c inclorexcl /tmp/aroma/theme.prop) == "1" ]]; then
+  sed -i '/inclorexcl/d' /tmp/aroma/theme.prop
+  if [[ -s /tmp/aroma/theme.prop ]]; then
+    ui_print "   Applying VRThemes"
+    for theme in $(cat /tmp/aroma/theme.prop); do
+      cp -r /tmp/tools/themes/$theme/* /data/tmp/vrtheme/apply
+    done
+    chmod 755 -R /data/tmp/vrtheme
+    #mount /system
+    sh /data/tmp/vrtheme/installtheme.sh >> /tmp/fos_logs/themeinstall.log
+  fi
+else
+  echo "No theme allowed on this build!"
   exit 0
 fi
-
-ui_print "   Applying VRThemes"
-
-for theme in $(cat /tmp/aroma/theme.prop); do
-	cp -r /tmp/tools/themes/$theme/* /data/tmp/vrtheme/apply
-done
-
-chmod 755 -R /data/tmp/vrtheme
-#mount /system
-sh /data/tmp/vrtheme/installtheme.sh >> /tmp/fos_logs/themeinstall.log
