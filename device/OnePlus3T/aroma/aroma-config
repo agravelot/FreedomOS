@@ -631,11 +631,11 @@ endif;
 # );
 
 alert (
- "<b>If you like my work",
- "consider a donation to:\n"+
- "Paypal:antoine.gravelot@hotlmail.com\n"+
- "Really appreciated!</b>",
- "@paypal"
+  "If you like my work",
+  "You can buy me a beer:\n"+
+  "Paypal: <b>antoine.gravelot@hotmail.com</b>\n"+
+  "Really appreciated!",
+  "@paypal"
 );
 
 # -- - Pre-Install - -- -#
