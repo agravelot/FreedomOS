@@ -598,15 +598,16 @@ then
           "ICEpreset.prop",
 
           "use.ICEsound.preset",     "ICE Configuration selection",        "",                    "group",
+            "BATHSALTS",                    "BATHSALTS",                  "",        "select",
             "DEEPBASS",                    "DEEPBASS",                  "",        "select",
-            "DEFAULT",                    "DEFAULT",                  "",  "select.selected",
-            "HOLYSHIT",                    "HOLYSHIT",                  "",        "select",
+            "Default",                    "DEFAULT",                  "",  "select.selected",
+            "HOLYSH*T",                    "HOLYSHIT",                  "",        "select",
             "KRAZY",                    "KRAZY",                  "",  "select",
             "MOVIE",                    "MOVIE",                  "",  "select",
             "MUSIC2",                    "MUSIC2",                  "",  "select",
             "OUTDOORS",                    "OUTDOORS",                  "",  "select",
             "PURE",                    "PURE",                  "",  "select",
-            "PURESHIT",                    "PURESHIT",                  "",  "select",
+            "(PURE)SH*T",                    "PURESHIT",                  "",  "select",
             "WIDECLARITY",                    "WIDECLARITY",                  "",  "select",
             "None",                    "None",                  "",  "select"
         );
