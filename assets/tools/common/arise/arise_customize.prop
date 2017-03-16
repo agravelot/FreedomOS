@@ -1,5 +1,5 @@
 
-# ARISE Sound Systems™ 20170227
+# ARISE Sound Systems™ 20170301
 #
 # "SwanSong"
 #
@@ -108,16 +108,17 @@ use.ICEconfig=
 use.ICEsound.pr**et=DEEPBASS
 
 
+BATHSALTS
 DEEPBASS
-DEFAULT
-HOLYSHIT
+HOLYSH*T
 KRAZY
 MOVIE
 MUSIC2
 OUTDOORS
 PURE
-(PURE)SHIT
+(PURE)SH*T
 WIDECLARITY
+Default
 None
 
 
@@ -163,6 +164,9 @@ UNINSTALL.v4a_xhifi=
 
 
 UNINSTALL.musicfx=
+
+
+RESTORE.deep_buffer=
 
 
 # END
