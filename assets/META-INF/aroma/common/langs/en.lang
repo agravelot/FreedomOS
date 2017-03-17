@@ -46,7 +46,8 @@ language.tchinese=Traditional Chinese
 language.tchinese.info=@clyang
 language.schinese=Simplified Chinese
 language.schinese.info=@clyang
-
+language.czech=Čeština
+language.czech.info=Použít Češtinu @iamceph
 
 rom.data=!date!
 text_finish=Finish

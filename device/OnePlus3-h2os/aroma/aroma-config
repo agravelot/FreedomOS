@@ -96,6 +96,10 @@ if prop("language.prop", "selected.0") == "8" then
   loadlang("langs/sc.lang");
 endif;
 
+if prop("language.prop", "selected.0") == "9" then
+  loadlang("langs/cz.lang");
+endif;
+
 # -- - WELCOME - -- #
 viewbox(
     "<~welcome.title>",
