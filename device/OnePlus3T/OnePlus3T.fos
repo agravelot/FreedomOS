@@ -141,7 +141,6 @@ common/google_dns.sh
 common/kernel
 common/log_folder.sh
 common/magisk
-common/pixel_icons
 common/save_logs.sh
 common/supersu
 common/themes
