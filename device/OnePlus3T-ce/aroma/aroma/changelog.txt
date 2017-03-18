@@ -1,3 +1,6 @@
+2.-CE
+  FIX: Rootless installation (missing aromaroot.prop error)
+
 2.5-CE
   UPDATE: OxygenOS OpenBeta 12
     - Upgraded to Android 7.1.1

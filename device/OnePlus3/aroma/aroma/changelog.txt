@@ -1,3 +1,8 @@
+2.6.1
+  FIX: Rootless installation (missing aromaroot.prop error)
+  REMOVE: Downgraded taget API for Pixel Icons
+  And some minor fixes, if you are on 2.6, you don't need to reflash this build unless you want rootless rom.
+
 2.6
     UPDATE: OxygenOS 4.1.0
     UPDATE: Android 7.1.1
