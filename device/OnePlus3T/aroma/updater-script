@@ -187,7 +187,6 @@ ui_print(" ");
 ui_print("@Applying Your Settings");
 ui_print(" ");
 
-if
 # -- - ROOT - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
   then
