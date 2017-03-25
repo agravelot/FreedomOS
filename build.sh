@@ -269,7 +269,7 @@ function download_rom {
     if curl -Is ${ROM_LINK} | grep "200 OK" &> /dev/null
     then
       if [ $(which aria2c) ]; then
-        aria2c ${ROM_LINK} -d ${download_root}/
+        aria2c -x 4 ${ROM_LINK} -d ${download_root}/
       else
         curl -o ${download_root}/${ROM_NAME}.zip ${ROM_LINK} | tee -a ${build_log}
       fi
