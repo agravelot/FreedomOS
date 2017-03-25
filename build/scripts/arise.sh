@@ -21,9 +21,10 @@ function build_arise() {
   remove_list="
   custom/Esira.apk
   modules/dolby
-  smeejaytee
-  am3d
-  v4a_xhifi
+  modules/smeejaytee
+  modules/am3d
+  modules/v4a_xhifi
+  modules/ddplus
   "
 
   echo ">> Building ARISE" | tee -a ${build_log}
