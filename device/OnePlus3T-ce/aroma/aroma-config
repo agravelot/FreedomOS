@@ -56,7 +56,8 @@ selectbox(
   "<~language.spanish>", "<~language.spanish.info>", 0,
   "<~language.turkish>", "<~language.turkish.info>", 0,
   "<~language.tchinese>", "<~language.tchinese.info>", 0,
-  "<~language.schinese>", "<~language.schinese.info>", 0
+  "<~language.schinese>", "<~language.schinese.info>", 0,
+  "<~language.czech>", "<~language.czech.info>", 0
 );
 
 # -- - SET LANGUAGE - -- #
@@ -94,6 +95,10 @@ if prop("language.prop", "selected.0") == "8" then
   fontresload( "0", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "12" );
   fontresload( "1", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "14" );
   loadlang("langs/sc.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "9" then
+  loadlang("langs/cz.lang");
 endif;
 
 # -- - WELCOME - -- #
@@ -499,7 +504,7 @@ form(
       "SoundRecorder",          "<~sound_recorder>",      "<~info.sound_recorder>",     "check",
       "SwiftKey",               "<~swiftkey>",            "<~info.swiftkey>",           "check",
       "Tag",                    "<~tags>",                "<~info.tags>",               "check",
-      "Weather",                "<~weather>",             "<~info.weather>",            "check"
+      "OPWeather",              "<~weather>",             "<~info.weather>",            "check"
 );
 
 resexec("scripts/gen_list.sh");
@@ -598,15 +603,16 @@ then
           "ICEpreset.prop",
 
           "use.ICEsound.preset",     "ICE Configuration selection",        "",                    "group",
+            "BATHSALTS",                    "BATHSALTS",                  "",        "select",
             "DEEPBASS",                    "DEEPBASS",                  "",        "select",
-            "DEFAULT",                    "DEFAULT",                  "",  "select.selected",
-            "HOLYSHIT",                    "HOLYSHIT",                  "",        "select",
+            "Default",                    "DEFAULT",                  "",  "select.selected",
+            "HOLYSH*T",                    "HOLYSHIT",                  "",        "select",
             "KRAZY",                    "KRAZY",                  "",  "select",
             "MOVIE",                    "MOVIE",                  "",  "select",
             "MUSIC2",                    "MUSIC2",                  "",  "select",
             "OUTDOORS",                    "OUTDOORS",                  "",  "select",
             "PURE",                    "PURE",                  "",  "select",
-            "PURESHIT",                    "PURESHIT",                  "",  "select",
+            "(PURE)SH*T",                    "PURESHIT",                  "",  "select",
             "WIDECLARITY",                    "WIDECLARITY",                  "",  "select",
             "None",                    "None",                  "",  "select"
         );
@@ -631,11 +637,11 @@ endif;
 #);
 
 alert (
- "<b>If you like my work",
- "consider a donation to:\n"+
- "Paypal:antoine.gravelot@hotlmail.com\n"+
- "Really appreciated!</b>",
- "@paypal"
+  "If you like my work",
+  "You can buy me a beer:\n"+
+  "Paypal: <b>antoine.gravelot@hotmail.com</b>\n"+
+  "Really appreciated!",
+  "@paypal"
 );
 
 # -- - Pre-Install - -- -#

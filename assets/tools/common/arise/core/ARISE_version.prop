@@ -1,7 +1,7 @@
 
 # ARISE Sound Systems™
 #
-# Deuteronomy™ 2.92 Modular Installer 20170301
+# Deuteronomy™ 2.93 Modular Installer 20170302
 #
 # "SwanSong™"
 #
@@ -15,7 +15,47 @@ Changelog:
 
 
 
-## Deuteronomy™ 2.91 "SwanSong™" -
+## Deuteronomy™ 2.93 "SwanSong™" -
+
+- Minor correction.
+
+##
+
+
+
+## Deuteronomy™ 2.92-2 "SwanSong™" -
+
+- Added x86 ICEpower™ effect library and audio_effects entries for enhanced ICEsound™ processing in x86 architecture.
+
+- New ICEsound™ BATHSALTS preset option for ICEsound™ module installations. Prepared by @secone00.
+
+- Motorola's AudioEffects.apk and CyanogenMod/LineageOS AudioFX.apk no longer removed by the script.
+
+- !! Changes to arise_customize.prop, including values !! 
+
+- Be sure to extract, copy, and paste latest arise_customize.prop into /sdcard, then examine the content and add the necessary values for desired sound system installation.
+
+- Remember to remove the value of "true" from the Core module installation once booted after the initial installation, if desiring to install/uninstall any modules other than Core in the future.
+
+##
+
+
+
+## Deuteronomy™ 2.92-1 "SwanSong™" -
+
+- Added support for a user preferred or customized ICEsound™ preset by seeking and using /sdcard/icesoundpresets.def if found. This is automatic and does not refer to /sdcard/arise_customize.prop for instruction.
+
+- Correction in deep_buffer module.
+
+- Correction in ToolBox™ uninstallation module.
+
+- New wallpaper from @churapa in /art/wallpaper.
+
+##
+
+
+
+## Deuteronomy™ 2.92 "SwanSong™" -
 
 - Adjusted the Dolby Digital Plus™ uninstallation module to leave the native Dolby™ entries intact for HTC Bolt htc_audio_effects.
 
@@ -72,7 +112,7 @@ Changelog:
 
 - New arise_customize.prop! Be sure to use new arise_customize.prop in /sdcard!
 
-- Corrections to allow PURESHIT ICEsound™ preset to install when selecting "(PURE)SHIT" in /sdcard/arise_customize.prop.
+- Corrections to allow PURESH*T ICEsound™ preset to install when selecting "(PURE)SH*T" in /sdcard/arise_customize.prop.
 
 - Added requirement for installed ICEsound™ module in order to install/delete any selected ICEconfig and/or ICEpreset.
 

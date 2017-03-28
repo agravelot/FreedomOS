@@ -28,11 +28,6 @@ function ctrl_c() {
   exit
 }
 
-# test if running as root
-if [ "$EUID" -ne 0 ]; then
-  die "Please, run this script as root! Aborting." "7"
-fi
-
 # error function
 function die {
   code=-1
@@ -300,6 +295,11 @@ function extract_rom {
 }
 
 set -e
+
+# test if running as root
+if [ "$EUID" -ne 0 ]; then
+  die "Please, run this script as root! Aborting." "7"
+fi
 
 initialize
 

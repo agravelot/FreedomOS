@@ -1,6 +1,22 @@
-2.5.1
-    FIX: VRTheme installation
-    NOTE: If you don't want to use any theme included in the aroma, 2.5 is good to go.
+2.6.1
+  FIX: Rootless installation (missing aromaroot.prop error)
+  REMOVE: Downgraded taget API for Pixel Icons
+  And some minor fixes, if you are on 2.6, you don't need to reflash this build unless you want rootless rom.
+  
+2.6
+    UPDATE: OxygenOS 4.1.0
+    UPDATE: Android 7.1.1
+    UPDATE: Google security patch to 1st March 2017
+    UPDATE: Improved picture taking of moving objects with blur reduction
+    UPDATE: Improved video stability when recording
+    UPDATE: Improved WiFi connectivity
+    UPDATE: Improved bluetooth connectivity
+    UPDATE: Fix english typo, thanks to @wschoot
+    UPDATE: A.R.I.S.E. Sound Systems Deuteronomy 2.93 SwanSong
+    FIX: General bug fixes
+    ADD: Czech support, thanks to @iamceph
+    ADD: Expanded screenshots
+    REMOVE: Aroma theme option, for now
 
 2.5
     UPDATE: ARISE Deuteronomy SwangSong 2.92

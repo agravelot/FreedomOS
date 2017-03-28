@@ -252,26 +252,28 @@ ICE3=modules/ICE/ICEconfig/ICEconfig3/icesoundconfig.def
 ICE4=modules/ICE/ICEconfig/ICEconfig4/icesoundconfig.def
 ICE5=modules/ICE/ICEconfig/ICEconfig5/icesoundconfig.def
 ICE6=modules/ICE/ICEconfig/ICEconfig6/icesoundconfig.def
+ICEPRESETBS=$(cat $WISHLIST | grep "use.ICEsound.preset=BATHSALTS")
 ICEPRESETDB=$(cat $WISHLIST | grep "use.ICEsound.preset=DEEPBASS")
 ICEPRESETDF=$(cat $WISHLIST | grep "use.ICEsound.preset=DEFAULT")
-ICEPRESETHS=$(cat $WISHLIST | grep "use.ICEsound.preset=HOLYSHIT")
+ICEPRESETHS=$(cat $WISHLIST | grep "use.ICEsound.preset=HOLYSH*T")
 ICEPRESETKZ=$(cat $WISHLIST | grep "use.ICEsound.preset=KRAZY")
 ICEPRESETMV=$(cat $WISHLIST | grep "use.ICEsound.preset=MOVIE")
 ICEPRESETM2=$(cat $WISHLIST | grep "use.ICEsound.preset=MUSIC2")
 ICEPRESETOD=$(cat $WISHLIST | grep "use.ICEsound.preset=OUTDOORS")
 ICEPRESETPR=$(cat $WISHLIST | grep "use.ICEsound.preset=PURE")
-ICEPRESETPS=$(cat $WISHLIST | grep "use.ICEsound.preset=(PURE)SHIT")
+ICEPRESETPS=$(cat $WISHLIST | grep "use.ICEsound.preset=(PURE)SH*T")
 ICEPRESETWC=$(cat $WISHLIST | grep "use.ICEsound.preset=WIDECLARITY")
 ICEPRESETNO=$(cat $WISHLIST | grep "use.ICEsound.preset=None")
+BATHSALTS=modules/ICE/ICEpreset/BATHSALTS/icesoundpresets.def
 DEEPBASS=modules/ICE/ICEpreset/DEEPBASS/icesoundpresets.def
 DEFAULT=modules/ICE/ICEpreset/DEFAULT/icesoundpresets.def
-HOLYSHIT=modules/ICE/ICEpreset/HOLYSHIT/icesoundpresets.def
+HOLYSH\*T=modules/ICE/ICEpreset/HOLYSH\*T/icesoundpresets.def
 KRAZY=modules/ICE/ICEpreset/KRAZY/icesoundpresets.def
 MOVIE=modules/ICE/ICEpreset/MOVIE/icesoundpresets.def
 MUSIC2=modules/ICE/ICEpreset/MUSIC2/icesoundpresets.def
 OUTDOORS=modules/ICE/ICEpreset/OUTDOORS/icesoundpresets.def
 PURE=modules/ICE/ICEpreset/PURE/icesoundpresets.def
-PURESHIT=modules/ICE/ICEpreset/PURESHIT/icesoundpresets.def
+PURESH\*T=modules/ICE/ICEpreset/PURESH\*T/icesoundpresets.def
 WIDECLARITY=modules/ICE/ICEpreset/WIDECLARITY/icesoundpresets.def
 UNINSTALLV4A=$(cat $WISHLIST | grep "UNINSTALL.v4a=true")
 UNINSTALLATMOS=$(cat $WISHLIST | grep "UNINSALL.atmos=true")
@@ -369,17 +371,16 @@ if [ ! "$INSTALLCORE" ] && [ ! -e "$INFO" ]; then
 
 fi
 
-rm -rf $PAPP/AudioEffects
-rm -rf $APP/AudioEffects
-rm -rf $PAPP/$AFX
+#rm -rf $PAPP/AudioEffects
+#rm -rf $APP/AudioEffects
+#rm -rf $PAPP/$AFX
 rm -rf $PAPP/$DSP
-rm -rf $APP/$AFX
+#rm -rf $APP/$AFX
 rm -rf $APP/$DSP
-rm -f $PAPP/$AFXAPK
+#rm -f $PAPP/$AFXAPK
 rm -f $PAPP/$DSPAPK
-rm -f $APP/$AFXAPK
+#rm -f $APP/$AFXAPK
 rm -f $APP/$DSPAPK
-rm -f $SDCARD/arise_addon.prop
 
 if [ "$INSTALLCORE" ]; then
 
@@ -721,7 +722,7 @@ if [ "$INSTALLCORE" ]; then
 
   fi
 
-  cp -Rf core/system/* $SYS
+  cp -Rf core/* $SYS
 
   $SPR $SFX 0 0 0755 0644
   $SPR $FW 0 0 0755 0644
@@ -1055,7 +1056,9 @@ if [ "$INSTALLICE" ]; then
   ui_print " "
   ui_print " "
 
-  cp -Rf $MODICE/system/* $SYS
+  cp -Rf $MODICE/etc/* $ETC
+  $SP $ETC/icesoundconfig.def 0 0 0644
+  $SP $ETC/icesoundpresets.def 0 0 0644
 
   if [ "$API" -ge "21" ]; then
 
@@ -1070,9 +1073,17 @@ if [ "$INSTALLICE" ]; then
 
   fi
 
-  $SP $DEUTFX/$ICELIB 0 0 0644
-  $SP $ETC/icesoundconfig.def 0 0 0644
-  $SP $ETC/icesoundpresets.def 0 0 0644
+  if [ "$X86" ] || [ "$X8664" ]; then
+
+    cp -f $MODICE/lib/x86/$ICELIB $LIB/$ICELIB
+    $SP $LIB/$ICELIB 0 0 0644
+
+  else
+
+    cp -f $MODICE/lib/arm/$ICELIB $DEUTFX/$ICELIB
+    $SP $DEUTFX/$ICELIB 0 0 0644
+
+  fi
 
   for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
 
@@ -1084,7 +1095,17 @@ if [ "$INSTALLICE" ]; then
       sed -i '/icepower_load {/,/}/d' $CFG
       sed -i '/icepower_test {/,/}/d' $CFG
       sed -i '/icepower_algo {/,/}/d' $CFG
-      sed -i 's/^# ICEpower | www.icepower.dk | Library/# ICEpower | www.icepower.dk | Library\n\n  icepower {\n    path \/system\/lib\/soundfx\/deuteronomy\/libicepower.so\n  }/g' $CFG
+
+      if [ "$X86" ] || [ "$X8664" ]; then
+
+        sed -i 's/^# ICEpower | www.icepower.dk | Library/# ICEpower | www.icepower.dk | Library\n\n  icepower {\n    path \/system\/lib\/libicepower.so\n  }/g' $CFG
+
+      else
+
+        sed -i 's/^# ICEpower | www.icepower.dk | Library/# ICEpower | www.icepower.dk | Library\n\n  icepower {\n    path \/system\/lib\/soundfx\/deuteronomy\/libicepower.so\n  }/g' $CFG
+
+      fi
+
       sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_algo {\n    library icepower\n    uuid f1c02420-777f-11e3-981f-0800200c9a66\n  }/g' $CFG
       sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_test {\n    library icepower\n    uuid e5456320-5391-11e3-8f96-0800200c9a66\n  }/g' $CFG
       sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_load {\n    library icepower\n    uuid bf51a790-512b-11e3-8f96-0800200c9a66\n  }/g' $CFG
@@ -1200,7 +1221,18 @@ if [ -e "$SDCARD/icesoundconfig.def" ]; then
 
 fi
 
-if [ "$ICEPRESETDB" ] && [ -e "$ICEPOWER" ]; then
+if [ "$ICEPRESETBS" ] && [ -e "$ICEPOWER" ]; then
+
+  ui_print " "
+  ui_print " "
+  ui_print "Installing BATHSALTS ICEsound™ Preset..."
+  ui_print " "
+  ui_print " "
+
+  cp -f $BATHSALTS $ETC/icesoundpresets.def
+  $SP $ETC/icesoundpresets.def 0 0 0644
+
+elif [ "$ICEPRESETDB" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
@@ -1226,11 +1258,11 @@ elif [ "$ICEPRESETHS" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
-  ui_print "Installing HOLYSHIT ICEsound™ Preset..."
+  ui_print "Installing HOLYSH\*T ICEsound™ Preset..."
   ui_print " "
   ui_print " "
 
-  cp -f $HOLYSHIT $ETC/icesoundpresets.def
+  cp -f $HOLYSH\*T $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
 elif [ "$ICEPRESETKZ" ] && [ -e "$ICEPOWER" ]; then
@@ -1292,11 +1324,11 @@ elif [ "$ICEPRESETPS" ] && [ -e "$ICEPOWER" ]; then
 
   ui_print " "
   ui_print " "
-  ui_print "Installing PURESHIT ICEsound™ Preset..."
+  ui_print "Installing PURESH\*T ICEsound™ Preset..."
   ui_print " "
   ui_print " "
 
-  cp -f $PURESHIT $ETC/icesoundpresets.def
+  cp -f $PURESH\*T $ETC/icesoundpresets.def
   $SP $ETC/icesoundpresets.def 0 0 0644
 
 elif [ "$ICEPRESETWC" ] && [ -e "$ICEPOWER" ]; then
@@ -1337,6 +1369,13 @@ elif [ ! -e "$ICEPOWER" ]; then
     fi
 
   done
+
+fi
+
+if [ -e "$SDCARD/icesoundpresets.def" ]; then
+
+  cp -f $SDCARD/icesoundpresets.def $ETC/icesoundpresets.def
+  $SP $ETC/icesoundpresets.def 0 0 0644
 
 fi
 
@@ -1725,7 +1764,7 @@ if [ "$BUFFER" ]; then
     else
 
       cp -f $ETC/$AOP $ETC/$AOPBAK
-      $SP $ETC/$POLBAK 0 0 0644
+      $SP $ETC/$AOPBAK 0 0 0644
       sed -i '/deep_buffer {/,/}/d' $ETC/$AOP
       sed -i '/raw {/,/}/d' $ETC/$AOP
 
@@ -1971,6 +2010,7 @@ if [ "$UNINSTALLICE" ]; then
 
   rm -rf $APP/$ICE
   rm -f $APP/$ICEAPK
+  rm -f $LIB/$ICELIB
   rm -f $DEUTFX/$ICELIB
   rm -f $ETC/icesoundconfig.def
   rm -f $ETC/icesoundpresets.def

@@ -42,3 +42,4 @@ rom/
 .build.conf
 tools/*
 build/keys/*
+*.aria2

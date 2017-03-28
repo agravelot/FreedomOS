@@ -46,7 +46,8 @@ language.tchinese=Traditional Chinese
 language.tchinese.info=@clyang
 language.schinese=Simplified Chinese
 language.schinese.info=@clyang
-
+language.czech=Čeština
+language.czech.info=Použít Češtinu @iamceph
 
 rom.data=!date!
 text_finish=Finish
@@ -149,7 +150,7 @@ info.duo=Video calling app
 info.gmail=Email client
 info.gmail_exchange=Support exchange for Gmail
 info.google=Google Now
-info.google_camera=Take pictues and movies
+info.google_camera=Take pictures and movies
 info.hangouts=Instant messaging
 info.maps=Real-time navigation, traffic, transport
 info.messenger=Google SMS/MMS apps.
@@ -225,7 +226,7 @@ info.oneplus_forum=Navigate into OnePlus forum
 info.oneplus_wallpapers=Some wallpapers
 info.oem_test=OEM testing application
 info.oem_log=Logging
-info.oneplus_camera=Take pictues and movies
+info.oneplus_camera=Take pictures and movies
 info.oneplus_gallery=View pictures and movies
 info.ota=OnePlus system update
 info.oneplus_wizard=SetupWizard coming after Google
