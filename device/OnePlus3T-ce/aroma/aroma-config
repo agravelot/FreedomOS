@@ -603,18 +603,18 @@ then
           "ICEpreset.prop",
 
           "use.ICEsound.preset",     "ICE Configuration selection",        "",                    "group",
-            "BATHSALTS",                    "BATHSALTS",                  "",        "select",
-            "DEEPBASS",                    "DEEPBASS",                  "",        "select",
-            "Default",                    "DEFAULT",                  "",  "select.selected",
-            "HOLYSH*T",                    "HOLYSHIT",                  "",        "select",
-            "KRAZY",                    "KRAZY",                  "",  "select",
-            "MOVIE",                    "MOVIE",                  "",  "select",
-            "MUSIC2",                    "MUSIC2",                  "",  "select",
-            "OUTDOORS",                    "OUTDOORS",                  "",  "select",
-            "PURE",                    "PURE",                  "",  "select",
-            "(PURE)SH*T",                    "PURESHIT",                  "",  "select",
-            "WIDECLARITY",                    "WIDECLARITY",                  "",  "select",
-            "None",                    "None",                  "",  "select"
+              "BATHSALTS",             "01",                  "",  "select",
+              "DEEPBASS",              "02",                  "",  "select",
+              "HOLYSH*T",              "03",                  "",  "select",
+              "KRAZY",                 "04",                  "",  "select",
+              "MOVIE",                 "05",                  "",  "select",
+              "MUSIC2",                "06",                  "",  "select",
+              "OUTDOORS",              "07",                  "",  "select",
+              "PURE",                  "08",                  "",  "select",
+              "(PURE)SH*T",            "09",                  "",  "select",
+              "WIDECLARITY",           "10",                  "",  "select",
+              "Default",               "11",                  "",  "select.selected",
+              "None",                  "NO",                  "",  "select"
         );
     endif;
 
