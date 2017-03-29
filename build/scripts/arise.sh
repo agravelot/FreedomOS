@@ -35,7 +35,7 @@ function build_arise() {
   sed -i 's/nui_print" >/nui_print" >>/g' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
 
   for i in $remove_list; do
-    rm -rf ${tmp_root}/tools/arise/$i
+    rm -rf ${tmp_root}/tools/arise/META-INF/com/google/android/custom/$i
   done
 
   echo "rm -rf /data/data/dk.icesound.icepower" >> ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary
