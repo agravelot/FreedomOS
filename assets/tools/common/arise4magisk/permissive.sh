@@ -6,8 +6,7 @@ MODDIR=${0%/*}
 # This script will be executed in post-fs-data mode
 # More info in the main Magisk thread
 
-sepolicy-inject --live "allow mediaserver mediaserver_tmpfs file { read write execute }" \
-"allow audioserver audioserver_tmpfs file { read write execute }" 
+sepolicy-inject --live "permissive *"
 
 if [ -e /system/su.d/arisesound_services ]; then
 	./system/su.d/arisesound_services
