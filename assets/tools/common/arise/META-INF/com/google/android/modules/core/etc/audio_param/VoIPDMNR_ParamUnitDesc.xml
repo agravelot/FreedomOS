@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Profile">
+			<CategoryGroup name="Handset">
+					<Category name="Handset 2mic NR" wording="Handset"/>
+					<Category name="Handset no 2mic NR" wording="Handset"/>
+			</CategoryGroup>
+			<CategoryGroup name="Hands-free">
+				<Category name="Hands-free 1mic NR" wording="Hands-free(1-mic NR)" feature_option="VIR_VOIP_HANDSFREE_DMNR_SUPPORT"/>
+				<Category name="Hands-free no 1mic NR" wording="Hands-free(1-mic NR)" feature_option="!VIR_VOIP_HANDSFREE_DMNR_SUPPORT"/>
+			</CategoryGroup>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="dmnr_para" type="ushort_array"/>
+	</ParamUnit>
+</ParamUnitDesc>

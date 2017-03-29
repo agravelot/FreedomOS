@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc tab_name="Audio Record" version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Profile" wording="Device">
+			<CategoryGroup name="Handset">
+				<Category name="Handset 2mic NR" wording="Handset" feature_option="VIR_VOIP_NORMAL_DMNR_SUPPORT"/>
+				<Category name="Handset no 2mic NR" wording="Handset" feature_option="!VIR_VOIP_NORMAL_DMNR_SUPPORT"/>
+			</CategoryGroup>
+			<CategoryGroup name="Headset">
+				<Category name="3-pole headset"/>
+				<Category name="4-pole headset"/>
+				<Category name="5-pole headset"/>
+				<Category name="5-pole headset+ANC"/>
+			</CategoryGroup>
+			<CategoryGroup name="Hands-free">
+				<Category name="Hands-free 1mic NR" wording="Hands-free(1-mic NR)" feature_option="VIR_VOIP_HANDSFREE_DMNR_SUPPORT"/>
+				<Category name="Hands-free no 1mic NR" wording="Hands-free(1-mic NR)" feature_option="!VIR_VOIP_HANDSFREE_DMNR_SUPPORT"/>
+			</CategoryGroup>
+			<Category name="BT earphone" wording="Bluetooth"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="DRC+DG visibility" type="int"/>
+		<Param name="FIR visibility" type="int"/>
+		<Param name="NREC visibility" type="int"/>
+		<Param name="UL cal. visibility" type="int"/>
+		<Param name="UL Digital Gain visibility" type="int"/>
+		<Param name="UL Limiter TH visibility" type="int"/>
+		<Param name="UL AEC visibility" type="int"/>
+		<Param name="UL NLP visibility" type="int"/>
+		<Param name="UL ES LB visibility" type="int"/>
+		<Param name="UL AES LB visibility" type="int"/>
+	</ParamUnit>
+</ParamUnitDesc>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc tab_name="Audio Playback" version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Volume type">
+			<Category name="Ring_Alarm" alias="Ring,Alarm"/>
+			<Category name="Notification"/>
+			<Category name="Others" alias="System,Music,Bluetooth_sco,Enforced_Audible,DTMF,TTS,Boot,VIBSPK,Accessibility"/>
+		</CategoryType>
+		<CategoryType name="Profile" wording="Device">
+			<Category name="RCV"/>
+			<Category name="HS" alias="Headset,3/4-pole Headset"/>
+			<Category name="HS5POLE" alias="5-pole Headset"/>
+			<Category name="HS5POLE_ANC" alias="5-pole headset+ANC"/>
+
+			<Category name="SPK_INT" alias="SPK,Speaker" feature_option="SPK_PATH_INT"/>
+			<Category name="SPK_LO" alias="SPK,Speaker" feature_option="SPK_PATH_LO"/>
+			<Category name="SPK_HP" alias="SPK,Speaker" feature_option="SPK_PATH_HP"/>
+			<Category name="SPK_NO_ANA" alias="SPK,Speaker" feature_option="SPK_PATH_NO_ANA"/>
+
+			<Category name="HSSPK_INT" alias="HSSPK,Headset+Speaker" feature_option="SPK_PATH_INT"/>
+			<Category name="HSSPK_LO" alias="HSSPK,Headset+Speaker" feature_option="SPK_PATH_LO"/>
+			<Category name="HSSPK_HP" alias="HSSPK,Headset+Speaker" feature_option="SPK_PATH_HP"/>
+			<Category name="HSSPK_NO_ANA" alias="HSSPK,Headset+Speaker" feature_option="SPK_PATH_NO_ANA"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="digital_gain_visibility" type="int"/>
+		<Param name="headset_pga_visibility" type="int"/>
+		<Param name="speaker_pga_visibility" type="int"/>
+		<Param name="receiver_pga_visibility" type="int"/>
+	</ParamUnit>
+</ParamUnitDesc>

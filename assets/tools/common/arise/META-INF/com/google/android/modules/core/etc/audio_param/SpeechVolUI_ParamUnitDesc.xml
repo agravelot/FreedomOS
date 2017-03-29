@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Band" wording="Bandwidth">
+			<Category name="NB" alias="Narrow Band"/>
+			<Category name="WB" alias="Wide Band"/>
+		</CategoryType>
+		<CategoryType name="Profile">
+			<Category name="RCV" alias="Normal,Handset,Lpbk_Handset"/>
+			<Category name="HAC"/>
+			<Category name="HS" alias="Headset,3_pole_Headset,4_pole_Headset,Lpbk_Headset"/>
+			<Category name="SPK" alias="Hands-free,1-mic NR,2-mic NR,Handsfree,MagiConference,Lpbk_Handsfree"/>
+			<Category name="HS5POLE" alias="5_pole_Headset,5-pole headset"/>
+			<Category name="HS5POLE_ANC" alias="5_pole_Headset+ANC"/>
+			<Category name="BT" alias="BT_Earphone,BT_NREC_Off"/>
+			<Category name="TTY"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="dl_gain_visibility" type="int"/>
+		<Param name="ul_gain_visibility" type="int"/>
+		<Param name="stf_gain_visibility" type="int"/>
+	</ParamUnit>
+</ParamUnitDesc>

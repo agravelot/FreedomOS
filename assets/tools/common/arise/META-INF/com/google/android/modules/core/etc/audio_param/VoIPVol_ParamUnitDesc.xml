@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Profile">
+			<Category name="RCV" wording="Receiver" alias="Handset 2mic NR,Handset no 2mic NR"/>
+			<Category name="HS" wording="Headset" alias="Headset,3-pole headset,4-pole headset"/>
+			<Category name="SPK" wording="Speaker" alias="Hands-free,Hands-free 1mic NR,Hands-free no 1mic NR"/>
+			<Category name="BT" alias="BT earphone"/>
+			<Category name="HS5POLE" wording="Headset(5-pole)" alias="5-pole headset"/>
+			<Category name="HS5POLE_ANC" wording="Headset(5-pole+ANC)" alias="5-pole headset+ANC"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="dl_gain" type="short_array"/><!-- unit is dB, range in other xml -->
+		<Param name="ul_gain" type="int"/><!-- unit is dB, range in other xml -->
+	</ParamUnit>
+</ParamUnitDesc>
