@@ -32,7 +32,6 @@ function build_arise() {
   #sed -i '/\/tmp\/\*/d' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
   sed -i '/exit 0/d' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
   sed -i '/sleep/d' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
-  sed -i '/\/sdcard\/0/d' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
   sed -i 's/nui_print" >/nui_print" >>/g' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
 
   for i in $remove_list; do
