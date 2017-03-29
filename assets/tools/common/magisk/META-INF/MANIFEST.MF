@@ -5,28 +5,34 @@ Name: META-INF/com/google/android/updater-script
 SHA1-Digest: tMlIJoEnSXCnFpqa7StAAaAoHlE=
 
 Name: common/init.magisk.rc
-SHA1-Digest: mIGdi4BhEwtrAH1KPF+sdMZPShg=
+SHA1-Digest: Zz8zXsM32Lh7Owijju3XEIbhssY=
 
 Name: common/magiskhide/enable
-SHA1-Digest: szxYNXGdmjdQjDW6rrg9YWHmvVI=
+SHA1-Digest: yxOLSwZ5T1/JetLpbzKqRUmPp1g=
 
-Name: arm/bootimgtools
-SHA1-Digest: FUQGes4208OgdCYrqpy/7PSB9OY=
+Name: x64/magiskpolicy
+SHA1-Digest: Y1wJRlLro5uo4JPTlzsjFvuQ/QE=
 
 Name: arm/su
-SHA1-Digest: 4BHtibeGs/wSf9YO9EaBpwNOQis=
+SHA1-Digest: +v9CnL2CuZOKUEzcxJ6KfhrZJuM=
 
 Name: x64/su
-SHA1-Digest: mo8PXHAzQbEVMNeQNjHwisWNYqM=
+SHA1-Digest: VLwH5KIoc2ub3lwq68BSYc9x2f4=
 
 Name: arm64/busybox
 SHA1-Digest: JiQHHctv+oP3vk+mPqsj8crzl54=
 
 Name: arm64/magiskhide
-SHA1-Digest: GfTzhiDbUIYME1rqhTK0sM0bsB8=
+SHA1-Digest: tQe9xw7R61Zvo73BjHUBR55ilAM=
+
+Name: common/ramdisk_patch.sh
+SHA1-Digest: RaC/edqJyf5tLLhqYIDn0TfI9Nk=
 
 Name: common/file_contexts_image
 SHA1-Digest: 3CMh9/rAwg+csTwthHJENOyhpmE=
+
+Name: x64/magiskboot
+SHA1-Digest: Kp6tFg9gfhqpq2HhBUuj/WUL4Gk=
 
 Name: chromeos/futility
 SHA1-Digest: Evd5+Hi0p6Pk1PV8KSghtak9Cdc=
@@ -34,50 +40,44 @@ SHA1-Digest: Evd5+Hi0p6Pk1PV8KSghtak9Cdc=
 Name: arm/busybox
 SHA1-Digest: nfZWxv/6lveKIwU4mBG98GcqLto=
 
-Name: x86/sepolicy-inject
-SHA1-Digest: vHnn7vBZXcGwF5vcmilyuFLm8sk=
-
-Name: arm64/bootimgtools
-SHA1-Digest: NzXXKYXQo8rTDIly35rfhD7ZOWY=
-
-Name: x86/bootimgtools
-SHA1-Digest: IMFVKjhgwPUJpLn23Bm8/KB0bYk=
-
 Name: common/magiskhide/rm
 SHA1-Digest: o3JU/wwKBir/QGnHw4QbDH9fNb4=
 
+Name: x86/magiskpolicy
+SHA1-Digest: dKEBZ6BTrO5PJF8YTOcW0d2JKTU=
+
 Name: x64/resetprop
-SHA1-Digest: AniXtMaFE6cJho4h/c+9Tm+P5Ro=
+SHA1-Digest: r3MsXXNazUfRXwDKNB+aFeIX9zY=
 
 Name: common/magic_mask.sh
-SHA1-Digest: BzcJ8MJ/RkEad4Tm/M7AAmtg6sU=
-
-Name: x64/sepolicy-inject
-SHA1-Digest: 2rvmko2sfEy7dyiVrb1XLnPTAAw=
+SHA1-Digest: wbYGd5QSLVfCxP6kV9BYTMlWP3c=
 
 Name: arm64/su
-SHA1-Digest: JfwLQSZIoi6A0TLJvj/ZZipJP1E=
+SHA1-Digest: LkS/T3PZgpNqjY9KNREXd85BAFg=
+
+Name: arm/magiskboot
+SHA1-Digest: eZVJFnd8CyK694tp+e1T53f9XMo=
 
 Name: x64/busybox
 SHA1-Digest: oK5m89Ael9T7+XHzJaxnGCzSYCo=
 
+Name: arm/magiskpolicy
+SHA1-Digest: KUEOzUwBlnJLYwBrRdbO6OMZZbo=
+
 Name: META-INF/com/google/android/update-binary
-SHA1-Digest: pJwDcMns120ZtBbWUpHr3od0yrE=
+SHA1-Digest: KdBx+kYfV78NqZWmGL8HsvoYdBs=
 
-Name: x64/bootimgtools
-SHA1-Digest: K5J1OlN4x32ZM/9d69eIzjCSMh8=
-
-Name: common/custom_ramdisk_patch.sh
-SHA1-Digest: te653qhRxSnrBl7MZwvO8dtl2PY=
+Name: x86/magiskboot
+SHA1-Digest: hSxEwi92znhuuHli3GUQ9gMFgCA=
 
 Name: x86/su
-SHA1-Digest: F5ayip8Wtqfugz+piCUrWXH34m0=
+SHA1-Digest: gxJxM2WwCDghFLUP6yHE/8LdzUg=
 
 Name: x86/magiskhide
-SHA1-Digest: 6FX2GedpLE38p9KMTPkQU5yj5pU=
+SHA1-Digest: jiK17VppcMkGAvxtY2YRMuIHU1g=
 
 Name: arm/magiskhide
-SHA1-Digest: zI5xazi/4x4rhqVSBU89ZZrrPOw=
+SHA1-Digest: q3BP8/G331buAzOj78ZHY2QbK7w=
 
 Name: chromeos/kernel.keyblock
 SHA1-Digest: zeiSVt//JG/gc0RW0507ZEaYVxU=
@@ -86,25 +86,22 @@ Name: common/magiskhide/list
 SHA1-Digest: 7hlsbYKJmrPOP81NHG/aGfnYklQ=
 
 Name: x64/magiskhide
-SHA1-Digest: NNXNysb9O0PZwF/A/bGGZG7MXb0=
+SHA1-Digest: SMi26lT8zqEmtpDxaTJH595rvCE=
 
 Name: chromeos/kernel_data_key.vbprivk
 SHA1-Digest: oLkG4w/5HLb7fes+kXTkmmnIhY4=
 
 Name: arm/resetprop
-SHA1-Digest: IxyKRfQhFI3n8UZbUo8+aHHve5k=
+SHA1-Digest: 73VBlyICIGvjjIRCg5Tcz51Kaqc=
 
-Name: arm64/sepolicy-inject
-SHA1-Digest: t6QcaHYKAzj/rx752zmeRNsEteg=
-
-Name: arm/sepolicy-inject
-SHA1-Digest: KBQbXgCjT8j/J0tH9ZnJDm8dQUY=
+Name: arm64/magiskpolicy
+SHA1-Digest: wZRPXgdvVMMbhR7V807XqKRAKvo=
 
 Name: common/magiskhide/disable
 SHA1-Digest: mD73MGo0NDBsibb81jKscylaQ6Q=
 
 Name: x86/resetprop
-SHA1-Digest: bIEypi4761qGrkahbujDn/5EO+0=
+SHA1-Digest: 2HYSpvyynDoiCbDAXfcZ25htxmg=
 
 Name: x86/busybox
 SHA1-Digest: twB1NLgPmv+SP7C3qHzkaBoiPKk=
@@ -113,11 +110,11 @@ Name: common/magiskhide/add
 SHA1-Digest: V24uLhvqck3PzXy7BaQ97pbMHDY=
 
 Name: arm64/resetprop
-SHA1-Digest: Hk3RuCsYoQK8NWtxj4Z8kwqRxgI=
+SHA1-Digest: blSk8ynw2iKh4jzEjynAwZL+88g=
 
-Name: common/magisksu.sh
-SHA1-Digest: sa0owZSGOsC7YUwtW/CGzGMsY34=
+Name: arm64/magiskboot
+SHA1-Digest: YdbJZV5VWPZHXkq31Fv+1hTX4H4=
 
 Name: common/magisk.apk
-SHA1-Digest: RbnDe8cfoO8YmUfGJRsSNcllHqw=
+SHA1-Digest: PSOZFBgg2av0pA8GhOwXIWzlgcM=
 
