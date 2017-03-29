@@ -154,7 +154,7 @@ run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
 run_program("/tmp/cmdline.sh");
 
 # -- - PERMISSIVE FLAG - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.13") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.12") == "1")
   then
   run_program("/tmp/cmdline_permissive.sh");
 endif;
@@ -335,19 +335,8 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.10") == "1")
     ui_print("   Installing Substratum");
 endif;
 
-# -- - APTX - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.11") == "1")
-  then
-    ui_print("   Adding APTX/APTXHD support");
-endif;
-
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.11") == "0")
-  then
-    run_program("/tmp/tools/aptx/remove.sh");
-endif;
-
 # -- - WIDEBAND WIFI - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.12") == "1")
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.11") == "1")
   then
     ui_print("   Enabling Wideband WiFi");
     run_program("/tmp/tools/wideband_wifi.sh");
