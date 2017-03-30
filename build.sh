@@ -64,7 +64,6 @@ function initialize {
   img2sdat
   sdat2img
   freedomos_busybox
-  freedomos_opengapps
   "
 
   redt=$(tput setaf 1)
