@@ -115,7 +115,7 @@ function dat_to_dat {
   ${build_root}/tools/${HOST_ARCH}/img2simg system_new.img system_new_sparse.img
 
   echo ">> Converting sparse image to sparse data" 2>&1 | tee -a ${build_log}
-  ${build_root}/scripts/img2sdat.sh ${tmp_root}/system_new_sparse.img 4 >> ${build_log} 2>&1
+  ${build_root}/scripts/img2sdat.sh ${tmp_root}/system_new_sparse.img . 4 >> ${build_log} 2>&1
 
   echo "> Clean unneeded tmp files" 2>&1 | tee -a ${build_log}
   if mount | grep "${tmp_root}/mount" > /dev/null;
