@@ -272,15 +272,16 @@ function download_rom {
       die "${ROM_NAME} mirror OFFLINE! Check your connection" "10"
     fi
   else
-    echo ">> Checking MD5 of ${ROM_NAME}.zip" 2>&1 | tee -a ${build_log}
-
-    if [[ ${ROM_MD5} == $(md5sum ${download_root}/${ROM_NAME}.zip | cut -d ' ' -f 1) ]]; then
-      echo ">>> MD5 ${ROM_NAME}.zip checksums OK." 2>&1 | tee -a ${build_log}
-    else
-      echo ">>> File ${ROM_NAME}.zip is corrupt, restarting download" 2>&1 | tee -a ${build_log}
-      rm -rvf ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
-      mv -vf ${download_root}/${ROM_NAME}.zip ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
-      download_rom
+    if [[ ! -z ${ROM_MD5} ]]; then
+        echo ">> Checking MD5 of ${ROM_NAME}.zip" 2>&1 | tee -a ${build_log}
+        if [[ ${ROM_MD5} == $(md5sum ${download_root}/${ROM_NAME}.zip | cut -d ' ' -f 1) ]]; then
+          echo ">>> MD5 ${ROM_NAME}.zip checksums OK." 2>&1 | tee -a ${build_log}
+        else
+          echo ">>> File ${ROM_NAME}.zip is corrupt, restarting download" 2>&1 | tee -a ${build_log}
+          rm -rvf ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
+          mv -vf ${download_root}/${ROM_NAME}.zip ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
+          download_rom
+        fi
     fi
   fi
   echo
