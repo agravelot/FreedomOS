@@ -33,9 +33,13 @@ ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 ROM_MD5=1edb85ffb59eab9ea22ab949ae083484
 
 # OpenGapps
-GAPPS_ANDROID=7.1.1
+GAPPS_ANDROID=7.1
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=aroma
+GAPPS_DATE=20170328
+GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
+GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
+GAPPS_MD5=c66c4f1f0e16956cd1dfca364bea70c0
 
 # Set Android version for selinux build script
 ANDROID_VERSION=7

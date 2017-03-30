@@ -33,9 +33,13 @@ ROM_LINK=http://otafsc1.h2os.com/patch/amazone2/GLO/OnePlus3TOxygen/OnePlus3TOxy
 ROM_MD5=dcd3acf960a1cfaf1f131127d198126d
 
 # OpenGapps
-GAPPS_ANDROID=7.1.1
+GAPPS_ANDROID=7.1
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=aroma
+GAPPS_DATE=20170328
+GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
+GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
+GAPPS_MD5=c66c4f1f0e16956cd1dfca364bea70c0
 
 # Set Android version for selinux build script
 ANDROID_VERSION=7
