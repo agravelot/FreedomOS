@@ -308,10 +308,12 @@ if [ $confirm_build -eq 1 ]; then
   banner
   cleanup
   download_rom
+  extract_rom
   if [ ! -z GAPPS_ANDROID ]; then
+    download_opengapps
+    extract_opengapps
     build_opengapps
   fi
-  extract_rom
   build
   add_files
   build_arise

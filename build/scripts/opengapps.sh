@@ -16,6 +16,46 @@
 # FreedomOS device build script
 # Contributors :
 
+function download_opengapps {
+  echo "> Downloading & Checking OpenGApps ..." 2>&1 | tee -a ${build_log}
+  if [ ! -f  ${download_root}/${GAPPS_ZIP}.zip ]; then
+    echo ">> File ${GAPPS_ZIP}.zip does not exist. Downloading ..." 2>&1 | tee -a ${build_log}
+
+    if curl -Is ${ROM_LINK} | grep "200 OK" &> /dev/null
+    then
+      if [ $(which aria2c) ]; then
+        aria2c -x 4 ${GAPPS_LINK} -d ${download_root}/
+      else
+        curl -o ${download_root}/${GAPPS_ZIP}.zip ${GAPPS_LINK} | tee -a ${build_log}
+      fi
+    else
+      die "${GAPPS_ZIP} mirror OFFLINE! Check your connection" "10"
+    fi
+  else
+    echo ">> Checking MD5 of ${GAPPS_ZIP}.zip" 2>&1 | tee -a ${build_log}
+
+    if [[ ! -z ${GAPPS_MD5} ]]; then
+        if [[ ${GAPPS_MD5} == $(md5sum ${download_root}/${GAPPS_ZIP}.zip | cut -d ' ' -f 1) ]]; then
+          echo ">>> MD5 ${GAPPS_ZIP}.zip checksums OK." 2>&1 | tee -a ${build_log}
+        else
+          echo ">>> File ${GAPPS_ZIP}.zip is corrupt, restarting download" 2>&1 | tee -a ${build_log}
+          rm -rvf ${download_root}/${GAPPS_ZIP}.zip.bak >> ${build_log} 2>&1
+          mv -vf ${download_root}/${GAPPS_ZIP}.zip ${download_root}/${GAPPS_ZIP}.zip.bak >> ${build_log} 2>&1
+          download_opengapps
+        fi
+    fi
+  fi
+  echo
+}
+
+function extract_opengapps {
+    if [ ! -d ${rom_root}/${GAPPS_ZIP} ]; then
+        echo ">> Extracting ${GAPPS_ZIP}" 2>&1 | tee -a ${build_log}
+        mkdir -p ${rom_root}/${GAPPS_ZIP} >> ${build_log} 2>&1
+        unzip -o ${download_root}/${GAPPS_ZIP}.zip -d ${rom_root}/${GAPPS_ZIP} >> ${build_log} 2>&1
+    fi
+}
+
 function build_opengapps() {
 
   # Set unneeded Open Gapps files
@@ -59,7 +99,7 @@ function build_opengapps() {
   mkdir -p ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
   mkdir -p ${tmp_root}/tools/opengapps/ >> ${build_log} 2>&1
   # Copy OpenGapps files from repo
-  cp -rvf ${download_root}/freedomos_opengapps/${GAPPS_TYPE}/${GAPPS_PLATFORM}/${GAPPS_ANDROID}/* -d ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
+  cp -rvf ${rom_root}/${GAPPS_ZIP}/* -d ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
   # Get the gapps-remove.txt list
   cp -vf ${tmp_root}/tools/opengapps_tmp/gapps-remove.txt ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
   # Remove all entries for android permisions
