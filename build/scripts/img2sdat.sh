@@ -16,11 +16,17 @@
 # FreedomOS build script
 # Contributors :
 
+if [[ -d /tmp/img2sdat ]]
+then
+    rm -rf /tmp/img2sdat
+fi
 cp -rf ../build/tools/img2sdat /tmp/img2sdat
 chmod u+x /tmp/img2sdat/*
-if [[ $(which python2) ]]; then
+if [[ $(which python2) ]]
+then
     PYTHONPATH="$PYTHONPATH:/tmp/img2sdat" exec python2 /tmp/img2sdat/img2sdat.py "$@"
-elif [[ $(which python) ]]; then
+elif [[ $(which python) ]]
+then
     PYTHONPATH="$PYTHONPATH:/tmp/img2sdat" exec python /tmp/img2sdat/img2sdat.py "$@"
 else
     echo "Unable to find python installation"
