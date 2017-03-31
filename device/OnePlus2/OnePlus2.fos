@@ -35,6 +35,10 @@ ROM_MD5=e3599a62fe3b575a2818fdecc1e3c9c2
 GAPPS_ANDROID=6.0
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=aroma
+GAPPS_DATE=20170328
+GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
+GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
+GAPPS_MD5=
 
 # Set Android version for selinux build script
 ANDROID_VERSION=6

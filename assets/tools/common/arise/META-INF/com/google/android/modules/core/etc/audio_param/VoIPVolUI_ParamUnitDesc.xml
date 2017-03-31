@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Profile">
+			<Category name="RCV" alias="Handset 2mic NR,Handset no 2mic NR"/>
+			<Category name="HS" alias="Headset,3-pole headset,4-pole headset"/>
+			<Category name="SPK" alias="Hands-free,Hands-free 1mic NR,Hands-free no 1mic NR"/>
+			<Category name="BT earphone"/>
+			<Category name="HS5POLE" alias="5-pole headset"/>
+			<Category name="HS5POLE_ANC" alias="5-pole headset+ANC"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="dl_gain_visibility" type="int"/>
+		<Param name="ul_gain_visibility" type="int"/>
+	</ParamUnit>
+</ParamUnitDesc>

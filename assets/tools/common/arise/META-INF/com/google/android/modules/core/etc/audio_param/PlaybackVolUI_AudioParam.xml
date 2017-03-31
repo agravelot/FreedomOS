@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AudioParam version="1.0">
+  <ParamTree>
+    <Param path="Ring_Alarm,RCV" param_id="0"/>
+    <Param path="Ring_Alarm,HS" param_id="0"/>
+    <Param path="Ring_Alarm,SPK_INT" param_id="2"/>
+    <Param path="Ring_Alarm,SPK_LO" param_id="2"/>
+    <Param path="Ring_Alarm,SPK_HP" param_id="2"/>
+    <Param path="Ring_Alarm,SPK_NO_ANA" param_id="5"/>
+    <Param path="Ring_Alarm,HSSPK_INT" param_id="3"/>
+    <Param path="Ring_Alarm,HSSPK_LO" param_id="3"/>
+    <Param path="Ring_Alarm,HSSPK_HP" param_id="1"/>
+    <Param path="Ring_Alarm,HSSPK_NO_ANA" param_id="1"/>
+    <Param path="Ring_Alarm,HS5POLE" param_id="0"/>
+    <Param path="Ring_Alarm,HS5POLE_ANC" param_id="0"/>
+    <Param path="Others,RCV" param_id="4"/>
+    <Param path="Others,HS" param_id="1"/>
+    <Param path="Others,SPK_INT" param_id="2"/>
+    <Param path="Others,SPK_LO" param_id="2"/>
+    <Param path="Others,SPK_HP" param_id="2"/>
+    <Param path="Others,SPK_NO_ANA" param_id="5"/>
+    <Param path="Others,HSSPK_INT" param_id="3"/>
+    <Param path="Others,HSSPK_LO" param_id="3"/>
+    <Param path="Others,HSSPK_HP" param_id="1"/>
+    <Param path="Others,HSSPK_NO_ANA" param_id="1"/>
+    <Param path="Others,HS5POLE" param_id="1"/>
+    <Param path="Others,HS5POLE_ANC" param_id="1"/>
+    <Param path="Notification,RCV" param_id="4"/>
+    <Param path="Notification,HS" param_id="1"/>
+    <Param path="Notification,SPK_INT" param_id="2"/>
+    <Param path="Notification,SPK_LO" param_id="2"/>
+    <Param path="Notification,SPK_HP" param_id="2"/>
+    <Param path="Notification,SPK_NO_ANA" param_id="5"/>
+    <Param path="Notification,HSSPK_INT" param_id="3"/>
+    <Param path="Notification,HSSPK_LO" param_id="3"/>
+    <Param path="Notification,HSSPK_HP" param_id="1"/>
+    <Param path="Notification,HSSPK_NO_ANA" param_id="1"/>
+    <Param path="Notification,HS5POLE" param_id="1"/>
+    <Param path="Notification,HS5POLE_ANC" param_id="1"/>
+  </ParamTree>
+  <ParamUnitPool>
+    <ParamUnit param_id="0">
+      <Param name="digital_gain_visibility" value="0"/>
+      <Param name="headset_pga_visibility" value="-1"/>
+      <Param name="speaker_pga_visibility" value="-1"/>
+      <Param name="receiver_pga_visibility" value="-1"/>
+    </ParamUnit>
+    <ParamUnit param_id="1">
+      <Param name="digital_gain_visibility" value="1"/>
+      <Param name="headset_pga_visibility" value="1"/>
+      <Param name="speaker_pga_visibility" value="-1"/>
+      <Param name="receiver_pga_visibility" value="-1"/>
+    </ParamUnit>
+    <ParamUnit param_id="2">
+      <Param name="digital_gain_visibility" value="1"/>
+      <Param name="headset_pga_visibility" value="-1"/>
+      <Param name="speaker_pga_visibility" value="1"/>
+      <Param name="receiver_pga_visibility" value="-1"/>
+    </ParamUnit>
+    <ParamUnit param_id="3">
+      <Param name="digital_gain_visibility" value="1"/>
+      <Param name="headset_pga_visibility" value="1"/>
+      <Param name="speaker_pga_visibility" value="1"/>
+      <Param name="receiver_pga_visibility" value="-1"/>
+    </ParamUnit>
+    <ParamUnit param_id="4">
+      <Param name="digital_gain_visibility" value="1"/>
+      <Param name="headset_pga_visibility" value="-1"/>
+      <Param name="speaker_pga_visibility" value="-1"/>
+      <Param name="receiver_pga_visibility" value="1"/>
+    </ParamUnit>
+    <ParamUnit param_id="5">
+      <Param name="digital_gain_visibility" value="1"/>
+      <Param name="headset_pga_visibility" value="-1"/>
+      <Param name="speaker_pga_visibility" value="-1"/>
+      <Param name="receiver_pga_visibility" value="-1"/>
+    </ParamUnit>
+  </ParamUnitPool>
+</AudioParam>

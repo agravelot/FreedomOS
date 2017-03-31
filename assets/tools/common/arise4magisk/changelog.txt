@@ -1,4 +1,0 @@
-v1
-    - initial release
-v2
-    - updated to be compatible with Magisk v11

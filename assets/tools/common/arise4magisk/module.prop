@@ -1,8 +1,7 @@
-id=ARISE_Magisk_Module
-name=ARISE Magisk Module for FreedomOS
-version=v2
-versionCode=2.92
-author=Shadowghoster & Nevax
-description=Sets the needed props and selinux changes to run stock ARISE Deuteronomy 2.93 on Magisk (fixed sepolicy by Nevax)
-donate=
-support=https://forum.xda-developers.com/showthread.php?t=3379709
+id=ARISE_Magisk_Compatibility_Module
+name=ARISE Magisk Compatibility Module for FreedomOS
+version=v2.3
+versionCode=2.3
+author=ARISE Sound Systems™, Shadowghoster, Zackptg5, Nevax
+description=Mobile audio enhancement system for nearly all Android devices. Sets selinux policy and makes scripts compatibile for magisk (SELinux fix by Nevax)
+template=3

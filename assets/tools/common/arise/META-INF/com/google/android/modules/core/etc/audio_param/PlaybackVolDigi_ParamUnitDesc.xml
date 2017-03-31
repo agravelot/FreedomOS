@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Volume type">
+			<Category name="System"/>
+			<Category name="Ring"/>
+			<Category name="Music"/>
+			<Category name="Alarm"/>
+			<Category name="Notification"/>
+			<Category name="Bluetooth_sco"/>
+			<Category name="Enforced_Audible"/>
+			<Category name="DTMF"/>
+			<Category name="TTS"/>
+			<Category name="Boot"/>
+			<Category name="VIBSPK"/>
+			<Category name="Accessibility"/>
+			<!--<Category name="MATV" feature_option="MATV_AUDIO_SUPPORT"/>-->
+		</CategoryType>
+		<CategoryType name="Profile">
+			<Category name="RCV"/>
+			<Category name="HS" alias="Headset,3/4-pole Headset"/>
+			<Category name="SPK" alias="Speaker"/>
+			<Category name="HSSPK" alias="Headset+Speaker"/>
+			<Category name="HS5POLE" alias="5-pole Headset"/>
+			<Category name="HS5POLE_ANC" alias="5-pole headset+ANC"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="digital_gain" type="short_array"/><!-- unit is dB -->
+	</ParamUnit>
+</ParamUnitDesc>

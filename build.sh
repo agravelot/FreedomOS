@@ -64,7 +64,6 @@ function initialize {
   img2sdat
   sdat2img
   freedomos_busybox
-  freedomos_opengapps
   "
 
   redt=$(tput setaf 1)
@@ -264,7 +263,7 @@ function download_rom {
     if curl -Is ${ROM_LINK} | grep "200 OK" &> /dev/null
     then
       if [ $(which aria2c) ]; then
-        aria2c ${ROM_LINK} -d ${download_root}/
+        aria2c -x 4 ${ROM_LINK} -d ${download_root}/
       else
         curl -o ${download_root}/${ROM_NAME}.zip ${ROM_LINK} | tee -a ${build_log}
       fi
@@ -272,15 +271,16 @@ function download_rom {
       die "${ROM_NAME} mirror OFFLINE! Check your connection" "10"
     fi
   else
-    echo ">> Checking MD5 of ${ROM_NAME}.zip" 2>&1 | tee -a ${build_log}
-
-    if [[ ${ROM_MD5} == $(md5sum ${download_root}/${ROM_NAME}.zip | cut -d ' ' -f 1) ]]; then
-      echo ">>> MD5 ${ROM_NAME}.zip checksums OK." 2>&1 | tee -a ${build_log}
-    else
-      echo ">>> File ${ROM_NAME}.zip is corrupt, restarting download" 2>&1 | tee -a ${build_log}
-      rm -rvf ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
-      mv -vf ${download_root}/${ROM_NAME}.zip ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
-      download_rom
+    if [[ ! -z ${ROM_MD5} ]]; then
+        echo ">> Checking MD5 of ${ROM_NAME}.zip" 2>&1 | tee -a ${build_log}
+        if [[ ${ROM_MD5} == $(md5sum ${download_root}/${ROM_NAME}.zip | cut -d ' ' -f 1) ]]; then
+          echo ">>> MD5 ${ROM_NAME}.zip checksums OK." 2>&1 | tee -a ${build_log}
+        else
+          echo ">>> File ${ROM_NAME}.zip is corrupt, restarting download" 2>&1 | tee -a ${build_log}
+          rm -rvf ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
+          mv -vf ${download_root}/${ROM_NAME}.zip ${download_root}/${ROM_NAME}.zip.bak >> ${build_log} 2>&1
+          download_rom
+        fi
     fi
   fi
   echo
@@ -307,10 +307,12 @@ if [ $confirm_build -eq 1 ]; then
   banner
   cleanup
   download_rom
+  extract_rom
   if [ ! -z GAPPS_ANDROID ]; then
+    download_opengapps
+    extract_opengapps
     build_opengapps
   fi
-  extract_rom
   build
   add_files
   build_arise

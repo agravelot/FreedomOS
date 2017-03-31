@@ -44,7 +44,7 @@ function add_files {
 
   if [[ ${GAPPS_TYPE} = "aroma" ]]; then
       echo ">> Add opengapps aroma scripts" 2>&1 | tee -a ${build_log}
-      cp -rvf ${download_root}/freedomos_opengapps/${GAPPS_TYPE}/${GAPPS_PLATFORM}/${GAPPS_ANDROID}/META-INF/com/google/android/aroma/scripts ${tmp_root}/META-INF/com/google/android/aroma/ >> ${build_log} 2>&1
+      cp -rvf ${rom_root}/${GAPPS_ZIP}/META-INF/com/google/android/aroma/scripts ${tmp_root}/META-INF/com/google/android/aroma/ >> ${build_log} 2>&1
   fi
 
   echo ">> Add FreedomOS wallpapers" 2>&1 | tee -a ${build_log}

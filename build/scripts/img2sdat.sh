@@ -1,5 +1,5 @@
-#!/bin/sh
-# Copyright 2016 Antoine GRAVELOT
+#!/bin/bash
+# Copyright 2016-2017 Antoine GRAVELOT
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,7 +16,20 @@
 # FreedomOS build script
 # Contributors :
 
+if [[ -d /tmp/img2sdat ]]
+then
+    rm -rf /tmp/img2sdat
+fi
 cp -rf ../build/tools/img2sdat /tmp/img2sdat
 chmod u+x /tmp/img2sdat/*
-PYTHONPATH="$PYTHONPATH:/tmp/img2sdat" exec /tmp/img2sdat/img2sdat.py  "$@"
+if [[ $(which python2) ]]
+then
+    PYTHONPATH="$PYTHONPATH:/tmp/img2sdat" exec python2 /tmp/img2sdat/img2sdat.py "$@"
+elif [[ $(which python) ]]
+then
+    PYTHONPATH="$PYTHONPATH:/tmp/img2sdat" exec python /tmp/img2sdat/img2sdat.py "$@"
+else
+    echo "Unable to find python installation"
+    exit 1
+fi;
 rm -rf /tmp/img2sdat

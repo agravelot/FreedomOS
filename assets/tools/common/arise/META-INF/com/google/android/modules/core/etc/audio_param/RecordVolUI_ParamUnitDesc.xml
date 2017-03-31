@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc tab_name="Audio Record" version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Application">
+			<CategoryGroup name="Sound recording">
+				<Category name="SndRecNormal" wording="Normal"/>
+				<Category name="SndRecLecture" wording="Lecture"/>
+				<Category name="SndRecMeeting" wording="Meeting"/>
+			</CategoryGroup>
+			<CategoryGroup name="Camera recording">
+				<Category name="CamRecNormal" wording="Normal"/>
+				<Category name="CamRecMeeting" wording="Meeting"/>
+			</CategoryGroup>
+			<Category name="ASR" wording="ASR improvement" />
+			<Category name="VR" wording="Voice recognition &amp; CTS verifier" />
+			<Category name="VoiceUnLk" visible="false" />
+			<Category name="Customization2" visible="false" />
+			<Category name="CUSTOMIZATION3"/>
+			<Category name="FastRecord" visible="false"/>
+		</CategoryType>
+		<CategoryType name="Profile" wording="Device">
+			<Category name="Handset"/>
+			<Category name="Headset" alias="3-pole HS,4-pole HS"/>
+			<Category name="HS5POLE" alias="5-pole HS"/>
+			<Category name="HS5POLE_ANC" alias="5-pole HS+ANC"/>
+			<Category name="BT earphone" alias="Bluetooth"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="ul_gain_visibility" type="int"/>
+	</ParamUnit>
+</ParamUnitDesc>

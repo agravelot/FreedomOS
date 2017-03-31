@@ -523,7 +523,6 @@ checkbox(
     "<~google_assistant>", "<~info.google_assistant>", 1,
     "<~arise>", "<~info.arise>", 1,
     "<~substratum>", "<~info.substratum>", 0,
-    "<~aptx>", "<~info.aptx>", 0,
     "<~40-wifi>", "<~info.40-wifi>", 0,
     "<~permissive>", "<~info.permissive>", 0
 );
@@ -582,38 +581,22 @@ then
         form(
           "ICEsound Configuration Selection",
           "Please Select:",
-          "icons/personalize",
-          "ICEconfig.prop",
-
-          "use.ICEconfig",     "ICE Configuration selection",        "",                    "group",
-            "0",                    "Delete current ICEconfig and don't use any at all",                  "",        "select",
-            "1",                    "ICEconfig 1",                  "",  "select.selected",
-            "2",                    "ICEconfig 2",                  "",  "select",
-            "3",                    "ICEconfig 3",                  "",  "select",
-            "4",                    "ICEconfig 4",                  "",  "select",
-            "5",                    "ICEconfig 5",                  "",  "select",
-            "6",                    "ICEconfig 6",                  "",  "select"
-        );
-
-        form(
-          "ICEsound Configuration Selection",
-          "Please Select:",
           "personalize",
           "ICEpreset.prop",
 
           "use.ICEsound.preset",     "ICE Configuration selection",        "",                    "group",
-            "BATHSALTS",                    "BATHSALTS",                  "",        "select",
-            "DEEPBASS",                    "DEEPBASS",                  "",        "select",
-            "Default",                    "DEFAULT",                  "",  "select.selected",
-            "HOLYSH*T",                    "HOLYSHIT",                  "",        "select",
-            "KRAZY",                    "KRAZY",                  "",  "select",
-            "MOVIE",                    "MOVIE",                  "",  "select",
-            "MUSIC2",                    "MUSIC2",                  "",  "select",
-            "OUTDOORS",                    "OUTDOORS",                  "",  "select",
-            "PURE",                    "PURE",                  "",  "select",
-            "(PURE)SH*T",                    "PURESHIT",                  "",  "select",
-            "WIDECLARITY",                    "WIDECLARITY",                  "",  "select",
-            "None",                    "None",                  "",  "select"
+              "01",                    "BATHSALTS",           "",  "select",
+              "02",                    "DEEPBASS",            "",  "select",
+              "03",                    "HOLYSH*T",            "",  "select",
+              "04",                    "KRAZY",               "",  "select",
+              "05",                    "MOVIE",               "",  "select",
+              "06",                    "MUSIC2",              "",  "select",
+              "07",                    "OUTDOORS",            "",  "select",
+              "08",                    "PURE",                "",  "select",
+              "09",                    "(PURE)SH*T",          "",  "select",
+              "10",                    "WIDECLARITY",         "",  "select",
+              "11",                    "Default",             "",  "select.selected",
+              "NO",                    "None",                "",  "select"
         );
     endif;
 

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc tab_name="VoIP" version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Profile" wording="Device">
+			<CategoryGroup name="Handset">
+				<Category name="Handset 2mic NR" wording="Handset" feature_option="VIR_VOIP_NORMAL_DMNR_SUPPORT"/>
+				<Category name="Handset no 2mic NR" wording="Handset" feature_option="!VIR_VOIP_NORMAL_DMNR_SUPPORT"/>
+			</CategoryGroup>
+			<CategoryGroup name="Headset">
+				<Category name="3-pole headset"/>
+				<Category name="4-pole headset"/>
+				<Category name="5-pole headset" wording="5-pole headset(ANC OFF)" feature_option="5_POLE_HS_SUPPORT"/>
+				<Category name="5-pole headset+ANC" wording="5-pole headset(ANC ON)" feature_option="MTK_HEADSET_ACTIVE_NOISE_CANCELLATION_SUPPORT"/>
+			</CategoryGroup>
+			<CategoryGroup name="Hands-free">
+				<Category name="Hands-free 1mic NR" wording="Hands-free(1-mic NR)" feature_option="VIR_VOIP_HANDSFREE_DMNR_SUPPORT"/>
+				<Category name="Hands-free no 1mic NR" wording="Hands-free(1-mic NR)" feature_option="!VIR_VOIP_HANDSFREE_DMNR_SUPPORT"/>
+			</CategoryGroup>
+			<Category name="BT earphone" wording="Bluetooth"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="voip_mode_para" type="uint_array">
+			<!-- Gain -->
+			<Field name="UL Digital Gain" array_index="7" bit="0,3" check_list="0,0dB,1,1dB,2,2dB,3,3dB,4,4dB,5,5dB,6,6dB,7,7dB,8,8dB,9,9dB,10,10dB,11,11dB,12,12dB,13,13dB,14,14dB,15,15dB"/>
+
+			<!-- New TX DRC -->
+			<Field name="TX Graphical_UI_DRC Switch"  array_index="32" bit="0,0" check_list="0,off,1,on"/>
+			<Field name="TX RMS_TAV_Count"            array_index="32" bit="1,3" check_list="0,20,1,20,2,40,3,60,4,80,5,100,6,100,7,100"/>
+			<Field name="TX DRC-Delay"                array_index="32" bit="4,5" check_list="0,0ms,1,5ms,2,10ms,3,15ms"/>
+			<Field name="TX DRC Min-Gain"             array_index="32" bit="6,7" check_list="0,-6dB,1,-9dB,2,-12dB,3,-18dB"/>
+			<Field name="TX-1 Gain Attack_Rate"       array_index="33" bit="0,2" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="TX-1 Gain Release_Rate"      array_index="33" bit="3,5" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="TX-1 Gain Hysterisis"        array_index="33" bit="6,7" check_list="0,0dB,1,1dB,2,2dB,3,3dB"/>
+			<Field name="TX-2 Gain Attack_Rate"       array_index="34" bit="0,2" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="TX-2 Gain Release_Rate"      array_index="34" bit="3,5" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="TX-2 Gain Hysterisis"        array_index="34" bit="6,7" check_list="0,0dB,1,1dB,2,2dB,3,3dB"/>
+			<Field name="TX-3 Gain Attack_Rate"       array_index="35" bit="0,2" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="TX-3 Gain Release_Rate"      array_index="35" bit="3,5" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="TX-3 Gain Hysterisis"        array_index="35" bit="6,7" check_list="0,0dB,1,1dB,2,2dB,3,3dB"/>
+			<Field name="TX-4 Gain Attack_Rate"       array_index="36" bit="0,2" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="TX-4 Gain Release_Rate"      array_index="36" bit="3,5" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="TX-4 Gain Hysterisis"        array_index="36" bit="6,7" check_list="0,0dB,1,1dB,2,2dB,3,3dB"/>
+			<Field name="TX-5 Gain Attack_Rate"       array_index="37" bit="0,2" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="TX-5 Gain Release_Rate"      array_index="37" bit="3,5" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="TX-5 Gain Hysterisis"        array_index="37" bit="6,7" check_list="0,0dB,1,1dB,2,2dB,3,3dB"/>
+			<Field name="TX DSP_Compression_ratio_0"  array_index="38" bit="0,7"/>
+			<Field name="TX DSP_Compression_ratio_1"  array_index="39" bit="0,7"/>
+			<Field name="TX DSP_Compression_ratio_2"  array_index="40" bit="0,7"/>
+			<Field name="TX DSP_Compression_ratio_3"  array_index="41" bit="0,7"/>
+			<Field name="TX DSP_Compression_ratio_4"  array_index="42" bit="0,7"/>
+			<Field name="TX DSP_Threshold_Y0"         array_index="43" bit="0,3"/>
+			<Field name="TX DSP_Threshold_X1"         array_index="44" bit="0,7"/>
+			<Field name="TX DSP_Threshold_X2"         array_index="45" bit="0,7"/>
+			<Field name="TX DSP_Threshold_X3"         array_index="46" bit="0,7"/>
+			<Field name="TX DSP_Threshold_X4"         array_index="47" bit="0,7"/>
+
+			<!-- New RX DRC -->
+			<Field name="RX Graphical_UI_DRC Switch"  array_index="32" bit="8,8"   check_list="0,off,1,on"/>
+			<Field name="RX RMS_TAV_Count"            array_index="32" bit="9,11"  check_list="0,20,1,20,2,40,3,60,4,80,5,100,6,100,7,100"/>
+			<Field name="RX DRC-Delay"                array_index="32" bit="12,13" check_list="0,0ms,1,5ms,2,10ms,3,15ms"/>
+			<Field name="RX DRC Min-Gain"             array_index="32" bit="14,15" check_list="0,-6dB,1,-9dB,2,-12dB,3,-18dB"/>
+			<Field name="RX-1 Gain Attack_Rate"       array_index="33" bit="8,10"  check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="RX-1 Gain Release_Rate"      array_index="33" bit="11,13" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="RX-1 Gain Hysterisis"        array_index="33" bit="14,15" check_list="0,0dB,1,1dB,2,2dB,3,3dB"/>
+			<Field name="RX-2 Gain Attack_Rate"       array_index="34" bit="8,10"  check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="RX-2 Gain Release_Rate"      array_index="34" bit="11,13" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="RX-2 Gain Hysterisis"        array_index="34" bit="14,15" check_list="0,0dB,1,1dB,2,2dB,3,3dB"/>
+			<Field name="RX-3 Gain Attack_Rate"       array_index="35" bit="8,10"  check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="RX-3 Gain Release_Rate"      array_index="35" bit="11,13" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="RX-3 Gain Hysterisis"        array_index="35" bit="14,15" check_list="0,0dB,1,1dB,2,2dB,3,3dB"/>
+			<Field name="RX-4 Gain Attack_Rate"       array_index="36" bit="8,10"  check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="RX-4 Gain Release_Rate"      array_index="36" bit="11,13" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="RX-4 Gain Hysterisis"        array_index="36" bit="14,15" check_list="0,0dB,1,1dB,2,2dB,3,3dB"/>
+			<Field name="RX-5 Gain Attack_Rate"       array_index="37" bit="8,10"  check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="RX-5 Gain Release_Rate"      array_index="37" bit="11,13" check_list="0,0.5ms,1,1ms,2,2ms,3,4ms,4,8ms,5,16ms,6,32ms,7,64ms"/>
+			<Field name="RX-5 Gain Hysterisis"        array_index="37" bit="14,15" check_list="0,0dB,1,1dB,2,2dB,3,3dB"/>
+			<Field name="RX DSP_Compression_ratio_0"  array_index="38" bit="8,15"/>
+			<Field name="RX DSP_Compression_ratio_1"  array_index="39" bit="8,15"/>
+			<Field name="RX DSP_Compression_ratio_2"  array_index="40" bit="8,15"/>
+			<Field name="RX DSP_Compression_ratio_3"  array_index="41" bit="8,15"/>
+			<Field name="RX DSP_Compression_ratio_4"  array_index="42" bit="8,15"/>
+			<Field name="RX DSP_Threshold_Y0"         array_index="43" bit="4,11 "/>
+			<Field name="RX DSP_Threshold_X1"         array_index="44" bit="8,15"/>
+			<Field name="RX DSP_Threshold_X2"         array_index="45" bit="8,15"/>
+			<Field name="RX DSP_Threshold_X3"         array_index="46" bit="8,15"/>
+			<Field name="RX DSP_Threshold_X4"         array_index="47" bit="8,15"/>
+
+			<!-- MagiNR(TX) -->
+			<Field name="TX NR Switch" array_index="4" bit="0,1"                                        check_list="0,off,1,on,2,on,3,on"/>
+			<Field name="NR suppression strength" array_index="8" bit="6,8"                             check_list="0,23dB,1,20.5dB,2,18dB,3,15.5dB,4,13dB,5,10.5dB,6,8dB,7,off"/>
+			<Field name="ASLR mode" array_index="4" bit="12,13"                                         check_list="0,off (fixed 10 dB),1,off (fixed 0 dB, for BT),2, on (up to 10 dB),3,on (Enhance D-value)"/>
+			<Field name="UL mute 1sec" array_index="10" bit="1,1"                                       check_list="0,on,1,off"/>
+			<Field name="Ambient noise calibration" array_index="8" bit="12,13"                         check_list="0,0 dB,1,-4 dB,2,+8 dB,3,+4 dB"/>
+			<Field name="UL expander mode" array_index="3" bit="0,1"                                    check_list="0,off,1,suppress echo only,2,suppress stationary noise,3,suppress non-stationary noise"/>
+			<Field name="UL expander suppression gain" array_index="3" bit="4,5"                        check_list="0,3dB,1,9dB,2,12dB,3,15dB"/>
+			<!-- MagiAEC -->
+			<Field name="AEC" array_index="1" bit="0,15"                                                check_list="189,189,221,221,224,224,253,253,479,479"/>
+			<Field name="Switch" array_index="1" bit="8,8"                                              check_list="0,on,1,off"/>
+			<Field name="device Mode" array_index="1" bit="0,0"                                         check_list="0,Handfree Mode,1,Normal Mode"/>
+			<Field name="Low-freq echo handling" array_index="1" bit="6,7"                              check_list="0,suppress  more aggressively,1,suppress aggressively,2,suppress low-freq echo,3,Turn off"/>
+			<Field name="echo path change handler" array_index="1" bit="13, 13"                         check_list="0,on,1,off"/>
+			<Field name="ES switch" array_index="1" bit="1,1"                                           check_list="0,on,1,off"/>
+			<Field name="residual echo weighting for linear part" array_index="2" bit="0,3"/>
+			<Field name="residual echo weighting for non-linear part" array_index="2" bit="4,7"/>
+			<Field name="ES" array_index="2" bit="11,14"                                                check_list="0,-Inf,1,-24.1dB,2,-18.1dB,3,-14.5dB,4,-12.0dB,5,-10.1dB,6,-8.52dB,7,-7.18dB,8,-6.02dB,9,-5.00dB,10,-4.08dB,11,-3.25dB,12,-2.50dB,13,-1.80dB,14,-1.16dB,15,-0.56dB"/>
+			<Field name="First Echo Suppression control" array_index="1" bit="10,10"                    check_list="0,on,1,off"/>
+			<Field name="AES switch" array_index="1" bit="14,14"                                        check_list="0,on,1,off"/>
+			<Field name="AES" array_index="12" bit="11,14"                                              check_list="0,-Inf,1,-24.1dB,2,-18.1dB,3,-14.5dB,4,-12.0dB,5,-10.1dB,6,-8.52dB,7,-7.18dB,8,-6.02dB,9,-5.00dB,10,-4.08dB,11,-3.25dB,12,-2.50dB,13,-1.80dB,14,-1.16dB,15,-0.56dB"/>
+			<Field name="Comfort noise generator" array_index="1" bit="5,5"                             check_list="0,off,1,on"/>
+			<Field name="Minimum comfort noise value" array_index="12" bit="0,4"/>
+			<Field name="NLP Suppression behavior control" array_index="1" bit="11,11"                  check_list="0,on,1,off"/>
+			<Field name="NLP" array_index="0" bit="0,7"                                                 check_list="0,0,64,64,96,96,128,128,192,192,255,255"/>
+			<Field name="BT Delay Control" array_index="15" bit="0,7"/>
+			<!-- TX DRC -->
+			<Field name="UL Limiter TH" array_index="3" bit="2,3"                                       check_list="0,off,1,off,2,-4.3 dBFS,3,-1.4 dBFS"/>
+			<Field name="UL IIR cut off frequency" array_index="9" bit="14,15"                          check_list="0,off,1,175Hz,2,228Hz,3,279Hz"/>
+			<Field name="IIR switch" array_index="11" bit="1,1"                                         check_list="0,on,1,off"/>
+			<Field name="75Hz high-pass IIR" array_index="3" bit="12,12"                                check_list="0,122Hz,1,75Hz"/>
+			<Field name="comfort noise" array_index="4" bit="14,14"                                     check_list="0,off,1,on"/>
+			<Field name="UL expander rate" array_index="3" bit="6,7"                                    check_list="0,fast,1,slow,2,normal,3,very fast"/>
+			<!-- MagiNR(dual) -->
+			<Field name="MagiNRDual switch" array_index="13" bit="0,0"                                  check_list="0,off,1,on"/>
+			<Field name="High band (>1250Hz) speech quality protection" array_index="13" bit="2,3"      check_list="0,weak,1,off,2,medium,3,strong"/>
+			<Field name="MagiNRDual-NS mode" array_index="13" bit="4,5"                                 check_list="0,none,1,strong,2,medium,3,weak"/>
+			<Field name="1-mic NS + expander capability" array_index="13" bit="6,7"                     check_list="0,suppress non-stationary noise,1,suppress stationary noise,2,suppress echo,3,off"/>
+			<Field name="1-mic NS + expander mode" array_index="13" bit="8,8"                           check_list="0,manual,1,combo"/>
+			<Field name="MagiNRDual-NC switch" array_index="13" bit="9,9"                               check_list="0,off,1,on"/>
+			<Field name="Initial convergence improvement" array_index="13" bit="13,13"                  check_list="0,off,1,on"/>
+			<Field name="BGNT with NE improvement" array_index="13" bit="14,15"                         check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain (dB)" array_index="14" bit="0,6"             check_list="0,0.07,1,0.14,2,0.21,3,0.28,4,0.35,5,0.42,6,0.49,7,0.56,8,0.63,9,0.71,10,0.78,11,0.85,12,0.93,13,1.01,14,1.08,15,1.16,16,1.24,17,1.32,18,1.40,19,1.48,20,1.56,21,1.64,22,1.72,23,1.80,24,1.89,25,1.97,26,2.06,27,2.14,28,2.23,29,2.32,30,2.41,31,2.50,32,2.59,33,2.68,34,2.77,35,2.87,36,2.96,37,3.06,38,3.16,39,3.25,40,3.35,41,3.45,42,3.56,43,3.66,44,3.76,45,3.87,46,3.97,47,4.08,48,4.19,49,4.30,50,4.41,51,4.53,52,4.64,53,4.76,54,4.88,55,5.00,56,5.12,57,5.24,58,5.37,59,5.49,60,5.62,61,5.75,62,5.89,63,6.02,64,6.16,65,6.30,66,6.44,67,6.58,68,6.73,69,6.88,70,7.03,71,7.18,72,7.34,73,7.50,74,7.66,75,7.82,76,7.99,77,8.16,78,8.34,79,8.52,80,8.70,81,8.89,82,9.08,83,9.27,84,9.47,85,9.68,86,9.89,87,10.10,88,10.32,89,10.55,90,10.78,91,11.02,92,11.26,93,11.51,94,11.77,95,12.04,96,12.32,97,12.60,98,12.90,99,13.20,100,13.52,101,13.84,102,14.19,103,14.54,104,14.91,105,15.30,106,15.70,107,16.12,108,16.57,109,17.04,110,17.53,111,18.06,112,18.62,113,19.22,114,19.87,115,20.56,116,21.32,117,22.14,118,23.06,119,24.08,120,25.24,121,26.58,122,28.16,123,30.10,124,32.60,125,36.12,126,42.14,127,Inf"/>
+			<Field name="Less MagiNRDual-NS level" array_index="14" bit="7,8"                           check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Non-stationary noise weight" array_index="14" bit="9,10"                       check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Stationary noise weight" array_index="14" bit="11,12"                          check_list="0,off,1,weak,2,medium,3,strong"/>
+		</Param>
+		<Param name="sph_in_fir" type="short_array"/>
+		<Param name="sph_in_fir_eq_freq" type="double_array"/>
+		<Param name="sph_in_fir_eq_mag" type="double_array"/>
+		<Param name="sph_out_fir" type="short_array"/>
+		<Param name="sph_out_fir_eq_mag" type="double_array"/>
+		<Param name="sph_out_fir_eq_freq" type="double_array"/>
+	</ParamUnit>
+</ParamUnitDesc>

@@ -27,15 +27,19 @@ DEVICE=OnePlus3T
 ASSERT="OnePlus 3T"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus3TOxygen_28_OTA_047_all_1703132119_0ed76c88
-ROM_LINK=http://otafsc.h2os.com/patch/amazone2/GLO/OnePlus3TOxygen/OnePlus3TOxygen_28.A.47_GLO_047_1703132119/$ROM_NAME.zip
+ROM_NAME=OnePlus3TOxygen_28_OTA_049_all_1703242040_62f3
+ROM_LINK=http://otafsc1.h2os.com/patch/amazone2/GLO/OnePlus3TOxygen/OnePlus3TOxygen_28.A.49_GLO_049_1703242040/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=fdb2ff9d4586bcbf4733fc38380e3c6a
+ROM_MD5=dcd3acf960a1cfaf1f131127d198126d
 
 # OpenGapps
-GAPPS_ANDROID=7.1.1
+GAPPS_ANDROID=7.1
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=aroma
+GAPPS_DATE=20170328
+GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
+GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
+GAPPS_MD5=c66c4f1f0e16956cd1dfca364bea70c0
 
 # Set Android version for selinux build script
 ANDROID_VERSION=7
@@ -48,9 +52,7 @@ BUILD_METHOD=dat_to_dat
 # The partition size is exactly the same between OP3 and OP3T
 SYSTEMIMAGE_PARTITION_SIZE=3154116608
 
-PATCH_SYSYEM="
-aptx
-"
+PATCH_SYSYEM=""
 
 # Add BUSYBOX into the rom
 BUILD_BUSYBOX=false

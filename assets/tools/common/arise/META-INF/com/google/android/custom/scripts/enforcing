@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+# ARISE Sound Systems™
+#
+# SElinux Enforcing Mode script
+
+setenforce 1
+
+exit 0
+

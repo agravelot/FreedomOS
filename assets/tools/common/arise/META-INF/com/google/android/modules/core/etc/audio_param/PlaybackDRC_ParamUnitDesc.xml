@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc tab_name="Entertainment - Playback" version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Volume type">
+			<Category name="Ring"/>
+			<Category name="Music" alias="System,Alarm,Notification,Bluetooth_sco,Enforced_Audible,DTMF,TTS,Boot,VIBSPK,Accessibility"/>
+	</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="ui_visible" type="int"/>
+		<Param name="bes_loudness_L_hpf_fc" type="uint_array"/>
+		<Param name="bes_loudness_L_hpf_order" type="uint_array"/>
+		<Param name="bes_loudness_L_lpf_fc" type="uint_array"/>
+		<Param name="bes_loudness_L_lpf_order" type="uint_array"/>
+		<Param name="bes_loudness_L_bpf_fc" type="uint_array"/>
+		<Param name="bes_loudness_L_bpf_bw" type="uint_array"/>
+		<Param name="bes_loudness_L_bpf_gain" type="int_array"/>
+		<Param name="bes_loudness_R_hpf_fc" type="uint_array"/>
+		<Param name="bes_loudness_R_hpf_order" type="uint_array"/>
+		<Param name="bes_loudness_R_lpf_fc" type="uint_array"/>
+		<Param name="bes_loudness_R_lpf_order" type="uint_array"/>
+		<Param name="bes_loudness_R_bpf_fc" type="uint_array"/>
+		<Param name="bes_loudness_R_bpf_bw" type="uint_array"/>
+		<Param name="bes_loudness_R_bpf_gain" type="int_array"/>
+		
+		<Param name="bes_loudness_Sep_LR_Filter" type="uint_array"/>
+		<Param name="bes_loudness_WS_Gain_Max" type="uint_array"/>
+		<Param name="bes_loudness_WS_Gain_Min" type="uint_array"/>
+		<Param name="bes_loudness_Filter_First" type="uint_array"/>
+		<Param name="bes_loudness_Num_Bands" type="uint_array">
+			<Field name="Number of Bands" array_index="0" bit="0,31" check_list="1,Full Band DRC,2,2-Band DRC,3,3-Band DRC,4,4-Band DRC,5,5-Band DRC,6,6-Band DRC,7,7-Band DRC,8,8-Band DRC"/>
+		</Param>
+		<Param name="bes_loudness_Flt_Bank_Order" type="uint_array"/>
+		<Param name="bes_loudness_Cross_Freq" type="uint_array"/>
+		<Param name="DRC_Th" type="int_array"/>
+		<Param name="DRC_Gn" type="int_array"/>
+		<Param name="SB_Gn" type="int_array"/>
+		<Param name="SB_Mode" type="uint_array">
+			<Field name="Band 1 Mode"     array_index="0" bit="0,31" check_list="0,Makeup Gain Mode,1,Limiter Mode"/>
+			<Field name="Band 2 Mode"     array_index="1" bit="0,31" check_list="0,Makeup Gain Mode,1,Limiter Mode"/>
+			<Field name="Band 3 Mode"     array_index="2" bit="0,31" check_list="0,Makeup Gain Mode,1,Limiter Mode"/>
+			<Field name="Band 4 Mode"     array_index="3" bit="0,31" check_list="0,Makeup Gain Mode,1,Limiter Mode"/>
+			<Field name="Band 5 Mode"     array_index="4" bit="0,31" check_list="0,Makeup Gain Mode,1,Limiter Mode"/>
+			<Field name="Band 6 Mode"     array_index="5" bit="0,31" check_list="0,Makeup Gain Mode,1,Limiter Mode"/>
+			<Field name="Band 7 Mode"     array_index="6" bit="0,31" check_list="0,Makeup Gain Mode,1,Limiter Mode"/>
+			<Field name="Band 8 Mode"     array_index="7" bit="0,31" check_list="0,Makeup Gain Mode,1,Limiter Mode"/>
+		</Param>
+		<Param name="DRC_Delay" type="uint_array"/>
+		<Param name="Att_Time" type="uint_array"/>
+		<Param name="Rel_Time" type="uint_array"/>
+		
+		<Param name="Hyst_Th" type="int_array"/>
+		
+		<Param name="Lim_Th" type="int_array"/>
+		<Param name="Lim_Gn" type="int_array"/>
+		<Param name="Lim_Const" type="uint_array"/>
+		<Param name="Lim_Delay" type="uint_array"/>
+		<Param name="SWIPRev" type="int_array"/>
+	</ParamUnit>
+</ParamUnitDesc>
