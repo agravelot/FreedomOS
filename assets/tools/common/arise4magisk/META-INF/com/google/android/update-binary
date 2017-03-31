@@ -10,6 +10,31 @@ umask 022
 # Functions
 ##########################################################################################
 
+safe_mount() {
+  IS_MOUNT=$(cat /proc/mounts | grep "$1")
+  if [ "$IS_MOUNT" ]; then
+    mount -o rw,remount $1
+  else
+    mount $1
+  fi
+}
+
+safe_mount /system
+
+SLOT=$(getprop ro.boot.slot_suffix 2>/tmp/null)
+if [ "$SLOT" ]; then
+  SYSTEM=/system/system
+else
+  SYSTEM=/system
+fi
+
+if [ ! -d "$SYSTEM/vendor" ] || [ -L "$SYSTEM/vendor" ]; then
+  safe_mount /vendor
+  VENDOR=/vendor
+elif [ -d "$SYSTEM/vendor" ] || [ -L "/vendor" ]; then
+  VENDOR=$SYSTEM/vendor
+fi
+
 ui_print() {
   if $BOOTMODE; then
     echo "$1"
@@ -24,7 +49,7 @@ grep_prop() {
   shift
   FILES=$@
   if [ -z "$FILES" ]; then
-    FILES='/system/build.prop'
+    FILES="$SYSTEM/build.prop"
   fi
   cat $FILES 2>/dev/null | sed -n "$REGEX" | head -n 1
 }
@@ -57,10 +82,10 @@ mount_image() {
         if [ "$?" -eq "0" ]; then
           mount -t ext4 -o loop $LOOPDEVICE $2
           if (! is_mounted $2); then
-            /system/bin/toolbox mount -t ext4 -o loop $LOOPDEVICE $2
+            $SYSTEM/bin/toolbox mount -t ext4 -o loop $LOOPDEVICE $2
           fi
           if (! is_mounted $2); then
-            /system/bin/toybox mount -t ext4 -o loop $LOOPDEVICE $2
+            $SYSTEM/bin/toybox mount -t ext4 -o loop $LOOPDEVICE $2
           fi
         fi
         if (is_mounted $2); then
@@ -195,14 +220,12 @@ ui_print "******************************"
 ui_print "Powered by Magisk (@topjohnwu)"
 ui_print "******************************"
 
-ui_print "- Mounting /system(rw), /vendor(ro), /data, /cache"
-mount -o rw /system 2>/dev/null
-mount -o ro /vendor 2>/dev/null
+ui_print "- Mounting /data, /cache"
 mount /data 2>/dev/null
 mount /cache 2>/dev/null
 
-if [ ! -f '/system/build.prop' ]; then
-  ui_print "! Failed: /system could not be mounted!"
+if [ ! -f "$SYSTEM/build.prop" ]; then
+  ui_print "! Failed: $SYSTEM could not be mounted!"
   exit 1
 fi
 
@@ -245,9 +268,6 @@ request_size_check "$ZIP"
 
 if [ -f "$IMG" ]; then
   ui_print "- $IMG detected!"
-  # Repair magisk.img in case of previous failed install
-  ui_print "- Checking and repairing magisk img"
-  e2fsck -fy /data/magisk.img
   image_size_check $IMG
   if [ "$reqSizeM" -gt "$curFreeM" ]; then
     SIZE=$(((reqSizeM + curUsedM) / 32 * 32 + 64))
@@ -307,51 +327,54 @@ fi
 ui_print "- Copying files"
 progress 1.0 2
 
-if [ -e /system/su.d/arisesound_services ]; then
-	sed -i '/mount -o rw,remount \/system/ d' "/system/su.d/arisesound_services"
-	sed -i '/mount -o rw,remount \/data/ d' "/system/su.d/arisesound_services"
-	sed -i 's/\$ETC\/init.d/\/system\/su.d/g' "/system/su.d/arisesound_services"	
+if [ -e $SYSTEM/su.d/arisesound_services ]; then
+	sed -i 's/\$ETC\/init.d\/post-boot/\/system\/su.d\/post-boot/g' "$SYSTEM/su.d/arisesound_services"
+	sed -i '/sleep/ d' "$SYSTEM/su.d/arisesound_services"
+	if [ ! "$(cat $SYSTEM/su.d/arisesound_services | grep "mount -o ro,remount /system")" ]; then
+		sed -i '/exit 0/i mount -o ro,remount \/system' "$SYSTEM/su.d/arisesound_services"
+	fi
 fi
 
-if [ -e /system/etc/init.d/post-boot ]; then
-	mv -f /system/etc/init.d/post-boot /system/su.d
+if [ -e $SYSTEM/etc/init.d/post-boot ]; then
+	mv -f $SYSTEM/etc/init.d/post-boot $SYSTEM/su.d
+	sed -i '/sleep/ d' "$SYSTEM/su.d/post-boot"										
 fi
 
-if [ -e /system/etc/init.d/arisesound_setprop ]; then
-	mv -f /system/etc/init.d/arisesound_setprop /system/su.d
+if [ -e $SYSTEM/etc/init.d/arisesound_setprop ]; then
+	mv -f $SYSTEM/etc/init.d/arisesound_setprop $SYSTEM/su.d
 fi
 
-if [ -e /system/etc/init.d/smeejaytee_setprop ]; then
-	mv -f /system/etc/init.d/smeejaytee_setprop /system/su.d
+if [ -e $SYSTEM/etc/init.d/smeejaytee_setprop ]; then
+	mv -f $SYSTEM/etc/init.d/smeejaytee_setprop $SYSTEM/su.d
 fi
 
-if [ -e /system/etc/init.d/sony_setprop ]; then
-	mv -f /system/etc/init.d/sony_setprop /system/su.d
+if [ -e $SYSTEM/etc/init.d/sony_setprop ]; then
+	mv -f $SYSTEM/etc/init.d/sony_setprop $SYSTEM/su.d
 fi
 
-if [ -e /system/etc/init.d/arisesoundserver ]; then
-	rm -f /system/etc/init.d/arisesoundserver
+if [ -e $SYSTEM/etc/init.d/arisesoundserver ]; then
+	rm -f $SYSTEM/etc/init.d/arisesoundserver
 fi
 
-if [ -e /system/su.d/arisesoundserver ]; then
-	rm -f /system/su.d/arisesoundserver
+if [ -e $SYSTEM/su.d/arisesoundserver ]; then
+	rm -f $SYSTEM/su.d/arisesoundserver
 fi
 
-if [ -e /system/etc/init.d/enforcing ]; then
-	rm -f /system/etc/init.d/enforcing
+if [ -e $SYSTEM/etc/init.d/enforcing ]; then
+	rm -f $SYSTEM/etc/init.d/enforcing
 fi
 
-if [ -e /system/su.d/enforcing ]; then
-	rm -f /system/su.d/enforcing
+if [ -e $SYSTEM/su.d/enforcing ]; then
+	rm -f $SYSTEM/su.d/enforcing
 fi
 
-if [ -e /system/etc/init.d/permissive ]; then
-	mv -f /system/etc/init.d/permissive /system/su.d
+if [ -e $SYSTEM/etc/init.d/permissive ]; then
+	mv -f $SYSTEM/etc/init.d/permissive $SYSTEM/su.d
 	unzip -o "$ZIP" permissive.sh
-	cp -af $INSTALLER/permissive.sh $MODPATH/post-fs-data.sh
-elif [ -e /system/su.d/permissive ]; then
+	cp -af $INSTALLER/permissive.sh $MODPATH/service.sh
+elif [ -e $SYSTEM/su.d/permissive ]; then
 	unzip -o "$ZIP" permissive.sh
-	cp -af $INSTALLER/permissive.sh $MODPATH/post-fs-data.sh
+	cp -af $INSTALLER/permissive.sh $MODPATH/service.sh
 fi
 
 ui_print "- Setting permissions"
@@ -373,7 +396,7 @@ fi
 
 if ! $BOOTMODE; then
   umount /system
-  umount /vendor 2>/dev/null
+  umount $VENDOR 2>/dev/null
 fi
 
 ui_print " "

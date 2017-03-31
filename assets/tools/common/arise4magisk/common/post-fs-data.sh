@@ -9,18 +9,12 @@ MODDIR=${0%/*}
 sepolicy-inject --live "allow mediaserver mediaserver_tmpfs file { read write execute }" \
 "allow audioserver audioserver_tmpfs file { read write execute }" 
 
-if [ -e /system/su.d/arisesound_services ]; then
-	./system/su.d/arisesound_services
-else
-	if [ -e /system/su.d/arisesound_setprop ]; then
-		./system/su.d/arisesound_setprop
-	fi
-
-	if [ -e /system/su.d/smeejaytee_setprop ]; then
-		./system/su.d/smeejaytee_setprop
-	fi
-
-	if [ -e /system/su.d/sony_setprop ]; then
-		./system/su.d/sony_setprop
-	fi
+if [ -e /system/su.d/arisesound_setprop ]; then
+	./system/su.d/arisesound_setprop
+fi
+if [ -e /system/su.d/smeejaytee_setprop ]; then
+	./system/su.d/smeejaytee_setprop
+fi
+if [ -e /system/su.d/sony_setprop ]; then
+	./system/su.d/sony_setprop
 fi

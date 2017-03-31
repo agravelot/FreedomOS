@@ -13,6 +13,9 @@ Installs the ARISE Sound System Magisk Compatibility Module
 ##Module Changelog
  - v1.0: Initial Release
  - v2.0: Complete restructuring to pass safetynet, be more adaptive to arise module changes, and work with all version of arise
+ - v2.1: Changed sed commands so arisesound_services can run all of its commands
+ - v2.2: Added pixel support
+ - v2.3: Changed sepolicy to late start service script for magisk 12.0
  
 ## A.R.I.S.E. general changelog
 Take a look [here](/core/ARISE_version.prop)
