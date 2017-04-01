@@ -1,5 +1,25 @@
-2.-CE
+2.6-CE
+  UPDATE: OxygenOS OpenBeta 12
+  - All new launcher, added support for Shortcuts on 7.1.1
+  - Redesigned app drawer
+  - Added quick pay option for India
+  - Redesigned UI for launcher settings
+  - Added status bar icon option to display real time network speed
+  - Added Notification Denoising
+  - Added Gaming Do Not Disturb mode
+  - Added automatic Night mode
+  - Added Secure Box for file encryption
+  - Optimized touch latency
+  - Optimized camera EIS for videos
+  - Improved contacts management with linking and merge functions
   FIX: Rootless installation (missing aromaroot.prop error)
+  UPDATE: A.R.I.S.E. Sound Systems Deuteronomy 3.09 SwanSong
+  UPDATE: Magisk module for ARISE (include FreedomOS patch for better support)
+  UPDATE: Magisk v12.0
+  UPDATE: GoogleApps 20170328
+  FIX: ARISE installation with /sdcard/0/ folder
+  UPDATE: Czech language, thanks to @iamceph
+  Add much more, check gitlab.
 
 2.5-CE
   UPDATE: OxygenOS OpenBeta 12
