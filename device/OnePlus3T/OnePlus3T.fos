@@ -33,6 +33,7 @@ ROM_LINK=http://otafsc.h2os.com/patch/amazone2/GLO/OnePlus3TOxygen/OnePlus3TOxyg
 ROM_MD5=031507863135b7008c2651ea461d0e9e
 
 # OpenGapps
+GAPPS_BUILD=true
 GAPPS_ANDROID=7.1
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=aroma

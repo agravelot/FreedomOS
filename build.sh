@@ -308,7 +308,7 @@ if [ $confirm_build -eq 1 ]; then
   cleanup
   download_rom
   extract_rom
-  if [ ! -z GAPPS_ANDROID ]; then
+  if [[ "$GAPPS_BUILD" == true ]]; then
     download_opengapps
     extract_opengapps
     build_opengapps
@@ -317,7 +317,7 @@ if [ $confirm_build -eq 1 ]; then
   add_files
   build_arise
   build_arise4magisk
-  if [[ "$BUILD_BUSYBOX" == ture ]]; then
+  if [[ "$BUILD_BUSYBOX" == true ]]; then
       build_busybox
   fi
   make_zip

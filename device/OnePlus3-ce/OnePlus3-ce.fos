@@ -33,6 +33,7 @@ ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 ROM_MD5=891e03e26a2721958ae44720308d2a8f
 
 # OpenGapps
+GAPPS_BUILD=true
 GAPPS_ANDROID=7.1
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=aroma
