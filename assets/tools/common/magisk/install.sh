@@ -17,6 +17,7 @@ mount /data
 if [[ ! -d /data/app/ ]]; then
   mkdir -p /data/app/
 fi
+rm -rvf /data/app/com.topjohnwu.magisk-*
 cp -rvf /tmp/tools/magisk/Magisk /data/app/
 cd /data/app/Magisk
 chown 1000.1000 . -R
