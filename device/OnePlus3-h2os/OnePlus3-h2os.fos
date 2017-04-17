@@ -203,6 +203,7 @@ common/arise4magisk
 common/clean.sh
 common/fonts
 common/fix_passwd.sh
+common/google_assistant.sh
 common/google_dns.sh
 common/kernel
 common/log_folder.sh

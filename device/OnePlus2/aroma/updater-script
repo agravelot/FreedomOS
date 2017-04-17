@@ -321,6 +321,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
   then
   set_progress(0.94000);
    ui_print("   Setting up Google Assistant");
+   run_program("/tmp/tools/google_assistant.sh");
 endif;
 
 # -- - NO THEME - -- #
