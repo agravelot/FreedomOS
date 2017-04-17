@@ -444,9 +444,11 @@ selectbox(
   endif;
 
   # Force Google WebViewGoogle installation, it's required by most of the apps.
-  # It will not be installed if Gogole Chrome is ticked,
-  appendvar("gapps", "WebViewGoogle\n");
-  appendvar("gapps", "\n");
+  if
+    prop("gapps.prop", "inclorexcl")=="1"
+  then
+    appendvar("gapps", "WebViewGoogle\n");
+  endif;
 
   appendvar("gapps", "\n\n");
 
@@ -530,9 +532,13 @@ checkbox(
 );
 
 if
-  prop("mod.prop", "item.1.8") == "1"
+  prop("gapps.prop", "inclorexcl")=="1"
 then
-  appendvar("gapps", "GoogleAssistant\n");
+  if
+    prop("mod.prop", "item.1.8") == "1"
+  then
+    appendvar("gapps", "GoogleAssistant\n");
+  endif;
 endif;
 
 if
