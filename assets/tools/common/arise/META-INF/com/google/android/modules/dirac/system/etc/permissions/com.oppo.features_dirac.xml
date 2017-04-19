@@ -1,0 +1,6 @@
+<!-- This file is used by Audio Service only(tuguang).  DO NOT MODIFY. -->
+
+<permissions>
+	<feature name="oppo.dirac.support" />
+	<feature name="oppo.soundeffect.support" />
+</permissions>

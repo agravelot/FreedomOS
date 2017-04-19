@@ -1,9 +1,11 @@
 
-# ARISE Sound Systems™ 20170317
+# ARISE Sound Systems™ 20170409
 #
 # "SwanSong"
 #
 # /sdcard/arise_customize.prop
+#
+# www.arisesound.com
 
 
 
@@ -14,11 +16,14 @@
 
 
 
-# Module description and information can be found in /getting_started/modules.
+# Module description and information can be found in 
+META-INF/getting_started/modules.
 
 
 
-# The ARISE™ modular installation zip works by using this file (when present in /sdcard as /sdcard/arise_customize.prop) to determine if any modules are to be installed by a value of "true" for each line below.
+# The ARISE™ modular installation zip works by using this file (when 
+present in /sdcard as /sdcard/arise_customize.prop) to determine if any 
+modules are to be installed by a value of "true" for each line below.
 
 
 # Any value other than "true" is the same as a value of "false".
@@ -32,10 +37,17 @@ install.xxxx=true
 
 
 
-# The Core System module must be installed at least once and only once. Once the core module is installed, the value of "true" should be removed for future customization installing, uninstalling, or executing scripts and modules.
+# The Core System module must be installed at least once and only once. 
+Once the core module is installed, the value of "true" should be removed 
+for future customization installing, uninstalling, or executing scripts 
+and modules.
 
 
-# If a rom update or system wipe is performed resulting in the need to reinstall the sound system, edit /sdcard/arise_customize.prop to include a value of "true" for the core module to complete your sound system installation, followed by removing the value of "true" from the core module once booted.
+# If a rom update or system wipe is performed resulting in the need to 
+reinstall the sound system, edit /sdcard/arise_customize.prop to include 
+a value of "true" for the core module to complete your sound system 
+installation, followed by removing the value of "true" from the core 
+module once booted.
 
 
 
@@ -49,7 +61,8 @@ install.core=
 
 
 
-# Select either ViPER4Arise™ version below to be installed or ignore to not install ViPER4Arise™ at all.
+# Select either ViPER4Arise™ version below to be installed or ignore 
+to not install ViPER4Arise™ at all.
 
 
 
@@ -76,6 +89,12 @@ install.v4a_profiles=
 install.ddplus=
 
 (15.3MB)
+
+
+
+install.atmos=
+
+(3.3MB)
 
 
 
@@ -121,15 +140,15 @@ install.musicfx=
 
 
 
+install.dirac=
+
+(4.2MB)
+
+
+
 install.dts-client=
 
 (13.5MB)
-
-
-
-install.ape.music=
-
-(9MB)
 
 
 
@@ -138,14 +157,6 @@ delete.deep_buffer=
 
 
 restore.deep_buffer=
-
-
-
-set.selinux.permissive=
-
-
-
-set.selinux.enforcing=
 
 
 
@@ -159,20 +170,26 @@ repair.sdcard.permissions=
 
 
 
-# Qualcomm™ devices have the ability to select from four audio effects configurations using Asus, Huawei, Sony, or Stock /soundfx libraries.
+# Qualcomm™ devices have the ability to select from four audio 
+effects configurations using Android O (default), Asus, Huawei, Sony, or 
+Stock /soundfx libraries.
 
 
 
-# As a reminder, any preferred or custom audio effects configuration can always be automatically installed during the Core System module installation by placing it directly in /sdcard named arise_effects.conf to result with /sdcard/arise_effects.conf.
+# As a reminder, any preferred or custom audio effects configuration can 
+always be automatically installed during the Core System module 
+installation by placing it directly in /sdcard named arise_effects.conf 
+to result with /sdcard/arise_effects.conf.
 
 
+ANDROID_O
 ASUS
 HUAWEI
 SONY
 STOCK
 
 
-Example: install.qc.ef**cts=ASUS
+Example: install.qc.ef**cts=ANDROID_O
 
 
 install.qc.effects=
@@ -188,7 +205,8 @@ install.qc.effects=
 ## ICEsound™ START ##
 
 
-# Two ICEsound™ ICEpower™ audio systems from the top two device firmwares of Asus™:
+# Two ICEsound™ ICEpower™ audio systems from the top two device 
+firmwares of Asus™:
 
 
 Asus™ Zenfone 3 Deluxe
@@ -196,7 +214,8 @@ Asus™ Zenfone 3 Deluxe
 Asus™ Zenfone 3 Ultra
 
 
-# Add a value of "true" to install one (1) of the two ICEsound™ modules below.
+# Add a value of "true" to install one (1) of the two ICEsound™ 
+modules below.
 
 
 install.deluxe.ICEsound=
@@ -209,32 +228,60 @@ install.ultra.ICEsound=
 (5.6MB)
 
 
-# Add a value of "0", "1", "2", "3", "4", "5", or "6" for the desired ICEsound™ configuration below. A value of "0" will delete /system/etc/icesoundconfig.def. Example:
+# The following ICEsound™ configurations are available below. a value 
+of "None" will remove an existing ICEsound™ configuration to use no 
+ICEsound™ configuration. Values 1 (default), through 6 select the 
+ICEsound™ configuration of the same number.
 
-use.ICEco**ig=0
+
+# Although, the available ICEsound™ configurations can have a 
+substantial impact on sound quality, the different versions are provided 
+to find the configuration most compatible with the rest of the 
+installation with incredible sound quality.
+
+
+# Because of the unpredictability of this file's impact on audio and 
+functionality, descriptive names for the different ICEsound™ 
+configurations are not logical and are simply numbered as they are 
+Example:
+
+
+use.ICEco**ig=1
+
+
+1
+2
+3
+4
+5
+6
+None
 
 
 use.ICEconfig=
 
 
-# The following ICEsound™ presets are available below. A value of "None" will remove an existing preset to use no ICEsound™ preset. Enter a value of the preset name exactly as shown below. Example:
+# The following ICEsound™ presets are available below. A value of 
+"None" will remove an existing preset to use no ICEsound™ preset. 
+Enter a value of the preset name exactly as shown below. Example:
 
 
 use.ICEsound.pr**et=01
 
 
-BATHSALTS    =01
-DEEPBASS     =02
-HOLYSH*T     =03
-KRAZY        =04
-MOVIE        =05
-MUSIC2       =06
-OUTDOORS     =07
-PURE         =08
-PURESH*T     =09
-WIDECLARITY  =10
-Default      =11
-None         =NO
+BATHSALTS       =01
+DEEPBASS        =02
+HOLYSH*T        =03
+KRAZY           =04
+MOVIE           =05
+MUSIC2          =06
+OUTDOORS        =07
+PURE (default)  =08
+PURESH*T        =09
+SHAT            =10
+WIDECLARITY     =11
+Default (pure)  =12
+None            =None
 
 
 
@@ -245,7 +292,10 @@ use.ICEsound.preset=
 ## ICEsound™ END ##
 
 
-# The ARISE™ modular installation zip works by using this file (when present in /sdcard as /sdcard/arise_customize.prop) to determine if any modules are to be UNINSTALLED by the value of "true" for each line below.
+# The ARISE™ modular installation zip works by using this file (when 
+present in /sdcard as /sdcard/arise_customize.prop) to determine if any 
+modules are to be UNINSTALLED by the value of "true" for each line 
+below.
 
 # Any value other than "true" is the same as a value of "false".
 
@@ -253,7 +303,7 @@ use.ICEsound.preset=
 UNINSTALL.v4a=
 
 
-UNINSALL.atmos=
+UNINSTALL.atmos=
 
 
 UNINSTALL.ddplus=
@@ -283,10 +333,11 @@ UNINSTALL.v4a_xhifi=
 UNINSTALL.musicfx=
 
 
+UNINSTALL.dirac=
+
+
 UNINSTALL.dts-client=
 
 
-UNINSTALL.ape.music=
-
-
 ## END ##
+

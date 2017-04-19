@@ -4,6 +4,8 @@
 # ARISE Sound Systems™
 #
 # arisesound_services
+#
+# www.arisesound.com
 
 
 mount -o rw,remount /
@@ -64,19 +66,10 @@ BOOT=$ETC/init.d/post-boot
 SERVER=$ETC/init.d/arisesoundserver
 SMEEJAYTEE=$ETC/init.d/smeejaytee_setprop
 SONY=$ETC/init.d/sony_setprop
-DTS=/data/dts
-MDTS=/data/misc/dts
-SRS=srs_processing.cfg
 CONTEXTS=/service_contexts
-PROPERTY=/property_contexts
-SERVICE=$BIN/dts_hpx_service
 AURO=$(cat $CONTEXTS | grep "auro_service")
-CONFIG=$(cat $CONTEXTS | grep "dts_configurator")
-DOLBY=$(cat $PROPERTY | grep "dolby.")
 DOLBYSERVICE=$(cat $CONTEXTS | grep "media.dolby_memoryservice")
 EAGLE=$(cat $CONTEXTS | grep "dts_eagle_service")
-ISS=$(cat $CONTEXTS | grep "iss_daemon")
-HPX=$(cat $CONTEXTS | grep "dts_hpx_service")
 SM=set_metadata
 SMR=set_metadata_recursive
 
@@ -116,8 +109,6 @@ if [ -e "$SONY" ]; then
 fi
 
 
-$SM $BIN/iss_daemon uid 1013 gid 1005 mode 0755 capabilities 0x0 selabel u:object_r:iss_daemon_service:s0
-
 if [ -e "$CONTEXTS" ]; then
 
   echo "\niss_daemon                                u:object_r:iss_daemon_service:s0\n" >> $CONTEXTS
@@ -139,13 +130,6 @@ if [ ! "$DOLBYSERVICE" ] && [ -e "$CONTEXTS" ]; then
 fi
 
 
-if [ ! "$HPX" ] && [ -e "$CONTEXTS" ]; then
-
-  echo "\ndts_hpx_service                           u:object_r:dtshpxservice_service:s0\n" >> $CONTEXTS
-
-fi
-
-
 if [ ! "$EAGLE" ] && [ -e "$CONTEXTS" ]; then
 
   echo "\ndts_eagle_service                         u:object_r:dtseagleservice_service:s0\n" >> $CONTEXTS
@@ -153,38 +137,10 @@ if [ ! "$EAGLE" ] && [ -e "$CONTEXTS" ]; then
 fi
 
 
-if [ -e "$SERVICE" ] && [ -e "$CONTEXTS" ]; then
-
-  $SM $SERVICE uid 1000 gid 1005 mode 0755 capabilities 0x0 selabel u:object_r:dtshpxservice_service:s0
-
-fi
-
-
-if [ ! -d "$MDTS" ]; then
-
-  mkdir $MDTS
-  cp -f $ETC/dts/route $MDTS/route
-  cp -f $ETC/srs/$SRS $MDTS/$SRS
-  $SMR $MDTS uid 1013 gid 1005 dmode 0770 fmode 0644 capabilities 0x0 selabel u:object_r:dts_data_file:s0
-
-elif [ ! -e "$MDTS/$SRS" ]; then
-
-  cp -f $ETC/dts/route $MDTS/route
-  cp -f $ETC/srs/$SRS $MDTS/$SRS
-  $SMR $MDTS uid 1013 gid 1005 dmode 0770 fmode 0644 capabilities 0x0 selabel u:object_r:dts_data_file:s0
-
-else
-
-  cp -f $ETC/dts/route $MDTS/route
-  $SMR $MDTS uid 1013 gid 1005 dmode 0770 fmode 0644 capabilities 0x0 selabel u:object_r:dts_data_file:s0
-
-fi
+$SM $BIN/iss_daemon uid 1013 gid 1005 mode 0755 capabilities 0x0 selabel u:object_r:iss_daemon_service:s0
 
 
 (
     sleep 60
     $SH $BOOT
 )&
-
-
-exit 0

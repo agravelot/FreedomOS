@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamTreeView version="1.0">
+	<TreeRoot name="TX_DRC+DG">
+		<Sheet/>
+		<Feature name="DRC">
+			<FieldList>
+				<Field audio_type="Record" param="record_mode_para" name="48K Limiter's bounder"/>
+				<Field audio_type="Record" param="record_mode_para" name="48K Limiter's attack rate"/>
+				<Field audio_type="Record" param="record_mode_para" name="48K Limiter's release rate"/>
+				<Field audio_type="Record" param="record_mode_para" name="48k Expander"/>
+				<Field audio_type="Record" param="record_mode_para" name="48k Compressor"/>
+				<Field audio_type="Record" param="record_mode_para" name="High band noise suppressor"/>
+				<Field audio_type="Record" param="record_mode_para" name="UL mute 1sec"/>
+				<Field audio_type="Record" param="record_mode_para" name="UL IIR switch"/>
+			</FieldList>
+			<CategoryPathList>
+				<Category path=""/>
+			</CategoryPathList>
+		</Feature>
+		<Feature name="Digital Gain">
+			<FieldList>
+				<Field audio_type="Record" param="record_mode_para" name="UL Digital Gain"/>
+			</FieldList>
+			<CategoryPathList>
+				<Category path=""/>
+			</CategoryPathList>
+		</Feature>
+		<Feature name="Stereo Enhancement">
+			<FieldList>
+				<Field audio_type="Record" param="record_mode_para" name="Bass enhancement"/>
+				<Field audio_type="Record" param="record_mode_para" name="Richen"/>
+				<Field audio_type="Record" param="record_mode_para" name="Widen"/>
+			</FieldList>
+			<CategoryPathList>
+				<Category path=""/>
+			</CategoryPathList>
+		</Feature>
+	</TreeRoot>
+	<TreeRoot name="NREC">
+		<Sheet/>
+		<Feature name="NR">
+			<FieldList>
+				<Field audio_type="Record" param="record_mode_para" name="Thermal NR"/>
+				<Field audio_type="Record" param="record_mode_para" name="UL NR switch"/>
+				<Field audio_type="Record" param="record_mode_para" name="Thermal noise upper bound"/>
+				<Field audio_type="Record" param="record_mode_para" name="UL NR suppression strength"/>
+			</FieldList>
+			<CategoryPathList>
+				<Category path=""/>
+			</CategoryPathList>
+		</Feature>
+	</TreeRoot>
+	<!-- TreeRoot2 -->
+	<!-- TreeRoot3... -->
+</ParamTreeView>
