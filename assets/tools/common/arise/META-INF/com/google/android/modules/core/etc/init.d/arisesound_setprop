@@ -68,6 +68,37 @@ setprop use.dts_eagle true
 #
 
 
+## Oppo™ F1S Dirac™ Power Sound ##
+
+#
+setprop ro.dirac.max_active.powersound 3
+setprop ro.dirac.max_active.headset 5
+setprop ro.dirac.poolsize 2
+setprop ro.dirac.config 1
+#
+
+
+## LG™ G6 HiFi DAC Audio ##
+
+#
+setprop audio.hifi_rec.normal_gain 30
+setprop audio.hifi_rec.normal_lcf 75
+setprop audio.hifi_rec.normal_lmt -3
+setprop audio.hifi_rec.concert_gain -150
+setprop audio.hifi_rec.concert_lcf 0
+setprop audio.hifi_rec.concert_lmt 0
+setprop audio.hifi_rec.offset_gain 37
+#
+
+
+## Xiaomi™ Mi Max HiFi Audio ##
+
+#
+setprop ro.audio.hifi true
+setprop persist.audio.hifi true
+#
+
+
 ## ViPER4Arise™ Audio ##
 
 #
@@ -91,7 +122,6 @@ setprop ro.mtk_bt_support 1
 #Hi-Res option for PowerAmp
 setprop ro.lenovo.hifi_support true
 setprop ro.zte.audio.hifitype dual
-setprop persist.bt.enableAptXHD true
 #
 
 

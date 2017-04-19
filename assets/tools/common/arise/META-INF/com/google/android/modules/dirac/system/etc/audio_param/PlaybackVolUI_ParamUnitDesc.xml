@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc tab_name="Audio Playback" version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Volume type">
+			<Category name="Ring_Alarm" alias="Ring,Alarm"/>
+			<Category name="Notification"/>
+			<Category name="Others" alias="System,Music,Bluetooth_sco,Enforced_Audible,DTMF,TTS,Boot,VIBSPK,Accessibility"/>
+		</CategoryType>
+		<CategoryType name="Profile" wording="Device">
+			<Category name="RCV"/>
+			<Category name="HS" alias="Headset,3/4-pole Headset"/>
+			<Category name="SPK" alias="Speaker"/>
+			<Category name="HSSPK" alias="Headset+Speaker"/>
+			<Category name="HS5POLE" alias="5-pole Headset"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="digital_gain_visibility" type="int"/>
+		<Param name="headset_pga_visibility" type="int"/>
+		<Param name="speaker_pga_visibility" type="int"/>
+		<Param name="receiver_pga_visibility" type="int"/>
+	</ParamUnit>
+</ParamUnitDesc>

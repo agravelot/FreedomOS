@@ -1,22 +1,63 @@
 #!/system/bin/sh
-
+#
 # ARISE Sound Systems™
 #
+# "SwanSong™"
+#
 # arisesoundserver
+#
+# www.arisesound.com
 
 
-supolicy --live "allow mediaserver mediaserver_tmpfs:file { execute };"
-/system/bin/supolicy --live "allow mediaserver mediaserver_tmpfs:file { execute };"
-/su/bin/supolicy --live "allow mediaserver mediaserver_tmpfs:file { execute };"
-/system/xbin/supolicy --live "allow mediaserver mediaserver_tmpfs:file { execute };"
-/su/xbin/supolicy --live "allow mediaserver mediaserver_tmpfs:file { execute };"
+is_mounted() {
+  case `mount` in
+    *" $1 "*) echo 1;;
+    *) echo 0;;
+  esac;
+}
 
 
-supolicy --live "allow audioserver audioserver_tmpfs:file { read execute };"
-/system/bin/supolicy --live "allow audioserver audioserver_tmpfs:file { read execute };"
-/su/bin/supolicy --live "allow audioserver audioserver_tmpfs:file { read execute };"
-/system/xbin/supolicy --live "allow audioserver audioserver_tmpfs:file { read execute };"
-/su/xbin/supolicy --live "allow audioserver audioserver_tmpfs:file { read execute };"
+suimg=$(ls /cache/su.img /data/su.img 2>/dev/null)
+if [ "$suimg" ]; then
+  if [ "$(is_mounted /su)" == 0 ]; then
+    test ! -e /su && mkdir /su
+    mount -t ext4 -o rw,noatime $suimg /su
+    for i in 0 1 2 3 4 5 6 7; do
+      test "$(is_mounted /su)" == 1 && break
+      loop=/dev/block/loop$i
+      if [ ! -f "$loop" -o ! -b "$loop" ]; then
+        mknod $loop b 7 $i
+      fi
+      losetup $loop $suimg && mount -t ext4 -o loop $loop /su
+    done
+  fi
+fi
 
 
-exit 0
+if [ -d "/system/system" ]; then
+  SYS=/system/system
+else
+  SYS=/system
+fi
+
+
+BIN=$SYS/bin
+XBIN=$SYS/xbin
+
+
+if [ -e "/su/bin/supolicy" ]; then
+  SEPOLICY=/su/bin/supolicy
+elif [ -e "$BIN/supolicy" ]; then
+  SEPOLICY=$BIN/supolicy
+elif [ -e "$XBIN/supolicy" ]; then
+  SEPOLICY=$XBIN/supolicy
+fi
+
+
+$SEPOLICY --live "permissive audioserver mediaserver priv_app property_socket system_app"
+$SEPOLICY --live "allow audioserver audioserver_tmpfs file { open read write execute }"
+$SEPOLICY --live "allow mediaserver mediaserver_tmpfs file { open read write execute }"
+$SEPOLICY --live "allow priv_app init unix_stream_socket { connectto }"
+$SEPOLICY --live "allow system_app init unix_stream_socket { connectto }"
+$SEPOLICY --live "allow priv_app property_socket sock_file { getattr open read write execute }"
+$SEPOLICY --live "allow system_app property_socket sock_file { getattr open read write execute }"

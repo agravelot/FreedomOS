@@ -4,28 +4,18 @@
 # ARISE Sound Systems™
 #
 # post-boot script
+#
+# www.arisesound.com
 
 
-DTS=/system/bin/dts_hpx_service
 ISS=/system/bin/iss_daemon
 LOG=/data/local/post-boot.log
-START="Starting dts_hpx_service...\n"
+START="Starting iss_daemon...\n"
 END="post-boot complete.\n"
 
 
-if [ -e "$DTS" ]; then
-
-  (
-      $DTS
-  )&
-
-fi
-
-
-echo $START > $LOG
-
-
 (
+    echo $START > $LOG
     $ISS
 )&
 
@@ -34,6 +24,11 @@ sleep 2
 
 
 echo $END >> $LOG
+
+
+mount -o ro,remount /
+mount -o ro,remount /system
+mount -o ro,remount /data
 
 
 exit 0

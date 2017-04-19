@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AudioParam version="1.0">
+  <ParamTree>
+    <Param path="Common" param_id="0"/>
+  </ParamTree>
+  <ParamUnitPool>
+    <ParamUnit param_id="0">
+      <Param name="step_per_db" value="4"/>
+      <Param name="db_per_step" value="0.250000"/>
+      <Param name="volume_step" value="255.000000"/>
+      <Param name="mic_idx_range_max" value="45"/>
+      <Param name="mic_idx_range_min" value="0"/>
+      <Param name="play_digi_range_max" value="0"/>
+      <Param name="play_digi_range_min" value="-64"/>
+      <Param name="stf_idx_range_max" value="47"/>
+      <Param name="stf_idx_range_min" value="0"/>
+      <Param name="dec_play_hs_max" value="160"/>
+      <Param name="dec_play_hs_step_per_db" value="4"/>
+      <Param name="dec_play_spk_max" value="160"/>
+      <Param name="dec_play_spk_step_per_db" value="4"/>
+      <Param name="dec_play_digi_max" value="256"/>
+      <Param name="dec_play_digi_step_per_db" value="4"/>
+      <Param name="dec_rec_max" value="252"/>
+      <Param name="dec_rec_step_per_db" value="4"/>
+      <Param name="dec_stf_max" value="240"/>
+      <Param name="dec_stf_step_per_db" value="8"/>
+      <Param name="buffer_gain_level" value="20"/>
+      <Param name="buffer_gain_db" value="8,7,6,5,4,3,2,1,0,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-40"/>
+      <Param name="buffer_gain_idx" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,31"/>
+      <Param name="buffer_gain_string" value="8Db,7Db,6Db,5Db,4Db,3Db,2Db,1Db,0Db,-1Db,-2Db,-3Db,-4Db,-5Db,-6Db,-7Db,-8Db,-9Db,-10Db,-40Db"/>
+      <Param name="buffer_gain_prefer_max_idx" value="18"/>
+      <Param name="spk_gain_level" value="16"/>
+      <Param name="spk_gain_db" value="-64,0,4,5,6,7,8,9,10,11,12,13,14,15,16,17"/>
+      <Param name="spk_gain_idx" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"/>
+      <Param name="spk_gain_string" value="MUTE,0Db,4Db,5Db,6Db,7Db,8Db,9Db,10Db,11Db,12Db,13Db,14Db,15Db,16Db,17Db"/>
+      <Param name="spk_l_mixer_name" value="Lineout_PGAL_GAIN"/>
+      <Param name="spk_r_mixer_name" value="Lineout_PGAR_GAIN"/>
+      <Param name="spk_analog_type" value="3"/>
+      <Param name="swagc_gain_map" value="25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,16,15,14,13,12,11,16,15,14,13,12,11,16,15,14,13,12,11,16,15,14,13,12,11,10,9,8,7,6,5,4"/>
+      <Param name="ul_pga_gain_map" value="6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,12,12,12,12,12,12,18,18,18,18,18,18,24,24,24,24,24,24,30,30,30,30,30,30,30,30,30,30,30,30,30"/>
+      <Param name="ul_pga_gain_string" value="0Db,6Db,12Db,18Db,24Db,30Db"/>
+      <Param name="ul_gain_offset" value="2"/>
+      <Param name="ul_pga_gain_map_max" value="30"/>
+      <Param name="ul_hw_pga_max_idx" value="6"/>
+      <Param name="stf_gain_map" value="32767,29204,26027,23196,20674,18426,16422,14636,13044,11625,10361,9234,8230,7335,6537,5826,5193,4628,4125,3676,3276,2919,2602,2319,2066,1841,1641,1463,1304,1162,1035,923,822,733,653,582,519,462,412,367,327,291,260,231,206,183,163,145"/>
+      <Param name="hp_impedance_enable" value="1"/>
+      <Param name="hp_impedance_default_idx" value="1"/>
+      <Param name="hp_impedance_threshold_list" value="24,48,96,192,512"/>
+      <Param name="hp_impedance_compensate_list" value="3,0,-3,-6,-9"/>
+    </ParamUnit>
+  </ParamUnitPool>
+</AudioParam>

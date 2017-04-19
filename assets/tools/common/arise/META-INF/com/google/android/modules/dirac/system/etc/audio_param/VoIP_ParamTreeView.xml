@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamTreeView version="1.0">
+	<TreeRoot name="TX_DRC+DG">
+		<Sheet/>
+		<Feature name="TX DRC">
+			<FieldList>
+				<Field audio_type="VoIP" param="voip_mode_para" name="UL Limiter TH"/>
+				<Field audio_type="Speech" param="speech_mode_para" name="UL IIR cut off frequency"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="IIR switch"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="75Hz high-pass IIR"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="comfort noise"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="UL expander rate"/>
+			</FieldList>
+			<CategoryPathList>
+				<Category path=""/>
+			</CategoryPathList>
+		</Feature>
+		<Feature name="TX Digital Gain">
+			<FieldList>
+				<Field audio_type="VoIP" param="voip_mode_para" name="UL Digital Gain"/>
+			</FieldList>
+			<CategoryPathList>
+				<Category path=""/>
+			</CategoryPathList>
+		</Feature>
+	</TreeRoot>
+	<TreeRoot name="NREC">
+		<Sheet/>
+		<Feature name="MagiAEC" switch_audio_type="VoIP" switch_param="voip_mode_para" switch_field="Switch">
+			<FieldList>
+				<Field audio_type="VoIP" param="voip_mode_para" name="AEC"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="Switch"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="device Mode"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="Low-freq echo handling"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="echo path change handler"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="ES switch"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="residual echo weighting for linear part"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="residual echo weighting for non-linear part"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="ES"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="First Echo Suppression control"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="AES switch"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="AES"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="Comfort noise generator"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="Minimum comfort noise value"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="NLP Suppression behavior control"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="NLP"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="BT Delay Control"/>
+			</FieldList>
+			<CategoryPathList>
+				<Category path=""/>
+			</CategoryPathList>
+		</Feature>
+		<Feature name="MagiNR(TX)" switch_audio_type="VoIP" switch_param="voip_mode_para" switch_field="TX NR Switch">
+			<FieldList>
+				<Field audio_type="VoIP" param="voip_mode_para" name="TX NR Switch"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="NR suppression strength"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="ASLR mode"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="UL mute 1sec"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="Ambient noise calibration"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="UL expander mode"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="UL expander suppression gain"/>
+			</FieldList>
+			<CategoryPathList>
+				<Category path=""/>
+			</CategoryPathList>
+		</Feature>
+		<Feature name="MagiNR(dual)" switch_audio_type="VoIP" switch_param="voip_mode_para" switch_field="MagiNRDual switch">
+			<FieldList>
+				<Field audio_type="VoIP" param="voip_mode_para" name="MagiNRDual switch"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="High band (>1250Hz) speech quality protection"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="MagiNRDual-NS mode"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="1-mic NS + expander capability"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="MagiNRDual-NC switch"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="1-mic NS switch"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="Initial convergence improvement"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="BGNT with NE improvement"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="Lower bound of MagiNRDual-NS Gain (dB)"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="Less MagiNRDual-NS level"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="Non-stationary noise weight"/>
+				<Field audio_type="VoIP" param="voip_mode_para" name="Stationary noise weight"/>
+			</FieldList>
+			<CategoryPathList>
+				<Category path="Handset"/>
+			</CategoryPathList>
+		</Feature>
+	</TreeRoot>
+</ParamTreeView>

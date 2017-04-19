@@ -34,6 +34,7 @@ ROM_LINK=http://download.h2os.com/oneplus3/PublicTest/$ROM_NAME.zip
 ROM_MD5=72d436ea08eb823f078628e55a2002eb
 
 # OpenGapps
+GAPPS_BUILD=true
 GAPPS_ANDROID=7.1
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=aroma
@@ -202,6 +203,7 @@ common/arise4magisk
 common/clean.sh
 common/fonts
 common/fix_passwd.sh
+common/google_assistant.sh
 common/google_dns.sh
 common/kernel
 common/log_folder.sh

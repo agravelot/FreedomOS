@@ -19,12 +19,12 @@
 function build_arise() {
 
   remove_list="
-  custom/Esira.apk
-  modules/dolby
-  modules/smeejaytee
-  modules/am3d
-  modules/v4a_xhifi
-  modules/ddplus
+  am3d
+  atmos
+  ddplus
+  dirac
+  smeejaytee
+  v4a_xhifi
   "
 
   echo ">> Building ARISE" | tee -a ${build_log}
@@ -35,7 +35,7 @@ function build_arise() {
   sed -i 's/nui_print" >/nui_print" >>/g' ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary >> ${build_log} 2>&1
 
   for i in $remove_list; do
-    rm -rf ${tmp_root}/tools/arise/META-INF/com/google/android/custom/$i
+    rm -rf ${tmp_root}/tools/arise/META-INF/com/google/android/modules/$i
   done
 
   echo "rm -rf /data/data/dk.icesound.icepower" >> ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary

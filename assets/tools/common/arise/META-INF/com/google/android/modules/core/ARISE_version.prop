@@ -1,7 +1,7 @@
 
 # ARISE Sound Systems™
 #
-# Deuteronomy™ 3.09 Modular Installer 20170319
+# Deuteronomy™ 3.31 Modular Installer 20170410
 #
 # "SwanSong™"
 #
@@ -12,6 +12,146 @@
 
 
 Changelog:
+
+
+
+## Deuteronomy™ 3.31 "SwanSong™" -
+
+
+ !! New, updated arise_customize.prop !!
+
+ !! Use and make changes to the new one !!
+
+
+- Added more team member wishlists in /getting_started/our_wishlists.
+
+- Removed Ape Music, Asus Music, and permissive/enforcing SELinux Mode modules.
+
+- Various cleanup and tidyness.
+
+##
+
+
+
+## Deuteronomy™ 3.29 "SwanSong™" -
+
+
+ !! New, updated arise_customize.prop !!
+
+ !! Use and make changes to the new one !!
+
+
+- Added dap_r6.5 Dolby Atmos™ installation/uninstallation modules graciously shared by XDA's @worstenbrood.
+
+- New arisesoundserver script to fully support Enforcing SELinux Mode.
+
+- Added /getting_started/our_wishlists directory to provide ARISE™ team members' personal arise_customize.prop's and details.
+
+- Removed Dolby Vision and dts_hpx_service.
+
+- Various corrections and enhancements.
+
+##
+
+
+
+## Deuteronomy™ 3.21 "SwanSong™" -
+
+- Added DolbyVisionService to Core installation module.
+
+- Changed placement of Dirac™ in audio_effects when installing the Dirac™ module.
+
+- Various changes and corrections to scripts.
+
+##
+
+
+
+## Deuteronomy™ 3.20-1 "SwanSong™" -
+
+
+ !! New, updated arise_customize.prop !!
+
+ !! Use and make changes to the new one !!
+
+
+- Added Dirac™ Power Sound installation/uninstallation modules.
+
+- Experimental Qualcomm™ device detection.
+
+- Various script and content changes.
+
+##
+
+
+
+## Deuteronomy™ 3.20 "SwanSong™" -
+
+
+ !! New, updated arise_customize.prop !!
+
+ !! Use and make changes to the new one !!
+
+
+- Added Exynos™ Samsung™ audio effects configuration to automatically install to Non-Qualcomm™ Samsung™ devices during the Core module installation.
+
+##
+
+
+
+## Deuteronomy™ 3.19 "SwanSong™" -
+
+
+ !! New, updated arise_customize.prop !!
+
+ !! Use and make changes to the new one !!
+
+
+- Added Samsung™ Qualcomm™ audio effects configuration based on Galaxy S7/Edge/Plus automatically installed to all Samsung™ devices. Non-Qualcomm™ Samsung™ audio effects configuration to come if Qualcomm™ proves successful.
+
+- Added SHAT (seriously heavy and trebly) ICEsound™ preset.
+
+- Added optional Asus™ Music player installation/uninstallation modules.
+
+- Minor changes to scripts, Android O Qualcomm™ audio effects configuration, arisesound_setprop, and arise_customize.prop.
+
+##
+
+
+
+## Deuteronomy™ 3.18 "SwanSong™" -
+
+
+ !! New, updated arise_customize.prop !!
+
+ !! Use and make changes to the new one !!
+
+
+- Slight changes to Android O audio effects configuration, now default for Qualcomm™ devices.
+
+- Updated Sony™ apps.
+
+- Removed Qualcomm™ Bluetooth™ codecs.
+
+- Various script corrections.
+
+##
+
+
+
+## Deuteronomy™ 3.13 "SwanSong™" -
+
+
+ !! New, updated arise_customize.prop !!
+
+ !! Use and make changes to the new one !!
+
+
+- Added Android O software and hardware audio libraries.
+
+- New Android O Qualcomm selectable audio effects configuration using Android O /soundfx libraries.
+
+##
 
 
 

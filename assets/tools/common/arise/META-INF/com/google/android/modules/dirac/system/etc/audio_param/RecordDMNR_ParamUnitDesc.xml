@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Application">
+			<Category name="ASR" wording="ASR improvement" />
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="dmnr_para" type="ushort_array"/>
+	</ParamUnit>
+</ParamUnitDesc>
