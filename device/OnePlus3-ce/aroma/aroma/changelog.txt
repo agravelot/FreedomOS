@@ -1,3 +1,34 @@
+2.7-CE
+  UPDATE: Magisk manager
+  FIX: Comeback to old Google Assistant activation
+  FIX: Missing WebViewGoogle when exclude is selected
+  UPDATE: ARISE Deuteromony 3.31 SwanSong
+  UPDATE: Sony Music Player (Cleaning app cache is recommanded)
+  UPDATE: OxygenOS Open Beta 14/5
+  Bluetooth improvements
+  Car bluetooth fixes
+  Battery usage optimizations
+  Fixed some auto connection issues
+  GPS optimizations
+  Improved accuracy, now less likely to drop GPS connection
+  Night Mode optimizations
+  Update default sunrise time (8AM -> 6AM)
+  Fixed issue of auto night mode not turning off
+  Fixed issue of auto night mode turning on, but doesn’t stay on
+  Fixed issue of night mode causing issues with sRGB
+  Launcher optimizations
+  Fixed issue of system reboot when setting wallpaper
+  Fixed issue where setting of wallpaper doesn’t work
+  Prevent occasional Launcher crash
+  Removed extraneous wallpaper entry
+  Clock widget improvements
+  Fixed bug where clock widget shows smaller after exit of a full-screen app
+  Dark theme improvements
+  Translation improvements
+  Updated community app to 1.8
+  Other general bug fixes and optimizations
+  And much more, check Gitlab...
+
 2.6-CE
   UPDATE: OxygenOS OpenBeta 12
   - All new launcher, added support for Shortcuts on 7.1.1
