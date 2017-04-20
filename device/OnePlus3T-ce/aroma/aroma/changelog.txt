@@ -1,4 +1,5 @@
 2.7-CE
+  UPDATE: OpenGapps arm64 20170420
   UPDATE: Magisk manager
   FIX: Comeback to old Google Assistant activation
   FIX: Missing WebViewGoogle when exclude is selected
