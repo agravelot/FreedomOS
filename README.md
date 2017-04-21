@@ -5,6 +5,7 @@
 ## Note for pull requests and issues
 
 I refuse all pull requests and issues coming from Github, please use [Gitlab](https://gitlab.com/Nevax/FreedomOS).
+All push requests must be done in develop branch, never in the master branch.
 
 ## Required
 - Linux x64 (others architectures are not currently supported).
