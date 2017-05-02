@@ -40,7 +40,7 @@ GAPPS_TYPE=aroma
 GAPPS_DATE=20170502
 GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
 GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
-GAPPS_MD5=497450219c777ac6df7c202e33c9ee79
+GAPPS_MD5=6cfb0a43c3f5129b3e57e0fdb4e70130
 
 # Set Android version for selinux build script
 ANDROID_VERSION=7
