@@ -1,3 +1,14 @@
+2.8-CE
+  UPDATE: New dialer and incoming call interface
+  UPDATE: UI optimizations for Messages, Settings and Contacts
+  UPDATE: New action bar for Messages and Settings
+  UPDATE: Optimized high power usage notifications
+  UPDATE: Bluetooth optimizations
+  UPDATE: Night mode optimizations
+  FIX: Bug fixes
+  UPDATE: OpenGapps 20170502
+  NOTE: This update will break safetynet.
+
 2.7-CE
   UPDATE: OpenGapps arm64 20170420
   UPDATE: Magisk manager
