@@ -27,17 +27,17 @@ DEVICE=OnePlus3
 ASSERT="OnePlus 3"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus3Oxygen_16_OTA_022_all_1704191252_c7f2b642cd014157
+ROM_NAME=OnePlus3Oxygen_16_OTA_023_all_1704261904_30e91791e5b046a3
 ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=09148084a7e5b3e46e0386c25347dc81
+ROM_MD5=d84ebb7f2e424bdbfdf9cb8f84f61044
 
 # OpenGapps
 GAPPS_BUILD=true
 GAPPS_ANDROID=7.1
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=aroma
-GAPPS_DATE=20170420
+GAPPS_DATE=20170502
 GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
 GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
 GAPPS_MD5=497450219c777ac6df7c202e33c9ee79
