@@ -1,0 +1,25 @@
+
+# ARISE Sound Systems™
+#
+# "SwanSong™"
+#
+# ICEsound™ Configuration module
+#
+# www.arisesound.com
+
+
+
+* The configuration file for ICEsound is currently available in six different versions.
+
+
+* Not all six will always be compatible with a particular device.
+
+
+* This is a way to experiment with a different configuration if ICEsound™ is preventing other signal processing, like ViPER4Arise™ for example.
+
+
+* ICEconfig 1 is the default configuration.
+
+* ICEconfigs 2, 3, 4, 5, and 6 are alternative configurations using different settings to hopefully provide at least one satisfactory configuration.
+
+* Final alternative: using no ICEsound™ configuration file at all.

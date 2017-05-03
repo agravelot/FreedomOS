@@ -1,0 +1,108 @@
+
+# ARISE Sound Systems™
+#
+# Magnum Opus
+#
+# Getting Started
+#
+# www.arisesound.com
+
+
+
+* Welcome to the ARISE™ Sound Systems™ family!
+
+
+
+* We'll get you started right away, but let's get you familiar with everything this archive has to offer before you flash it in recovery.
+
+
+
+* The Modular Installer zip allows our sound system to be installed on a modular level, similar to a "plug-and-play" system, where multiple components can be installed and uninstalled to construct a desired sound system at any time, eliminating any need to start over from scratch.
+
+
+* This modular method is achieved using /sdcard/arise_customize.prop, when edited by the user with the appropriate values, to instruct the installation script to install/uninstall any of the available modules.
+
+
+* This file, often referred to as "wishlist" or "system", appears in a few places in the archive for easy access and reference, and should be extracted and placed directly in /sdcard and then edited to include the necessary values to build the desired system.
+
+
+* If this archive is flashed before the user has completed this step, the installation script will abort with an Error 1 along with the reason for the error and the necessary action(s) to take.
+
+
+* If /sdcard/arise_customize.prop is not found, the abort operation will copy this file to /sdcard so that all that is required is preparation of this file by the user to include the values for the desired installation.
+
+
+* Below, is a list of the available modules, with which hundreds of different sound system combinations are possible, as well as the amount of /system space they consume:
+
+
+  * I = Install (can be installed)
+  * U = Uninstall (can be uninstalled)
+  * D = Delete (can be deleted)
+  * M = Multiple (select one from multiple options)
+  * ! = Required (required, if not already installed)
+  
+
+  - Core System module | (40MB - 175MB) | (I, !)
+
+
+  - ViPER4Arise™ 2.5.0.5 module | (4.5MB) | (I, U)
+
+
+  - ViPER4Arise™ 2.3.4.0 module | (6.5MB) | (I, U)
+
+
+  - ViPER4Arise™ Profiles module | (0KB /system) | (I)
+
+
+  - AM3D ZIRENE® module | (3.5MB) | (I, U)
+
+
+  - Arkamys™ Audio module | (170KB) | (I, U)
+
+
+  - Dolby Digital Plus™ module | (15.3MB) | (I, U)
+
+
+  - Sony™ Xperia Music Suite module | (70MB) | (I, U)
+
+
+  - ICEsound™ Deluxe module| (750KB) | (I, U)
+
+  then
+
+   - ICEsound™ Configuration module | (D, M)
+
+   - ICEsound™ Preset module | (D, M)
+
+
+  - Esira™ Media Player module | (3.6MB) | (I, U)
+
+
+  - ViPER4Android XHiFi module | (700KB) | (I, U)
+
+
+  - Dirac™ module | (4.2MB) | (I, U)
+
+
+  - MusicFX module | (200KB) | (I, U)
+
+
+  - deep_buffer audio_policy removal/restore modules
+
+
+  - SDCard permissions repair by osm0sis
+
+
+* Detailed information on the specific modules can be found in /META-INF/com/google/android/getting_started/the_modules.
+
+
+* Detailed instructions on preparing /sdcard/arise_customize.prop can be found within that same file.
+
+
+* Once ready, simply confirm the amount of /system space currently available on the device, boot to recovery, install the Modular Installer archive, and reboot.
+
+
+* We at ARISE™ want to personally thank you for your interest in our project and urge you to seek us and our awesome community @XDA Developers for any help, assistance, information, or just to hang out!
+
+
+:good:

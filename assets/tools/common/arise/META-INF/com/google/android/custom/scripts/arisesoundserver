@@ -2,12 +2,11 @@
 #
 # ARISE Sound Systems™
 #
-# "SwanSong™"
+# Magnum Opus
 #
 # arisesoundserver
 #
 # www.arisesound.com
-
 
 is_mounted() {
   case `mount` in
@@ -16,48 +15,70 @@ is_mounted() {
   esac;
 }
 
+if [ -d "/system_root" ]; then
+  SYS=/system_root/system
+  ROOT=/system_root
+else
+  SYS=/system
+  ROOT=""
+fi
 
-suimg=$(ls /cache/su.img /data/su.img 2>/dev/null)
+suimg=$(ls $ROOT/cache/su.img $ROOT/data/su.img 2>/dev/null)
 if [ "$suimg" ]; then
-  if [ "$(is_mounted /su)" == 0 ]; then
-    test ! -e /su && mkdir /su
-    mount -t ext4 -o rw,noatime $suimg /su
+  if [ "$(is_mounted $ROOT/su)" == 0 ]; then
+    test ! -e $ROOT/su && mkdir $ROOT/su
+    mount -t ext4 -o rw,noatime $suimg $ROOT/su
     for i in 0 1 2 3 4 5 6 7; do
-      test "$(is_mounted /su)" == 1 && break
-      loop=/dev/block/loop$i
+      test "$(is_mounted $ROOT/su)" == 1 && break
+      loop=$ROOT/dev/block/loop$i
       if [ ! -f "$loop" -o ! -b "$loop" ]; then
         mknod $loop b 7 $i
       fi
-      losetup $loop $suimg && mount -t ext4 -o loop $loop /su
+      losetup $loop $suimg && mount -t ext4 -o loop $loop $ROOT/su
     done
   fi
 fi
 
-
-if [ -d "/system/system" ]; then
-  SYS=/system/system
-else
-  SYS=/system
-fi
-
-
 BIN=$SYS/bin
 XBIN=$SYS/xbin
+SBIN=$ROOT/su/bin
+SXBIN=$ROOT/su/xbin
+SU=$ROOT/su/bin/su
+XHIFI=$SYS/lib/soundfx/deuteronomy/libv4a_xhifi_ics.so
+API=$(cat $SYS/build.prop | grep "ro.build.version.sdk=" | dd bs=1 skip=21 count=2)
 
+if [ -e "$XHIFI" ] && [ "$API" -ge "21" ]; then
 
-if [ -e "/su/bin/supolicy" ]; then
-  SEPOLICY=/su/bin/supolicy
+  if [ -e "$SU" ] && [ -d "$XBIN" ]; then
+
+    ln -sf $SU $XBIN/su
+
+    if [ -e "$SBIN/busybox" ]; then
+
+      ln -sf $SBIN/busybox $XBIN/busybox
+
+    elif [ -e "$SXBIN/busybox" ]; then
+
+      ln -sf $SXBIN/busybox $XBIN/busybox
+
+    fi
+
+  fi
+
+fi
+
+if [ -e "$ROOT/su/bin/supolicy" ]; then
+  SEPOLICY=$ROOT/su/bin/supolicy
 elif [ -e "$BIN/supolicy" ]; then
   SEPOLICY=$BIN/supolicy
 elif [ -e "$XBIN/supolicy" ]; then
   SEPOLICY=$XBIN/supolicy
 fi
 
-
-$SEPOLICY --live "permissive audioserver mediaserver priv_app property_socket system_app"
-$SEPOLICY --live "allow audioserver audioserver_tmpfs file { open read write execute }"
-$SEPOLICY --live "allow mediaserver mediaserver_tmpfs file { open read write execute }"
-$SEPOLICY --live "allow priv_app init unix_stream_socket { connectto }"
-$SEPOLICY --live "allow system_app init unix_stream_socket { connectto }"
-$SEPOLICY --live "allow priv_app property_socket sock_file { getattr open read write execute }"
-$SEPOLICY --live "allow system_app property_socket sock_file { getattr open read write execute }"
+$SEPOLICY --live "permissive audio_prop audioserver mediaserver priv_app service system_app"
+$SEPOLICY --live "allow audioserver audioserver_tmpfs file { execute }"
+$SEPOLICY --live "allow mediaserver mediaserver_tmpfs file { execute }"
+$SEPOLICY --live "allow audio_prop system_file file { execmod }"
+$SEPOLICY --live "allow priv_app system_file file { execmod }"
+$SEPOLICY --live "allow service system_file file { execmod }"
+$SEPOLICY --live "allow system_app system_file file { execmod }"

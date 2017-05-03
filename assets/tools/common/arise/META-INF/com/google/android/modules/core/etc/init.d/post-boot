@@ -3,32 +3,39 @@
 #
 # ARISE Sound Systems™
 #
+# Magnum Opus
+#
 # post-boot script
 #
 # www.arisesound.com
 
+if [ -d "/system_root" ]; then
+  SYS=/system_root/system
+  ROOT=/system_root 
+else
+  SYS=/system
+  ROOT=""
+fi
 
-ISS=/system/bin/iss_daemon
-LOG=/data/local/post-boot.log
+ISS=$SYS/bin/iss_daemon
+LOG=$ROOT/data/local/post-boot.log
 START="Starting iss_daemon...\n"
 END="post-boot complete.\n"
-
 
 (
     echo $START > $LOG
     $ISS
 )&
 
-
 sleep 2
-
 
 echo $END >> $LOG
 
-
-mount -o ro,remount /
-mount -o ro,remount /system
-mount -o ro,remount /data
-
+if [ $ROOT == "" ]; then
+	mount -o ro,remount /
+else
+	mount -o ro,remount $ROOT
+fi
+mount -o ro,remount $SYS
 
 exit 0

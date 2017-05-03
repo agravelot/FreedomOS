@@ -1,0 +1,395 @@
+﻿A.R.I.S.E. Swansong 3.31 Troubleshooting Guide
+
+
+ 
+In this guide we show you what you need to check to see why something isn’t working properly.  These include things like Viper not processing or Arkamys constantly crashing.  Ensure that you’ve flashed latest SuperSU (it doesn’t matter if system or systemless version) and that your SELinux is set to Permissive.
+
+Arkamys or ICESERVICE force crashing:
+
+When you first boot up Android and keep getting Arkamys or ICESERVICE crashing errors, take these steps to correct it:
+
+1)  Go into Settings/Applications and use the top right 3 dot menu to “Show system”
+2)  Scroll down and go into ArkamysAudio app.  Hit Storage, then the “Clear Data” button.
+3)  Scroll down further to ICEsound Service.  Again, hit Storage, then the “Clear Data” button.
+4)  Reboot.
+
+If this doesn’t fix your issue, and then only as a last resort,use Titanium Backup to freeze the app.  If you don’t have the full version of TiBu, you can use this application:  https://play.google.com/store/apps/details?id=com.vramsngrai.freezeapp&hl=en
+
+Driver I/O Error
+
+If you get a Driver I/O error, go to system/vendor/etc and rename audio_effects.conf to audio_effects.conf.bak (do NOT delete) and restart your device. When back in Android, open ViPER and install the drivers as prompted.  Reboot and profit.
+
+Streaming Media (Audio or Video) doesn’t process
+
+If ViPER doesn’t process for streaming services (Spotify/GPM/SoundCloud etc), edit your arise_customize.prop to read del.deep_buffer=true.  Place this file in the root of your internal sdcard prior to flashing Swansong and then flash it.  If you’ve already flashed Swansong, it’s perfectly fine to dirty flash the same version of Swansongt over itself with this fix.  Boot into Android and check for proper streaming functionality.
+
+
+ViPER is processing on speaker output but not on headphones/earbuds
+(Credit go to Nexus 6P Alpha Tester Yat Yat)
+
+Use top right 3-dot menu to exit from ViPER then remove the app from your recents list. Open ViPER back up. Headphones should start processing once again.
+
+ViPER doesn’t show any profiles
+
+
+Some ROMs don’t set/link the default ViPER folder in the right place.  Always check all of these locations before reporting such an issue:
+
+* sdcard/ViPER4Android (Default Location)
+* Data/media/0/ViPER4Android (Most Common)
+* Data/media/legacy/ViPER4Android
+* Data/media/emulated/legacy/ViPER4Android
+
+
+If you find the profiles in any one of these locations, simply copy them to the default location (sdcard/ViPER4Android) and re-launch ViPER4ARISE FX.  You should be able to see the profiles now.
+
+Add-Ons and Options: How Do I Install Them?! - Non-Aroma installation only!
+
+
+A.R.I.S.E. Swansong 3.31 has many add-ons that you can try to enhance your listening experience. To make add-on installation easier and to have your preferences saved through ROM updates, we’ve included a new file in the add-on zip.  It’s called arise_customize.prop and it’s found in the root of the installer.  Extract it and put it at the root of your internal sdcard.
+
+
+Open the .prop file with a text editor.   Edit each entry that want installed with true after the equals sign (no spaces) and if you want an ICEconfig, select the number afterwards. 
+ 
+Do not put false for things you don’t want installed; just leave them blank.  Once the .prop file is fully edited, save it and installer in recovery normally. All the required files will be automatically installed. 
+
+Eg, If i want to install Dolby Digital Plus, set install.ddplus=true in the arise_addon.prop, place the .prop file on the root of your internal sdcard, and then flash the add-ons zip.
+
+Here’s a list of the add-ons and options you can choose from:
+
+* ViPER4ARISE FX v2.5.0.5 - The newer version of V4A.  Use this version if you intend to use @Joe0Blogg’s 3D stereo IRSes as they only work on this version - install.v4a_2.5.0.5=true
+* ViPER4ARISE FX v2.3.4.0-  The “classic” version of V4A with its coveted superior quality driver - install.v4a_2.3.4.0=true
+* A collection of A.R.I.S.E. Team members’ profiles with their DCCs and IRSes - install.v4a_profiles=true
+
+
+
+* Dolby Digital Plus - Dolby’s equalizer/surround sound application with increased Bluetooth functionality than Atmos - install.ddplus=true
+* Dolby Atmos - ported by worstenbrood @XDA Developers is from Lenovo A7000 official firmware and will install on JellyBean, KitKat, and Lollipop operating systems.
+* Zirene AM3D - Zirene’s equalizer/surround sound application.  Not compatible with every ROM/Android version) - install.am3d=true
+* Arkamys - The Arkamys firmware found in mobiles and automobiles.  It does NOT have a GUI interface - install.arkamys=true
+* Sony Music Suite - A set of Sony GUI apps that include a music player and TrackID which is similiar to Google Sound Search/Soundhound - install.sony=true
+* ViPER4ARISE XHIFI - Legacy equalizer/effects app created by viper520 - install.xhifi=true
+* Install ICEsound - A service made by SonicMaster.  It does NOT have a GUI interface - install.ICEsound=true
+* Esira music player - An alpha level build of a music player made by ARISE Team member @Roi007leaf - install.esira=true
+* Smeejaytee Toolbox v3.0 - A collection of carefully selected and choiced libraries, binaries, and configuration files - install.ToolBox=true
+* MusicFX- Install the default Android MusicFX GUI application.  Install but disable or freeze this application to help the Sony Music Suite function -  install.musicfx=true
+* Dirac Power Sound - Dirac Power Sound combines several different technologies that work together to dramatically enhance the audio performance of small speakers. By addressing the fundamental limitations of small speakers, Dirac Power Sound brings out their full potential, resulting in louder, higher-quality sound that rivals that of even much larger speakers - install.dirac=true 
+* DTSClientControllerService - The DTSClientControllerService service/debug apk is found in Vivo's earliest HiFi™ systems used in their XPlay 3S device to perform various tasks - install.dts-client=true
+* Deep Buffer Removal - removes all buffers from streaming media applications  Use as a LAST resort to get V4A FX to process with streaming apps (music and video.)  If you’ve installed ICE.  Try ALL configs first
+* Restore Deep Buffer - If you’ve previously removed your buffers with deep buffer remover and want to restore default settings, use this setting - restore.deep_buffer=true
+* Permissive SELinux on boot - set.selinux.permissive=true
+* Set SELinux to Enforcing on boot - set.selinux.enforcing=true
+* Repair sdcard permissions -  Use this script if you can’t access or modify V4A profiles - repair.sdcard.permissions=true
+* ICEsound effect installation - This is another non-GUI effect created by Asus.  If you choose to install, you need to pick a config and preset as well -  install.ICEsound=true
+* To set which ICEconfig to install when flashing - use.ICEconfig=x  (x is the desired ICEconfig number.  Set it to 0 to delete your current config.)  ICEConfig 2 is the most universal config as it is the only one with session0 true.  All other configs have this set to false and may stop V4A FX from processing, but sound better if it works on your device.
+* Custom ICEsound presets created by A.R.I.S.E. Team member @Secone00 use.ICEsound.preset=xx  (xx=number corresponding to list below or none)
+
+BATHSALTS    =01   DEEPBASS     =02   HOLYSH*T     =03  KRAZY        =04
+            MOVIE        =05  MUSIC2       =06  OUTDOORS     =07  PURE         =08
+            PURESH*T     =09  SHAT =10  WIDECLARITY     =11  Default    =12   None         =None
+
+@Secone00 describes the presets below:
+
+Default- default preset file that contains all presets for the original device. Will load the default music profile 
+Pure- Firmware specific preset that came from the Zenfone 3 Deluxe Japan edition 
+Movie- came from original default presets file, modified to have its features enabled, a basic profile intended for movies 
+Music2- alternate music preset that came from the original default preset file. Overall not too different from default music preset 
+Outdoors- also came from the default preset file. Overall the same sound as other music profiles, except it makes things louder to account for any noise outside 
+Wide Clarity- one of the first preset attempts. Focuses on widening sound and enhancing clarity, no focus on bass 
+DeepBass- first attempt at a bass preset, before much was learned about the presets, therefore it's lacking in as much bass as was desired 
+Krazy- Went crazy with the effects on this one, mostly an experimental preset, makes it easy to tell if ice is working by the various features enabled and set to weird settings 
+HolyShit- One of the first “major” presets, focuses heavily on bass and not much else, still has slight widening effect 
+PureShit- The goal was to keep the heavy bass in HolyShit, but add some more clarity and enhance the treble overall as well 
+Bath Salts- this preset focuses on dynamics as well as further pushing for a perfect balance of bass and treble
+SHAT- his newest preset is Seriously Heavy And Trebly or SHAT for short.  It was made with earbuds and aims to complement the heavy bass of Dirac
+
+Qualcomm Audio Effects Configuration Start
+
+Qualcomm™ devices have the ability to select from four audio effects configurations using Android O (default), Asus, Huawei, Sony, or Stock /soundfx libraries
+
+ICEsound ICEpower Deluxe or Ultra
+ICEsound™, specifically ICEsoundService, is part of the SonicMaster ™ 3.0 audio system in the latest firmware of Asus™ premium devices.
+
+
+
+ICEsound Deluxe- install.deluxe.ICEsound=true
+ICEsound Ultra-  install.ultra.ICEsound=true
+Under all that you have the option to remove any module you have previously installed.
+
+ViPER4Android XHi-Fi keeps giving me BusyBox Error?
+
+The script calls for BusyBox to be installed in /system/xbin.  If your BusyBox is installed in su/xbin, uninstall it and choose /system/xbin.  If your BusyBox app doesn’t let you choose a location, you can use this BusyBox which installs to /system/xbin:  https://play.google.com/store/apps/details?id=ru.meefik.busybox&hl=en
+
+Reboot and you should be fixed.
+
+ViPER4Android XHi-Fi launches with “Root permissionn (su binary) required.” box
+
+Create a blank (0 byte) file named su in /system/xbin.  Give it 0777 permissions and reboot.
+
+ XHiFi_su_binary_error.jpg   su perms.jpg 
+
+ICEsound configs were introduced in 2.4.  What are they and how do I use them?
+
+If you choose to install ICEsound with A.R.I.S.E 2.4 and ViPER4Arise FX stops processing, there’s some different configuration files to get it processing if it doesn’t work for you out of the box.  Take these steps:
+
+1) The base ICEsound installation uses config 1.  If you're not processing...on first boot, follow the delete ICE and Ark data steps from above.
+2) If you’re still not processing after reboot, go into the arise_addon.prop and change use.ICEconfig=2.  Delete both datas again and reflash the add-ons zip.
+3) Repeat step 2 for Configs 3, 4, and 5 as necessary.  You can also try to set it to 0 to not use any ICEconfig.
+4) If all else fails, you will need to manually edit each setting one by one, deleting data and rebooting each time (we know it's tedious but this is troubleshooting.)  The order should be:
+
+
+a) Change session0 to true
+b) Change fasttrack to false
+c) Change a2dp to true
+d) Change usbaudio to true
+Hopefully, it’s working now!
+
+Google Play Music (GPM) reports “Music temporarily unavailable.  No space available.”
+
+1)  Close GPM and remove it from your recents.
+2)  Go into Settings/Apps and go into GPM’s Storage.  Click “Clear Data.”
+3)  Restart GPM and go into the app’s settings.  Click Equalizer to verify that Viper4ARISE is your default Equalizer.  
+4)  Optional but recommended, change Quality on mobile network to High.  Profit!
+ Screenshot_20170118-005636.png  Screenshot_20170118-005750.png  Screenshot_20170118-015120.png 
+
+
+
+
+
+
+
+
+
+Poweramp isn’t processing in ViPER
+
+You have to go into Poweramp Settings/Audio/Advanced Tweaks and uncheck the box next to Direct Volume Control.
+ Screenshot_20170123-083207.png 
+
+Everythings is working, but Spotify isn’t processing
+
+Use an ICEconfig that has session0 true (ICEconfig 2) or manually edit your current ICEconfig to set it to this value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Driver fails to install
+
+1)  Ensure you're fully rooted with SuperSU.  BusyBox needs to be installed to system/xbin.  Avoid using CM's superuser or phh's SU. 
+2)  Go into Settings\Apps and delete Viper4ARISE's data
+3)  Use a file explorer and go into system\lib\soundfx\deuteronomy and delete libv4a_fx_ics.so and reboot
+4)  Once back in Android, open up V4A FX.  It will ask for storage permissions again...grant it.  It will ask to install drivers.  Do so and reboot.  Profit.
+
+
+ Driver fails to install.jpg 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Arise Compatibility Module For Magisk FAQ
+
+
+Where to Get it: https://www.androidfilehost.com/?w=files&flid=153681
+
+
+
+Is this a completely systemless version of magisk?
+No. All this does is move the arise scripts to su.d (if needed) and allow them to run with magisk (sets sepolicy and build.props). It just allows arise to work with magisk. You still need to flash regular arise installer first (see Installation for more details)
+
+
+Will this magisk module trip safetynet?
+With the latest version, no. The problem involved the arisesound_services script mounting system as rw. 
+During the magisk module installation, a line remounting system as ro was added towards the end of the arisesound_services script since some parts of the script require rw access to system
+How the Module Works (Helpful for Your Own Troubleshooting Purposes):
+Arise Magisk Compatibility Module (for all 3.x versions of arise):
+   * During the magisk module installation, it moves all scripts installed by arise into /system/su.d
+   * Arise 3.x installs all scripts to /system/etc/init.d except the arisesound_services script (which I like to refer to as the master script) which is installed to system/su.d
+   * The reason for this moving is that some kernels have init.d enabled and so will run all of the scripts except the master script. With the older magisk modules, these scripts would end up getting run twice and this would cause problems.
+   * After moving the scripts, any selinux modifying scripts are deleted as they are not needed (module does this itself since magisk works differently from supersu in this aspect).
+   * The exception here is the permissive script which is kept as a placeholder to tell the module if it should install the enforcing sepolicy setting post-fs-data or permissive one
+   * Arisesound_services (the master script), is modified so that all of the variables in it for the script paths point to su.d (if applicable). The module itself is then only a post-fs-data script that sets the sepolicy (this is dependent on selinux modifying scripts found during the installation)
+
+
+
+
+
+
+
+Here's a breakdown of the process tree for anyone who's curious:
+Boot initiated -> post-fs-data script runs -> calls set_prop scripts -> zygote beings/android boots -> As android is booting: late service script runs -> sepolicy is set -> calls arisesound_services -> calls post-boot to run
+
+
+Arise Legacy Magisk Compatibility Module (for all versions of arise older than 3.x (like 2.9x):
+   * Boot initiated -> post-fs-data script runs -> calls set_prop scripts -> zygote beings/android boots -> As android is booting: late service script runs -> sepolicy is set
+
+LS Edition: 
+Boot initiated -> zygote beings/android begins to boot, late service script runs which then sets sepolicy and calls setprop scripts to run
+Notes About Older Versions of Arise Magisk Modules:
+Any older arise magisk modules (including aroma) are now defunct as this new method of piggybacking off of existing arise infrastructure makes far more sense, is compatible across all devices that are compatible with magisk (regardless of arise setup), and is easy (no options for the user to set, just flash the zip and you're done)
+
+
+Things to Note:
+      * Version 2.3+ requires MagiskSU and Magisk 12 or newer (If you're using supersu with magisk, you shouldn't need this module)
+      * Version 2.2 requires MagiskSU and Magisk v11.6 (If you're using supersu with magisk, you shouldn't need this module)
+      * Your phone will seeingly hang on the boot logo for a minute or so. This is when magisk runs all of the module scripts
+      * Since the magisk modules are dependent on the scripts initially present from the arise install, arise must be installed before the magisk module
+
+
+
+Things To Do Before Installation:
+      * MAKE A BACKUP
+      * Read the ARISE OP to get a full grasp of how it works/install/etc.
+      * Read the Troubleshooting Section for Magisk here: https://forum.xda-developers.com/app...mless-t3473445
+      * Check that your phone is compatible with magisk: https://github.com/topjohnwu/Magisk/issues
+      * If there's a device support issue open for your phone, then it's probably not supported yet
+      * Remove any other audio magisk modules including older arise ones (this one uses a new naming scheme/MODID and so won't automatically get rid of the old ones)
+
+
+Which Edition Should I Use?
+Try the regular edition first. LS edition is for those who are unable to boot with the regular edition.
+Installation:
+      1. Remove all audio related modules and any older arise magisk modules using magisk manager
+      2. Note: If you want safetynet to pass, go to the safetynet section before continuing with the install
+      3. Flash the following in order: Rom, magisk 11.6+, arise, arise magisk module
+      4. Note: If your rom has supersu built in, you will need to remove it prior to installing magisk: Go to SuperSu Removal
+      5. Then while still in twrp, go to Advanced -> Copy log
+      6. If you have no problems with the install/booting/general use, you can delete the recovery.log from /sdcard
+      7. After booting, install magisk manager from the app store if you haven't already.
+      8. Open magisk manager and go to settings -> enable busybox
+      9. Then check your apps for AudioFX. If you see it there, go to App Info and Disable it (this is mainly LOS based roms)
+      10. Reboot and verify everything's working. If not, go to troubleshooting
+
+
+SuperSu Removal:
+      1. Flash UnSu from here: https://forum.xda-developers.com/sho...php?p=63615067
+      2. On your computer, extract the boot.img rom your rom zip and copy it to your sd card
+      3. Flash the boot.img, then flash latest magisk, arise, and arise magisk module
+      4. So for future reference, the protocol for install (in order) would be: Flash rom, unsu, boot.img, magisk, arise, arise magisk module
+      5. Follow the rest of the Installation guide above
+Troubleshooting:
+If you're spontaneously losing root/weird magisk stuff happening:
+This often happens when magisk hide is enabled. You will either need to:
+      * Disable magisk hide
+      * Disable magisk busybox
+      * Or go to battery optimization settings and disable battery optimization for magisk manager
+If you're seeing weird stuff in twrp involving data partition or see 'Error 2' when installing anything involving magisk
+      * Boot into twrp
+      * Go to Advanced -> terminal
+      * Type:
+      * Code:
+      * e2fsck -f data/magisk.img
+      * Say yes to prompts to repair errors
+      * **Note that in some rare instances, the magisk img is too corrupt to be recovered. In these cases, you'll need to uninstall/reinstall magisk
+If you're able to boot:
+      * Follow the instructions in the OP for obtaining a logcat.
+      * Open magisk manager, go to Log, and save the Magisk log.
+      * Attach the logcat, magisk log, and recovery log you obtained earlier in a post
+If you're unable to boot:
+      * Follow the instructions here: https://forum.xda-developers.com/sho....php?t=1726238 to obtain a logcat via adb.
+      * Attach that and the recovery log you obtained earlier in a post
+      * Proceed to uninstallation
+Uninstallation:
+      * Dirty flash rom to remove arise
+      * To remove the magisk module, just remove it through magisk manager.
+If you can't boot and need to remove the module, either:
+      * Flash magisk mount from here: https://forum.xda-developers.com/app...dules-t3445257, open file manager, go to magisk folder and delete arise module
+      * OR flash magisk uninstaller
+Safety Net:
+      * Open magisk manager
+      * Go to settings
+      * Enable magisk hide and reboot
+As of magisk v11.6, hides the adb debugging option so you don't have to disable it anymore for safetynet to pass
+Still note that Safetynet is a losing battle.
+See here: https://forum.xda-developers.com/sho...05&postcount=2
+
+
+
+
+
+
+Aroma specific tips:
+
+I want to install ViPER 2.5.0.5, but I only see ViPER 2.3.4.0 offered to install?
+
+ViPER 2.5.0.5 is the base (default) version to install with Aroma.  When you select the top or middle option, this will automatically be installed.
+
+One or more of my add-ons doesn’t work after switching from ViPER 2.5.0.5 to ViPER 2.3.4.0 or vice versa
+
+While the Aroma installer allows for very quick switching between the two versions of ViPER, if you have add-ons installed with it, then you have to reflash the add-ons and any options you’ve chosen as well.  This will ensure functionality of ViPER and all your add-ons.
+
+You added uninstall feature but I can’t install ViPER 2.5.0.5/2.3.4.0?
+
+Due to the numerous changes to the /system directory, the core sound system can not be uninstalled.  Just like previous versions, you’ll have to clean/dirty flash your ROM to clean it out of the /system directory.
+
+Is Smeejaytee’s Toolbox fixed?
+
+Yes, the most current version is in the build and no longer affects the rest of the install.  Enjoy!
+
+You added Esira back.  Is it fixed?
+
+No.  We haven’t touched it since initial release.  It will have the same bugs it always has.
+
+AM3D has never worked for me and didn’t work for me in 2.4.  Will it work now?
+
+No.  Do not install it if you’ve always had problems.  You will continue to have problems and it will drain your battery quickly as the app tries to correctly function.
+
+
+
+
+
+
+
+
+
+
+Known bugs:  
+
+On some devices, when you plug in your headphones, ViPER will stop processing.  We’ve commonly called this the “headphone bug.”  Despite several attempts and many hours trying to trace its cause, the Team was unable to.  If you’re continually having this problem, please install ViPER 2.3.4.0.
+
+On some HTC devices, starting any media with ViPER enabled produces an intolerable high-pitched “screeching.”  Many attempts were tried to correct this issue without any success.  If you have this problem, you’ll have to revert to your previously working version.
+
+
+
+ICE Processing Bug (tested by wrongway213 on Nexus 6)
+
+
+“Upon further inspection of the previously mentioned “headphone bug”, I found it to be more an ICE processing bug on my Nexus 6. What I found was that, with deep buffer removed, I needed to use iceconfig2 to make everything work with both streaming media and local playback. However, there is an issue in doing this with deepbuffer removed and a bigger issue doing so with deep buffer kept on my Nexus 6. The only workaround I have found requires the 2.5.0.5, and this issue is actually what ultimately caused me to move to new Viper. So, this will require 2.5.0.5 to use this workaround.
+Anyway, what I have to do to get V4A to process over with ICE
+With deep buffer removed: when I connect to bluetooth, I must open V4A, then exit the app thru the three dot menu in upper right, then open it again - I do not even have to swipe it out of recents. From there, it works totally fine over BT, phone speaker, and headset until a reboot, and then you must do this one time again, per boot. 
+With deep buffer kept: When I connect to aux, I must open V4A and exit the app thru the three dot menu in upper right, then open it again. Unlike with deep buffer removed, on the N6 this does not keep working while switching from BlueTooth to aux to speaker and back - the app must be exited and reopened every time you switch from one to the other.”
+
+
+
+
+On behalf of the entire A.R.I.S.E.Team, we want to thank you for using Swansong 3.31 and the various add-ons.  May you have hours and hours of listening pleasure!!!
+
+
+ARISE UP!!!!!
+
+Roi007leaf and docnok63

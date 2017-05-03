@@ -1,0 +1,21 @@
+
+# ARISE Sound Systems™
+#
+# "SwanSong™"
+#
+# Core System module
+#
+# www.arisesound.com
+
+
+
+* The Core System module is the framework of the entire "SwanSong™" sound system composed of libraries, effects, configurations, and scripts that allows the device to utilize the various modules available.
+
+
+* Making up the Core System module are Vivo™ HiFi 3.0 and MaxxAudio, Huawei™ DTS™ Eagle, and Auro™ 3D components along with numerous choiced libraries and effects from several quality mobils firmware images.
+
+
+* The Core System module installation will vary from device to device, resulting with the optimum combination of content deemed fit by the installation script. Consumed /system space can be as little as 40MB and as large as 175MB.
+
+
+* The Core System module is the only module required to be installed once, and only once. Future customization using the other available modules is only possible when the value of "true" is removed from its line entry in /sdcard/arise_customize.prop, when changing or adding values for the other modules' line entries.

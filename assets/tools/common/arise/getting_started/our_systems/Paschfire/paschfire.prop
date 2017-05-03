@@ -1,0 +1,33 @@
+# Included are my personal custom profiles PaschfireFX_GroundZero,
+PaschfireFX(1-3) and PaschfireXHiFi, also included is
+1_2_InDaClub_Bass_Stereo.irs Convolver​ profile.
+
+# NOTE!! PaschfireFX_GroundZero has been set with Sony-XBA2 DDC 
+Enabled specifically, if not using these headphones simply disable 
+this DDC Profile from within ViPER4Arise app or select a different 
+PaschfireFX(1-3) profile as this DDC is already Disable.
+
+# I've found these custom Profiles along with the following 
+arise_customize.prop selections to best suit my Nexus 5 
+Sound & Performance capabilities, especially while using my wired 
+Sony XBA-2 headphones.
+
+# Using Qualcomm™ Audio Effects Configuration I have chosen 
+Android_O set true by default within the arise_customize.prop, 
+though HUAWEI is also an excellent choice if wanting to try 
+something different.
+
+# arise_customize.prop edits as follows...
+
+install.core=true
+install.v4a_2.5.0.5=true
+install.v4a_profiles=true
+install.v4a_xhifi=true
+install.qc.effects=ANDROID_O
+(optional) install.qc.effects=HUAWEI
+delete.deep_buffer=true
+
+
+# Hopefully you enjoy my setup.
+
+ ARISE UP!!!

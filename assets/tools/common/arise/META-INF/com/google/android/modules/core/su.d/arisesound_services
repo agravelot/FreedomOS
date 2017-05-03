@@ -3,14 +3,11 @@
 #
 # ARISE Sound Systems™
 #
+# Magnum Opus
+#
 # arisesound_services
 #
 # www.arisesound.com
-
-
-mount -o rw,remount /
-mount -o rw,remount /system
-mount -o rw,remount /data
 
 
 set_metadata() {
@@ -57,28 +54,34 @@ set_metadata_recursive() {
 }
 
 
-BIN=/system/bin
-ETC=/system/etc
+if [ -d "/system_root" ]; then
+  ROOT=/system_root
+  SYS=/system_root/system
+else
+  ROOT=""
+  SYS=/system
+fi
+
+if [ $ROOT != "" ]; then
+  mount -o rw,remount $ROOT
+else
+  mount -o rw,remount /
+fi
+mount -o rw,remount $SYS
+
+
+BIN=$SYS/bin
 SH=$BIN/sh
-PERMISSIVE=$ETC/init.d/permissive
-ARISE=$ETC/init.d/arisesound_setprop
-BOOT=$ETC/init.d/post-boot
-SERVER=$ETC/init.d/arisesoundserver
-SMEEJAYTEE=$ETC/init.d/smeejaytee_setprop
-SONY=$ETC/init.d/sony_setprop
-CONTEXTS=/service_contexts
+ARISE=$SYS/su.d/arisesound_setprop
+BOOT=$SYS/su.d/post-boot
+SERVER=$SYS/su.d/arisesoundserver
+SONY=$SYS/su.d/sony_setprop
+CONTEXTS=$ROOT/service_contexts
 AURO=$(cat $CONTEXTS | grep "auro_service")
-DOLBYSERVICE=$(cat $CONTEXTS | grep "media.dolby_memoryservice")
 EAGLE=$(cat $CONTEXTS | grep "dts_eagle_service")
+VIVO=$(cat $CONTEXTS | grep "iss_daemon")
 SM=set_metadata
 SMR=set_metadata_recursive
-
-
-if [ -e "$PERMISSIVE" ]; then
-
-  $SH $PERMISSIVE
-
-fi
 
 
 if [ -e "$SERVER" ]; then
@@ -95,13 +98,6 @@ if [ -e "$ARISE" ]; then
 fi
 
 
-if [ -e "$SMEEJAYTEE" ]; then
-
-  $SH $SMEEJAYTEE
-
-fi
-
-
 if [ -e "$SONY" ]; then
 
   $SH $SONY
@@ -109,7 +105,7 @@ if [ -e "$SONY" ]; then
 fi
 
 
-if [ -e "$CONTEXTS" ]; then
+if [ ! "$VIVO" ] && [ -e "$CONTEXTS" ]; then
 
   echo "\niss_daemon                                u:object_r:iss_daemon_service:s0\n" >> $CONTEXTS
 
@@ -118,16 +114,10 @@ fi
 
 if [ ! "$AURO" ] && [ -e "$CONTEXTS" ]; then
 
-  echo "\nmedia.imageeffect		         	              u:object_r:mediaserver_service:s0\nauro_service                              u:object_r:mediaserver_service:s0\n" >> $CONTEXTS
+  echo "\nauro_service                              u:object_r:mediaserver_service:s0\n" >> $CONTEXTS
 
 fi
 
-
-if [ ! "$DOLBYSERVICE" ] && [ -e "$CONTEXTS" ]; then
-
-  echo "\nmedia.dolby_memoryservice                 u:object_r:audioserver_service:s0\n" >> $CONTEXTS
-
-fi
 
 
 if [ ! "$EAGLE" ] && [ -e "$CONTEXTS" ]; then
@@ -138,6 +128,13 @@ fi
 
 
 $SM $BIN/iss_daemon uid 1013 gid 1005 mode 0755 capabilities 0x0 selabel u:object_r:iss_daemon_service:s0
+
+
+if [ $ROOT != "" ]; then
+  mount ro,remount $ROOT
+else
+  mount ro,remount /
+fi
 
 
 (

@@ -1,0 +1,29 @@
+ * hello ARISE family. 
+1st off i would like to give a huge thank you to all persons involved in making ARISE™ what it has become. this includes YOU!! without the end-user and all the input you provide , ARISE™ would be a good sound mod for about 20 or so people. but because of YOU it has become a great sound mod for thousands. 
+again , my heartfelt gratitude for your use of and contributions.
+ARISEUP!!!
+
+this is my normal setup for ARISE™. 
+just a side note , i always use AOSP based roms if that matters.
+and my DD is Slimkat 4.4.4. (on a dying htc M8).
+so remember your mileage may vary according to phone model and android version. 
+i have also tested/run this ARISE™ setup extensively on AOSP 6.0.1 & 7.1.1 with good results.
+
+enjoy ,
+dave.
+
+-core
+-v4a_2.3.4.0
+-toolbox
+-profiles (i use Paul-stereo.irs) under convolvers in v4a settings.
+-dirac
+-install.qc.effects=ANDROID_O
+-ICEsound
+-ultra.ICEsound
+-ICEconfig=2
+-ICEsound.preset=10 (SHAT)
+
+# i always have to go to settings > apps > v4a and toggle off storage permissions and then toggle back on for convolvers to be available in v4a.
+## also , if you've never used v4a-2.3.4.0 ; in the upper right-hand corner , click on the 3 dot drop down menu and under "UIsetting" , select expert.
+
+enjoy !!

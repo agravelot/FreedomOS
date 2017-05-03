@@ -1,9 +1,7 @@
 
 # ARISE Sound Systems™
 #
-# Deuteronomy™ 3.31 Modular Installer 20170410
-#
-# "SwanSong™"
+# Magnum Opus™ 20170430
 #
 # Auditory Research in Sound Enhancement™
 #
@@ -12,6 +10,114 @@
 
 
 Changelog:
+
+
+
+## Magnum Opus™ 200170430 -
+
+- Various booted script corrections.
+
+- General debloat.
+
+##
+
+
+
+## Magnum Opus™ 20170426 -
+
+- Overhaul of arisesoundserver.
+
+- Script adjustments targeting complete Pixel support.
+
+- Compatibility/stability tuning of arisesound_setprop.
+
+- A third potential Error 1 has been added to the recovery session in the event of an outdated arise_customize.prop is found, in which case the outdated arise_cistomize.prop is renamed and replaced with the appropriate arise_customize.prop to be edited by the user before attempting installation again.
+
+- All three potential Error 1 instances have been enhanced with more visible and pertinent text output to achieve a successful installation.
+
+##
+
+
+
+## Magnum Opus™ 20170425 -
+
+
+ !! New, updated arise_customize.prop !!
+
+ !! Use and make changes to the new one !!
+
+
+- Adjustment to /sdcard variable.
+
+- Adjustment to Samsung™ audio effects configuration requirements.
+
+- Updated TrackID in Sony™ Music module.
+
+- Removed DTS Client Controller Service module.
+
+- Various tidyness.
+
+##
+
+
+
+## Magnum Opus™ 20170420 -
+
+
+- Broke record for most participation in the history of XDA's Android Software Development forum.
+
+
+##
+
+
+
+## Deuteronomy™ 3.41 "SwanSong™" -
+
+
+ !! New, updated arise_customize.prop !!
+
+ !! Use and make changes to the new one !!
+
+
+- Added DAP (native Dolby Atmos™) Qualcomm™ selectable audio effects configuration.
+
+##
+
+
+
+## Deuteronomy™ 3.39 "SwanSong" -
+
+
+ !! New, updated arise_customize.prop !!
+
+ !! Use and make changes to the new one !!
+
+
+- Removed Ultra ICEsound™ module.
+
+- Removed ToolBox™ module.
+
+- Minor correction to arisesound_setprop.
+
+##
+
+
+
+## Deuteronomy™ 3.38 "SwanSong™" -
+
+- Added and corrected team member profiles for Profiles module.
+
+- Minor corrections/enhancements to scripts.
+
+##
+
+
+
+## Deuteronomy™ 3.33 "SwanSong™" -
+
+- Minor script corrections post-boot and Core module installation.
+
+##
 
 
 

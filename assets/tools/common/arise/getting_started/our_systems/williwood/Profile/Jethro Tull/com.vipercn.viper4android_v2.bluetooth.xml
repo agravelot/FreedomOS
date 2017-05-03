@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="viper4android.headphonefx.convolver.enable" value="true" />
+    <string name="viper4android.headphonefx.convolver.kernel">Sony MDR-1ABT-Christopher7-44k.irs</string>
+    <boolean name="viper4android.headphonefx.enable" value="true" />
+</map>

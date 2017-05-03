@@ -2,7 +2,7 @@
 #
 # ARISE Sound Systems™
 #
-# Deuteronomy™
+# Magnum Opus
 #
 # arisesound_setprop
 #
@@ -42,7 +42,7 @@ setprop ro.config.hw_dts true
 setprop ro.config.hw_sws true
 setprop ro.config.sws_version sws3
 setprop ro.config.swsAlwaysActiveForSPK true
-setprop ro.config.hw_dts_settings truef
+setprop ro.config.hw_dts_settings true
 setprop ro.config.hw_media_flags 3
 setprop ro.config.hpx_support true
 setprop ro.config.hw_dolby true
@@ -81,21 +81,21 @@ setprop ro.dirac.config 1
 ## LG™ G6 HiFi DAC Audio ##
 
 #
-setprop audio.hifi_rec.normal_gain 30
-setprop audio.hifi_rec.normal_lcf 75
-setprop audio.hifi_rec.normal_lmt -3
-setprop audio.hifi_rec.concert_gain -150
-setprop audio.hifi_rec.concert_lcf 0
-setprop audio.hifi_rec.concert_lmt 0
-setprop audio.hifi_rec.offset_gain 37
+#setprop audio.hifi_rec.normal_gain 30
+#setprop audio.hifi_rec.normal_lcf 75
+#setprop audio.hifi_rec.normal_lmt -3
+#setprop audio.hifi_rec.concert_gain -150
+#setprop audio.hifi_rec.concert_lcf 0
+#setprop audio.hifi_rec.concert_lmt 0
+#setprop audio.hifi_rec.offset_gain 37
 #
 
 
 ## Xiaomi™ Mi Max HiFi Audio ##
 
 #
-setprop ro.audio.hifi true
-setprop persist.audio.hifi true
+#setprop ro.audio.hifi true
+#setprop persist.audio.hifi true
 #
 
 

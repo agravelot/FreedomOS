@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="viper4android.headphonefx.convolver.kernel">Sony MDR-1ABT-Christopher6-44k.irs</string>
+    <string name="viper4android.headphonefx.fireq">custom</string>
+    <boolean name="viper4android.headphonefx.convolver.enable" value="true" />
+    <boolean name="viper4android.headphonefx.enable" value="true" />
+    <string name="viper4android.headphonefx.fireq.custom">-0.9;-1.1;-1.2;-1.7;-0.1;0.3;0.2;0.4;0.0;0.0;</string>
+    <boolean name="viper4android.headphonefx.fireq.enable" value="true" />
+</map>
