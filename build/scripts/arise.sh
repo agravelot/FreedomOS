@@ -42,6 +42,7 @@ function build_arise() {
   echo "rm -rf /data/data/com.arkamys.audio" >> ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary
   echo "rm -rf /data/data/com.audlabs.viperfx" >> ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary
   echo "rm -rf /data/data/com.fihtdc.am3dfx" >> ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary
+  echo "rm -rf /data/data/*dirac*" >> ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary
   echo "exit 0" >> ${tmp_root}/tools/arise/META-INF/com/google/android/update-binary
   zip -r9 arise.zip * -x install.sh >> ${build_log} 2>&1
   cd - >> ${build_log} 2>&1
