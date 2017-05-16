@@ -1,0 +1,28 @@
+Setup: Disable MusicFX (freeze in Titanium Backup). Use wrongway213 profile (included: Paul-stereo.irs by Joe0Bloggs and Ephexxis_DTS_HiRes.vdc by churapa). Apply profile in Viper4Arise. Use Paul-stereo.irs for "Convolver" and Ephexxis_DTS_HiRes.vdc for "Viper-DDC: Listening Device". All testing done on my Nexus 6 with a generic BlueTooth speaker.
+
+Modules and configuration I use are found in attached arise_customize.prop, which should be placed in /sdcard, and  installs the following when respective entries are set to "true" as I have them set in the attached file:
+
+Core
+Viper 2.3.4.0
+Dolby Digital Plus
+AM3D ZIRENE
+Arkamys
+MusicFX
+Dirac
+Delete deep buffer
+Android_O audio effects
+ICEConfig 2
+HOLYSH*T preset
+
+Setup on boot:
+
+Make sure MusicFX is frozen in TiBu if this is your first install or a clean flash. I need MusicFX for proper functioning on my device, but it must be frozen.
+
+Open Viper4Arise, turn it on with power switch. Hit the 3 dot menu in top right corner, hit "load effect profile", and tap "wrongway213", twice to be safe. Next, hit "lock effect mode" and select "headset". Exit V4A.
+
+Open Dolby Digital Plus and turn it on with the power button. Select "music". Turn surround virtualizer, volume leveler and dialog enhancer all to off position, and select "open" eq. Exit Dolby.
+
+Open AM3D ZIRENE and toggle the power button to "on", then tap the button right next to it, between power and the 3 dot menu, and select "JBL Flip". If unavailable, connect to BT or auxilary headphones or speaker and it will show up. Open the settings at the bottom menu of AM3D with the down arrow and enable surround sound and voice enhancement. Turn bass to high and treble to low with the knobs. I use "JBL Flip" config for all media processing, but if I get stick in "internal speaker" I simply turn bass to high, treble to low, and enable "voice enhancer".
+
+Enjoy!
+

@@ -10,5 +10,18 @@ MODDIR=${0%/*}
 "allow audioserver audioserver_tmpfs file { read write execute }"
 
 if [ -e /system/su.d/arisesound_services ]; then
-	./system/su.d/arisesound_services
+	/system/bin/sh /system/su.d/arisesound_services
+else
+	if [ -e /system/su.d/arisesound_setprop ]; then
+		/system/bin/sh /system/su.d/arisesound_setprop
+	fi
+	if [ -e /system/su.d/smeejaytee_setprop ]; then
+		/system/bin/sh /system/su.d/smeejaytee_setprop
+	fi
+	if [ -e /system/su.d/sony_setprop ]; then
+		/system/bin/sh /system/su.d/sony_setprop
+	fi
+	if [ -e /system/su.d/dts_configurator_wrapper ]; then
+		/system/bin/sh /system/su.d/dts_configurator_wrapper
+	fi
 fi

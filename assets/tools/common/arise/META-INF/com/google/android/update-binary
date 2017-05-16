@@ -1,8 +1,8 @@
 #!/sbin/sh
 #
-# ARISE Sound Systems™ @XDA Developers
+# ARISE Sound Systems™
 #
-# Deuteronomy™ "SwanSong™" Modular Installation
+# Magnum Opus Modular Installation
 #
 # www.arisesound.com
 
@@ -56,13 +56,7 @@ elif [ -e "$SYS/build.prop" ] && [ -e "$VEN/build.prop" ]; then
   fi
 fi
 
-if [ -d "/sdcard0" ]; then
-  SDCARD=/sdcard0
-elif [ -d "/sdcard/0" ]; then
-  SDCARD=/sdcard/0
-else
-  SDCARD=/sdcard
-fi
+SDCARD=/data/media/0
 
 set_perm() {
  if [ -e $1 ]; then
@@ -113,6 +107,8 @@ DEUTFX=$SFX/deuteronomy
 DEUTFX64=$SFX64/deuteronomy
 ASUSFX=$SFX/asus
 ASUSFX64=$SFX64/asus
+HUAWEIFX=$SFX/huawei
+HUAWEIFX64=$SFX64/huawei
 SONYFX=$SFX/sony
 SONYFX64=$SFX64/sony
 VIVOFX=$SFX/vivo
@@ -150,12 +146,9 @@ FREQ=libFrequencyDomain.so
 LATENCY=libSuperpoweredLatency.so
 APSS=libAudioPluginSuperpoweredSpatializer.so
 STA=libstlport_sta.so
-STLSH=libstlport_shared.so
 STAPROXY=libsta_lib_third_party_staproxy_sta_proxy_loader_gyp.so
 STAGYP=libsta_lib_third_party_libsta_lib_libsta_gyp.so
 CORE=$MODULES/core
-TOOLBOX=$MODULES/smeejaytee/ToolBox
-SMEEJAY=$MODULES/smeejaytee
 PROFILES=$MODULES/profiles/ViPER4Android
 V4A2340=$MODULES/v4a_2.3.4.0
 V4A2505=$MODULES/v4a_2.5.0.5
@@ -168,8 +161,7 @@ MODDDP=$MODULES/ddplus
 MODARK=$MODULES/arkamys
 MODDIRAC=$MODULES/dirac
 MODDTS=$MODULES/dtsccs
-MODICEDLX=$MODULES/ICE/ICEsound_dlx
-MODICEULT=$MODULES/ICE/ICEsound_ult
+MODICE=$MODULES/ICE/ICEsound
 MODICECON=$MODULES/ICE/ICEconfig
 MODICEPRE=$MODULES/ICE/ICEpreset
 ICE=ICEsoundService
@@ -236,9 +228,14 @@ ACC=$SYS/customize/ACC/default.xml
 ACCBAK=$SYS/customize/ACC/default.xml.backup
 PROP=arisesound_setprop
 SERVER=arisesoundserver
+SERVICES=arisesound_services
 ARISEFX=$SDCARD/arise_effects.conf
 WISHLIST=$SDCARD/arise_customize.prop
+NEWLIST=getting_started/your_system/arise_customize.prop
+OUTDATED=$SDCARD/arise_outdated.prop
 INFO=$SYS/ARISE_version.prop
+LETTER=$SYS/a_letter_from_gh.txt
+OPUS=$(cat $WISHLIST | grep "Magnum Opus")
 BUFFER=$(cat $WISHLIST | grep "delete.deep_buffer=true")
 REBUFFER=$(cat $WISHLIST | grep "restore.deep_buffer=true")
 PERMISSIONS=$(cat $WISHLIST | grep "repair.sdcard.permissions=true")
@@ -256,14 +253,13 @@ INSTALLDDPLUS=$(cat $WISHLIST | grep "install.ddplus=true")
 INSTALLAM3D=$(cat $WISHLIST | grep "install.am3d=true")
 INSTALLARKAMYS=$(cat $WISHLIST | grep "install.arkamys=true")
 INSTALLSONY=$(cat $WISHLIST | grep "install.sony=true")
-INSTALLDTS=$(cat $WISHLIST | grep "install.dts-client=true")
 INSTALLQCAO=$(cat $WISHLIST | grep "install.qc.effects=ANDROID_O")
 INSTALLQCAS=$(cat $WISHLIST | grep "install.qc.effects=ASUS")
+INSTALLQCDA=$(cat $WISHLIST | grep "install.qc.effects=DAP")
 INSTALLQCHW=$(cat $WISHLIST | grep "install.qc.effects=HUAWEI")
 INSTALLQCSO=$(cat $WISHLIST | grep "install.qc.effects=SONY")
 INSTALLQCSK=$(cat $WISHLIST | grep "install.qc.effects=STOCK")
-INSTALLICEDLX=$(cat $WISHLIST | grep "install.deluxe.ICEsound=true")
-INSTALLICEULT=$(cat $WISHLIST | grep "install.ultra.ICEsound=true")
+INSTALLICE=$(cat $WISHLIST | grep "install.ICEsound=true")
 ICECONFIGNONE=$(cat $WISHLIST | grep "use.ICEconfig=None")
 ICECONFIG1=$(cat $WISHLIST | grep "use.ICEconfig=1")
 ICECONFIG2=$(cat $WISHLIST | grep "use.ICEconfig=2")
@@ -310,9 +306,7 @@ UNINSTALLICE=$(cat $WISHLIST | grep "UNINSTALL.ICEsound=true")
 UNINSTALLAM3D=$(cat $WISHLIST | grep "UNINSTALL.am3d=true")
 UNINSTALLSONY=$(cat $WISHLIST | grep "UNINSTALL.sony=true")
 UNINSTALLESIRA=$(cat $WISHLIST | grep "UNINSTALL.esira=true")
-UNINSTALLBEATS=$(cat $WISHLIST | grep "UNINSTALL.ToolBox=true")
 UNINSTALLDIRAC=$(cat $WISHLIST | grep "UNINSTALL.dirac=true")
-UNINSTALLDTS=$(cat $WISHLIST | grep "UNINSTALL.dts-client=true")
 UNINSTALLXHIFI=$(cat $WISHLIST | grep "UNINSTALL.v4a_xhifi=true")
 UNINSTALLMFX=$(cat $WISHLIST | grep "UNINSTALL.musicfx=true")
 QCOM=$(cat $BUILDPROP | grep -E -i 'ro.board.platform=msm*|ro.board.platform=apq*')
@@ -370,7 +364,7 @@ ui_print " "
 ui_print " "
 ui_print " "
 ui_print " "
-ui_print "                    SwanSong™"
+ui_print "                  Magnum Opus"
 ui_print " "
 ui_print " "
 ui_print " "
@@ -389,7 +383,7 @@ mkdir $ARISE
 cd $ARISE
 unzip -o "$ZIP"
 
-ui_print "200MB - 300MB of free /system space is necessary for successful installations of various module combinations."
+ui_print "300MB+ of free /system space is necessary for successful installations of various module combinations."
 ui_print " "
 ui_print " "
 sleep 3
@@ -404,7 +398,7 @@ sleep 3
 ui_print "The dependency on SuperSU for achieving the full, intended experience is not one which is satisfactory for us. Achieving the full, intended experience without root is always a priority."
 ui_print " "
 ui_print " "
-sleep 5
+sleep 3
 ui_print " "
 ui_print " "
 ui_print "Obtaining instructions from $WISHLIST..."
@@ -412,59 +406,118 @@ ui_print " "
 ui_print " "
 ui_print " "
 ui_print " "
-sleep 3
+sleep 2
 
 if [ ! -e "$WISHLIST" ]; then
 
-  ui_print "$WISHLIST not found!"
+  ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
+  ui_print " "
+  ui_print "!! IMPORTANT INFORMATION FOR SUCCESSFUL INSTALLATION WILL APPEAR BELOW !!"
+  ui_print " "
+  ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
+  ui_print " "
+  sleep 2
+  ui_print " "
+  ui_print "$WISHLIST NOT FOUND!"
   ui_print " "
   ui_print " "
-  ui_print "Creating $WISHLIST for you..."
-  cp -f getting_started/your_wishlist/arise_customize.prop $WISHLIST
+  ui_print "CREATING $WISHLIST FOR YOU..."
+  cp -f $NEWLIST $WISHLIST
+  ui_print " "
+  sleep 2
+  ui_print " "
+  ui_print "REBOOT, ADD VALUES TO $WISHLIST, AND TRY AGAIN."
   ui_print " "
   ui_print " "
-  ui_print "Reboot, add values to $WISHLIST, and try again."
+  ui_print "DETAILS AND INSTRUCTIONS CAN BE FOUND INSIDE $WISHLIST AS WELL AS IN /getting_started OF THIS ARCHIVE."
+  ui_print " "
+  sleep 2
+  ui_print " "
+  ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
+  ui_print " "
+  ui_print "!! THE ERROR 1 ENDING THIS RECOVERY SESSION IS NOT AN ERROR !!"
+  ui_print " "
+  ui_print "!! ERROR 1 IS A FORCED ABORT OF THE INSTALLATION THAT INCLUDES THE CAUSE FOR THE ABORT AND THE INFORMATION TO ACHIEVE SUCCESSFUL INSTALLATION !!"
+  ui_print " "
+  ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
+  umount /system
+  sleep 4
+  exit 1
+
+elif [ ! "$OPUS" ]; then
+
+  ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
+  ui_print " "
+  ui_print "!! IMPORTANT INFORMATION FOR SUCCESSFUL INSTALLATION WILL APPEAR BELOW !!"
+  ui_print " "
+  ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
+  ui_print " "
+  sleep 2
+  ui_print " "
+  ui_print "AN OUTDATED $WISHLIST IS DETECTED!"
   ui_print " "
   ui_print " "
-  ui_print "Detailed information and instructions can be found in /getting_started inside the archive."
+  ui_print "ORIGINAL $WISHLIST WILL BE RENAMED AND REPLACED WITH THE APPROPRIATE $WISHLIST."
+  mv -f $WISHLIST $OUTDATED
+  cp -f $NEWLIST $WISHLIST
+  ui_print " "
+  sleep 2
+  ui_print " "
+  ui_print "REBOOT AND PREPARE THE NEW $WISHLIST BEFORE ATTEMPTING INSTALLATION."
+  ui_print " "
+  sleep 2
+  ui_print " "
+  ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
+  ui_print " "
+  ui_print "!! THE ERROR 1 ENDING THIS RECOVERY SESSION IS NOT AN ERROR !!"
+  ui_print " "
+  ui_print "!! ERROR 1 IS A FORCED ABORT OF THE INSTALLATION THAT INCLUDES THE CAUSE FOR THE ABORT AND THE INFORMATION TO ACHIEVE SUCCESSFUL INSTALLATION !!"
+  ui_print " "
+  ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
+  umount /system
+  sleep 4
+  exit 1
+
+elif [ ! "$INSTALLCORE" ] && [ ! -e "$INFO" ]; then
+
+  ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
+  ui_print " "
+  ui_print "!! IMPORTANT INFORMATION FOR SUCCESSFUL INSTALLATION WILL APPEAR BELOW !!"
+  ui_print " "
+  ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
+  ui_print " "
+  sleep 2
+  ui_print " "
+  ui_print "$WISHLIST CONTAINS INSUFFICIENT INSTRUCTIONS FOR AN INITIAL INSTALLATION!"
+  ui_print " "
+  ui_print " "
+  ui_print "THIS PACKAGE REQUIRES THE CORE MODULE TO BE INSTALLED IF NOT ALREADY INSTALLED!"
+  ui_print " "
+  sleep 2
+  ui_print " "
+  ui_print "REBOOT, PREPARE $WISHLIST, AND TRY AGAIN."
+  ui_print " "
+  ui_print " "
+  ui_print "DETAILS AND INSTRUCTIONS CAN BE FOUND INSIDE $WISHLIST AS WELL AS IN /getting_started OF THIS ARCHIVE."
+  ui_print " "
+  sleep 2
+  ui_print " "
+  ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
+  ui_print " "
+  ui_print "!! THE ERROR 1 ENDING THIS RECOVERY SESSION IS NOT AN ERROR !!"
+  ui_print " "
+  ui_print "!! ERROR 1 IS A FORCED ABORT OF THE INSTALLATION THAT INCLUDES THE CAUSE FOR THE ABORT AND THE INFORMATION TO ACHIEVE SUCCESSFUL INSTALLATION !!"
+  ui_print " "
+  ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
+  umount /system
   sleep 4
   exit 1
 
 fi
 
-if [ ! "$INSTALLCORE" ] && [ ! -e "$INFO" ]; then
-
-  ui_print "$INFO not found!"
-  ui_print " "
-  ui_print " "
-  ui_print "This modular installer requires the Core module to be installed or to be already installed."
-  ui_print " "
-  ui_print " "
-  sleep 4
-  ui_print "Reboot, add values to $WISHLIST, and try again."
-  ui_print " "
-  ui_print " "
-  ui_print "Once the Core module is installed, the following line in $WISHLIST should be edited to remove the value of "true" for future customization without installing the Core module again."
-  ui_print " "
-  ui_print " "
-  ui_print ""install.core=true""
-  ui_print " "
-  ui_print " "
-  ui_print "Detailed information and instructions can be found in /getting_started inside the archive."
-  sleep 4
-  exit 1
-
-fi
-
-#rm -rf $PAPP/AudioEffects
-#rm -rf $APP/AudioEffects
-#rm -rf $PAPP/$AFX
 rm -rf $PAPP/$DSP
-#rm -rf $APP/$AFX
 rm -rf $APP/$DSP
-#rm -f $PAPP/$AFXAPK
 rm -f $PAPP/$DSPAPK
-#rm -f $APP/$AFXAPK
 rm -f $APP/$DSPAPK
 
 if [ "$INSTALLCORE" ]; then
@@ -504,7 +557,7 @@ if [ "$INSTALLCORE" ]; then
 
   fi
 
-  if [ "$SAMSUNG" ]; then
+  if [ "$SAMSUNG" ] && [ -e "$LIB/libaudiosa.so" ]; then
 
     if [ "$QCOM" ]; then
 
@@ -586,8 +639,7 @@ if [ "$INSTALLCORE" ]; then
       $SP $LIB64/$FFMPGVIDHW 0 0 0644
       $SP $LIB64/$SWS 0 0 0644
       $SP $LIB64/$SWS2 0 0 0644
-      rm -f $VEN/lib64/libaudiodevarb.so
-      ln -s $LIB64/libaudiodevarb.so $VEN/lib64/libaudiodevarb.so
+      ln -sf $LIB64/libaudiodevarb.so $VEN/lib64/libaudiodevarb.so
 
     fi
 
@@ -645,79 +697,18 @@ if [ "$INSTALLCORE" ]; then
 
     fi
 
-    ln -s $ETC/firmware/hifi_6402.img $VEN/firmware/hifi_6402.img
-    ln -s $ETC/firmware/hifi_6402_2spk.img $VEN/firmware/hifi_6402_2spk.img
-    ln -s $ETC/firmware/hifi_6403.img $VEN/firmware/hifi_6403.img
-    ln -s $ETC/firmware/hifi_6403_tfa.img $VEN/firmware/hifi_6403_tfa.img
-    ln -s $ETC/firmware/isp_dts.img $VEN/firmware/isp_dts.img
-    rm -f $VEN/lib/libaudiodevarb.so
-    ln -s $LIB/libaudiodevarb.so $VLIB/libaudiodevarb.so
+    ln -sf $ETC/firmware/hifi_6402.img $VEN/firmware/hifi_6402.img
+    ln -sf $ETC/firmware/hifi_6402_2spk.img $VEN/firmware/hifi_6402_2spk.img
+    ln -sf $ETC/firmware/hifi_6403.img $VEN/firmware/hifi_6403.img
+    ln -sf $ETC/firmware/hifi_6403_tfa.img $VEN/firmware/hifi_6403_tfa.img
+    ln -sf $ETC/firmware/isp_dts.img $VEN/firmware/isp_dts.img
+    ln -sf $LIB/libaudiodevarb.so $VLIB/libaudiodevarb.so
 
   elif [ ! "$QCOM" ]; then
 
     cp $CAFX/huawei/$AEC $ETC/$AEC
 
   fi
-
-  for QCFX in $INSTALLQCAO $INSTALLQCAS $INSTALLQCHW $INSTALLQCSS $INSTALLQCSO $INSTALLQCSK; do
-
-    if [ "$QCFX" ]; then
-
-      if [ ! "$QCOM" ]; then
-
-        ui_print "Qualcomm™ not detected!"
-        ui_print " "
-        ui_print " "
-        ui_print "The appropriate audio effects configuration already in place will be left as is."
-        sleep 3
-
-      elif [ "$INSTALLQCAO" ]; then
-
-        ui_print "Installing Android O Qualcomm audio effects configuration..."
-
-        cp -f $CAFX/qc/android_o/$AEC $ETC/$AEC
-        $SP $ETC/$AEC 0 0 0644
-
-      elif [ "$INSTALLQCAS" ]; then
-
-        ui_print "Installing Asus™ Qualcomm™ audio effects configuration..."
-        sleep 2
-
-        cp -f $CAFX/qc/asus/$AEC $ETC/$AEC
-        $SP $ETC/$AEC 0 0 0644
-
-      elif [ "$INSTALLQCHW" ]; then
-
-        ui_print "Installing Huawei™ Qualcomm™ audio effects configuration..."
-        sleep 2
-
-        cp -f $CAFX/qc/huawei/$AEC $ETC/$AEC
-        $SP $ETC/$AEC 0 0 0644
-
-      elif [ "$INSTALLQCSO" ]; then
-
-        ui_print "Installing Sony™ Qualcomm™ audio effects configuration..."
-        sleep 2
-
-        cp -f $CAFX/qc/sony/$AEC $ETC/$AEC
-        $SP $ETC/$AEC 0 0 0644
-
-      elif [ "$INSTALLQCSK" ]; then
-
-        ui_print "Installing Stock Qualcomm™ audio effects configuration..."
-        sleep 2
-
-        cp -f $CAFX/qc/stock/$AEC $ETC/$AEC
-        $SP $ETC/$AEC 0 0 0644
-
-      fi
-
-      ui_print " "
-      ui_print " "
-
-    fi
-
-  done
 
   if [ -e "$ARISEFX" ]; then
 
@@ -731,8 +722,7 @@ if [ "$INSTALLCORE" ]; then
 
   fi
 
-  rm -f $VETC/$AEC
-  ln -s $ETC/$AEC $VETC/$AEC
+  ln -sf $ETC/$AEC $VETC/$AEC
 
   if [ ! -e "$VLIB/$SRS" ] && [ ! -e "$LIB/$SRS" ]; then
 
@@ -797,17 +787,20 @@ if [ "$INSTALLCORE" ]; then
   if [ "$QCOM" ]; then
 
     mkdir -p $ASUSFX
+    mkdir -p $HUAWEIFX
     mkdir -p $SONYFX
     cp -Rf $CARM/asus/* $ASUSFX
+    cp -Rf $CARM/huawei/* $HUAWEIFX
     cp -Rf $CARM/sony/* $SONYFX
-    $SPR $ASUSFX 0 0 0755 0644
-    $SPR $SONYFX 0 0 0755 0644
+    $SPR $SFX 0 0 0755 0644
 
     if [ -d  "$LIB64" ]; then
 
       mkdir -p $ASUSFX64
+      mkdir -p $HUAWEIFX64
       mkdir -p $SONYFX64
       cp -Rf $CARM64/asus/* $ASUSFX64
+      cp -Rf $CARM64/huawei/* $HUAWEIFX64
       cp -Rf $CARM64/sony/* $SONYFX64
       $SPR $SFX64 0 0 0755 0644
 
@@ -851,12 +844,12 @@ if [ "$INSTALLCORE" ]; then
 
   fi
 
-  if [ -d "LIB64" ]; then
+  if [ -d "$LIB64" ]; then
 
     mkdir -p $AOFX64
     mkdir -p $VIVOFX64
     mkdir -p $LIB64/hw
-    cp -Rf $CARM64/andorid_o/* $AOFX64
+    cp -Rf $CARM64/android_o/* $AOFX64
     cp -Rf $CARM64/vivo/* $VIVOFX64
     cp -Rf $CARM64/hw/* $LIB64/hw
     cp -f $CARM64/android.hardware.audio.common@2.0.so $LIB64/android.hardware.audio.common@2.0.so
@@ -868,10 +861,7 @@ if [ "$INSTALLCORE" ]; then
     cp -f $CARM64/libApeSwDec.so $LIB64/libApeSwDec.so
     cp -f $CARM64/libaptX_encoder.so $LIB64/libaptX_encoder.so
     cp -f $CARM64/libaptXHD_encoder.so $LIB64/libaptXHD_encoder.so
-    cp -f $CARM64/libaudio_param_parser.so $LIB64/libaudio_param_parser.so
     cp -f $CARM64/libaudioclient.so $LIB64/libaudioclient.so
-    cp -f $CARM64/libaudiocustparam.so $LIB64/libaudiocustparam.so
-    cp -f $CARM64/libaudiohal.so $LIB64/libaudiohal.so
     cp -f $CARM64/libaudiomanager.so $LIB64/libaudiomanager.so
     cp -f $CARM64/libaudioom.so $LIB64/libaudioom.so
     cp -f $CARM64/libaudioprocessing.so $LIB64/libaudioprocessing.so
@@ -885,7 +875,6 @@ if [ "$INSTALLCORE" ]; then
     cp -f $CARM64/$SOMCAV $LIB64/$SOMCAV
     cp -f $CARM64/$SOMCME $LIB64/$SOMCME
     cp -f $CARM64/libstlport.so $LIB64/libstlport.so
-    cp -f $CARM64/$STLSH $LIB64/$STLSH
     $SPR $LIB64/hw 0 0 0755 0644
     $SPR $SFX64 0 0 0755 0644
     $SP $LIB64/android.hardware.audio.common@2.0.so 0 0 0644
@@ -897,10 +886,7 @@ if [ "$INSTALLCORE" ]; then
     $SP $LIB64/libApeSwDec.so 0 0 0644
     $SP $LIB64/libaptX_encoder.so 0 0 0644
     $SP $LIB64/libaptXHD_encoder.so 0 0 0644
-    $SP $LIB64/libaudio_param_parser.so 0 0 0644
     $SP $LIB64/libaudioclient.so 0 0 0644
-    $SP $LIB64/libaudiocustparam.so 0 0 0644
-    $SP $LIB64/libaudiohal.so 0 0 0644
     $SP $LIB64/libaudiomanager.so 0 0 0644
     $SP $LIB64/libaudioom.so 0 0 0644
     $SP $LIB64/libFlacSwDec.so 0 0 0644
@@ -913,17 +899,11 @@ if [ "$INSTALLCORE" ]; then
     $SP $LIB64/$SOMCAV 0 0 0644
     $SP $LIB64/$SOMCME 0 0 0644
     $SP $LIB64/libstlport.so 0 0 0644
-    $SP $LIB64/$STLSH 0 0 0644
-    rm -f $VLIB64/libAlacSwDec.so
-    rm -f $VLIB64/libApeSwDec.so
-    rm -f $VLIB64/libaptX_encoder.so
-    rm -f $VLIB64/libaptXHD_encoder.so
-    rm -f $VLIB64/libFlacSwDec.so
-    ln -s $LIB64/libAlacSwDec.so $VLIB64/libAlacSwDec.so
-    ln -s $LIB64/libApeSwDec.so $VLIB64/libApeSwDec.so
-    ln -s $LIB64/libaptX_encoder.so $VLIB64/libaptX_encoder.so
-    ln -s $LIB64/libaptXHD_encoder.so $VLIB64/libaptXHD_encoder.so
-    ln -s $LIB64/libFlacSwDec.so $VLIB64/libFlacSwDec.so
+    ln -sf $LIB64/libAlacSwDec.so $VLIB64/libAlacSwDec.so
+    ln -sf $LIB64/libApeSwDec.so $VLIB64/libApeSwDec.so
+    ln -sf $LIB64/libaptX_encoder.so $VLIB64/libaptX_encoder.so
+    ln -sf $LIB64/libaptXHD_encoder.so $VLIB64/libaptXHD_encoder.so
+    ln -sf $LIB64/libFlacSwDec.so $VLIB64/libFlacSwDec.so
  
   fi
 
@@ -931,20 +911,15 @@ if [ "$INSTALLCORE" ]; then
   $SPR $SFX 0 0 0755 0644
   $SPR $SYS/data 0 0 0755 0644
   $SPR $BIN/hw 0 2000 0755 0755
-  $SPR $ETC/audio_param 0 0 0755 0644
   $SPR $ETC/dts 0 0 0755 0644
   $SPR $FW 0 0 0755 0644
   $SPR $LIB/hw 0 0 0755 0644
   $SPR $PERM 0 0 0755 0644
   $SPR $ALSA 0 0 0755 0644
-  $SPR $INITD 0 0 0755 0755
+  $SPR $INITD 0 2000 0755 0755
   $SPR $SUD 0 0 0700 0700
-  $SP $SYS/ARISE_version.prop 0 0 0644
-  $SP $BIN/iss_daemon 0 2000 0755
-  chown media.audio $BIN/iss_daemon
-  chcon u:object_r:iss_daemon_service:s0 $BIN/iss_daemon
-  $SP $ETC/afs_config.xml 0 0 0644
-  $SP $ETC/em_features.xml 0 0 0644
+  $SP $INFO 0 0 0644
+  $SP $LETTER 0 0 0644
   $SP $ETC/maxxaudio_default.mps 0 0 0644
   $SP $LIB/android.hardware.audio.common@2.0.so 0 0 0644
   $SP $LIB/android.hardware.audio.common@2.0-util.so 0 0 0644
@@ -961,14 +936,10 @@ if [ "$INSTALLCORE" ]; then
   $SP $LIB/libaptXHD_encoder.so 0 0 0644
   $SP $LIB/libAlacSwDec.so 0 0 0644
   $SP $LIB/libApeSwDec.so 0 0 0644
-  $SP $LIB/libaudio_param_parser.so 0 0 0644
   $SP $LIB/libaudio3d.so 0 0 0644
   $SP $LIB/libaudioclient.so 0 0 0644
-  $SP $LIB/libaudiocustparam.so 0 0 0644
-  $SP $LIB/libaudiohal.so 0 0 0644
   $SP $LIB/libaudiomanager.so 0 0 0644
   $SP $LIB/libaudioom.so 0 0 0644
-  $SP $LIB/libaudioparameter.so 0 0 0644
   $SP $LIB/libaudioparams.so 0 0 0644
   $SP $LIB/libaudioprocessing.so 0 0 0644
   $SP $LIB/$APSS 0 0 0644
@@ -976,9 +947,7 @@ if [ "$INSTALLCORE" ]; then
   $SP $LIB/libauroservice_client.so 0 0 0644
   $SP $LIB/libaurostat.so 0 0 0644
   $SP $LIB/libbundlewrapper.so 0 0 0644
-  $SP $LIB/libdts-dcc-jni-v2.so 0 0 0644
   $SP $LIB/libdts-eagle-shared.so 0 0 0644
-  $SP $LIB/libdtscs.so 0 0 0644
   $SP $LIB/libeaglecore.so 0 0 0644
   $SP $LIB/libFlacSwDec.so 0 0 0644
   $SP $LIB/$FREQ 0 0 0644
@@ -994,18 +963,14 @@ if [ "$INSTALLCORE" ]; then
   $SP $LIB/libMAM2-AlgFXProxy-Coretex_A9.so 0 0 0644
   $SP $LIB/libMAM2-WavesFX-Coretex_A9.so 0 0 0644
   $SP $LIB/libmedia_helper.so 0 0 0644
-  $SP $LIB/libmsc.so 0 0 0644
   $SP $LIB/libmwsound.so 0 0 0644
-  $SP $LIB/libprotobuf.so 0 0 0644
   $SP $LIB/libqalcodecwrapper.so 0 0 0644
   $SP $LIB/libqcompostprocbundle.so 0 0 0644
   $SP $LIB/libreverbwrapper.so 0 0 0644
-  $SP $LIB/libsdk_dcc_core_NDK.so 0 0 0644
   $SP $LIB/$SOMCAV 0 0 0644
   $SP $LIB/$SOMCME 0 0 0644
   $SP $LIB/libSpectrum.so 0 0 0644
   $SP $LIB/libSpectrum_jni.so 0 0 0644
-  $SP $LIB/libsqlcipher_android.so 0 0 0644
   $SP $LIB/libstagefright_soft_dsddec.so 0 0 0644
   $SP $LIB/libstagefright_soft_lddpdec.so 0 0 0644
   $SP $LIB/libstagefright_soft_pcmdec.so 0 0 0644
@@ -1013,7 +978,6 @@ if [ "$INSTALLCORE" ]; then
   $SP $LIB/libstagefright_soft_somcdsddec.so 0 0 0644
   $SP $LIB/libsta_jni.so 0 0 0644
   $SP $LIB/libstlport_sh_521.so 0 0 0644
-  $SP $LIB/$STLSH 0 0 0644
   $SP $LIB/libstlport.so 0 0 0644
   $SP $LIB/libsurround_proc.so 0 0 0644
   $SP $LIB/$LATENCY 0 0 0644
@@ -1023,26 +987,18 @@ if [ "$INSTALLCORE" ]; then
   $SP $LIB/libval_2.0.so 0 0 0644
   $SP $LIB/libval_common.so 0 0 0644
   $SP $VEN/bin 0 2000 0755
-  $SP $VEN/bin/hw 0 2000 0755
-  rm -f $VEN/bin/hw/android.hardware.audio@2.0-service
-  rm -f $VETC/maxxaudio_default.mps
-  rm -f $VLIB/libAlacSwDec.so
-  rm -f $VLIB/libApeSwDec.so
-  rm -f $VLIB/libaptX_encoder.so
-  rm -f $VLIB/libaptXHD_encoder.so
-  rm -f $VLIB/libFlacSwDec.so
-  rm -f $VLIB/libsurround_proc.so
-  ln -s $BIN/hw/android.hardware.audio@2.0-service $VEN/bin/hw/android.hardware.audio@2.0-service
-  ln -s $ETC/maxxaudio_default.mps $VETC/maxxaudio_default.mps
-  ln -s $LIB/libAlacSwDec.so $VLIB/libAlacSwDec.so
-  ln -s $LIB/libApeSwDec.so $VLIB/libApeSwDec.so
-  ln -s $LIB/libaptX_encoder.so $VLIB/libaptX_encoder.so
-  ln -s $LIB/libaptXHD_encoder.so $VLIB/libaptXHD_encoder.so
-  ln -s $LIB/libFlacSwDec.so $VLIB/libFlacSwDec.so
-  ln -s $LIB/libsurround_proc.so $VLIB/libsurround_proc.so
+  $SP $VEN/bin/hw 0 2000 0755 so
+  ln -sf $BIN/hw/android.hardware.audio@2.0-service $VEN/bin/hw/android.hardware.audio@2.0-service
+  ln -sf $ETC/maxxaudio_default.mps $VETC/maxxaudio_default.mps
+  ln -sf $LIB/libAlacSwDec.so $VLIB/libAlacSwDec.so
+  ln -sf $LIB/libApeSwDec.so $VLIB/libApeSwDec.so
+  ln -sf $LIB/libaptX_encoder.so $VLIB/libaptX_encoder.so
+  ln -sf $LIB/libaptXHD_encoder.so $VLIB/libaptXHD_encoder.so
+  ln -sf $LIB/libFlacSwDec.so $VLIB/libFlacSwDec.so
+  ln -sf $LIB/libsurround_proc.so $VLIB/libsurround_proc.so
   restorecon $INITD/post-boot
   restorecon $INITD/$PROP
-  restorecon $SUD/arisesound_services
+  restorecon $SUD/$SERVICES
 
   if [ -e "$SDCARD/$PROP" ]; then
 
@@ -1059,6 +1015,74 @@ if [ "$INSTALLCORE" ]; then
 
 fi
 
+for QCFX in $INSTALLQCAO $INSTALLQCAS $INSTALLQCDA $INSTALLQCHW $INSTALLQCSS $INSTALLQCSO $INSTALLQCSK; do
+
+  if [ "$QCFX" ]; then
+
+    if [ ! "$QCOM" ]; then
+
+      ui_print "Qualcomm™ not detected!"
+      ui_print " "
+      ui_print " "
+      ui_print "The appropriate audio effects configuration already in place will be left as is."
+      sleep 3
+
+    elif [ "$INSTALLQCAO" ]; then
+
+      ui_print "Installing Android O Qualcomm audio effects configuration..."
+
+      cp -f $CAFX/qc/android_o/$AEC $ETC/$AEC
+      $SP $ETC/$AEC 0 0 0644
+
+    elif [ "$INSTALLQCAS" ]; then
+
+      ui_print "Installing Asus™ Qualcomm™ audio effects configuration..."
+      sleep 2
+
+      cp -f $CAFX/qc/asus/$AEC $ETC/$AEC
+      $SP $ETC/$AEC 0 0 0644
+
+    elif [ "$INSTALLQCDA" ]; then
+
+      ui_print "Installing Dolby™ Qualcomm™ audio effects configuration..."
+      sleep 2
+
+      cp -f $CAFX/qc/dap/$AEC $ETC/$AEC
+      $SP $ETC/$AEC 0 0 0644
+
+    elif [ "$INSTALLQCHW" ]; then
+
+      ui_print "Installing Huawei™ Qualcomm™ audio effects configuration..."
+      sleep 2
+ 
+      cp -f $CAFX/qc/huawei/$AEC $ETC/$AEC
+      $SP $ETC/$AEC 0 0 0644
+
+    elif [ "$INSTALLQCSO" ]; then
+
+      ui_print "Installing Sony™ Qualcomm™ audio effects configuration..."
+      sleep 2
+
+      cp -f $CAFX/qc/sony/$AEC $ETC/$AEC
+      $SP $ETC/$AEC 0 0 0644
+
+    elif [ "$INSTALLQCSK" ]; then
+
+      ui_print "Installing Stock Qualcomm™ audio effects configuration..."
+      sleep 2
+
+      cp -f $CAFX/qc/stock/$AEC $ETC/$AEC
+      $SP $ETC/$AEC 0 0 0644
+
+    fi
+
+    ui_print " "
+    ui_print " "
+
+  fi
+
+done
+
 if [ "$INSTALLV4A2505" ]; then
 
   ui_print "Installing ViPER4Arise™ 2.5.0.5 module (4.5MB)..."
@@ -1069,7 +1093,7 @@ if [ "$INSTALLV4A2505" ]; then
   if [ "$API" -ge "21" ]; then
 
     cp -f $SCRIPTS/$SERVER $INITD/$SERVER
-    $SP $INITD/$SERVER 0 0 0755
+    $SP $INITD/$SERVER 0 2000 0755
     restorecon $INITD/$SERVER
 
     if [ "$X86" ]; then
@@ -1138,7 +1162,7 @@ if [ "$INSTALLV4A2340" ]; then
   if [ "$API" -ge "21" ]; then
 
     cp -f $SCRIPTS/$SERVER $INITD/$SERVER
-    $SP $INITD/$SERVER 0 0 0755
+    $SP $INITD/$SERVER 0 2000 0755
     restorecon $INITD/$SERVER
 
     if [ "$X86" ]; then
@@ -1265,7 +1289,7 @@ if [ "$INSTALLDDPLUS" ]; then
   if [ "$API" -ge "21" ]; then
 
     cp $SCRIPTS/$SERVER $INITD/$SERVER
-    $SP $INITD/$SERVER 0 0 0755
+    $SP $INITD/$SERVER 0 2000 0755
     restorecon $INITD/$SERVER
 
     if [ ! -d "$PAPP/$MFX" ] && [ ! -d "$APP/$MFX" ]; then
@@ -1320,8 +1344,8 @@ if [ "$INSTALLARKAMYS" ]; then
 
   cp -Rf $MODARK/system/* $SYS
   $SP $DEUTFX/$ARKLIB 0 0 0644
-  $SP $FW/com.arkamysaudio.jar 0 0 0644
-  $SP $PERM/com.arkamysaudio.xml 0 0 0644
+  $SP $FW/com.arkamys.audiofx.jar 0 0 0644
+  $SP $PERM/com.arkamys.audiofx.xml 0 0 0644
 
   if [ "$API" -ge "21" ]; then
 
@@ -1351,26 +1375,26 @@ if [ "$INSTALLARKAMYS" ]; then
 
 fi
 
-if [ "$INSTALLICEDLX" ]; then
+if [ "$INSTALLICE" ]; then
 
-  ui_print "Installing Deluxe ICEsound™ module (750KB)..."
+  ui_print "Installing ICEsound™ module (750KB)..."
   ui_print " "
   ui_print " "
   sleep 2
 
-  cp -Rf $MODICEDLX/etc/* $ETC
+  cp -Rf $MODICE/etc/* $ETC
   $SP $ETC/icesoundconfig.def 0 0 0644
   $SP $ETC/icesoundpresets.def 0 0 0644
 
   if [ "$API" -ge "21" ]; then
 
     mkdir -p $APP/$ICE
-    cp -f $MODICEDLX/$ICEAPK $APP/$ICE/$ICEAPK
+    cp -f $MODICE/$ICEAPK $APP/$ICE/$ICEAPK
     $SPR $APP/$ICE 0 0 0755 0644
 
   else
 
-    cp -f $MODICEDLX/$ICEAPK $APP/$ICEAPK
+    cp -f $MODICE/$ICEAPK $APP/$ICEAPK
     $SP $APP/$ICEAPK 0 0 0644
 
   fi
@@ -1388,14 +1412,14 @@ if [ "$INSTALLICEDLX" ]; then
 
       if [ "$X86" ] || [ "$X8664" ]; then
 
-        cp -f $MODICEDLX/lib/x86/$ICELIB $LIB/$ICELIB
+        cp -f $MODICE/lib/x86/$ICELIB $LIB/$ICELIB
         $SP $LIB/$ICELIB 0 0 0644
 
         sed -i 's/^# ICEpower | www.icepower.dk | Library/# ICEpower | www.icepower.dk | Library\n\n  icepower {\n    path \/system\/lib\/libicepower.so\n  }/g' $CFG
 
       else
 
-        cp -f $MODICEDLX/lib/arm/$ICELIB $DEUTFX/$ICELIB
+        cp -f $MODICE/lib/arm/$ICELIB $DEUTFX/$ICELIB
         $SP $DEUTFX/$ICELIB 0 0 0644
 
         sed -i 's/^# ICEpower | www.icepower.dk | Library/# ICEpower | www.icepower.dk | Library\n\n  icepower {\n    path \/system\/lib\/soundfx\/deuteronomy\/libicepower.so\n  }/g' $CFG
@@ -1411,96 +1435,6 @@ if [ "$INSTALLICEDLX" ]; then
     fi
 
   done
-
-fi
-
-if [ "$INSTALLICEULT" ]; then
-
-  ui_print "Installing Ultra ICEsound™ module (5.6MB)..."
-  ui_print " "
-  ui_print " "
-  sleep 2
-
-  cp -Rf $MODICEULT/bin/* $SYS/bin
-  cp -Rf $MODICEULT/etc/* $ETC
-  cp -Rf $MODICEULT/lib/* $LIB
-  $SPR $ETC/drc 0 0 0755 0644
-  $SPR $ETC/dts 0 0 0755 0644
-  $SP $BIN/audiod 0 2000 0755
-  $SP $BIN/dts_hpx_service 0 2000 0755
-  $SP $ETC/audio_volume_curve.conf 0 0 0644
-  $SP $ETC/audio_volume_curve_nonce.conf 0 0 0644
-  $SP $ETC/icesoundconfig.def 0 0 0644
-  $SP $ETC/icesoundpresets.def 0 0 0644
-  $SP $ETC/stereo_aac.cnt 0 0 0644
-  $SP $ETC/stereo_left.cnt 0 0 0644
-  $SP $ETC/stereo_right.cnt 0 0 0644
-  $SP $LIB/libdts-eagle-shared.so 0 0 0644
-  $SP $LIB/libdts_hpx_service_c.so 0 0 0644
-  $SP $LIB/libeaglecore.so 0 0 0644
-  $SP $LIB/libhpx-lite-sdk.so 0 0 0644
-  $SP $LIB/libomx-dts.so 0 0 0644
-  $SP $LIB/libstagefright_soft_dtsdec.so 0 0 0644
-
-  if [ -d "$LIB64" ]; then
-
-    cp -Rf $MODICEULT/custom/arm64/* $LIB64
-    $SP $LIB64/libdts_hpx_service_c.so 0 0 0644
-    $SP $LIB64/libhpx-lite-sdk.so 0 0 0644
-
-  fi
-
-  if [ "$API" -ge "21" ]; then
-
-    mkdir -p $APP/$ICE
-    cp -f $MODICEULT/$ICEAPK $APP/$ICE/$ICEAPK
-    $SPR $APP/$ICE 0 0 0755 0644
-
-  else
-
-    cp -f $MODICEULT/$ICEAPK $APP/$ICEAPK
-    $SP $APP/$ICEAPK 0 0 0644
-
-  fi
-
-  for CFG in $ETC/$AEC $ETC/$HTC $ETC/$AEV $VETC/$AOE; do
-
-    if [ -f "$CFG" ]; then
-
-      sed -i '/icepower {/,/}/d' $CFG
-      sed -i '/icepower_eq {/,/}/d' $CFG
-      sed -i '/icepower_null {/,/}/d' $CFG
-      sed -i '/icepower_load {/,/}/d' $CFG
-      sed -i '/icepower_test {/,/}/d' $CFG
-      sed -i '/icepower_algo {/,/}/d' $CFG
-
-      if [ "$X86" ] || [ "$X8664" ]; then
-
-        cp -f $MODICEULT/custom/x86/$ICELIB $LIB/$ICELIB
-        $SP $LIB/$ICELIB 0 0 0644
-
-        sed -i 's/^# ICEpower | www.icepower.dk | Library/# ICEpower | www.icepower.dk | Library\n\n  icepower {\n    path \/system\/lib\/libicepower.so\n  }/g' $CFG
-
-      else
-
-        cp -f $MODICEULT/custom/arm/$ICELIB $DEUTFX/$ICELIB
-        $SP $DEUTFX/$ICELIB 0 0 0644
-
-        sed -i 's/^# ICEpower | www.icepower.dk | Library/# ICEpower | www.icepower.dk | Library\n\n  icepower {\n    path \/system\/lib\/soundfx\/deuteronomy\/libicepower.so\n  }/g' $CFG
-
-      fi
-
-      sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_algo {\n    library icepower\n    uuid f1c02420-777f-11e3-981f-0800200c9a66\n  }/g' $CFG
-      sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_test {\n    library icepower\n    uuid e5456320-5391-11e3-8f96-0800200c9a66\n  }/g' $CFG
-      sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_load {\n    library icepower\n    uuid bf51a790-512b-11e3-8f96-0800200c9a66\n  }/g' $CFG
-      sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_null {\n    library icepower\n    uuid 63509430-52aa-11e3-8f96-0800200c9a66\n  }/g' $CFG
-      sed -i 's/^# ICEpower | www.icepower.dk | Effect/# ICEpower | www.icepower.dk | Effect\n\n  icepower_eq {\n    library icepower\n    uuid 50dbef80-4ad4-11e3-8f96-0800200c9a66\n  }/g' $CFG
-
-    fi
-
-  done
-
-  $SPR $SFX 0 0 0755 0644
 
 fi
 
@@ -1756,7 +1690,7 @@ if [ "$INSTALLAM3D" ]; then
   if [ "$API" -ge "21" ]; then
 
     cp -f $SCRIPTS/$SERVER $INITD/$SERVER
-    $SP $INITD/$SERVER 0 0 0755
+    $SP $INITD/$SERVER 0 2000 0755
     restorecon $INITD/$SERVER
 
     mkdir -p $PAPP/$AM3D
@@ -1881,8 +1815,7 @@ if [ "$INSTALLSONY" ]; then
   $SP $LIB/libhuey_dms_plugin.so 0 0 0644
   $SP $LIB/libprotobuf-cpp-2.3.0-lite.so 0 0 0644
   restorecon $INITD/sony_setprop
-  rm -f $VETC/media_codecs_somc.xml
-  ln -s $ETC/media_codecs_somc.xml $VETC/media_codecs_somc.xml
+  ln -sf $ETC/media_codecs_somc.xml $VETC/media_codecs_somc.xml
 
 fi
 
@@ -1908,78 +1841,9 @@ if [ "$INSTALLESIRA" ]; then
 
 fi
 
-if [ "$INSTALLBEATS" ]; then
-
-  ui_print "Installing smeejaytee's ToolBox™ module (5MB)..."
-  ui_print " "
-  ui_print " "
-  sleep 2
-
-  rm -f $SUD/$PROP
-  rm -f $INITD/$PROP
-  rm -f $SUD/smeejaytee*
-  rm -f $INITD/smeejaytee*
-
-  cp -Rf $TOOLBOX/* $SYS
-  $SPR $ALSA 0 0 0755 0644
-  $SPR $ETC/snd_soc_msm 0 0 0755 0644
-  $SPR $ETC/srs 0 0 0755 0644
-  $SPR $ETC/tfa 0 0 0755 0644
-  $SP $ETC/asound.conf 0 0 0644
-  $SP $ETC/Headset_cal.acdb 0 0 0644
-  $SP $ETC/sound_mfg.txt 0 0 0644
-  $SP $ETC/sound_mfg_DMIC.txt 0 0 0644
-  $SP $BIN/alsa_amixer 0 2000 0755
-  $SP $BIN/alsa_aplay 0 2000 0755
-  $SP $BIN/alsa_ctl 0 2000 0755
-  $SP $BIN/arm-linux-gnueabi-sndfile-resample 0 2000 0755
-  $SP $LIB/libalsa-msm.so 0 0 0644
-  $SP $LIB/libasound.so 0 0 0644
-  $SP $LIB/libresample.so 0 0 0644
-  $SP $LIB/libresample.so 0 0 0644
-  $SP $LIB/libsamplerate.so 0 0 0644
-  $SP $LIB/libsndfile.so 0 0 0644
-  $SP $INITD/smeejaytee_setprop 0 0 0755
-  restorecon $INITD/smeejaytee_setprop
-
-  if [ -f "$ACC" ]; then
-
-    if [ -e "$ACCBAK" ]; then
-
-      sed -i '/<item type="integer" name="effect_manager_id">/s/-1/4/g' $SYS/customize/ACC/default.xml
-      sed -i '/<item type="boolean" name="support_harman">/s/true/false/g' $SYS/customize/ACC/default.xml
-      sed -i '/<item type="boolean" name="support_boomsound_effect">/s/true/false/g' $SYS/customize/ACC/default.xml
-      sed -i '/<item type="boolean" name="support_beats_audio">/s/true/false/g' $SYS/customize/ACC/default.xml
-
-    else
-
-      cp -f $ACC $ACCBAK
-      $SP $ACCBAK 0 0 0644
-      sed -i '/<item type="integer" name="effect_manager_id">/s/-1/4/g' $SYS/customize/ACC/default.xml
-      sed -i '/<item type="boolean" name="support_harman">/s/true/false/g' $SYS/customize/ACC/default.xml
-      sed -i '/<item type="boolean" name="support_boomsound_effect">/s/true/false/g' $SYS/customize/ACC/default.xml
-      sed -i '/<item type="boolean" name="support_beats_audio">/s/true/false/g' $SYS/customize/ACC/default.xml
-
-    fi
-
-  fi
-
-  if [ ! -d "$SDCARD/ViPER4Android" ]; then
-
-    mkdir -p $SDCARD/ViPER4Android
-    cp -Rf $SMEEJAY/ViPER4Android/* $SDCARD/ViPER4Android
-
-  else
-
-    cp -Rf $SMEEJAY/ViPER4Android/* $SDCARD/ViPER4Android
-
-  fi
-
-fi
-
 if [ "$INSTALLMFX" ]; then
 
-  ui_print "Installing $MFX..."
+  ui_print "Installing $MFX (200KB)..."
   ui_print " "
   ui_print " "
   sleep 2
@@ -2012,28 +1876,24 @@ fi
 
 if [ "$INSTALLDIRAC" ]; then
 
-  ui_print "Installing Dirac™ Power Sound module..."
+  ui_print "Installing Dirac™ Power Sound module (4.2MB)..."
   ui_print " "
   ui_print " "
   sleep 2
 
   cp -Rf $MODDIRAC/system/* $SYS
   $SPR $DEUTFX 0 0 0755 0644
-  $SPR $ETC/audio_param 0 0 0755 0644
-  $SPR $ETC/smartpa_params 0 0 0755 0644
   $SP $ETC/diracmobile.config 0 0 0644
   $SP $ETC/diracvdd.bin 0 0 0644
   $SP $LIB/libDiracAPI_SHARED.so 0 0 0644
   $SP $PERM/com.oppo.features_dirac.xml 0 0 0644
-  rm -f $VETC/diracmobile.config
-  rm -f $VETC/diracvdd.bin
-  ln -s $ETC/diracmobile.config $VETC/diracmobile.config
-  ln -s $ETC/diracvdd.bin $VETC/diracvdd.bin
+  ln -sf $ETC/diracmobile.config $VETC/diracmobile.config
+  ln -sf $ETC/diracvdd.bin $VETC/diracvdd.bin
 
   if [ "$API" -ge "21" ]; then
 
     cp -f $SCRIPTS/$SERVER $INITD/$SERVER
-    $SP $INITD/$SERVER 0 0 0755
+    $SP $INITD/$SERVER 0 2000 0755
     restorecon $INITD/$SERVER
 
     mkdir -p $APP/$DACS
@@ -2077,32 +1937,6 @@ if [ "$INSTALLDIRAC" ]; then
   done
 
 fi
-
-if [ "$INSTALLDTS" ]; then
-
-  ui_print "Installing $DTS module (13.5MB)..."
-  ui_print " "
-  ui_print " "
-  sleep 2
-
-  if [ "$API" -ge "21" ]; then
-
-    cp -f $SCRIPTS/$SERVER $INITD/$SERVER
-    $SP $INITD/$SERVER 0 0 0755
-    restorecon $INITD/$SERVER
-
-    mkdir -p $PAPP/$DTS
-    cp -Rf $MODDTS/* $PAPP/$DTS
-    $SPR $PAPP/$DTS 0 0 0755 0644
-
-  else
-
-    cp -f $MODDTS/$DTSAPK $APP/$DTSAPK
-    $SP $APP/$DTSAPK 0 0 0644
-
-  fi
-
-fi
      
 if [ "$INSTALLV4AXHIFI" ]; then
 
@@ -2126,7 +1960,7 @@ if [ "$INSTALLV4AXHIFI" ]; then
     sleep 3
 
     cp -f $SCRIPTS/$SERVER $INITD/$SERVER
-    $SP $INITD/$SERVER 0 0 0755
+    $SP $INITD/$SERVER 0 2000 0755
     restorecon $INITD/$SERVER
 
     mkdir -p $PAPP/$XHIFI
@@ -2371,7 +2205,7 @@ if [ "$PERMISSIONS" ]; then
 
   set_perm_recursive 1023 1023 0775 0664 "/data/media"
   set_perm 1023 1023 0770 "/data/media" "/data/media/0"
-  restore_con /data/media/0
+  restorecon -R /data/media/0
 
 fi
 
@@ -2594,48 +2428,6 @@ if [ "$UNINSTALLESIRA" ]; then
 
 fi
 
-if [ "$UNINSTALLBEATS" ]; then
-
-  ui_print "Uninstalling ToolBox™ module..."
-  ui_print " "
-  ui_print " "
-  sleep 2
-
-  rm -rf $ALSA
-  rm -rf $ETC/srs
-  rm -f $ETC/asound.conf
-  rm -f $BIN/alsa_amixer
-  rm -f $BIN/alsa_aplay
-  rm -f $BIN/alsa_ctl
-  rm -f $BIN/arm-linux-gnueabi-sndfile-resample
-  rm -f $LIB/libalsa-msm.so
-  rm -f $LIB/libasound.so
-  rm -f $LIB/libresample.so
-  rm -f $LIB/libsamplerate.so
-  rm -f $LIB/libsndfile.so
-  rm -f $SUD/smeejaytee_setprop
-  rm -f $INITD/smeejaytee_setprop
-
-  mkdir -p $ALSA
-  mkdir -p $ETC/srs
-  cp -Rf core/usr/share/alsa/* $ALSA
-  cp -Rf custom/huawei/system/etc/srs/* $ETC/srs
-  cp -f $CORE/etc/init.d/$PROP $INITD/$PROP
-  $SPR $ALSA 0 0 0755 0644
-  $SPR $ETC/srs 0 0 0755 0644
-  $SP $INITD/$PROP 0 0 0700
-  restorecon $INITD/$PROP
-
-  if [ -e "$ACCBAK" ]; then
-
-    rm -f $ACC
-    mv -f $ACCBAK $ACC
-    $SP $ACC 0 0 0644
-
-  fi
-
-fi
-
 if [ "$UNINSTALLXHIFI" ]; then
 
   ui_print "Uninstalling ViPER4Android XHiFi module..."
@@ -2707,18 +2499,6 @@ if [ "$UNINSTALLDIRAC" ]; then
 
 fi
 
-if [ "$UNINSTALLDTS" ]; then
-
-  ui_print "Uninstalling $DTS module..."
-  ui_print " "
-  ui_print " "
-  sleep 2
-
-  rm -rf $PAPP/$DTS
-  rm -f $APP/$DTSAPK
-
-fi
-
 rm -rf $ARISE
 
 if [ ! -d "$SYS/vendor" ] || [ -L "$SYS/vendor" ]; then
@@ -2729,9 +2509,12 @@ fi
 
 ui_print " "
 ui_print " "
-ui_print "This session is now complete."
+ui_print "This saga is now complete..."
+sleep 2
 ui_print " "
+ui_print "and we cannot thank you enough for the support every step of the way..."
 ui_print " "
+sleep 2
 
 umount /system
 
@@ -2763,6 +2546,6 @@ ui_print " "
 ui_print " "
 ui_print " "
 
-sleep 2
+sleep 1
 
 exit 0

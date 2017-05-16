@@ -1,0 +1,31 @@
+
+# ARISE Sound Systems™
+#
+# "SwanSong™"
+#
+# ViPER4Android XHiFi module
+#
+# www.arisesound.com
+
+
+
+* Before ViPER4Android FX's features such as Convolution, ViPER Clarity & Bass, and Dynamic System existed, much of these enhancements existed in its sister-app, ViPER4Android XHiFi. Early on in ViPER development, these two DSP apps coexisted and evolved in a quite satisfying fashion.
+
+
+* Of course, using two different DSP's and effect libraries was not a necessity in fulfilling a purpose; rather, two different technologies being developed provided more opportunities and resources to achieve that ultimate DSP when it all started. ViPER4Android FX soon became the standout of the two apps and when the technologies of ViPER4Android XHiFi began merging into ViPER4Android FX, there was no doubt that all resources must be used for ViPER4Android FX and begin the dissolution of ViPER4Android XHiFi.
+
+
+* This timecapsule-esque of an app is extremely temperamental in today's Android operating systems full of stricter and new policies, as well as SElinux environments and systemless locations of its dependencies, root and BusyBox. This add-on is our best attempt for a fully functional XHiFi installation, but do know that this is the likeliest of all add-ons to fail if any are to fail.
+
+
+* For the record, that is not a sign that this app is worth acrobatic feats to procure an XHiFi installation. There is a gross misconception created by an individual, one that will absolutely not be named anywhere in this package, that declares XHiFi being superior to FX in regards to "audio reconstruction". This is absolute nonsense as FX was always ahead of XHiFi, never behind, and when the merging began once XHiFi's fate was decided, it was clearer than ever that FX could do everything better than XHiFi could.
+
+
+* So many words to simply state this: This add-on is intended more as a nostalgic experience and a glimpse into early ViPER development. This add-on is not intended to be a critical component in constructing an amazing sound system.
+
+
+!! NOTE !!
+
+* This module requires a /system/xbin BusyBox installation if on Lollipop and above!
+
+* Use your preferred BusyBox installer to make this change if necessary.

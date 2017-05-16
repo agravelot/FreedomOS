@@ -1,0 +1,82 @@
+
+# ARISE Sound Systems™
+#
+# Magnum Opus
+#
+# gh.prop
+#
+# www.arisesound.com
+
+
+
+* Hey guys! We know this package can be a bit overwhelming for many, even for those experienced in custom recovery activities. We also know that, sometimes, you just want to know what those that put all this together ultimately use for their personal installation setup.
+
+
+* This is precisely what /getting_started/our_wishlists is all about - a collection of ARISE™ team members' own arise_cusomize.prop's as they use for their own installation, along with any necessary information to confidently achieve what team members have decided, after hundreds of combinations, is their "perfect" sound system.
+
+
+***
+
+
+* Located next to this file is the arise_customize.prop file guitardedhero places directly in /sdcard:
+
+
+
+           /sdcard/arise_customize.prop
+
+
+
+before flashing the Modular Installer zip in recovery.
+
+
+* guitardedhero's arise_customize.prop includes the value of "true" to automatically install the following modules:
+
+
+  - Core Module
+
+  - ViPER4Arise™ 2.5.0.5 module
+
+  - ViPER4Arise™ Profiles module (Audiophile™ X profile)
+
+  - AM3D ZIRENE® module (powered Off)
+
+  - ICEsound™ module
+
+  - Dirac™ Power Sound module
+
+  - MusicFx module
+
+
+* guitardedhero's setup after installation is actually quite simple:
+
+
+  - Upon booting up after flashing the Modular Installer zip with /sdcard/arise_customize.prop already in place:
+
+  - Settings > Apps > Menu > Show System > enable permissions requested for each installed application, if necessary.
+
+
+  - Launch ViPER4Arise™, tap the "hamburger" menu at the top-left, tap Load Effect Profile, and select Audiophile X. Once loaded, tap Power to power Off and tap again to power back On.
+
+    - Reboot and begin playback to test processing by selecting Driver Status in the ViPER4Arise™ "hamburger" menu and confirm the following:
+
+      - Enabled: Yes
+      - Status: Normal
+      - Audio Format: Supported
+      - Processing: Yes
+
+    - Please note that this current ViPER4Arise™ 2.5.0.5 apk may, at times, require tapping ViPER Clarity in the displayed output tab to "fully engage" a loaded profile that uses the Convolver and/or ViPER Clarity functions, both of which Audiophile™ X uses.
+
+
+  - Launch AM3D ZIRENE® and tap the green power button towards the top to power Off. Nothing more.
+
+  - However, if only a blank screen with "A.R.I.S.E. AM3D" at the top appears when launched, do the following:
+
+    - Navigate to /system/priv-app with a capable file manager, delete the /AM3DZirene folder, and reboot.
+
+    - If on KitKat or below, delete /system/app/AM3DZirene.apk and reboot.
+
+
+  - And that's it! :good:
+
+
+* The entire Magnum Opus™ sound enhancement solution as well as guitardedhero's Audiophile™ X ViPER4Arise profile and guitardedhero's arise_customize.prop were prepared using the Sony™ SRS-X88 Hi-Res Bluetooth™ speaker system, exclusively - a gift most generously provided by the entire ARISE™ XDA Developers community. :good:

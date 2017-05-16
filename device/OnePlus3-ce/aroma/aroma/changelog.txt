@@ -1,3 +1,17 @@
+2.8-CE
+  UPDATE: New dialer and incoming call interface
+  UPDATE: UI optimizations for Messages, Settings and Contacts
+  UPDATE: New action bar for Messages and Settings
+  UPDATE: Optimized high power usage notifications
+  UPDATE: Bluetooth optimizations
+  UPDATE: Night mode optimizations
+  FIX: Bug fixes
+  UPDATE: OpenGapps 20170502
+  UPDATE: ARISE Magnum Opus 20170430
+  UPDATE: Arise Magisk Compatibility Module v3.2 with FreedomOS patch
+  And more, check gitlab.
+  NOTE: This update will break safetynet, consider to use 2.7-CE or stable to pass it.
+
 2.7-CE
   UPDATE: OpenGapps arm64 20170420
   UPDATE: Magisk manager

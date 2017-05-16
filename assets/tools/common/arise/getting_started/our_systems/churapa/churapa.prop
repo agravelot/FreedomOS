@@ -1,0 +1,12 @@
+Setup: churapa profile 
+
+Configuration I use is found in attached arise_customize.prop, which should be placed in /sdcard, and  installs the following when respective entries are set to "true" as I have them set in the attached file:
+
+Core
+Viper 2.5.0.5
+Android_O audio effects
+IceSound Deluxe
+ICEConfig 2
+SHAT preset
+ 
+Enjoy!

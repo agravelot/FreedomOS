@@ -10,29 +10,16 @@ umask 022
 # Functions
 ##########################################################################################
 
-safe_mount() {
-  IS_MOUNT=$(cat /proc/mounts | grep "$1")
-  if [ "$IS_MOUNT" ]; then
-    mount -o rw,remount $1
-  else
-    mount $1
-  fi
-}
-
-safe_mount /system
-
-SLOT=$(getprop ro.boot.slot_suffix 2>/tmp/null)
-if [ "$SLOT" ]; then
+# DETERMINE IF PIXEL (A/B OTA) DEVICE
+ABDeviceCheck=$(cat /proc/cmdline | grep slot_suffix | wc -l)
+if [ "$ABDeviceCheck" -gt 0 ]; then
+  isABDevice=true
   SYSTEM=/system/system
-else
-  SYSTEM=/system
-fi
-
-if [ ! -d "$SYSTEM/vendor" ] || [ -L "$SYSTEM/vendor" ]; then
-  safe_mount /vendor
   VENDOR=/vendor
-elif [ -d "$SYSTEM/vendor" ] || [ -L "/vendor" ]; then
-  VENDOR=$SYSTEM/vendor
+else
+  isABDevice=false
+  SYSTEM=/system
+  VENDOR=/system/vendor	   
 fi
 
 ui_print() {
@@ -141,13 +128,6 @@ image_size_check() {
   curSizeM=$((curSizeM * 4 / 1024))
 }
 
-progress() {
-  if [ $OUTFD != "" ]; then
-    echo "progress ${1} ${2} " 1>&$OUTFD;
-  fi;
-}
-
-
 ##########################################################################################
 # Flashable update-binary preparation
 ##########################################################################################
@@ -220,12 +200,22 @@ ui_print "******************************"
 ui_print "Powered by Magisk (@topjohnwu)"
 ui_print "******************************"
 
-ui_print "- Mounting /data, /cache"
+ui_print "- Mounting /data and /cache"
 mount /data 2>/dev/null
 mount /cache 2>/dev/null
 
+SPACE=" "
+if [ $isABDevice == true ]; then
+  ui_print "   ! A/B OTA device detected!"
+  SPACE="  "
+fi
+ui_print "$SPACE  Mounting /system..."
+mount -o rw /system 2>/dev/null
+ui_print "$SPACE  Mounting /vendor..."
+mount -o rw /vendor 2>/dev/null
+
 if [ ! -f "$SYSTEM/build.prop" ]; then
-  ui_print "! Failed: $SYSTEM could not be mounted!"
+  ui_print "! Failed: /system could not be mounted!"
   exit 1
 fi
 
@@ -325,56 +315,33 @@ fi
 
 # Copy files
 ui_print "- Copying files"
-progress 1.0 2
+
+for ARISE in enforcing permissive; do
+	if [ -e $SYSTEM/etc/init.d/$ARISE ]; then
+		rm -f $SYSTEM/etc/init.d/$ARISE
+	fi
+	if [ -e $SYSTEM/su.d/$ARISE ]; then
+		rm -f $SYSTEM/su.d/$ARISE
+	fi
+done
+
+for ARISE in arisesoundserver post-boot arisesound_setprop sony_setprop; do
+	if [ -e $SYSTEM/etc/init.d/$ARISE ]; then
+		mv -f $SYSTEM/etc/init.d/$ARISE $SYSTEM/su.d
+		set_perm $SYSTEM/su.d/$ARISE 0 0 0644
+	fi
+done
 
 if [ -e $SYSTEM/su.d/arisesound_services ]; then
-	sed -i 's/\$ETC\/init.d\/post-boot/\/system\/su.d\/post-boot/g' "$SYSTEM/su.d/arisesound_services"
-	sed -i '/sleep/ d' "$SYSTEM/su.d/arisesound_services"
-	if [ ! "$(cat $SYSTEM/su.d/arisesound_services | grep "mount -o ro,remount /system")" ]; then
-		sed -i '/exit 0/i mount -o ro,remount \/system' "$SYSTEM/su.d/arisesound_services"
-	fi
-fi
-
-if [ -e $SYSTEM/etc/init.d/post-boot ]; then
-	mv -f $SYSTEM/etc/init.d/post-boot $SYSTEM/su.d
-	sed -i '/sleep/ d' "$SYSTEM/su.d/post-boot"										
-fi
-
-if [ -e $SYSTEM/etc/init.d/arisesound_setprop ]; then
-	mv -f $SYSTEM/etc/init.d/arisesound_setprop $SYSTEM/su.d
-fi
-
-if [ -e $SYSTEM/etc/init.d/smeejaytee_setprop ]; then
-	mv -f $SYSTEM/etc/init.d/smeejaytee_setprop $SYSTEM/su.d
-fi
-
-if [ -e $SYSTEM/etc/init.d/sony_setprop ]; then
-	mv -f $SYSTEM/etc/init.d/sony_setprop $SYSTEM/su.d
-fi
-
-if [ -e $SYSTEM/etc/init.d/arisesoundserver ]; then
-	rm -f $SYSTEM/etc/init.d/arisesoundserver
+	sed -i 's/\$ETC\/init.d/\$SYS\/su.d/g' $SYSTEM/su.d/arisesound_services
+	set_perm $SYSTEM/su.d/arisesound_services 0 0 0644
 fi
 
 if [ -e $SYSTEM/su.d/arisesoundserver ]; then
-	rm -f $SYSTEM/su.d/arisesoundserver
-fi
-
-if [ -e $SYSTEM/etc/init.d/enforcing ]; then
-	rm -f $SYSTEM/etc/init.d/enforcing
-fi
-
-if [ -e $SYSTEM/su.d/enforcing ]; then
-	rm -f $SYSTEM/su.d/enforcing
-fi
-
-if [ -e $SYSTEM/etc/init.d/permissive ]; then
-	mv -f $SYSTEM/etc/init.d/permissive $SYSTEM/su.d
-	unzip -o "$ZIP" permissive.sh
-	cp -af $INSTALLER/permissive.sh $MODPATH/service.sh
-elif [ -e $SYSTEM/su.d/permissive ]; then
-	unzip -o "$ZIP" permissive.sh
-	cp -af $INSTALLER/permissive.sh $MODPATH/service.sh
+	if [ ! "$(cat $SYSTEM/su.d/arisesoundserver | grep "magisk")" ]; then
+		sed -i -e 's/if \[ -e "\$ROOT\/su/elif \[ -e "\$ROOT\/su/' -e '/elif \[ -e "\$ROOT\/su/i if \[ -e "\/data\/magisk\.img" \]; then' -e '/elif \[ -e "\$ROOT\/su/i \  SEPOLICY=magiskpolicy' $SYSTEM/su.d/arisesoundserver
+	fi
+	set_perm $SYSTEM/su.d/arisesoundserver 0 0 0644
 fi
 
 ui_print "- Setting permissions"
@@ -396,10 +363,11 @@ fi
 
 if ! $BOOTMODE; then
   umount /system
-  umount $VENDOR 2>/dev/null
+  umount /vendor 2>/dev/null
 fi
 
-ui_print " "
-ui_print "- :good:"
-ui_print " "
+if [ $isABDevice == true ]; then
+  mount -o ro /system 2>/dev/null
+  mount -o ro /vendor 2>/dev/null
+fi
 exit 0

@@ -1,0 +1,18 @@
+# ViPER4Android_XHiFi audio effect profile !
+# Created 2017-04-15   04:39:56
+
+profile_name=Paschfire_XHiFi
+
+viper4android.headphone_xhifi.enable=boolean=true
+viper4android.headphone_xhifi.playbackgain.enable=boolean=true
+viper4android.headphone_xhifi.fireq.enable=boolean=true
+viper4android.headphone_xhifi.xfisound.enable=boolean=true
+viper4android.headphone_xhifi.playbackgain.ratio=string=50
+viper4android.headphone_xhifi.playbackgain.maxscaler=string=100
+viper4android.headphone_xhifi.playbackgain.volume=string=80
+viper4android.headphone_xhifi.fireq=string=custom
+viper4android.headphone_xhifi.fireq.custom=string=3.4;3.3;2.8;1.5;0.6;0.5;0.5;0.9;1.1;1.6;
+viper4android.headphone_xhifi.xfisound.process=string=130
+viper4android.headphone_xhifi.xfisound.locontour=string=10
+viper4android.headphone_xhifi.outvol=string=110
+viper4android.headphone_xhifi.limiter=string=100

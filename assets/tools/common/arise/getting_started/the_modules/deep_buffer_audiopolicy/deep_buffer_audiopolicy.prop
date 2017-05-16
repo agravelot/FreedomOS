@@ -1,0 +1,17 @@
+# ARISE Sound Systems™
+#
+# "SwanSong™"
+#
+# deep_buffer audio_policy module
+#
+# www.arisesound.com
+
+
+
+* Devices use audio_policy configurations to indicate the available hardware inputs and outputs for audio on the device as well as their corresponding module libraries.
+
+
+* Although preferred to leave intact, some scenarios require audio_policy manipulation to allow full processing, typically ViPER4Android, of streamed media content like YouTube, Chrome, Spotify, SoundCloud, TuneIn, etc.
+
+
+* audio_policy manipulation can be reverted by adding a value of "true" to the line entry for restoring deep_buffer.

@@ -1,0 +1,288 @@
+
+# ARISE Sound Systems™ 20170424
+#
+# Magnum Opus
+#
+# Paschfire's /sdcard/arise_customize.prop
+#
+# www.arisesound.com
+
+
+
+## !! This archive contains 300MB of data.
+## !! Navigate to /system to ensure
+## !! sufficient space is available in
+## !! /system before flashing.
+
+
+
+# Module description and information can be found in META-INF/getting_started/modules.
+
+
+
+# The ARISE™ modular installation zip works by using this file (when present in /sdcard as /sdcard/arise_customize.prop) to determine if any modules are to be installed by a value of "true" for each line below.
+
+
+# Any value other than "true" is the same as a value of "false".
+
+
+# Add a value of "true" to desired add-on(s). Example:
+
+
+
+install.xxxx=true
+
+
+
+# The Core System module must be installed at least once and only once. Once the core module is installed, the value of "true" should be removed for future customization installing, uninstalling, or executing scripts and modules.
+
+
+# If a rom update or system wipe is performed resulting in the need to reinstall the sound system, edit /sdcard/arise_customize.prop to include a value of "true" for the core module to complete your sound system installation, followed by removing the value of "true" from the core module once booted.
+
+
+
+## START ##
+
+
+
+install.core=true
+
+(40MB-175MB)
+
+
+
+# Select either ViPER4Arise™ version below to be installed or ignore to not install ViPER4Arise™ at all.
+
+
+
+install.v4a_2.5.0.5=true
+
+(4.5MB)
+
+
+
+install.v4a_2.3.4.0=
+
+(6.5MB)
+
+
+
+# Add a value of "true" to any modules below to install.
+
+
+
+install.v4a_profiles=true
+
+
+
+install.ddplus=
+
+(15.3MB)
+
+
+
+install.atmos=
+
+(3.3MB)
+
+
+
+install.am3d=
+
+(3.5MB)
+
+
+
+install.arkamys=
+
+(170KB)
+
+
+
+install.sony=
+
+(70MB)
+
+
+
+install.v4a_xhifi=true
+
+(700KB)
+
+
+
+install.esira=
+
+(3.6MB)
+
+
+
+install.musicfx=
+
+(200KB)
+
+
+
+install.dirac=
+
+(4.2MB)
+
+
+
+delete.deep_buffer=true
+
+
+
+restore.deep_buffer=
+
+
+
+repair.sdcard.permissions=
+
+
+#
+
+
+## Qualcomm™ Audio Effects Configuration START ##
+
+
+
+# Qualcomm™ devices have the ability to select from four audio effects configurations using Android O (default), Asus, DAP (native Dolby Atmos), Huawei, Sony, or Stock /soundfx libraries.
+
+
+
+# IMPORTANT!!
+
+# If installing an audio effects configuration on a currently installed sound system, BE SURE TO INSTALL THE CURRENTLY INSTALLED MODULES AGAIN USING THE APPROPRIATE VALUES!!
+
+# Installing Core is not necessary, but any other module IS NECESSARY so that those modules' entries are written to the new audio effects configuration!!
+
+
+
+# As a reminder, any preferred or custom audio effects configuration can always be automatically installed during the Core System module installation by placing it directly in /sdcard named arise_effects.conf to result with /sdcard/arise_effects.conf.
+
+
+ANDROID_O
+ASUS
+DAP
+HUAWEI
+SONY
+STOCK
+
+
+Example: install.qc.ef**cts=ANDROID_O
+
+
+install.qc.effects=ANDROID_O
+
+
+
+## Qualcomm™ Audio Effects Configuration END ##
+
+
+#
+
+
+## ICEsound™ START ##
+
+
+# Add a value of "true" to install the ICEsound™ module:
+
+
+install.ICEsound=
+
+(750KB)
+
+
+# The following ICEsound™ configurations are available below. a value of "None" will remove an existing ICEsound™ configuration to use no ICEsound™ configuration. Values 1 (default), through 6 select the ICEsound™ configuration of the same number.
+
+
+# Although, the available ICEsound™ configurations can have a substantial impact on sound quality, the different versions are provided to find the configuration most compatible with the rest of the installation with incredible sound quality.
+
+
+# Because of the unpredictability of this file's impact on audio and functionality, descriptive names for the different ICEsound™ configurations are not logical and are simply numbered as they are Example:
+
+
+use.ICEco**ig=1
+
+
+1
+2
+3
+4
+5
+6
+None
+
+
+use.ICEconfig=
+
+
+# The following ICEsound™ presets are available below. A value of "None" will remove an existing preset to use no ICEsound™ preset. Enter a value of the preset name exactly as shown below. Example:
+
+
+use.ICEsound.pr**et=01
+
+
+BATHSALTS       =01
+DEEPBASS        =02
+HOLYSH*T        =03
+KRAZY           =04
+MOVIE           =05
+MUSIC2          =06
+OUTDOORS        =07
+PURE (default)  =08
+PURESH*T        =09
+SHAT            =10
+WIDECLARITY     =11
+Default (pure)  =12
+None            =None
+
+
+
+use.ICEsound.preset=
+
+
+
+## ICEsound™ END ##
+
+
+# The ARISE™ modular installation zip works by using this file (when present in /sdcard as /sdcard/arise_customize.prop) to determine if any modules are to be UNINSTALLED by the value of "true" for each line below.
+
+# Any value other than "true" is the same as a value of "false".
+
+
+UNINSTALL.v4a=
+
+
+UNINSTALL.atmos=
+
+
+UNINSTALL.ddplus=
+
+
+UNINSTALL.arkamys=
+
+
+UNINSTALL.ICEsound=
+
+
+UNINSTALL.am3d=
+
+
+UNINSTALL.sony=
+
+
+UNINSTALL.esira=
+
+
+UNINSTALL.v4a_xhifi=
+
+
+UNINSTALL.musicfx=
+
+
+UNINSTALL.dirac=
+
+
+## END ##
