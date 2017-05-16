@@ -15,16 +15,6 @@
 #  Author : Nevax
 #
 
-#ui_print("    ______                   __              ");
-#ui_print("   / ____/_______  ___  ____/ /___  ____ ___ ");
-#ui_print("  / /_  / ___/ _ \/ _ \/ __  / __ \/ __ `__ \");
-#ui_print(" / __/ / /  /  __/  __/ /_/ / /_/ / / / / / /");
-#ui_print("/_/___/_/___//__/\___/\____/\____/_/ /_/ /_/ ");
-#ui_print("  / __ \/ ___/                               ");
-#ui_print(" / / / /\__ \    facebook.com/nevaxtuto      ");
-#ui_print("/ /_/ /___/ /   youtube.com/nevaxtuto        ");
-#ui_print("\____//____/   twitter.com/nevax07           ");
-
 set_progress(0.000000);
 # -- - ASSERT - -- #
 getprop("ro.display.series") == "!assert!" ||
@@ -45,34 +35,31 @@ run_program("/tmp/tools/log_folder.sh");
 
 ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 ifelse(is_mounted("/data"), run_program("/tmp/tools/busybox", "umount", "/data"));
+ui_print("   Mounting Data");
+run_program("/tmp/tools/busybox", "mount", "/data");
+
+set_progress(0.032);
+ui_print("   Mounting System");
+run_program("/tmp/tools/busybox", "mount", "/system");
 
 # -- - BACKUP ADDON.D - -- #
 
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
-  set_progress(0.032);
-  ui_print("   Mounting System & Data");
-  run_program("/tmp/tools/busybox", "mount", "/system");
-  #mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
-  ui_print("   Mounting Data");
-  run_program("/tmp/tools/busybox", "mount", "/data");
-  #mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/userdata", "/data");
-
   set_progress(0.035);
   ui_print("   Backup up your addon.d ");
   set_metadata_recursive("/tmp/tools/addon", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
   run_program("/tmp/tools/addon/backuptool.sh", "backup");
-
-  ui_print("   Unmounting System");
-  ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 endif;
-
 
 # -- - CLEAN SYSTEM - -- #
 set_progress(0.04);
-ui_print("   Formating System");
+ui_print("   Wiping System");
 run_program("/tmp/tools/busybox", "mount", "/system");
 delete_recursive("/system");
+
+ui_print("   Unmounting System");
+ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
 
 set_progress(0.08);
 ui_print("   Cleaning junk files");
@@ -108,50 +95,26 @@ run_program("/tmp/tools/busybox", "mount", "/system");
 
 # -- - FIRMWARES - -- #
 
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.3") == "1")
-  then
-  set_progress(0.580000);
-  ui_print("   Extracting Radio");
-  package_extract_file("RADIO/static_nvbk.bin", "/dev/block/bootdevice/by-name/oem_stanvbk");
-  ui_print("   Extracting Firmware");
-  package_extract_file("firmware-update/3.2.8/firmware-update/cmnlib64.mbn", "/dev/block/bootdevice/by-name/cmnlib64");
-  package_extract_file("firmware-update/3.2.8/firmware-update/cmnlib.mbn", "/dev/block/bootdevice/by-name/cmnlib");
-  package_extract_file("firmware-update/3.2.8/firmware-update/hyp.mbn", "/dev/block/bootdevice/by-name/hyp");
-  package_extract_file("firmware-update/3.2.8/firmware-update/pmic.elf", "/dev/block/bootdevice/by-name/pmic");
-  package_extract_file("firmware-update/3.2.8/firmware-update/tz.mbn", "/dev/block/bootdevice/by-name/tz");
-  package_extract_file("firmware-update/3.2.8/firmware-update/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/aboot");
-  package_extract_file("firmware-update/3.2.8/firmware-update/devcfg.mbn", "/dev/block/bootdevice/by-name/devcfg");
-  package_extract_file("firmware-update/3.2.8/firmware-update/keymaster.mbn", "/dev/block/bootdevice/by-name/keymaster");
-  package_extract_file("firmware-update/3.2.8/firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/xbl");
-  package_extract_file("firmware-update/3.2.8/firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpm");
-  package_extract_file("firmware-update/3.2.8/firmware-update/NON-HLOS.bin", "/dev/block/bootdevice/by-name/modem");
-  package_extract_file("firmware-update/3.2.8/firmware-update/adspso.bin", "/dev/block/bootdevice/by-name/dsp");
-  package_extract_file("firmware-update/3.2.8/firmware-update/firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
-endif;
-
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.3") == "2")
-  then
-  set_progress(0.580000);
-  ui_print("   Extracting Radio");
-  package_extract_file("RADIO/static_nvbk.bin", "/dev/block/bootdevice/by-name/oem_stanvbk");
-  ui_print("   Extracting Firmware");
-  package_extract_file("firmware-update/cmnlib64.mbn", "/dev/block/bootdevice/by-name/cmnlib64");
-  package_extract_file("firmware-update/cmnlib.mbn", "/dev/block/bootdevice/by-name/cmnlib");
-  package_extract_file("firmware-update/hyp.mbn", "/dev/block/bootdevice/by-name/hyp");
-  package_extract_file("firmware-update/pmic.elf", "/dev/block/bootdevice/by-name/pmic");
-  package_extract_file("firmware-update/tz.mbn", "/dev/block/bootdevice/by-name/tz");
-  package_extract_file("firmware-update/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/aboot");
-  package_extract_file("firmware-update/devcfg.mbn", "/dev/block/bootdevice/by-name/devcfg");
-  package_extract_file("firmware-update/keymaster.mbn", "/dev/block/bootdevice/by-name/keymaster");
-  package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/xbl");
-  package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpm");
-  package_extract_file("firmware-update/NON-HLOS.bin", "/dev/block/bootdevice/by-name/modem");
-  package_extract_file("firmware-update/adspso.bin", "/dev/block/bootdevice/by-name/dsp");
-  package_extract_file("firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
-endif;
+set_progress(0.580000);
+ui_print("   Extracting Radio");
+package_extract_file("RADIO/static_nvbk.bin", "/dev/block/bootdevice/by-name/oem_stanvbk");
+ui_print("   Extracting Firmware");
+package_extract_file("firmware-update/cmnlib64.mbn", "/dev/block/bootdevice/by-name/cmnlib64");
+package_extract_file("firmware-update/cmnlib.mbn", "/dev/block/bootdevice/by-name/cmnlib");
+package_extract_file("firmware-update/hyp.mbn", "/dev/block/bootdevice/by-name/hyp");
+package_extract_file("firmware-update/pmic.elf", "/dev/block/bootdevice/by-name/pmic");
+package_extract_file("firmware-update/tz.mbn", "/dev/block/bootdevice/by-name/tz");
+package_extract_file("firmware-update/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/aboot");
+package_extract_file("firmware-update/devcfg.mbn", "/dev/block/bootdevice/by-name/devcfg");
+package_extract_file("firmware-update/keymaster.mbn", "/dev/block/bootdevice/by-name/keymaster");
+package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/xbl");
+package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpm");
+package_extract_file("firmware-update/NON-HLOS.bin", "/dev/block/bootdevice/by-name/modem");
+package_extract_file("firmware-update/adspso.bin", "/dev/block/bootdevice/by-name/dsp");
+package_extract_file("firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
 
 # -- - Restoring Addon.d - -- #
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.2") == "1")
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   then
   ui_print("   Restoring your addon.d");
   run_program("/tmp/tools/addon/backuptool.sh", "restore");
@@ -160,10 +123,10 @@ endif;
 delete_recursive("/tmp/tools/addon/");
 
 # -- - pin/patern fix - -- #
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
+if (file_getprop("/tmp/aroma/install_mod.prop", "selected.0") == "1")
   then
-    set_metadata("/tmp/clean.sh", "uid", 0, "gid", 0, "mode", 0777);
-    run_program("/tmp/clean.sh");
+    set_metadata("/tmp/fix_passwd.sh", "uid", 0, "gid", 0, "mode", 0777);
+    run_program("/tmp/fix_passwd.sh");
     ui_print("   Fixing rom pin/pattern");
 endif;
 
@@ -178,6 +141,7 @@ package_extract_dir("tools/kernel/boot", "/tmp");
 
 run_program("/tmp/tools/busybox", "echo", "DEBUG: Set permissions");
 set_metadata("/tmp/cmdline.sh", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata("/tmp/cmdline_permissive.sh", "uid", 0, "gid", 0, "mode", 0777);
 set_metadata("/tmp/editramdisk.sh", "uid", 0, "gid", 0, "mode", 0777);
 set_metadata("/tmp/makebootimg.sh", "uid", 0, "gid", 0, "mode", 0777);
 set_metadata("/tmp/mkbootimg", "uid", 0, "gid", 0, "mode", 0777);
@@ -186,6 +150,12 @@ set_metadata("/tmp/unpackbootimg", "uid", 0, "gid", 0, "mode", 0777);
 run_program("/tmp/tools/busybox", "dd", "if=/dev/block/bootdevice/by-name/boot", "of=/tmp/boot.img");
 run_program("/tmp/unpackbootimg", "-i", "/tmp/boot.img", "-o", "/tmp/");
 run_program("/tmp/cmdline.sh");
+
+# -- - PERMISSIVE FLAG - -- #
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.12") == "1")
+  then
+  run_program("/tmp/cmdline_permissive.sh");
+endif;
 
 # If supersu, patch the kernel without dm-verity patch and forceencryption patch
 # SuperSU will do that
@@ -209,36 +179,60 @@ run_program("/tmp/tools/busybox", "fstrim", "/cache");
 ui_print("   Trimming data");
 run_program("/tmp/tools/busybox", "fstrim", "/data");
 
-# -- - ROOT - -- #
-
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
-  then
-  ui_print("   Installing SuperSU");
-  run_program("/tmp/tools/busybox", "echo", "DEBUG: Move supersu to /tmp/tools/supersu ->  /tmp/supersu ");
-  run_program("/tmp/tools/busybox", "mv", "/tmp/tools/supersu", "/tmp/supersu");
-  run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");
-  run_program("/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/supersu.log", "/tmp/supersu/supersu.zip");
-  run_program("/tmp/tools/busybox", "mount", "/system");
-endif;
-
-delete_recursive("/tmp/supersu");
-
 # -- - MOD - -- #
 set_progress(0.720000);
 ui_print(" ");
 ui_print("@Applying Your Settings");
 ui_print(" ");
 
+# -- - ROOT - -- #
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
+  then
+  # -- - SUPERSU - -- #
+  if (file_getprop("/tmp/aroma/aromaroot.prop", "rootmethod") == "0")
+    then
+    ui_print("   Installing SuperSU");
+    run_program("/tmp/tools/busybox", "echo", "DEBUG: Move supersu to /tmp/tools/supersu ->  /tmp/supersu ");
+    run_program("/tmp/tools/busybox", "mv", "/tmp/tools/supersu", "/tmp/supersu");
+    run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");
+    run_program("/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/supersu.log", "/tmp/supersu/supersu.zip");
+    run_program("/tmp/tools/busybox", "mount", "/system");
+  endif;
+
+  # -- - MAGISK - -- #
+  if (file_getprop("/tmp/aroma/aromaroot.prop", "rootmethod") == "1")
+    then
+    ui_print("   Installing Magisk");
+    run_program("/tmp/tools/magisk/install.sh");
+    ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
+    run_program("/tmp/tools/busybox", "echo", "DEBUG: Move magisk to /tmp/tools/magisk ->  /tmp/magisk ");
+    run_program("/tmp/tools/busybox", "mkdir", "-p", "/dev/tmp");
+    run_program("/tmp/tools/busybox", "mv", "/tmp/tools/magisk", "/dev/tmp/magisk");
+    run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");
+    run_program("/dev/tmp/magisk/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/magisk.log", "/tmp/magisk/magisk.zip");
+    run_program("/tmp/tools/busybox", "mount", "/system");
+
+    if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
+      then
+      ui_print("   Installing ARISE4Magisk module");
+      run_program("/sbin/mkdir", "/tmp/arise4magisk");
+      run_program("/sbin/unzip", "/tmp/tools/arise4magisk/arise4magisk.zip", "META-INF/com/google/android/*", "-d", "/tmp/arise4magisk");
+      run_program("/sbin/sh", "/tmp/arise4magisk/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/arise4magisk.log", "/tmp/tools/arise4magisk/arise4magisk.zip");
+    endif;
+  endif;
+endif;
+delete_recursive("/tmp/magisk");
+delete_recursive("/tmp/supersu");
+
+
 # -- - ARISE - -- #
 
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
   then
   ui_print("   Installing A.R.I.S.E Sound System");
-  #run_program("/tmp/tools/arise/install.sh");
   ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
   run_program("/tmp/tools/busybox", "mkdir", "/tmp/arise");
   run_program("/tmp/tools/busybox", "unzip", "/tmp/tools/arise/arise.zip", "META-INF/com/google/android/*", "-d", "/tmp/arise");
-  #run_program("mv", "/tmp/tools/arise/arise.zip", "/tmp/arise/arise.zip");
   package_extract_dir("tools/arise", "/tmp/arise");
   set_metadata("/tmp/arise/META-INF/com/google/android/update-binary", "uid", 0, "gid", 0, "mode", 0777);
   set_metadata_recursive("/tmp/arise", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
@@ -246,8 +240,6 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
   run_program("/tmp/tools/busybox", "mount", "/system");
   delete_recursive("/tmp/arise");
   delete_recursive("/tmp/tools/arise");
-  ui_print("   Extracting V4A profiles & IRS");
-  package_extract_dir("tools/v4a_profiles_irs", "/sdcard/");
 endif;
 
 # -- - XPOSED - -- #
@@ -270,11 +262,6 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "1")
   then
     set_progress(0.900000);
   	ui_print("   Installing Adaway");
-  	ui_print("   Installing host file");
-  	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "mode", 0777);
-  	delete("/system/etc/hosts");
-  	package_extract_file("tools/hosts", "/system/etc/hosts");
-  	set_metadata("/system/etc/hosts", "uid", 0, "gid", 0, "mode", 0644);
 endif;
 
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.3") == "0")
@@ -334,8 +321,6 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.8") == "1")
    run_program("/tmp/tools/google_assistant.sh");
 endif;
 
-delete("/tmp/tools/google_assistant.sh");
-
 # -- - NO THEME - -- #
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.10") == "0")
   then
@@ -350,15 +335,16 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.10") == "1")
     ui_print("   Installing Substratum");
 endif;
 
-set_progress(0.955000);
-ui_print("   Installing OxygenOS Bootscreen");
-package_extract_file("tools/splash-stock.bin", "/dev/block/sde17");
-delete("/tmp/tools/splash-stock.bin");
+# -- - WIDEBAND WIFI - -- #
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.11") == "1")
+  then
+    ui_print("   Enabling Wideband WiFi");
+    run_program("/tmp/tools/wideband_wifi.sh");
+endif;
 
-ui_print("   Installing Busybox");
-run_program("/sbin/busybox", "unzip", "/tmp/tools/busybox_installer/busybox.zip", "META-INF/com/google/android/*", "-d", "/tmp/tools/busybox_installer");
-run_program("/sbin/busybox", "sh", "/tmp/tools/busybox_installer/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/busybox.log", "/tmp/tools/busybox_installer/busybox.zip");
-delete_recursive("/tmp/tools/busybox_installer");
+# -- - APPLYING THEMES - -- #
+run_program("/tmp/tools/busybox", "mount", "/system");
+run_program("/tmp/tools/vrtheme/run.sh");
 
 # -- - SYSTEM APPS - -- #
 set_progress(0.960000);
@@ -372,33 +358,28 @@ run_program("/tmp/tools/apps_remover.sh", "sapps.prop", "1");
 set_progress(0.940000);
 ui_print(" ");
 
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "2")
-  then
-    run_program("/tmp/tools/no_setup.sh");
-endif;
-
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
-  then
-  ui_print("@Installing Open GApps");
-  ui_print(" ");
-  delete_recursive("/tmp/opengapps");
-  #run_program("/tmp/tools/opengapps/install.sh");
-  run_program("/tmp/tools/busybox", "mkdir", "/tmp/opengapps");
-  run_program("/tmp/tools/busybox", "unzip", "/tmp/tools/opengapps/opengapps.zip", "META-INF/com/google/android/*", "-d", "/tmp/opengapps");
-  #run_program("mv", "/tmp/tools/opengapps/opengapps.zip", "/tmp/ariopengappsse/opengapps.zip");
-  package_extract_dir("tools/opengapps", "/tmp/opengapps");
-  set_metadata("/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "uid", 0, "gid", 0, "mode", 0777);
-  set_metadata_recursive("/tmp/opengapps", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
-  run_program("/sbin/busybox", "sh", "/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "dummy", "1", "/tmp/opengapps/opengapps.zip");
-  run_program("/tmp/tools/busybox", "mount", "/system");
-endif;
+ui_print("@Installing Open GApps");
+ui_print(" ");
+delete_recursive("/tmp/opengapps");
+#run_program("/tmp/tools/opengapps/install.sh");
+run_program("/tmp/tools/busybox", "mkdir", "/tmp/opengapps");
+run_program("/tmp/tools/busybox", "unzip", "/tmp/tools/opengapps/opengapps.zip", "META-INF/com/google/android/*", "-d", "/tmp/opengapps");
+#run_program("mv", "/tmp/tools/opengapps/opengapps.zip", "/tmp/ariopengappsse/opengapps.zip");
+package_extract_dir("tools/opengapps", "/tmp/opengapps");
+set_metadata("/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata_recursive("/tmp/opengapps", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
+run_program("/sbin/busybox", "sh", "/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "dummy", "1", "/tmp/opengapps/opengapps.zip");
+run_program("/tmp/tools/busybox", "mount", "/system");
+run_program("/tmp/tools/pixel_icons/install.sh");
 
 set_progress(0.990000);
 ui_print(" ");
-ui_print("Saving log in /sdcard/FreedomOS_log_installer.tar.gz");
-ui_print("Cleaning Temporary Files");
-run_program("/tmp/tools/save_logs.sh");
-ui_print("You can save extra logs with Save Logs button");
-ui_print(" ");
-set_progress(1.00000);
 ui_print("@Finished");
+ui_print(" ");
+ui_print("Saving log in /sdcard/FreedomOS_log_installer.tar.gz");
+run_program("/tmp/tools/save_logs.sh");
+ui_print(" ");
+ui_print("Unmounting /system");
+ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
+set_progress(1);
+ui_print("");

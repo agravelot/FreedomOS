@@ -1,0 +1,152 @@
+#!/bin/bash
+# Copyright 2016-2017 Antoine GRAVELOT
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#  Author : Nevax
+#
+# FreedomOS conf file
+
+ZIP_NAME=FreedomOS-CE
+# Select the architecture of your device, it will be used in the system patch (see ADD_SYSTEM_LIST bellow).
+# It must coincide with the assets/system/$TARGET_ARCH
+TARGET_ARCH=arm64
+CODENAME=op3t
+DEVICE=OnePlus3T
+# It will be used for the assert verification at the beginning of installation of the ROM.
+ASSERT="OnePlus 3T"
+
+# Basically, it's just the name of the downloaded zip file without the ".zip" extension.
+ROM_NAME=OnePlus3TOxygen_28_OTA_022_all_1704191252_bca11249255a47fe
+ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
+# This MD5 is used for checking the integrity of the original rom.
+ROM_MD5=49c7ed2453f26dce8f210a43a1e5d9e0
+
+# OpenGapps
+GAPPS_BUILD=true
+GAPPS_ANDROID=7.1
+GAPPS_PLATFORM=arm64
+GAPPS_TYPE=aroma
+GAPPS_DATE=20170420
+GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
+GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
+GAPPS_MD5=497450219c777ac6df7c202e33c9ee79
+
+# Set Android version for selinux build script
+ANDROID_VERSION=7
+# Set the version of the aroma installer, this is not the version of FreedomOS!
+# see assets/META-INF/aroma/$AROMA_VERSION
+AROMA_VERSION=2.70
+BUILD_METHOD=dat_to_dat
+# SYSTEMIMAGE_PARTITION_SIZE is the size of your system partition, you can get this value in the TWRP source of your device.
+# https://github.com/dianlujitao/android_device_oneplus_oneplus3/search?utf8=✓&q=BOARD_SYSTEMIMAGE_PARTITION_SIZE&type=Code
+SYSTEMIMAGE_PARTITION_SIZE=3154116608
+
+PATCH_SYSYEM=""
+
+# Add BUSYBOX into the rom
+BUILD_BUSYBOX=false
+
+BOOTANIMATION=350
+
+aroma_list="
+common/*
+1080p/*
+oneplus3/*
+"
+
+# Files / folders to remove from the original stock image.
+# You can easily debloat your rom from here.
+CLEAN_SYSTEM_LIST="
+app/AndroidPay
+app/BTtestmode
+app/Duo
+app/EngineeringMode
+app/EngSpecialTest
+app/FaceLock
+app/Hangouts
+app/LogKitSdService
+app/Maps
+app/OemAutoTestServer
+app/OEMLogKit
+app/OPPBugReport
+app/SensorTestTool
+app/Videos
+app/WifiRfTestApk
+priv-app/OnePlusWizard
+bin/fmfactorytest
+bin/fmfactorytestserver
+bin/install-recovery.sh
+bin/oemlogkit
+bin/WifiLogger_app
+recovery-from-boot.p
+etc/recovery-resource.dat
+app/CalendarGoogle
+priv-app/CallLogBackup
+app/Chrome
+app/Drive
+app/Gmail2
+app/GmailExchange
+priv-app/Velvet
+app/Messenger
+app/Photos
+app/Music2
+app/YouTube
+app/NFCTestMode
+vendor/etc/in_apps
+priv-app/SetupWizard
+priv-app/GmsCore
+etc/permissions/com.google.android.maps.xml
+etc/permissions/com.google.android.media.effects.xml
+etc/permissions/com.google.widevine.software.drm.xml
+tts/
+"
+
+# Add a secondary firmware files, like that it can be installed.
+PATCH_FIRMWARE=""
+
+# Set the files/folder you want to add to your system partition.
+# The files are in the assets/system/$TARGET_ARCH/
+ADD_SYSTEM_LIST="
+app/Adaway
+app/Substratum
+app/XposedInstaller
+"
+
+# Set the files/folder you want to add to your system partition.
+# The files are in the assets/system/$TARGET_ARCH/
+ADD_DATA_LIST=""
+
+# tools to add to the rom, (/assets/tools/)
+TOOLS_LIST="
+arm64/busybox
+common/adb.sh
+common/addon
+common/apps_remover.sh
+common/aptx
+common/arise
+common/arise4magisk
+common/clean.sh
+common/fonts
+common/fix_passwd.sh
+common/google_assistant.sh
+common/google_dns.sh
+common/kernel
+common/log_folder.sh
+common/magisk
+common/save_logs.sh
+common/supersu
+common/themes
+common/vrtheme
+common/wideband_wifi.sh
+"

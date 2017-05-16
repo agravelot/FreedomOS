@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc tab_name="Entertainment - Playback" version="1.0">
+	<CategoryTypeList>
+	<CategoryType name="Profile">
+			<Category name="Headset" alias="3-pole headset,4-pole headset,5-pole headset"/>
+			<Category name="Speaker" alias="Hands-free 1mic NR,Hands-free no 1mic NR"/>
+			<Category name="Headset+Speaker"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="ui_visible" type="int"/>
+		<Param name="bes_loudness_L_hpf_fc" type="uint_array"/>
+		<Param name="bes_loudness_L_hpf_order" type="uint_array">
+			<Field name="High Pass Filter Order" array_index="0" bit="0,31" check_list="0,No High Pass Filter,2,2nd-Order IIR Filter,4,4th-Order IIR Filter"/>
+		</Param>
+		<Param name="bes_loudness_L_lpf_fc" type="uint_array"/>
+		<Param name="bes_loudness_L_lpf_order" type="uint_array">
+			<Field name="Low Pass Filter Order"  array_index="0" bit="0,31" check_list="0,No Low Pass Filter,1,1st-Order IIR Filter,2,2nd-Order IIR Filter"/>
+		</Param>
+		<Param name="bes_loudness_L_bpf_fc" type="uint_array"/>
+		<Param name="bes_loudness_L_bpf_bw" type="uint_array"/>
+		<Param name="bes_loudness_L_bpf_gain" type="int_array"/>
+		<Param name="bes_loudness_R_hpf_fc" type="uint_array"/>
+		<Param name="bes_loudness_R_hpf_order" type="uint_array"/>
+		<Param name="bes_loudness_R_lpf_fc" type="uint_array"/>
+		<Param name="bes_loudness_R_lpf_order" type="uint_array"/>
+		<Param name="bes_loudness_R_bpf_fc" type="uint_array"/>
+		<Param name="bes_loudness_R_bpf_bw" type="uint_array"/>
+		<Param name="bes_loudness_R_bpf_gain" type="int_array"/>
+		
+		<Param name="bes_loudness_Sep_LR_Filter" type="uint_array"/>
+		<Param name="bes_loudness_WS_Gain_Max" type="uint_array"/>
+		<Param name="bes_loudness_WS_Gain_Min" type="uint_array"/>
+		<Param name="bes_loudness_Filter_First" type="uint_array"/>
+		<Param name="bes_loudness_Num_Bands" type="uint_array"/>
+		<Param name="bes_loudness_Flt_Bank_Order" type="uint_array"/>
+		<Param name="bes_loudness_Cross_Freq" type="uint_array"/>
+		
+		<Param name="DRC_Th" type="int_array"/>
+		<Param name="DRC_Gn" type="int_array"/>
+		<Param name="SB_Gn" type="int_array"/>
+		
+		<Param name="SB_Mode" type="uint_array"/>
+		<Param name="DRC_Delay" type="uint_array"/>
+		<Param name="Att_Time" type="uint_array"/>
+		<Param name="Rel_Time" type="uint_array"/>
+		
+		<Param name="Hyst_Th" type="int_array"/>
+		
+		<Param name="Lim_Th" type="int_array"/>
+		<Param name="Lim_Gn" type="int_array"/>
+		<Param name="Lim_Const" type="uint_array"/>
+		<Param name="Lim_Delay" type="uint_array"/>
+		<Param name="SWIPRev" type="int_array"/>
+	</ParamUnit>
+</ParamUnitDesc>

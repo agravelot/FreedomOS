@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.sonyericsson.dtcpctrl_private.api"
+        file="/system/framework/com.sonyericsson.dtcpctrl_private_impl.jar"/>
+    <library name="com.sonyericsson.dtcpctrl_private.api_2"
+        file="/system/framework/com.sonyericsson.dtcpctrl_private_impl.jar"/>
+    <library name="com.sonyericsson.dtcpctrl_private.api_3"
+        file="/system/framework/com.sonyericsson.dtcpctrl_private_impl.jar"/>
+</permissions>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="CategoryLayer" wording="CategoryLayer">
+			<Category name="" wording="Common" alias="Common"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="speech_common_para" type="ushort_array">
+			<Field name="Loud speaker mode Pre-Clipping threshold" array_index="3" bit="0,2"              check_list="0,8960,1,10752,2,12902,3,15483,4,18579,5,22295,6,26754,7,32767"/>
+		</Param>
+		<Param name="debug_info" type="ushort_array"/>
+	</ParamUnit>
+</ParamUnitDesc>

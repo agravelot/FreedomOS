@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AudioParam version="1.0">
+  <ParamTree>
+    <Param path="RCV" param_id="0"/>
+    <Param path="HS" param_id="0"/>
+    <Param path="SPK" param_id="0"/>
+    <Param path="BT earphone" param_id="1"/>
+    <Param path="HS5POLE" param_id="0"/>
+    <Param path="HS5POLE_ANC" param_id="0"/>
+  </ParamTree>
+  <ParamUnitPool>
+    <ParamUnit param_id="0">
+      <Param name="dl_gain_visibility" value="1"/>
+      <Param name="ul_gain_visibility" value="1"/>
+    </ParamUnit>
+    <ParamUnit param_id="1">
+      <Param name="dl_gain_visibility" value="0"/>
+      <Param name="ul_gain_visibility" value="-1"/>
+    </ParamUnit>
+  </ParamUnitPool>
+</AudioParam>

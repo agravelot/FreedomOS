@@ -26,14 +26,6 @@ live_wallpaper_list="
 LiveWallpapersPicker
 "
 
-document_list="
-OPFilemanager
-"
-
-download_provider_list="
-DownloadProviderUi
-"
-
 swiftkey_list="
 SwiftKeyFactorySettings
 com.touchtype
@@ -57,18 +49,6 @@ fi
 sed -i '/inclorexcl/d' /tmp/aroma/sapps.prop
 
 # Add unwanted file to sapps.prop
-if [[ $(grep -c "DocumentsUI" /tmp/aroma/sapps.prop) == "1" ]]; then
-  for app in $document_list; do
-    echo -e $app >> /tmp/aroma/sapps.prop
-  done
-fi
-
-if [[ $(grep -c "DownloadProvider" /tmp/aroma/sapps.prop) == "1" ]]; then
-  for app in $download_provider_list; do
-    echo -e $app >> /tmp/aroma/sapps.prop
-  done
-fi
-
 if [[ $(grep -c "LiveWallpapers" /tmp/aroma/sapps.prop) == "1" ]]; then
   for app in $live_wallpaper_list; do
     echo -e $app >> /tmp/aroma/sapps.prop

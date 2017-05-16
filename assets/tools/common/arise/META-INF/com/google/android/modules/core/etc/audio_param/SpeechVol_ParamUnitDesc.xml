@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Band" wording="Bandwidth">
+			<Category name="NB" alias="Narrow Band"/>
+			<Category name="WB" alias="Wide Band"/>
+		</CategoryType>
+		<CategoryType name="Profile">
+			<Category name="RCV" wording="Receiver" alias="Normal,Handset,Lpbk_Handset"/>
+			<Category name="HAC"/>
+			<Category name="HS" wording="Headset" alias="Headset,3_pole_Headset,4_pole_Headset,Lpbk_Headset"/>
+			<Category name="SPK" wording="Speaker" alias="Hands-free,1-mic NR,2-mic NR,Handsfree,MagiConference,Lpbk_Handsfree"/>
+			<Category name="HS5POLE" wording="Headset(5-pole)" alias="5_pole_Headset,5-pole headset"/>
+			<Category name="HS5POLE_ANC" wording="Headset(5-pole+ANC)" alias="5_pole_Headset+ANC"/>
+			<Category name="TTY"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="dl_gain" type="short_array"/><!-- index, corresponding dB in another xml -->
+		<Param name="ul_gain" type="int"/><!-- unit is dB, range in other xml -->
+		<Param name="stf_gain" type="short_array">
+			<Field name="stf_gain_field" array_index="0" bit="0,15" check_list="30,20dB,28,18dB,26,16dB,24,14dB,22,12dB,20,10dB,18,8dB,16,6dB,14,4dB,12,2dB,10,0dB,8,-2dB,6,-4dB,4,-6dB,2,-8dB,0,-10dB"/>
+		</Param>
+	</ParamUnit>
+</ParamUnitDesc>

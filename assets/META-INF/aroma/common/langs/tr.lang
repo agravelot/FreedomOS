@@ -29,7 +29,7 @@ welcome.next=Yüklemeye Devam Etmek İçin İleri'ye basın...
 changelog.title=Değişiklikler
 changelog.desc=FreedomOS Değişiklikleri
 language.title=Dil seçin
-language.text=Yükleme dili seçin
+language.text=Yükleme dilini seçin
 language.english=English
 language.english.info=Using English
 language.french=France
@@ -42,8 +42,13 @@ language.spanish=Español
 language.spanish.info=Utilizar Español by @jgimenezpascual
 language.turkish=Türkçe
 language.turkish.info=Türkçe kullanın - @Mevlüt TOPÇU
+language.tchinese=正體中文
+language.tchinese.info=使用正體中文 - @clyang
+language.schinese=简体中文
+language.schinese.info=使用简体中文 - @clyang
 
-rom.data=!date!
+
+rom.data=!tarih!
 text_finish=Bitti
 model.title=Telefon Modeli
 
@@ -56,16 +61,16 @@ main.sys=Sistem bilgisi
 main.sys.info=Aygıt bilgilerini göster
 main.changelog.info=FreedomOS değişiklikleri
 main.exit=Çıkış
-main.exit.info=FreedomOS yükleyiciden çık
+main.exit.info=FreedomOS yükleyicisinden çık
 
 install_mod.tittle=FreedomOS yükleyici
 install_mod.tittle2=Ayarlarınızı seçin
 install_mod.sub_tittle=Kurulum yöntemi
 
 gapps_yes=Evet, Google Uygulamarını yükle
-gapps_no=Google Uygulamarını yükleme
+gapps_no=Google Uygulamalarını yükleme
 info.gapps_yes=Tavsiye edilen
-info.gapps_no=Sistem Google uygulamaları olmadan önyükleme <#f00>YAPMAZ</#>
+info.gapps_no=Sistem, Google uygulamaları olmadan önyükleme <#f00>YAPMAZ</#>
 assert.tittle=Kontrolü onayla
 assert_yes=Evet (Önerilen)
 assert_no=Hayır
@@ -83,7 +88,7 @@ passwordfix.tittle=Pin/Desen geçici çözümü
 passwordfix_yes=Evet
 info.passwordfix_yes=Veri bölümünden Pin/Desen yedeklemesini kaldır
 passwordfix_no=Hayır
-info.passwordfix_no=Eski dosyalara izin ver
+info.passwordfix_no=Eski dosya kalsın
 
 info.custom=Özgürlük yolunda
 info.stock=Orijinal OnePlus stok yazılımı, root erişimi yok
@@ -112,18 +117,20 @@ pre.install3=Yükleme ayarlarınızı gözden geçirmek veya değiştirmek ister
 gapps.tittle=Google Uygulamaları
 gapps.tittle2=İstediğiniz Google Uygulamalarını seçin
 
-calculator=Hesap Makinesi
-calendar=Takvim
+android_pay=<b>Android Pay</b>
+calculator=<b>Hesap Makinesi</b>
+calendar=<b>Takvim</b>
 call_log=Google Çağrı Yedekleme
-chrome=Chrome
+chrome=<b>Chrome</b>
 drive=Drive
 duo= Duo
 gmail=Gmail
 gmail_exchange=Gmail Exchange
 google=Google
+google_camera=<b>Google Kamera</b>
 hangouts=Hangouts
 maps=Haritalar
-messenger=Messenger
+messenger=Android Messenger
 photos=Fotoğraflar
 play_music=Play Müzik
 tts=Text-to-Speech
@@ -132,6 +139,7 @@ play_movies=Play Filmler
 setupwizard=Google Kurulum Sihirbazı
 youtube=YouTube
 
+info.android_pay=NFC ödemeler
 info.calculator=0010 1010
 info.calendar=Google Takvim
 info.call_log=Arama geçmişinizi Google'a gönderin
@@ -141,6 +149,7 @@ info.duo=Görüntülü arama uygulaması
 info.gmail=E-posta istemcisi
 info.gmail_exchange=Gmail için destek değişimi
 info.google=Google Asistan
+info.google_camera=Resimler ve videolar çekin
 info.hangouts=Anlık mesajlaşma
 info.maps=Gerçek zamanlı navigasyon, trafik, nakliye
 info.messenger=Google SMS/MMS uygulaması
@@ -158,26 +167,25 @@ apps.tittle=Sistem uygulamaları
 apps.tittle2=Yüklemek istediğiniz sistem uygulamalarını seçin
 
 anthal=AntHalService
-android_pay=Android Pay
 basic_dream=Basic Dream
-bt_midi=BT Midi Service
-bt_test=BTtestmode
+bt_midi=BT Midi Hizmeti
+bt_test=BT test modu
 desk_clock=DeskClock
-document=Dökümanalr
+document=OP Dosya Yöneticisi
 download_provider=İndirme Sağlayıcı
 engineering=Mühendislik Modu
 eng_special_test=EngSpecialTest
 easter_egg=Easter Egg
-facelock=Facelock
+facelock=Yüz kilidi
 galaxy=Galaxy
 holo_spiral=Holo Spiral
-anim_wallpaper=Animated Wallpaper
+anim_wallpaper=Hareketli Duvar Kağıdı
 log_kit=LogKitSdService
 music=Müzik
-noise_feild=Noised Feild
+noise_feild=Gürültülü Alan
 oneplus_forum=OnePlus Topluluğu
 oneplus_wallpapers=OnePlus Duvar Kağıtları
-oem_test=OemAutoTestServer
+oem_test=Oem Otomatik Test Sunucusu
 oem_log=OEMLogKit
 oneplus_camera=OnePlus Kamera
 oneplus_gallery=OnePlus Galeri
@@ -185,11 +193,11 @@ ota=OnePlus OTA
 oneplus_wizard=OnePlus Kurulum sihirbazı
 phase_beam=Phase Beam
 protips=Protips
-sensor_test=SensorTestTool
+sensor_test=Sensör Test Aracı
 sms=OnePlus SMS
 sound_recorder=Ses kaydedici
 swiftkey=Swiftkey
-tags=Tags
+tags=Etiketler
 weather=OnePlus Hava Durumu
 wifi_test=WifiRfTestApk
 dive_icon=Dive Simge Paketi
@@ -259,18 +267,22 @@ mod.tittle=Ek modları yükle
 mod.tittle2=Root erişimi, ses modu, reklam engelleyici ve xposed ...
 mod.tittle3=Ekstra mod
 
-supersu=SuperSU yükle
+root=Kök erişimini etkinleştir
 xposed=Material Tasarım Xposed Yükleyici
 adaway=Adaway
 adb=ADB'yi etkinleştir
 dns=Google DNS
 fos_wallpapers=FreedomOS duvar kağıtları
 emoji_one=EmojiOne
-google_assistant=Google Asitan
+google_assistant=Google Asistan
 arise=A.R.I.S.E
+aptx=APTX/APTX-HD yükle
+40-wifi=Geniş bant Wifi\'yi etkinleştir
+permissive=İzin Verilenleri Etkinleştir
+substratum=Substratum
 
-info.supersu=SuperSU by Chainfire
-info.xposed=Xposed Installer application only by DVD android
+info.root=SafetyNet'i geçmek için gereklidir
+info.xposed=Xposed Installer uygulaması yalnızca DVD android tarafından yapılan
 info.adaway=Android için Reklam Engelleyici
 info.adb=Android Hata Ayıklama Köprüsü
 info.dns=DNS'i Ayarla 8.8.8.8/8.8.4.4
@@ -278,33 +290,61 @@ info.fos_wallpapers=Tasarım @badboy47
 info.emoji_one=Açık Emoji Standardı
 info.google_assistant=Yalnızca ABD
 info.arise=A.R.I.S.E Ses Sistemi
-
-# -- - THEME - -- #
-
-theme.tittle=Tema
-theme.tittle2=Tema ayarlarınızı seçin
-theme.tittle3=Tema motorunuzu seçin
-
-theme.tittle3=Tema motorunuzu seçin
-notheme=Tema motoru yükleme
-layer=RRO Katmanlar [kullanımdan kaldırıldı]
-substratum=Substratum
-
-info.notheme=
-info.layer=RRO Layers Manager
+info.aptx=Qualcomm'dan ekstra codec bileşenleri
+info.40-wifi=2.4 MHz üzerinde 40 MHz kanal genişliği
+info.permissive=Çekirdeği serbest (permissive) olarak yeniden paketleyin (Ayrıcalıklı olmanın avantajlı hale getirilmesi)
 info.substratum=Yeni Tema Motoru
 
+# -- - ROOT - -- #
+supersu=SuperSU yükle
+magisk=Install MagiskSU
+
+info.supersu=@Chainfire - <#f00>SafetyNet'i kıracak</#>
+info.magisk=@topjohnwu - <#0f0>SafetyNet'i geçmek için gereklidir</#>
+
+# -- - THEME - -- #
 splash.tittle=Önyükleme ekranınızı seçin, başlangıç animasyonu DEĞİL
 fos_splash=FreedomOS Önyükleme ekranı
 oos_splash=OxygenOS Önyükleme ekranı
 no_splash=Mevcut Önyükleme ekranı kalsın
 
-info.fos_splash=
-info.oos_splash=
-info.no_splash=
+theme.tittle=Temalar
+theme.subtittle=Uygulamak istediğiniz temaları seçin
+incorexcl.theme=Aşağıda temaları dahil etmeyi veya hariç tutmayı seçin
+inc.theme=Dahil et
+excl.theme=Hariç tut
+
+info.inc.theme=Aşağıdaki listeden kurmak istediğiniz temaları seçin.
+info.excl.theme=Aşağıdakilerden kurmak istemediğiniz temaları seçin.
+
+theme.select=Lütfen eklemek istediğiniz VRTheme modülünü seçin
+
+center_clock=Saati Ortala
+no_traffic=Ağ Trafik Göstergesi Yok
+
+info.center_clock=@kickoff Tarafından sunulan
+info.no_traffic=@kickoff Tarafından sunulan
+
+# -- - AUDIO - -- #
+v4a_new=Viper4Android 2.5.0.5
+v4a_old=Viper4Android 2.3.4.0
+v4a_profiles=V4A Profiles & Kernels
+arkamys=Arkamys™
+icesound=ICEsound™
+sony_player=Sony Müzik Çalar
+rm_deep_buffer=Deep_buffer'ı audio_policy'den kaldır
+sdcard_perm=SD kart izinlerini düzelt
+
+info.v4a_new=En son versiyon
+info.v4a_old=Eski kullanıcılar için
+info.v4a_profiles=Çeşitli  çekirdek ses profilleri
+info.arkamys=Arkamys™ Ses sistemi
+info.icesound=Verilen talimatları dikkatle okuyun
+info.sony_player=TrackID, Ağ/DLNA, podcast'leri dahil et
+info.rm_deep_buffer=Çoğu sorunu çözecek, pil dostu değil!
+info.sdcard_perm=Kurtarma oturumuna 3 - 5 dakika ekleyebilir
 
 # -- - KERNEL - -- #
-
 kernel.tittle=Çekirdek
 kernel.tittle2=Çekirdeğinizi seçin.
 kernel_stock=Stok Çekirdek

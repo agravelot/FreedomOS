@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Profile">
+			<Category name="RCV" alias="Normal,Handset,Handset 2mic NR,Handset no 2mic NR"/>
+			<Category name="HS" alias="Headset,4_pole_Headset,3-pole headset,4-pole headset"/>
+			<Category name="SPK" alias="Hands-free,Hands-free 1mic NR,Hands-free no 1mic NR,Handsfree,MagiConference,Speaker"/>
+			<Category name="HSSPK" alias="Headset+Speaker"/>
+			<Category name="HS5POLE" alias="5-pole headset"/>
+			<Category name="HAC"/>
+			<Category name="BT" alias="BT earphone"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="dl_total_gain" type="short_array"/>
+		<Param name="dl_digital_gain" type="short_array"/>
+		<Param name="dl_analog_gain" type="short_array"/>
+		<Param name="dl_total_gain_decimal" type="short_array"/>
+		<Param name="dl_analog_type" type="int"/><!-- the corresponding analog type for dl_analog_gain -->
+		<!--<Param name="dl_analog_gain_2" type="short_array"/>-->
+		<!--<Param name="dl_analog_type_2" type="short"/>-->
+	</ParamUnit>
+</ParamUnitDesc>

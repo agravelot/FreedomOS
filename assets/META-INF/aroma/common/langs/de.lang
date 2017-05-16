@@ -18,7 +18,7 @@ text_quit_msg=Bist du sicher?
 
 welcome.title=Willkommen
 welcome.title2=Informationen zur ROM
-welcome.text1=You are about to use
+welcome.text1=Du hast vor dies zu verwenden
 welcome.version=Version
 welcome.device=Gerät
 welcome.updated=Geupdated
@@ -34,10 +34,14 @@ language.english=English
 language.english.info=Using English
 language.french=France
 language.french.info=Utiliser le Français
+language.tchinese=正體中文
+language.tchinese.info=使用正體中文 - @clyang
+language.schinese=简体中文
+language.schinese.info=使用简体中文 - @clyang
 
 rom.data=!date!
-text_finish=Finish
-model.title=Phone Model
+text_finish=Beenden
+model.title=Handy Model
 
 by=von
 
@@ -54,10 +58,10 @@ install_mod.tittle=FreedomOS-Installer
 install_mod.tittle2=Wähle deine Einstellungen aus
 install_mod.sub_tittle=Installations-Methode
 
-gapps_yes=Yes, install Google Apps
-gapps_no=Do not install Google Apps
-info.gapps_yes=Recommended
-info.gapps_no=The system will <#f00>NOT</#> boot without GApps
+gapps_yes=Ja, installiere Google Apps
+gapps_no=Installere nicht Google Apps
+info.gapps_yes=Empfohlen
+info.gapps_no=Das System wird <#f00>NICHT</#> ohne GApps booten
 assert.tittle=Die "Asserts" prüfen
 assert_yes=Ja (emfohlen)
 assert_no=Nein
@@ -66,16 +70,16 @@ addon_yes=Ja
 info.addon_yes=Emfohlen für einen "dirty flash"
 addon_no=Nein
 info.addon_no=Für einen sauberen "flash"
-firmware.tittle=Select your firmware
+firmware.tittle=Wähle deine firmware
 fw_mm=Marshmallow firmwares
-info.fw_mm=Support more TWRP variant
+info.fw_mm=Unterstütze weitere TWRP Varianten
 fw_n=Nougat firmwares
-info.fw_n=Recommended
+info.fw_n=Empfohlen
 passwordfix.tittle=Pin/Pattern workaround
-passwordfix_yes=Yes
-info.passwordfix_yes=Remove Pin/Pattern backup in data partition
-passwordfix_no=No
-info.passwordfix_no=Let the old file
+passwordfix_yes=Ja
+info.passwordfix_yes=Entferne Pin/Pattern backup in der Datenpartition
+passwordfix_no=Nein
+info.passwordfix_no=Lass die alte Datei
 
 info.custom=Der "Freedom-Way" (Freiheitspfad)
 info.stock=Original OnePlus Betreibssystem, nicht gerooted
@@ -88,7 +92,7 @@ sys.info.title=System Informationen
 sys.info.title2=Deine Gerätinformation.
 sys.info.model=Model
 sys.info.name=Name
-sys.info.manu=Manufacturer
+sys.info.manu=Manufaktur
 sys.info.cpu=CPU
 sys.info.lcd=LCD Pixeldichte
 sys.info.storage=Geräte Speicher
@@ -104,9 +108,9 @@ pre.install3=Um deine gewählten Einstellungen ändern zu können, oder un dir s
 gapps.tittle=Google Apps
 gapps.tittle2=Wähle die Google Apps aus, die du installiert haben möchtest
 
-calculator=Calculator
-calendar=Calendar
-call_log=Google Call Backup
+calculator=Taschenrechner
+calendar=Kalendar
+call_log=Google Anruf Backup
 chrome=Chrome
 drive=Drive
 info.duo=Duo
@@ -116,7 +120,7 @@ google=Google
 hangouts=Hangouts
 maps=Maps
 messenger=Messenger
-photos=Photos
+photos=Fotos
 play_music=Play Music
 tts=Text-to-Speech
 tallback=Tallback
@@ -138,8 +142,8 @@ info.maps=Navigation, Verkehr, Transport
 info.messenger=Google SMS/MMS App.
 info.photos=Foto Verwaltung
 info.play_music=Google Play Music
-info.tts=Sorgt beim ersten Start für Blackscreens, wenn wenn entfernt!!
-info.tallback=Sorgt beim ersten Start für Blackscreens, wenn wenn entfernt!!
+info.tts=Sorgt beim ersten Start für Blackscreens, wenn entfernt!!
+info.tallback=Sorgt beim ersten Start für Blackscreens, wenn entfernt!!
 info.play_movies=Google Play Movies
 info.setupwizard=Initialization screen from Google
 info.youtube=YouTube
@@ -155,7 +159,7 @@ basic_dream=Basic Dream
 bt_midi=BT Midi Service
 bt_test=BTtestmode
 desk_clock=DeskClock
-document=Documents
+document=OP File Manager
 download_provider=Download Provider
 engineering=EngineeringMode
 eng_special_test=EngSpecialTest
@@ -220,8 +224,8 @@ info.sms=Original OnePlus SMS application
 info.sound_recorder=OnePlus recording app
 info.swiftkey=Swiftkey Tastatur
 info.tags=NFC Tags
-info.weather=OnePlus Weather application
-info.wifi_test=Wlan Testg
+info.weather=OnePlus Wetter App
+info.wifi_test=Wlan Test
 info.dive_icon=OnePlus Iconpack
 info.rifon_icon=OnePlus Iconpack
 
@@ -251,7 +255,7 @@ mod.tittle=Installiere extra Mods
 mod.tittle2=Root, Audio Mod, Werbeblocker & Xposed...
 mod.tittle3=Extra mod
 
-supersu=Installiere SuperSU
+root=Aktiviere root Zugang
 xposed=Material Design Xposed Installer
 adaway=Adaway
 adb=Aktiviere ADB
@@ -260,9 +264,13 @@ fos_wallpapers=FreedomOS Wallpapers
 emoji_one=EmojiOne
 google_assistant=Google Assistant
 arise=A.R.I.S.E
+aptx=Install APTX/APTX-HD
+40-wifi=Aktiviere Breitband WLAN
+permissive=Aktiviere permissive
+substratum=Substratum
 
-info.supersu=SuperSU von Chainfire
-info.xposed=Xposed Installer  vom DVD android
+info.root=Benötigt um SafetyNet zu umgehen
+info.xposed=Xposed Installer vom DVD android
 info.adaway=WerbeBlocker für Android
 info.adb=Android Debugging Bridge
 info.dns=Aktiviere DNS 8.8.8.8/8.8.4.4
@@ -270,32 +278,61 @@ info.fos_wallpapers=Designed von @badboy47
 info.emoji_one=The Open Emoji Standard
 info.google_assistant=US only
 info.arise=A.R.I.S.E Sound System
-
-# -- - THEME - -- #
-theme.tittle=Theme
-theme.tittle2=Wähle deine Designeinstellungen
-theme.tittle3=Wähle deine Designengine
-
-theme.tittle3=Wähle deine Designengine
-notheme=Installiere keine Designengine
-layer=RRO Layers [deprecated]
-substratum=Substratum
-
-info.notheme=
-info.layer=RRO Layers Manager
+info.aptx=Weitere codecs von Qualcomm
+info.40-wifi=40MHz Kanal breite über 2.4GHz
+info.permissive=Pack den Kernel neu mit permissive flag (Unsicher)
 info.substratum=Das neue Designengine
 
+# -- - ROOT - -- #
+supersu=Installiere SuperSU
+magisk=Installere MagiskSU
+
+info.supersu=@Chainfire - <#f00>Deaktiviert SafetyNet</#>
+info.magisk=@topjohnwu - <#0f0>Benötigt um SafetyNet zu umgehen</#>
+
+# -- - THEME - -- #
 splash.tittle=Wähle deinen Bootscreen, NICHT bootanimation
 fos_splash=FreedomOS Bootscreen
 oos_splash=OxygenOS Bootscreen
 no_splash=Aktuellen Bootscreen weiterhin verwenden
 
-info.fos_splash=
-info.oos_splash=
-info.no_splash=
+theme.tittle=Themen
+theme.subtittle=Wähle Themen die du verwenden möchtest
+incorexcl.theme=Wähle um Themen auszuwählen oder zu auszuschließen
+inc.theme=Auswählen
+excl.theme=Ausschließen
+
+info.inc.theme=Wähle Themen die du installieren möchtest.
+info.excl.theme=Wähle Themen die du nicht installieren möchtest.
+
+theme.select=Bitte wähle aus welche VRThemen Module du verwenden möchtest
+
+center_clock=Uhr mittig
+no_traffic=Kein Traffic Indicator
+
+info.center_clock=Zur Verfügung gestellt von @kickoff
+info.no_traffic=Zur Verfügung gestellt von @kickoff
+
+# -- - AUDIO - -- #
+v4a_new=Viper4Android 2.5.0.5
+v4a_old=Viper4Android 2.3.4.0
+v4a_profiles=V4A Profiles & Kernels
+arkamys=Arkamys™
+icesound=ICEsound™
+sony_player=Sony Music Player
+rm_deep_buffer=Entferne deep_buffer von audio_policy
+sdcard_perm=Repariere sdcard Berechtigungen
+
+info.v4a_new=Neuste Version
+info.v4a_old=Für "old school" Benutzer
+info.v4a_profiles=Zahlreiche Audioprofile mit Kerneln
+info.arkamys=Arkamys™ Audio system
+info.icesound=Lese sorgfälltig die hinzugefügte Anleitung
+info.sony_player=Beinhaltet TrackID, Network/DLNA, podcasts
+info.rm_deep_buffer=Löst die meisten Probleme (Saugt den Akku leer!)
+info.sdcard_perm=Kann bis zu 5 Minuten zur Recovery Aufenthalt hinzufügen
 
 # -- - KERNEL - -- #
-
 kernel.tittle=Kernel
 kernel.tittle2=Wähle deinen kernel.
 kernel_stock=Standard Kernel
@@ -306,7 +343,7 @@ moxie=Moxie Kernel
 info.moxie=Entwickelt von @bedalus
 
 # -- - INSTALLER - -- #
-install=Installing FreedomOS
+install=Installere FreedomOS
 install.now=Installieren
 install.finish=Das könnte eine weile Dauern...
 install.finish.title=Die Installation wurde beendet.

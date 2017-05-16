@@ -1,0 +1,146 @@
+
+#!/system/bin/sh
+#
+# ARISE Sound Systems™
+#
+# arisesound_services
+#
+# www.arisesound.com
+
+
+mount -o rw,remount /
+mount -o rw,remount /system
+mount -o rw,remount /data
+
+
+set_metadata() {
+  file="$1";
+  if [ -e $file ]; then
+    shift;
+    until [ ! "$2" ]; do
+    case $1 in
+      uid) chown $2 $file;;
+      gid) chown :$2 $file;;
+      mode) chmod $2 $file;;
+      capabilities) ;;
+      selabel)
+      chcon -h $2 $file;
+      chcon $2 $file;
+      ;;
+      *) ;;
+    esac;
+    shift 2;
+    done;
+  fi
+}
+
+set_metadata_recursive() {
+  dir="$1";
+  if [ -d "$dir" ]; then
+    shift;
+    until [ ! "$2" ]; do
+    case $1 in
+      uid) chown -R $2 $dir;;
+      gid) chown -R :$2 $dir;;
+      dmode) find "$dir" -type d -exec chmod $2 {} +;;
+      fmode) find "$dir" -type f -exec chmod $2 {} +;;
+      capabilities) ;;
+      selabel)
+      find "$dir" -exec chcon -h $2 '{}' +;
+      find "$dir" -exec chcon $2 '{}' +;
+      ;;
+      *) ;;
+    esac;
+    shift 2;
+    done;
+  fi
+}
+
+
+BIN=/system/bin
+ETC=/system/etc
+SH=$BIN/sh
+PERMISSIVE=$ETC/init.d/permissive
+ARISE=$ETC/init.d/arisesound_setprop
+BOOT=$ETC/init.d/post-boot
+SERVER=$ETC/init.d/arisesoundserver
+SMEEJAYTEE=$ETC/init.d/smeejaytee_setprop
+SONY=$ETC/init.d/sony_setprop
+CONTEXTS=/service_contexts
+AURO=$(cat $CONTEXTS | grep "auro_service")
+DOLBYSERVICE=$(cat $CONTEXTS | grep "media.dolby_memoryservice")
+EAGLE=$(cat $CONTEXTS | grep "dts_eagle_service")
+SM=set_metadata
+SMR=set_metadata_recursive
+
+
+if [ -e "$PERMISSIVE" ]; then
+
+  $SH $PERMISSIVE
+
+fi
+
+
+if [ -e "$SERVER" ]; then
+
+  $SH $SERVER
+
+fi
+
+
+if [ -e "$ARISE" ]; then
+
+  $SH $ARISE
+
+fi
+
+
+if [ -e "$SMEEJAYTEE" ]; then
+
+  $SH $SMEEJAYTEE
+
+fi
+
+
+if [ -e "$SONY" ]; then
+
+  $SH $SONY
+
+fi
+
+
+if [ -e "$CONTEXTS" ]; then
+
+  echo "\niss_daemon                                u:object_r:iss_daemon_service:s0\n" >> $CONTEXTS
+
+fi
+
+
+if [ ! "$AURO" ] && [ -e "$CONTEXTS" ]; then
+
+  echo "\nmedia.imageeffect		         	              u:object_r:mediaserver_service:s0\nauro_service                              u:object_r:mediaserver_service:s0\n" >> $CONTEXTS
+
+fi
+
+
+if [ ! "$DOLBYSERVICE" ] && [ -e "$CONTEXTS" ]; then
+
+  echo "\nmedia.dolby_memoryservice                 u:object_r:audioserver_service:s0\n" >> $CONTEXTS
+
+fi
+
+
+if [ ! "$EAGLE" ] && [ -e "$CONTEXTS" ]; then
+
+  echo "\ndts_eagle_service                         u:object_r:dtseagleservice_service:s0\n" >> $CONTEXTS
+
+fi
+
+
+$SM $BIN/iss_daemon uid 1013 gid 1005 mode 0755 capabilities 0x0 selabel u:object_r:iss_daemon_service:s0
+
+
+(
+    sleep 60
+    $SH $BOOT
+)&

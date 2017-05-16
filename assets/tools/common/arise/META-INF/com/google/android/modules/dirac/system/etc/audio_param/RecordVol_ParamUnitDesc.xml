@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Application">
+		<!-- tunable -->
+			<Category name="Sound recording" alias="SndRecNormal,SndRecLecture,SndRecMeeting"/>
+			<Category name="Camera recording" alias="CamRecNormal,CamRecMeeting"/>
+			<Category name="ASR" wording="ASR improvement"/>
+			<Category name="VR" wording="Voice recognition &amp; CTS verifier"/>
+			<!-- not tunable -->
+			<Category name="VOICE_UNLOCK" alias="VoiceUnLk"/>
+			<Category name="CUSTOMIZATION2" alias="Customization2"/>
+			<Category name="CUSTOMIZATION3"/>
+			<Category name="TTY_CTM_Mic"/>
+			<Category name="Level_Shift_Buffer_Gain"/>
+			<Category name="Analog_PLay_Gain"/>
+		</CategoryType>
+		<CategoryType name="Profile">
+			<Category name="Handset" wording="Receiver"/>
+			<Category name="Headset" wording="Headset" alias="3-pole HS,4-pole HS"/>
+			<Category name="HS5POLE" wording="Headset(5-pole)" alias="5-pole HS"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="ul_gain" type="int"/>
+	</ParamUnit>
+</ParamUnitDesc>

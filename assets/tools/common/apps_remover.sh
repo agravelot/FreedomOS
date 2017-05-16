@@ -17,13 +17,17 @@
 
 prop=$1
 outfd=$2
+pkg_list="$(cat /tmp/aroma/${prop})"
 
 ui_print() {
   echo -n -e "ui_print $1\n" >> /proc/self/fd/$outfd
   echo -n -e "ui_print $1\n" >> /tmp/fos_logs/apps_remover
 }
 
-pkg_list="$(cat /tmp/aroma/${prop})"
+echo "##################################"
+echo "$prop"
+echo "##################################"
+echo "$pkg_list"
 
 for pkg in $pkg_list; do
   ui_print "   Removing $pkg"

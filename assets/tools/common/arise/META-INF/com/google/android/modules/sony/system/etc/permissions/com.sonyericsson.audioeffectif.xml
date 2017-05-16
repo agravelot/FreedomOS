@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2010 Sony Mobile Communications Inc.
+    All rights, including trade secret rights, reserved.
+-->
+<permissions>
+    <library name="semc_audioeffectif"
+             file="/system/framework/semc_audioeffectif.jar"/>
+    <library name="com.sonymobile.audioeffect"
+             file="/system/framework/semc_audioeffectif.jar"/>
+    <library name="com.sonymobile.audioeffect_2"
+             file="/system/framework/semc_audioeffectif.jar"/>
+    <library name="com.sonymobile.audioeffect_3"
+             file="/system/framework/semc_audioeffectif.jar"/>
+    <library name="com.sonymobile.audioeffect_4"
+             file="/system/framework/semc_audioeffectif.jar"/>
+    <library name="com.sonymobile.audioeffect_5"
+             file="/system/framework/semc_audioeffectif.jar"/>
+</permissions>

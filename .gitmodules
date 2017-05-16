@@ -9,4 +9,4 @@
 	url = https://github.com/xpirt/img2sdat.git
 [submodule "download/make_ext4fs"]
 	path = download/make_ext4fs
-	url = https://github.com/superr/make_ext4fs.git
+	url = https://github.com/Nevax07/make_ext4fs.git

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc tab_name="Audio Record" version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Application">
+			<CategoryGroup name="Sound recording">
+				<Category name="SndRecNormal" wording="Normal"/>
+				<Category name="SndRecLecture" wording="Lecture"/>
+				<Category name="SndRecMeeting" wording="Meeting"/>
+			</CategoryGroup>
+			<CategoryGroup name="Camera recording">
+				<Category name="CamRecNormal" wording="Normal"/>
+				<Category name="CamRecMeeting" wording="Meeting"/>
+			</CategoryGroup>
+			<Category name="ASR" wording="ASR improvement" />
+			<Category name="VR" wording="Voice recognition &amp; CTS verifier" />
+			<Category name="VoiceUnLk" visible="false" />
+			<Category name="Customization2" visible="false" />
+		</CategoryType>
+		<CategoryType name="Profile" wording="Device">
+			<Category name="Handset"/>
+			<CategoryGroup name="Headset">
+				<Category name="4-pole HS" wording="4-pole headset"/>
+				<Category name="5-pole HS" wording="5-pole headset(ANC OFF)"/>
+				<Category name="5-pole HS+ANC" wording="5-pole headset(ANC ON)"/>
+			</CategoryGroup>
+			<Category name="BT earphone" wording="Bluetooth"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="DRC+DG visibility" type="int"/>
+		<Param name="FIR visibility" type="int"/>
+		<Param name="NREC visibility" type="int"/>
+		<Param name="UL cal. visibility" type="int"/>
+		<Param name="UL Digital Gain visibility" type="int"/>
+		<Param name="UL Limiter TH visibility" type="int"/>
+		<Param name="UL AEC visibility" type="int"/>
+		<Param name="UL NLP visibility" type="int"/>
+		<Param name="UL ES LB visibility" type="int"/>
+		<Param name="UL AES LB visibility" type="int"/>
+		<Param name="UL Sample Rate" type="int"/>
+	</ParamUnit>
+</ParamUnitDesc>

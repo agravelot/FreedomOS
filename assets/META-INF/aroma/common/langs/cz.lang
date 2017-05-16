@@ -1,0 +1,367 @@
+#########################################################
+#	FreedomOS language file
+#
+#	Czech/Čeština by/od: iamceph
+#
+#
+#
+
+text_ok=OK
+text_next=Další
+text_back=Zpět
+text_yes=Ano
+text_no=Ne
+text_abou=Informace
+text_calibrating=Kalibrační nástroje
+text_quit=Ukončit instalaci
+text_quit_msg=Jste si jistí?
+
+welcome.title=Vítejte
+welcome.title2=Informace o ROM
+welcome.text1=Chystáte se použít
+welcome.version=Verze
+welcome.device=Zařízení
+welcome.updated=Aktualizováno
+welcome.microblog=YouTube
+welcome.developer=Vývojář
+welcome.next=Stiskněte Další pro pokračování instalace...
+
+changelog.title=Changelogy
+changelog.desc=FreedomOS Changelogy
+language.title=Vybrat jazyk
+language.text=Vybrat instalační jazyk
+language.czech=Čeština
+language.czech.info=Použít Češtinu @iamceph
+language.english=English
+language.english.info=Using English
+language.french=France
+language.french.info=Utiliser le Français
+language.italian=Italiano
+language.italian.info=Utilizzare Italiano @xEvoRayJiN
+language.german=German
+language.german.info=@DanielL
+language.spanish=Español
+language.spanish.info=Utilizar Español by @jgimenezpascual
+language.turkish=Türkçe
+language.turkish.info=Türkçe kullanın - @Mevlüt TOPÇU
+language.tchinese=Traditional Chinese
+language.tchinese.info=@clyang
+language.schinese=Simplified Chinese
+language.schinese.info=@clyang
+
+
+rom.data=!date!
+text_finish=Dokončit
+model.title=Model telefonu
+
+by=od
+
+main.tittle=Vyberte nabídku níže pro spuštění instalace
+main.install=Instalovat
+main.install.info=Pokračovat v instalaci
+main.sys=Informace o systému
+main.sys.info=Informace o zařízení
+main.changelog.info=FreedomOS changelogy
+main.exit=Ukončit
+main.exit.info=Ukončit FreedomOS instalátor
+
+install_mod.tittle=FreedomOS instalátor
+install_mod.tittle2=Vyberte si, co chcete nainstalovat
+install_mod.sub_tittle=Metoda instalace
+
+apps_yes=Ano, nainstalovat Google Aplikace
+gapps_no=Neinstalovat Google Aplikace
+info.gapps_yes=Doporučené
+info.gapps_no=Systém <#f00>NEBUDE</#> fungovat bez GApps
+assert.tittle=Opravdu?
+assert_yes=Ano (Doporučeno)
+assert_no=Ne
+addon.tittle=Zálohovat/Obnovit /system/addon.d/
+addon_yes=Ano
+info.addon_yes=Doporučeno pro dirty flash
+addon_no=Ne
+info.addon_no=Pro clean flash
+firmware.tittle=Vyberte svůj firmware
+fw_mm=Marshmallow firmwary
+info.fw_mm=Podporují více TWRP variant
+fw_n=Nougat firmwarey
+info.fw_n=Doporučeno
+passwordfix.tittle=Řešení Pinu/Patternu
+passwordfix_yes=Ano
+info.passwordfix_yes=Odstraní Pin/Pattern zálohu v data patritionu
+passwordfix_no=Ne
+info.passwordfix_no=Ponechá staré
+
+info.custom=The Freedom way
+info.stock=Originální OnePlus stock, bez rootu
+info.assert_yes=Kontroluje variantu v build.prop
+info.assert_no=Nekontrouje variantu v build.prop
+
+sys.title=Systémové informace
+sys.info.wait=Získávám informace...
+sys.info.title=Systémové informace
+sys.info.title2=Informace o vašem zařízení.
+sys.info.model=Model
+sys.info.name=Jméno
+sys.info.manu=Výrobce
+sys.info.cpu=CPU
+sys.info.lcd=Hustota LCD
+sys.info.storage=Velikost úložiště
+sys.info.storage.free=Volno
+
+pre.install.title=Připraveno instalovat
+pre.install=Instalátor je připraven instalovat
+pre.install2=Stiskněte <b>Instlovat nyní</b> pro spuštění instalace.
+pre.install3=Pokud chcete změnit některá svá rozhodnutí, stiskněte <b>Zpět</b>.
+
+# -- - GOOGLE APPS - -- #
+
+gapps.tittle=Google Aplikace
+gapps.tittle2=Vyberte si GApps, které chcete
+
+android_pay=<b>Android Pay</b>
+calculator=<b>Google Kalkulačka</b>
+calendar=<b>Google Kalentdář</b>
+call_log=Google Call Backup
+chrome=<b>Chrome</b>
+drive=Disk Google
+duo= Duo
+gmail=Gmail
+gmail_exchange=Gmail Exchange
+google=Google
+google_camera=<b>Google Kamera</b>
+hangouts=Hangouts
+maps=Mapy
+messenger=Google Zprávy
+photos=Fotky Google
+play_music=Google Hudba
+tts=Text na mluvené slovo
+tallback=Tallback
+play_movies=Google Filmy
+setupwizard=Google SetupWizard
+youtube=YouTube
+
+info.android_pay=NFC payments
+info.calculator=0010 1010
+info.calendar=Google Kalendář
+info.call_log=Odesílá historii volání Googlu
+info.chrome=Web browser
+info.drive=Cloud služba
+info.duo=Video-hovory
+info.gmail=Email klient
+info.gmail_exchange=Podporuje exchange pro Gmail
+info.google=Google Now
+info.google_camera=Kamera od Googlu
+info.hangouts=Instantní zprávy
+info.maps=Real-time navigace, provoz, transport
+info.messenger=Google SMS/MMS.
+info.photos=Galerie vašich fotek
+info.play_music=Google Play Music
+info.tts=Způsobuje balckscreen při prvním bootu, pokud je odstraněn!!
+info.tallback=Způsobuje balckscreen při prvním bootu, pokud je odstraněn!!
+info.play_movies=Google Play Filmy
+info.setupwizard=Instalační obrazovka od Googlu
+info.youtube=YouTube
+# -- - SYSTEM APPS - -- #
+
+apps.tittle=Systémové Aplikace
+apps.tittle2=Vyberte systémové aplikace, které chcete
+
+anthal=AntHalService
+basic_dream=Basic Dream
+bt_midi=BT Midi Service
+bt_test=BTtestmode
+desk_clock=DeskClock
+document=OP Správce souborů
+download_provider=Manažer stahování
+engineering=EngineeringMode
+eng_special_test=EngSpecialTest
+easter_egg=Překvapení
+facelock=Facelock
+galaxy=Galaxy
+holo_spiral=Holo Spiral
+anim_wallpaper=Animované pozadí
+log_kit=LogKitSdService
+music=Hudba
+noise_feild=Noised Feild
+oneplus_forum=OnePlus Komunita
+oneplus_wallpapers=OnePlus pozadí
+oem_test=OemAutoTestServer
+oem_log=OEMLogKit
+oneplus_camera=OnePlus Kamera
+oneplus_gallery=OnePlus Galerie
+ota=OnePlus OTA
+oneplus_wizard=OnePlus SetupWizard
+phase_beam=Phase Beam
+protips=Protips
+sensor_test=SensorTestTool
+sms=OnePlus SMS
+sound_recorder=Sound Recorder
+swiftkey=Swiftkey
+tags=Tags
+weather=OnePlus počasí
+wifi_test=WifiRfTestApk
+dive_icon=Dive ikony
+rifon_icon=Rifon ikony
+
+info.anthal=Pro sprotovní/fitness/zdravotní zařízení
+info.android_pay=NFC paltby
+info.basic_dream=Screensaver
+info.bt_midi=Bluetooth MIDI Support
+info.bt_test=Bluetooth testování
+info.desk_clock=Vudík, hodiny a stopky
+info.document=Správce souborů
+info.download_provider=Správce souborů
+info.engineering=Různé nastavení pro vývojáře
+info.eng_special_test=Různé testování
+info.easter_egg=Maow!
+info.facelock=Odemkněte si mobil obličejem!
+info.galaxy=Animované pozadí
+info.holo_spiral=Animované pozadí
+info.anim_wallpaper=Podpora animovaných pozadí
+info.log_kit=Logging
+info.music=OnePlus hudební aplikace
+info.noise_feild=Animovaná pozadí
+info.oneplus_forum=OnePlus fórum
+info.oneplus_wallpapers=Nějaké pozdí
+info.oem_test=OEM testing application
+info.oem_log=Logging
+info.oneplus_camera=Vyfoťte si obrázky a natočte videa
+info.oneplus_gallery=Prohlížení fotek a videí
+info.ota=OnePlus aktualizace systému
+info.oneplus_wizard=SetupWizard coming after Google
+info.phase_beam=Animované pozadí
+info.protips=Nějaké tipy
+info.sensor_test=Aplikace pro testování senzorů
+info.sms=Original OnePlus SMS aplikace
+info.sound_recorder=OnePlus aplikace pro nahrávání
+info.swiftkey=SwiftKey klávesnice
+info.tags=NFC Tags
+info.weather=OnePlus počasí
+info.wifi_test=Wifi testování
+info.dive_icon=Ikony od OnePlus
+info.rifon_icon=Ikony od OnePlus
+
+mod.title=Extra nastavené
+mod.title2=Extra nastavení podle vás
+
+dpi.tittle=Změnit DPI
+dpi.tittle2=Dots Per Inch
+dpi.500=Nastavit androidovo DPI na 500
+dpi.490=Nastavit androidovo DPI na 490
+dpi.480=Nastavit androidovo DPI na 480
+dpi.470=Nastavit androidovo DPI na 470
+dpi.460=Nastavit androidovo DPI na 460
+dpi.450=Nastavit androidovo DPI na 450
+dpi.440=Nastavit androidovo DPI na 440
+dpi.430=Nastavit androidovo DPI na 430
+dpi.420=Nastavit androidovo DPI na 420
+dpi.410=Nastavit androidovo DPI na 410
+dpi.400=Nastavit androidovo DPI na 400
+dpi.390=Nastavit androidovo DPI na 390
+dpi.380=Nastavit androidovo DPI na 380
+dpi.370=Nastavit androidovo DPI na 370
+dpi.360=Nastavit androidovo DPI na 360
+dpi.350=Nastavit androidovo DPI na 350
+
+mod.tittle=Nainstalovat extra módy
+mod.tittle2=Root, audio mod, blokování reklam & xposed...
+mod.tittle3=Extra módy
+
+root=Povolit root
+xposed=Material Design Xposed Installer
+adaway=Adaway
+adb=Povolit ADB
+dns=Google DNS
+fos_wallpapers=FreedomOS pozadí
+emoji_one=EmojiOne
+google_assistant=Google Asistent
+arise=A.R.I.S.E
+aptx=Nainstalovat APTX/APTX-HD
+40-wifi=Povolit širokopásmovou Wifi
+permissive=Povolit permissive
+substratum=Substratum
+
+info.root=Potřebný pro prolomení SafetyNet
+info.xposed=Xposed Instalátor
+info.adaway=Blokování reklam pro Android
+info.adb=Android Debugging Bridge
+info.dns=Nastaví DNS na 8.8.8.8/8.8.4.4
+info.fos_wallpapers=Designováno od @badboy47
+info.emoji_one=OpenEmoji standart
+info.google_assistant=Pouze pro US
+info.arise=A.R.I.S.E systém zvuku
+info.aptx=Extra kódy od Qualcommu
+info.40-wifi=40MHz šířka kanálu přes 2.4GHz
+info.permissive=Zabalí kernel jako permissive (Náchylnější k získání práv)
+info.substratum=Nový theme-engine
+
+# -- - ROOT - -- #
+supersu=Nainstalovat SuperSU
+magisk=Nainstalovat MagiskSU
+
+info.supersu=@Chainfire - <#f00>Zničí SafetyNet (nepůjde Snapchat, etc.)</#>
+info.magisk=@topjohnwu - <#0f0>Prolomí SafetyNet</#>
+
+# -- - THEME - -- #
+splash.tittle=Vyberte si vaši bootscreen, NE bootanimation
+fos_splash=FreedomOS Bootscreen
+oos_splash=OxygenOS Bootscreen
+no_splash=Ponechat aktuální Bootscreen
+
+theme.tittle=Styly
+theme.subtittle=Vyberte si styl, který chcete ponechat
+incorexcl.theme=Vyberte, jestli styl ponechat nebo vyloučit
+inc.theme=Ponechat
+excl.theme=Vyloučit
+
+info.inc.theme=Vyberte si styly které CHCETE nainstalovat.
+info.excl.theme=Vyberte si styly, které NECHCETE nainstalovat..
+
+theme.select=Prosím, vyberte VRTheme modul který chcete použít
+
+center_clock=Vycentrovat hodiny
+no_traffic=Neukazovat informace o provozu na silnici
+
+info.center_clock=Od @kickoff
+info.no_traffic=Od @kickoff
+
+# -- - AUDIO - -- #
+v4a_new=Viper4Android 2.5.0.5
+v4a_old=Viper4Android 2.3.4.0
+v4a_profiles=V4A profily & Kernely
+arkamys=Arkamys™
+icesound=ICEsound™
+sony_player=Přehrávač hudby od
+rm_deep_buffer=Odstraní deep_buffer z audio_policy
+sdcard_perm=Opraví sdcard práva
+
+info.v4a_new=Poslední verze
+info.v4a_old=Pro starší uživatele
+info.v4a_profiles=Různé audio profily s kernelem
+info.arkamys=Arkamys™ Audio systém
+info.icesound=Čtěte pořádně přiložené informace prosím.
+info.sony_player=I s TrackID, Network/DLNA, podcasty
+info.rm_deep_buffer=Opraví většinu problémů, špatné řešení pro baterii.
+info.sdcard_perm=Může přidat 3 - 5 minut v recovery módu
+
+# -- - KERNEL - -- #
+kernel.tittle=Kernel
+kernel.tittle2=Vyberte si svůj kernel.
+kernel_stock=Stock Kernel
+info.kernel_stock=Originál od OnePlus s FOS patchem
+elementalx=ElementalX
+info.elementalx=Od @flar2
+moxie=Moxie Kernel
+info.moxie=Od @bedalus
+
+# -- - INSTALLER - -- #
+install=Instalace FreedomOS
+install.now=Instalovat
+install.finish=Chvilku to potrvá...
+install.finish.title=Instalce je hotova.
+installing.title=Instaluji...
+finish.title=Gratulace!
+finish.msg=FreedomOS byl úspěšně nainstalován.
+finish.status=Výsledek instalace:
+finish.reboot=Restartuje nyní zařízení.

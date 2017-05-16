@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2016 Antoine GRAVELOT
+# Copyright 2016-2017 Antoine GRAVELOT
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,6 +15,46 @@
 
 # FreedomOS device build script
 # Contributors :
+
+function download_opengapps {
+  echo "> Downloading & Checking OpenGApps ..." 2>&1 | tee -a ${build_log}
+  if [ ! -f  ${download_root}/${GAPPS_ZIP}.zip ]; then
+    echo ">> File ${GAPPS_ZIP}.zip does not exist. Downloading ..." 2>&1 | tee -a ${build_log}
+
+    if curl -Is ${ROM_LINK} | grep "200 OK" &> /dev/null
+    then
+      if [ $(which aria2c) ]; then
+        aria2c -x 4 ${GAPPS_LINK} -d ${download_root}/
+      else
+        curl -o ${download_root}/${GAPPS_ZIP}.zip ${GAPPS_LINK} | tee -a ${build_log}
+      fi
+    else
+      die "${GAPPS_ZIP} mirror OFFLINE! Check your connection" "10"
+    fi
+  else
+    echo ">> Checking MD5 of ${GAPPS_ZIP}.zip" 2>&1 | tee -a ${build_log}
+
+    if [[ ! -z ${GAPPS_MD5} ]]; then
+        if [[ ${GAPPS_MD5} == $(md5sum ${download_root}/${GAPPS_ZIP}.zip | cut -d ' ' -f 1) ]]; then
+          echo ">>> MD5 ${GAPPS_ZIP}.zip checksums OK." 2>&1 | tee -a ${build_log}
+        else
+          echo ">>> File ${GAPPS_ZIP}.zip is corrupt, restarting download" 2>&1 | tee -a ${build_log}
+          rm -rvf ${download_root}/${GAPPS_ZIP}.zip.bak >> ${build_log} 2>&1
+          mv -vf ${download_root}/${GAPPS_ZIP}.zip ${download_root}/${GAPPS_ZIP}.zip.bak >> ${build_log} 2>&1
+          download_opengapps
+        fi
+    fi
+  fi
+  echo
+}
+
+function extract_opengapps {
+    if [ ! -d ${rom_root}/${GAPPS_ZIP} ]; then
+        echo ">> Extracting ${GAPPS_ZIP}" 2>&1 | tee -a ${build_log}
+        mkdir -p ${rom_root}/${GAPPS_ZIP} >> ${build_log} 2>&1
+        unzip -o ${download_root}/${GAPPS_ZIP}.zip -d ${rom_root}/${GAPPS_ZIP} >> ${build_log} 2>&1
+    fi
+}
 
 function build_opengapps() {
 
@@ -44,13 +84,14 @@ function build_opengapps() {
   indic
   japanese
   korean
-  vrservice
-  moviesvrmode
-  photosvrmode
   googlenow
   dmagent
   hangouts
   storagemanagergoogle
+  clockgoogle
+  dialerframework
+  dialergoogle
+  contactsgoogle
   "
 
   echo "> Building FreedomOS OpenGApps" 2>&1 | tee -a ${build_log}
@@ -58,7 +99,7 @@ function build_opengapps() {
   mkdir -p ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
   mkdir -p ${tmp_root}/tools/opengapps/ >> ${build_log} 2>&1
   # Copy OpenGapps files from repo
-  cp -rvf ${download_root}/freedomos_opengapps/${GAPPS_TYPE}/${GAPPS_PLATFORM}/${GAPPS_ANDROID}/* -d ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
+  cp -rvf ${rom_root}/${GAPPS_ZIP}/* -d ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
   # Get the gapps-remove.txt list
   cp -vf ${tmp_root}/tools/opengapps_tmp/gapps-remove.txt ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
   # Remove all entries for android permisions
@@ -70,8 +111,10 @@ function build_opengapps() {
   CLEAN_SYSTEM_LIST+="$(<${tmp_root}/tools/gapps-remove.txt)"
 
   # Remove ugly Opengapps header (sorry it's very ugly with aroma)
-  # TODO: Do not use line numbers
-  sed -ie '1057,1072d;' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  logo_start=$(grep -nr '####' ${tmp_root}/tools/opengapps_tmp/installer.sh | gawk '{print $1}' FS=":" | head -1)
+  logo_end=$(grep -nr '####' ${tmp_root}/tools/opengapps_tmp/installer.sh | gawk '{print $1}' FS=":" | tail -1)
+  logo_end=$((logo_end+3))
+  sed -ie "$logo_start,$logo_end d;" ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Add OPInCallUI to the remove list if Google Dialer is installed
   sed -i 's/FineOSDialer/OPInCallUI/g' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Disable /tmp clear after installation, the installer will do that later for us.
@@ -86,6 +129,11 @@ function build_opengapps() {
   sed -i 's/ui_print "- /ui_print "/g' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   sed -i '/ui_print " "/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   sed -i '/ui_print "- Installation complete!"/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/Installation complete!/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/Unmounting/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/app\/Calculator/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+
+  rm -rvf ${tmp_root}/tools/opengapps_tmp/META-INF/com/google/android/aroma >> ${build_log} 2>&1
 
   # Remove all the unneeded files
   for i in ${RM_OPENGAPPS}

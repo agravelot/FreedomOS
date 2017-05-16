@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="VolumeParam">
+			<Category name="Common"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="step_per_db" type="int"/>
+		<Param name="db_per_step" type="float"/>
+		<Param name="volume_step" type="float"/>
+		<!-- Common -->
+		<Param name="mic_idx_range_max" type="int"/>
+		<Param name="mic_idx_range_min" type="int"/>
+		<!-- PlaybackVolDigi -->
+		<Param name="play_digi_range_max" type="int"/>
+		<Param name="play_digi_range_min" type="int"/>
+
+		<Param name="stf_idx_range_max" type="int"/>
+		<Param name="stf_idx_range_min" type="int"/>		
+		<!-- Decimal -->
+		<Param name="dec_play_hs_max" type="int"/>
+		<Param name="dec_play_hs_step_per_db" type="int"/>
+		<Param name="dec_play_spk_max" type="int"/>
+		<Param name="dec_play_spk_step_per_db" type="int"/>
+		<Param name="dec_play_digi_max" type="int"/> <!-- decimal maximum == 255 -->
+		<Param name="dec_play_digi_step_per_db" type="int"/>
+
+		<Param name="dec_rec_max" type="int"/>
+		<Param name="dec_rec_step_per_db" type="int"/>
+				
+		<Param name="dec_stf_max" type="int"/>
+		<Param name="dec_stf_step_per_db" type="int"/>
+		<!-- spec -->
+		<Param name="buffer_gain_level" type="int"/>
+		<Param name="buffer_gain_db" type="short_array"/>
+		<Param name="buffer_gain_idx" type="short_array"/>
+		<Param name="buffer_gain_string" type="string"/>
+		<Param name="buffer_gain_prefer_max_idx" type="int"/>
+
+		<Param name="spk_gain_level" type="int"/>
+		<Param name="spk_gain_db" type="short_array"/>
+		<Param name="spk_gain_idx" type="short_array"/>
+		<Param name="spk_gain_string" type="string"/>
+
+		<Param name="spk_l_mixer_name" type="string"/>
+		<Param name="spk_r_mixer_name" type="string"/>
+		<Param name="spk_analog_type" type="int"/>
+
+		<Param name="swagc_gain_map" type="short_array"/>
+		<Param name="ul_pga_gain_map" type="short_array"/>
+		<Param name="ul_pga_gain_string" type="string"/>
+		<Param name="ul_gain_offset" type="int"/>
+		<Param name="ul_pga_gain_map_max" type="int"/>
+		<Param name="ul_hw_pga_max_idx" type="int"/>
+
+		<Param name="stf_gain_map" type="short_array"/>
+
+		<Param name="hp_impedance_enable" type="int"/>
+		<Param name="hp_impedance_default_idx" type="int"/>
+		<Param name="hp_impedance_threshold_list" type="short_array"/>
+		<Param name="hp_impedance_compensate_list" type="short_array"/>
+	</ParamUnit>
+</ParamUnitDesc>

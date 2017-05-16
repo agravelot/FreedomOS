@@ -35,7 +35,12 @@ language.english.info=Using English
 language.french=France
 language.french.info=Utiliser le Français
 language.italian=Italiano
-language.italian.info=Utilizzare Italiano
+language.italian.info=Utilizzare Italiano - @YvanB
+language.tchinese=正體中文
+language.tchinese.info=使用正體中文 - @clyang
+language.schinese=简体中文
+language.schinese.info=使用简体中文 - @clyang
+
 rom.data=!date!
 text_finish=Finito
 model.title=Modello telefono
@@ -55,10 +60,10 @@ install_mod.tittle=Installer FreedomOS
 install_mod.tittle2=Seleziona le tue impostazioni
 install_mod.sub_tittle=Metodo di installazione
 
-gapps_yes=Yes, install Google Apps
-gapps_no=Do not install Google Apps
-info.gapps_yes=Recommended
-info.gapps_no=The system will <#f00>NOT</#> boot without GApps
+gapps_yes=Si, installa le Google Apps
+gapps_no=No, non installare le Google Apps
+info.gapps_yes=Raccomandato
+info.gapps_no=Il sistema <#f00>non</#> si avvierà con le Gapps
 assert.tittle=Checking the assert
 assert_yes=Si (Raccomandato)
 assert_no=No
@@ -67,18 +72,18 @@ addon_yes=Si
 info.addon_yes=Raccomandato per un dirty flash
 addon_no=No
 info.addon_no=Per installazione pulita
-firmware.tittle=Select your firmware
-fw_mm=Marshmallow firmwares
-info.fw_mm=Support more TWRP variant
-fw_n=Nougat firmwares
-info.fw_n=Recommended
-passwordfix.tittle=Pin/Pattern workaround
-passwordfix_yes=Yes
-info.passwordfix_yes=Remove Pin/Pattern backup in data partition
+firmware.tittle=Seleziona il tuo Firmware
+fw_mm=Firmware Marshmallo
+info.fw_mm=Supporta più varianti della TWRP
+fw_n=Firmware Nougat
+info.fw_n=Raccomandato
+passwordfix.tittle=Soluzione Pin/Sequenza
+passwordfix_yes=Si
+info.passwordfix_yes=Rimuovi Pin/Sequenza nella partizione data
 passwordfix_no=No
-info.passwordfix_no=Let the old file
+info.passwordfix_no=Lascia i vecchi file
 
-info.custom=The Freedom way
+info.custom=La strada di Freedom
 info.stock=Oneplus Stock originale, No root
 info.assert_yes=Controlla varianti nel build.prop
 info.assert_no=Non controllare varianti nel build.prop
@@ -89,7 +94,7 @@ sys.info.title=Informazioni sistema
 sys.info.title2=Informazioni sul sistema del tuo device.
 sys.info.model=Modello
 sys.info.name=Nome
-sys.info.manu=Manufacturer
+sys.info.manu=Fabbricante
 sys.info.cpu=CPU
 sys.info.lcd=Densità LCD
 sys.info.storage=Taglia Memoria
@@ -130,7 +135,7 @@ info.calendar=Google Calendario
 info.call_log=Invia il tuo storico chiamate a Google
 info.chrome=Web browser
 info.drive=Servizio Cloud
-info.duo=Video calling app
+info.duo=App video chiamate
 info.gmail=Email client
 info.gmail_exchange=Supporta exchange for Gmail
 info.google=Google Now
@@ -142,7 +147,7 @@ info.play_music=Applicazione Google Play Music
 info.tts=Causa lo schermo nero al primo avvio se rimosso!!
 info.tallback=Causa lo schermo nero al primo avvio se rimosso!!
 info.play_movies=Applicazione Google Play Movies
-info.setupwizard=Initialization screen from Google
+info.setupwizard=Schermata iniziale da Google
 info.youtube=Applicazione Youtube
 
 # -- - SYSTEM APPS - -- #
@@ -156,7 +161,7 @@ basic_dream=Basic Dream
 bt_midi=BT Midi Service
 bt_test=BTtestmode
 desk_clock=DeskClock
-document=Documents
+document=OP File Manager
 download_provider=Download Provider
 engineering=EngineeringMode
 eng_special_test=EngSpecialTest
@@ -164,7 +169,7 @@ easter_egg=Easter Egg
 facelock=Facelock
 galaxy=Galaxy
 holo_spiral=Holo Spiral
-anim_wallpaper=Animated Wallpaper
+anim_wallpaper=Walpaper Animati
 log_kit=LogKitSdService
 music=Music
 noise_feild=Noised Feild
@@ -180,10 +185,10 @@ phase_beam=Phase Beam
 protips=Protips
 sensor_test=SensorTestTool
 sms=OnePlus SMS
-sound_recorder=Sound Recorder
+sound_recorder=Registratore suoni
 swiftkey=Swiftkey
 tags=Tags
-weather=OnePlus Weather
+weather=Meteo Oneplus
 wifi_test=WifiRfTestApk
 dive_icon=Dive Icon Pack
 rifon_icon=Rifon Icon Pack
@@ -213,15 +218,15 @@ info.oem_log=Logging
 info.oneplus_camera=Scatta foto e video
 info.oneplus_gallery=Guarda foto e video
 info.ota=OnePlus system update
-info.oneplus_wizard=SetupWizard coming after Google
+info.oneplus_wizard=Configurazione guidata che viene dopo quella di Google
 info.phase_beam=Wallpaper animato
 info.protips=Qualche consiglio
-info.sensor_test=Sensor testing application
-info.sms=Original OnePlus SMS application
-info.sound_recorder=OnePlus recording app
-info.swiftkey=Swiftkey keyboard
+info.sensor_test=Applicazione per il test dei sensori
+info.sms=Applicazione originale OnePlus SMS
+info.sound_recorder=App registratore OnePlus
+info.swiftkey=Tastiera Swiftkey 
 info.tags=NFC Tags
-info.weather=OnePlus Weather application
+info.weather=Applicazione meteo OnePlus
 info.wifi_test=Wifi Testing
 info.dive_icon=Icons pack da OnePlus
 info.rifon_icon=Icons pack da OnePlus
@@ -252,7 +257,7 @@ mod.tittle=Installa mod extra
 mod.tittle2=Root, audio mod, ads blocker e xposed...
 mod.tittle3=Extra mod
 
-supersu=Installa SuperSU
+root=Abilita l'accesso root
 xposed=Material Design Xposed Installer
 adaway=Adaway
 adb=Abilita ADB
@@ -261,8 +266,12 @@ fos_wallpapers=FreedomOS wallpapers
 emoji_one=EmojiOne
 google_assistant=Google Assistant
 arise=A.R.I.S.E
+aptx=Installa APTX/APTX-HD
+40-wifi=Abilita doppia banda Wifi
+permissive=Abilita permissive
+substratum=Substratum
 
-info.supersu=SuperSU da Chainfire
+info.root=Richiesto per superare SafetyNet
 info.xposed=Xposed Installer solo applicazione da DVD android
 info.adaway=Ad-Blocker per Android
 info.adb=Android Debugging Bridge
@@ -271,32 +280,60 @@ info.fos_wallpapers=Designed da @badboy47
 info.emoji_one=L’ Open Emoji Standard
 info.google_assistant=US only
 info.arise=A.R.I.S.E Sound System
-
-# -- - THEME - -- #
-theme.tittle=Tema
-theme.tittle2=Seleziona le impostazioni dei temi
-theme.tittle3=Seleziona il tuo motore dei temi
-
-theme.tittle3=Seleziona il tuo motore dei temi
-notheme=Non installare motore dei temi
-layer=RRO Layers [Abbandonato]
-substratum=Substratum
-
-info.notheme=
-info.layer=RRO Layers Manager
+info.aptx=Extra codecs da Qualcomm
+info.40-wifi=40MHz channel con oltre 2.4GHz
+info.permissive=Ricostruisci il kernel con l'impostazionione "permissive" (Vulnerabile ad un escalation di privilegi) 
 info.substratum=Il nuovo motore dei temi
 
+# -- - ROOT - -- #
+magisk=Installa MagiskSU
+supersu=Installa SuperSU
+info.supersu=@Chainfire - <#f00>Potrebbe corrompere SafetyNet</#>
+info.magisk=@topjohnwu - <#0f0>Richiesto per superare SafetyNet</#>
+
+# -- - THEME - -- #
 splash.tittle=Seleziona la tua bootscreen, Non bootanimation
 fos_splash=FreedomOS Bootscreen
 oos_splash=OxygenOS Bootscreen
 no_splash=Lascia la tua attuale Bootscreen
 
-info.fos_splash=
-info.oos_splash=
-info.no_splash=
+theme.tittle=Temi
+theme.subtittle=Scegli il tema che vorresti applicare
+incorexcl.theme=Sceli se includere o escludere i seguenti temi
+inc.theme=Includi
+excl.theme=Escludi
+
+info.inc.theme=Seleziona i temi che VUOI installare dalla seguente lista.
+info.excl.theme=Seleziona i temi che NON VUOI installare dalla seguente lista.
+
+theme.select=Perfavore seleziona quale modulo per VrTheme vuoi includere
+
+center_clock=Orologio Centrato
+no_traffic=Nessun indicatore del traffico
+
+info.center_clock=Fornito da @kickoff
+info.no_traffic=Fornito da @kickoff
+
+# -- - AUDIO - -- #
+v4a_new=Viper4Android 2.5.0.5
+v4a_old=Viper4Android 2.3.4.0
+v4a_profiles=V4A Profiles & Kernels
+arkamys=Arkamys™
+icesound=ICEsound™
+sony_player=Sony Music Player
+rm_deep_buffer=Rimuovi deep_buffer da audio_policy
+sdcard_perm=Fix per i permessi di sdcard
+
+info.v4a_new=Ultima versione
+info.v4a_old=Per gli utenti vecchia scuola
+info.v4a_profiles=Vari profili audio con kernels
+info.arkamys=Sistema audio Arkamys™
+info.icesound=Leggi con attenzione le istruzioni incluse
+info.sony_player=Include TrackID, Network/DLNA, podcasts
+info.rm_deep_buffer=Dovrebbe risolvere la maggior parte dei bug, non è battery friendly!
+info.sdcard_perm=Aggiunge 3 - 5 minuti alla sessione recovery
 
 # -- - KERNEL - -- #
-
 kernel.tittle=Kernel
 kernel.tittle2=Seleziona il tuo kernel.
 kernel_stock=Stock Kernel

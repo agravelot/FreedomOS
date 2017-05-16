@@ -105,6 +105,9 @@ function dat_to_dat {
     rm -rvf ${tmp_root}/bootanimation >> ${build_log} 2>&1
   fi
 
+  echo ">> Set rom version in build.prop" 2>&1 | tee -a ${build_log}
+  sed -i "s/ro.rom.version=.*/ro.rom.version=${ZIP_NAME}-${CODENAME}-${BUILD_TYPE}-${VERSION}/" ${tmp_root}/mount/build.prop
+
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}
   ${build_root}/tools/${HOST_ARCH}/make_ext4fs -T 0 -S file_contexts -l ${SYSTEMIMAGE_PARTITION_SIZE} -a system system_new.img mount/ >> ${build_log} 2>&1
 
@@ -112,7 +115,7 @@ function dat_to_dat {
   ${build_root}/tools/${HOST_ARCH}/img2simg system_new.img system_new_sparse.img
 
   echo ">> Converting sparse image to sparse data" 2>&1 | tee -a ${build_log}
-  ${build_root}/scripts/img2sdat.sh ${tmp_root}/system_new_sparse.img 4 >> ${build_log} 2>&1
+  ${build_root}/scripts/img2sdat.sh ${tmp_root}/system_new_sparse.img . 4 >> ${build_log} 2>&1
 
   echo "> Clean unneeded tmp files" 2>&1 | tee -a ${build_log}
   if mount | grep "${tmp_root}/mount" > /dev/null;

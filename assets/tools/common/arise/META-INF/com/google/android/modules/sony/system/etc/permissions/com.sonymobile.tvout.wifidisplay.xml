@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.sonymobile.tvout.wifidisplay.api"
+        file="/system/framework/com.sonymobile.tvout.wifidisplay.jar"/>
+    <library name="com.sonymobile.tvout.wifidisplay.api_2"
+        file="/system/framework/com.sonymobile.tvout.wifidisplay.jar"/>
+    <library name="com.sonymobile.tvout.wifidisplay.api_3"
+        file="/system/framework/com.sonymobile.tvout.wifidisplay_impl.jar"/>
+</permissions>

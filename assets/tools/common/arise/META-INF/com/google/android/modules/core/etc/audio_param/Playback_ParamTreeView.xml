@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamTreeView version="1.0">
+	<TreeRoot name="DRC+ACF">
+		<Sheet/>
+		<Feature name="Dynamic Range Control (DRC)">
+			<FieldList>
+				<Field audio_type="PlaybackDRC" param="bes_loudness_Num_Bands" name="Number of Bands"/>
+				<Field audio_type="PlaybackDRC" param="SB_Mode"                name="Band 1 Mode"/>
+				<Field audio_type="PlaybackDRC" param="SB_Mode"                name="Band 2 Mode"/>
+				<Field audio_type="PlaybackDRC" param="SB_Mode"                name="Band 3 Mode"/>
+				<Field audio_type="PlaybackDRC" param="SB_Mode"                name="Band 4 Mode"/>
+				<Field audio_type="PlaybackDRC" param="SB_Mode"                name="Band 5 Mode"/>
+				<Field audio_type="PlaybackDRC" param="SB_Mode"                name="Band 6 Mode"/>
+				<Field audio_type="PlaybackDRC" param="SB_Mode"                name="Band 7 Mode"/>
+				<Field audio_type="PlaybackDRC" param="SB_Mode"                name="Band 8 Mode"/>
+			</FieldList>
+			<CategoryPathList>
+				<Category path=""/>
+			</CategoryPathList>
+		</Feature>
+		<Feature name="Loudspeaker Compensation Filter (ACF)">
+			<FieldList>
+				<Field audio_type="PlaybackACF" param="bes_loudness_L_hpf_order" name="High Pass Filter Order"/>
+				<Field audio_type="PlaybackACF" param="bes_loudness_L_lpf_order" name="Low Pass Filter Order"/>
+			</FieldList>
+			<CategoryPathList>
+				<Category path=""/>
+			</CategoryPathList>
+		</Feature>
+		<Feature name="2nd Loudspeaker Compensation Filter (2nd-ACF)" switch_audio_type="PlaybackACF" switch_param="bes_loudness_Sep_LR_Filter" switch_field="Apply Different Filter Setting for 2nd Loudspeaker">
+			<FieldList>
+				<Field audio_type="PlaybackACF" param="bes_loudness_Sep_LR_Filter" name="Apply Different Filter Setting for 2nd Loudspeaker"/>
+				<Field audio_type="PlaybackACF" param="bes_loudness_R_hpf_order"   name="2nd Loudspeaker High Pass Filter Order"/>
+				<Field audio_type="PlaybackACF" param="bes_loudness_R_lpf_order"   name="2nd Loudspeaker Low Pass Filter Order"/>
+			</FieldList>
+			<CategoryPathList>
+				<Category path=""/>
+			</CategoryPathList>
+		</Feature>
+	</TreeRoot>
+	<TreeRoot name="HCF">
+		<Sheet/>
+		<Feature name="Headphone Compensation Filter (HCF)">
+			<FieldList>
+				<Field audio_type="PlaybackHCF" param="bes_loudness_L_hpf_order" name="High Pass Filter Order"/>
+				<Field audio_type="PlaybackHCF" param="bes_loudness_L_lpf_order" name="Low Pass Filter Order"/>
+			</FieldList>
+			<CategoryPathList>
+				<Category path=""/>
+			</CategoryPathList>
+		</Feature>
+	</TreeRoot>
+</ParamTreeView>

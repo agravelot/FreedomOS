@@ -1,0 +1,52 @@
+
+# ARISE Sound Systems™
+#
+# ICEsound configuration file #2
+#
+# Modified from original by guitardedhero@arisesound.com
+#
+# www.arisesound.com
+
+
+
+# To use with a standard audioflinger, set
+
+fasttrack false
+
+
+# To use with an ICEpower modified audioflinger, set
+
+#fasttrack true
+
+# Or leave blank - fasttrack true is the default.
+
+
+# The value of "fasttrack" can be a determining factor in the effect's successful construction, although, less of a factor than the value of "session0" so begin troubleshooting with the "session0" setting before the "fasttrack" setting.
+
+
+
+
+# To control the number of output thread effects that are created in fasttrack mode, set fasttrackoutputs. The default is 2.
+
+fasttrackoutputs 4
+
+
+
+
+# The session for the output thread effects. A value of false will use session -1.
+
+# The session used for ICEsound can be the determining factor in the effect's successful construction so begin troubleshooting with this setting. 
+
+session0 true
+
+
+
+
+a2dp true
+
+#usbaudio true
+
+libicepowerdebuglevel 2
+
+#configlocation /data/asusfw/audio
+

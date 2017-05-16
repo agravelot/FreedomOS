@@ -27,15 +27,20 @@ DEVICE=OnePlus3T
 ASSERT="OnePlus 3T"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus3TOxygen_28_OTA_039_all_1701140132_400a7
-ROM_LINK=http://otafsc.h2os.com/patch/amazone2/GLO/OnePlus3TOxygen/OnePlus3TOxygen_28.A.39_GLO_039_1701140132/$ROM_NAME.zip
+ROM_NAME=OnePlus3TOxygen_28_OTA_051_all_1704112011_d6f79637e1c
+ROM_LINK=http://otafsc.h2os.com/patch/amazone2/GLO/OnePlus3TOxygen/OnePlus3TOxygen_28.A.51_GLO_051_1704112011/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=a9c4b279c389dc57ec17b2808a450edf
+ROM_MD5=031507863135b7008c2651ea461d0e9e
 
 # OpenGapps
-GAPPS_ANDROID=7.0
+GAPPS_BUILD=true
+GAPPS_ANDROID=7.1
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=aroma
+GAPPS_DATE=20170420
+GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
+GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
+GAPPS_MD5=497450219c777ac6df7c202e33c9ee79
 
 # Set Android version for selinux build script
 ANDROID_VERSION=7
@@ -48,12 +53,10 @@ BUILD_METHOD=dat_to_dat
 # The partition size is exactly the same between OP3 and OP3T
 SYSTEMIMAGE_PARTITION_SIZE=3154116608
 
-PATCH_SYSYEM="
-aptx
-"
+PATCH_SYSYEM=""
 
 # Add BUSYBOX into the rom
-BUILD_BUSYBOX=true
+BUILD_BUSYBOX=false
 
 BOOTANIMATION=350
 
@@ -89,7 +92,6 @@ bin/oemlogkit
 bin/WifiLogger_app
 recovery-from-boot.p
 etc/recovery-resource.dat
-app/Calculator
 app/CalendarGoogle
 priv-app/CallLogBackup
 app/Chrome
@@ -101,7 +103,14 @@ app/Messenger
 app/Photos
 app/Music2
 app/YouTube
-app/NFCTestMode 
+app/NFCTestMode
+vendor/etc/in_apps
+priv-app/SetupWizard
+priv-app/GmsCore
+etc/permissions/com.google.android.maps.xml
+etc/permissions/com.google.android.media.effects.xml
+etc/permissions/com.google.widevine.software.drm.xml
+tts/
 "
 
 # Add a secondary firmware files, like that it can be installed.
@@ -125,17 +134,20 @@ arm64/busybox
 common/adb.sh
 common/addon
 common/apps_remover.sh
+common/aptx
 common/arise
+common/arise4magisk
 common/clean.sh
 common/fonts
-common/google_dns.sh
+common/fix_passwd.sh
 common/google_assistant.sh
-common/hosts
+common/google_dns.sh
 common/kernel
 common/log_folder.sh
+common/magisk
 common/save_logs.sh
-common/no_setup.sh
 common/supersu
-common/v4a_profiles_irs
-oneplus3/splash/oos-bootscreen/splash-stock.bin
+common/themes
+common/vrtheme
+common/wideband_wifi.sh
 "

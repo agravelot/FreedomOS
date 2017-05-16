@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc tab_name="Voice" version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Band" wording="Bandwidth">
+			<Category name="NB" wording="Narrow Band"/>
+			<Category name="WB" wording="Wide Band"/>
+		</CategoryType>
+		<CategoryType name="Profile" wording="Device">
+			<CategoryGroup name="Handset">
+				<Category name="Normal" wording="Handset"/>
+				<Category name="HAC"/>
+			</CategoryGroup>
+			<CategoryGroup name="Headset">
+				<Category name="3_pole_Headset"/>
+				<Category name="4_pole_Headset"/>
+				<Category name="5_pole_Headset" wording="5-pole headset(ANC OFF)" feature_option="5_POLE_HS_SUPPORT"/>
+				<Category name="5_pole_Headset+ANC" wording="5-pole headset(ANC ON)" feature_option="MTK_HEADSET_ACTIVE_NOISE_CANCELLATION_SUPPORT"/>
+            </CategoryGroup>
+			<CategoryGroup name="Hands-free">
+				<Category name="Handsfree" wording="Hands-free(1-mic NR)"/>
+				<Category name="MagiConference" wording="Hands-free(2-mic NR)"/>
+			</CategoryGroup>
+			<CategoryGroup name="BT Device" wording="Bluetooth">
+				<Category name="BT_Earphone" wording="BT_NREC_On"/>
+				<Category name="BT_NREC_Off"/>
+			</CategoryGroup>
+			<CategoryGroup name="Loopback" feature_option="MTK_SUPPORT_TC1_TUNNING">
+				<Category name="Lpbk_Handset" wording="Handset"/>
+				<Category name="Lpbk_Headset" wording="Headset"/>
+				<Category name="Lpbk_Handsfree" wording="Handsfree"/>
+			</CategoryGroup>
+		</CategoryType>
+		<CategoryType name="VolIndex" wording="Volume">
+			<CategoryGroup name="Index">
+				<Category name="0" wording="Level0"/>
+				<Category name="1" wording="Level1"/>
+				<Category name="2" wording="Level2"/>
+				<Category name="3" wording="Level3"/>
+				<Category name="4" wording="Level4"/>
+				<Category name="5" wording="Level5"/>
+				<Category name="6" wording="Level6"/>
+			</CategoryGroup>
+		</CategoryType>
+		<CategoryType name="Network">
+			<Category name="GSM"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="DL FIR visibility" type="int"/>
+		<Param name="DL DRC+DG visibility" type="int"/>
+		<Param name="DL NR visibility" type="int"/>
+		<Param name="DL Digital Gain visibility" type="int"/>
+		<Param name="DL Limiter TH visibility" type="int"/>
+		<Param name="DL TASTE visibility" type="int"/>
+		<Param name="UL FIR visibility" type="int"/>
+		<Param name="UL DRC+DG visibility" type="int"/>
+		<Param name="UL NREC visibility" type="int"/>
+		<Param name="UL cal. visibility" type="int"/>
+    	<Param name="UL Digital Gain visibility" type="int"/>
+		<Param name="UL Limiter TH visibility" type="int"/>
+		<Param name="UL AEC visibility" type="int"/>
+		<Param name="UL NLP visibility" type="int"/>
+		<Param name="UL ES LB visibility" type="int"/>
+		<Param name="UL AES LB visibility" type="int"/>
+	</ParamUnit>
+</ParamUnitDesc>

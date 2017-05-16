@@ -20,8 +20,14 @@ mv /sdcard/BusyBox-YDS-installer.log /tmp/fos_logs/
 mv /sdcard/open_gapps_log.txt /tmp/fos_logs/
 mv /tmp/logs /tmp/fos_logs/opengapps
 dmesg > /tmp/fos_logs/dmesg.log
+mount > /tmp/fos_logs/mount.log
 cp -r /cache /tmp/fos_logs/
-cp /default.prop /tmp/fos_logs
-cp /fstab.qcom /tmp/fos_logs
+cp -r /tmp/aroma /tmp/fos_logs/
+cp /default.prop /tmp/fos_logs/
+cp /fstab.* /tmp/fos_logs/
+cp /sdcard/arise_customize.prop /tmp/fos_logs/
+ls -R /system > /tmp/fos_logs/system.list
+rm /tmp/fos_logs/cache/*_boot*
+rm /tmp/fos_logs/aroma/update-binary
 tar -czvf /sdcard/FreedomOS_log_installer.tar.gz /tmp/fos_logs/*
 find /tmp/* -maxdepth 0 ! -path /tmp/recovery.log  -exec rm -rf {} +

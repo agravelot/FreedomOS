@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.sonyericsson.illumination"
+        file="/system/framework/com.sonyericsson.illumination.jar"/>
+    <library name="com.sonyericsson.illumination_3"
+        file="/system/framework/com.sonyericsson.illumination.jar"/>
+    <library name="com.sonyericsson.illumination_4"
+        file="/system/framework/com.sonyericsson.illumination.jar"/>
+    <library name="com.sonyericsson.illumination_5"
+        file="/system/framework/com.sonyericsson.illumination.jar"/>
+</permissions>

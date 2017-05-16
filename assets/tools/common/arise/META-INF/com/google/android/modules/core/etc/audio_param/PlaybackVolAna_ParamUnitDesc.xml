@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Volume type">
+			<Category name="Ring_Alarm" alias="Ring,Alarm"/>
+			<Category name="Notification"/>
+			<Category name="Others" alias="System,Music,Bluetooth_sco,Enforced_Audible,DTMF,TTS,Boot,VIBSPK,Accessibility"/>
+		</CategoryType>
+		<CategoryType name="Profile">
+			<Category name="RCV"/>
+			<Category name="HS" alias="Headset,3/4-pole Headset"/>
+			<Category name="SPK" alias="Speaker"/>
+			<Category name="HSSPK" alias="Headset+Speaker"/>
+			<Category name="HS5POLE" alias="5-pole Headset"/>
+			<Category name="HS5POLE_ANC" alias="5-pole headset+ANC"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="headset_pga" type="short_array">	<!-- save index of register -->
+			<Field name="hs_ana_gain" array_index="0" bit="0,15" check_list="0,8dB,1,7dB,2,6dB,3,5dB,4,4dB,5,3dB,6,2dB,7,1dB,8,0dB,9,-1dB,10,-2dB,11,-3dB,12,-4dB,13,-5dB,14,-6dB,15,-7dB,16,-8dB,17,-9dB,18,-10dB"/>
+		</Param>
+		<Param name="speaker_pga" type="short_array">	<!-- save index of register -->
+			<Field name="spk_ana_gain" feature_option="SPK_PATH_INT" array_index="0" bit="0,15" check_list="15,17dB,14,16dB,13,15dB,12,14dB,11,13dB,10,12dB,9,11dB,8,10dB,7,9dB,6,8dB,5,7dB,4,6dB,3,5dB,2,4dB"/>
+			<Field name="spk_ana_gain" feature_option="SPK_PATH_LO" array_index="0" bit="0,15" check_list="0,8dB,1,7dB,2,6dB,3,5dB,4,4dB,5,3dB,6,2dB,7,1dB,8,0dB,9,-1dB,10,-2dB,11,-3dB,12,-4dB,13,-5dB,14,-6dB,15,-7dB,16,-8dB,17,-9dB,18,-10dB"/>
+			<Field name="spk_ana_gain" feature_option="SPK_PATH_HP" array_index="0" bit="0,15" check_list="0,8dB,1,7dB,2,6dB,3,5dB,4,4dB,5,3dB,6,2dB,7,1dB,8,0dB,9,-1dB,10,-2dB,11,-3dB,12,-4dB,13,-5dB,14,-6dB,15,-7dB,16,-8dB,17,-9dB,18,-10dB"/>
+			<Field name="spk_ana_gain" feature_option="SPK_PATH_NO_ANA" array_index="0" bit="0,15" check_list="0,0"/>
+		</Param>
+		<Param name="receiver_pga" type="short_array">	<!-- save index of register -->
+			<Field name="rcv_ana_gain" feature_option="RCV_PATH_INT" array_index="0" bit="0,15" check_list="0,8dB,1,7dB,2,6dB,3,5dB,4,4dB,5,3dB,6,2dB,7,1dB,8,0dB,9,-1dB,10,-2dB,11,-3dB,12,-4dB,13,-5dB,14,-6dB,15,-7dB,16,-8dB,17,-9dB,18,-10dB"/>
+			<Field name="rcv_ana_gain" feature_option="RCV_PATH_2_IN_1_SPK" array_index="0" bit="0,15" check_list="15,17dB,14,16dB,13,15dB,12,14dB,11,13dB,10,12dB,9,11dB,8,10dB,7,9dB,6,8dB,5,7dB,4,6dB,3,5dB,2,4dB"/>
+			<Field name="rcv_ana_gain" feature_option="RCV_PATH_3_IN_1_SPK" array_index="0" bit="0,15" check_list="15,17dB,14,16dB,13,15dB,12,14dB,11,13dB,10,12dB,9,11dB,8,10dB,7,9dB,6,8dB,5,7dB,4,6dB,3,5dB,2,4dB"/>
+		</Param>
+		<Param name="amp" type="short_array"/>
+	</ParamUnit>
+</ParamUnitDesc>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AudioParam version="1.0">
+  <ParamTree>
+    <Param path="SndRecNormal,Handset" param_id="2"/>
+    <Param path="SndRecLecture,Handset" param_id="1"/>
+    <Param path="SndRecMeeting,Handset" param_id="1"/>
+    <Param path="SndRecNormal,Headset" param_id="2"/>
+    <Param path="SndRecLecture,Headset" param_id="1"/>
+    <Param path="SndRecMeeting,Headset" param_id="1"/>
+    <Param path="SndRecNormal,HS5POLE" param_id="2"/>
+    <Param path="SndRecLecture,HS5POLE" param_id="1"/>
+    <Param path="SndRecMeeting,HS5POLE" param_id="1"/>
+    <Param path="SndRecNormal,HS5POLE_ANC" param_id="2"/>
+    <Param path="SndRecLecture,HS5POLE_ANC" param_id="1"/>
+    <Param path="SndRecMeeting,HS5POLE_ANC" param_id="1"/>
+    <Param path="CamRecNormal,Handset" param_id="2"/>
+    <Param path="CamRecMeeting,Handset" param_id="1"/>
+    <Param path="CamRecNormal,Headset" param_id="2"/>
+    <Param path="CamRecMeeting,Headset" param_id="1"/>
+    <Param path="CamRecNormal,HS5POLE" param_id="2"/>
+    <Param path="CamRecMeeting,HS5POLE" param_id="1"/>
+    <Param path="CamRecNormal,HS5POLE_ANC" param_id="2"/>
+    <Param path="CamRecMeeting,HS5POLE_ANC" param_id="1"/>
+    <Param path="ASR" param_id="2"/>
+    <Param path="VR" param_id="2"/>
+    <Param path="VoiceUnLk" param_id="2"/>
+    <Param path="Customization2" param_id="2"/>
+    <Param path="CUSTOMIZATION3" param_id="2"/>
+    <Param path="FastRecord" param_id="2"/>
+    <Param path="BT earphone" param_id="0"/>
+    <Param path="ASR,BT earphone" param_id="0"/>
+    <Param path="VR,BT earphone" param_id="0"/>
+    <Param path="VoiceUnLk,BT earphone" param_id="0"/>
+    <Param path="Customization2,BT earphone" param_id="0"/>
+    <Param path="CUSTOMIZATION3,BT earphone" param_id="0"/>
+    <Param path="FastRecord,BT earphone" param_id="0"/>
+  </ParamTree>
+  <ParamUnitPool>
+    <ParamUnit param_id="0">
+      <Param name="ul_gain_visibility" value="-1"/>
+    </ParamUnit>
+    <ParamUnit param_id="1">
+      <Param name="ul_gain_visibility" value="0"/>
+    </ParamUnit>
+    <ParamUnit param_id="2">
+      <Param name="ul_gain_visibility" value="1"/>
+    </ParamUnit>
+  </ParamUnitPool>
+</AudioParam>

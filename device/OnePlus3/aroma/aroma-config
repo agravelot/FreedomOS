@@ -54,7 +54,10 @@ selectbox(
   "<~language.italian>", "<~language.italian.info>", 0,
   "<~language.german>", "<~language.german.info>", 0,
   "<~language.spanish>", "<~language.spanish.info>", 0,
-  "<~language.turkish>", "<~language.turkish.info>", 0
+  "<~language.turkish>", "<~language.turkish.info>", 0,
+  "<~language.tchinese>", "<~language.tchinese.info>", 0,
+  "<~language.schinese>", "<~language.schinese.info>", 0,
+  "<~language.czech>", "<~language.czech.info>", 0
 );
 
 # -- - SET LANGUAGE - -- #
@@ -80,6 +83,22 @@ endif;
 
 if prop("language.prop", "selected.0") == "6" then
   loadlang("langs/tr.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "7" then
+  fontresload( "0", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "12" );
+  fontresload( "1", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "14" );
+  loadlang("langs/tc.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "8" then
+  fontresload( "0", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "12" );
+  fontresload( "1", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "14" );
+  loadlang("langs/sc.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "9" then
+  loadlang("langs/cz.lang");
 endif;
 
 # -- - WELCOME - -- #
@@ -150,22 +169,14 @@ ini_set("text_next", "<~text_next>");
 selectbox(
   "<~install_mod.tittle>", "<~install_mod.tittle2>", "@default", "install_mod.prop",
 
-  "<~gapps.tittle>", "", 2,
-    "<~gapps_yes>", "<~info.gapps_yes>", 1,
-    "<~gapps_no>", "<~info.gapps_no>", 0,
   "<~addon.tittle>", "", 2,
     "<~addon_yes>", "<~info.addon_yes>", 0,
     "<~addon_no>", "<~info.addon_no>", 1,
-  "<~firmware.tittle>", "", 2,
-    "<~fw_mm>", "<~info.fw_mm>", 0,
-    "<~fw_n>", "<~info.fw_n>", 1,
   "<~passwordfix.tittle>", "", 2,
     "<~passwordfix_yes>", "<~info.passwordfix_yes>", 0,
     "<~passwordfix_no>", "<~info.passwordfix_no>", 1
 );
 
-if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
-  then
   ##############################################
   # Load Previous Choices
   ##############################################
@@ -212,9 +223,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "CalSync",     "<b>Google Calendar Sync</b>",       "(installed by default when Google Calendar is NOT being installed)",                      "check",
         "CameraGoogle",     "<b>Google Camera</b>",       "",                      "check",
         "Chrome",     "<b>Google Chrome</b>",       "",                      "check",
-        "ClockGoogle",     "<b>Google Clock</b>",       "",                      "check",
         "CloudPrint",     "<b>Google Cloud Print</b>",       "",                      "check",
-        "DialerCombo",     "<b>Google Contacts + Google Dialer</b>",       "<#f00>EXPERIMENTAL, read the FAQ</#>",                      "check",
         "Drive",     "<b>Google Drive</b>",       "",                      "check",
         "ExchangeGoogle",     "<b>Google Exchange Services</b>",       "",                      "check",
         "FaceDetect",     "<b>Face Detection for Media</b>",       "",                      "check",
@@ -233,6 +242,7 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
         "Speech",     "<b>Offline Speech Files</b>",       "(Required for offline voice dicatation support)",                      "check",
         "TagGoogle",     "<b>Google NFC Tags</b>",       "",                      "check",
         "Talkback",     "<b>Talkback</b>",       "",                      "check",
+        "VRService",     "<b>Google VR Service</b>",       "",                      "check",
         "Wallpapers",     "<b>Wallpapers</b>",       "To Exclude BOTH Wallpapers AND Pixel Launcher <#f00>OR</#> To Include Wallpapers",                      "check",
         "YouTube",     "<b>YouTube</b>",       "",                      "check"
   );
@@ -294,23 +304,9 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   if
-    prop("gapps.prop", "ClockGoogle")=="1"
-  then
-    appendvar("gapps", "ClockGoogle\n");
-  endif;
-
-  if
     prop("gapps.prop", "CloudPrint")=="1"
   then
     appendvar("gapps", "CloudPrint\n");
-  endif;
-
-  if
-    prop("gapps.prop", "DialerCombo")=="1"
-  then
-    appendvar("gapps", "DialerFramework\n");
-    appendvar("gapps", "DialerGoogle\n");
-    appendvar("gapps", "ContactsGoogle\n");
   endif;
 
   if
@@ -447,9 +443,11 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
   endif;
 
   # Force Google WebViewGoogle installation, it's required by most of the apps.
-  # It will not be installed if Gogole Chrome is ticked,
-  appendvar("gapps", "WebViewGoogle\n");
-  appendvar("gapps", "\n");
+  if
+    prop("gapps.prop", "inclorexcl")=="1"
+  then
+    appendvar("gapps", "WebViewGoogle\n");
+  endif;
 
   appendvar("gapps", "\n\n");
 
@@ -472,12 +470,11 @@ if (file_getprop("/tmp/aroma/install_mod.prop", "selected.1") == "1")
     "@welcome",
     "Save Choices", "1", "saveselections"
   );
-  if
+    if
       getvar("saveselections")=="1"
     then
       resexec("scripts/tools.sh", "save");
-  endif;
-endif;
+    endif;
 
 # -- - SYSTEM APPS - -- #
 form(
@@ -494,7 +491,8 @@ form(
       "BasicDreams",            "<~basic_dream>",         "<~info.basic_dream>",        "check",
       "BluetoothMidiService",   "<~bt_midi>",             "<~info.bt_midi>",            "check",
       "DivesIconPack",          "<~dive_icon>",           "<~info.dive_icon>",          "check",
-      "DocumentsUI",            "<~desk_clock>",          "<~info.desk_clock>",         "check",
+      "OPFilemanager",          "<~document>",            "<~info.document>",           "check",
+      "DeskClock",              "<~desk_clock>",          "<~info.desk_clock>",         "check",
       "EasterEgg",              "<~easter_egg>",          "<~info.easter_egg>",         "check",
       "LiveWallpapers",         "<~anim_wallpaper>",      "<~info.anim_wallpaper>",     "check",
       "OPBackup",               "<~ota>",                 "<~info.ota>",                "check",
@@ -518,7 +516,7 @@ checkbox(
   "<~mod.tittle>", "<~mod.tittle2>", "@personalize", "mod.prop",
 
   "<~mod.tittle3>", "", 2,
-    "<~supersu>", "<~info.supersu>", 1,
+    "<~root>", "<~info.root>", 1,
     "<~xposed>", "<~info.xposed>", 0,
     "<~adaway>", "<~info.adaway>", 1,
     "<~adb>", "<~info.adb>", 0,
@@ -527,7 +525,112 @@ checkbox(
     "<~emoji_one>", "<~info.emoji_one>", 1,
     "<~google_assistant>", "<~info.google_assistant>", 1,
     "<~arise>", "<~info.arise>", 1,
-    "<~substratum>", "<~info.substratum>", 0
+    "<~substratum>", "<~info.substratum>", 0,
+    "<~40-wifi>", "<~info.40-wifi>", 0,
+    "<~permissive>", "<~info.permissive>", 0
+);
+
+if
+  prop("gapps.prop", "inclorexcl")=="1"
+then
+  if
+    prop("mod.prop", "item.1.8") == "1"
+  then
+    appendvar("gapps", "GoogleAssistant\n");
+  endif;
+endif;
+
+if
+  prop("mod.prop", "item.1.1") == "1"
+then
+    form(
+        "Root",
+        "Choose wich root method you want to include</#>",
+        "@default",
+        aromaroot.prop,
+        "rootmethod",     "",        "",      "group",
+          "0",                    "<~supersu>",                  "<~info.supersu>",       "select.selected",
+          "1",                    "<~magisk>",                   "<~info.magisk>",        "select"
+        );
+endif;
+
+# -- ARISE -- #
+if
+  prop("mod.prop", "item.1.9")=="1"
+then
+    form(
+        "ARISE Settings",
+        "Please select which options you want to include with ARISE</#>",
+        "@default",
+        arise.prop,
+
+        "arise",     "Please select which options you want to include with ARISE",    "",        "group",
+          "install.v4a_2.5.0.5",      "<~v4a_new>",         "<~info.v4a_new>",         "check",
+          "install.v4a_2.3.4.0",      "<~v4a_old>",         "<~info.v4a_old>",         "check",
+          "install.v4a_profiles",     "<~v4a_profiles>",    "",                        "check",
+          "install.arkamys",          "<~arkamys>",         "<~info.arkamys>",         "check",
+          "install.ICEsound",         "<~icesound>",        "<~info.icesound>",        "check",
+          "install.sony",             "<~sony_player>",     "<~info.sony_player>",     "check",
+          "delete.deep_buffer",       "<~rm_deep_buffer>",  "<~info.rm_deep_buffer>",  "check",
+          "repair.sdcard.permissions","<~sdcard_perm>",     "<~info.sdcard_perm>",     "check"
+    );
+
+    if file_getprop("/tmp/aroma/arise.prop","install.ICEsound") == "1"
+        then
+
+        textbox(
+          "ICEconfigs",
+          "Read Me",
+          "info",
+          readfile_aroma("ICEconfig.txt")
+        );
+
+        form(
+          "ICEsound Configuration Selection",
+          "Please Select:",
+          "personalize",
+          "ICEpreset.prop",
+
+          "use.ICEsound.preset",     "ICE Configuration selection",        "",                    "group",
+            "01",                    "BATHSALTS",           "",  "select",
+            "02",                    "DEEPBASS",            "",  "select",
+            "03",                    "HOLYSH*T",            "",  "select",
+            "04",                    "KRAZY",               "",  "select",
+            "05",                    "MOVIE",               "",  "select",
+            "06",                    "MUSIC2",              "",  "select",
+            "07",                    "OUTDOORS",            "",  "select",
+            "08",                    "PURE",                "",  "select",
+            "09",                    "(PURE)SH*T",          "",  "select",
+            "10",                    "WIDECLARITY",         "",  "select",
+            "11",                    "Default",             "",  "select.selected",
+            "NO",                    "None",                "",  "select"
+        );
+    endif;
+
+    resexec("scripts/gen_arise_conf.sh");
+endif;
+
+# form(
+#     "<~theme.tittle>",
+#     "<~theme.subtittle>",
+#     "@default",
+#     aromatheme.prop,
+#
+#     "inclorexcl",     "<~incorexcl.theme>",        "",                    "group",
+#       "1",                    "<~inc.theme>",                  "<~info.inc.theme>",        "select.selected",
+#       "0",                    "<~excl.theme>",                  "<~info.excl.theme>",  "select",
+#
+#     "theme",     "<~theme.select>",    "",        "group",
+#       "centerclock",      "<~center_clock>",       "<~info.center_clock>",       "check",
+#       "notraffic",        "<~no_traffic>",         "<~info.no_traffic>",         "check"
+# );
+
+alert (
+ "If you like my work",
+ "You can buy me a beer:\n"+
+ "Paypal: <b>antoine.gravelot@hotmail.com</b>\n"+
+ "Really appreciated!",
+ "@paypal"
 );
 
 # -- - Pre-Install - -- -#

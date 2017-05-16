@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AudioParam version="1.0">
+  <ParamTree>
+    <Param path="" param_id="0"/>
+    <Param path="Handset 2mic NR" param_id="1"/>
+  </ParamTree>
+  <ParamUnitPool>
+    <ParamUnit param_id="0">
+      <Param name="DRC+DG visibility" value="1"/>
+      <Param name="FIR visibility" value="1"/>
+      <Param name="NREC visibility" value="1"/>
+      <Param name="UL cal. visibility" value="-1"/>
+      <Param name="UL Digital Gain visibility" value="1"/>
+      <Param name="UL Limiter TH visibility" value="1"/>
+      <Param name="UL AEC visibility" value="1"/>
+      <Param name="UL NLP visibility" value="1"/>
+      <Param name="UL ES LB visibility" value="1"/>
+      <Param name="UL AES LB visibility" value="1"/>
+    </ParamUnit>
+    <ParamUnit param_id="1">
+      <Param name="DRC+DG visibility" value="1"/>
+      <Param name="FIR visibility" value="1"/>
+      <Param name="NREC visibility" value="1"/>
+      <Param name="UL cal. visibility" value="1"/>
+      <Param name="UL Digital Gain visibility" value="1"/>
+      <Param name="UL Limiter TH visibility" value="1"/>
+      <Param name="UL AEC visibility" value="1"/>
+      <Param name="UL NLP visibility" value="1"/>
+      <Param name="UL ES LB visibility" value="1"/>
+      <Param name="UL AES LB visibility" value="1"/>
+    </ParamUnit>
+  </ParamUnitPool>
+</AudioParam>
