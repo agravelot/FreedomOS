@@ -1,3 +1,14 @@
+2.9-CE
+    FIX: Duplicate contacts after upgrade
+    FIX: Contacts search function bug
+    FIX: Alarm clock ocassionally not ringing
+    FIX: App crashes
+    FIX: Display issue under black and white theme
+    FIX: Optimized power consumption
+    UPDTAE: Arise Magisk Compatibility Module v3.3 with FreedomOS patch
+    UPDATE: OpenGapps 20170516
+    FIX: Lockscreen font oversized
+
 2.8-CE
   UPDATE: New dialer and incoming call interface
   UPDATE: UI optimizations for Messages, Settings and Contacts

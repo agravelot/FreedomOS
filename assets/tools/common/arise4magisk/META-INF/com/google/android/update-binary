@@ -316,32 +316,33 @@ fi
 # Copy files
 ui_print "- Copying files"
 
-for ARISE in enforcing permissive; do
-	if [ -e $SYSTEM/etc/init.d/$ARISE ]; then
-		rm -f $SYSTEM/etc/init.d/$ARISE
-	fi
-	if [ -e $SYSTEM/su.d/$ARISE ]; then
-		rm -f $SYSTEM/su.d/$ARISE
-	fi
-done
-
-for ARISE in arisesoundserver post-boot arisesound_setprop sony_setprop; do
-	if [ -e $SYSTEM/etc/init.d/$ARISE ]; then
-		mv -f $SYSTEM/etc/init.d/$ARISE $SYSTEM/su.d
-		set_perm $SYSTEM/su.d/$ARISE 0 0 0644
-	fi
-done
-
-if [ -e $SYSTEM/su.d/arisesound_services ]; then
-	sed -i 's/\$ETC\/init.d/\$SYS\/su.d/g' $SYSTEM/su.d/arisesound_services
-	set_perm $SYSTEM/su.d/arisesound_services 0 0 0644
+if [ -e $SYSTEM/etc/init.d/enforcing ]; then
+	rm -f $SYSTEM/etc/init.d/enforcing
 fi
 
-if [ -e $SYSTEM/su.d/arisesoundserver ]; then
-	if [ ! "$(cat $SYSTEM/su.d/arisesoundserver | grep "magisk")" ]; then
-		sed -i -e 's/if \[ -e "\$ROOT\/su/elif \[ -e "\$ROOT\/su/' -e '/elif \[ -e "\$ROOT\/su/i if \[ -e "\/data\/magisk\.img" \]; then' -e '/elif \[ -e "\$ROOT\/su/i \  SEPOLICY=magiskpolicy' $SYSTEM/su.d/arisesoundserver
+if [ -e $SYSTEM/su.d/enforcing ]; then
+	rm -f $SYSTEM/su.d/enforcing
+fi
+
+if [ -e $SYSTEM/etc/init.d/permissive ]; then
+	mv -f $SYSTEM/etc/init.d/permissive $SYSTEM/su.d/permissive
+fi
+
+if [ -e $SYSTEM/su.d/permissive ]; then
+	unzip -o "$ZIP" permissive.sh
+	cp -af $INSTALLER/permissive.sh $MODPATH/service.sh
+fi
+
+if [ -e $SYSTEM/etc/init.d/arisesoundserver ]; then
+	if [ ! "$(cat $SYSTEM/etc/init.d/arisesoundserver | grep "magisk")" ]; then
+		sed -i -e 's/if \[ -e "\$ROOT\/su/elif \[ -e "\$ROOT\/su/' -e '/elif \[ -e "\$ROOT\/su/i if \[ -e "\/data\/magisk\.img" \]; then' -e '/elif \[ -e "\$ROOT\/su/i \  SEPOLICY=magiskpolicy' $SYSTEM/etc/init.d/arisesoundserver
 	fi
-	set_perm $SYSTEM/su.d/arisesoundserver 0 0 0644
+fi
+
+if [ -e $SYSTEM/etc/init.d/post-boot ]; then
+	if [ ! "$(cat $SYSTEM/etc/init.d/post-boot | grep "mount -o ro,remount /system")" ] || [ ! "$(cat $SYSTEM/etc/init.d/post-boot | grep "mount -o ro,remount $SYS")" ]; then
+		sed -i '/exit 0/i mount -o ro,remount \/system' $SYSTEM/etc/init.d/post-boot
+	fi
 fi
 
 ui_print "- Setting permissions"

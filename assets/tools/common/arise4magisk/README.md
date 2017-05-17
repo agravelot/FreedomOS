@@ -19,6 +19,7 @@ Installs the ARISE Sound System Magisk Compatibility Module
  - v3.0: Script fixes for magnus opum compatibility, consolidated both versions into 1 using logic of LS version
  - v3.1: Lots of script fixes and magiskpolicy fixes, thanks to @ashwin.kj. Thanks to @ahrion for pixel fixes.
  - v3.2: Redone for Latest 4/27 Magnus Opus
+ - v3.3: Redone for 5/6 Magnus Opus and made backwardly compatible - no longer moves scripts to su.d
  
 ## A.R.I.S.E. general changelog
 Take a look [here](/core/ARISE_version.prop)
