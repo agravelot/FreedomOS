@@ -22,7 +22,6 @@ function build_arise() {
   am3d
   atmos
   ddplus
-  dirac
   smeejaytee
   v4a_xhifi
   "
