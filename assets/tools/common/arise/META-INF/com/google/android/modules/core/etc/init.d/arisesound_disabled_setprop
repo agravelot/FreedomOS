@@ -49,6 +49,7 @@ setprop ro.config.hw_dolby true
 setprop ro.config.hw_audio_plus true
 setprop audio.musicfx.bassboost.max 500
 setprop audio.musicfx.virtualizer.max 500
+setprop audio.high.resolution.enable true
 setprop use.qti.sw.alac.decoder true
 setprop use.qti.sw.ape.decoder true
 setprop flac.sw.decoder.16bit.support true
@@ -121,7 +122,9 @@ setprop ro.mtk_bt_support 1
 #
 #Hi-Res option for PowerAmp
 setprop ro.lenovo.hifi_support true
-setprop ro.zte.audio.hifitype dual
+#setprop ro.zte.audio.hifitype dual
+setprop persist.bt.a2dp.aptx_disable false
+setprop persist.bt.a2dp.aptx_hd_disable false
 #
 
 

@@ -1,0 +1,7 @@
+id=ARISE_Magisk_Compatibility_Module
+name=ARISE Magisk Compatibility Module
+version=v3.3
+versionCode=3.3
+author=ARISE Sound Systems™, Shadowghoster, Zackptg5
+description=Mobile audio enhancement system for nearly all Android devices. Allows scripts to run with magisk
+template=3

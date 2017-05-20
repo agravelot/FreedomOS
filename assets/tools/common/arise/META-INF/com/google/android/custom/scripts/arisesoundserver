@@ -17,7 +17,7 @@ is_mounted() {
 
 if [ -d "/system_root" ]; then
   SYS=/system_root/system
-  ROOT=/system_root
+  ROOT=""
 else
   SYS=/system
   ROOT=""

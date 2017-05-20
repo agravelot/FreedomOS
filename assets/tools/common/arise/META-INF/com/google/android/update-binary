@@ -56,7 +56,19 @@ elif [ -e "$SYS/build.prop" ] && [ -e "$VEN/build.prop" ]; then
   fi
 fi
 
-SDCARD=/data/media/0
+if [ -d "/data/media/0" ]; then
+  SDCARD=/data/media/0
+elif [ -d "/storage/emulated/0" ]; then
+  SDCARD=/storage/emulated/0
+elif [ -d "/sdcard/0" ]; then
+  SDCARD=/sdcard/0
+elif [ -d "/sdcard_internal/0" ]; then
+  SDCARD=/sdcard_internal/0
+elif [ "/sdcard_internal" ]; then
+  SDCARD=/sdcard_internal
+else
+  SDCARD=/sdcard
+fi
 
 set_perm() {
  if [ -e $1 ]; then
@@ -164,6 +176,7 @@ MODDTS=$MODULES/dtsccs
 MODICE=$MODULES/ICE/ICEsound
 MODICECON=$MODULES/ICE/ICEconfig
 MODICEPRE=$MODULES/ICE/ICEpreset
+MAGISK=$MODULES/magisk
 ICE=ICEsoundService
 ICEAPK=ICEsoundService.apk
 ICELIB=libicepower.so
@@ -234,7 +247,6 @@ WISHLIST=$SDCARD/arise_customize.prop
 NEWLIST=getting_started/your_system/arise_customize.prop
 OUTDATED=$SDCARD/arise_outdated.prop
 INFO=$SYS/ARISE_version.prop
-LETTER=$SYS/a_letter_from_gh.txt
 OPUS=$(cat $WISHLIST | grep "Magnum Opus")
 BUFFER=$(cat $WISHLIST | grep "delete.deep_buffer=true")
 REBUFFER=$(cat $WISHLIST | grep "restore.deep_buffer=true")
@@ -260,6 +272,7 @@ INSTALLQCHW=$(cat $WISHLIST | grep "install.qc.effects=HUAWEI")
 INSTALLQCSO=$(cat $WISHLIST | grep "install.qc.effects=SONY")
 INSTALLQCSK=$(cat $WISHLIST | grep "install.qc.effects=STOCK")
 INSTALLICE=$(cat $WISHLIST | grep "install.ICEsound=true")
+INSTALLMAGISKCOMPATIBILITY=$(cat $WISHLIST | grep "install.magiskcompatibility=true")
 ICECONFIGNONE=$(cat $WISHLIST | grep "use.ICEconfig=None")
 ICECONFIG1=$(cat $WISHLIST | grep "use.ICEconfig=1")
 ICECONFIG2=$(cat $WISHLIST | grep "use.ICEconfig=2")
@@ -395,10 +408,6 @@ ui_print "STRONGLY consider using SuperSU for all root management needs if our s
 ui_print " "
 ui_print " "
 sleep 3
-ui_print "The dependency on SuperSU for achieving the full, intended experience is not one which is satisfactory for us. Achieving the full, intended experience without root is always a priority."
-ui_print " "
-ui_print " "
-sleep 3
 ui_print " "
 ui_print " "
 ui_print "Obtaining instructions from $WISHLIST..."
@@ -448,7 +457,7 @@ elif [ ! "$OPUS" ]; then
 
   ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
   ui_print " "
-  ui_print "!! IMPORTANT INFORMATION FOR SUCCESSFUL INSTALLATION WILL APPEAR BELOW !!"
+  ui_print "** IMPORTANT INFORMATION FOR SUCCESSFUL INSTALLATION WILL APPEAR BELOW **"
   ui_print " "
   ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
   ui_print " "
@@ -469,9 +478,9 @@ elif [ ! "$OPUS" ]; then
   ui_print " "
   ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
   ui_print " "
-  ui_print "!! THE ERROR 1 ENDING THIS RECOVERY SESSION IS NOT AN ERROR !!"
+  ui_print "** THE ERROR 1 ENDING THIS RECOVERY SESSION IS NOT AN ERROR **"
   ui_print " "
-  ui_print "!! ERROR 1 IS A FORCED ABORT OF THE INSTALLATION THAT INCLUDES THE CAUSE FOR THE ABORT AND THE INFORMATION TO ACHIEVE SUCCESSFUL INSTALLATION !!"
+  ui_print "** ERROR 1 IS A FORCED ABORT OF THE INSTALLATION THAT INCLUDES THE CAUSE FOR THE ABORT AND THE INFORMATION TO ACHIEVE SUCCESSFUL INSTALLATION **"
   ui_print " "
   ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
   umount /system
@@ -482,7 +491,7 @@ elif [ ! "$INSTALLCORE" ] && [ ! -e "$INFO" ]; then
 
   ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
   ui_print " "
-  ui_print "!! IMPORTANT INFORMATION FOR SUCCESSFUL INSTALLATION WILL APPEAR BELOW !!"
+  ui_print "** IMPORTANT INFORMATION FOR SUCCESSFUL INSTALLATION WILL APPEAR BELOW **"
   ui_print " "
   ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
   ui_print " "
@@ -504,9 +513,9 @@ elif [ ! "$INSTALLCORE" ] && [ ! -e "$INFO" ]; then
   ui_print " "
   ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
   ui_print " "
-  ui_print "!! THE ERROR 1 ENDING THIS RECOVERY SESSION IS NOT AN ERROR !!"
+  ui_print "** THE ERROR 1 ENDING THIS RECOVERY SESSION IS NOT AN ERROR **"
   ui_print " "
-  ui_print "!! ERROR 1 IS A FORCED ABORT OF THE INSTALLATION THAT INCLUDES THE CAUSE FOR THE ABORT AND THE INFORMATION TO ACHIEVE SUCCESSFUL INSTALLATION !!"
+  ui_print "** ERROR 1 IS A FORCED ABORT OF THE INSTALLATION THAT INCLUDES THE CAUSE FOR THE ABORT AND THE INFORMATION TO ACHIEVE SUCCESSFUL INSTALLATION **"
   ui_print " "
   ui_print "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
   umount /system
@@ -765,6 +774,20 @@ if [ "$INSTALLCORE" ]; then
 
   fi
 
+  if [ ! -e "$LIB/$LDAC" ]; then
+
+    cp -f $CARM/$LDAC $LIB/$LDAC
+    $SP $LIB/$LDAC 0 0 0644
+
+    if [ -d "$LIB64" ]; then
+
+      cp -f $CARM64/$LDAC $LIB64/$LDAC
+      $SP $LIB64/$LDAC 0 0 0644
+
+    fi
+
+  fi
+
   if [ ! -d "$DRC" ]; then
 
     mkdir -p $DRC
@@ -866,7 +889,6 @@ if [ "$INSTALLCORE" ]; then
     cp -f $CARM64/libaudioom.so $LIB64/libaudioom.so
     cp -f $CARM64/libaudioprocessing.so $LIB64/libaudioprocessing.so
     cp -f $CARM64/libFlacSwDec.so $LIB64/libFlacSwDec.so
-    cp -f $CARM64/$LDAC $LIB64/$LDAC
     cp -f $CARM64/libmars-audioparams.so $LIB64/libmars-audioparams.so
     cp -f $CARM64/libmars-featureclient.so $LIB64/libmars-featureclient.so
     cp -f $CARM64/libmars-service.so $LIB64/libmars-service.so
@@ -890,7 +912,6 @@ if [ "$INSTALLCORE" ]; then
     $SP $LIB64/libaudiomanager.so 0 0 0644
     $SP $LIB64/libaudioom.so 0 0 0644
     $SP $LIB64/libFlacSwDec.so 0 0 0644
-    $SP $LIB64/$LDAC 0 0 0644
     $SP $LIB64/libmars-audioparams.so 0 0 0644
     $SP $LIB64/libmars-featureclient.so 0 0 0644
     $SP $LIB64/libmars-service.so 0 0 0644
@@ -918,8 +939,7 @@ if [ "$INSTALLCORE" ]; then
   $SPR $ALSA 0 0 0755 0644
   $SPR $INITD 0 2000 0755 0755
   $SPR $SUD 0 0 0700 0700
-  $SP $INFO 0 0 0644
-  $SP $LETTER 0 0 0644
+  $SP $SYS/ARISE_version.prop 0 0 0644
   $SP $ETC/maxxaudio_default.mps 0 0 0644
   $SP $LIB/android.hardware.audio.common@2.0.so 0 0 0644
   $SP $LIB/android.hardware.audio.common@2.0-util.so 0 0 0644
@@ -955,7 +975,6 @@ if [ "$INSTALLCORE" ]; then
   $SP $LIB/libharman.so 0 0 0644
   $SP $LIB/libhwcodec.so 0 0 0644
   $SP $LIB/libiss_svc.so 0 0 0644
-  $SP $LIB/$LDAC 0 0 0644
   $SP $LIB/libmars-audioparams.so 0 0 0644
   $SP $LIB/libmars-featureclient.so 0 0 0644
   $SP $LIB/libmars-service.so 0 0 0644
@@ -1291,14 +1310,6 @@ if [ "$INSTALLDDPLUS" ]; then
     cp $SCRIPTS/$SERVER $INITD/$SERVER
     $SP $INITD/$SERVER 0 2000 0755
     restorecon $INITD/$SERVER
-
-    if [ ! -d "$PAPP/$MFX" ] && [ ! -d "$APP/$MFX" ]; then
-
-      mkdir -p $PAPP/$MFX
-      cp -f $CAPP/$MFXAPK $PAPP/$MFX/$MFXAPK
-      $SPR $PAPP/$MFX 0 0 0755 0644
-
-    fi
 
     mkdir -p $PAPP/Ds
     mkdir -p $PAPP/DsUI
@@ -2162,6 +2173,14 @@ if [ "$REBUFFER" ]; then
 
 fi
 
+if [ "$INSTALLMAGISKCOMPATIBILITY" ]; then
+
+	ui_print "Installing Magisk Compatibility Modile..."
+	$SP $MAGISK/META-INF/com/google/android/update-binary 0 0 0777
+	./$MAGISK/META-INF/com/google/android/update-binary
+	
+fi
+
 if [ "$PERMISSIONS" ]; then
 
   ui_print "Repairing $SDCARD permissions..."
@@ -2509,11 +2528,10 @@ fi
 
 ui_print " "
 ui_print " "
-ui_print "This saga is now complete..."
-sleep 2
+ui_print "This session is now complete."
 ui_print " "
-ui_print "and we cannot thank you enough for the support every step of the way..."
 ui_print " "
+
 sleep 2
 
 umount /system
