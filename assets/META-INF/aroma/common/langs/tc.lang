@@ -277,6 +277,7 @@ aptx=安裝APTX/APTX-HD
 40-wifi=啟用wideband無線網路
 permissive=啟用寬容模式(permissive)
 substratum=Substratum主題引擎
+android_o_font=Android O Emoji
 
 info.xposed=Xposed Installer application only by DVD android
 info.adaway=Android用的擋廣告軟體
@@ -290,6 +291,7 @@ info.aptx=高音質藍牙codec
 info.40-wifi=在2.4GHz上使用40MHz頻寬
 info.permissive=啟用內核的寬容標記 (易導致內核提權)
 info.substratum=新的主題引擎
+info.android_o_font=Extracted from latest dev preview
 
 # -- - ROOT - -- #
 supersu=安裝SuperSU
@@ -333,6 +335,7 @@ icesound=ICEsound™
 sony_player=Sony音樂播放器
 rm_deep_buffer=將deep_buffer從audio_policy中移除
 sdcard_perm=修復sdcard權限
+dirac=Dirac
 
 info.v4a_new=最新版本
 info.v4a_old=給念舊的使用者們
@@ -342,6 +345,7 @@ info.icesound=請仔細地閱讀內附的指示
 info.sony_player=內含TrackID, Network/DLNA, podcasts
 info.rm_deep_buffer=這會解決多數的問題, 不過會增加耗電量!
 info.sdcard_perm=過程約需三到五分鐘完成
+info.dirac=Install modified Dirac from ARISE
 
 # -- - KERNEL - -- #
 kernel.tittle=Kernel內核

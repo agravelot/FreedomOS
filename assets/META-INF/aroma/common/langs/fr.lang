@@ -265,6 +265,7 @@ aptx=Installer APTX/APTX-HD
 40-wifi=Activer large bande Wifi
 permissive=Force le kernel en permissive
 substratum=Substratum
+android_o_font=Emoji Android O
 
 info.root=Requis pour passer SafetyNet
 info.xposed=Application Xposed seulement par DVD android
@@ -279,6 +280,7 @@ info.aptx=Extra codecs from Qualcomm
 info.40-wifi=Largeur de  canal 40MHz en 2.4GHz
 info.permissive=Repack le kernel avec le flash permissive (vulnérable à l'escalade des privilèges)
 info.substratum=Le remplacent de Layers
+info.android_o_font=is la dernière prévisualisation développeur
 
 # -- - ROOT - -- #
 supersu=Installer SuperSU
@@ -320,6 +322,7 @@ icesound=ICEsound™
 sony_player=Lecteur de musique Sony
 rm_deep_buffer=Retire deep_buffer de l'audio_policy
 sdcard_perm=Corrige les permissions sdcard
+dirac=Dirac
 
 info.v4a_new=Dernière verison
 info.v4a_old=Pour les utilisateurs old school
@@ -329,6 +332,7 @@ info.icesound=Lisez avec précaution les instructions suivante
 info.sony_player=Comprend TrackID, Réseau/DLNA, podcasts
 info.rm_deep_buffer=Devrait corriger la plupart des problèmes, à utiliser en DERNIER RECOURS!
 info.sdcard_perm=Ajoute en 3 à 5 minutes de temps d'installation
+info.dirac=Installe la version modifié de DIRAC (provenant de ARISE)
 
 # -- - KERNEL - -- #
 kernel.tittle=Kernel

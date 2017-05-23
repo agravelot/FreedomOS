@@ -280,6 +280,7 @@ aptx=APTX/APTX-HD yükle
 40-wifi=Geniş bant Wifi\'yi etkinleştir
 permissive=İzin Verilenleri Etkinleştir
 substratum=Substratum
+android_o_font=Android O Emoji
 
 info.root=SafetyNet'i geçmek için gereklidir
 info.xposed=Xposed Installer uygulaması yalnızca DVD android tarafından yapılan
@@ -294,6 +295,7 @@ info.aptx=Qualcomm'dan ekstra codec bileşenleri
 info.40-wifi=2.4 MHz üzerinde 40 MHz kanal genişliği
 info.permissive=Çekirdeği serbest (permissive) olarak yeniden paketleyin (Ayrıcalıklı olmanın avantajlı hale getirilmesi)
 info.substratum=Yeni Tema Motoru
+info.android_o_font=Extracted from latest dev preview
 
 # -- - ROOT - -- #
 supersu=SuperSU yükle
@@ -334,6 +336,7 @@ icesound=ICEsound™
 sony_player=Sony Müzik Çalar
 rm_deep_buffer=Deep_buffer'ı audio_policy'den kaldır
 sdcard_perm=SD kart izinlerini düzelt
+dirac=Dirac
 
 info.v4a_new=En son versiyon
 info.v4a_old=Eski kullanıcılar için
@@ -343,6 +346,7 @@ info.icesound=Verilen talimatları dikkatle okuyun
 info.sony_player=TrackID, Ağ/DLNA, podcast'leri dahil et
 info.rm_deep_buffer=Çoğu sorunu çözecek, pil dostu değil!
 info.sdcard_perm=Kurtarma oturumuna 3 - 5 dakika ekleyebilir
+info.dirac=Install modified Dirac from ARISE
 
 # -- - KERNEL - -- #
 kernel.tittle=Çekirdek
