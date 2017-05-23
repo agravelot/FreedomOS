@@ -1,4 +1,4 @@
-    UPDATE: Czech language
+    UPDATE: Czech language by @iamceph
 
 2.8
     UPDATE: OxygenOS 4.1.3
