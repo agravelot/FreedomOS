@@ -1,4 +1,3 @@
-
 #########################################################
 #	FreedomOS language file
 #
@@ -59,7 +58,7 @@ by=od
 
 main.tittle=Vyberte nabídku níže pro spuštění instalace
 main.install=Instalovat
-main.install.info=Pokračovat pro instalaci
+main.install.info=Pokračovat v instalaci
 main.sys=Informace o systému
 main.sys.info=Informace o zařízení
 main.changelog.info=FreedomOS changelogy
@@ -285,10 +284,10 @@ substratum=Substratum
 android_o_font=Android O Emoji
 
 info.root=Potřebný pro prolomení SafetyNet
-info.xposed=Xposed Installer application only by DVD android
+info.xposed=Xposed Instalátor
 info.adaway=Blokování reklam pro Android
 info.adb=Android Debugging Bridge
-info.dns=Set DNS 8.8.8.8/8.8.4.4
+info.dns=Nastaví DNS na 8.8.8.8/8.8.4.4
 info.fos_wallpapers=Designováno od @badboy47
 info.emoji_one=OpenEmoji standart
 info.google_assistant=Pouze pro US
@@ -346,8 +345,8 @@ info.v4a_profiles=Různé audio profily s kernelem
 info.arkamys=Arkamys™ Audio systém
 info.icesound=Čtěte pořádně přiložené informace prosím.
 info.sony_player=I s TrackID, Network/DLNA, podcasty
-info.rm_deep_buffer=Opraví většinu problémy, né moc dobré pro baterii!
-info.sdcard_perm=Může přidat 3 - 5 minut v recovery
+info.rm_deep_buffer=Opraví většinu problémů, špatné řešení pro baterii.
+info.sdcard_perm=Může přidat 3 - 5 minut v recovery módu
 info.dirac=Install modified Dirac from ARISE
 
 # -- - KERNEL - -- #
@@ -362,7 +361,7 @@ info.moxie=Od @bedalus
 
 # -- - INSTALLER - -- #
 install=Instalace FreedomOS
-install.now=Instaluji
+install.now=Instalovat
 install.finish=Chvilku to potrvá...
 install.finish.title=Instalce je hotova.
 installing.title=Instaluji...
