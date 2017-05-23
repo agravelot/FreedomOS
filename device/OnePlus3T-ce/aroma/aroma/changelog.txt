@@ -2,6 +2,7 @@
     ADD: Android O emoji (option in aroma)
     UPDATE: GoogleApps 20170520
     UPDATE: ARISE OPUS 20170518
+    UPDATE: Czech language
     Minor bug fixes
     NOTE: Installing Android O emoji will erase OpenEmoji installation.
 
