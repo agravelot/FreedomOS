@@ -224,19 +224,23 @@ fi
 if [ ! -d "/su/bin" ]; then
   # not mounted yet, and doesn't exist already, mount
 
+  # fix permissions
+  chown 0.0 /data/su.img
+  chmod 0600 /data/su.img
+  chcon u:object_r:system_data_file:s0 /data/su.img
+
   # losetup is unreliable pre-M
   if [ `cat /proc/mounts | grep /su >/dev/null 2>&1; echo $?` -ne 0 ]; then
     loopsetup /data/su.img
     if [ ! -z "$LOOPDEVICE" ]; then
-      mount -t ext4 -o rw,noatime $LOOPDEVICE /su
+      MOUNT=$(mount -t ext4 -o rw,noatime $LOOPDEVICE /su 2>&1)
+      log_print "$MOUNT"
     fi
   fi
 
   # trigger mount, should also work pre-M, but on post-fs-data trigger may
   # be processed only after this script runs, causing a fallback to service launch
   if [ `cat /proc/mounts | grep /su >/dev/null 2>&1; echo $?` -ne 0 ]; then
-    chcon u:object_r:system_data_file:s0 /data/su.img
-    chmod 0600 /data/su.img
     setprop sukernel.mount 1
     sleep 1
   fi
