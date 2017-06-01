@@ -9,7 +9,7 @@
 # www.arisesound.com
 
 is_mounted() {
-  case `mount` in
+  case mount in
     *" $1 "*) echo 1;;
     *) echo 0;;
   esac;
@@ -67,7 +67,9 @@ if [ -e "$XHIFI" ] && [ "$API" -ge "21" ]; then
 
 fi
 
-if [ -e "$ROOT/su/bin/supolicy" ]; then
+if [ -e "$ROOT/data/magisk.img" ]; then
+  SEPOLICY=magiskpolicy
+elif [ -e "$ROOT/su/bin/supolicy" ]; then
   SEPOLICY=$ROOT/su/bin/supolicy
 elif [ -e "$BIN/supolicy" ]; then
   SEPOLICY=$BIN/supolicy
@@ -75,10 +77,10 @@ elif [ -e "$XBIN/supolicy" ]; then
   SEPOLICY=$XBIN/supolicy
 fi
 
-$SEPOLICY --live "permissive audio_prop audioserver mediaserver priv_app service system_app"
-$SEPOLICY --live "allow audioserver audioserver_tmpfs file { execute }"
-$SEPOLICY --live "allow mediaserver mediaserver_tmpfs file { execute }"
-$SEPOLICY --live "allow audio_prop system_file file { execmod }"
-$SEPOLICY --live "allow priv_app system_file file { execmod }"
-$SEPOLICY --live "allow service system_file file { execmod }"
-$SEPOLICY --live "allow system_app system_file file { execmod }"
+$SEPOLICY —live "permissive audio_prop audioserver mediaserver priv_app service system_app"
+$SEPOLICY —live "allow audioserver audioserver_tmpfs file { execute }"
+$SEPOLICY —live "allow mediaserver mediaserver_tmpfs file { execute }"
+$SEPOLICY —live "allow audio_prop system_file file { execmod }"
+$SEPOLICY —live "allow priv_app system_file file { execmod }"
+$SEPOLICY —live "allow service system_file file { execmod }"
+$SEPOLICY —live "allow system_app system_file file { execmod }"

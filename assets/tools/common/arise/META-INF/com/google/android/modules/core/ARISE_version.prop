@@ -1,7 +1,7 @@
 
 # ARISE Sound Systems™
 #
-# Magnum Opus™ 20170518
+# Magnum Opus™ 20170524
 #
 # Auditory Research in Sound Enhancement™
 #
@@ -11,15 +11,20 @@
 
 Changelog:
 
-## Magnum Opus™ 20170518 -
 
-- Fixed viper not processing on enforcing for pixel devices (thx for bbender for the fix) 
-Added magisk compatibility module
-- Made changes to Wishlist file to suit the addition of magisk compatibility module
+## Magnum Opus™ 20170524 -
+
+- fixed magisk compatibility module 
 
 ##
 
 
+## Magnum Opus™ 20170508 -
+
+- Added magisk compatibility module to the installer for easier installations
+- Fixed soundserver for pixel thx to bbender
+
+##
 
 ## Magnum Opus™ 20170506 -
 

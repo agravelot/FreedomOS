@@ -6,7 +6,7 @@
 #
 # www.arisesound.com
 
-OUTFD=/proc/self/fd/$2
+export OUTFD=/proc/self/fd/$2
 
 ui_print() { echo -e "ui_print $1\nui_print" > $OUTFD; }
 
@@ -32,27 +32,27 @@ safe_mount /system
 safe_mount /data
 
 if [ -d "/system/system" ]; then
-  SYS=/system/system
+  export SYS=/system/system
 else
-  SYS=/system
+  export SYS=/system
 fi
 
 if [ ! -d "$SYS/vendor" ] || [ -L "$SYS/vendor" ]; then
   safe_mount /vendor
-  VEN=/vendor
+  export VEN=/vendor
 elif [ -d "$SYS/vendor" ] || [ -L "/vendor" ]; then
-  VEN=$SYS/vendor
+  export VEN=$SYS/vendor
 fi
 
 if [ -e "$VEN/build.prop" ] && [ ! -e "$SYS/build.prop" ]; then
-  BUILDPROP=$VEN/build.prop
+  export BUILDPROP=$VEN/build.prop
 elif [ -e "$SYS/build.prop" ] && [ ! -e "$VEN/build.prop" ]; then
-  BUILDPROP=$SYS/build.prop
+  export BUILDPROP=$SYS/build.prop
 elif [ -e "$SYS/build.prop" ] && [ -e "$VEN/build.prop" ]; then
   if [ $(wc -c < "$SYS/build.prop") -ge $(wc -c < "$VEN/build.prop") ]; then
-    BUILDPROP=$SYS/build.prop
+    export BUILDPROP=$SYS/build.prop
   else
-    BUILDPROP=$VEN/build.prop
+    export BUILDPROP=$VEN/build.prop
   fi
 fi
 
@@ -162,6 +162,7 @@ STAPROXY=libsta_lib_third_party_staproxy_sta_proxy_loader_gyp.so
 STAGYP=libsta_lib_third_party_libsta_lib_libsta_gyp.so
 CORE=$MODULES/core
 PROFILES=$MODULES/profiles/ViPER4Android
+MAGISK=$MODULES/magisk
 V4A2340=$MODULES/v4a_2.3.4.0
 V4A2505=$MODULES/v4a_2.5.0.5
 V4AXHIFI=$MODULES/v4a_xhifi
@@ -176,7 +177,6 @@ MODDTS=$MODULES/dtsccs
 MODICE=$MODULES/ICE/ICEsound
 MODICECON=$MODULES/ICE/ICEconfig
 MODICEPRE=$MODULES/ICE/ICEpreset
-MAGISK=$MODULES/magisk
 ICE=ICEsoundService
 ICEAPK=ICEsoundService.apk
 ICELIB=libicepower.so
@@ -251,6 +251,7 @@ OPUS=$(cat $WISHLIST | grep "Magnum Opus")
 BUFFER=$(cat $WISHLIST | grep "delete.deep_buffer=true")
 REBUFFER=$(cat $WISHLIST | grep "restore.deep_buffer=true")
 PERMISSIONS=$(cat $WISHLIST | grep "repair.sdcard.permissions=true")
+INSTALLMAGISKCOMPATIBILITY=$(cat $WISHLIST | grep "install.magiskcompatibility=true")
 INSTALLCORE=$(cat $WISHLIST | grep "install.core=true")
 INSTALLESIRA=$(cat $WISHLIST | grep "install.esira=true")
 INSTALLBEATS=$(cat $WISHLIST | grep "install.ToolBox=true")
@@ -272,7 +273,6 @@ INSTALLQCHW=$(cat $WISHLIST | grep "install.qc.effects=HUAWEI")
 INSTALLQCSO=$(cat $WISHLIST | grep "install.qc.effects=SONY")
 INSTALLQCSK=$(cat $WISHLIST | grep "install.qc.effects=STOCK")
 INSTALLICE=$(cat $WISHLIST | grep "install.ICEsound=true")
-INSTALLMAGISKCOMPATIBILITY=$(cat $WISHLIST | grep "install.magiskcompatibility=true")
 ICECONFIGNONE=$(cat $WISHLIST | grep "use.ICEconfig=None")
 ICECONFIG1=$(cat $WISHLIST | grep "use.ICEconfig=1")
 ICECONFIG2=$(cat $WISHLIST | grep "use.ICEconfig=2")
@@ -400,11 +400,7 @@ ui_print "300MB+ of free /system space is necessary for successful installations
 ui_print " "
 ui_print " "
 sleep 3
-ui_print "Various scripts in the Core and other modules depend heavily on SuperSU, systemless or system, for specific operations during and after boot."
-ui_print " "
-ui_print " "
-sleep 3
-ui_print "STRONGLY consider using SuperSU for all root management needs if our sound enhancement solutions are part of your Android experience."
+ui_print "Various scripts in the Core and other modules depend heavily on SuperSU, systemless or system, or MagiskSU for specific operations during and after boot."
 ui_print " "
 ui_print " "
 sleep 3
