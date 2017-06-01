@@ -18,6 +18,7 @@
     UPDATE: GoogleApps 20170601
     UPDATE: ARISE Magnum Opus 20170524
     UPDATE: Czech language by @iamceph
+    UPDATE: OxygenOS OOpen Beta 17
     NOTE: Installing Android O emoji will erase OpenEmoji installation.
 
 2.9-CE
