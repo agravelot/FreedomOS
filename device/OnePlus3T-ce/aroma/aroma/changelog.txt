@@ -1,9 +1,23 @@
-2.9.1-CE
+2.10-CE
+    ADD: Ambient display 2.0
+    ADD: Lift up display
+    ADD: Sharing functionality for Shot on OnePlus
+    ADD: All new OnePlus Font (Available in English, Chinese, and Japanese only)
     ADD: Android O emoji (option in aroma)
-    UPDATE: GoogleApps 20170520
-    UPDATE: ARISE OPUS 20170518
+    IMPROVE: Gallery v1.7
+    IMPROVE: Recorder v1.6
+    IMPROVE: Weather v1.7
+    IMPROVE: File Manager v1.7
+    IMPROVE: Other UI refinements
+    OPTIMIZE: Enhanced launching speed of 3rd-party apps
+    OPTIMIZE: Management of foreground and background processes
+    UPDATE: Setup wizard adjusted to suit the style of Android 7.1
+    UPDATE: Refined contact import process from SIM card, now supports dual numbers and an email address
+    UPDATE: Automatically add corresponding country codes when making calls during roaming
+    UPDATE: Updated Android Security Patch level to 1st May 2017
+    UPDATE: GoogleApps 20170601
+    UPDATE: ARISE Magnum Opus 20170524
     UPDATE: Czech language by @iamceph
-    Minor bug fixes
     NOTE: Installing Android O emoji will erase OpenEmoji installation.
 
 2.9-CE
