@@ -285,7 +285,7 @@ info.aptx=Extra codecs da Qualcomm
 info.40-wifi=40MHz channel con oltre 2.4GHz
 info.permissive=Ricostruisci il kernel con l'impostazionione "permissive" (Vulnerabile ad un escalation di privilegi)
 info.substratum=Il nuovo motore dei temi
-info.android_o_font=Extracted from latest dev preview
+info.android_o_font=Extracted from latest developper preview
 
 # -- - ROOT - -- #
 magisk=Installa MagiskSU

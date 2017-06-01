@@ -292,7 +292,7 @@ info.aptx=高音质蓝牙codec
 info.40-wifi=在2.4GHz上使用40MHz频宽
 info.permissive=启用内核的宽容标记 (易导致内核提权)
 info.substratum=新的主题引擎
-info.android_o_font=Extracted from latest dev preview
+info.android_o_font=Extracted from latest developper preview
 
 # -- - ROOT - -- #
 supersu=安装SuperSU

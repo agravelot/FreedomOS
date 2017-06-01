@@ -280,7 +280,7 @@ info.aptx=Extra codecs from Qualcomm
 info.40-wifi=Largeur de  canal 40MHz en 2.4GHz
 info.permissive=Repack le kernel avec le flash permissive (vulnérable à l'escalade des privilèges)
 info.substratum=Le remplacent de Layers
-info.android_o_font=is la dernière prévisualisation développeur
+info.android_o_font=Extrait depuis la dernière versions développeur
 
 # -- - ROOT - -- #
 supersu=Installer SuperSU
