@@ -1,0 +1,131 @@
+#!/system/bin/sh
+#
+# ARISE Sound Systems™
+#
+# Magnum Opus
+#
+# arisesound_setprop
+#
+# www.arisesound.com
+
+
+## Asus™ Zenfone 3 Ultra Audio ##
+
+#
+setprop media.stagefright.enable-player true
+setprop media.stagefright.enable-http true
+setprop media.stagefright.enable-aac true
+setprop media.stagefright.enable-qcp true
+setprop media.stagefright.enable-scan true
+setprop mm.enable.smoothstreaming true
+setprop mmp.enable.3g2 true
+setprop media.aac_51_output_enabled true
+setprop audio.offload.track.enable false
+setprop audio.deep_buffer.media true
+setprop audio.offload.gapless.enabled true
+setprop audio.offload.multiple.enabled false
+setprop audio.safx.pbe.enabled true
+setprop audio.pp.asphere.enabled false
+setprop audio.offload.pcm.16bit.enable true
+setprop audio.offload.pcm.24bit.enable true
+setprop audio.dolby.ds2.enabled true
+#
+
+
+## Huawei™ Multi-device Audio ##
+
+#
+setprop mm.enable.qcom_parser 1048575
+setprop audio.parser.ip.buffer.size 262144
+setprop ro.config.hw_music_lp true
+setprop ro.config.hw_dts true
+setprop ro.config.hw_sws true
+setprop ro.config.sws_version sws3
+setprop ro.config.swsAlwaysActiveForSPK true
+setprop ro.config.hw_dts_settings true
+setprop ro.config.hw_media_flags 3
+setprop ro.config.hpx_support true
+setprop ro.config.hw_dolby true
+setprop ro.config.hw_audio_plus true
+setprop audio.musicfx.bassboost.max 500
+setprop audio.musicfx.virtualizer.max 500
+setprop audio.high.resolution.enable true
+setprop use.qti.sw.alac.decoder true
+setprop use.qti.sw.ape.decoder true
+setprop flac.sw.decoder.16bit.support true
+setprop flac.sw.decoder.24bit.support true
+#
+
+
+## Vivo™ DTS™ Audio ##
+
+#
+setprop ro.config.hifi_config_state 2
+setprop persist.vivo.phone.hifi Have_hifi
+setprop ro.config.hifi_always_on yes
+setprop use.dts_m6 true
+setprop use.dts_m6_notify true
+setprop use.dts_eagle true
+#
+
+
+## Oppo™ F1S Dirac™ Power Sound ##
+
+#
+setprop ro.dirac.max_active.powersound 3
+setprop ro.dirac.max_active.headset 5
+setprop ro.dirac.poolsize 2
+setprop ro.dirac.config 1
+#
+
+
+## LG™ G6 HiFi DAC Audio ##
+
+#
+#setprop audio.hifi_rec.normal_gain 30
+#setprop audio.hifi_rec.normal_lcf 75
+#setprop audio.hifi_rec.normal_lmt -3
+#setprop audio.hifi_rec.concert_gain -150
+#setprop audio.hifi_rec.concert_lcf 0
+#setprop audio.hifi_rec.concert_lmt 0
+#setprop audio.hifi_rec.offset_gain 37
+#
+
+
+## Xiaomi™ Mi Max HiFi Audio ##
+
+#
+#setprop ro.audio.hifi true
+#setprop persist.audio.hifi true
+#
+
+
+## ViPER4Arise™ Audio ##
+
+#
+setprop tunnel.decode false
+setprop lpa.decode false
+setprop lpa.use-stagefright false
+#
+
+
+#Auro
+setprop AUROBUILD_ENABLED yes
+setprop ro.mtk_audenh_support 1
+setprop ro.mtk_bessurround_support 1
+setprop ro.mtk_bt_support 1
+#
+
+
+## Miscellaneous Audio ##
+
+#
+#Hi-Res option for PowerAmp
+setprop ro.lenovo.hifi_support true
+#setprop ro.zte.audio.hifitype dual
+setprop persist.bt.a2dp.aptx_disable false
+setprop persist.bt.a2dp.aptx_hd_disable false
+#
+
+
+exit 0

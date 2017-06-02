@@ -3,7 +3,13 @@
 set_perm() {
   chown $1.$2 $4
   chmod $3 $4
-  chcon $4 $5
+  if [ ! -z "$5" ]; then
+    chcon -h $5 $4
+    chcon $5 $4
+  else
+    chcon -h u:object_r:system_file:s0 $4
+    chcon u:object_r:system_file:s0 $4
+  fi
 }
 
 cp_perm() {
@@ -13,6 +19,8 @@ cp_perm() {
     set_perm $1 $2 $3 $5 $6
   fi
 }
+
+chcon u:object_r:system_file:s0 /su
 
 mkdir /su/bin
 mkdir /su/xbin
@@ -32,3 +40,4 @@ ln -s /su/bin/su /su/bin/supolicy
 cp_perm 0 0 0755 /.sufrp/supolicy /su/bin/supolicy_wrapped
 cp_perm 0 0 0644 /.sufrp/libsupol.so /su/lib/libsupol.so
 cp_perm 0 0 0755 /.sufrp/sukernel /su/bin/sukernel
+

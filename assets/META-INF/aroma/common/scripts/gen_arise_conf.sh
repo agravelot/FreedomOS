@@ -23,8 +23,6 @@ echo "install.core=true" >> /sdcard/arise_customize.prop
 cat /tmp/aroma/arise.prop >> /sdcard/arise_customize.prop
 sed -i 's/=1/=true/g' /sdcard/arise_customize.prop
 sed -i 's/=0/=/g' /sdcard/arise_customize.prop
-cat /tmp/aroma/ICEconfig.prop >> /sdcard/arise_customize.prop
-cat /tmp/aroma/ICEpreset.prop >> /sdcard/arise_customize.prop
 
 if [[ ! -f /tmp/aroma/ICEconfig.prop ]]; then
     touch /tmp/aroma/ICEconfig.prop
@@ -33,3 +31,6 @@ fi
 if [[ ! -f /tmp/aroma/ICEpreset.prop ]]; then
     touch /tmp/aroma/ICEpreset.prop
 fi
+
+cat /tmp/aroma/ICEconfig.prop >> /sdcard/arise_customize.prop
+cat /tmp/aroma/ICEpreset.prop >> /sdcard/arise_customize.prop

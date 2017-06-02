@@ -24,14 +24,14 @@ welcome.device=Zařízení
 welcome.updated=Aktualizováno
 welcome.microblog=YouTube
 welcome.developer=Vývojář
-welcome.next=Stiskněte Další pro pokračování instalace...
+welcome.next=Stiskněte Další pro instalaci...
 
 changelog.title=Changelogy
 changelog.desc=FreedomOS Changelogy
 language.title=Vybrat jazyk
 language.text=Vybrat instalační jazyk
 language.czech=Čeština
-language.czech.info=Použít Češtinu @iamceph
+language.czech.info=Použít Češtinu od @iamceph
 language.english=English
 language.english.info=Using English
 language.french=France
@@ -80,7 +80,7 @@ addon.tittle=Zálohovat/Obnovit /system/addon.d/
 addon_yes=Ano
 info.addon_yes=Doporučeno pro dirty flash
 addon_no=Ne
-info.addon_no=Pro clean flash
+info.addon_no=Doporučeno pro clean flash
 firmware.tittle=Vyberte svůj firmware
 fw_mm=Marshmallow firmwary
 info.fw_mm=Podporují více TWRP variant
@@ -209,7 +209,7 @@ info.android_pay=NFC paltby
 info.basic_dream=Screensaver
 info.bt_midi=Bluetooth MIDI Support
 info.bt_test=Bluetooth testování
-info.desk_clock=Vudík, hodiny a stopky
+info.desk_clock=Budík, hodiny a stopky
 info.document=Správce souborů
 info.download_provider=Správce souborů
 info.engineering=Různé nastavení pro vývojáře
@@ -281,6 +281,7 @@ aptx=Nainstalovat APTX/APTX-HD
 40-wifi=Povolit širokopásmovou Wifi
 permissive=Povolit permissive
 substratum=Substratum
+android_o_font=Android O Emoji
 
 info.root=Potřebný pro prolomení SafetyNet
 info.xposed=Xposed Instalátor
@@ -295,6 +296,7 @@ info.aptx=Extra kódy od Qualcommu
 info.40-wifi=40MHz šířka kanálu přes 2.4GHz
 info.permissive=Zabalí kernel jako permissive (Náchylnější k získání práv)
 info.substratum=Nový theme-engine
+info.android_o_font=Extracted from latest developper preview
 
 # -- - ROOT - -- #
 supersu=Nainstalovat SuperSU
@@ -335,6 +337,7 @@ icesound=ICEsound™
 sony_player=Přehrávač hudby od
 rm_deep_buffer=Odstraní deep_buffer z audio_policy
 sdcard_perm=Opraví sdcard práva
+dirac=Dirac
 
 info.v4a_new=Poslední verze
 info.v4a_old=Pro starší uživatele
@@ -344,6 +347,7 @@ info.icesound=Čtěte pořádně přiložené informace prosím.
 info.sony_player=I s TrackID, Network/DLNA, podcasty
 info.rm_deep_buffer=Opraví většinu problémů, špatné řešení pro baterii.
 info.sdcard_perm=Může přidat 3 - 5 minut v recovery módu
+info.dirac=Install modified Dirac from ARISE
 
 # -- - KERNEL - -- #
 kernel.tittle=Kernel

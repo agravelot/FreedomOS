@@ -224,7 +224,7 @@ info.protips=Qualche consiglio
 info.sensor_test=Applicazione per il test dei sensori
 info.sms=Applicazione originale OnePlus SMS
 info.sound_recorder=App registratore OnePlus
-info.swiftkey=Tastiera Swiftkey 
+info.swiftkey=Tastiera Swiftkey
 info.tags=NFC Tags
 info.weather=Applicazione meteo OnePlus
 info.wifi_test=Wifi Testing
@@ -270,6 +270,7 @@ aptx=Installa APTX/APTX-HD
 40-wifi=Abilita doppia banda Wifi
 permissive=Abilita permissive
 substratum=Substratum
+android_o_font=Android O Emoji
 
 info.root=Richiesto per superare SafetyNet
 info.xposed=Xposed Installer solo applicazione da DVD android
@@ -282,8 +283,9 @@ info.google_assistant=US only
 info.arise=A.R.I.S.E Sound System
 info.aptx=Extra codecs da Qualcomm
 info.40-wifi=40MHz channel con oltre 2.4GHz
-info.permissive=Ricostruisci il kernel con l'impostazionione "permissive" (Vulnerabile ad un escalation di privilegi) 
+info.permissive=Ricostruisci il kernel con l'impostazionione "permissive" (Vulnerabile ad un escalation di privilegi)
 info.substratum=Il nuovo motore dei temi
+info.android_o_font=Extracted from latest developper preview
 
 # -- - ROOT - -- #
 magisk=Installa MagiskSU
@@ -323,6 +325,7 @@ icesound=ICEsound™
 sony_player=Sony Music Player
 rm_deep_buffer=Rimuovi deep_buffer da audio_policy
 sdcard_perm=Fix per i permessi di sdcard
+dirac=Dirac
 
 info.v4a_new=Ultima versione
 info.v4a_old=Per gli utenti vecchia scuola
@@ -332,6 +335,7 @@ info.icesound=Leggi con attenzione le istruzioni incluse
 info.sony_player=Include TrackID, Network/DLNA, podcasts
 info.rm_deep_buffer=Dovrebbe risolvere la maggior parte dei bug, non è battery friendly!
 info.sdcard_perm=Aggiunge 3 - 5 minuti alla sessione recovery
+info.dirac=Install modified Dirac from ARISE
 
 # -- - KERNEL - -- #
 kernel.tittle=Kernel

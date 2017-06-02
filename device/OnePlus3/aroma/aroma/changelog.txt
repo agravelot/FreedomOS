@@ -1,3 +1,6 @@
+    UPDATE: Czech language by @iamceph
+    UPDATE: ARISE OPUS 20170518
+
 2.8
     UPDATE: OxygenOS 4.1.3
     UPDATE: Increased system stability

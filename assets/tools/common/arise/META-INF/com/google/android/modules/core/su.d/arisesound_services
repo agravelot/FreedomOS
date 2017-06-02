@@ -9,7 +9,6 @@
 #
 # www.arisesound.com
 
-
 set_metadata() {
   file="$1";
   if [ -e $file ]; then
@@ -53,29 +52,25 @@ set_metadata_recursive() {
   fi
 }
 
-
 if [ -d "/system_root" ]; then
-  ROOT=/system_root
   SYS=/system_root/system
-else
-  ROOT=""
-  SYS=/system
-fi
-
-if [ $ROOT != "" ]; then
+  ROOT=/system_root
   mount -o rw,remount $ROOT
 else
+  SYS=/system
+  ROOT=""
   mount -o rw,remount /
 fi
-mount -o rw,remount $SYS
 
+mount -o rw,remount $SYS
 
 BIN=$SYS/bin
 SH=$BIN/sh
-ARISE=$SYS/su.d/arisesound_setprop
-BOOT=$SYS/su.d/post-boot
-SERVER=$SYS/su.d/arisesoundserver
-SONY=$SYS/su.d/sony_setprop
+INITD=$SYS/etc/init.d
+ARISE=$INITD/arisesound_setprop
+BOOT=$INITD/post-boot
+SERVER=$INITD/arisesoundserver
+SONY=$INITD/sony_setprop
 CONTEXTS=$ROOT/service_contexts
 AURO=$(cat $CONTEXTS | grep "auro_service")
 EAGLE=$(cat $CONTEXTS | grep "dts_eagle_service")
@@ -90,13 +85,11 @@ if [ -e "$SERVER" ]; then
 
 fi
 
-
 if [ -e "$ARISE" ]; then
 
   $SH $ARISE
 
 fi
-
 
 if [ -e "$SONY" ]; then
 
@@ -104,13 +97,11 @@ if [ -e "$SONY" ]; then
 
 fi
 
-
 if [ ! "$VIVO" ] && [ -e "$CONTEXTS" ]; then
 
   echo "\niss_daemon                                u:object_r:iss_daemon_service:s0\n" >> $CONTEXTS
 
 fi
-
 
 if [ ! "$AURO" ] && [ -e "$CONTEXTS" ]; then
 
@@ -118,24 +109,13 @@ if [ ! "$AURO" ] && [ -e "$CONTEXTS" ]; then
 
 fi
 
-
-
 if [ ! "$EAGLE" ] && [ -e "$CONTEXTS" ]; then
 
   echo "\ndts_eagle_service                         u:object_r:dtseagleservice_service:s0\n" >> $CONTEXTS
 
 fi
 
-
 $SM $BIN/iss_daemon uid 1013 gid 1005 mode 0755 capabilities 0x0 selabel u:object_r:iss_daemon_service:s0
-
-
-if [ $ROOT != "" ]; then
-  mount ro,remount $ROOT
-else
-  mount ro,remount /
-fi
-
 
 (
     sleep 60

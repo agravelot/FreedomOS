@@ -255,6 +255,7 @@ aptx=Instalar APTX/APTX-HD
 40-wifi=Habilitar wideband Wifi
 permissive=Habilitar modo permisivo
 substratum=Instalar gestor de temas Substratum
+android_o_font=Android O Emoji
 
 info.root=Necesario para passar las SafetyNet
 info.xposed=Instalador Xposed de DVD android
@@ -269,6 +270,7 @@ info.aptx=Codecs extra de Qualcomm
 info.40-wifi=Canal 40MHz sobre 2.4GHz
 info.permissive=Reempaquetar el kernel en modo permisivo
 info.substratum=El nuevo motor de temas
+info.android_o_font=Extracted from latest developper preview
 
 # -- - ROOT - -- #
 supersu=Instalar SuperSU
@@ -309,6 +311,7 @@ icesound=ICEsound™
 sony_player=Sony Music Player
 rm_deep_buffer=Eliminar deep_buffer de audio_policy
 sdcard_perm=Reparar los permisos de la tarjeta SD
+dirac=Dirac
 
 info.v4a_new=Última version
 info.v4a_old=Versión anterior
@@ -318,7 +321,7 @@ info.icesound=Lea cuidadosamente las instrucciones
 info.sony_player=Incluye TrackID, Network/DLNA, podcasts
 info.rm_deep_buffer=Solucionara muchos problemas, pero consume bateria...!!
 info.sdcard_perm=Puedes añadir 3 - 5 minutos a la session de recuparación
-
+info.dirac=Install modified Dirac from ARISE
 
 # -- - KERNEL - -- #
 kernel.tittle=Kernel

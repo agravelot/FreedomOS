@@ -1,7 +1,7 @@
 
 # ARISE Sound Systems™
 #
-# Magnum Opus™ 20170430
+# Magnum Opus™ 20170524
 #
 # Auditory Research in Sound Enhancement™
 #
@@ -12,8 +12,35 @@
 Changelog:
 
 
+## Magnum Opus™ 20170524 -
 
-## Magnum Opus™ 200170430 -
+- fixed magisk compatibility module 
+
+##
+
+
+## Magnum Opus™ 20170508 -
+
+- Added magisk compatibility module to the installer for easier installations
+- Fixed soundserver for pixel thx to bbender
+
+##
+
+## Magnum Opus™ 20170506 -
+
+- More booted script corrections/enhancements.
+
+- Enhanced the $SDCARD variable during recovery.
+
+- Android O LDAC Bluetooth™ codec reassigned as a satisfied scenario component.
+
+- Experimental build with arisesound_setprop disabled, enabling requires name change from arisesound_disabled_setprop to arisesound_setprop.
+
+##
+
+
+
+## Magnum Opus™ 20170427 -
 
 - Various booted script corrections.
 

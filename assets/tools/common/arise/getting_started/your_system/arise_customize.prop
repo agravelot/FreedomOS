@@ -40,6 +40,8 @@ install.xxxx=true
 # If a rom update or system wipe is performed resulting in the need to reinstall the sound system, edit /sdcard/arise_customize.prop to include a value of "true" for the core module to complete your sound system installation, followed by removing the value of "true" from the core module once booted.
 
 
+# If using magisksu, install the magiskcompatibility module. NOTE: You must have magisksu installed before installing this module
+
 
 ## START ##
 
@@ -48,6 +50,11 @@ install.xxxx=true
 install.core=
 
 (40MB-175MB)
+
+
+install.magiskcompatibility=
+
+(N/A)
 
 
 
