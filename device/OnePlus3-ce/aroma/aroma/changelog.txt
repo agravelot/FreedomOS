@@ -19,6 +19,7 @@
     UPDATE: ARISE Magnum Opus 20170524
     UPDATE: Czech language by @iamceph
     UPDATE: OxygenOS Open Beta 8
+    UPDATE: SuperSU 2.82 stable
     NOTE: Installing Android O emoji will erase OpenEmoji installation.
 
 2.9-CE
