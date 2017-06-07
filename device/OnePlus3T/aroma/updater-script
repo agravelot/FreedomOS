@@ -306,8 +306,16 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.7") == "1")
   then
     set_progress(0.935000);
     ui_print("   Installing EmojiOne");
-    package_extract_file("tools/fonts/emojione-android.ttf", "/system/fonts/NotoColorEmoji.ttf");
+    package_extract_file("tools/fonts/emojione/NotoColorEmoji.ttf", "/system/fonts/NotoColorEmoji.ttf"); 
     set_metadata("/system/fonts/NotoColorEmoji.ttf", "uid", 0, "gid", 0,  "mode", 0644);
+endif;
+
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.13") == "1")
+  then
+  set_progress(0.935000);
+  ui_print("   Installing Android O fonts");
+  package_extract_file("tools/fonts/android_o/NotoColorEmoji.ttf", "/system/fonts/NotoColorEmoji.ttf");
+  set_metadata("/system/fonts/NotoColorEmoji.ttf", "uid", 0, "gid", 0,  "mode", 0644);
 endif;
 
 delete_recursive("/tmp/tools/fonts");

@@ -230,7 +230,6 @@ selectbox(
         "FaceUnlock",     "<b>Face Unlock</b>",       "",                      "check",
         "Gmail",     "<b>Gmail</b>",       "",                      "check",
         "GoogleTTS",     "<b>Google Text-to-Speech</b>",       "",                      "check",
-        "Hotword",     "<b>OK Google Hotword Enrollment</b>",       "(automatically selected if Search will be installed)",                      "check",
         "KeyboardGoogle",     "<b>Google Keyboard</b>",       "",                      "check",
         "Messenger",     "<b>Messenger</b>",       "",                      "check",
         "PixelIcons",     "<b>Pixel Icons</b>",       "",                      "check",
@@ -238,7 +237,7 @@ selectbox(
         "Photos",     "<b>Google Photos</b>",       "",                      "check",
         "PlayGames",     "<b>Google Play Games</b>",       "",                      "check",
         "PrintServiceGoogle",     "<b>Print Service Recommendation Service</b>",       "",                      "check",
-        "Search",     "<b>Google Search</b>",       "To Exclude Google Search AND Google Now Launcher AND Pixel Launcher <#f00>OR</#> To Include Google Search AND OK Google Hotword Enrollment",                      "check",
+        "Search",     "<b>Google Search</b>",       "To Exclude Google Search AND Google Now Launcher AND Pixel Launcher <#f00>OR</#> To Include Google Search",                      "check",
         "Speech",     "<b>Offline Speech Files</b>",       "(Required for offline voice dicatation support)",                      "check",
         "TagGoogle",     "<b>Google NFC Tags</b>",       "",                      "check",
         "Talkback",     "<b>Talkback</b>",       "",                      "check",
@@ -356,12 +355,6 @@ selectbox(
     prop("gapps.prop", "GoogleTTS")=="1"
   then
     appendvar("gapps", "GoogleTTS\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Hotword")=="1"
-  then
-    appendvar("gapps", "Hotword\n");
   endif;
 
   if
@@ -527,7 +520,8 @@ checkbox(
     "<~arise>", "<~info.arise>", 1,
     "<~substratum>", "<~info.substratum>", 0,
     "<~40-wifi>", "<~info.40-wifi>", 0,
-    "<~permissive>", "<~info.permissive>", 0
+    "<~permissive>", "<~info.permissive>", 0,
+    "<~android_o_font>", "<~info.android_o_font>", 0 
 );
 
 if

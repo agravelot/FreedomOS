@@ -92,6 +92,7 @@ function build_opengapps() {
   dialerframework
   dialergoogle
   contactsgoogle
+  duo
   "
 
   echo "> Building FreedomOS OpenGApps" 2>&1 | tee -a ${build_log}
