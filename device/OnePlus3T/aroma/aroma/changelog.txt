@@ -1,3 +1,21 @@
+2.10
+    ADD: System push notifications for important information from OnePlus
+    UPDATE: Network settings for select carriers
+    UPDATE: OnePlus Community app to v1.8
+    UPDATE: Android Security Patch level to 1st May 2017
+    UPDATE: Modified WiFi no internet indication icon
+    FIX: Storage issue present on 3rd party filemanagers
+    FIX: VoLTE issue on certain Jio SIM cards
+    FIX: Connection issue on Android Auto
+    OPTIMIZE: Battery
+    OPTIMIZE: WiFi, Bluetooth and GPS
+    OPTIMIZE: Proximity sensor
+    OPTIMIZE: Camera low light focus
+    OPTIMIZE: Expanded screenshot
+    OTHER: Enhanced system stability
+    UPDATE: GoogleApps 20170611
+    REMOVE: Google Hotword
+    
 2.9
     UPDATE: Czech language by @iamceph
     UPDATE: ARISE OPUS 20170518
