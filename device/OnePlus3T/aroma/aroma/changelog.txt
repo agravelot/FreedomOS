@@ -14,8 +14,7 @@
     OPTIMIZE: Expanded screenshot
     OTHER: Enhanced system stability
     UPDATE: GoogleApps 20170611
-    REMOVE: Google Hotword
-    
+
 2.9
     UPDATE: Czech language by @iamceph
     UPDATE: ARISE OPUS 20170518
