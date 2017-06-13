@@ -27,20 +27,20 @@ DEVICE=OnePlus3T
 ASSERT="OnePlus 3T"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus3TOxygen_28_OTA_053_all_1706041759_63ff82dbae5
-ROM_LINK=http://otafsc.h2os.com/patch/amazone2/GLO/OnePlus3TOxygen/OnePlus3TOxygen_28.A.53_GLO_053_1706041759/$ROM_NAME.zip
+ROM_NAME=OnePlus3TOxygen_28_OTA_054_all_1706101907_0c4fa6
+ROM_LINK=http://otafsc.h2os.com/patch/amazone2/GLO/OnePlus3TOxygen/OnePlus3TOxygen_28.A.54_GLO_054_1706101907/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=bb023fd6bf46a7a3733e14efd02d7cc5
+ROM_MD5=4a6f30be0d3012047be22b588c51016e
 
 # OpenGapps
 GAPPS_BUILD=true
 GAPPS_ANDROID=7.1
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=aroma
-GAPPS_DATE=20170606
+GAPPS_DATE=20170611
 GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
 GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
-GAPPS_MD5=75603eb8d33a1dea60e6d56102619703
+GAPPS_MD5=0390546e93b63287560088153e6f639b
 
 # Set Android version for selinux build script
 ANDROID_VERSION=7
