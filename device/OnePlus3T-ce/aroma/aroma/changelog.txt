@@ -1,3 +1,16 @@
+2.11-CE
+    UPDATE: OnePlus Community to v1.9
+    UPDATE: GoogleApps 20170615
+    FIX: Occasional duplicate notifications
+    FIX: Expanded screenshot duplicate stitches
+    FIX: Eolor issues with app locker
+    FIX: Inaccurate battery percentage
+    FIX: Certain display issues with OnePlus Font
+    FIX: Certain display issues in the weather app
+    FIX: Camera occasionally unable to open
+    FIX: Sending files with 3rd party apps via hotspot
+    FIX: Inaccurate displayed network speed when activating hotspot
+
 2.10-CE
     ADD: Ambient display 2.0
     ADD: Lift up display
