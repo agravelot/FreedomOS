@@ -1,3 +1,5 @@
+2.11-CE
+    UPDATE: GoogleApps 20170615
 2.10-CE
     ADD: Ambient display 2.0
     ADD: Lift up display
