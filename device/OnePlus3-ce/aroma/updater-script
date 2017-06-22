@@ -203,9 +203,9 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
   if (file_getprop("/tmp/aroma/aromaroot.prop", "rootmethod") == "1")
     then
     ui_print("   Installing Magisk");
-    run_program("/tmp/tools/magisk/install.sh");
     ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Move magisk to /tmp/tools/magisk ->  /tmp/magisk ");
+    run_program("/tmp/tools/busybox", "rm", "-rf", "/dev/tmp");
     run_program("/tmp/tools/busybox", "mkdir", "-p", "/dev/tmp");
     run_program("/tmp/tools/busybox", "mv", "/tmp/tools/magisk", "/dev/tmp/magisk");
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");
