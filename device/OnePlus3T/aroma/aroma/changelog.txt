@@ -1,3 +1,12 @@
+2.10.1
+    ADD: Call recording option in aroma
+    UPDATE: Magisk V13 BETA 0980cb6
+    UPDATE: GoogleApps 20170622
+    UPDATE: ARISE is no more selected by default
+    UPDATE: ARISE4Magisk: SELinux patch for FreedomOS
+    UPDATE: Magisk is now the default root provider
+    REMOVE: OnePlus Push app (push OnePlus ads and took 55MB of RAM!)
+    
 2.10
     ADD: System push notifications for important information from OnePlus
     UPDATE: Network settings for select carriers
