@@ -106,7 +106,6 @@ function initialize {
   source ${scripts_root}/opengapps.sh
   source ${scripts_root}/arise.sh
   source ${scripts_root}/busybox.sh
-  source ${scripts_root}/arise4magisk.sh
 
   HOST_ARCH=`uname -m`
   HOST_OS=`uname -s`
