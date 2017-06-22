@@ -545,8 +545,8 @@ then
         "@default",
         aromaroot.prop,
         "rootmethod",     "",        "",      "group",
-          "0",                    "<~supersu>",                  "<~info.supersu>",       "select.selected",
-          "1",                    "<~magisk>",                   "<~info.magisk>",        "select"
+          "0",                    "<~supersu>",                  "<~info.supersu>",       "select",
+          "1",                    "<~magisk>",                   "<~info.magisk>",        "select.selected"
         );
 endif;
 
