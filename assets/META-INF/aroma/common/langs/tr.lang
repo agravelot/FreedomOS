@@ -281,6 +281,7 @@ aptx=APTX/APTX-HD yükle
 permissive=İzin Verilenleri Etkinleştir
 substratum=Substratum
 android_o_font=Android O Emoji
+call_recorder=Call recording
 
 info.root=SafetyNet'i geçmek için gereklidir
 info.xposed=Xposed Installer uygulaması yalnızca DVD android tarafından yapılan
@@ -296,6 +297,7 @@ info.40-wifi=2.4 MHz üzerinde 40 MHz kanal genişliği
 info.permissive=Çekirdeği serbest (permissive) olarak yeniden paketleyin (Ayrıcalıklı olmanın avantajlı hale getirilmesi)
 info.substratum=Yeni Tema Motoru
 info.android_o_font=Extracted from latest developper preview
+info.call_recorder=Allows to record your calls
 
 # -- - ROOT - -- #
 supersu=SuperSU yükle

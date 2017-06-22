@@ -282,6 +282,7 @@ aptx=Nainstalovat APTX/APTX-HD
 permissive=Povolit permissive
 substratum=Substratum
 android_o_font=Android O Emoji
+call_recorder=Call recording
 
 info.root=Potřebný pro prolomení SafetyNet
 info.xposed=Xposed Instalátor
@@ -297,6 +298,7 @@ info.40-wifi=40MHz šířka kanálu přes 2.4GHz
 info.permissive=Zabalí kernel jako permissive (Náchylnější k získání práv)
 info.substratum=Nový theme-engine
 info.android_o_font=Extracted from latest developper preview
+info.call_recorder=Allows to record your calls
 
 # -- - ROOT - -- #
 supersu=Nainstalovat SuperSU

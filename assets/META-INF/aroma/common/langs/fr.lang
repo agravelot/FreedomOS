@@ -266,6 +266,7 @@ aptx=Installer APTX/APTX-HD
 permissive=Force le kernel en permissive
 substratum=Substratum
 android_o_font=Emoji Android O
+call_recorder=Enregistreur d'appel
 
 info.root=Requis pour passer SafetyNet
 info.xposed=Application Xposed seulement par DVD android
@@ -281,6 +282,7 @@ info.40-wifi=Largeur de  canal 40MHz en 2.4GHz
 info.permissive=Repack le kernel avec le flash permissive (vulnérable à l'escalade des privilèges)
 info.substratum=Le remplacent de Layers
 info.android_o_font=Extrait depuis la dernière versions développeur
+info.call_recorder=Allows to record your calls
 
 # -- - ROOT - -- #
 supersu=Installer SuperSU

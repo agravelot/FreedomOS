@@ -256,6 +256,7 @@ aptx=Instalar APTX/APTX-HD
 permissive=Habilitar modo permisivo
 substratum=Instalar gestor de temas Substratum
 android_o_font=Android O Emoji
+call_recorder=Call recording
 
 info.root=Necesario para passar las SafetyNet
 info.xposed=Instalador Xposed de DVD android
@@ -271,6 +272,7 @@ info.40-wifi=Canal 40MHz sobre 2.4GHz
 info.permissive=Reempaquetar el kernel en modo permisivo
 info.substratum=El nuevo motor de temas
 info.android_o_font=Extracted from latest developper preview
+info.call_recorder=Allows to record your calls
 
 # -- - ROOT - -- #
 supersu=Instalar SuperSU

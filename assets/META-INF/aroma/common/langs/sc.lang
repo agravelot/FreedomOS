@@ -278,6 +278,7 @@ aptx=安装APTX/APTX-HD
 permissive=启用宽容模式(permissive)
 substratum=Substratum主题引擎
 android_o_font=Android O Emoji
+call_recorder=Call recording
 
 info.root=Required to pass SafetyNet
 info.xposed=Xposed Installer application only by DVD android
@@ -293,6 +294,7 @@ info.40-wifi=在2.4GHz上使用40MHz频宽
 info.permissive=启用内核的宽容标记 (易导致内核提权)
 info.substratum=新的主题引擎
 info.android_o_font=Extracted from latest developper preview
+info.call_recorder=Allows to record your calls
 
 # -- - ROOT - -- #
 supersu=安装SuperSU
