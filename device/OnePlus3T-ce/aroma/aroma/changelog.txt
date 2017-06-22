@@ -3,7 +3,7 @@
     UPDATE: Magisk V13 BETA 0980cb6
     UPDATE: GoogleApps 20170622
     UPDATE: ARISE is no more selected by default
-    UPDATE: ARISE4Magisk: SELinux patch for FreedomOS
+    UPDATE: FreedomOS SELinux patch for ARISE4Magisk (Magisk v13)
     UPDATE: Magisk is now the default root provider
     REMOVE: OnePlus Push app (push OnePlus ads and took 55MB of RAM!)
 
