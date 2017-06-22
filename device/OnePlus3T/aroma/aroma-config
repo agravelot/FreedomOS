@@ -521,7 +521,8 @@ checkbox(
     "<~substratum>", "<~info.substratum>", 0,
     "<~40-wifi>", "<~info.40-wifi>", 0,
     "<~permissive>", "<~info.permissive>", 0,
-    "<~android_o_font>", "<~info.android_o_font>", 0 
+    "<~android_o_font>", "<~info.android_o_font>", 0,
+    "<~call_recorder>", "<~info.call_recorder>", 1
 );
 
 if
