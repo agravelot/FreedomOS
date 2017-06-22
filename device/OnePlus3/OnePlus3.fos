@@ -80,6 +80,7 @@ app/Maps
 app/OemAutoTestServer
 app/OEMLogKit
 app/OPPBugReport
+app/OPPush 
 app/SensorTestTool
 app/Videos
 app/WifiRfTestApk
