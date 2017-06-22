@@ -518,7 +518,7 @@ checkbox(
     "<~fos_wallpapers>", "<~info.fos_wallpapers>", 1,
     "<~emoji_one>", "<~info.emoji_one>", 1,
     "<~google_assistant>", "<~info.google_assistant>", 1,
-    "<~arise>", "<~info.arise>", 1,
+    "<~arise>", "<~info.arise>", 0,
     "<~substratum>", "<~info.substratum>", 0,
     "<~40-wifi>", "<~info.40-wifi>", 0,
     "<~permissive>", "<~info.permissive>", 0,
