@@ -215,15 +215,12 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
     if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
       then
       ui_print("   Installing ARISE4Magisk module");
-      run_program("/sbin/mkdir", "/tmp/arise4magisk");
-      run_program("/sbin/unzip", "/tmp/tools/arise4magisk/arise4magisk.zip", "META-INF/com/google/android/*", "-d", "/tmp/arise4magisk");
-      run_program("/sbin/sh", "/tmp/arise4magisk/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/arise4magisk.log", "/tmp/tools/arise4magisk/arise4magisk.zip");
     endif;
   endif;
 endif;
 delete_recursive("/tmp/magisk");
+delete_recursive("/dev/tmp/magisk");
 delete_recursive("/tmp/supersu");
-
 
 # -- - ARISE - -- #
 

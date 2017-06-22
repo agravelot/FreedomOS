@@ -316,7 +316,6 @@ if [ $confirm_build -eq 1 ]; then
   build
   add_files
   build_arise
-  build_arise4magisk
   if [[ "$BUILD_BUSYBOX" == true ]]; then
       build_busybox
   fi
