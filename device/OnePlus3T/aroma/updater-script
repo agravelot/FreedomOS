@@ -205,7 +205,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
     ui_print("   Installing Magisk");
     ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Move magisk to /tmp/tools/magisk ->  /tmp/magisk ");
-    run_program("/tmp/tools/busybox", "rm", "-rf", "/dev/tmp");
+    run_program("/tmp/tools/busybox", "rm", "-rf", "/dev/tmp"); 
     run_program("/tmp/tools/busybox", "mkdir", "-p", "/dev/tmp");
     run_program("/tmp/tools/busybox", "mv", "/tmp/tools/magisk", "/dev/tmp/magisk");
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");
@@ -350,14 +350,6 @@ endif;
 # -- - APPLYING THEMES - -- #
 run_program("/tmp/tools/busybox", "mount", "/system");
 run_program("/tmp/tools/vrtheme/run.sh");
-
-# -- - CALL RECORDER - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.14") == "1")
-  then
-  set_progress(0.950000);
-  ui_print("   Enabling Call recoder");
-  run_program("/tmp/tools/call_recorder.sh");
-endif;
 
 # -- - SYSTEM APPS - -- #
 set_progress(0.960000);
