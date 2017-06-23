@@ -203,9 +203,9 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
   if (file_getprop("/tmp/aroma/aromaroot.prop", "rootmethod") == "1")
     then
     ui_print("   Installing Magisk");
-    run_program("/tmp/tools/magisk/install.sh");
     ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Move magisk to /tmp/tools/magisk ->  /tmp/magisk ");
+    run_program("/tmp/tools/busybox", "rm", "-rf", "/dev/tmp");
     run_program("/tmp/tools/busybox", "mkdir", "-p", "/dev/tmp");
     run_program("/tmp/tools/busybox", "mv", "/tmp/tools/magisk", "/dev/tmp/magisk");
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");
@@ -215,13 +215,11 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
     if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
       then
       ui_print("   Installing ARISE4Magisk module");
-      run_program("/sbin/mkdir", "/tmp/arise4magisk");
-      run_program("/sbin/unzip", "/tmp/tools/arise4magisk/arise4magisk.zip", "META-INF/com/google/android/*", "-d", "/tmp/arise4magisk");
-      run_program("/sbin/sh", "/tmp/arise4magisk/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/arise4magisk.log", "/tmp/tools/arise4magisk/arise4magisk.zip");
     endif;
   endif;
 endif;
 delete_recursive("/tmp/magisk");
+delete_recursive("/dev/tmp/magisk"); 
 delete_recursive("/tmp/supersu");
 
 # -- - ARISE - -- #
@@ -352,6 +350,14 @@ endif;
 # -- - APPLYING THEMES - -- #
 run_program("/tmp/tools/busybox", "mount", "/system");
 run_program("/tmp/tools/vrtheme/run.sh");
+
+# -- - CALL RECORDER - -- #
+if (file_getprop("/tmp/aroma/mod.prop", "item.1.14") == "1")
+  then
+  set_progress(0.950000);
+  ui_print("   Enabling Call recoder");
+  run_program("/tmp/tools/call_recorder.sh");
+endif;
 
 # -- - SYSTEM APPS - -- #
 set_progress(0.960000);

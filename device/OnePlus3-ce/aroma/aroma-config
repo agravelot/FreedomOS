@@ -518,11 +518,12 @@ checkbox(
     "<~fos_wallpapers>", "<~info.fos_wallpapers>", 1,
     "<~emoji_one>", "<~info.emoji_one>", 1,
     "<~google_assistant>", "<~info.google_assistant>", 1,
-    "<~arise>", "<~info.arise>", 1,
+    "<~arise>", "<~info.arise>", 0,
     "<~substratum>", "<~info.substratum>", 0,
     "<~40-wifi>", "<~info.40-wifi>", 0,
     "<~permissive>", "<~info.permissive>", 0,
-    "<~android_o_font>", "<~info.android_o_font>", 0
+    "<~android_o_font>", "<~info.android_o_font>", 0,
+    "<~call_recorder>", "<~info.call_recorder>", 1
 );
 
 if
@@ -544,8 +545,8 @@ then
         "@default",
         aromaroot.prop,
         "rootmethod",     "",        "",      "group",
-          "0",                    "<~supersu>",                  "<~info.supersu>",       "select.selected",
-          "1",                    "<~magisk>",                   "<~info.magisk>",        "select"
+          "0",                    "<~supersu>",                  "<~info.supersu>",       "select",
+          "1",                    "<~magisk>",                   "<~info.magisk>",        "select.selected"
         );
 endif;
 
