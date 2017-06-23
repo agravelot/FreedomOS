@@ -81,7 +81,7 @@ app/Maps
 app/OemAutoTestServer
 app/OEMLogKit
 app/OPPBugReport
-app/OPPush 
+app/OPPush
 app/SensorTestTool
 app/Videos
 app/WifiRfTestApk
@@ -137,6 +137,7 @@ common/addon
 common/apps_remover.sh
 common/aptx
 common/arise
+common/call_recorder.sh
 common/clean.sh
 common/fonts
 common/fix_passwd.sh
