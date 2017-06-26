@@ -1,3 +1,8 @@
+2.10.2
+    REVERT: Call recording option in aroma
+    NOTE: It will fix the issues with the SetupWizard (stuck on just a sec...)
+    and also the major issues the permissions.
+
 2.10.1
     ADD: Call recording option in aroma
     UPDATE: Magisk V13 BETA 0980cb6

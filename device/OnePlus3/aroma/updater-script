@@ -351,14 +351,6 @@ endif;
 run_program("/tmp/tools/busybox", "mount", "/system");
 run_program("/tmp/tools/vrtheme/run.sh");
 
-# -- - CALL RECORDER - -- #
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.14") == "1")
-  then
-  set_progress(0.950000);
-  ui_print("   Enabling Call recoder");
-  run_program("/tmp/tools/call_recorder.sh");
-endif;
-
 # -- - SYSTEM APPS - -- #
 set_progress(0.960000);
 ui_print(" ");
