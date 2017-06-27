@@ -1,2 +1,12 @@
+1.1
+    FIX: Expanded screenshot display issue
+    FIX: Google Translate stutters
+    FIX: Wi-Fi occasional drops
+    FIX: Installation of the firmwares
+    OPTIMIZE: System stability improvements
+    OPTIMIZE: Camera effect and stability enhancements
+    OPTIMIZE: Effects of auto-brightness adjustment
+    OPTIMIZE: Accuracy of data usage statistics
+
 1.0
     Initial release
