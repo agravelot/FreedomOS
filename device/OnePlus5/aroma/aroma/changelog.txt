@@ -1,3 +1,9 @@
+1.2
+    UPDATE: OxygenOS 4.5.4
+    FIX: Netherlands 4G network issue
+    FIX: Required directory for magisk
+    FIX: FreedomOS version in about phone
+
 1.1
     FIX: Expanded screenshot display issue
     FIX: Google Translate stutters
