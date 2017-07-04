@@ -1,3 +1,25 @@
+2.12-CE
+    UPDATE: OxygenOS Open Beta 19
+    UPDATE: All new OnePlus Launcher v2.1:
+    UPDATE: Supports dynamic icons for Weather and Calendar
+    UPDATE: Added ‘Home screen layout’ under launcher settings for grid and icon customizations
+    UPDATE: Grid layout will be kept irrespective of display size changes
+    UPDATE: Added search history records in app drawer, displaying the 5 most recent apps on the first row
+    UPDATE: Newly installed apps will now be tagged with a blue dot for easier recognition
+    UPDATE: You can access icon pack resources on the Play store directly under launcher settings
+    UPDATE: User interface improvements during widget selection
+    UPDATE: Launcher version information is now visible under launcher settings
+    ADD: An option to display battery status of connected bluetooth devices
+    ADD: OnePlus widget (Not usable on Shelf)
+    ADD: Email address recognition within the text message contents
+    ADD: Size of clock widget is now adjustable
+    ADD: Updated UI style for Clock
+    OPTIMIZE: Smart Callback works even better now
+    OPTIMIZE: Incoming call animations are more dazzling than ever
+    OPTIMIZE: OnePlus font optimizations for select languages
+    OPTIMIZE: Compatibility optimizations for various bluetooth devices
+    FIX: Required directory for magisk (minor)
+    
 2.11.2-CE
     REVERT: Call recording option in aroma
     NOTE: It will fix the issues with the SetupWizard (stuck on just a sec...)
