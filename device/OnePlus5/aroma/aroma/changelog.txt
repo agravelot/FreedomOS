@@ -1,3 +1,26 @@
+1.3
+    UPDATE: OxygenOS 4.5.5
+    OPTIMIZE: Further improvements to Wi-Fi connectivity
+    OPTIMIZE: Clearer voice calling
+    OPTIMIZE: Video recording now consumes less battery
+    OPTIMIZE: Vibration intensity when receiving calls is now tuned to a gentler level
+    FIX: Wi-Fi signal consistently being displayed as weak
+    FIX: Certain apps not able to work under IPv6 network settings
+    FIX: To restore connectivity to a Windows 10 PC, please turn off USB debugging prior to the upgrade
+    UPDATE: Magisk BETA v13.0(c4377ed)
+        - [Fix] Fix a bug in cache mount
+        - [Fix] Tons of small adjustments
+        - [MagiskBoot] Moved boot patch logic into magiskboot binary
+        - [MagiskHide] MagiskHide is now enabled by default
+        - [MagiskHide] Update unmount policies
+        - [MagiskHide] Add more props for hiding
+        - [General] Add addon.d survival support
+        - [General] Add more image commands in magisk binary
+        - [General] Updated scripts to use magisk native commands to increase compatibility
+    UPDATE: ARISE Magnum Opus 20170703
+        - Fixed viper laggy navbar and themed icon to match the theme better
+        - new look for ViPER4Arise!
+
 1.2
     UPDATE: OxygenOS 4.5.4
     FIX: Netherlands 4G network issue

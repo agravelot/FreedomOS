@@ -23,24 +23,9 @@
 # image placed under /data we've created when previously installing
 #
 ##########################################################################################
-
-# Workaround for getting the full path of BOOTIMAGE
-CWD=`pwd`
-cd `dirname $1`
-BOOTIMAGE="`pwd`/`basename $1`"
-cd "$CWD"
-
-if [ -z "$BOOTIMAGE" ]; then
-  ui_print_wrap "This script requires a boot image as a parameter"
-  exit 1
-fi
-
-# Presets
-[ -z $KEEPVERITY ] && KEEPVERITY=false
-[ -z $KEEPFORCEENCRYPT ] && KEEPFORCEENCRYPT=false
-
-# Detect whether running as root
-[ `id -u` -eq 0 ] && ROOT=true || ROOT=false
+##########################################################################################
+# Functions
+##########################################################################################
 
 # Call ui_print_wrap if exists, or else simply use echo
 # Useful when wrapped in flashable zip
@@ -58,6 +43,21 @@ abort_wrap() {
   else
     abort "$1"
   fi
+}
+
+# Pure bash dirname implementation
+dirname_wrap() {
+  if echo $1 | grep "/" >/dev/null 2>&1; then
+    RES=${1%/*}
+    [ -z $RES ] && echo "/" || echo $RES
+  else
+    echo "."
+  fi
+}
+
+# Pure bash basename implementation
+basename_wrap() {
+  echo ${1##*/}
 }
 
 grep_prop() {
@@ -86,12 +86,33 @@ cpio_mkdir() {
 }
 
 ##########################################################################################
-# Prework
+# Initialization
 ##########################################################################################
 
+CWD=`pwd`
+cd "`dirname_wrap $1`"
+BOOTIMAGE="`pwd`/`basename_wrap $1`"
+cd "$CWD"
+
+if [ -z "$BOOTIMAGE" ]; then
+  ui_print_wrap "This script requires a boot image as a parameter"
+  exit 1
+fi
+
+# Presets
+[ -z $KEEPVERITY ] && KEEPVERITY=false
+[ -z $KEEPFORCEENCRYPT ] && KEEPFORCEENCRYPT=false
+
+# Detect whether running as root
+[ `id -u` -eq 0 ] && ROOT=true || ROOT=false
+
 # Switch to the location of the script file
-[ -z $SOURCEDMODE ] && cd "`dirname "${BASH_SOURCE:-$0}"`"
+[ -z $SOURCEDMODE ] && cd "`dirname_wrap "${BASH_SOURCE:-$0}"`"
 chmod +x ./*
+
+##########################################################################################
+# Unpack
+##########################################################################################
 
 ui_print_wrap "- Unpacking boot image"
 ./magiskboot --unpack "$BOOTIMAGE"
@@ -173,16 +194,8 @@ esac
 
 ui_print_wrap "- Patching ramdisk"
 
-# The common patches
-$KEEPVERITY || ./magiskboot --cpio-patch-dmverity ramdisk.cpio
-$KEEPFORCEENCRYPT || ./magiskboot --cpio-patch-forceencrypt ramdisk.cpio
-
 # Add magisk entrypoint
-cpio_extract init.rc init.rc
-grep "import /init.magisk.rc" init.rc >/dev/null || sed -i '1,/.*import.*/s/.*import.*/import \/init.magisk.rc\n&/' init.rc
-sed -i "/selinux.reload_policy/d" init.rc
-cpio_add 750 init.rc init.rc
-rm -f init.rc
+./magiskboot --cpio-patch ramdisk.cpio $KEEPVERITY $KEEPFORCEENCRYPT
 
 # sepolicy patches
 cpio_extract sepolicy sepolicy
@@ -216,8 +229,6 @@ rm -f ramdisk.cpio.orig
 A1020054011440B93FA00F7140020054010840B93FA00F71E0010054001840B91FA00F7181010054
 
 ui_print_wrap "- Repacking boot image"
-./magiskboot --repack "$BOOTIMAGE"
-
-[ $? -ne 0 ] && abort_wrap "! Unable to repack boot image!"
+./magiskboot --repack "$BOOTIMAGE" || abort_wrap "! Unable to repack boot image!"
 
 ./magiskboot --cleanup
