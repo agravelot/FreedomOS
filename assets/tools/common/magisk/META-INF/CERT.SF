@@ -1,5 +1,5 @@
 Signature-Version: 1.0
-SHA1-Digest-Manifest: bIvPwnG3u4lgUEXzdjTkMb5YAEk=
+SHA1-Digest-Manifest: E0xKScdzBqVzlKhcKvl1E4yL9dw=
 Created-By: 1.0 (Android SignApk)
 
 Name: META-INF/com/google/android/updater-script
@@ -9,25 +9,25 @@ Name: common/init.magisk.rc
 SHA1-Digest: p5dzrbmT8QBJCM3ZW/CT4KhMb9U=
 
 Name: x64/magisk
-SHA1-Digest: JWlmEmPs+1vwRcLlG/qDrFxaZBs=
+SHA1-Digest: P9/HCBK749fqBZoiBcYzu8gf2Dc=
 
 Name: META-INF/com/google/android/update-binary
-SHA1-Digest: 5U0PSk4AtjQGqHF9ce+Ot/hnmT0=
+SHA1-Digest: YMJeW7JmvpSk4vTXxtAbGCah3dU=
 
 Name: common/boot_patch.sh
-SHA1-Digest: 2MGgHotBE3fnpchkv8OVFw4M6kI=
+SHA1-Digest: JSljMBKD46iF4ejkU9dAxZdbghs=
 
 Name: arm64/magisk
-SHA1-Digest: d6S3ICcqmleNRrBmt6XQf3Lkt9s=
+SHA1-Digest: yRjjDwDzwdaPJF5kU6UAgiiNnQM=
 
 Name: x86/magiskboot
-SHA1-Digest: WD83QSY1ol/niWuEahAMGvtsrpY=
+SHA1-Digest: ROj9mPGI0hUspfnkqeT5XBgbe2c=
 
 Name: chromeos/kernel.keyblock
 SHA1-Digest: obJ/Zq6Q4YjuLT9zMe2gVi0SVfQ=
 
 Name: x64/magiskboot
-SHA1-Digest: WaPddRmpqq6SLVYOgXxs7gjpy3E=
+SHA1-Digest: iY/dmai1gxQ8wX6MFraXBAnMweE=
 
 Name: chromeos/futility
 SHA1-Digest: XFdhLSY2+Y0QmsdpQ86C1+PiRIM=
@@ -35,18 +35,24 @@ SHA1-Digest: XFdhLSY2+Y0QmsdpQ86C1+PiRIM=
 Name: chromeos/kernel_data_key.vbprivk
 SHA1-Digest: 3QeXadLiF9HJzK0798JQDt+7buY=
 
+Name: common/util_functions.sh
+SHA1-Digest: c12R1com/caFZwb0ZpP6Jhegr9c=
+
 Name: x86/magisk
-SHA1-Digest: Iy6KWwF+Kvbuh45s9XQ51Z39WW8=
+SHA1-Digest: hVnzNBRu/soZKKIHZoMDwi3VR2M=
 
 Name: arm/magisk
-SHA1-Digest: 1Rka/iHG+9sQRLxJToC1V7EMQzk=
+SHA1-Digest: Fn6tuIxluKSxUmeKBVOxh/lS+NI=
+
+Name: addon.d/99-magisk.sh
+SHA1-Digest: MGh/UTXG1dFqptIL7bvDEJbRf1k=
 
 Name: arm64/magiskboot
-SHA1-Digest: /NVaGToVW0AGSKiSh/fO8Zg7bg8=
+SHA1-Digest: 3tlvFPMT1LhG3UHC66iJv5tX5x4=
 
 Name: common/magisk.apk
-SHA1-Digest: y0TbyRXdVQ+XVxp9pTG1yEewCRY=
+SHA1-Digest: PJJkDNS/wa35f8lH3MkdjyG0xws=
 
 Name: arm/magiskboot
-SHA1-Digest: 9COueNCQ6XqnyZubQ9LRljlwr38=
+SHA1-Digest: LmVD8As8fW/etBLdLaTAXzcMX+Q=
 
