@@ -1,3 +1,20 @@
+2.12.1-CE
+    UPDATE: Magisk BETA v13.0(c4377ed)
+        - [Fix] Fix a bug in cache mount
+        - [Fix] Tons of small adjustments
+        - [MagiskBoot] Moved boot patch logic into magiskboot binary
+        - [MagiskHide] MagiskHide is now enabled by default
+        - [MagiskHide] Update unmount policies
+        - [MagiskHide] Add more props for hiding
+        - [General] Add addon.d survival support
+        - [General] Add more image commands in magisk binary
+        - [General] Updated scripts to use magisk native commands to increase compatibility
+    UPDATE: ARISE Magnum Opus 20170703
+        - Fixed viper laggy navbar and themed icon to match the theme better
+        - new look for ViPER4Arise!
+    REVERT: FIX: Required directory for magisk (minor)
+    NOTE: In order to pass SafetyNet, you need to disable and re-enable Magisk Hide
+
 2.12-CE
     UPDATE: OxygenOS Open Beta 19
     UPDATE: All new OnePlus Launcher v2.1:
