@@ -207,9 +207,9 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Move magisk to /tmp/tools/magisk ->  /tmp/magisk ");
     run_program("/tmp/tools/busybox", "rm", "-rf", "/dev/tmp"); 
     run_program("/tmp/tools/busybox", "mkdir", "-p", "/dev/tmp");
-    run_program("/tmp/tools/busybox", "mv", "/tmp/tools/magisk", "/dev/tmp/magisk");
+    run_program("/tmp/tools/busybox", "mv", "/tmp/tools/magisk", "/dev/tmp/install");
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");
-    run_program("/dev/tmp/magisk/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/magisk.log", "/tmp/magisk/magisk.zip");
+    run_program("/dev/tmp/install/META-INF/com/google/android/update-binary", "dummy", "../../../tmp/fos_logs/magisk.log", "/tmp/magisk/magisk.zip");
     run_program("/tmp/tools/busybox", "mount", "/system");
 
     if (file_getprop("/tmp/aroma/mod.prop", "item.1.9") == "1")
