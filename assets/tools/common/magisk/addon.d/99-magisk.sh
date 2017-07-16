@@ -34,10 +34,13 @@ main() {
   [ -f /system/build.prop ] || abort "! /system could not be mounted!"
 
   ui_print "************************"
-  ui_print "* Magisk v13.1 addon.d"
+  ui_print "* Magisk v13.2 addon.d"
   ui_print "************************"
 
   api_level_arch_detect
+
+  # Check if system root is installed and remove
+  remove_system_su
 
   recovery_actions
 

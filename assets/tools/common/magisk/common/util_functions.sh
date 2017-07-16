@@ -7,7 +7,7 @@
 # 
 ##########################################################################################
 
-SCRIPT_VERSION=1310
+SCRIPT_VERSION=1320
 
 get_outfd() {
   readlink /proc/$$/fd/$OUTFD 2>/dev/null | grep /tmp >/dev/null
