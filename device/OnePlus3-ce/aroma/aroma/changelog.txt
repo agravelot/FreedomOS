@@ -1,3 +1,46 @@
+2.13-CE
+    UPDATE: OxygenOS Open Beta 20
+    OPTIMIZE: Battery saver indication changed from orange status bar to a notification
+    OPTIMIZE: Calculation method for data usage statistics, tabulation is now more accurate.
+    OPTIMIZE:  Expanded screenshot, now supports capturing for gifs and videos.
+    OPTIMIZE: Visual effects improvements for Weather widget
+    FIX: Resolved various 3rd party app crashes
+    FIX: Bluetooth device battery status wrongly displayed for non-supported devices
+    FIX: Weather occasionally not able to retrieve forecast data
+    UPDATE: Magisk STABLE v13.2
+    - [magiskpolicy] Fix magiskpolicy segfault on old Android versions, should fix tons of older devices that couldn't use v13.1
+    - [MagiskHide] Set proper selinux context while re-linking /sbin to hide Magisk, should potentially fix many issues
+    - [MagiskBoot] Change lzma compression encoder flag from LZMA_CHECK_CRC64 to LZMA_CHECK_CRC32, kernel only supports latter
+    - [General] Core-only mode now properly mounts systemless hosts and magiskhide
+    - [General] Merge MagiskSU, magiskhide, resetprop, magiskpolicy into one binary
+    - [General] Add Android O support (tested on DP3)
+    - [General] Dynamic link libselinux.so, libsqlite.so from system to greatly reduce binary size
+    - [General] Remove bundled busybox because it casues a lot of issues
+    - [General] Unlock all block devices for read-write support instead of emmc only (just figured not all devices uses emmc lol)
+    - [Scripts] Run all ext4 image operations through magisk binary in flash scripts
+    - [Scripts] Updated scripts to use magisk native commands to increase compatibility
+    - [Scripts] Add addon.d survival support
+    - [Scripts] Introduce util_functions.sh, used as a global shell script function source for all kinds of installation
+    - [MagiskBoot] Moved boot patch logic into magiskboot binary
+    - [MagiskSU] Does not fork new process for each request, add new threads instead
+    - [MagiskSU] Added multiuser support
+    - [MagiskSU] Introduce new timeout queue mechanism, prevent performance hit with poorly written su apps
+    - [MagiskSU] Multiple settings moved from prop detection to database
+    - [MagiskSU] Add namespace mode option support
+    - [MagiskSU] Add master-mount option
+    - [resetprop] Updated to latest AOSP upstream, support props from 5.0 to Android O
+    - [resetprop] Renamed all functions to prevent calling functions from external libc
+    - [magiskpolicy] Updated libsepol from official SELinux repo
+    - [magiskpolicy] Added xperm patching support (in order to make Android O work properly)
+    - [magiskpolicy] Updated rules for Android O, and Liveboot support
+    - [MagiskHide] Remove pseudo permissive mode, directly hide permissive status instead
+    - [MagiskHide] Remove unreliable list file monitor, change to daemon request mode
+    - [MagiskHide] MagiskHide is now enabled by default
+    - [MagiskHide] Update unmount policies, passes CTS in SafetyNet!
+    - [MagiskHide] Add more props for hiding
+    - [MagiskHide] Remove background magiskhide daemon, spawn short life process for unmounting purpose
+    - [Magic Mount] Ditched shell script based mounting, use proper C program to parse and mount files. Speed is SIGNIFICANTLY improved
+
 2.12.1-CE
     UPDATE: Magisk BETA v13.0(c4377ed)
         - [Fix] Fix a bug in cache mount
