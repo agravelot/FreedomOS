@@ -117,9 +117,19 @@ function initialize {
       fi
   done
 
-  if [ ! -f "${config_file}" ]; then
-    configure
+  if [[ ${BUILD_TYPE} != "nevax" && ${BUILD_TYPE} != "debug" ]]; then
+    die "Bad build type" "60"
   fi
+
+  if [[ -z ${device} || -z ${BUILD_TYPE} || -z ${VERSION} ]]; then
+    die "Bad device" "61"
+  fi
+
+  if [[ -z ${VERSION} ]]; then
+    die "Version not defined" "62"
+  fi
+
+  write_config
 
   # show the configuration
   source ${config_file}
@@ -174,7 +184,6 @@ function configure {
     echo "release selected"
     ;;
   *)
-    BUILD=2
     BUILD_TYPE=debug
     echo "debug selected"
     ;;
@@ -194,7 +203,16 @@ function configure {
 
 function review {
   # Set environment based on current config
-  source ${device_root}/${device}/${device}.fos
+
+  if [[ -f ${device_root}/${device}/${device}.fos ]]; then
+    source ${device_root}/${device}/${device}.fos
+  else
+    echo "Unable to find your device in the device tree"
+    echo -e "Please pick one of them:\n"
+    ls device -lUx
+    echo
+    die "Unable to find your device ${device}" "51"
+  fi
   output_file="${ZIP_NAME}-${CODENAME}-${BUILD_TYPE}-${VERSION}"
 
   # Show Build review
@@ -217,17 +235,15 @@ function review {
   echo "============================================" 2>&1 | tee -a ${build_log}
   echo 2>&1 | tee -a ${build_log}
 
-  if [[ "yes" == $(confirm "All options correct?") ]]
-  then
-    confirm_build=1
-    echo "Saving configuration to ${config_file}" 2>&1 | tee -a ${build_log}
-    echo "device=$device" > ${config_file} 2>&1 | tee -a ${build_log}
-    echo "BUILD=$BUILD" >> ${config_file} 2>&1 | tee -a ${build_log}
-    echo "BUILD_TYPE=$BUILD_TYPE" >> ${config_file} 2>&1 | tee -a ${build_log}
-    echo "VERSION=$VERSION" >> ${config_file} 2>&1 | tee -a ${build_log}
-  else
-    configure
-  fi
+  confirm_build=1
+  write_config
+}
+
+function write_config() {
+  echo "Saving configuration to ${config_file}" 2>&1 | tee -a ${build_log}
+  echo "device=$device" > ${config_file} 2>&1 | tee -a ${build_log}
+  echo "BUILD_TYPE=$BUILD_TYPE" >> ${config_file} 2>&1 | tee -a ${build_log}
+  echo "VERSION=$VERSION" >> ${config_file} 2>&1 | tee -a ${build_log}
 }
 
 function cleanup {
@@ -300,10 +316,20 @@ if [ "$EUID" -ne 0 ]; then
   die "Please, run this script as root! Aborting." "7"
 fi
 
+# set variables from arguments
+while getopts d:t:v: option
+do
+ case "${option}"
+ in
+ d) device=${OPTARG};;
+ t) BUILD_TYPE=${OPTARG};;
+ v) VERSION=$OPTARG;;
+ esac
+done
+
 initialize
 
 if [ $confirm_build -eq 1 ]; then
-  banner
   cleanup
   download_rom
   extract_rom
