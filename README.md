@@ -16,7 +16,7 @@ All push requests must be done in develop branch, never in the master branch.
 
 Arch based:
 ```
-pacman -S rsync python python2 zip curl openssl ncurses cpio python-virtualenv
+pacman -S rsync python python2 zip curl openssl ncurses cpio python-virtualenv unzip
 ```
 
 Debian/Ubuntu based:
