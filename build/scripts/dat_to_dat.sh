@@ -83,7 +83,6 @@ function dat_to_dat {
     do
       mkdir -p ${tmp_root}/data/${i}  >> ${build_log} 2>&1
       cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i}/* ${tmp_root}/data/${i} >> ${build_log} 2>&1
-      chown system:system -R ${tmp_root}/data/${i}
     done
   fi
 
