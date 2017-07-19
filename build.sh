@@ -140,7 +140,6 @@ function initialize {
 }
 
 function banner() {
-  tput clear
   echo "----------------------------------------"
   echo "${bold}${redt} FreedomOS build script by Nevax ${normal}"
   echo "----------------------------------------"
