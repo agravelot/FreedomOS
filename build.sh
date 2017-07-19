@@ -279,7 +279,7 @@ function download_rom {
       if [ $(which aria2c) ]; then
         aria2c -x 4 ${ROM_LINK} -d ${download_root}/
       else
-        curl -o ${download_root}/${ROM_NAME}.zip ${ROM_LINK} | tee -a ${build_log}
+        curl -L -o ${download_root}/${ROM_NAME}.zip ${ROM_LINK} | tee -a ${build_log}
       fi
     else
       die "${ROM_NAME} mirror OFFLINE! Check your connection" "10"

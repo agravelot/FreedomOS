@@ -26,7 +26,7 @@ function download_opengapps {
       if [ $(which aria2c) ]; then
         aria2c -x 4 ${GAPPS_LINK} -d ${download_root}/
       else
-        curl -o ${download_root}/${GAPPS_ZIP}.zip ${GAPPS_LINK} | tee -a ${build_log}
+        curl -L -o ${download_root}/${GAPPS_ZIP}.zip ${GAPPS_LINK} | tee -a ${build_log}
       fi
     else
       die "${GAPPS_ZIP} mirror OFFLINE! Check your connection" "10"
