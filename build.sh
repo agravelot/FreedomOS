@@ -66,25 +66,25 @@ function initialize {
   freedomos_busybox
   "
 
-  redt=$(tput setaf 1)
-  redb=$(tput setab 1)
-  greent=$(tput setaf 2)
-  greenb=$(tput setab 2)
-  yellowt=$(tput setaf 3)
-  yellowb=$(tput setab 3)
-  bluet=$(tput setaf 4)
-  blueb=$(tput setab 4)
-  magentat=$(tput setaf 5)
-  magentab=$(tput setab 5)
-  cyant=$(tput setaf 6)
-  cyanb=$(tput setab 6)
-  whiteb=$(tput setab 7)
-  bold=$(tput bold)
-  italic=$(tput sitm)
-  stand=$(tput smso)
-  underline=$(tput smul)
-  normal=$(tput sgr0)
-  clears=$(tput clear)
+  redt=
+  redb=
+  greent=
+  greenb=
+  yellowt=
+  yellowb=
+  bluet=
+  blueb=
+  magentat=
+  magentab=
+  cyant=
+  cyanb=
+  whiteb=
+  bold=
+  italic=
+  stand=
+  underline=
+  normal=
+  clears=
 
   # create folder structure
   cd ${top_root}
