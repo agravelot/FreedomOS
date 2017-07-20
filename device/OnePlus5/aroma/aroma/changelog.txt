@@ -1,3 +1,11 @@
+1.4
+    UPDATE: Magisk v13.3
+    - [MagiskHide] Update to bypass Google CTS (2017.7.17)
+    - [resetprop] Properly support removing persist props
+    - [uninstaller] Remove Magisk Manager and persist props
+    UPDATE: OxygenOS 4.5.6
+    FIX: Reboot caused by dialing 911 on certain OnePlus 5 units
+
 1.3
     UPDATE: OxygenOS 4.5.5
     OPTIMIZE: Further improvements to Wi-Fi connectivity

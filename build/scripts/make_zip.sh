@@ -19,7 +19,7 @@
 function make_zip {
 
   ## user release build
-  if [ "$BUILD" = 1 ];
+  if [ "$BUILD_TYPE" = "nevax" ];
   then
     cd ${tmp_root}/
 
@@ -48,7 +48,7 @@ function make_zip {
   fi
 
   ## debug build
-  if [ "$BUILD" = 2 ];
+  if [ "$BUILD_TYPE" = "debug" ];
   then
     cd ${tmp_root}/
 

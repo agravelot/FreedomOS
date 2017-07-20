@@ -40,7 +40,8 @@ function dat_to_dat {
     echo ">>>> Getting file_contexts.bin" 2>&1 | tee -a ${build_log}
     cp ${tmp_root}/boot/ramdisk/file_contexts.bin ${tmp_root}/ >> ${build_log} 2>&1
     echo ">>>>> Convert into file_contexts" 2>&1 | tee -a ${build_log}
-    ${build_root}/tools/${HOST_ARCH}/sefcontext/sefcontext -o ${tmp_root}/file_contexts ${tmp_root}/file_contexts.bin >> ${build_log} 2>&1
+    contest=$(strings ${tmp_root}/file_contexts.bin | sed -e '/^u:/,/\//!d' | grep -v "abcd") >> ${build_log} 2>&1
+		paste -d '\t' <(echo "$contest" | grep -v "^u:") <(echo "$contest" | grep "^u:") | grep -v "S2RP\|ERCP" >> ${tmp_root}/file_contexts
     rm -vf ${tmp_root}/file_contexts.bin >> ${build_log} 2>&1
   fi
 
@@ -82,7 +83,6 @@ function dat_to_dat {
     do
       mkdir -p ${tmp_root}/data/${i}  >> ${build_log} 2>&1
       cp -rvf ${assets_root}/system/${TARGET_ARCH}/${i}/* ${tmp_root}/data/${i} >> ${build_log} 2>&1
-      chown system:system -R ${tmp_root}/data/${i}
     done
   fi
 

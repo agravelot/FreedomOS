@@ -34,7 +34,7 @@ main() {
   [ -f /system/build.prop ] || abort "! /system could not be mounted!"
 
   ui_print "************************"
-  ui_print "* Magisk v13.2 addon.d"
+  ui_print "* Magisk v13.3 addon.d"
   ui_print "************************"
 
   api_level_arch_detect
