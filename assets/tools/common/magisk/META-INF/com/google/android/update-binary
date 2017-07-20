@@ -50,7 +50,7 @@ get_outfd
 ##########################################################################################
 
 ui_print "************************"
-ui_print "* Magisk v13.2 Installer"
+ui_print "* Magisk v13.3 Installer"
 ui_print "************************"
 
 ui_print "- Mounting /system, /vendor, /cache, /data"
