@@ -146,6 +146,13 @@ function build_opengapps() {
     sed -i '/${i}/d' ${tmp_root}/tools/opengapps_tmp/app_densities.txt >> ${build_log} 2>&1
   done
 
+  cd ${tmp_root}/tools/opengapps_tmp/Core/
+  tar xf gmscore-arm64.tar.xz
+  rm gmscore-arm64.tar.xz
+  rm -rvf gmscore-arm64/*0
+  tar cfJ gmscore-arm64.tar.xz gmscore-arm64
+  rm -rvf gmscore-arm64/
+
   cd ${tmp_root}/tools/opengapps_tmp/
   # Make new zip
   zip -r9 ${tmp_root}/tools/opengapps/opengapps.zip * >> ${build_log} 2>&1
