@@ -149,7 +149,7 @@ function build_opengapps() {
   cd ${tmp_root}/tools/opengapps_tmp/Core/
   tar xf gmscore-arm64.tar.xz >> ${build_log} 2>&1
   rm gmscore-arm64.tar.xz >> ${build_log} 2>&1
-  rm -rvf gmscore-arm64/*0 >> ${build_log} 2>&1
+  rm -rvf gmscore-arm64/{480,320} >> ${build_log} 2>&1
   tar cfJ gmscore-arm64.tar.xz gmscore-arm64 >> ${build_log} 2>&1
   rm -rvf gmscore-arm64/ >> ${build_log} 2>&1
 
