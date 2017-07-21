@@ -33,16 +33,18 @@ function dat_to_dat {
   echo ">>>> Extracting ramdisk" 2>&1 | tee -a ${build_log}
   ${build_root}/tools/${HOST_ARCH}/abootimg-unpack-initrd boot.img-ramdisk.gz >> ${build_log} 2>&1
 
-  if [[ $ANDROID_VERSION = 6 ]]; then
+  if [[ -f ${tmp_root}/boot/ramdisk/file_contexts ]]; then
     echo ">>>> Getting file_contexts" 2>&1 | tee -a ${build_log}
     cp ${tmp_root}/boot/ramdisk/file_contexts ${tmp_root}/ >> ${build_log} 2>&1
-  elif [[ $ANDROID_VERSION = 7 ]]; then
+  elif [[ -f ${tmp_root}/boot/ramdisk/file_contexts.bin ]]; then
     echo ">>>> Getting file_contexts.bin" 2>&1 | tee -a ${build_log}
     cp ${tmp_root}/boot/ramdisk/file_contexts.bin ${tmp_root}/ >> ${build_log} 2>&1
     echo ">>>>> Convert into file_contexts" 2>&1 | tee -a ${build_log}
     contest=$(strings ${tmp_root}/file_contexts.bin | sed -e '/^u:/,/\//!d' | grep -v "abcd") >> ${build_log} 2>&1
 		paste -d '\t' <(echo "$contest" | grep -v "^u:") <(echo "$contest" | grep "^u:") | grep -v "S2RP\|ERCP" >> ${tmp_root}/file_contexts
     rm -vf ${tmp_root}/file_contexts.bin >> ${build_log} 2>&1
+  else
+    die "No file_contexts fond" "150"
   fi
 
   cd ${tmp_root}
