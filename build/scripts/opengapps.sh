@@ -142,8 +142,8 @@ function build_opengapps() {
     rm -rvf ${tmp_root}/tools/opengapps_tmp/Core/${i}* >> ${build_log} 2>&1
     rm -rvf ${tmp_root}/tools/opengapps_tmp/GApps/${i}* >> ${build_log} 2>&1
     sed -i 0,/${i}/{/${i}/d} ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
-    sed -i '/${i}/d' ${tmp_root}/tools/opengapps_tmp/app_sizes.txt >> ${build_log} 2>&1
-    sed -i '/${i}/d' ${tmp_root}/tools/opengapps_tmp/app_densities.txt >> ${build_log} 2>&1
+    sed -i '/'${i}'/d' ${tmp_root}/tools/opengapps_tmp/app_sizes.txt >> ${build_log} 2>&1
+    sed -i '/'${i}'/d' ${tmp_root}/tools/opengapps_tmp/app_densities.txt >> ${build_log} 2>&1
   done
 
   cd ${tmp_root}/tools/opengapps_tmp/Core/
