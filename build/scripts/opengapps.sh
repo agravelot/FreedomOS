@@ -156,6 +156,6 @@ function build_opengapps() {
   cd ${tmp_root}/tools/opengapps_tmp/
   # Make new zip
   zip -r9 ${tmp_root}/tools/opengapps/opengapps.zip * >> ${build_log} 2>&1
-  cd - >> ${build_log}
+  cd ${top_root} >> ${build_log}
   rm -rvf ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
 }
