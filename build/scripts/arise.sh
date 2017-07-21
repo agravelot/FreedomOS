@@ -25,6 +25,7 @@ function build_arise() {
   dirac
   smeejaytee
   v4a_xhifi
+  x86
   "
 
   echo ">> Building ARISE" | tee -a ${build_log}
