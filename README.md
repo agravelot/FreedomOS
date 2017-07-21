@@ -13,15 +13,16 @@ All push requests must be done in develop branch, never in the master branch.
 - Optional packages:
 - `adb` for pulling updated apps and pushing rom with automatic flash.
 - `java` for signed the zip file.
+- `aria2` for paralleled download.
 
 Arch based:
 ```
-pacman -S rsync python python2 zip curl openssl ncurses cpio python-virtualenv unzip
+pacman -S python python2 zip curl openssl ncurses cpio python-virtualenv unzip
 ```
 
 Debian/Ubuntu based:
 ```
-apt-get install rsync python zip curl openssl libncurses-dev cpio python-virtualenv gawk
+apt-get install python zip curl openssl libncurses-dev cpio python-virtualenv gawk
 ```
 
 ## How to build

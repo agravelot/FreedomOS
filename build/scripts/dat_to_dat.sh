@@ -21,7 +21,7 @@ function dat_to_dat {
   echo "> $device build starting now with $BUILD_METHOD build method." 2>&1 | tee -a ${build_log}
 
   echo ">> Copying ${ROM_NAME} needed files" 2>&1 | tee -a ${build_log}
-  rsync -vr ${rom_root}/${device}/${ROM_NAME}/* ${tmp_root}/ --exclude='system.transfer.list' --exclude='system.new.dat' --exclude='system.patch.dat' --exclude='META-INF/' >> ${build_log} 2>&1
+  cp -rv ${rom_root}/${device}/${ROM_NAME}/{RADIO/,firmware-update/,boot.img} ${tmp_root}/ >> ${build_log} 2>&1
   mkdir -p ${tmp_root}/mount >> ${build_log} 2>&1
   mkdir -p ${tmp_root}/system >> ${build_log} 2>&1
 
