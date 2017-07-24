@@ -42,11 +42,12 @@ language.spanish=Español
 language.spanish.info=Utilizar Español by @jgimenezpascual
 language.turkish=Türkçe
 language.turkish.info=Türkçe kullanın - @Mevlüt TOPÇU
-language.tchinese=正體中文
-language.tchinese.info=使用正體中文 - @clyang
-language.schinese=简体中文
-language.schinese.info=使用简体中文 - @clyang
-
+language.tchinese=Traditional Chinese
+language.tchinese.info=@clyang
+language.schinese=Simplified Chinese
+language.schinese.info=@clyang
+language.czech=Čeština
+language.czech.info=Použít Češtinu @iamceph
 
 rom.data=!tarih!
 text_finish=Bitti
@@ -67,7 +68,7 @@ install_mod.tittle=FreedomOS yükleyici
 install_mod.tittle2=Ayarlarınızı seçin
 install_mod.sub_tittle=Kurulum yöntemi
 
-gapps_yes=Evet, Google Uygulamarını yükle
+gapps_yes=Evet, Google Uygulamalarını yükle
 gapps_no=Google Uygulamalarını yükleme
 info.gapps_yes=Tavsiye edilen
 info.gapps_no=Sistem, Google uygulamaları olmadan önyükleme <#f00>YAPMAZ</#>
@@ -91,7 +92,7 @@ passwordfix_no=Hayır
 info.passwordfix_no=Eski dosya kalsın
 
 info.custom=Özgürlük yolunda
-info.stock=Orijinal OnePlus stok yazılımı, root erişimi yok
+info.stock=Orijinal OnePlus stok yazılımı, kök erişimi yok
 info.assert_yes=Build.prop içindeki varyantı kontrol et
 info.assert_no=Varyantı build.prop'te kontrol etme
 
@@ -102,7 +103,7 @@ sys.info.title2=Cihazınızın sistem bilgileri.
 sys.info.model=Model
 sys.info.name=Ad
 sys.info.manu=Üretici firma
-sys.info.cpu=İŞLEMCİ
+sys.info.cpu=İşlemci
 sys.info.lcd=LCD Yoğunluğu
 sys.info.storage=Depolama Alanı Boyutu
 sys.info.storage.free=Kullanılabilir
@@ -264,7 +265,7 @@ dpi.360=Ayarlanacak DPI 360
 dpi.350=Ayarlanacak DPI 350
 
 mod.tittle=Ek modları yükle
-mod.tittle2=Root erişimi, ses modu, reklam engelleyici ve xposed ...
+mod.tittle2=Kök erişimi, ses modu, reklam engelleyici ve xposed ...
 mod.tittle3=Ekstra mod
 
 root=Kök erişimini etkinleştir
@@ -291,7 +292,7 @@ info.fos_wallpapers=Tasarım @badboy47
 info.emoji_one=Açık Emoji Standardı
 info.google_assistant=Yalnızca ABD
 info.arise=A.R.I.S.E Ses Sistemi
-info.aptx=Qualcomm'dan ekstra codec bileşenleri
+info.aptx=Qualcomm'dan ekstra kodek bileşenleri
 info.40-wifi=2.4 MHz üzerinde 40 MHz kanal genişliği
 info.permissive=Çekirdeği serbest (permissive) olarak yeniden paketleyin (Ayrıcalıklı olmanın avantajlı hale getirilmesi)
 info.substratum=Yeni Tema Motoru
@@ -312,9 +313,9 @@ no_splash=Mevcut Önyükleme ekranı kalsın
 
 theme.tittle=Temalar
 theme.subtittle=Uygulamak istediğiniz temaları seçin
-incorexcl.theme=Aşağıda temaları dahil etmeyi veya hariç tutmayı seçin
+incorexcl.theme=Aşağıda temaları dahil etmeyi veya etmemeyi seçin
 inc.theme=Dahil et
-excl.theme=Hariç tut
+excl.theme=Dahil etme
 
 info.inc.theme=Aşağıdaki listeden kurmak istediğiniz temaları seçin.
 info.excl.theme=Aşağıdakilerden kurmak istemediğiniz temaları seçin.
