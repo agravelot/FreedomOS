@@ -31,12 +31,14 @@ sleep 2
 
 echo $END >> $LOG
 
-if [ -d "/system_root" ]; then
-	mount -o ro,remount /system_root
-else
-	mount -o ro,remount /
-fi
+if [ ! -e "$ROOT/data/magisk.img" ]; then
+    if [ -d "/system_root" ]; then
+        mount -o ro,remount /system_root
+    else
+        mount -o ro,remount /
+    fi
 
-mount -o ro,remount $SYS
+    mount -o ro,remount $SYS
+fi
 
 exit 0

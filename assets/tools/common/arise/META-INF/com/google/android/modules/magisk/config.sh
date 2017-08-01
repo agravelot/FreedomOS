@@ -1,6 +1,6 @@
 ##########################################################################################
 #
-# Magisk
+# Magisk Module Template Config Script
 # by topjohnwu
 # 
 # This is a template zip for developers
@@ -31,13 +31,13 @@ MODID=ARISE_Magisk_Compatibility_Module
 
 # Set to true if you need to enable Magic Mount
 # Most mods would like it to be enabled
-AUTOMOUNT=false
+AUTOMOUNT=true
 
 # Set to true if you need to load system.prop
 PROPFILE=false
 
 # Set to true if you need post-fs-data script
-POSTFSDATA=false
+POSTFSDATA=true
 
 # Set to true if you need late_start service script
 LATESTARTSERVICE=true
@@ -48,14 +48,15 @@ LATESTARTSERVICE=true
 
 # Set what you want to show when installing your mod
 
-#print_modname() {
-  #ui_print "*********************************"
-  #ui_print "ARISE Magisk Compatibility Module"
-  #ui_print "*********************************" 
-  #ui_print "          by Shadowghoster,"
-  #ui_print "          and Zackptg5"
-  #ui_print "*********************************"
-#}
+print_modname() {
+  ui_print "*********************************"
+  ui_print "ARISE Magisk Compatibility Module"
+  ui_print "*********************************" 
+  ui_print "          by Shadowghoster,"
+  ui_print "          and Zackptg5"
+  ui_print "*********************************"
+
+}
 
 ##########################################################################################
 # Replace list
@@ -85,9 +86,31 @@ REPLACE="
 
 # NOTE: This part has to be adjusted to fit your own needs
 
+set_metadata() {
+  file="$1";
+  if [ -e $file ]; then
+    shift;
+    until [ ! "$2" ]; do
+    case $1 in
+      uid) chown $2 $file;;
+      gid) chown :$2 $file;;
+      mode) chmod $2 $file;;
+      capabilities) ;;
+      selabel)
+      chcon -h $2 $file;
+      chcon $2 $file;
+      ;;
+      *) ;;
+    esac;
+    shift 2;
+    done;
+  fi
+}
+
 set_permissions() {
   # Default permissions, don't remove them
   set_perm_recursive  $MODPATH  0  0  0755  0644
+  set_metadata $MODPATH/$SYS/bin/iss_daemon uid 1013 gid 1005 mode 0755 capabilities 0x0 selabel u:object_r:iss_daemon_service:s0
 
   # Only some special files require specific permissions
   # The default permissions should be good enough for most cases
