@@ -1,3 +1,17 @@
+1.5
+    UPDATE: Turkish language
+    ADD: Introducing the all new OnePlus Slate font
+    ADD: EIS for 4k video recording
+    UPDATE: Android security patch level to 1st July 2017
+    UPDATE: to latest GMS package
+    OPTIMIZE: Wi-Fi connectivity improvements
+    OPTIMIZE: Standby battery enhancements
+    FIX: Occasional sound leaks in the speakers when using earphones
+    FIX: Camera shutter sound bug in silent mode for Indian region
+    FIX: Missing sound channels when recording videos
+    UPDATE: Google Apps 20170801
+    UPDATE: ARISE Magnum Opus 20170724
+
 1.4
     UPDATE: Magisk v13.3
     - [MagiskHide] Update to bypass Google CTS (2017.7.17)
