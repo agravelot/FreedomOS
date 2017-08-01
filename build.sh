@@ -303,6 +303,9 @@ function download_rom {
 function extract_rom {
   if [ ! -f ${rom_root}/${device}/${ROM_NAME}/system.new.dat ]; then
     echo ">> Extracting rom zip" 2>&1 | tee -a ${build_log}
+    if [[ -d ${rom_root}/${device}/${ROM_NAME} ]]; then
+      rm -rf ${rom_root}/${device}/${ROM_NAME}
+    fi
     mkdir -p ${rom_root}/${device}/${ROM_NAME} >> ${build_log} 2>&1
     unzip -o ${download_root}/${ROM_NAME}.zip -d ${rom_root}/${device}/${ROM_NAME} >> ${build_log} 2>&1
   fi

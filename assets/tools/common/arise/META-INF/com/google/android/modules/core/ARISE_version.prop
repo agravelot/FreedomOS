@@ -1,7 +1,6 @@
-
 # ARISE Sound Systems™
 #
-# Magnum Opus™ 20170703
+# Magnum Opus™ 20170724
 #
 # Auditory Research in Sound Enhancement™
 #
@@ -10,6 +9,28 @@
 
 
 Changelog:
+
+## Magnum Opus™ 20170724 -
+
+- Improvement to V4Arise theme
+
+##
+
+## Magnum Opus™ 20170723 -
+
+- finally a fix safety net for magisk users
+
+##
+
+
+## Magnum Opus™ 20170718 -
+
+- Fixed viper not orocessing in enforcing 
+- WIP:profiles widget (not ready yet)
+
+##
+
+
 
 ## Magnum Opus™ 20170703 -
 

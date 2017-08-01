@@ -27,20 +27,20 @@ DEVICE=OnePlus5
 ASSERT="OnePlus 5"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus5Oxygen_23_OTA_011_all_1707192021_eb641c6f
-ROM_LINK=http://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus5Oxygen/OnePlus5Oxygen_23.O.11_GLO_011_1707192021/$ROM_NAME.zip
+ROM_NAME=OnePlus5Oxygen_23_OTA_012_all_1707312123_3bd11eedc
+ROM_LINK=http://otafsg.h2os.com/patch/amazone2/GLO/OnePlus5Oxygen/OnePlus5Oxygen_23.O.12_GLO_012_1707312123/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=d563829253bd6ffe3e0a4e54215c3ed3
+ROM_MD5=ea55598bed79cc121a80c169f53fa9d8
 
 # OpenGapps
 GAPPS_BUILD=true
 GAPPS_ANDROID=7.1
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=aroma
-GAPPS_DATE=20170622
+GAPPS_DATE=20170801
 GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
 GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
-GAPPS_MD5=2db1411f74b622b8cd745c8090181e35
+GAPPS_MD5=84830df0547bed76acae6a20170a2548
 
 # Set Android version for selinux build script
 ANDROID_VERSION=7
@@ -146,7 +146,5 @@ common/log_folder.sh
 common/magisk
 common/save_logs.sh
 common/supersu
-common/themes
-common/vrtheme
 common/wideband_wifi.sh
 "

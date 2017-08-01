@@ -62,7 +62,9 @@ else
   mount -o rw,remount /
 fi
 
-mount -o rw,remount $SYS
+if [ ! -e "$ROOT/data/magisk.img" ]; then
+    mount -o rw,remount $SYS
+fi
 
 BIN=$SYS/bin
 SH=$BIN/sh
@@ -78,22 +80,9 @@ VIVO=$(cat $CONTEXTS | grep "iss_daemon")
 SM=set_metadata
 SMR=set_metadata_recursive
 
-
 if [ -e "$SERVER" ]; then
 
-  $SH $SERVER
-
-fi
-
-if [ -e "$ARISE" ]; then
-
-  $SH $ARISE
-
-fi
-
-if [ -e "$SONY" ]; then
-
-  $SH $SONY
+    $SH $SERVER
 
 fi
 
@@ -115,9 +104,33 @@ if [ ! "$EAGLE" ] && [ -e "$CONTEXTS" ]; then
 
 fi
 
-$SM $BIN/iss_daemon uid 1013 gid 1005 mode 0755 capabilities 0x0 selabel u:object_r:iss_daemon_service:s0
+if [ ! -e "$ROOT/data/magisk.img" ]; then
 
-(
-    sleep 60
-    $SH $BOOT
-)&
+    $SM $BIN/iss_daemon uid 1013 gid 1005 mode 0755 capabilities 0x0 selabel u:object_r:iss_daemon_service:s0
+
+    if [ -e "$ARISE" ]; then
+
+        $SH $ARISE
+
+    fi
+
+    if [ -e "$SONY" ]; then
+
+        $SH $SONY
+
+    fi
+
+    (
+        sleep 60
+        $SH $BOOT
+    )&
+    
+else
+
+    if [ -d "/system_root" ]; then
+        mount -o ro,remount /system_root
+    else
+        mount -o ro,remount /
+    fi
+    
+fi
