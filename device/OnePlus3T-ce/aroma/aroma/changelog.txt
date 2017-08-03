@@ -1,3 +1,22 @@
+2.13.1-CE
+    UPDATE: Turkish language, thanks to @topcu.mevlut
+    UPDATE: Google Apps 20170801
+    UPDATE: ARISE Magnum Opus 20170724
+    UPDATE: Magisk v13.3
+    - [MagiskHide] Update to bypass Google CTS (2017.7.17)
+    - [resetprop] Properly support removing persist props
+    - [uninstaller] Remove Magisk Manager and persist props
+    - [Fix] Fix a bug in cache mount
+    - [Fix] Tons of small adjustments
+    - [MagiskBoot] Moved boot patch logic into magiskboot binary
+    - [MagiskHide] MagiskHide is now enabled by default
+    - [MagiskHide] Update unmount policies
+    - [MagiskHide] Add more props for hiding
+    - [General] Add addon.d survival support
+    - [General] Add more image commands in magisk binary
+    - [General] Updated scripts to use magisk native commands to increase compatibility
+    UPDATE: Fix typo in english
+
 2.13-CE
     UPDATE: OxygenOS Open Beta 11
     OPTIMIZE: Battery saver indication changed from orange status bar to a notification
