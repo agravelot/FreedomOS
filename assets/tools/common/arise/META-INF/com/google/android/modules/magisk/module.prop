@@ -1,7 +1,7 @@
 id=ARISE_Magisk_Compatibility_Module
 name=ARISE Magisk Compatibility Module for FreedomOS
-version=v4.0
-versionCode=4.0
-author=ARISE Sound Systems™, Shadowghoster, Zackptg5
-description=Mobile audio enhancement system for nearly all Android devices. Sets selinux policy and makes scripts compatibile for magisk
+version=v4.0-2
+versionCode=4.0-2
+author=ARISE Sound Systems™, Shadowghoster, Zackptg5, Nevax
+description=Mobile audio enhancement system for nearly all Android devices. Sets selinux policy and makes scripts compatibile for magisk (SELinux fix by Nevax)
 template=4

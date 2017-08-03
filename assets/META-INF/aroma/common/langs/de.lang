@@ -283,7 +283,7 @@ info.aptx=Weitere codecs von Qualcomm
 info.40-wifi=40MHz Kanal breite über 2.4GHz
 info.permissive=Pack den Kernel neu mit permissive flag (Unsicher)
 info.substratum=Das neue Designengine
-info.android_o_font=Extracted from latest developper preview
+info.android_o_font=Extracted from latest developer preview
 
 # -- - ROOT - -- #
 supersu=Installiere SuperSU

@@ -296,7 +296,7 @@ info.aptx=Extra kódy od Qualcommu
 info.40-wifi=40MHz šířka kanálu přes 2.4GHz
 info.permissive=Zabalí kernel jako permissive (Náchylnější k získání práv)
 info.substratum=Nový theme-engine
-info.android_o_font=Extracted from latest developper preview
+info.android_o_font=Extracted from latest developer preview
 
 # -- - ROOT - -- #
 supersu=Nainstalovat SuperSU

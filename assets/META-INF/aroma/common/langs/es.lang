@@ -270,7 +270,7 @@ info.aptx=Codecs extra de Qualcomm
 info.40-wifi=Canal 40MHz sobre 2.4GHz
 info.permissive=Reempaquetar el kernel en modo permisivo
 info.substratum=El nuevo motor de temas
-info.android_o_font=Extracted from latest developper preview
+info.android_o_font=Extracted from latest developer preview
 
 # -- - ROOT - -- #
 supersu=Instalar SuperSU
