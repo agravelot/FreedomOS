@@ -1,4 +1,4 @@
-2.10.4-CE
+2.10.4
     UPDATE: Turkish language, thanks to @topcu.mevlut
     UPDATE: Google Apps 20170801
     UPDATE: ARISE Magnum Opus 20170724
