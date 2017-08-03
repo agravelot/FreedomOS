@@ -1,3 +1,8 @@
+1.5.1
+    ADD: Custom SELinux patch in order to run arise perfectly with oos and magisk. Removed in the 1.5 update and it was a bad idea.
+    UPDATE: Fix typo in english
+    NOTE: I forgot to mention @topcu.mevlut for the Turkish translation in the 1.5 update.
+
 1.5
     UPDATE: Turkish language, thanks to @topcu.mevlut
     ADD: Introducing the all new OnePlus Slate font
