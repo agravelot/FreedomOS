@@ -117,8 +117,8 @@ function initialize {
       fi
   done
 
-  if [[ ${BUILD_TYPE} != "nevax" && ${BUILD_TYPE} != "debug" ]]; then
-    die "Bad build type" "60"
+  if [[ ${BUILD_TYPE} = "" ]]; then
+    die "Specify a build type" "60"
   fi
 
   if [[ -z ${device} || -z ${BUILD_TYPE} || -z ${VERSION} ]]; then
