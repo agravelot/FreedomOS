@@ -1,6 +1,6 @@
 # FreedomOS
 
-![alt text](assets/media/oneplus3/png/big-banner-nougat.png)
+![alt text](assets/media/png/op5-big-banner-nougat.png)
 
 ## Note for pull requests and issues
 
@@ -35,9 +35,21 @@ To update all the repos:
 ```bash
 git pull --recurse-submodules
 ```
-Build the project:
+Build the rom with the interactive menu:
 ```bash
 bash build.sh
+```
+
+Or build the rom with the one line command:
+
+`<device>`: to get the list of the available devices just type `ls device`  
+`<version>`: anything you wan want (e.g 1.0)  
+`<build_type>`: put your developer name for public release, or `debug` for testing (e.g nevax)  
+In order to build a public release build, you need to generate your own private keys (see gitlab Wiki)
+```bash
+bash  build.sh -d <device> -v <version> -t <build_type>
+# example
+bash  build.sh -d OnePlus5 -v 1.0 -t nevax
 ```
 
 It will download all the needed files and start building your project.
