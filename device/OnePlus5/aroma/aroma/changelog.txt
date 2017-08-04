@@ -1,3 +1,7 @@
+1.6
+    FIX: Occasional stutters when playing games
+    FIX: Battery drain for Jio users
+
 1.5.1
     ADD: Custom SELinux patch in order to run arise perfectly with oos and magisk. Removed in the 1.5 update and it was a bad idea.
     UPDATE: Fix typo in english
