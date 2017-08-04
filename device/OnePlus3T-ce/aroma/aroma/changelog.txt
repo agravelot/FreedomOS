@@ -1,4 +1,4 @@
-2.14
+2.14-CE
     UPDATE: OxygenOS Open Beta 12
     ADD: Parallel Apps
     - Run a parallel version of the same app using a separate account. For now, works on Facebook, Twitter, WhatsApp, Instagram.
