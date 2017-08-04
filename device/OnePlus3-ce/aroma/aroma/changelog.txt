@@ -1,3 +1,19 @@
+2.14-CE
+    UPDATE: OxygenOS Open Beta 12
+    ADD: Parallel Apps
+    - Run a parallel version of the same app using a separate account. For now, works on Facebook, Twitter, WhatsApp, Instagram.
+    UPDATE: OnePlus Launcher V.2.1.5
+    UPDATE: Optimized home screen folder icon, with a preview look of first 4 icons in the folder
+    UPDATE: Redesigned UI for folders. You can switch between folder by swiping left / right
+    UPDATE: Added double finger slide support: slide the home screen with one finger while using another to hold item
+    UPDATE: Gallery App updated to V.1.8
+    UPDATE: Support light theme
+    UPDATE: RAW Format can be opened
+    UPDATE: File Manager updated to V.1.7.1
+    UPDATE: Long pressing search items now shows edit operations
+    OPTIMIZATION: Call history from the same person will now be merged
+    FIX: Fix increased battery consumption after connecting to a bluetooth device
+
 2.13.1-CE
     UPDATE: Turkish language, thanks to @topcu.mevlut
     UPDATE: Google Apps 20170801
