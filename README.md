@@ -22,7 +22,7 @@ pacman -S python python2 zip curl openssl ncurses cpio python-virtualenv unzip
 
 Debian/Ubuntu based:
 ```
-apt-get install python zip curl openssl libncurses-dev cpio python-virtualenv gawk
+apt-get install python zip curl openssl libncurses-dev cpio python-virtualenv gawk binutils
 ```
 
 ## How to build
