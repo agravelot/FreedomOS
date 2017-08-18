@@ -4,15 +4,16 @@
     OPTIMIZATION: Expanded screenshot optimization
     UPDATE:
     - App Locker
-    - FileManager 
+    - FileManager
     - Weather
     - Note
     - Launcher
-    - OnePlus Push
+    - OnePlus Push (Ads! Removed in every FreedomOS builds)
     FIX: Installation issue for some parallel apps
     FIX: Screenshot issue on some parallel apps
     FIX: Weather widget sometimes won't update
     FIX: Font issue after changing system language
+    UPDATE: Minification of the OpenGapps to remove the duplicate available dpi (-~100 MB) and will reduce installation time
 
 2.14-CE
     UPDATE: OxygenOS Open Beta 21
