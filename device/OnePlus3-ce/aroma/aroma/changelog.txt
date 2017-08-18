@@ -1,5 +1,21 @@
+2.15-CE
+    UPDATE: OxygenOS Open Beta 22
+    OPTIMIZATION: Better data usage tracking
+    OPTIMIZATION: Expanded screenshot optimization
+    UPDATE:
+    - App Locker
+    - FileManager 
+    - Weather
+    - Note
+    - Launcher
+    - OnePlus Push
+    FIX: Installation issue for some parallel apps
+    FIX: Screenshot issue on some parallel apps
+    FIX: Weather widget sometimes won't update
+    FIX: Font issue after changing system language
+
 2.14-CE
-    UPDATE: OxygenOS Open Beta 12
+    UPDATE: OxygenOS Open Beta 21
     ADD: Parallel Apps
     - Run a parallel version of the same app using a separate account. For now, works on Facebook, Twitter, WhatsApp, Instagram.
     UPDATE: OnePlus Launcher V.2.1.5
