@@ -146,12 +146,50 @@ function build_opengapps() {
     sed -i '/'${i}'/d' ${tmp_root}/tools/opengapps_tmp/app_densities.txt >> ${build_log} 2>&1
   done
 
-  cd ${tmp_root}/tools/opengapps_tmp/Core/
-  tar xf gmscore-arm64.tar.xz >> ${build_log} 2>&1
-  rm gmscore-arm64.tar.xz >> ${build_log} 2>&1
-  rm -rvf gmscore-arm64/{480,320} >> ${build_log} 2>&1
-  tar cfJ gmscore-arm64.tar.xz gmscore-arm64 >> ${build_log} 2>&1
-  rm -rvf gmscore-arm64/ >> ${build_log} 2>&1
+  MINIFY_OPENGAPPS="
+  gmscore
+  photosvrmode
+  photos
+  drive
+  androidpay
+  youtube
+  messenger
+  playgames
+  "
+
+  MINIFY_DPI="
+  160
+  240
+  320
+  480
+  640
+  213-240
+  560-640
+  "
+
+  # Minify the opengapps packages
+  for i in ${MINIFY_OPENGAPPS}
+  do
+    cd ${tmp_root}/tools/opengapps_tmp
+    find . -type f -name "${i}-*" >> ${build_log} 2>&1
+    if [ $? -eq 0 ]
+    then
+        cd "$(dirname "$(find . -type f -name "${i}-*")")"
+        archiveNameWithExtension=$(ls ${i}-*) # Get the filename with the extension
+        archiveNameWithoutExtension="${archiveNameWithExtension%%.*}" # Remove the extension from archiveNameWithExtension
+        echo " - Minify ${i}" 2>&1 | tee -a ${build_log}
+        tar xvf ${archiveNameWithoutExtension}.tar.xz >> ${build_log} 2>&1 # Extract archive of the app to minify
+        rm -v ${archiveNameWithoutExtension}.tar.xz >> ${build_log} 2>&1 # Remove the older archive since we're going to build a new one
+        for y in ${MINIFY_DPI}
+        do
+          rm -rvf ${archiveNameWithoutExtension}/${y} >> ${build_log} 2>&1
+        done
+        tar cfJ ${archiveNameWithoutExtension}.tar.xz ${archiveNameWithoutExtension} >> ${build_log} 2>&1
+        rm -rvf ${archiveNameWithoutExtension}/ >> ${build_log} 2>&1
+    else
+        echo " - Unable to found ${i}" 2>&1 | tee -a ${build_log}
+    fi
+  done
 
   cd ${tmp_root}/tools/opengapps_tmp/
   # Make new zip
