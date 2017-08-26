@@ -1,3 +1,13 @@
+2.11
+    IMPROVE: Enhanced system fluidity
+    IMPROVE: Battery optimizations
+    IMPROVE: Android security patch updated to August
+    FIX: Sound channel error while recording videos
+    FIX: Call is routed to speaker accidently by some 3rd party apps
+    FIX: Rendering issue in Indian Kannada language
+    FIX: App locker issue caused by some 3rd party apps
+    UPDATE: Minification of the OpenGapps to remove the duplicate available dpi (-~100 MB) and will reduce installation time
+
 2.10.4
     UPDATE: Turkish language, thanks to @topcu.mevlut
     UPDATE: Google Apps 20170801
