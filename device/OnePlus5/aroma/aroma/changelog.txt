@@ -1,3 +1,17 @@
+1.7
+    ADD: Country information of photographers in Shot on OnePlus
+    OPTIMIZE: Photo noise reduction (Camera)
+    OPTIMIZE: Improved Camera stability
+    OPTIMIZE: 60 fps video noise and texture improvements
+    OPTIMIZE: Improved WiFi stability
+    FIX: Accidental touches after hanging up
+    FIX: Display issue on calling screen
+    FIX: Clarity issue of videos taken by SnapShot app
+    FIX: Display issue of new font
+    FIX: Scrolling issue of Play Music
+    UPDATE: Improved Jio call functionality
+    UPDATE: Minification of the OpenGapps to remove the duplicate available dpi (-~100 MB)
+
 1.6
     FIX: Occasional stutters when playing games
     FIX: Battery drain for Jio users
