@@ -1,3 +1,16 @@
+2.16-CE
+    UPDATE: Redesigned lift up display UI. Now supports displaying battery percentage
+    UPDATE: Supports hiding of notification contents from apps locked by App locker
+    IMPROVE: Stability of Parallel apps
+    UPDATE: Phone dialer and UI improvements
+    UPDATE: Weather app improvements
+    UPDATE: Adjusted color display of default screen calibration
+    ADD: E-warranty card
+    UPDATE: Android security patch level to August
+    ADD: [Camerra] Shot on OnePlus watermark. You can add your name in the watermark
+    UPDATE: [Clock] Added new feature - alarm calendar - to set irregular alarm
+    UPDATE: [Gallery]Loading speed of images improved
+
 2.15-CE
     UPDATE: OxygenOS Open Beta 22
     OPTIMIZATION: Better data usage tracking
