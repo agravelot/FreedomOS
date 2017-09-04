@@ -27,7 +27,7 @@ DEVICE=OnePlus3T
 ASSERT="OnePlus 3T"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAMEOnePlus3TOxygen_28_OTA_031_all_1708311655_e9f1f038d04044d9
+ROM_NAME=OnePlus3TOxygen_28_OTA_031_all_1708311655_e9f1f038d04044d9
 ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
 ROM_MD5=988af5dbfb789c02331b1bf2cedcc305
