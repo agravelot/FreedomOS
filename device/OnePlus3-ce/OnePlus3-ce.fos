@@ -27,10 +27,10 @@ DEVICE=OnePlus3
 ASSERT="OnePlus 3"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus3Oxygen_16_OTA_031_all_1708311700_dabd4ca9a94f4b8e
+ROM_NAME=OnePlus3Oxygen_16_OTA_032_all_1709152302_9fce1800554a4637
 ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=c21a6b0f3fed687c17028cc319d3df76
+ROM_MD5=ebcfb27dd67da01b428aada283043119
 
 # OpenGapps
 GAPPS_BUILD=true
