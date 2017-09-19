@@ -1,3 +1,9 @@
+2.17-CE
+    ADD: “Soft” screen calibration
+    UPDATE: Optimized the clearing of recent apps
+    UPDATE: Community app to V1.9.5
+    FIX: Minor bug fixes
+
 2.16-CE
     UPDATE: Redesigned lift up display UI. Now supports displaying battery percentage
     UPDATE: Supports hiding of notification contents from apps locked by App locker
