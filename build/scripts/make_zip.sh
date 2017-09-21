@@ -24,7 +24,7 @@ function make_zip {
     cd ${tmp_root}/
 
     echo "> Making zip file" 2>&1 | tee -a ${build_log}
-    zip -r9 "${output_file}.zip" * -x "*EMPTY_DIRECTORY*" >> ${build_log} 2>&1
+    zip -r9 "${output_file}.zip" * >> ${build_log} 2>&1
     cd ${top_root}
 
     echo ">> Copy Unsigned in output folder" 2>&1 | tee -a ${build_log}
@@ -53,7 +53,7 @@ function make_zip {
     cd ${tmp_root}/
 
     echo "> Making zip file" 2>&1 | tee -a ${build_log}
-    zip -r1 "${output_file}.zip" * -x "*EMPTY_DIRECTORY*" >> ${build_log} 2>&1
+    zip -r1 "${output_file}.zip" * >> ${build_log} 2>&1
 
     cd ${top_root}
     echo ">> Move unsigned zip file in output folder" 2>&1 | tee -a ${build_log}
