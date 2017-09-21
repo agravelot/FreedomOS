@@ -146,16 +146,23 @@ function build_opengapps() {
     sed -i '/'${i}'/d' ${tmp_root}/tools/opengapps_tmp/app_densities.txt >> ${build_log} 2>&1
   done
 
-  MINIFY_OPENGAPPS="
-  gmscore
-  photosvrmode
-  photos
-  drive
-  androidpay
-  youtube
-  messenger
-  playgames
-  "
+  if [[ $GAPPS_TYPE == "aroma" ]]; then
+      MINIFY_OPENGAPPS="
+      gmscore
+      photosvrmode
+      photos
+      drive
+      androidpay
+      youtube
+      messenger
+      playgames
+      "
+  else
+      MINIFY_OPENGAPPS="
+      gmscore
+      "
+  fi
+
 
   MINIFY_DPI="
   160
@@ -178,20 +185,23 @@ function build_opengapps() {
         archiveNameWithExtension=$(ls ${i}-*) # Get the filename with the extension
         archiveNameWithoutExtension="${archiveNameWithExtension%%.*}" # Remove the extension from archiveNameWithExtension
         echo " - Minify ${i}" 2>&1 | tee -a ${build_log}
-        tar xvf ${archiveNameWithoutExtension}.tar.xz >> ${build_log} 2>&1 # Extract archive of the app to minify
-        rm -v ${archiveNameWithoutExtension}.tar.xz >> ${build_log} 2>&1 # Remove the older archive since we're going to build a new one
+        tar xvf --remove-files  ${archiveNameWithoutExtension}.tar.lz >> ${build_log} 2>&1 # Extract archive of the app to minify
         for y in ${MINIFY_DPI}
         do
           rm -rvf ${archiveNameWithoutExtension}/${y} >> ${build_log} 2>&1
         done
-        tar cfJ ${archiveNameWithoutExtension}.tar.xz ${archiveNameWithoutExtension} >> ${build_log} 2>&1
-        rm -rvf ${archiveNameWithoutExtension}/ >> ${build_log} 2>&1
+        tar --remove-files -cf - "${archiveNameWithoutExtension}" | lzip -m 273 -s 128MiB -o "${archiveNameWithoutExtension}.tar"  >> ${build_log} 2>&1 #.lz is added by lzip; specify the compression parameters manually to get good results
     else
         echo " - Unable to found ${i}" 2>&1 | tee -a ${build_log}
     fi
   done
 
   cd ${tmp_root}/tools/opengapps_tmp/
+
+  if [[ $GAPPS_TYPE == "nano" || $GAPPS_TYPE == "pico" ]]; then
+      echo "" > gapps-remove.txt
+  fi
+
   # Make new zip
   zip -r9 ${tmp_root}/tools/opengapps/opengapps.zip * >> ${build_log} 2>&1
   cd ${top_root} >> ${build_log}
