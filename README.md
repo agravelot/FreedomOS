@@ -54,6 +54,11 @@ bash  build.sh -d OnePlus5 -v 1.0 -t nevax
 
 It will download all the needed files and start building your project.
 
+If you forget to pull the submodules, run this command:
+```bash
+git submodule update --init --recursive
+```
+
 ## How to translate
 
 The translation process is quite simple.   
@@ -66,7 +71,7 @@ After that, just create a merge request, i'll check if everything is ok for the 
 If you are curious about git in general, check this [link](https://forum.xda-developers.com/android/help/test-t3515907).
 
 ## Join the beta team
-We use Slack, just send me your email address in private message on XDA and i will send your an invitation to join the team.
+You can join the public Slack group [link](freedomos.fr:3000)
 
 Check your email.
 
