@@ -1,3 +1,18 @@
+2.12
+    ADD: Lift up display
+    ADD: Gaming Do Not Disturb
+    ADD: Low priority notification
+    ADD: Network speed in status bar
+    ADD: Scheduled night mode
+    ADD: OnePlus Slate font
+    UPDATE: Redesigned Dash Charge animation
+    UPDATE: System stability and battery improvements
+    ADD: Shot on OnePlus wallpaper
+    UPDATE: Redesigned calling UI
+    ADD: Shot on OnePlus watermark
+    UPDATE: Redesigned photo editor in Gallery
+    ADD: Secure box
+
 2.11
     IMPROVE: Enhanced system fluidity
     IMPROVE: Battery optimizations

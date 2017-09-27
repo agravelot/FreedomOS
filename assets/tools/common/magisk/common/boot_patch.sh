@@ -3,11 +3,11 @@
 #
 # Magisk Boot Image Patcher
 # by topjohnwu
-# 
+#
 # This script should be placed in a directory with the following files:
-# 
+#
 # File name       type      Description
-# 
+#
 # boot_patch.sh   script    A script to patch boot. Expect path to boot image as parameter.
 #               (this file) The script will use binaries and files in its same directory
 #                           to complete the patching process
@@ -19,7 +19,7 @@
 #                           All magisk entrypoints are defined here
 # chromeos        folder    This folder should store all the utilities and keys to sign
 #               (optional)  a chromeos device, used in the tablet Pixel C
-# 
+#
 # If the script is not running as root, then the input boot image should be a stock image
 # or have a backup included in ramdisk internally, since we cannot access the stock boot
 # image placed under /data we've created when previously installing
@@ -49,12 +49,15 @@ abort_wrap() {
 
 # Pure bash dirname implementation
 dirname_wrap() {
-  if echo $1 | grep "/" >/dev/null 2>&1; then
-    RES=${1%/*}
-    [ -z $RES ] && echo "/" || echo $RES
-  else
-    echo "."
-  fi
+  case "$1" in
+    */*)
+      dir=${1%/*}
+      [ -z $dir ] && echo "/" || echo $dir
+      ;;
+    *)
+      echo "."
+      ;;
+  esac
 }
 
 # Pure bash basename implementation
@@ -91,35 +94,37 @@ cpio_mkdir() {
 # Initialization
 ##########################################################################################
 
-CWD=`pwd`
+[ -z $1 ] && abort_wrap "This script requires a boot image as a parameter"
+
+cwd=`pwd`
 cd "`dirname_wrap $1`"
 BOOTIMAGE="`pwd`/`basename_wrap $1`"
-cd "$CWD"
+cd $cwd
 
-if [ -z "$BOOTIMAGE" ]; then
-  ui_print_wrap "This script requires a boot image as a parameter"
-  exit 1
-fi
+[ -e "$BOOTIMAGE" ] || abort_wrap "$BOOTIMAGE does not exist!"
 
 # Presets
 [ -z $KEEPVERITY ] && KEEPVERITY=false
 [ -z $KEEPFORCEENCRYPT ] && KEEPFORCEENCRYPT=false
 
 # Detect whether running as root
-[ `id -u` -eq 0 ] && ROOT=true || ROOT=false
+id | grep "uid=0" >/dev/null 2>&1 && ROOT=true || ROOT=false
 
 # Switch to the location of the script file
 [ -z $SOURCEDMODE ] && cd "`dirname_wrap "${BASH_SOURCE:-$0}"`"
-chmod +x ./*
+chmod -R 755 .
 
 ##########################################################################################
 # Unpack
 ##########################################################################################
 
+migrate_boot_backup
+
+CHROMEOS=false
+
 ui_print_wrap "- Unpacking boot image"
 ./magiskboot --unpack "$BOOTIMAGE"
 
-CHROMEOS=false
 case $? in
   1 )
     abort_wrap "! Unable to unpack boot image"
@@ -147,7 +152,7 @@ case $? in
   0 )  # Stock boot
     ui_print_wrap "- Stock boot image detected!"
     ui_print_wrap "- Backing up stock boot image"
-    SHA1=`./magiskboot --sha1 "$BOOTIMAGE" | tail -n 1`
+    SHA1=`./magiskboot --sha1 "$BOOTIMAGE" 2>/dev/null`
     STOCKDUMP=stock_boot_${SHA1}.img
     dd if="$BOOTIMAGE" of=$STOCKDUMP
     ./magiskboot --compress $STOCKDUMP
@@ -156,12 +161,7 @@ case $? in
   1 )  # Magisk patched
     ui_print_wrap "- Magisk patched image detected!"
     # Find SHA1 of stock boot image
-    if [ -z $SHA1 ]; then
-      ./magiskboot --cpio-extract ramdisk.cpio init.magisk.rc init.magisk.rc.old
-      SHA1=`grep_prop "# STOCKSHA1" init.magisk.rc.old`
-      rm -f init.magisk.rc.old
-    fi
-
+    [ -z $SHA1 ] && SHA1=`./magiskboot --cpio-stocksha1 ramdisk.cpio 2>/dev/null`
     OK=false
     ./magiskboot --cpio-restore ramdisk.cpio
     if [ $? -eq 0 ]; then
@@ -238,15 +238,6 @@ ui_print_wrap "- Repacking boot image"
 ./magiskboot --repack "$BOOTIMAGE" || abort_wrap "! Unable to repack boot image!"
 
 # Sign chromeos boot
-if $CHROMEOS; then
-  echo > empty
-
-  ./chromeos/futility vbutil_kernel --pack new-boot.img.signed \
-  --keyblock ./chromeos/kernel.keyblock --signprivate ./chromeos/kernel_data_key.vbprivk \
-  --version 1 --vmlinuz new-boot.img --config empty --arch arm --bootloader empty --flags 0x1
-
-  rm -f empty new-boot.img
-  mv new-boot.img.signed new-boot.img
-fi
+$CHROMEOS && sign_chromeos
 
 ./magiskboot --cleanup
