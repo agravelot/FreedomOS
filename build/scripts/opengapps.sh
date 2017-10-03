@@ -133,6 +133,8 @@ function build_opengapps() {
   sed -i '/Installation complete!/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   sed -i '/Unmounting/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   sed -i '/app\/Calculator/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/\/system\/app\/Gmail2/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/\/system\/app\/CalendarGoogle/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
 
   rm -rvf ${tmp_root}/tools/opengapps_tmp/META-INF/com/google/android/aroma >> ${build_log} 2>&1
 
