@@ -1,3 +1,13 @@
+1.8
+    ADD: Supports customization of notification ringtone
+    UPDATE: Improved launching speed of apps
+    UPDATE: Optimized adaptive brightness
+    FIX: Issue of YouTube video lagging behind audio
+    FIX: Display issues of some UI elements
+    FIX: Issue of no 4G+ network in some regions
+    UPDATE: Android security patch to September
+    FIX: General bug fixes
+
 1.7
     ADD: Country information of photographers in Shot on OnePlus
     OPTIMIZE: Photo noise reduction (Camera)

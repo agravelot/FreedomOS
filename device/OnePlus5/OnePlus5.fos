@@ -27,10 +27,10 @@ DEVICE=OnePlus5
 ASSERT="OnePlus 5"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus5Oxygen_23_OTA_015_all_1708252353_f05918
-ROM_LINK=http://otafsg.h2os.com/patch/amazone2/GLO/OnePlus5Oxygen/OnePlus5Oxygen_23.O.15_GLO_015_1708252353/$ROM_NAME.zip
+ROM_NAME=OnePlus5Oxygen_23_OTA_016_all_1710011637_e072
+ROM_LINK=http://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus5Oxygen/OnePlus5Oxygen_23.O.16_GLO_016_1710011637/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=0a9d6f88a813e5d3f786568bc89f46b5
+ROM_MD5=870add7f29f37839ac8027c0c9981c43
 
 # OpenGapps
 GAPPS_BUILD=true
