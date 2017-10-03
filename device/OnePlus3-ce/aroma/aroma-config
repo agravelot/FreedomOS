@@ -446,13 +446,13 @@ selectbox(
   appendvar("gapps", "\n\n");
 
   # WRITE CONFIG TO TEMP AND DISPLAY IT
-  writetmpfile(".gapps-config", getvar("gapps"));
+  writetmpfile(".gapps.prop", getvar("gapps"));
 
   textbox(
       "gapps-config",
       "Your gapps-config file",
       "@update",
-      read("tmp/aroma/.gapps-config")
+      read("tmp/aroma/.gapps.prop")
   );
 
   ##############################################
