@@ -187,12 +187,13 @@ function build_opengapps() {
         archiveNameWithExtension=$(ls ${i}-*) # Get the filename with the extension
         archiveNameWithoutExtension="${archiveNameWithExtension%%.*}" # Remove the extension from archiveNameWithExtension
         echo " - Minify ${i}" 2>&1 | tee -a ${build_log}
-        tar xvf --remove-files  ${archiveNameWithoutExtension}.tar.lz >> ${build_log} 2>&1 # Extract archive of the app to minify
+        tar xvf ${archiveNameWithExtension} >> ${build_log} 2>&1 # Extract archive of the app to minify
+        rm -v ${archiveNameWithExtension} >> ${build_log} 2>&1 # Remove the older archive since we're going to build a new one
         for y in ${MINIFY_DPI}
         do
           rm -rvf ${archiveNameWithoutExtension}/${y} >> ${build_log} 2>&1
         done
-        tar --remove-files -cf - "${archiveNameWithoutExtension}" | lzip -m 273 -s 128MiB -o "${archiveNameWithoutExtension}.tar"  >> ${build_log} 2>&1 #.lz is added by lzip; specify the compression parameters manually to get good results
+        tar --remove-files -cf - "${archiveNameWithoutExtension}" | lzip -m 273 -s 128MiB -o "${archiveNameWithoutExtension}.tar" >> ${build_log} 2>&1 #.lz is added by lzip; specify the compression parameters manually to get good results
     else
         echo " - Unable to found ${i}" 2>&1 | tee -a ${build_log}
     fi
