@@ -1,3 +1,34 @@
+1.9
+    FIX: Bug of missing icon of download app in 4.5.11
+
+1.8
+    ADD: Supports customization of notification ringtone
+    UPDATE: Improved launching speed of apps
+    UPDATE: Optimized adaptive brightness
+    FIX: Issue of YouTube video lagging behind audio
+    FIX: Display issues of some UI elements
+    FIX: Issue of no 4G+ network in some regions
+    UPDATE: Android security patch to September
+    FIX: General bug fixes
+    UPDATE: Magisk v14
+        - [script] Simplify installation scripts
+        - [script] Fix a bug causing backing up and restoring stock boot images failure
+        - [script] Installation and uninstallation will migrate old or broken stock boot image backups to proper format
+        - [script] Fix an issue with selabel setting in util_functions on Lollipop
+        - [rc script] Enable logd in post-fs to start logging as early as possible
+        - [MagiskHide] magisk.img mounted is no longer a requirement
+        Devices with issues mounting magisk.img can now run in proper core-only mode
+        - [MagiskBoot] Add native function to extract stock SHA1 from ramdisk
+        - [b64xz] New tool to extract compressed and encoded binary dumps in shell script
+        - [busybox] Add busybox to Magisk source, and embed multi-arch busybox binary into update-binary shell script
+        - [busybox] Busybox is added into PATH for all boot scripts (post-fs-data.d, service.d, and all module scripts)
+        - [MagiskSU] Fully fix multiuser issues
+        - [Magic Mount] Fix a typo in cloning attributes
+        - [Daemon] Fix the daemon crashing when boot scripts opens a subshell
+        - [Daemon] Adjustments to prevent stock Samsung kernel restrictions on exec system calls for binaries started from /data
+        - [Daemon] Workaround on Samsung device with weird fork behaviors
+
+
 1.7
     ADD: Country information of photographers in Shot on OnePlus
     OPTIMIZE: Photo noise reduction (Camera)
