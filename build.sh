@@ -117,16 +117,12 @@ function initialize {
       fi
   done
 
-  if [[ ${BUILD_TYPE} = "" ]]; then
+  if [[ ${BUILD_TYPE} = "" || -z ${BUILD_TYPE} ]]; then
     die "Specify a build type" "60"
   fi
 
-  if [[ -z ${device} || -z ${BUILD_TYPE} || -z ${VERSION} ]]; then
+  if [[ -z ${device} ]]; then
     die "Bad device" "61"
-  fi
-
-  if [[ -z ${VERSION} ]]; then
-    die "Version not defined" "62"
   fi
 
   write_config
