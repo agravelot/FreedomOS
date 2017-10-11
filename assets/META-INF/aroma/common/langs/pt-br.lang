@@ -1,0 +1,373 @@
+﻿#########################################################
+#	FreedomOS language file
+#
+#	Português Brasil by: @sconetto
+#
+#
+#
+
+text_ok=OK
+text_next=Próximo
+text_back=Voltar
+text_yes=Sim
+text_no=Não
+text_about=Sobre
+text_calibrating=Ferramentas de Calibração
+text_quit=Sair da Instalação
+text_quit_msg=Tem Certeza ?
+
+welcome.title=Bem-vindo
+welcome.title2=Informações sobre a ROM
+welcome.text1=Você está prestes a usar
+welcome.version=Versão
+welcome.device=Dispositivo
+welcome.updated=Atualizada
+welcome.microblog=YouTube
+welcome.developer=Desenvolvedor
+welcome.next=Pressione Próximo para Continuar a Instalação...
+
+changelog.title=Changelogs
+changelog.desc=FreedomOS Changelogs
+language.title=Selecione o idioma
+language.text=Selecione o idioma da instalação
+language.english=English
+language.english.info=Using English
+language.french=France
+language.french.info=Utiliser le Français
+language.italian=Italiano
+language.italian.info=Utilizzare Italiano @xEvoRayJiN
+language.german=German
+language.german.info=@DanielL
+language.spanish=Español
+language.spanish.info=Utilizar Español by @jgimenezpascual
+language.turkish=Türkçe
+language.turkish.info=Türkçe kullanın - @Mevlüt TOPÇU
+language.tchinese=Traditional Chinese
+language.tchinese.info=@clyang
+language.schinese=Simplified Chinese
+language.schinese.info=@clyang
+language.czech=Čeština
+language.czech.info=Použít Češtinu @iamceph
+language.portuguesebr=Português Brasil
+language.portuguesebr=Utilizar Português Brasil - @sconetto
+
+rom.data=!date!
+text_finish=Terminar
+model.title=Modelo do Telefone
+
+by=por
+
+main.tittle=Por favor selecione menu abaixo para começar a Instalação
+main.install=Instalar
+main.install.info=Continue para instalar o mod
+main.sys=Informação do Sistema
+main.sys.info=Mostrar informações do dispositivo
+main.changelog.info=FreedomOS changelogs
+main.exit=Sair
+main.exit.info=Sair do instalador da FreedomOS
+
+install_mod.tittle=Instalador FreedomOS
+install_mod.tittle2=Selecione suas configurações
+install_mod.sub_tittle=Método de Instalação
+
+gapps_yes=Sim, instalar os Google Apps
+gapps_no=Não instalar os Google Apps
+info.gapps_yes=Recomendado
+info.gapps_no=O sistema <#f00>NÃO</#> irá inicializar sem os GApps
+assert.tittle=Verificando a afirmção
+assert_yes=Sim (Recomendado)
+assert_no=Não
+addon.tittle=Backup/Restaura /system/addon.d/
+addon_yes=Sim
+info.addon_yes=Recomendado para o dirty flash
+addon_no=Não
+info.addon_no=Para um clean flash
+firmware.tittle=Selecione o seu firmware
+fw_mm=Marshmallow firmwares
+info.fw_mm=Suporta mais variantes do TWRP
+fw_n=Nougat firmwares
+info.fw_n=Recomendado
+passwordfix.tittle=Solução alternativa para o Pin/Padrão
+passwordfix_yes=Sim
+info.passwordfix_yes=Remove a cópia do Pin/Padrão na partição data
+passwordfix_no=Não
+info.passwordfix_no=Mantém o arquivo antigo
+
+info.custom=O jeito Freedom
+info.stock=Padrão Original Oneplus, sem root
+info.assert_yes=Verifica a variante em build.prop
+info.assert_no=Não verica a variante em build.prop
+
+sys.title=Informação do sistema
+sys.info.wait=Coletando informações do sistema...
+sys.info.title=Informações do sistema
+sys.info.title2=As informações de sistema do seu dispositivo.
+sys.info.model=Modelo
+sys.info.name=Nome
+sys.info.manu=Fabricante
+sys.info.cpu=CPU
+sys.info.lcd=Densidade do LCD
+sys.info.storage=Tamanho do Armazenamento
+sys.info.storage.free=Livre
+
+pre.install.title=Pronto para Instalar
+pre.install=O assistente está pronto para iniciar a instalação.
+pre.install2=Pressione <b>Instalar Agora</b> para iniciar a instalação.
+pre.install3=Se você deseja rever ou alterar qualquer uma das suas configurações de instalação, pressione <b>Voltar</b>.
+
+# -- - GOOGLE APPS - -- #
+
+gapps.tittle=Google Apps
+gapps.tittle2=Selecione os Google Apps que você deseja
+
+android_pay=<b>Android Pay</b>
+calculator=<b>Google Calculadora</b>
+calendar=<b>Google Agenda</b>
+call_log=Google Call Backup
+chrome=<b>Chrome</b>
+drive=Drive
+duo= Duo
+gmail=Gmail
+gmail_exchange=Gmail Exchange
+google=Google
+google_camera=<b>Google Câmera</b>
+hangouts=Hangouts
+maps=Maps
+messenger=Messenger
+photos=Fotos
+play_music=Play Music
+tts=Síntese de voz Google
+tallback=TalkBack
+play_movies=Play Filmes
+setupwizard=Assistente de Configuração Google
+youtube=YouTube
+
+info.android_pay=Pagamentos via NFC
+info.calculator=0010 1010
+info.calendar=Calendário Google
+info.call_log=Envia seu histórico de ligações para o Google
+info.chrome=Navegador
+info.drive=Armazenamento na Nuvem
+info.duo=Aplicativo de Vídeo Chamadas
+info.gmail=Cliente de Email
+info.gmail_exchange=Serviço de comunicação para o Gmail
+info.google=Google Now
+info.google_camera=Tire fotos e vídeos
+info.hangouts=Mensageiro instântaneo
+info.maps=Navegação, tráfego e transporte em real-time
+info.messenger=Aplicativo de SMS/MMS do Google.
+info.photos=Aplicativo de gerenciamento de fotos
+info.play_music=Aplicativo Google Play Music
+info.tts=Causa tela preta na primeira inicialização se removido!!
+info.tallback=Causa tela preta na primeira inicialização se removido!!
+info.play_movies=Aplicativo Google Play Filmes
+info.setupwizard=Tela de inicialização do Google
+info.youtube=Aplicativo YouTube
+
+# -- - SYSTEM APPS - -- #
+
+apps.tittle=Aplicativos do Sistema
+apps.tittle2=Selecione aplicativos do sistema que você deseja
+
+anthal=Serviço AntHal
+basic_dream=Basic Dream
+bt_midi=Serviço BT Midi
+bt_test=BT modo teste
+desk_clock=Relógio
+document=Gestor de Arquivos OnePlus
+download_provider=Gestor de Download
+engineering=Modo Engineering
+eng_special_test=EngEspecialTeste
+easter_egg=Easter Egg
+facelock=Facelock
+galaxy=Galáxia
+holo_spiral=Holo Spiral
+anim_wallpaper=Papéis de Parede Animados
+log_kit=Serviço LogKitSd
+music=Música
+noise_feild=Noised Feild
+oneplus_forum=Aplicativo OnePlus Community
+oneplus_wallpapers=Papéis de Parede OnePlus
+oem_test=OemAutoTestServer
+oem_log=OEMLogKit
+oneplus_camera=OnePlus Câmera
+oneplus_gallery=OnePlus Galeria
+ota=OnePlus OTA
+oneplus_wizard=OnePlus Assistente de Configuração
+phase_beam=Feixe Fásico
+protips=Protips
+sensor_test=SensorTestTool
+sms=OnePlus SMS
+sound_recorder=Gravador
+swiftkey=Swiftkey
+tags=Tags
+weather=OnePlus Tempo
+wifi_test=WifiRfTestApk
+dive_icon=Dive Icon Pack
+rifon_icon=Rifon Icon Pack
+
+info.anthal=Para dispositivos de esporte/fitness/saúde
+info.android_pay=Pagamentos via NFC
+info.basic_dream=Protetor de Tela
+info.bt_midi=Suporte Bluetooth MIDI
+info.bt_test=Testes Bluetooth
+info.desk_clock=Alarme, relógio e timer
+info.document=Gerenciador de Arquivos
+info.download_provider=Gerenciador de Downloads
+info.engineering=Várias configurações de desenvolvedor
+info.eng_special_test=Testes variados
+info.easter_egg=Miau!
+info.facelock=Desbloqueie com o seu rosto
+info.galaxy=Papel de Parede Animado
+info.holo_spiral=Papel de Parede Animado
+info.anim_wallpaper=Suporte para papéis de parede animados
+info.log_kit=Logging
+info.music=Aplicativo de música OnePlus
+info.noise_feild=Papel de Parede Animado
+info.oneplus_forum=Navegue nos fóruns da OnePlus
+info.oneplus_wallpapers=Alguns Papéis de Parede
+info.oem_test=Aplicações de teste do OEM
+info.oem_log=Logging
+info.oneplus_camera=Tire fotos e grave vídeos
+info.oneplus_gallery=Visualize fotos e vídeos
+info.ota=Sistema de atualização da OnePlus
+info.oneplus_wizard=Assistente de configuração após o do Google
+info.phase_beam=Papel de Parede Animado
+info.protips=Algumas dicas
+info.sensor_test=Aplicação de teste de sensores
+info.sms=Aplicativo original de SMS da OnePlus
+info.sound_recorder=Aplicativo OnePlus de gravação
+info.swiftkey=Teclado Swiftkey
+info.tags=NFC Tags
+info.weather=Aplicativo OnePlus de Clima
+info.wifi_test=Testes de Wifi
+info.dive_icon=Pack de ícones da OnePlus
+info.rifon_icon=Pack de ícones da OnePlus
+
+mod.title=Mods Extras
+mod.title2=Selecione o mod extra que você deseja
+
+dpi.tittle=Mudar o DPI
+dpi.tittle2=Dots Per Inch (Pontos por Polegada)
+dpi.500=Defina o DPI do android para 500
+dpi.490=Defina o DPI do android para 490
+dpi.480=Defina o DPI do android para 480
+dpi.470=Defina o DPI do android para 470
+dpi.460=Defina o DPI do android para 460
+dpi.450=Defina o DPI do android para 450
+dpi.440=Defina o DPI do android para 440
+dpi.430=Defina o DPI do android para 430
+dpi.420=Defina o DPI do android para 420
+dpi.410=Defina o DPI do android para 410
+dpi.400=Defina o DPI do android para 400
+dpi.390=Defina o DPI do android para 390
+dpi.380=Defina o DPI do android para 380
+dpi.370=Defina o DPI do android para 370
+dpi.360=Defina o DPI do android para 360
+dpi.350=Defina o DPI do android para 350
+
+mod.tittle=Instale mods extras
+mod.tittle2=Root, mod de áudio, AD blocker & Xposed...
+mod.tittle3=Mod Extra
+
+root=Ativar acesso root
+xposed=Material Design Xposed Installer
+adaway=Adaway
+adb=Ativar ADB
+dns=Google DNS
+fos_wallpapers=Papéis de parede FreedomOS
+emoji_one=EmojiOne
+google_assistant=Google Assistant
+arise=A.R.I.S.E
+aptx=Instalar APTX/APTX-HD
+40-wifi=Ativar wideband Wifi
+permissive=Ativar permissive
+substratum=Substratum
+android_o_font=Android O Emoji
+
+info.root=Necessário para SafetyNet
+info.xposed=Aplicativo Xposed Installer pelo DVD android
+info.adaway=Ad-Blocker para Android
+info.adb=Android Debugging Bridge
+info.dns=Define o DNS 8.8.8.8/8.8.4.4
+info.fos_wallpapers=Design por @badboy47
+info.emoji_one=O padrão Open Emoji
+info.google_assistant=Apenas US
+info.arise=A.R.I.S.E Sound System
+info.aptx=Codecs extras da Qualcomm
+info.40-wifi=Canal de 40MHz sobre 2,4GHz
+info.permissive=Reconfigura o kernel com a flag permissiva (Vulnerável a escalonamento de privilégios)
+info.substratum=Novo motor de Temas
+info.android_o_font=Extraído do último preview de desenvolvedor
+
+# -- - ROOT - -- #
+supersu=Instalar SuperSU
+magisk=Instalar MagiskSU
+
+info.supersu=@Chainfire - <#f00>Vai quebrar o SafetyNet</#>
+info.magisk=@topjohnwu - <#0f0>Necessário para SafetyNet</#>
+
+# -- - THEME - -- #
+splash.tittle=Selecione o seu bootscreen, NÃO a animação de inicialização
+fos_splash=FreedomOS Bootscreen
+oos_splash=OxygenOS Bootscreen
+no_splash=Manter o Bootscreen atual
+
+theme.tittle=Temas
+theme.subtittle=Escolha qual temas você deseja aplicar
+incorexcl.theme=Escolha para incluir ou excluir os temas abaixo
+inc.theme=Incluir
+excl.theme=Excluir
+
+info.inc.theme=Escolha os temas que você DESEJA instalar da lista abaixo.
+info.excl.theme=Escolha os temas que você NÃO DESEJA instalar da lista abaixo.
+
+theme.select=Por favor selecione qual módulo VRTheme você deseja incluir
+
+center_clock=Relógio Centrado
+no_traffic=Sem Indicador de Tráfego
+
+info.center_clock=Dese volvido por @kickoff
+info.no_traffic=Desenvolvido por @kickoff
+
+# -- - AUDIO - -- #
+v4a_new=Viper4Android 2.5.0.5
+v4a_old=Viper4Android 2.3.4.0
+v4a_profiles=V4A Perfis & Kernels
+arkamys=Arkamys™
+icesound=ICEsound™
+sony_player=Sony Music Player
+rm_deep_buffer=Remove deep_buffer do audio_policy
+sdcard_perm=Conserta permissões do SD
+dirac=Dirac
+
+info.v4a_new=Última versão
+info.v4a_old=Para usuários mais antigos
+info.v4a_profiles=Vários perfis de áudio com os kernels
+info.arkamys=Arkamys™ Sistema de Áudio
+info.icesound=Leia atentamente as instruções inclusas
+info.sony_player=Inclue TrackID, Network/DLNA e podcasts
+info.rm_deep_buffer=Irá consertar grande parte dos erros, não amigável a bateria!
+info.sdcard_perm=Pode adicionar 3 - 5 minutos para a sessão de recuperação
+info.dirac=Instalar o Dirac modificado da ARISE
+
+# -- - KERNEL - -- #
+kernel.tittle=Kernel
+kernel.tittle2=Selecione o seu kernel.
+kernel_stock=Kernel Stock
+info.kernel_stock=O Original pela OnePlus com o FOS patch
+elementalx=ElementalX
+info.elementalx=Desenvolvido por @flar2
+moxie=Moxie Kernel
+info.moxie=Desenvolvido por @bedalus
+
+# -- - INSTALLER - -- #
+install=Instalando FreedomOS
+install.now=Instalar Agora
+install.finish=Vai demorar algum tempo...
+install.finish.title=A instalação foi concluída.
+installing.title=Instalando...
+finish.title=Parabéns!
+finish.msg=FreedomOS foi instalado com sucesso.
+finish.status=Resultado da Instalação:
+finish.reboot=Reiniciar o seu dispositivo agora.
