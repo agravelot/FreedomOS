@@ -71,12 +71,14 @@ oneplus3/*
 CLEAN_SYSTEM_LIST="
 app/BTtestmode
 app/Duo
+app/DMAgent
 app/EngSpecialTest
 app/EngineeringMode
 app/FaceLock
 app/GmailExchange
 app/Hangouts
 app/LogKitSdService
+app/Music2
 app/NFCTestMode
 app/OEMLogKit
 app/OPBugReport_Complete
@@ -84,6 +86,7 @@ app/OPPBugReport
 app/OPPush
 app/OemAutoTestServer
 app/SensorTestTool
+app/Videos
 app/WifiRfTestApk
 bin/WifiLogger_app
 bin/fmfactorytest
@@ -93,6 +96,8 @@ bin/oemlogkit
 etc/recovery-resource.dat
 priv-app/CallLogBackup
 priv-app/GmsCore
+priv-app/GoogleFeedback
+priv-app/GoogleServicesFramework
 priv-app/OnePlusWizard
 priv-app/OPDeviceManager
 priv-app/SetupWizard
