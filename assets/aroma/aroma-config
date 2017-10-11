@@ -456,7 +456,7 @@ selectbox(
       "gapps-config",
       "Your gapps-config file",
       "@update",
-      read("tmp/aroma/.gapps.prop")
+      read("tmp/aroma/gapps.prop")
   );
 
   ##############################################
