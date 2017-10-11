@@ -223,234 +223,29 @@ selectbox(
 
       "gapps",     "Choose GApps which you want to add on install/exclude list",        "",                                         "group",
         "AndroidPay",     "<b>Android Pay</b>",       "",                      "check",
-        "CalculatorGoogle",     "<b>Google Calculator</b>",       "",                      "check",
         "CalendarGoogle",     "<b>Google Calendar</b>",       "",                      "check",
-        "CalSync",     "<b>Google Calendar Sync</b>",       "(installed by default when Google Calendar is NOT being installed)",                      "check",
-        "CameraGoogle",     "<b>Google Camera</b>",       "",                      "check",
+        "GoogleCalendarSyncAdapter",     "<b>Google Calendar Sync</b>",       "",                      "check",
+        #"CameraGoogle",     "<b>Google Camera</b>",       "",                      "check",
+        "Velvet",      "<b>Google<b>",    "",                      "check",
         "Chrome",     "<b>Google Chrome</b>",       "",                      "check",
-        "CloudPrint",     "<b>Google Cloud Print</b>",       "",                      "check",
+        "GooglePrintRecommendationService",     "<b>Google Cloud Print Recommendation</b>",       "",                      "check",
         "Drive",     "<b>Google Drive</b>",       "",                      "check",
-        "ExchangeGoogle",     "<b>Google Exchange Services</b>",       "",                      "check",
-        "FaceDetect",     "<b>Face Detection for Media</b>",       "",                      "check",
-        "FaceUnlock",     "<b>Face Unlock</b>",       "",                      "check",
-        "Gmail",     "<b>Gmail</b>",       "",                      "check",
-        "GoogleTTS",     "<b>Google Text-to-Speech</b>",       "",                      "check",
-        "KeyboardGoogle",     "<b>Google Keyboard</b>",       "",                      "check",
-        "Messenger",     "<b>Messenger</b>",       "",                      "check",
-        "PixelIcons",     "<b>Pixel Icons</b>",       "",                      "check",
-        "PixelLauncher",     "<b>Pixel Launcher</b>",       "(Wallpapers and Google Search Required)",                      "check",
+        "Maps",     "<b>Google Maps</b>",       "",                      "check",
         "Photos",     "<b>Google Photos</b>",       "",                      "check",
-        "PlayGames",     "<b>Google Play Games</b>",       "",                      "check",
-        "PrintServiceGoogle",     "<b>Print Service Recommendation Service</b>",       "",                      "check",
+        "Gmail2",     "<b>Gmail</b>",       "",                      "check",
+        "GoogleTTS",     "<b>Google Text-to-Speech</b>",       "",                      "check",
+        #"KeyboardGoogle",     "<b>Google Keyboard</b>",       "",                      "check",
+        #"PixelIcons",     "<b>Pixel Icons</b>",       "",                      "check",
+        #"PixelLauncher",     "<b>Pixel Launcher</b>",       "(Wallpapers and Google Search Required)",                      "check",
         "Search",     "<b>Google Search</b>",       "To Exclude Google Search AND Google Now Launcher AND Pixel Launcher <#f00>OR</#> To Include Google Search",                      "check",
-        "Speech",     "<b>Offline Speech Files</b>",       "(Required for offline voice dicatation support)",                      "check",
-        "TagGoogle",     "<b>Google NFC Tags</b>",       "",                      "check",
-        "Talkback",     "<b>Talkback</b>",       "",                      "check",
-        "VRService",     "<b>Google VR Service</b>",       "",                      "check",
-        "Wallpapers",     "<b>Wallpapers</b>",       "To Exclude BOTH Wallpapers AND Pixel Launcher <#f00>OR</#> To Include Wallpapers",                      "check",
+        "tts",     "<b>Offline Speech Files</b>",       "(Required for offline voice dicatation support)",                      "check",
+        "Talkback",     "<b>Talkback</b>",       "<#f00>NOT</#> recommended for uninstallation",                      "check",
+        #"Wallpapers",     "<b>Wallpapers</b>",       "",                      "check",
         "YouTube",     "<b>YouTube</b>",       "",                      "check"
   );
 
   # Duplicate aromagapps.prop and rename it to gapps.prop
-  resexec("scripts/props.sh");
-
-  ##############################################
-  # Write the gapps-config file
-  ##############################################
-  setvar("gapps","");
-
-  # INCLUDE/EXCLUDE
-  if
-    prop("gapps.prop", "inclorexcl")=="1"
-  then
-    appendvar("gapps", "Include");
-  else
-    appendvar("gapps", "Exclude");
-  endif;
-
-  # APP CHOICES
-  appendvar("gapps", "\n\n");
-
-  if
-    prop("gapps.prop", "AndroidPay")=="1"
-  then
-    appendvar("gapps", "AndroidPay\n");
-  endif;
-
-  if
-    prop("gapps.prop", "CalculatorGoogle")=="1"
-  then
-    appendvar("gapps", "CalculatorGoogle\n");
-  endif;
-
-  if
-    prop("gapps.prop", "CalendarGoogle")=="1"
-  then
-    appendvar("gapps", "CalendarGoogle\n");
-  endif;
-
-  if
-    prop("gapps.prop", "CalSync")=="1"
-  then
-    appendvar("gapps", "CalSync\n");
-  endif;
-
-  if
-    prop("gapps.prop", "CameraGoogle")=="1"
-  then
-    appendvar("gapps", "CameraGoogle\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Chrome")=="1"
-  then
-    appendvar("gapps", "Chrome\n");
-  endif;
-
-  if
-    prop("gapps.prop", "CloudPrint")=="1"
-  then
-    appendvar("gapps", "CloudPrint\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Docs")=="1"
-  then
-    appendvar("gapps", "Docs\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Drive")=="1"
-  then
-    appendvar("gapps", "Drive\n");
-  endif;
-
-  if
-    prop("gapps.prop", "ExchangeGoogle")=="1"
-  then
-    appendvar("gapps", "ExchangeGoogle\n");
-  endif;
-
-  if
-    prop("gapps.prop", "FaceDetect")=="1"
-  then
-    appendvar("gapps", "FaceDetect\n");
-  endif;
-
-  if
-    prop("gapps.prop", "FaceUnlock")=="1"
-  then
-    appendvar("gapps", "FaceUnlock\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Gmail")=="1"
-  then
-    appendvar("gapps", "Gmail\n");
-  endif;
-
-  if
-    prop("gapps.prop", "GoogleNow")=="1"
-  then
-    appendvar("gapps", "GoogleNow\n");
-  endif;
-
-
-  if
-    prop("gapps.prop", "GoogleTTS")=="1"
-  then
-    appendvar("gapps", "GoogleTTS\n");
-  endif;
-
-  if
-    prop("gapps.prop", "KeyboardGoogle")=="1"
-  then
-    appendvar("gapps", "KeyboardGoogle\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Messenger")=="1"
-  then
-    appendvar("gapps", "Messenger\n");
-  endif;
-
-  if
-    prop("gapps.prop", "PixelIcons")=="1"
-  then
-    appendvar("gapps", "PixelIcons\n");
-  endif;
-
-  if
-    prop("gapps.prop", "PixelLauncher")=="1"
-  then
-    appendvar("gapps", "PixelLauncher\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Wallpapers")=="1"
-  then
-    appendvar("gapps", "Wallpapers\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Photos")=="1"
-  then
-    appendvar("gapps", "Photos\n");
-  endif;
-
-  if
-    prop("gapps.prop", "PlayGames")=="1"
-  then
-    appendvar("gapps", "PlayGames\n");
-  endif;
-
-  if
-    prop("gapps.prop", "PrintServiceGoogle")=="1"
-  then
-    appendvar("gapps", "PrintServiceGoogle\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Search")=="1"
-  then
-    appendvar("gapps", "Search\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Speech")=="1"
-  then
-    appendvar("gapps", "Speech\n");
-  endif;
-
-  if
-    prop("gapps.prop", "TagGoogle")=="1"
-  then
-    appendvar("gapps", "TagGoogle\n");
-  endif;
-
-  if
-    prop("gapps.prop", "Talkback")=="1"
-  then
-    appendvar("gapps", "Talkback\n");
-  endif;
-
-  if
-    prop("gapps.prop", "YouTube")=="1"
-  then
-    appendvar("gapps", "YouTube\n");
-  endif;
-
-  # Force Google WebViewGoogle installation, it's required by most of the apps.
-  if
-    prop("gapps.prop", "inclorexcl")=="1"
-  then
-    appendvar("gapps", "WebViewGoogle\n");
-  endif;
-
-  appendvar("gapps", "\n\n");
-
-  # WRITE CONFIG TO TEMP AND DISPLAY IT
-  writetmpfile(".gapps.prop", getvar("gapps"));
+  #resexec("scripts/props.sh");
 
   textbox(
       "gapps-config",
@@ -464,7 +259,7 @@ selectbox(
   ##############################################
   checkviewbox(
     "Save Choices",
-    "<b>Do you want to save your choices?</b>\nThey are stored in /sdcard/Open-GApps\n\n",
+    "<b>Do you want to save your choices?</b>\nThey are stored in /sdcard/FreedomOS/Open-GApps\n\n",
     "@welcome",
     "Save Choices", "1", "saveselections"
   );
@@ -491,7 +286,10 @@ form(
       "DivesIconPack",          "<~dive_icon>",           "<~info.dive_icon>",          "check",
       "OPFilemanager",          "<~document>",            "<~info.document>",           "check",
       "DeskClock",              "<~desk_clock>",          "<~info.desk_clock>",         "check",
+      "Calculator",             "Calculator",             "OnePlus Calculator",         "check",
       "EasterEgg",              "<~easter_egg>",          "<~info.easter_egg>",         "check",
+      "FaceDetect",             "<b>Face Detection for Media</b>",       "",            "check",
+      "FaceUnlock",             "<b>Face Unlock</b>",     "",                           "check",
       "LiveWallpapers",         "<~anim_wallpaper>",      "<~info.anim_wallpaper>",     "check",
       "OPBackup",               "<~ota>",                 "<~info.ota>",                "check",
       "OPMusic",                "<~music>",               "<~info.music>",              "check",
@@ -506,8 +304,6 @@ form(
       "Tag",                    "<~tags>",                "<~info.tags>",               "check",
       "Weather",                "<~weather>",             "<~info.weather>",            "check"
 );
-
-resexec("scripts/gen_list.sh");
 
 # -- - MOD - -- #
 checkbox(

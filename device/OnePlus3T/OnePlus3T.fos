@@ -102,7 +102,6 @@ priv-app/OnePlusWizard
 priv-app/OPDeviceManager
 priv-app/SetupWizard
 priv-app/Velvet
-tts/
 vendor/etc/in_apps
 recovery-from-boot.p
 "
@@ -133,6 +132,7 @@ common/arise
 common/clean.sh
 common/fonts
 common/fix_passwd.sh
+common/gen_apps_list.sh
 common/google_assistant.sh
 common/google_dns.sh
 common/kernel

@@ -351,14 +351,6 @@ endif;
 run_program("/tmp/tools/busybox", "mount", "/system");
 run_program("/tmp/tools/vrtheme/run.sh");
 
-# -- - SYSTEM APPS - -- #
-set_progress(0.960000);
-ui_print(" ");
-ui_print("@Customizing your System Applications");
-ui_print(" ");
-
-run_program("/tmp/tools/apps_remover.sh", "sapps.prop", "1");
-
 # -- - OPENGAPPS - -- #
 set_progress(0.940000);
 ui_print(" ");
@@ -376,6 +368,23 @@ set_metadata_recursive("/tmp/opengapps", "uid", 0, "gid", 0, "dmode", 0777, "fmo
 run_program("/sbin/busybox", "sh", "/tmp/opengapps/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/opengapps/opengapps.zip");
 run_program("/tmp/tools/busybox", "mount", "/system");
 run_program("/tmp/tools/pixel_icons/install.sh");
+
+run_program("/tmp/tools/gen_apps_list.sh" , "gapps");
+run_program("/tmp/tools/gen_apps_list.sh" , "sapps");
+
+# -- - SYSTEM APPS REMOVER - -- #
+set_progress(0.960000);
+ui_print(" ");
+ui_print("@Customizing your System Applications");
+ui_print(" ");
+run_program("/tmp/tools/apps_remover.sh", "sapps.prop", "1");
+
+# -- - SYSTEM APPS REMOVER - -- #
+set_progress(0.975000);
+ui_print(" ");
+ui_print("@Customizing your Google Applications");
+ui_print(" ");
+run_program("/tmp/tools/apps_remover.sh", "gapps.prop", "1");
 
 set_progress(0.990000);
 ui_print(" ");
