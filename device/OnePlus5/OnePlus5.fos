@@ -93,6 +93,7 @@ etc/recovery-resource.dat
 priv-app/CallLogBackup
 priv-app/GmsCore
 priv-app/OnePlusWizard
+priv-app/OPDeviceManager
 priv-app/SetupWizard
 priv-app/Velvet
 tts/
