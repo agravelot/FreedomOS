@@ -21,6 +21,12 @@ function add_files {
   echo ">> Add META-INF files" 2>&1 | tee -a ${build_log}
   mkdir -p ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
   cp -vrf ${device_root}/${device}/aroma/* ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
+  cp -vrf ${assets_root}/aroma/* ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
+
+  # If aroma-config exist in device tree, override it.
+  if [[ -f ${device_root}/${device}/aroma/aroma-config ]]; then
+      cp -vrf ${device_root}/${device}/aroma/* ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
+  fi
 
   echo ">>> Add aroma bin" 2>&1 | tee -a ${build_log}
   cp -vf ${assets_root}/META-INF/update-binary/${AROMA_VERSION}/update-binary ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1

@@ -32,7 +32,7 @@ echo "$pkg_list"
 for pkg in $pkg_list; do
   ui_print "   Removing $pkg"
   found=false
-  for dir in /system/app /system/priv-app /system/reserve /system; do
+  for dir in /system/app /system/priv-app /system/reserve /system /; do
     if [[ -d $dir/$pkg ]]; then
       echo -e "\tPackage : [$pkg], found at $dir/$pkg" >> /tmp/fos_logs/apps_remover
       rm -rvf $dir/$pkg >> /tmp/fos_logs/apps_remover

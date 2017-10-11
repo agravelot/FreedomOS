@@ -18,6 +18,12 @@
 # The installer list contain only the ticked apps in the aroma settings, but
 # some apps have more than one file to remove.
 # So here we declare the uneeded depencies that will be added to the sapps.prop
+
+
+
+
+PROP_FILE=$1
+
 camera_list="
 OnePlusCameraService
 "
@@ -31,38 +37,43 @@ SwiftKeyFactorySettings
 com.touchtype
 "
 
-# Generate a list file with only the wanted apps.
-rm -f /tmp/aroma/sapps.prop
-cp /tmp/aroma/aromasapps.prop /tmp/aroma/sapps.prop
+if [[ ! -f /tmp/aroma/aroma${PROP_FILE}.prop ]]; then
+    echo /tmp/aroma/aroma${PROP_FILE}.prop not found!  
+    exit
+fi
 
-if [[ $(grep -c inclorexcl=1 /tmp/aroma/aromasapps.prop) == "1" ]]; then
+# Generate a list file with only the wanted apps.
+rm -f /tmp/aroma/${PROP_FILE}.prop
+cp /tmp/aroma/aroma${PROP_FILE}.prop /tmp/aroma/${PROP_FILE}.prop
+
+if [[ $(grep -c inclorexcl=1 /tmp/aroma/aroma${PROP_FILE}.prop) == "1" ]]; then
   # If Include selected
-  sed -i '/=1/d' /tmp/aroma/sapps.prop
-  sed -i 's/=0//g' /tmp/aroma/sapps.prop
+  sed -i '/=1/d' /tmp/aroma/${PROP_FILE}.prop
+  sed -i 's/=0//g' /tmp/aroma/${PROP_FILE}.prop
 else
   # If Exclude selected
-  sed -i '/=0/d' /tmp/aroma/sapps.prop
-  sed -i 's/=1//g' /tmp/aroma/sapps.prop
+  sed -i '/=0/d' /tmp/aroma/${PROP_FILE}.prop
+  sed -i 's/=1//g' /tmp/aroma/${PROP_FILE}.prop
 fi
 
 # Remove uneeded entry
-sed -i '/inclorexcl/d' /tmp/aroma/sapps.prop
+sed -i '/inclorexcl/d' /tmp/aroma/${PROP_FILE}.prop
 
-# Add unwanted file to sapps.prop
-if [[ $(grep -c "LiveWallpapers" /tmp/aroma/sapps.prop) == "1" ]]; then
+# Add unwanted file to ${PROP_FILE}.prop
+if [[ $(grep -c "LiveWallpapers" /tmp/aroma/${PROP_FILE}.prop) == "1" ]]; then
   for app in $live_wallpaper_list; do
-    echo -e $app >> /tmp/aroma/sapps.prop
+    echo -e $app >> /tmp/aroma/${PROP_FILE}.prop
   done
 fi
 
-if [[ $(grep -c "OnePlusCamera" /tmp/aroma/sapps.prop) == "1" ]]; then
+if [[ $(grep -c "OnePlusCamera" /tmp/aroma/${PROP_FILE}.prop) == "1" ]]; then
   for app in $camera_list; do
-    echo -e $app >> /tmp/aroma/sapps.prop
+    echo -e $app >> /tmp/aroma/${PROP_FILE}.prop
   done
 fi
 
-if [[ $(grep -c "SwiftKey" /tmp/aroma/sapps.prop) == "1" ]]; then
+if [[ $(grep -c "SwiftKey" /tmp/aroma/${PROP_FILE}.prop) == "1" ]]; then
   for app in $swiftkey_list; do
-    echo -e $app >> /tmp/aroma/sapps.prop
+    echo -e $app >> /tmp/aroma/${PROP_FILE}.prop
   done
 fi
