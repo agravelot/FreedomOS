@@ -57,7 +57,8 @@ selectbox(
   "<~language.turkish>", "<~language.turkish.info>", 0,
   "<~language.tchinese>", "<~language.tchinese.info>", 0,
   "<~language.schinese>", "<~language.schinese.info>", 0,
-  "<~language.czech>", "<~language.czech.info>", 0
+  "<~language.czech>", "<~language.czech.info>", 0,
+  "<~language.portuguesebr>", "<~language.portuguesebr>", 0
 );
 
 # -- - SET LANGUAGE - -- #
@@ -101,6 +102,9 @@ if prop("language.prop", "selected.0") == "9" then
   loadlang("langs/cz.lang");
 endif;
 
+if prop("language.prop", "selected.0") == "10" then
+  loadlang("langs/pt-br.lang");
+endif;
 
 # -- - WELCOME - -- #
 viewbox(
