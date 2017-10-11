@@ -504,7 +504,7 @@ form(
       "SoundRecorder",          "<~sound_recorder>",      "<~info.sound_recorder>",     "check",
       "SwiftKey",               "<~swiftkey>",            "<~info.swiftkey>",           "check",
       "Tag",                    "<~tags>",                "<~info.tags>",               "check",
-      "OPWeather",              "<~weather>",             "<~info.weather>",            "check"
+      "Weather",                "<~weather>",             "<~info.weather>",            "check"
 );
 
 resexec("scripts/gen_list.sh");
