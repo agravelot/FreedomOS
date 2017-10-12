@@ -201,6 +201,9 @@ function review {
 
   if [[ -f ${device_root}/${device}/${device}.fos ]]; then
     source ${device_root}/${device}/${device}.fos
+    if [[ ! -z $VERSION_TMP ]]; then
+      VERSION=$VERSION_ARG
+    fi
   else
     echo "Unable to find your device in the device tree"
     echo -e "Please pick one of them:\n"
@@ -321,7 +324,7 @@ do
  in
  d) device=${OPTARG};;
  t) BUILD_TYPE=${OPTARG};;
- v) VERSION=$OPTARG;;
+ v) VERSION_ARG=${OPTARG};;
  esac
 done
 
