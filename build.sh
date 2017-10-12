@@ -201,7 +201,7 @@ function review {
 
   if [[ -f ${device_root}/${device}/${device}.fos ]]; then
     source ${device_root}/${device}/${device}.fos
-    if [[ ! -z $VERSION_TMP ]]; then
+    if [[ ! -z $VERSION_ARG ]]; then
       VERSION=$VERSION_ARG
     fi
   else
