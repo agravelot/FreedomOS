@@ -1,3 +1,21 @@
+1.10
+    UPDATE: OxygenOS 4.5.13
+    ADD: Supports customization of notification ringtone
+    UPDATE: Improved launching speed of apps‎
+    UPDATE:  Optimized adaptive brightness
+    FIX: Issue of YouTube video lagging behind audio
+    FIX: Display issues of some UI elements
+    FIX: Issue of no 4G+ network in some regions
+    UPDATE: Android security patch to September
+    FIX: General bug fixes
+    UPDATE: Switch to nano opengapps instead of aroma, now most of the gapps are preodexed in order to speed up first boot
+    FIX: Weather uninstallation
+    ADD: Portuguese/Bresilian translation @sconetto (gitlab)
+    REMOVE: More Google bloaware
+    REMOVE: OPDeviceManager, know for data analytics
+    UPDATE: Xposed installer to 3.0.1, now support Nougat!
+    UPDATE: Google Apps 20170920
+
 1.9
     FIX: Bug of missing icon of download app in 4.5.11
 
