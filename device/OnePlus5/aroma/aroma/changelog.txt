@@ -19,6 +19,7 @@
     UPDATE: Pixel Launcher
     UPDATE: Pixel Icons
     UPDATE: Google Wallpapers
+    UPDATE: FreedomOS aroma installer, reduce number of step
 
 1.9
     FIX: Bug of missing icon of download app in 4.5.11
