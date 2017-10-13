@@ -202,7 +202,7 @@ function review {
   if [[ -f ${device_root}/${device}/${device}.fos ]]; then
     source ${device_root}/${device}/${device}.fos
     if [[ ! -z $VERSION_ARG ]]; then
-      VERSION=$VERSION_ARG
+      VERSION=$VERSION-$VERSION_ARG
     fi
   else
     echo "Unable to find your device in the device tree"
