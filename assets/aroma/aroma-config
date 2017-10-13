@@ -183,33 +183,6 @@ selectbox(
 );
 
   ##############################################
-  # Load Previous Choices
-  ##############################################
-  checkviewbox(
-    "Load Previous Choices",
-    "<b>Do you want to load your choices from a previous install?</b>\n\n",
-    "@welcome",
-    "Load choices", "1", "loadselections"
-  );
-
-  if
-      getvar("loadselections")=="1"
-    then
-      if
-          getvar("reset")!="1"
-      then
-          resexec("scripts/tools.sh", "load");
-          setvar("reset", "1");
-      endif;
-    else
-      if
-        getvar("reset")=="1" then
-          resexec("scripts/tools.sh", "reset");
-          setvar("reset","0");
-      endif;
-  endif;
-
-  ##############################################
   # Customized installation
   ##############################################
   form(
@@ -242,31 +215,6 @@ selectbox(
         "GoogleWallpapers",     "<b>Wallpapers</b>",       "",                      "check",
         "YouTube",     "<b>YouTube</b>",       "",                      "check"
   );
-
-  # Duplicate aromagapps.prop and rename it to gapps.prop
-  #resexec("scripts/props.sh");
-
-  textbox(
-      "gapps-config",
-      "Your gapps-config file",
-      "@update",
-      read("tmp/aroma/gapps.prop")
-  );
-
-  ##############################################
-  # Save Choices
-  ##############################################
-  checkviewbox(
-    "Save Choices",
-    "<b>Do you want to save your choices?</b>\nThey are stored in /sdcard/FreedomOS/Open-GApps\n\n",
-    "@welcome",
-    "Save Choices", "1", "saveselections"
-  );
-    if
-      getvar("saveselections")=="1"
-    then
-      resexec("scripts/tools.sh", "save");
-    endif;
 
 # -- - SYSTEM APPS - -- #
 form(
@@ -323,16 +271,6 @@ checkbox(
     "<~permissive>", "<~info.permissive>", 0,
     "<~android_o_font>", "<~info.android_o_font>", 0
 );
-
-if
-  prop("gapps.prop", "inclorexcl")=="1"
-then
-  if
-    prop("mod.prop", "item.1.8") == "1"
-  then
-    appendvar("gapps", "GoogleAssistant\n");
-  endif;
-endif;
 
 if
   prop("mod.prop", "item.1.1") == "1"
@@ -403,21 +341,6 @@ then
 
     resexec("scripts/gen_arise_conf.sh");
 endif;
-
-#form(
-#    "<~theme.tittle>",
-#    "<~theme.subtittle>",
-#    "@default",
-#    aromatheme.prop,
-#
-#    "inclorexcl",     "<~incorexcl.theme>",        "",                    "group",
-#      "1",                    "<~inc.theme>",                  "<~info.inc.theme>",        "select.selected",
-#      "0",                    "<~excl.theme>",                  "<~info.excl.theme>",  "select",
-#
-#    "theme",     "<~theme.select>",    "",        "group",
-#      "centerclock",      "<~center_clock>",       "<~info.center_clock>",       "check",
-#      "notraffic",        "<~no_traffic>",         "<~info.no_traffic>",         "check"
-#);
 
 alert (
   "If you like my work",
