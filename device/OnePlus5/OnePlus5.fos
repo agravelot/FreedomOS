@@ -113,6 +113,10 @@ PATCH_FIRMWARE=""
 # The files are in the assets/system/$TARGET_ARCH/
 ADD_SYSTEM_LIST="
 app/Adaway
+app/GoogleCamera
+app/GoogleWallpapers
+app/PixelIcons
+app/PixelLauncher
 app/Substratum
 app/XposedInstaller
 "

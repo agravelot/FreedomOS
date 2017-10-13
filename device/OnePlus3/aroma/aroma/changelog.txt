@@ -1,3 +1,8 @@
+    UPDATE: Google Camera
+    UPDATE: Pixel Launcher
+    UPDATE: Pixel Icons
+    UPDATE: Google Wallpapers
+
 2.12
     ADD: Lift up display
     ADD: Gaming Do Not Disturb

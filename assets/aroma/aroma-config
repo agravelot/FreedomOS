@@ -225,7 +225,7 @@ selectbox(
         "AndroidPay",     "<b>Android Pay</b>",       "",                      "check",
         "CalendarGoogle",     "<b>Google Calendar</b>",       "",                      "check",
         "GoogleCalendarSyncAdapter",     "<b>Google Calendar Sync</b>",       "",                      "check",
-        #"CameraGoogle",     "<b>Google Camera</b>",       "",                      "check",
+        "GoogleCamera",     "<b>Google Camera</b>",       "",                      "check",
         "Velvet",      "<b>Google<b>",    "",                      "check",
         "Chrome",     "<b>Google Chrome</b>",       "",                      "check",
         "GooglePrintRecommendationService",     "<b>Google Cloud Print Recommendation</b>",       "",                      "check",
@@ -234,13 +234,12 @@ selectbox(
         "Photos",     "<b>Google Photos</b>",       "",                      "check",
         "Gmail2",     "<b>Gmail</b>",       "",                      "check",
         "GoogleTTS",     "<b>Google Text-to-Speech</b>",       "",                      "check",
-        #"KeyboardGoogle",     "<b>Google Keyboard</b>",       "",                      "check",
-        #"PixelIcons",     "<b>Pixel Icons</b>",       "",                      "check",
-        #"PixelLauncher",     "<b>Pixel Launcher</b>",       "(Wallpapers and Google Search Required)",                      "check",
-        "Search",     "<b>Google Search</b>",       "To Exclude Google Search AND Google Now Launcher AND Pixel Launcher <#f00>OR</#> To Include Google Search",                      "check",
+        "PixelIcons",     "<b>Pixel Icons</b>",       "",                      "check",
+        "PixelLauncher",     "<b>Pixel Launcher</b>",       "(Wallpapers and Google Search Required)",                      "check",
+        "Search",     "<b>Google Search</b>",       "",                      "check",
         "tts",     "<b>Offline Speech Files</b>",       "(Required for offline voice dicatation support)",                      "check",
         "Talkback",     "<b>Talkback</b>",       "<#f00>NOT</#> recommended for uninstallation",                      "check",
-        #"Wallpapers",     "<b>Wallpapers</b>",       "",                      "check",
+        "GoogleWallpapers",     "<b>Wallpapers</b>",       "",                      "check",
         "YouTube",     "<b>YouTube</b>",       "",                      "check"
   );
 
