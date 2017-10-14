@@ -367,7 +367,6 @@ set_metadata("/tmp/opengapps/META-INF/com/google/android/update-binary", "uid", 
 set_metadata_recursive("/tmp/opengapps", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
 run_program("/sbin/busybox", "sh", "/tmp/opengapps/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/opengapps/opengapps.zip");
 run_program("/tmp/tools/busybox", "mount", "/system");
-run_program("/tmp/tools/pixel_icons/install.sh");
 
 run_program("/tmp/tools/gen_apps_list.sh" , "gapps");
 run_program("/tmp/tools/gen_apps_list.sh" , "sapps");
