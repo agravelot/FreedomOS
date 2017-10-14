@@ -43,6 +43,9 @@ function dat_to_dat {
     contest=$(strings ${tmp_root}/file_contexts.bin | sed -e '/^u:/,/\//!d' | grep -v "abcd") >> ${build_log} 2>&1
 		paste -d '\t' <(echo "$contest" | grep -v "^u:") <(echo "$contest" | grep "^u:") | grep -v "S2RP\|ERCP" >> ${tmp_root}/file_contexts
     rm -vf ${tmp_root}/file_contexts.bin >> ${build_log} 2>&1
+  elif [[ -f ${tmp_root}/boot/ramdisk/plat_file_contexts ]]; then
+      cp ${tmp_root}/boot/ramdisk/plat_file_contexts ${tmp_root}/file_contexts
+      cat ${tmp_root}/boot/ramdisk/nonplat_file_contexts >> ${tmp_root}/file_contexts
   else
     die "No file_contexts fond" "150"
   fi
