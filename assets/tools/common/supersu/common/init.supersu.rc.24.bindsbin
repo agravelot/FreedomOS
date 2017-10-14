@@ -1,0 +1,14 @@
+# bypass forced FBE on unencrypted device
+on post-fs
+    exec u:r:supersu:s0 root root -- /sbin/fbe_bypass.sh
+
+# earliest possible SuperSU daemon launch, with fallback to service
+on post-fs-data
+    exec u:r:supersu:s0 root root -- /sbin/launch_daemonsu.sh post-fs-data
+
+# launch SuperSU daemon
+service daemonsu /sbin/launch_daemonsu.sh service
+    class late_start
+    user root
+    seclabel u:r:supersu:s0
+    oneshot
