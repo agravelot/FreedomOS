@@ -13,4 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-/tmp/tools/busybox echo "persist.sys.debug.multi_window=true" >> /system/build.prop
+echo "persist.sys.debug.multi_window=true" >> /system/build.prop

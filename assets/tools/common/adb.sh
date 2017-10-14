@@ -13,6 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-/tmp/tools/busybox echo "persist.service.adb.enable=1" >> /system/build.prop
-/tmp/tools/busybox echo "persist.service.debuggable=1" >> /system/build.prop
-/tmp/tools/busybox echo "persist.sys.usb.config=mtp,adb" >> /system/build.prop
+echo "persist.service.adb.enable=1" >> /system/build.prop
+echo "persist.service.debuggable=1" >> /system/build.prop
+echo "persist.sys.usb.config=mtp,adb" >> /system/build.prop

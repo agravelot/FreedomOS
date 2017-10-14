@@ -13,4 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-/tmp/tools/busybox echo "ro.opa.eligible_device=true" >> /system/build.prop
+echo "ro.opa.eligible_device=true" >> /system/build.prop
