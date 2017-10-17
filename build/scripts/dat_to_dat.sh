@@ -115,7 +115,7 @@ function dat_to_dat {
   sed -i "s/ro.oxygen.version=.*/ro.oxygen.version=${ZIP_NAME}-${CODENAME}-${BUILD_TYPE}-${VERSION}/" ${tmp_root}/mount/build.prop
 
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}
-  ${build_root}/tools/${HOST_ARCH}/make_ext4fs -T 0 -S file_contexts -l ${SYSTEMIMAGE_PARTITION_SIZE} -a system system_new.img mount/ >> ${build_log} 2>&1
+  ${build_root}/tools/${HOST_ARCH}/make_ext4fs_${ANDROID_VERSION} -T 0 -S file_contexts -l ${SYSTEMIMAGE_PARTITION_SIZE} -a system system_new.img mount/ >> ${build_log} 2>&1
 
   echo ">> Converting ext4 raw image to sparse image" 2>&1 | tee -a ${build_log}
   ${build_root}/tools/${HOST_ARCH}/img2simg system_new.img system_new_sparse.img

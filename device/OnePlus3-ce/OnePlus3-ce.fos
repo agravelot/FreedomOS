@@ -44,7 +44,7 @@ GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${G
 GAPPS_MD5=f749e00d578fdec3cf91198969ab59b7
 
 # Set Android version for selinux build script
-ANDROID_VERSION=7
+ANDROID_VERSION=8
 # Set the version of the aroma installer, this is not the version of FreedomOS!
 # see assets/META-INF/aroma/$AROMA_VERSION
 AROMA_VERSION=2.70
