@@ -5,7 +5,7 @@
     REMOVE: More Google bloaware
     REMOVE: OPDeviceManager, know for data analytics
     UPDATE: Xposed installer to 3.0.1, now support Nougat!
-    UPDATE: Google Apps 20171013
+    UPDATE: Google Apps 20171027
     UPDATE: Google Camera
     UPDATE: Pixel Launcher
     UPDATE: Pixel Icons
