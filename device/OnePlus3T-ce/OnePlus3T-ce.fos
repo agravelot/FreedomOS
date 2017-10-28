@@ -23,22 +23,22 @@ ZIP_NAME=FreedomOS-CE
 TARGET_ARCH=arm64
 CODENAME=op3t
 DEVICE=OnePlus3T
-VERSION=3.0
+VERSION=3.1
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT="OnePlus 3T"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus3TOxygen_28_OTA_035_all_1710131617_25dd46926af44c2d
+ROM_NAME=OnePlus3TOxygen_28_OTA_036_all_1710262314_06497d048ea54565
 ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=aa83101e4845a591d461e842da3d5286
+ROM_MD5=05d068bf4a39b6941d4265bf0db88e8e
 
 # OpenGapps
 GAPPS_BUILD=true
 GAPPS_ANDROID=8.0
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=nano
-GAPPS_DATE=20171018
+GAPPS_DATE=20171027
 GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
 GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
 GAPPS_MD5=
