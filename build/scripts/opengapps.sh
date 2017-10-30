@@ -99,11 +99,13 @@ function build_opengapps() {
   mkdir -p ${tmp_root}/tools/opengapps/ >> ${build_log} 2>&1
   # Copy OpenGapps files from repo
   cp -rvf ${rom_root}/${GAPPS_ZIP}/* -d ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
+  # Keep all /system/app installed, since we need them
+  sed -i '/\/system\/app/d' ${tmp_root}/tools/opengapps_tmp/gapps-remove.txt >> ${build_log} 2>&1
   # Get the gapps-remove.txt list
   cp -vf ${tmp_root}/tools/opengapps_tmp/gapps-remove.txt ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
   # Remove all entries for android permisions
   sed -i '/permissions/d' ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
-  # Remove all "/system/" from gapps-remove.txt file
+  # Remove all "/system/" from gapps-remove.txt file, since we are already in system/ dir
   sed -i 's/\/system\///g' ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
 
   # Add gapps-remove.txt to the CLEAN_SYSTEM_LIST variable
