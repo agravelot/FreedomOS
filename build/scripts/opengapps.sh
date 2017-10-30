@@ -109,7 +109,7 @@ function build_opengapps() {
   sed -i 's/\/system\///g' ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
 
   # Add gapps-remove.txt to the CLEAN_SYSTEM_LIST variable
-  #CLEAN_SYSTEM_LIST+="$(<${tmp_root}/tools/gapps-remove.txt)"
+  CLEAN_SYSTEM_LIST+="$(<${tmp_root}/tools/gapps-remove.txt)"
 
   # Remove ugly Opengapps header (sorry it's very ugly with aroma)
   logo_start=$(grep -nr '####' ${tmp_root}/tools/opengapps_tmp/installer.sh | gawk '{print $1}' FS=":" | head -1)
