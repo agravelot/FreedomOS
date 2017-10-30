@@ -78,9 +78,6 @@ function add_files {
   echo ">> Set date in en.lang" 2>&1 | tee -a ${build_log}
   sed -i "s:!date!:$(date +"%d%m%y"):" ${tmp_root}/META-INF/com/google/android/aroma/langs/en.lang >> ${build_log} 2>&1
 
-  echo ">> Set date in fr.lang" 2>&1 | tee -a ${build_log}
-  sed -i "s:!date!:$(date +"%d%m%y"):" ${tmp_root}/META-INF/com/google/android/aroma/langs/fr.lang >> ${build_log} 2>&1
-
   echo ">> Set VERSION in kernel" 2>&1 | tee -a ${build_log}
   sed -i "s:!version!:${ZIP_NAME}-$VERSION:" ${tmp_root}/tools/kernel/boot/editramdisk.sh >> ${build_log} 2>&1
 
