@@ -103,8 +103,6 @@ function build_opengapps() {
   sed -i '/\/system\/app/d' ${tmp_root}/tools/opengapps_tmp/gapps-remove.txt >> ${build_log} 2>&1
   # Get the gapps-remove.txt list
   cp -vf ${tmp_root}/tools/opengapps_tmp/gapps-remove.txt ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
-  # Remove all entries for android permisions
-  sed -i '/permissions/d' ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
   # Remove all "/system/" from gapps-remove.txt file, since we are already in system/ dir
   sed -i 's/\/system\///g' ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
 
