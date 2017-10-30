@@ -359,6 +359,7 @@ ini_set("text_next", "<~text_next>");
 install( "<~install>", "<b>" + ini_get("rom_name") + "</b> is being installed.\n\n" + "<~install.finish>", "@install");
 
 # -- - Post-Install - -- #
+resexec("scripts/clean_tmp.sh");
 ini_set("text_next", "Finish");
 checkviewbox(
   "<~install.finish.title>", "<#selectbg_g><b><~finish.title></b></#>\n\n" + "<b><~finish.msg></b>\n\n" + "", "@finish",
