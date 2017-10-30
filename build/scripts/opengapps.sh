@@ -116,8 +116,6 @@ function build_opengapps() {
   logo_end=$(grep -nr '####' ${tmp_root}/tools/opengapps_tmp/installer.sh | gawk '{print $1}' FS=":" | tail -1)
   logo_end=$((logo_end+3))
   sed -ie "$logo_start,$logo_end d;" ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
-  # Add OPInCallUI to the remove list if Google Dialer is installed
-  sed -i 's/FineOSDialer/OPInCallUI/g' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Disable /tmp clear after installation, the installer will do that later for us.
   sed -i '/-maxdepth 0 ! -path/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Remove all set progress, to let FreedomOS aroma controller it
