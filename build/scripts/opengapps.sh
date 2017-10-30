@@ -202,10 +202,6 @@ function build_opengapps() {
 
   cd ${tmp_root}/tools/opengapps_tmp/
 
-  if [[ $GAPPS_TYPE == "nano" || $GAPPS_TYPE == "pico" ]]; then
-      echo "" > gapps-remove.txt
-  fi
-
   # Make new zip
   zip -r9 ${tmp_root}/tools/opengapps/opengapps.zip * >> ${build_log} 2>&1
   cd ${top_root} >> ${build_log}
