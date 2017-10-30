@@ -156,9 +156,7 @@ function build_opengapps() {
       playgames
       "
   else
-      MINIFY_OPENGAPPS="
-      gmscore
-      "
+      MINIFY_OPENGAPPS=""
   fi
 
 
