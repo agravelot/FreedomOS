@@ -60,7 +60,6 @@ function build_opengapps() {
 
   # Set unneeded Open Gapps files
   RM_OPENGAPPS="
-  setupwizardtablet
   books
   earth
   googleplus
@@ -89,7 +88,6 @@ function build_opengapps() {
   hangouts
   storagemanagergoogle
   clockgoogle
-  dialerframework
   dialergoogle
   contactsgoogle
   duo
