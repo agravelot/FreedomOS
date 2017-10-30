@@ -195,6 +195,11 @@ function build_opengapps() {
     fi
   done
 
+  if [[ -f ${tmp_root}/tools/opengapps_tmp/installer.she ]]
+  then
+    rm -vf ${tmp_root}/tools/opengapps_tmp/installer.she
+  fi
+
   cd ${tmp_root}/tools/opengapps_tmp/
 
   if [[ $GAPPS_TYPE == "nano" || $GAPPS_TYPE == "pico" ]]; then
