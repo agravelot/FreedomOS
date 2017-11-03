@@ -195,7 +195,7 @@ function build_opengapps() {
 
   if [[ -f ${tmp_root}/tools/opengapps_tmp/installer.she ]]
   then
-    rm -vf ${tmp_root}/tools/opengapps_tmp/installer.she
+    rm -vf ${tmp_root}/tools/opengapps_tmp/installer.she >> ${build_log} 2>&1
   fi
 
   cd ${tmp_root}/tools/opengapps_tmp/
