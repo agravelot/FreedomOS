@@ -1,3 +1,12 @@
+1.11
+    UPDATE: OxygenOS 4.5.14
+        Supported Airtel VoLTE in India
+        Supported Band 66 of Freedom in Canada
+        Fixed Wi-Fi WPA2 security issue
+        Optimized battery usage in some cases
+        Optimized GPS accuracy
+        General bug fixes
+
 1.10
     UPDATE: OxygenOS 4.5.13
     ADD: Supports customization of notification ringtone
