@@ -158,7 +158,6 @@ common/google_assistant.sh
 common/google_dns.sh
 common/kernel
 common/log_folder.sh
-common/magisk
 common/save_logs.sh
 common/supersu
 common/wideband_wifi.sh
