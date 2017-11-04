@@ -1,4 +1,5 @@
 3.1-CE  
+    
     UPDATE: Switch to nano opengapps instead of aroma, now most of the gapps are preodexed in order to speed up first boot
     FIX: Weather uninstallation
     ADD: Portuguese/Bresilian translation @sconetto (gitlab)

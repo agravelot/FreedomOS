@@ -43,6 +43,8 @@ GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_D
 GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
 GAPPS_MD5=e2d1232c1e4203a20ca4be4757e47115
 
+ARISE_BUILD=true
+
 # Set Android version for selinux build script
 ANDROID_VERSION=7
 # Set the version of the aroma installer, this is not the version of FreedomOS!

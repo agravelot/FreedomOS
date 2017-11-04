@@ -341,7 +341,9 @@ if [ $confirm_build -eq 1 ]; then
   fi
   build
   add_files
-  build_arise
+  if [[ "$ARISE_BUILD" == true ]]; then
+      build_arise
+  fi
   if [[ "$BUILD_BUSYBOX" == true ]]; then
       build_busybox
   fi
