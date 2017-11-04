@@ -1,4 +1,5 @@
 1.11
+    UPDATE: ARISE Opus 20170918
     UPDATE: OxygenOS 4.5.14
         Supported Airtel VoLTE in India
         Supported Band 66 of Freedom in Canada
