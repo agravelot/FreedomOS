@@ -60,7 +60,6 @@ function build_opengapps() {
 
   # Set unneeded Open Gapps files
   RM_OPENGAPPS="
-  setupwizardtablet
   books
   earth
   googleplus
@@ -89,7 +88,6 @@ function build_opengapps() {
   hangouts
   storagemanagergoogle
   clockgoogle
-  dialerframework
   dialergoogle
   contactsgoogle
   duo
@@ -101,11 +99,11 @@ function build_opengapps() {
   mkdir -p ${tmp_root}/tools/opengapps/ >> ${build_log} 2>&1
   # Copy OpenGapps files from repo
   cp -rvf ${rom_root}/${GAPPS_ZIP}/* -d ${tmp_root}/tools/opengapps_tmp/ >> ${build_log} 2>&1
+  # Keep all /system/app installed, since we need them
+  sed -i '/\/system\/app/d' ${tmp_root}/tools/opengapps_tmp/gapps-remove.txt >> ${build_log} 2>&1
   # Get the gapps-remove.txt list
   cp -vf ${tmp_root}/tools/opengapps_tmp/gapps-remove.txt ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
-  # Remove all entries for android permisions
-  sed -i '/permissions/d' ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
-  # Remove all "/system/" from gapps-remove.txt file
+  # Remove all "/system/" from gapps-remove.txt file, since we are already in system/ dir
   sed -i 's/\/system\///g' ${tmp_root}/tools/gapps-remove.txt >> ${build_log} 2>&1
 
   # Add gapps-remove.txt to the CLEAN_SYSTEM_LIST variable
@@ -116,8 +114,6 @@ function build_opengapps() {
   logo_end=$(grep -nr '####' ${tmp_root}/tools/opengapps_tmp/installer.sh | gawk '{print $1}' FS=":" | tail -1)
   logo_end=$((logo_end+3))
   sed -ie "$logo_start,$logo_end d;" ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
-  # Add OPInCallUI to the remove list if Google Dialer is installed
-  sed -i 's/FineOSDialer/OPInCallUI/g' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Disable /tmp clear after installation, the installer will do that later for us.
   sed -i '/-maxdepth 0 ! -path/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   # Remove all set progress, to let FreedomOS aroma controller it
@@ -133,6 +129,8 @@ function build_opengapps() {
   sed -i '/Installation complete!/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   sed -i '/Unmounting/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
   sed -i '/app\/Calculator/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/\/system\/app\/Gmail2/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
+  sed -i '/\/system\/app\/CalendarGoogle/d' ${tmp_root}/tools/opengapps_tmp/installer.sh >> ${build_log} 2>&1
 
   rm -rvf ${tmp_root}/tools/opengapps_tmp/META-INF/com/google/android/aroma >> ${build_log} 2>&1
 
@@ -146,16 +144,21 @@ function build_opengapps() {
     sed -i '/'${i}'/d' ${tmp_root}/tools/opengapps_tmp/app_densities.txt >> ${build_log} 2>&1
   done
 
-  MINIFY_OPENGAPPS="
-  gmscore
-  photosvrmode
-  photos
-  drive
-  androidpay
-  youtube
-  messenger
-  playgames
-  "
+  if [[ $GAPPS_TYPE == "aroma" ]]; then
+      MINIFY_OPENGAPPS="
+      gmscore
+      photosvrmode
+      photos
+      drive
+      androidpay
+      youtube
+      messenger
+      playgames
+      "
+  else
+      MINIFY_OPENGAPPS=""
+  fi
+
 
   MINIFY_DPI="
   160
@@ -178,20 +181,25 @@ function build_opengapps() {
         archiveNameWithExtension=$(ls ${i}-*) # Get the filename with the extension
         archiveNameWithoutExtension="${archiveNameWithExtension%%.*}" # Remove the extension from archiveNameWithExtension
         echo " - Minify ${i}" 2>&1 | tee -a ${build_log}
-        tar xvf ${archiveNameWithoutExtension}.tar.xz >> ${build_log} 2>&1 # Extract archive of the app to minify
-        rm -v ${archiveNameWithoutExtension}.tar.xz >> ${build_log} 2>&1 # Remove the older archive since we're going to build a new one
+        tar xvf ${archiveNameWithExtension} >> ${build_log} 2>&1 # Extract archive of the app to minify
+        rm -v ${archiveNameWithExtension} >> ${build_log} 2>&1 # Remove the older archive since we're going to build a new one
         for y in ${MINIFY_DPI}
         do
           rm -rvf ${archiveNameWithoutExtension}/${y} >> ${build_log} 2>&1
         done
-        tar cfJ ${archiveNameWithoutExtension}.tar.xz ${archiveNameWithoutExtension} >> ${build_log} 2>&1
-        rm -rvf ${archiveNameWithoutExtension}/ >> ${build_log} 2>&1
+        tar --remove-files -cf - "${archiveNameWithoutExtension}" | lzip -m 273 -s 128MiB -o "${archiveNameWithoutExtension}.tar" >> ${build_log} 2>&1 #.lz is added by lzip; specify the compression parameters manually to get good results
     else
         echo " - Unable to found ${i}" 2>&1 | tee -a ${build_log}
     fi
   done
 
+  if [[ -f ${tmp_root}/tools/opengapps_tmp/installer.she ]]
+  then
+    rm -vf ${tmp_root}/tools/opengapps_tmp/installer.she >> ${build_log} 2>&1
+  fi
+
   cd ${tmp_root}/tools/opengapps_tmp/
+
   # Make new zip
   zip -r9 ${tmp_root}/tools/opengapps/opengapps.zip * >> ${build_log} 2>&1
   cd ${top_root} >> ${build_log}

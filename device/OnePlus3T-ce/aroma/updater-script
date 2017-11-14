@@ -104,11 +104,13 @@ package_extract_file("firmware-update/cmnlib.mbn", "/dev/block/bootdevice/by-nam
 package_extract_file("firmware-update/hyp.mbn", "/dev/block/bootdevice/by-name/hyp");
 package_extract_file("firmware-update/pmic.elf", "/dev/block/bootdevice/by-name/pmic");
 package_extract_file("firmware-update/tz.mbn", "/dev/block/bootdevice/by-name/tz");
+package_extract_file("firmware-update/mdtp.img", "/dev/block/bootdevice/by-name/mdtp");
 package_extract_file("firmware-update/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/aboot");
 package_extract_file("firmware-update/devcfg.mbn", "/dev/block/bootdevice/by-name/devcfg");
 package_extract_file("firmware-update/keymaster.mbn", "/dev/block/bootdevice/by-name/keymaster");
 package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/xbl");
 package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpm");
+package_extract_file("firmware-update/logo.bin", "/dev/block/bootdevice/by-name/LOGO");
 package_extract_file("firmware-update/NON-HLOS.bin", "/dev/block/bootdevice/by-name/modem");
 package_extract_file("firmware-update/adspso.bin", "/dev/block/bootdevice/by-name/dsp");
 package_extract_file("firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
@@ -351,13 +353,22 @@ endif;
 run_program("/tmp/tools/busybox", "mount", "/system");
 run_program("/tmp/tools/vrtheme/run.sh");
 
-# -- - SYSTEM APPS - -- #
+run_program("/tmp/tools/gen_apps_list.sh" , "gapps");
+run_program("/tmp/tools/gen_apps_list.sh" , "sapps");
+
+# -- - SYSTEM APPS REMOVER - -- #
 set_progress(0.960000);
 ui_print(" ");
 ui_print("@Customizing your System Applications");
 ui_print(" ");
-
 run_program("/tmp/tools/apps_remover.sh", "sapps.prop", "1");
+
+# -- - SYSTEM APPS REMOVER - -- #
+set_progress(0.975000);
+ui_print(" ");
+ui_print("@Customizing your Google Applications");
+ui_print(" ");
+run_program("/tmp/tools/apps_remover.sh", "gapps.prop", "1");
 
 # -- - OPENGAPPS - -- #
 set_progress(0.940000);
@@ -371,11 +382,10 @@ run_program("/tmp/tools/busybox", "mkdir", "/tmp/opengapps");
 run_program("/tmp/tools/busybox", "unzip", "/tmp/tools/opengapps/opengapps.zip", "META-INF/com/google/android/*", "-d", "/tmp/opengapps");
 #run_program("mv", "/tmp/tools/opengapps/opengapps.zip", "/tmp/ariopengappsse/opengapps.zip");
 package_extract_dir("tools/opengapps", "/tmp/opengapps");
-set_metadata("/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "uid", 0, "gid", 0, "mode", 0777);
+set_metadata("/tmp/opengapps/META-INF/com/google/android/update-binary", "uid", 0, "gid", 0, "mode", 0777);
 set_metadata_recursive("/tmp/opengapps", "uid", 0, "gid", 0, "dmode", 0777, "fmode", 0777);
-run_program("/sbin/busybox", "sh", "/tmp/opengapps/META-INF/com/google/android/update-binary-installer", "dummy", "1", "/tmp/opengapps/opengapps.zip");
+run_program("/sbin/busybox", "sh", "/tmp/opengapps/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/opengapps/opengapps.zip");
 run_program("/tmp/tools/busybox", "mount", "/system");
-run_program("/tmp/tools/pixel_icons/install.sh");
 
 set_progress(0.990000);
 ui_print(" ");

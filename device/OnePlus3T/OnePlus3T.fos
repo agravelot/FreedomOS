@@ -23,6 +23,7 @@ ZIP_NAME=FreedomOS
 TARGET_ARCH=arm64
 CODENAME=op3t
 DEVICE=OnePlus3T
+VERSION=3.0
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT="OnePlus 3T"
 
@@ -36,11 +37,13 @@ ROM_MD5=d6ab3ea50e0987b771c4eaf6a88713be
 GAPPS_BUILD=true
 GAPPS_ANDROID=7.1
 GAPPS_PLATFORM=arm64
-GAPPS_TYPE=aroma
-GAPPS_DATE=20170801
+GAPPS_TYPE=nano
+GAPPS_DATE=20171013
 GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
 GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
-GAPPS_MD5=84830df0547bed76acae6a20170a2548
+GAPPS_MD5=e2d1232c1e4203a20ca4be4757e47115
+
+ARISE_BUILD=true
 
 # Set Android version for selinux build script
 ANDROID_VERSION=7
@@ -69,49 +72,41 @@ oneplus3/*
 # Files / folders to remove from the original stock image.
 # You can easily debloat your rom from here.
 CLEAN_SYSTEM_LIST="
-app/AndroidPay
 app/BTtestmode
 app/Duo
-app/EngineeringMode
+app/DMAgent
 app/EngSpecialTest
+app/EngineeringMode
 app/FaceLock
+app/GmailExchange
 app/Hangouts
 app/LogKitSdService
-app/Maps
-app/OemAutoTestServer
+app/Music2
+app/NFCTestMode
 app/OEMLogKit
+app/OPBugReport_Complete
 app/OPPBugReport
 app/OPPush
+app/OemAutoTestServer
 app/SensorTestTool
 app/Videos
 app/WifiRfTestApk
-priv-app/OnePlusWizard
+bin/WifiLogger_app
 bin/fmfactorytest
 bin/fmfactorytestserver
 bin/install-recovery.sh
 bin/oemlogkit
-bin/WifiLogger_app
-recovery-from-boot.p
 etc/recovery-resource.dat
-app/CalendarGoogle
 priv-app/CallLogBackup
-app/Chrome
-app/Drive
-app/Gmail2
-app/GmailExchange
-priv-app/Velvet
-app/Messenger
-app/Photos
-app/Music2
-app/YouTube
-app/NFCTestMode
-vendor/etc/in_apps
-priv-app/SetupWizard
 priv-app/GmsCore
-etc/permissions/com.google.android.maps.xml
-etc/permissions/com.google.android.media.effects.xml
-etc/permissions/com.google.widevine.software.drm.xml
-tts/
+priv-app/GoogleFeedback
+priv-app/GoogleServicesFramework
+priv-app/OnePlusWizard
+priv-app/OPDeviceManager
+priv-app/SetupWizard
+priv-app/Velvet
+vendor/etc/in_apps
+recovery-from-boot.p
 "
 
 # Add a secondary firmware files, like that it can be installed.
@@ -121,6 +116,10 @@ PATCH_FIRMWARE=""
 # The files are in the assets/system/$TARGET_ARCH/
 ADD_SYSTEM_LIST="
 app/Adaway
+app/GoogleCamera
+app/GoogleWallpapers
+app/PixelIcons
+app/PixelLauncher
 app/Substratum
 app/XposedInstaller
 "
@@ -140,6 +139,7 @@ common/arise
 common/clean.sh
 common/fonts
 common/fix_passwd.sh
+common/gen_apps_list.sh
 common/google_assistant.sh
 common/google_dns.sh
 common/kernel

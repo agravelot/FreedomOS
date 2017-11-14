@@ -1,3 +1,34 @@
+3.0-CE
+    
+    UPDATE: Switch to nano opengapps instead of aroma, now most of the gapps are preodexed in order to speed up first boot
+    FIX: Weather uninstallation
+    ADD: Portuguese/Bresilian translation @sconetto (gitlab)
+    REMOVE: More Google bloaware
+    REMOVE: OPDeviceManager, know for data analytics
+    UPDATE: Xposed installer to 3.0.1, now support Nougat!
+    UPDATE: Google Apps 20171027
+    UPDATE: Google Camera
+    UPDATE: Pixel Launcher
+    UPDATE: Pixel Icons
+    UPDATE: Google Wallpapers
+    UPDATE: FreedomOS aroma installer, reduce number of step
+    UPDATE: OxygenOS Open Beta 26/
+      Added User Feedback app
+      Improved Wifi and data connectivity
+      Improved the performance of NFC
+      Improved the stability of Picture in Picture
+      Fixed issue of missing voicemail tab in dialer
+      Fixed issue of occasional heating
+      General bug fixes
+      Update to Android O (8.0)
+      Added Picture in Picture
+      Added Auto-fill
+      Added Smart text selection
+      New Quick Settings design
+      Updated security patch to September
+      Added notification dots
+      Now able to upload photos directly to Shot on OnePlus
+
 2.17-CE
     UPDATE: OxygenOS Open Beta 15/24
     ADD: “Soft” screen calibration

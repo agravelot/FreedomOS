@@ -1,0 +1,42 @@
+# This file is used to restore contexts of SuperSU-related files at boot.
+#
+# While rare, the file contexts do occasionally get lost. You can test it
+# out manually by running 'restorecon -R /path/to/this/directory', which
+# will reset the file contexts to whatever Android thinks is appropriate.
+#
+# In the past we modified the list Android uses itself, but this has
+# lead to some unexpected behavior on some devices.
+#
+# Running 'sukernel --restorecon /path/to/this/directory' will apply the
+# contexts listed in this file to this directory.
+#
+# Format: one filename and context pair per line, separated by a single
+# space. Filenames are relative to the directory the file_contexts file
+# resides in, and may contain subdirectories in their name.
+#
+# The filename may end with a * to signify a wildcard match, but there
+# is no regex support.
+#
+# Filenames are matched in reverse order (last entry first), so you
+# can start the file with a * to set a default.
+#
+# If a match is not found, the file is labeled u:object_r:system_file:s0.
+# SuperSU's own files all need this, so this file is empty other than
+# this comment.
+#
+# Subdirectories may also contain their own file_contexts file (with
+# filenames relative to that directory).
+#
+# This file should have Unix line-endings.
+#
+# Examples:
+#
+# * u:object_r:system_file:s0
+# frp_date u:object_r:system_file:s0
+# supersu_is_here u:object_r:system_file:s0
+# bin/* u:object_r:system_file:s0
+# lib/* u:object_r:system_file:s0
+#
+# This file will be overwritten by SuperSU at various times. Add a new
+# file_contexts file in the relevant subdirectory if you need to add
+# your own entries.

@@ -20,24 +20,32 @@ cp_perm() {
   fi
 }
 
-chcon u:object_r:system_file:s0 /su
+if [ ! -d "/su" ]; then
+  SUFILES=/data/adb/su
+else
+  SUFILES=/su
+fi
 
-mkdir /su/bin
-mkdir /su/xbin
-mkdir /su/lib
-mkdir /su/etc
-mkdir /su/su.d
+chcon u:object_r:system_file:s0 $SUFILES
 
-set_perm 0 0 0751 /su/bin
-set_perm 0 0 0755 /su/xbin
-set_perm 0 0 0755 /su/lib
-set_perm 0 0 0755 /su/etc
-set_perm 0 0 0700 /su/su.d
+mkdir $SUFILES/bin
+mkdir $SUFILES/xbin
+mkdir $SUFILES/lib
+mkdir $SUFILES/etc
+mkdir $SUFILES/su.d
 
-cp_perm 0 0 0755 /.sufrp/su /su/bin/su
-cp_perm 0 0 0755 /.sufrp/su /su/bin/daemonsu
-ln -s /su/bin/su /su/bin/supolicy
-cp_perm 0 0 0755 /.sufrp/supolicy /su/bin/supolicy_wrapped
-cp_perm 0 0 0644 /.sufrp/libsupol.so /su/lib/libsupol.so
-cp_perm 0 0 0755 /.sufrp/sukernel /su/bin/sukernel
+set_perm 0 0 0751 $SUFILES/bin
+set_perm 0 0 0755 $SUFILES/xbin
+set_perm 0 0 0755 $SUFILES/lib
+set_perm 0 0 0755 $SUFILES/etc
+set_perm 0 0 0700 $SUFILES/su.d
 
+cp_perm 0 0 0755 /.sufrp/su $SUFILES/bin/su
+cp_perm 0 0 0755 /.sufrp/su $SUFILES/bin/daemonsu
+ln -s su $SUFILES/bin/supolicy
+cp_perm 0 0 0755 /.sufrp/supolicy $SUFILES/bin/supolicy_wrapped
+cp_perm 0 0 0644 /.sufrp/libsupol.so $SUFILES/lib/libsupol.so
+cp_perm 0 0 0755 /.sufrp/sukernel $SUFILES/bin/sukernel
+cp_perm 0 0 0644 /.sufrp/frp_date $SUFILES/frp_date
+cp_perm 0 0 0644 /.sufrp/file_contexts $SUFILES/file_contexts
+cp_perm 0 0 0644 /.sufrp/supersu_is_here $SUFILES/supersu_is_here

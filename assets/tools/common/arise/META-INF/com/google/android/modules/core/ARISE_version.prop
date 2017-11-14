@@ -1,6 +1,6 @@
 # ARISE Sound Systems™
 #
-# Magnum Opus™ 20170724
+# Magnum Opus™ 20170811
 #
 # Auditory Research in Sound Enhancement™
 #
@@ -9,6 +9,22 @@
 
 
 Changelog:
+
+
+## Magnum Opus™ 20170811 -
+
+- Android O content removed from Core module.
+
+- arisesoundserver enhancement.
+
+- Appropriate name restored to setprop.
+
+- Correction to sdcard detection.
+
+- gh
+
+##
+
 
 ## Magnum Opus™ 20170724 -
 

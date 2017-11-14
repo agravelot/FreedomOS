@@ -21,6 +21,12 @@ function add_files {
   echo ">> Add META-INF files" 2>&1 | tee -a ${build_log}
   mkdir -p ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
   cp -vrf ${device_root}/${device}/aroma/* ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
+  cp -vrf ${assets_root}/aroma/* ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
+
+  # If aroma-config exist in device tree, override it.
+  if [[ -f ${device_root}/${device}/aroma/aroma-config ]]; then
+      cp -vrf ${device_root}/${device}/aroma/* ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
+  fi
 
   echo ">>> Add aroma bin" 2>&1 | tee -a ${build_log}
   cp -vf ${assets_root}/META-INF/update-binary/${AROMA_VERSION}/update-binary ${tmp_root}/META-INF/com/google/android/ >> ${build_log} 2>&1
@@ -71,9 +77,6 @@ function add_files {
 
   echo ">> Set date in en.lang" 2>&1 | tee -a ${build_log}
   sed -i "s:!date!:$(date +"%d%m%y"):" ${tmp_root}/META-INF/com/google/android/aroma/langs/en.lang >> ${build_log} 2>&1
-
-  echo ">> Set date in fr.lang" 2>&1 | tee -a ${build_log}
-  sed -i "s:!date!:$(date +"%d%m%y"):" ${tmp_root}/META-INF/com/google/android/aroma/langs/fr.lang >> ${build_log} 2>&1
 
   echo ">> Set VERSION in kernel" 2>&1 | tee -a ${build_log}
   sed -i "s:!version!:${ZIP_NAME}-$VERSION:" ${tmp_root}/tools/kernel/boot/editramdisk.sh >> ${build_log} 2>&1

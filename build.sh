@@ -117,16 +117,12 @@ function initialize {
       fi
   done
 
-  if [[ ${BUILD_TYPE} = "" ]]; then
+  if [[ ${BUILD_TYPE} = "" || -z ${BUILD_TYPE} ]]; then
     die "Specify a build type" "60"
   fi
 
-  if [[ -z ${device} || -z ${BUILD_TYPE} || -z ${VERSION} ]]; then
+  if [[ -z ${device} ]]; then
     die "Bad device" "61"
-  fi
-
-  if [[ -z ${VERSION} ]]; then
-    die "Version not defined" "62"
   fi
 
   write_config
@@ -205,6 +201,9 @@ function review {
 
   if [[ -f ${device_root}/${device}/${device}.fos ]]; then
     source ${device_root}/${device}/${device}.fos
+    if [[ ! -z $VERSION_ARG ]]; then
+      VERSION=$VERSION-$VERSION_ARG
+    fi
   else
     echo "Unable to find your device in the device tree"
     echo -e "Please pick one of them:\n"
@@ -325,7 +324,7 @@ do
  in
  d) device=${OPTARG};;
  t) BUILD_TYPE=${OPTARG};;
- v) VERSION=$OPTARG;;
+ v) VERSION_ARG=${OPTARG};;
  esac
 done
 
@@ -342,7 +341,9 @@ if [ $confirm_build -eq 1 ]; then
   fi
   build
   add_files
-  build_arise
+  if [[ "$ARISE_BUILD" == true ]]; then
+      build_arise
+  fi
   if [[ "$BUILD_BUSYBOX" == true ]]; then
       build_busybox
   fi

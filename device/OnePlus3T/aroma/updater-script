@@ -205,7 +205,7 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
     ui_print("   Installing Magisk");
     ifelse(is_mounted("/system"), run_program("/tmp/tools/busybox", "umount", "/system"));
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Move magisk to /tmp/tools/magisk ->  /tmp/magisk ");
-    run_program("/tmp/tools/busybox", "rm", "-rf", "/dev/tmp"); 
+    run_program("/tmp/tools/busybox", "rm", "-rf", "/dev/tmp");
     run_program("/tmp/tools/busybox", "mkdir", "-p", "/dev/tmp");
     run_program("/tmp/tools/busybox", "mv", "/tmp/tools/magisk", "/dev/tmp/install");
     run_program("/tmp/tools/busybox", "echo", "DEBUG: Start SU install script");
@@ -351,13 +351,22 @@ endif;
 run_program("/tmp/tools/busybox", "mount", "/system");
 run_program("/tmp/tools/vrtheme/run.sh");
 
-# -- - SYSTEM APPS - -- #
+run_program("/tmp/tools/gen_apps_list.sh" , "gapps");
+run_program("/tmp/tools/gen_apps_list.sh" , "sapps");
+
+# -- - SYSTEM APPS REMOVER - -- #
 set_progress(0.960000);
 ui_print(" ");
 ui_print("@Customizing your System Applications");
 ui_print(" ");
-
 run_program("/tmp/tools/apps_remover.sh", "sapps.prop", "1");
+
+# -- - SYSTEM APPS REMOVER - -- #
+set_progress(0.975000);
+ui_print(" ");
+ui_print("@Customizing your Google Applications");
+ui_print(" ");
+run_program("/tmp/tools/apps_remover.sh", "gapps.prop", "1");
 
 # -- - OPENGAPPS - -- #
 set_progress(0.940000);

@@ -17,12 +17,12 @@ All push requests must be done in develop branch, never in the master branch.
 
 Arch based:
 ```
-pacman -S python python2 zip curl openssl ncurses cpio python-virtualenv unzip binutils
+pacman -S python python2 zip curl openssl ncurses cpio python-virtualenv unzip binutils lzip
 ```
 
 Debian/Ubuntu based:
 ```
-apt-get install python zip curl openssl libncurses-dev cpio python-virtualenv gawk binutils
+apt-get install python zip curl openssl libncurses-dev cpio python-virtualenv gawk binutils lzip
 ```
 
 ## How to build

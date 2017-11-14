@@ -23,27 +23,31 @@ ZIP_NAME=FreedomOS-CE
 TARGET_ARCH=arm64
 CODENAME=op3
 DEVICE=OnePlus3
+VERSION=3.0
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT="OnePlus 3"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus3Oxygen_16_OTA_032_all_1709152302_9fce1800554a4637
+ROM_NAME=OnePlus3Oxygen_16_OTA_036_all_1710262329_97651662219b4e6b
 ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=ebcfb27dd67da01b428aada283043119
+ROM_MD5=1cd78fd180ead7908b0c1127c7e385b3
 
 # OpenGapps
 GAPPS_BUILD=true
-GAPPS_ANDROID=7.1
+GAPPS_ANDROID=8.0
 GAPPS_PLATFORM=arm64
-GAPPS_TYPE=aroma
-GAPPS_DATE=20170801
+GAPPS_TYPE=nano
+GAPPS_DATE=20171027
 GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
 GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
-GAPPS_MD5=84830df0547bed76acae6a20170a2548
+GAPPS_MD5=
+
+
+ARISE_BUILD=false
 
 # Set Android version for selinux build script
-ANDROID_VERSION=7
+ANDROID_VERSION=8
 # Set the version of the aroma installer, this is not the version of FreedomOS!
 # see assets/META-INF/aroma/$AROMA_VERSION
 AROMA_VERSION=2.70
@@ -68,49 +72,58 @@ oneplus3/*
 # Files / folders to remove from the original stock image.
 # You can easily debloat your rom from here.
 CLEAN_SYSTEM_LIST="
-app/AndroidPay
 app/BTtestmode
 app/Duo
-app/EngineeringMode
+app/DMAgent
 app/EngSpecialTest
+app/EngineeringMode
 app/FaceLock
+app/GmailExchange
 app/Hangouts
 app/LogKitSdService
-app/Maps
-app/OemAutoTestServer
+app/Music2
+app/NFCTestMode
 app/OEMLogKit
+app/OPBugReport_Complete
 app/OPPBugReport
 app/OPPush
+app/OemAutoTestServer
 app/SensorTestTool
 app/Videos
 app/WifiRfTestApk
-priv-app/OnePlusWizard
+bin/WifiLogger_app
 bin/fmfactorytest
 bin/fmfactorytestserver
 bin/install-recovery.sh
 bin/oemlogkit
-bin/WifiLogger_app
-recovery-from-boot.p
 etc/recovery-resource.dat
-app/CalendarGoogle
 priv-app/CallLogBackup
-app/Chrome
-app/Drive
-app/Gmail2
-app/GmailExchange
-priv-app/Velvet
-app/Messenger
-app/Photos
-app/Music2
-app/YouTube
-app/NFCTestMode
-vendor/etc/in_apps
-priv-app/SetupWizard
 priv-app/GmsCore
-etc/permissions/com.google.android.maps.xml
-etc/permissions/com.google.android.media.effects.xml
-etc/permissions/com.google.widevine.software.drm.xml
-tts/
+priv-app/GoogleFeedback
+priv-app/GoogleServicesFramework
+priv-app/OnePlusWizard
+priv-app/OPDeviceManager
+priv-app/SetupWizard
+priv-app/Velvet
+app/GoogleExtShareds
+priv-app/AndroidPlatformServices
+priv-app/ConfigUpdater
+priv-app/GCS
+priv-app/GmsCoreSetupPrebuilt
+priv-app/GoogleBackupTransport
+priv-app/GoogleContacts
+priv-app/GoogleDialer
+priv-app/GoogleExtServices
+priv-app/GoogleOneTimeInitializer
+priv-app/GooglePartnerSetup
+priv-app/NexusLauncherPrebuilt
+priv-app/Phonesky
+priv-app/PrebuiltGmsCore
+priv-app/StorageManagerGoogle
+priv-app/TagGoogle
+priv-app/Turbo
+vendor/etc/in_apps
+recovery-from-boot.p
 "
 
 # Add a secondary firmware files, like that it can be installed.
@@ -120,6 +133,10 @@ PATCH_FIRMWARE=""
 # The files are in the assets/system/$TARGET_ARCH/
 ADD_SYSTEM_LIST="
 app/Adaway
+app/GoogleCamera
+app/GoogleWallpapers
+app/PixelIcons
+app/PixelLauncher
 app/Substratum
 app/XposedInstaller
 "
@@ -134,16 +151,14 @@ arm64/busybox
 common/adb.sh
 common/addon
 common/apps_remover.sh
-common/aptx
-common/arise
 common/clean.sh
 common/fonts
 common/fix_passwd.sh
+common/gen_apps_list.sh
 common/google_assistant.sh
 common/google_dns.sh
 common/kernel
 common/log_folder.sh
-common/magisk
 common/save_logs.sh
 common/supersu
 common/wideband_wifi.sh

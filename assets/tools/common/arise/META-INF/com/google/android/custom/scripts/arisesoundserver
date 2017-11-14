@@ -47,7 +47,7 @@ SU=$ROOT/su/bin/su
 XHIFI=$SYS/lib/soundfx/deuteronomy/libv4a_xhifi_ics.so
 API=$(cat $SYS/build.prop | grep "ro.build.version.sdk=" | dd bs=1 skip=21 count=2)
 
-if [ -e "$XHIFI" ] && [ "$API" -ge "21" ] && [ ! -e "$ROOT/data/magisk.img" ]; then
+if [ -e "$XHIFI" ] && [ "$API" -ge "21" ]; then
 
   if [ -e "$SU" ] && [ -d "$XBIN" ]; then
 
@@ -68,19 +68,19 @@ if [ -e "$XHIFI" ] && [ "$API" -ge "21" ] && [ ! -e "$ROOT/data/magisk.img" ]; t
 fi
 
 if [ -e "$ROOT/data/magisk.img" ]; then
-  SEPOLICY=magiskpolicy
-elif [ -e "$ROOT/su/bin/supolicy" ]; then
-  SEPOLICY=$ROOT/su/bin/supolicy
-elif [ -e "$BIN/supolicy" ]; then
-  SEPOLICY=$BIN/supolicy
-elif [ -e "$XBIN/supolicy" ]; then
-  SEPOLICY=$XBIN/supolicy
+  AUDIT='sepolicy-inject --live'
+else
+  AUDIT='supolicy --live'
 fi
 
-$SEPOLICY --live "permissive audio_prop audioserver mediaserver priv_app service system_app"
-$SEPOLICY --live "allow audioserver audioserver_tmpfs file { execute }"
-$SEPOLICY --live "allow mediaserver mediaserver_tmpfs file { execute }"
-$SEPOLICY --live "allow audio_prop system_file file { execmod }"
-$SEPOLICY --live "allow priv_app system_file file { execmod }"
-$SEPOLICY --live "allow service system_file file { execmod }"
-$SEPOLICY --live "allow system_app system_file file { execmod }"
+$AUDIT "permissive audio_data_file audio_prop audioserver default_android_service dolby_prop dts_data_file init mediaserver platform_app priv_app property_socket su system_app system_data_file system_file system_prop system_server tmpfs untrusted_app"
+
+$AUDIT "allow audioserver audioserver_tmpfs file { read write execute }"
+
+$AUDIT "allow mediaserver mediaserver_tmpfs file { read write execute }"
+
+$AUDIT "allow priv_app default_android_service service_manager { find }"
+
+$AUDIT "allow priv_app init unix_stream_socket { connectto }"
+
+$AUDIT "allow priv_app property_socket sock_file { write }"

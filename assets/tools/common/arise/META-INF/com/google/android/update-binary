@@ -64,7 +64,7 @@ elif [ -d "/sdcard/0" ]; then
   SDCARD=/sdcard/0
 elif [ -d "/sdcard_internal/0" ]; then
   SDCARD=/sdcard_internal/0
-elif [ "/sdcard_internal" ]; then
+elif [ -d "/sdcard_internal" ]; then
   SDCARD=/sdcard_internal
 else
   SDCARD=/sdcard
@@ -770,20 +770,6 @@ if [ "$INSTALLCORE" ]; then
 
   fi
 
-  if [ ! -e "$LIB/$LDAC" ]; then
-
-    cp -f $CARM/$LDAC $LIB/$LDAC
-    $SP $LIB/$LDAC 0 0 0644
-
-    if [ -d "$LIB64" ]; then
-
-      cp -f $CARM64/$LDAC $LIB64/$LDAC
-      $SP $LIB64/$LDAC 0 0 0644
-
-    fi
-
-  fi
-
   if [ ! -d "$DRC" ]; then
 
     mkdir -p $DRC
@@ -867,97 +853,58 @@ if [ "$INSTALLCORE" ]; then
 
     mkdir -p $AOFX64
     mkdir -p $VIVOFX64
-    mkdir -p $LIB64/hw
     cp -Rf $CARM64/android_o/* $AOFX64
     cp -Rf $CARM64/vivo/* $VIVOFX64
-    cp -Rf $CARM64/hw/* $LIB64/hw
-    cp -f $CARM64/android.hardware.audio.common@2.0.so $LIB64/android.hardware.audio.common@2.0.so
-    cp -f $CARM64/android.hardware.audio.common@2.0-util.so $LIB64/android.hardware.audio.common@2.0-util.so
-    cp -f $CARM64/android.hardware.audio.effect@2.0.so $LIB64/android.hardware.audio.effect@2.0.so
-    cp -f $CARM64/android.hardware.audio@2.0.so $LIB64/android.hardware.audio@2.0.so
-    cp -f $CARM64/android.hardware.bluetooth@1.0.so $LIB64/android.hardware.bluetooth@1.0.so
     cp -f $CARM64/libAlacSwDec.so $LIB64/libAlacSwDec.so
     cp -f $CARM64/libApeSwDec.so $LIB64/libApeSwDec.so
-    cp -f $CARM64/libaptX_encoder.so $LIB64/libaptX_encoder.so
-    cp -f $CARM64/libaptXHD_encoder.so $LIB64/libaptXHD_encoder.so
-    cp -f $CARM64/libaudioclient.so $LIB64/libaudioclient.so
-    cp -f $CARM64/libaudiomanager.so $LIB64/libaudiomanager.so
     cp -f $CARM64/libaudioom.so $LIB64/libaudioom.so
-    cp -f $CARM64/libaudioprocessing.so $LIB64/libaudioprocessing.so
     cp -f $CARM64/libFlacSwDec.so $LIB64/libFlacSwDec.so
     cp -f $CARM64/libmars-audioparams.so $LIB64/libmars-audioparams.so
     cp -f $CARM64/libmars-featureclient.so $LIB64/libmars-featureclient.so
     cp -f $CARM64/libmars-service.so $LIB64/libmars-service.so
     cp -f $CARM64/libmars-service_jni.so $LIB64/libmars-service_jni.so
-    cp -f $CARM64/libmedia_helper.so $LIB64/libmedia_helper.so
     cp -f $CARM64/$SOMCAV $LIB64/$SOMCAV
     cp -f $CARM64/$SOMCME $LIB64/$SOMCME
     cp -f $CARM64/libstlport.so $LIB64/libstlport.so
-    $SPR $LIB64/hw 0 0 0755 0644
     $SPR $SFX64 0 0 0755 0644
-    $SP $LIB64/android.hardware.audio.common@2.0.so 0 0 0644
-    $SP $LIB64/android.hardware.audio.common@2.0-util.so 0 0 0644
-    $SP $LIB64/android.hardware.audio.effect@2.0.so 0 0 0644
-    $SP $LIB64/android.hardware.audio@2.0.so 0 0 0644
-    $SP $LIB64/android.hardware.bluetooth@1.0.so 0 0 0644
     $SP $LIB64/libAlacSwDec.so 0 0 0644
     $SP $LIB64/libApeSwDec.so 0 0 0644
-    $SP $LIB64/libaptX_encoder.so 0 0 0644
-    $SP $LIB64/libaptXHD_encoder.so 0 0 0644
-    $SP $LIB64/libaudioclient.so 0 0 0644
-    $SP $LIB64/libaudiomanager.so 0 0 0644
     $SP $LIB64/libaudioom.so 0 0 0644
     $SP $LIB64/libFlacSwDec.so 0 0 0644
     $SP $LIB64/libmars-audioparams.so 0 0 0644
     $SP $LIB64/libmars-featureclient.so 0 0 0644
     $SP $LIB64/libmars-service.so 0 0 0644
     $SP $LIB64/libmars-service_jni.so 0 0 0644
-    $SP $LIB64/libmedia_helper.so 0 0 0644
     $SP $LIB64/$SOMCAV 0 0 0644
     $SP $LIB64/$SOMCME 0 0 0644
     $SP $LIB64/libstlport.so 0 0 0644
     ln -sf $LIB64/libAlacSwDec.so $VLIB64/libAlacSwDec.so
     ln -sf $LIB64/libApeSwDec.so $VLIB64/libApeSwDec.so
-    ln -sf $LIB64/libaptX_encoder.so $VLIB64/libaptX_encoder.so
-    ln -sf $LIB64/libaptXHD_encoder.so $VLIB64/libaptXHD_encoder.so
     ln -sf $LIB64/libFlacSwDec.so $VLIB64/libFlacSwDec.so
  
   fi
 
-  mkdir -p $VEN/bin/hw
   $SPR $SFX 0 0 0755 0644
   $SPR $SYS/data 0 0 0755 0644
-  $SPR $BIN/hw 0 2000 0755 0755
   $SPR $ETC/dts 0 0 0755 0644
   $SPR $FW 0 0 0755 0644
-  $SPR $LIB/hw 0 0 0755 0644
   $SPR $PERM 0 0 0755 0644
   $SPR $ALSA 0 0 0755 0644
   $SPR $INITD 0 2000 0755 0755
   $SPR $SUD 0 0 0700 0700
   $SP $SYS/ARISE_version.prop 0 0 0644
   $SP $ETC/maxxaudio_default.mps 0 0 0644
-  $SP $LIB/android.hardware.audio.common@2.0.so 0 0 0644
-  $SP $LIB/android.hardware.audio.common@2.0-util.so 0 0 0644
-  $SP $LIB/android.hardware.audio.effect@2.0.so 0 0 0644
-  $SP $LIB/android.hardware.audio@2.0.so 0 0 0644
-  $SP $LIB/android.hardware.bluetooth@1.0.so 0 0 0644
   $SP $LIB/AudioSphereModule.so 0 0 0644
   $SP $LIB/DolbyMobileModule.so 0 0 0644
   $SP $LIB/DolbySurroundModule.so 0 0 0644
   $SP $LIB/DTS_HPX_MODULE.so 0 0 0644
   $SP $LIB/SrsTruMediaModule.so 0 0 0644
   $SP $LIB/libadm.so 0 0 0644
-  $SP $LIB/libaptX_encoder.so 0 0 0644
-  $SP $LIB/libaptXHD_encoder.so 0 0 0644
   $SP $LIB/libAlacSwDec.so 0 0 0644
   $SP $LIB/libApeSwDec.so 0 0 0644
   $SP $LIB/libaudio3d.so 0 0 0644
-  $SP $LIB/libaudioclient.so 0 0 0644
-  $SP $LIB/libaudiomanager.so 0 0 0644
   $SP $LIB/libaudioom.so 0 0 0644
   $SP $LIB/libaudioparams.so 0 0 0644
-  $SP $LIB/libaudioprocessing.so 0 0 0644
   $SP $LIB/$APSS 0 0 0644
   $SP $LIB/libauroservice.so 0 0 0644
   $SP $LIB/libauroservice_client.so 0 0 0644
@@ -977,7 +924,6 @@ if [ "$INSTALLCORE" ]; then
   $SP $LIB/libmars-service_jni.so 0 0 0644
   $SP $LIB/libMAM2-AlgFXProxy-Coretex_A9.so 0 0 0644
   $SP $LIB/libMAM2-WavesFX-Coretex_A9.so 0 0 0644
-  $SP $LIB/libmedia_helper.so 0 0 0644
   $SP $LIB/libmwsound.so 0 0 0644
   $SP $LIB/libqalcodecwrapper.so 0 0 0644
   $SP $LIB/libqcompostprocbundle.so 0 0 0644
@@ -1001,14 +947,9 @@ if [ "$INSTALLCORE" ]; then
   $SP $LIB/libvad.so 0 0 0644
   $SP $LIB/libval_2.0.so 0 0 0644
   $SP $LIB/libval_common.so 0 0 0644
-  $SP $VEN/bin 0 2000 0755
-  $SP $VEN/bin/hw 0 2000 0755 so
-  ln -sf $BIN/hw/android.hardware.audio@2.0-service $VEN/bin/hw/android.hardware.audio@2.0-service
   ln -sf $ETC/maxxaudio_default.mps $VETC/maxxaudio_default.mps
   ln -sf $LIB/libAlacSwDec.so $VLIB/libAlacSwDec.so
   ln -sf $LIB/libApeSwDec.so $VLIB/libApeSwDec.so
-  ln -sf $LIB/libaptX_encoder.so $VLIB/libaptX_encoder.so
-  ln -sf $LIB/libaptXHD_encoder.so $VLIB/libaptXHD_encoder.so
   ln -sf $LIB/libFlacSwDec.so $VLIB/libFlacSwDec.so
   ln -sf $LIB/libsurround_proc.so $VLIB/libsurround_proc.so
   restorecon $INITD/post-boot

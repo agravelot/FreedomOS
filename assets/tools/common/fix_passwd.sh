@@ -14,5 +14,5 @@
 # limitations under the License.
 
 echo "DEBUG: Remove Password"
-/tmp/tools/busybox rm /data/system/gatekeeper*
-/tmp/tools/busybox rm /data/system/locksettings*
+rm /data/system/gatekeeper*
+rm /data/system/locksettings*

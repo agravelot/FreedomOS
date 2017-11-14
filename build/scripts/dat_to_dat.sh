@@ -34,15 +34,42 @@ function dat_to_dat {
   ${build_root}/tools/${HOST_ARCH}/abootimg-unpack-initrd boot.img-ramdisk.gz >> ${build_log} 2>&1
 
   if [[ -f ${tmp_root}/boot/ramdisk/file_contexts ]]; then
+    # For Android Lollipop
     echo ">>>> Getting file_contexts" 2>&1 | tee -a ${build_log}
     cp ${tmp_root}/boot/ramdisk/file_contexts ${tmp_root}/ >> ${build_log} 2>&1
   elif [[ -f ${tmp_root}/boot/ramdisk/file_contexts.bin ]]; then
+     # For Android Nougat
     echo ">>>> Getting file_contexts.bin" 2>&1 | tee -a ${build_log}
     cp ${tmp_root}/boot/ramdisk/file_contexts.bin ${tmp_root}/ >> ${build_log} 2>&1
     echo ">>>>> Convert into file_contexts" 2>&1 | tee -a ${build_log}
     contest=$(strings ${tmp_root}/file_contexts.bin | sed -e '/^u:/,/\//!d' | grep -v "abcd") >> ${build_log} 2>&1
 		paste -d '\t' <(echo "$contest" | grep -v "^u:") <(echo "$contest" | grep "^u:") | grep -v "S2RP\|ERCP" >> ${tmp_root}/file_contexts
     rm -vf ${tmp_root}/file_contexts.bin >> ${build_log} 2>&1
+  elif [[ -f ${tmp_root}/boot/ramdisk/plat_file_contexts ]]; then
+      # For Android Oreo
+      CONTEXTS_LIST=" 
+      nonplat_service_contexts
+      plat_property_contexts
+      nonplat_property_contexts
+      plat_file_contexts
+      nonplat_file_contexts
+      "
+      # plat_service_contexts
+      # vndservice_contexts
+      # nonplat_hwservice_contexts
+     # nonplat_service_contexts
+      # plat_service_contexts
+      
+      # nonplat_service_contexts
+
+      for i in $CONTEXTS_LIST; do
+        if [[ -f ${tmp_root}/boot/ramdisk/$i ]]; then
+          cat ${tmp_root}/boot/ramdisk/${i} >> ${tmp_root}/file_contexts
+        else
+          die "Context file '$i' not found!" "55"
+        fi
+      done
+
   else
     die "No file_contexts fond" "150"
   fi
@@ -112,7 +139,7 @@ function dat_to_dat {
   sed -i "s/ro.oxygen.version=.*/ro.oxygen.version=${ZIP_NAME}-${CODENAME}-${BUILD_TYPE}-${VERSION}/" ${tmp_root}/mount/build.prop
 
   echo ">> Building new ext4 system" 2>&1 | tee -a ${build_log}
-  ${build_root}/tools/${HOST_ARCH}/make_ext4fs -T 0 -S file_contexts -l ${SYSTEMIMAGE_PARTITION_SIZE} -a system system_new.img mount/ >> ${build_log} 2>&1
+  ${build_root}/tools/${HOST_ARCH}/make_ext4fs_${ANDROID_VERSION} -T 0 -S file_contexts -l ${SYSTEMIMAGE_PARTITION_SIZE} -a system system_new.img mount/ >> ${build_log} 2>&1
 
   echo ">> Converting ext4 raw image to sparse image" 2>&1 | tee -a ${build_log}
   ${build_root}/tools/${HOST_ARCH}/img2simg system_new.img system_new_sparse.img
