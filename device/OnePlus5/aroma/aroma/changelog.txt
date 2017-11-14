@@ -1,5 +1,17 @@
 1.11
     UPDATE: ARISE Opus 20170918
+    UPDATE: Switch to nano opengapps instead of aroma, now most of the gapps are preodexed in order to speed up first boot
+    FIX: Weather uninstallation
+    ADD: Portuguese/Bresilian translation @sconetto (gitlab)
+    REMOVE: More Google bloaware
+    REMOVE: OPDeviceManager, know for data analytics
+    UPDATE: Xposed installer to 3.0.1, now support Nougat!
+    UPDATE: Google Apps 20171013
+    UPDATE: Google Camera
+    UPDATE: Pixel Launcher
+    UPDATE: Pixel Icons
+    UPDATE: Google Wallpapers
+    UPDATE: FreedomOS aroma installer, reduce number of step
     UPDATE: OxygenOS 4.5.14
         Supported Airtel VoLTE in India
         Supported Band 66 of Freedom in Canada
