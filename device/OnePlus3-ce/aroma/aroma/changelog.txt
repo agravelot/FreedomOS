@@ -1,5 +1,6 @@
 3.1-CE
     FIX: Force encryption issues, the system will not try to encrypt all your data!
+    ADD: Magisk V14.3(1347)
     UPDATE: OxygenOS Open Beta 27/18
       New UI for Do Not Disturb
       Optimized standby battery usage

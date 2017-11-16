@@ -1,3 +1,5 @@
+    UPDATE: Magisk V14.3(1347)
+
 3.0
     UPDATE: ARISE Opus 20170918
     UPDATE: Switch to nano opengapps instead of aroma, now most of the gapps are preodexed in order to speed up first boot
