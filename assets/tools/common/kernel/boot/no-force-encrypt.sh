@@ -15,7 +15,11 @@
 
 found_fstab=false
 
-cd /tmp/ramdisk
+if [ -f /system/vendor/etc/fstab.qcom ]; then
+    cd /system/vendor/etc/
+else
+    cd /tmp/ramdisk
+fi
 
 for fstab in fstab.*; do
 	[ -f "$fstab" ] || continue
