@@ -1,3 +1,15 @@
+3.1-CE
+    FIX: Force encryption issues, the system will not try to encrypt all your data!
+    UPDATE: OxygenOS Open Beta 27/18
+      New UI for Do Not Disturb
+      Optimized standby battery usage
+      Smart Text Selection improvements
+      General performance improvements
+      Updated OnePlus and GMS applications
+      Updated Google security patch (October 2017)
+      Other bug fixes and optimizations
+
+
 3.0-CE
     UPDATE: Switch to nano opengapps instead of aroma, now most of the gapps are preodexed in order to speed up first boot
     FIX: Weather uninstallation
