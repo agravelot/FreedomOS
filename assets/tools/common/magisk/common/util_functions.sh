@@ -3,13 +3,16 @@
 # Magisk General Utility Functions
 # by topjohnwu
 #
-# Used in flash_script.sh, addon.d.sh, magisk module installers, and uninstaller
+# Used everywhere in Magisk
 #
 ##########################################################################################
 
-MAGISK_VER="14.0"
-MAGISK_VER_CODE=1400
+MAGISK_VER="14.3"
+MAGISK_VER_CODE=1437
 SCRIPT_VERSION=$MAGISK_VER_CODE
+
+# Default location, will override if needed
+MAGISKBIN=/data/magisk
 
 get_outfd() {
   readlink /proc/$$/fd/$OUTFD 2>/dev/null | grep /tmp >/dev/null
@@ -30,11 +33,36 @@ get_outfd() {
 }
 
 ui_print() {
-  if $BOOTMODE; then
-    echo "$1"
-  else
-    echo -n -e "ui_print $1\n" >> /proc/self/fd/$OUTFD
-    echo -n -e "ui_print\n" >> /proc/self/fd/$OUTFD
+  $BOOTMODE && echo "$1" || echo -e "ui_print $1\nui_print" >> /proc/self/fd/$OUTFD
+}
+
+mount_partitions() {
+  # Check A/B slot
+  SLOT=`getprop ro.boot.slot_suffix`
+  [ -z $SLOT ] || ui_print "- A/B partition detected, current slot: $SLOT"
+  ui_print "- Mounting /system, /vendor"
+  is_mounted /system || [ -f /system/build.prop ] || mount -o ro /system 2>/dev/null
+  if ! is_mounted /system && ! [ -f /system/build.prop ]; then
+    SYSTEMBLOCK=`find /dev/block -iname system$SLOT | head -n 1`
+    mount -t ext4 -o ro $SYSTEMBLOCK /system
+  fi
+  is_mounted /system || [ -f /system/build.prop ] || abort "! Cannot mount /system"
+  cat /proc/mounts | grep -E '/dev/root|/system_root' >/dev/null && SKIP_INITRAMFS=true || SKIP_INITRAMFS=false
+  if [ -f /system/init.rc ]; then
+    SKIP_INITRAMFS=true
+    mkdir /system_root 2>/dev/null
+    mount --move /system /system_root
+    mount -o bind /system_root/system /system
+  fi
+  $SKIP_INITRAMFS && ui_print "- Device skip_initramfs detected"
+  if [ -L /system/vendor ]; then
+    # Seperate /vendor partition
+    is_mounted /vendor || mount -o ro /vendor 2>/dev/null
+    if ! is_mounted /vendor; then
+      VENDORBLOCK=`find /dev/block -iname vendor$SLOT | head -n 1`
+      mount -t ext4 -o ro $VENDORBLOCK /vendor
+    fi
+    is_mounted /vendor || abort "! Cannot mount /vendor"
   fi
 }
 
@@ -57,42 +85,75 @@ getvar() {
   eval $VARNAME=\$VALUE
 }
 
+resolve_link() {
+  RESOLVED="$1"
+  while RESOLVE=`readlink $RESOLVED`; do
+    RESOLVED=$RESOLVE
+  done
+  echo $RESOLVED
+}
+
 find_boot_image() {
   if [ -z "$BOOTIMAGE" ]; then
-    for BLOCK in boot_a kern-a android_boot kernel boot lnx; do
-      BOOTIMAGE=`find /dev/block -iname $BLOCK | head -n 1` 2>/dev/null
-      [ ! -z $BOOTIMAGE ] && break
-    done
+    if [ ! -z $SLOT ]; then
+      BOOTIMAGE=`find /dev/block -iname boot$SLOT | head -n 1` 2>/dev/null
+    else
+      for BLOCK in boot_a kern-a android_boot kernel boot lnx bootimg; do
+        BOOTIMAGE=`find /dev/block -iname $BLOCK | head -n 1` 2>/dev/null
+        [ ! -z $BOOTIMAGE ] && break
+      done
+    fi
   fi
   # Recovery fallback
   if [ -z "$BOOTIMAGE" ]; then
     for FSTAB in /etc/*fstab*; do
-      BOOTIMAGE=`grep -v '#' $FSTAB | grep -E '\b/boot\b' | grep -oE '/dev/[a-zA-Z0-9_./-]*'`
+      BOOTIMAGE=`grep -v '#' $FSTAB | grep -E '/boot[^a-zA-Z]' | grep -oE '/dev/[a-zA-Z0-9_./-]*'`
       [ ! -z $BOOTIMAGE ] && break
     done
   fi
-  [ -L "$BOOTIMAGE" ] && BOOTIMAGE=`readlink $BOOTIMAGE`
+  BOOTIMAGE=`resolve_link $BOOTIMAGE`
 }
 
 migrate_boot_backup() {
   # Update the broken boot backup
   if [ -f /data/stock_boot_.img.gz ]; then
-    ./magiskboot --decompress /data/stock_boot_.img.gz
+    $MAGISKBIN/magiskboot --decompress /data/stock_boot_.img.gz
     mv /data/stock_boot_.img /data/stock_boot.img
   fi
   # Update our previous backup to new format if exists
   if [ -f /data/stock_boot.img ]; then
     ui_print "- Migrating boot image backup"
-    SHA1=`./magiskboot --sha1 /data/stock_boot.img 2>/dev/null`
+    SHA1=`$MAGISKBIN/magiskboot --sha1 /data/stock_boot.img 2>/dev/null`
     STOCKDUMP=/data/stock_boot_${SHA1}.img
     mv /data/stock_boot.img $STOCKDUMP
-    ./magiskboot --compress $STOCKDUMP
+    $MAGISKBIN/magiskboot --compress $STOCKDUMP
   fi
+  mv /data/magisk/stock_boot* /data 2>/dev/null
+}
+
+flash_boot_image() {
+  # Make sure all blocks are writable
+  $MAGISKBIN/magisk --unlock-blocks
+  case "$1" in
+    *.gz) COMMAND="gzip -d < \"$1\"";;
+    *)    COMMAND="cat \"$1\"";;
+  esac
+  case "$2" in
+    /dev/block/*)
+      ui_print "- Flashing new boot image"
+      eval $COMMAND | cat - /dev/zero | dd of="$2" bs=4096 >/dev/null 2>&1
+      ;;
+    *)
+      ui_print "- Storing new boot image"
+      eval $COMMAND | dd of="$2" bs=4096 >/dev/null 2>&1
+      ;;
+  esac
 }
 
 sign_chromeos() {
-  echo > empty
+  ui_print "- Signing ChromeOS boot image"
 
+  echo > empty
   ./chromeos/futility vbutil_kernel --pack new-boot.img.signed \
   --keyblock ./chromeos/kernel.keyblock --signprivate ./chromeos/kernel_data_key.vbprivk \
   --version 1 --vmlinuz new-boot.img --config empty --arch arm --bootloader empty --flags 0x1
@@ -181,6 +242,7 @@ recovery_cleanup() {
   export LD_LIBRARY_PATH=$OLD_LD_PATH
   [ -z $OLD_PATH ] || export PATH=$OLD_PATH
   ui_print "- Unmounting partitions"
+  umount -l /system_root 2>/dev/null
   umount -l /system 2>/dev/null
   umount -l /vendor 2>/dev/null
   umount -l /dev/random 2>/dev/null
