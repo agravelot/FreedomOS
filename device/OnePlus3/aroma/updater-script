@@ -157,12 +157,8 @@ if (file_getprop("/tmp/aroma/mod.prop", "item.1.12") == "1")
   run_program("/tmp/cmdline_permissive.sh");
 endif;
 
-# If supersu, patch the kernel without dm-verity patch and forceencryption patch
-# SuperSU will do that
-if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "1")
-  then
-  run_program("/tmp/editramdisk.sh", "su");
-endif;
+# patch the kernel without dm-verity patch and forceencryption patch
+run_program("/tmp/editramdisk.sh", "su");
 
 # If no supersu, patch the kernel with dm-verity and forceencryption Disable
 if (file_getprop("/tmp/aroma/mod.prop", "item.1.1") == "0")
