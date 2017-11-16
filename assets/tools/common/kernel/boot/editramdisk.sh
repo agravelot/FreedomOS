@@ -41,10 +41,11 @@ fi
 # Else, supersu will do that during the installation process.
 if [[ $1 = "nosu" ]]; then
     # Disable dm-verity
-    sh /tmp/tools/kernel/boot/no-dm-verity.sh
-    # Disable force ecryption
-    sh /tmp/tools/kernel/boot/no-force-encrypt.sh
+    sh /tmp/tools/kernel/boot/no-dm-verity.sh    
 fi
+
+# Disable force ecryption
+sh /tmp/tools/kernel/boot/no-force-encrypt.sh
 
 find . | cpio -o -H newc | gzip > /tmp/boot.img-ramdisk.gz
 rm -r /tmp/ramdisk
