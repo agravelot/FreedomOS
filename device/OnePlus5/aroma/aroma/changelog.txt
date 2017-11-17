@@ -1,5 +1,7 @@
+2.0.1
     UPDATE: Magisk V14.3(1347)
     UPDATE: OpenGapps 20171116 nano
+    FIX: Google Apps installation (unable to boot system)
 
 2.0
     UPDATE: ARISE Opus 20170918
