@@ -1,3 +1,7 @@
+3.1
+    UPDATE: OxygenOS 4.5.1
+    General bug fixes and stability improvements
+
 3.0.1
     UPDATE: Magisk V14.3(1347)
     UPDATE: OpenGapps 20171116 nano
