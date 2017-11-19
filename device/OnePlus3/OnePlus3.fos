@@ -43,7 +43,7 @@ GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_D
 GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
 GAPPS_MD5=2d1832d333dac247fc4b5cee93a936c0
 
-ARISE_BUILD=true
+ARISE_BUILD=false
 
 # Set Android version for selinux build script
 ANDROID_VERSION=8
@@ -133,8 +133,6 @@ arm64/busybox
 common/adb.sh
 common/addon
 common/apps_remover.sh
-common/aptx
-common/arise
 common/clean.sh
 common/fonts
 common/fix_passwd.sh
