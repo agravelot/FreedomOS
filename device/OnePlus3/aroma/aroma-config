@@ -1,0 +1,370 @@
+# Copyright 2016-2017 Antoine GRAVELOT
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#  Author : Nevax
+#
+
+# -- - INIT - -- #
+fontresload("0", "ttf/Roboto-Regular.ttf", "13");
+fontresload("1", "ttf/Roboto-Regular.ttf", "18");
+loadlang("langs/en.lang");
+
+# -- - VARIABLES - -- #
+ini_set("rom_name", "FreedomOS");
+ini_set("rom_version", "!version!");
+ini_set("rom_author", "Nevax");
+ini_set("rom_date", "!date!");
+ini_set("rom_device", "!device!");
+
+#UI
+ini_set("force_colorspace", "rgba");
+theme("redblack");
+
+anisplash(
+  1,
+  "splash/0", 500,
+  "splash/10", 30,
+  "splash/20", 30,
+  "splash/30", 30,
+  "splash/40", 30,
+  "splash/50", 30,
+  "splash/60", 30,
+  "splash/70", 30,
+  "splash/80", 30,
+  "splash/90", 30,
+  "splash/100", 1000
+);
+
+# -- - SELECT LANGUAGE - -- #
+selectbox(
+  "<~language.title>", "<~language.text>", "@agreement", "language.prop",
+  "<~language.french>", "<~language.french.info>", 0,
+  "<~language.english>", "<~language.english.info>", 1,
+  "<~language.italian>", "<~language.italian.info>", 0,
+  "<~language.german>", "<~language.german.info>", 0,
+  "<~language.spanish>", "<~language.spanish.info>", 0,
+  "<~language.turkish>", "<~language.turkish.info>", 0,
+  "<~language.tchinese>", "<~language.tchinese.info>", 0,
+  "<~language.schinese>", "<~language.schinese.info>", 0,
+  "<~language.czech>", "<~language.czech.info>", 0,
+  "<~language.portuguesebr>", "<~language.portuguesebr>", 0
+);
+
+# -- - SET LANGUAGE - -- #
+if prop("language.prop", "selected.0") == "1" then
+  loadlang("langs/fr.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "2" then
+  loadlang("langs/en.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "3" then
+  loadlang("langs/it.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "4" then
+  loadlang("langs/de.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "5" then
+  loadlang("langs/es.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "6" then
+  loadlang("langs/tr.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "7" then
+  fontresload( "0", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "12" );
+  fontresload( "1", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "14" );
+  loadlang("langs/tc.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "8" then
+  fontresload( "0", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "12" );
+  fontresload( "1", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "14" );
+  loadlang("langs/sc.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "9" then
+  loadlang("langs/cz.lang");
+endif;
+
+if prop("language.prop", "selected.0") == "10" then
+  loadlang("langs/pt-br.lang");
+endif;
+
+# -- - WELCOME - -- #
+viewbox(
+    "<~welcome.title>",
+    "<~welcome.text1> <b>" + ini_get("rom_name") + " " + ini_get("rom_version") + "</b> <~by> <b>" + ini_get("rom_author") + "</b>.\n\n\n\n" +
+    "<~welcome.title2>\n\n" +
+    "  <~welcome.version>\t\t:\t<b><#selectbg_g>" + ini_get("rom_version") + "</#></b>\n" +
+    "  <~welcome.device>\t\t\t:\t<b><#selectbg_g>" + ini_get("rom_device") + "</#></b>\n" +
+    "  <~welcome.developer>\t\t:\t<b><#selectbg_g>" + ini_get("rom_author") +"</#></b>\n" +
+    "  <~welcome.updated>\t\t:\t<b><#selectbg_g>" + ini_get("rom_date") + "</#></b>\n\n" +
+    "  <~welcome.next>",
+    "@welcome");
+
+# -- - MAIN MENU - -- #
+menubox(
+  ini_get("rom_name") + " <~by> <b>Nevax</b>", "<~main.tittle>", "@welcome", "menu.prop",
+
+  "<b><~main.install></b>", "<~main.install.info>", "@install",
+  "<b><~main.sys></b>", "<~main.sys.info>", "@info",
+  "<b><~changelog.title></b>", "<~main.changelog.info>", "@update",
+  "<b><~main.exit></b>", "<~main.exit.info>", "@default"
+);
+
+# -- - SYSTEM INFO - -- #
+if prop("menu.prop", "selected") == "2" then
+  pleasewait("<~sys.info.wait>");
+  setvar(
+  "sysinfo", "\n\n" +
+  "<~sys.info.model>\t\t\t: <b><#selectbg_g>" + sysprop("ro.product.model") + "</#></b>\n" +
+  "<~sys.info.name>\t\t\t: <b><#selectbg_g>" + sysprop("ro.product.name") + "</#></b>\n" +
+  "<~sys.info.manu>\t: <b><#selectbg_g>" + sysprop("ro.product.manufacturer") + "</#></b>\n\n" +
+  "<~sys.info.cpu>\t\t\t: <b><#selectbg_g>" + sysprop("ro.product.cpu.abi") + "</#></b>\n" +
+  "<~sys.info.lcd>\t\t: <b><#selectbg_g>" + sysprop("ro.sf.lcd_density") + "</#></b>\n\n" +
+  "<~sys.info.storage>\t\t: <b><#selectbg_g>" + getdisksize("/system", "m") + " MB</#></b>\n" +
+  "\t\t<~sys.info.storage.free>\t: <b><#selectbg_g>" + getdiskfree("/system", "m") + " MB</#></b>\n\n"
+  );
+
+  textbox("<~sys.info.title>", "<~sys.info.title2>", "@info", getvar("sysinfo"));
+  back("2");
+endif;
+
+# -- - CHANGELOG - -- #
+if prop("menu.prop", "selected") == "3" then
+  textdialog("FreedomOS changelog", resread("changelog.txt"), "Close");
+  back("1");
+endif;
+
+# -- - EXIT - -- #
+if prop("menu.prop", "selected") == "4" then
+  if confirm("<~main.exit>", "<~main.exit.info>?", "@alert") == "yes" then
+    exit("");
+  endif;
+back("1");
+endif;
+
+agreebox(
+   "Terms Of Use",
+   "<@center>Please read the FreedomOS terms of use</@>",
+   "@default",
+   "" + readfile_aroma("agreement.txt"),
+   "I agree with these terms of use",
+   "<@center>You must accept the terms</@>"
+ );
+
+# -- - INSTALL OPTIONS - -- #
+ini_set("text_next", "<~text_next>");
+selectbox(
+  "<~install_mod.tittle>", "<~install_mod.tittle2>", "@default", "install_mod.prop",
+
+  "<~addon.tittle>", "", 2,
+    "<~addon_yes>", "<~info.addon_yes>", 0,
+    "<~addon_no>", "<~info.addon_no>", 1,
+  "<~passwordfix.tittle>", "", 2,
+    "<~passwordfix_yes>", "<~info.passwordfix_yes>", 0,
+    "<~passwordfix_no>", "<~info.passwordfix_no>", 1
+);
+
+  ##############################################
+  # Customized installation
+  ##############################################
+  form(
+      "Google Apps",
+      "Please select which apps you want to include or exclude</#>",
+      "@default",
+      aromagapps.prop,
+      "inclorexcl",     "Choose to include or exclude the apps below",        "",                    "group",
+        "1",     "Include",   "Choose the apps you WANT installed from the list below.",             "select.selected",
+        "0",     "Exclude",   "Choose the apps you DON'T WANT installed from the list below.",       "select",
+
+      "gapps",     "Choose GApps which you want to add on install/exclude list",        "",                                         "group",
+        "AndroidPay",     "<b>Android Pay</b>",       "",                      "check",
+        "CalendarGoogle",     "<b>Google Calendar</b>",       "",                      "check",
+        "GoogleCalendarSyncAdapter",     "<b>Google Calendar Sync</b>",       "",                      "check",
+        "GoogleCamera",     "<b>Google Camera</b>",       "",                      "check",
+        "Velvet",      "<b>Google<b>",    "",                      "check",
+        "Chrome",     "<b>Google Chrome</b>",       "",                      "check",
+        "GooglePrintRecommendationService",     "<b>Google Cloud Print Recommendation</b>",       "",                      "check",
+        "Drive",     "<b>Google Drive</b>",       "",                      "check",
+        "Maps",     "<b>Google Maps</b>",       "",                      "check",
+        "Photos",     "<b>Google Photos</b>",       "",                      "check",
+        "Gmail2",     "<b>Gmail</b>",       "",                      "check",
+        "GoogleTTS",     "<b>Google Text-to-Speech</b>",       "",                      "check",
+        "PixelIcons",     "<b>Pixel Icons</b>",       "",                      "check",
+        "PixelLauncher",     "<b>Pixel Launcher</b>",       "(Wallpapers and Google Search Required)",                      "check",
+        "Search",     "<b>Google Search</b>",       "",                      "check",
+        "tts",     "<b>Offline Speech Files</b>",       "(Required for offline voice dicatation support)",                      "check",
+        "Talkback",     "<b>Talkback</b>",       "<#f00>NOT</#> recommended for uninstallation",                      "check",
+        "GoogleWallpapers",     "<b>Wallpapers</b>",       "",                      "check",
+        "YouTube",     "<b>YouTube</b>",       "",                      "check"
+  );
+
+# -- - SYSTEM APPS - -- #
+form(
+    "System Apps",
+    "Please select which apps you want to include or exclude</#>",
+    "@default",
+    aromasapps.prop,
+    "inclorexcl",     "Choose to include or exclude the apps below",        "",                    "group",
+      "1",                    "Include",                  "Choose the apps you WANT installed from the list below.",        "select.selected",
+      "0",                    "Exclude",                  "Choose the apps you DON'T WANT installed from the list below.",  "select",
+
+    "sapps",     "Choose System Apps which you want to add on install/exclude list",    "",        "group",
+      "AntHalService",          "<~anthal>",              "<~info.anthal>",             "check",
+      "BasicDreams",            "<~basic_dream>",         "<~info.basic_dream>",        "check",
+      "BluetoothMidiService",   "<~bt_midi>",             "<~info.bt_midi>",            "check",
+      "DivesIconPack",          "<~dive_icon>",           "<~info.dive_icon>",          "check",
+      "OPFilemanager",          "<~document>",            "<~info.document>",           "check",
+      "DeskClock",              "<~desk_clock>",          "<~info.desk_clock>",         "check",
+      "Calculator",             "Calculator",             "OnePlus Calculator",         "check",
+      "EasterEgg",              "<~easter_egg>",          "<~info.easter_egg>",         "check",
+      "FaceDetect",             "<b>Face Detection for Media</b>",       "",            "check",
+      "FaceUnlock",             "<b>Face Unlock</b>",     "",                           "check",
+      "LiveWallpapers",         "<~anim_wallpaper>",      "<~info.anim_wallpaper>",     "check",
+      "OPBackup",               "<~ota>",                 "<~info.ota>",                "check",
+      "OPMusic",                "<~music>",               "<~info.music>",              "check",
+      "OPForum",                "<~oneplus_forum>",       "<~info.oneplus_forum>",      "check",
+      "OPWallpapers",           "<~oneplus_wallpapers>",  "<~info.oneplus_wallpapers>", "check",
+      "OnePlusCamera",          "<~oneplus_camera>",      "<~info.oneplus_camera>",     "check",
+      "OnePlusGallery",         "<~oneplus_gallery>",     "<~info.oneplus_gallery>",    "check",
+      "OPMms",                  "<~sms>",                 "<~info.sms>",                "check",
+      "RifonIconPack",          "<~rifon_icon>",          "<~info.rifon_icon>",         "check",
+      "SoundRecorder",          "<~sound_recorder>",      "<~info.sound_recorder>",     "check",
+      "SwiftKey",               "<~swiftkey>",            "<~info.swiftkey>",           "check",
+      "Tag",                    "<~tags>",                "<~info.tags>",               "check",
+      "Weather",                "<~weather>",             "<~info.weather>",            "check"
+);
+
+# -- - MOD - -- #
+checkbox(
+  "<~mod.tittle>", "<~mod.tittle2>", "@personalize", "mod.prop",
+
+  "<~mod.tittle3>", "", 2,
+    "<~root>", "<~info.root>", 1,
+    "<~xposed>", "<~info.xposed>", 0,
+    "<~adaway>", "<~info.adaway>", 1,
+    "<~adb>", "<~info.adb>", 0,
+    "<~dns>", "<~info.dns>", 0,
+    "<~fos_wallpapers>", "<~info.fos_wallpapers>", 1,
+    "<~emoji_one>", "<~info.emoji_one>", 1,
+    "<~google_assistant>", "<~info.google_assistant>", 1,
+    "", "", 0,
+    "<~substratum>", "<~info.substratum>", 0,
+    "<~40-wifi>", "<~info.40-wifi>", 0,
+    "<~permissive>", "<~info.permissive>", 0,
+    "<~android_o_font>", "<~info.android_o_font>", 0
+);
+
+
+    form(
+        "Root",
+        "Choose wich root method you want to include</#>",
+        "@default",
+        aromaroot.prop,
+        "rootmethod",     "",        "",      "group",
+          "0",                    "<~supersu>",                  "<~info.supersu>",       "select",
+          "1",                    "<~magisk>",                   "<~info.magisk>",        "select.selected"
+        );
+
+
+# -- ARISE -- #
+if
+  prop("mod.prop", "item.1.9")=="IGNORE"
+then
+    form(
+        "ARISE Settings",
+        "Please select which options you want to include with ARISE</#>",
+        "@default",
+        arise.prop,
+
+        "arise",     "Please select which options you want to include with ARISE",    "",        "group",
+          "install.v4a_2.5.0.5",      "<~v4a_new>",         "<~info.v4a_new>",         "check",
+          "install.v4a_2.3.4.0",      "<~v4a_old>",         "<~info.v4a_old>",         "check",
+          "install.v4a_profiles",     "<~v4a_profiles>",    "",                        "check",
+          "install.arkamys",          "<~arkamys>",         "<~info.arkamys>",         "check",
+          "install.ICEsound",         "<~icesound>",        "<~info.icesound>",        "check",
+          "install.sony",             "<~sony_player>",     "<~info.sony_player>",     "check",
+          "delete.deep_buffer",       "<~rm_deep_buffer>",  "<~info.rm_deep_buffer>",  "check",
+          "repair.sdcard.permissions","<~sdcard_perm>",     "<~info.sdcard_perm>",     "check"
+    );
+
+    if file_getprop("/tmp/aroma/arise.prop","install.ICEsound") == "1"
+        then
+
+        textbox(
+          "ICEconfigs",
+          "Read Me",
+          "info",
+          readfile_aroma("ICEconfig.txt")
+        );
+
+        form(
+          "ICEsound Configuration Selection",
+          "Please Select:",
+          "personalize",
+          "ICEpreset.prop",
+
+          "use.ICEsound.preset",     "ICE Configuration selection",        "",                    "group",
+              "01",                    "BATHSALTS",           "",  "select",
+              "02",                    "DEEPBASS",            "",  "select",
+              "03",                    "HOLYSH*T",            "",  "select",
+              "04",                    "KRAZY",               "",  "select",
+              "05",                    "MOVIE",               "",  "select",
+              "06",                    "MUSIC2",              "",  "select",
+              "07",                    "OUTDOORS",            "",  "select",
+              "08",                    "PURE",                "",  "select",
+              "09",                    "(PURE)SH*T",          "",  "select",
+              "10",                    "WIDECLARITY",         "",  "select",
+              "11",                    "Default",             "",  "select.selected",
+              "NO",                    "None",                "",  "select"
+        );
+    endif;
+
+    resexec("scripts/gen_arise_conf.sh");
+endif;
+
+alert (
+  "If you like my work",
+  "You can buy me a beer:\n"+
+  "Paypal: <b>antoine.gravelot@hotmail.com</b>\n"+
+  "Really appreciated!",
+ "@paypal"
+);
+
+# -- - Pre-Install - -- -#
+ini_set("text_next", "<~install.now>");
+viewbox( "<~pre.install.title>", "<~pre.install>\n\n" + "<~pre.install2>\n\n" + "<~pre.install3>\n\n\n\n", "@install");
+
+# -- - Install - -- #
+ini_set("text_next", "<~text_next>");
+install( "<~install>", "<b>" + ini_get("rom_name") + "</b> is being installed.\n\n" + "<~install.finish>", "@install");
+
+# -- - Post-Install - -- #
+resexec("scripts/clean_tmp.sh");
+ini_set("text_next", "Finish");
+checkviewbox(
+  "<~install.finish.title>", "<#selectbg_g><b><~finish.title></b></#>\n\n" + "<b><~finish.msg></b>\n\n" + "", "@finish",
+
+  "<~finish.reboot>", "0", "reboot_it");
+
+# -- - REBOOT - -- #
+if
+  getvar("reboot_it") == "1" then reboot("onfinish");
+endif;
