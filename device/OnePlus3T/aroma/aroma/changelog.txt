@@ -1,3 +1,20 @@
+3.2
+    REMOVE: Arise (until fixed with oreo builds)
+    UPDATE: Google Apps for Oreo
+    UPDATE: OxygenOS 5.0
+    System:
+        Update to Android O (8.0)
+        Added Parallel Apps
+        Added Picture in Picture
+        Added Auto-fill
+        Added Smart text selection
+        New Quick Settings design
+        Updated security patch to September
+    Launcher:
+        Added notification dots
+        New app folder design
+        Now able to upload photos directly to Shot on OnePlus
+        
 3.1
     UPDATE: OxygenOS 4.5.1
     General bug fixes and stability improvements

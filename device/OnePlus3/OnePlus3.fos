@@ -23,30 +23,30 @@ ZIP_NAME=FreedomOS
 TARGET_ARCH=arm64
 CODENAME=op3
 DEVICE=OnePlus3
-VERSION=3.1
+VERSION=3.2
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT="OnePlus 3"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus3Oxygen_16_OTA_057_all_1710122310_f5da2d4b1f194f4e
-ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
+ROM_NAME=OnePlus3Oxygen_16_OTA_060_all_1711160505_d8b688b464
+ROM_LINK=http://otafsg.h2os.com/patch/amazone2/GLO/OnePlus3Oxygen/OnePlus3Oxygen_16.A.60_GLO_060_1711160505/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=02abdb85ee854a341b625a3be489140e
+ROM_MD5=4f84d524311ab99fddcf6568254dcff6
 
 # OpenGapps
 GAPPS_BUILD=true
-GAPPS_ANDROID=7.1
+GAPPS_ANDROID=8.0
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=nano
 GAPPS_DATE=20171116
 GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
 GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
-GAPPS_MD5=be692200edfbfff42f224706b01d52d3
+GAPPS_MD5=2d1832d333dac247fc4b5cee93a936c0
 
-ARISE_BUILD=true
+ARISE_BUILD=false
 
 # Set Android version for selinux build script
-ANDROID_VERSION=7
+ANDROID_VERSION=8
 # Set the version of the aroma installer, this is not the version of FreedomOS!
 # see assets/META-INF/aroma/$AROMA_VERSION
 AROMA_VERSION=2.70
@@ -104,6 +104,23 @@ priv-app/OnePlusWizard
 priv-app/OPDeviceManager
 priv-app/SetupWizard
 priv-app/Velvet
+app/GoogleExtShareds
+priv-app/AndroidPlatformServices
+priv-app/ConfigUpdater
+priv-app/GCS
+priv-app/GmsCoreSetupPrebuilt
+priv-app/GoogleBackupTransport
+priv-app/GoogleContacts
+priv-app/GoogleDialer
+priv-app/GoogleExtServices
+priv-app/GoogleOneTimeInitializer
+priv-app/GooglePartnerSetup
+priv-app/NexusLauncherPrebuilt
+priv-app/Phonesky
+priv-app/PrebuiltGmsCore
+priv-app/StorageManagerGoogle
+priv-app/TagGoogle
+priv-app/Turbo
 vendor/etc/in_apps
 recovery-from-boot.p
 "
@@ -133,8 +150,6 @@ arm64/busybox
 common/adb.sh
 common/addon
 common/apps_remover.sh
-common/aptx
-common/arise
 common/clean.sh
 common/fonts
 common/fix_passwd.sh
