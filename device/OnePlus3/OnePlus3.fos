@@ -23,7 +23,7 @@ ZIP_NAME=FreedomOS
 TARGET_ARCH=arm64
 CODENAME=op3
 DEVICE=OnePlus3
-VERSION=3.2
+VERSION=3.2.1
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT="OnePlus 3"
 

@@ -23,7 +23,7 @@ ZIP_NAME=FreedomOS
 TARGET_ARCH=arm64
 CODENAME=op5
 DEVICE=OnePlus5
-VERSION=2.0.1
+VERSION=2.0.2
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT="OnePlus 5"
 

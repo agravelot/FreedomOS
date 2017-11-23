@@ -1,3 +1,7 @@
+3.1.1-CE
+    REMOVE: OPBugReportLite know for logging users data
+    Thanks to: https://twitter.com/fs0c131y/status/933037531066785797
+
 3.1-CE
     FIX: Force encryption issues, the system will not try to encrypt all your data!
     ADD: Magisk V14.3(1347)
