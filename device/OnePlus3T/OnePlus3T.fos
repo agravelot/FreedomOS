@@ -23,7 +23,7 @@ ZIP_NAME=FreedomOS
 TARGET_ARCH=arm64
 CODENAME=op3t
 DEVICE=OnePlus3T
-VERSION=3.2
+VERSION=3.2.1
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT="OnePlus 3T"
 
@@ -53,7 +53,6 @@ AROMA_VERSION=2.70
 BUILD_METHOD=dat_to_dat
 # SYSTEMIMAGE_PARTITION_SIZE is the size of your system partition, you can get this value in the TWRP source of your device.
 # https://github.com/dianlujitao/android_device_oneplus_oneplus3/search?utf8=✓&q=BOARD_SYSTEMIMAGE_PARTITION_SIZE&type=Code
-# The partition size is exactly the same between OP3 and OP3T
 SYSTEMIMAGE_PARTITION_SIZE=3154116608
 
 PATCH_SYSYEM=""
@@ -86,6 +85,7 @@ app/NFCTestMode
 app/OEMLogKit
 app/OPBugReport_Complete
 app/OPPBugReport
+app/OPBugReportLite
 app/OPPush
 app/OemAutoTestServer
 app/SensorTestTool
