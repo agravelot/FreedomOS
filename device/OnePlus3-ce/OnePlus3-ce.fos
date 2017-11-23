@@ -86,6 +86,7 @@ app/NFCTestMode
 app/OEMLogKit
 app/OPBugReport_Complete
 app/OPPBugReport
+app/OPBugReportLite
 app/OPPush
 app/OemAutoTestServer
 app/SensorTestTool
