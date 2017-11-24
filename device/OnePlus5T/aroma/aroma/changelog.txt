@@ -1,2 +1,2 @@
-1.0
-    Initial release
+2.0.2
+    Initial release (version number to fit with OnePus5)
