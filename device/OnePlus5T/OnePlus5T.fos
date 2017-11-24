@@ -1,0 +1,151 @@
+#!/bin/bash
+# Copyright 2016-2017 Antoine GRAVELOT
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#  Author : Nevax
+#
+# FreedomOS conf file
+
+ZIP_NAME=FreedomOS
+# Select the architecture of your device, it will be used in the system patch (see ADD_SYSTEM_LIST bellow).
+# It must coincide with the assets/system/$TARGET_ARCH
+TARGET_ARCH=arm64
+CODENAME=op5t
+DEVICE=OnePlus5t
+VERSION=1.0.0
+# It will be used for the assert verification at the beginning of installation of the ROM.
+ASSERT="OnePlus 5T"
+
+# Basically, it's just the name of the downloaded zip file without the ".zip" extension.
+ROM_NAME=OnePlus5TOxygen_43_OTA_004_all_1711152324_9a7ca8ad1c7d
+ROM_LINK=http://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus5TOxygen/OnePlus5TOxygen_43.O.04_GLO_004_1711152324/$ROM_NAME.zip
+# This MD5 is used for checking the integrity of the original rom.
+ROM_MD5=afd04ff93d9b3aaaf9213a6e91c338f9
+
+# OpenGapps
+GAPPS_BUILD=true
+GAPPS_ANDROID=7.1
+GAPPS_PLATFORM=arm64
+GAPPS_TYPE=nano
+GAPPS_DATE=20171123
+GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
+GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
+GAPPS_MD5=f0c1273d0eb73d3f93880b472650fc83  
+
+ARISE_BUILD=true
+
+# Set Android version for selinux build script
+ANDROID_VERSION=7
+# Set the version of the aroma installer, this is not the version of FreedomOS!
+# see assets/META-INF/aroma/$AROMA_VERSION
+AROMA_VERSION=2.70
+BUILD_METHOD=dat_to_dat
+# SYSTEMIMAGE_PARTITION_SIZE is the size of your system partition, you can get this value in the TWRP source of your device.
+# https://github.com/dianlujitao/android_device_oneplus_oneplus3/search?utf8=✓&q=BOARD_SYSTEMIMAGE_PARTITION_SIZE&type=Code
+SYSTEMIMAGE_PARTITION_SIZE=3221225472
+
+PATCH_SYSYEM=""
+
+# Add BUSYBOX into the rom
+BUILD_BUSYBOX=false
+
+BOOTANIMATION=350
+
+aroma_list="
+common/*
+1080p/*
+oneplus3/*
+"
+
+# Files / folders to remove from the original stock image.
+# You can easily debloat your rom from here.
+CLEAN_SYSTEM_LIST="
+app/BTtestmode
+app/Duo
+app/DMAgent
+app/EngSpecialTest
+app/EngineeringMode
+app/FaceLock
+app/GmailExchange
+app/Hangouts
+app/LogKitSdService
+app/Music2
+app/NFCTestMode
+app/OEMLogKit
+app/OPBugReport_Complete
+app/OPPBugReport
+app/OPBugReportLite
+app/OPPush
+app/OemAutoTestServer
+app/SensorTestTool
+app/Videos
+app/WifiRfTestApk
+bin/WifiLogger_app
+bin/fmfactorytest
+bin/fmfactorytestserver
+bin/install-recovery.sh
+bin/oemlogkit
+etc/recovery-resource.dat
+priv-app/CallLogBackup
+priv-app/GmsCore
+priv-app/GoogleFeedback
+priv-app/GoogleServicesFramework
+priv-app/OnePlusWizard
+priv-app/OPDeviceManager
+priv-app/SetupWizard
+priv-app/Velvet
+vendor/etc/in_apps
+recovery-from-boot.p
+"
+
+# Add a secondary firmware files, like that it can be installed.
+PATCH_FIRMWARE=""
+
+# Set the files/folder you want to add to your system partition.
+# The files are in the assets/system/$TARGET_ARCH/
+ADD_SYSTEM_LIST="
+app/Adaway
+app/GoogleCamera
+app/GoogleWallpapers
+app/PixelIcons
+app/PixelLauncher
+app/Substratum
+app/XposedInstaller
+"
+
+# Set the files/folder you want to add to your system partition.
+# The files are in the assets/system/$TARGET_ARCH/
+ADD_DATA_LIST=""
+
+# tools to add to the rom, (/assets/tools/)
+TOOLS_LIST="
+arm64/busybox
+common/adb.sh
+common/addon
+common/apps_remover.sh
+common/aptx
+common/arise
+common/clean.sh
+common/fonts
+common/fix_passwd.sh
+common/gen_apps_list.sh
+common/google_assistant.sh
+common/google_dns.sh
+common/kernel
+common/log_folder.sh
+common/magisk
+common/save_logs.sh
+common/supersu
+common/wideband_wifi.sh
+"
