@@ -22,7 +22,7 @@ ZIP_NAME=FreedomOS
 # It must coincide with the assets/system/$TARGET_ARCH
 TARGET_ARCH=arm64
 CODENAME=op5t
-DEVICE=OnePlus5t
+DEVICE=OnePlus5T
 VERSION=2.0.2
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT="OnePlus 5T"
