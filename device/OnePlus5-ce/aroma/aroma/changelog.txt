@@ -1,0 +1,12 @@
+3.0-CE
+    Initial release beta builds based on Oreo builds: 
+        Updated to Android O (8.0)
+        Added Parallel Apps
+        Added Picture in Picture
+        Added Auto-fill
+        Added Smart text selection
+        New Quick Settings design
+        Updated security patch to October
+        Added notification dots
+        New app folder design
+        Now able to upload photos directly to Shot on OnePlus
