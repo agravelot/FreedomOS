@@ -1,3 +1,22 @@
+3.2-CE
+    UPDATE: OxygenOS OpenBeta 28/19
+      Launcher
+          Optimized and enhanced application shortcut menu
+          Optimized shelf visual style
+      Gallery
+          Added a photo map to view photos by location
+          UI enhancements and other optimizations
+      Contacts
+          Added emergency information (ICE) to your personal information
+      System
+          Wireless hotspot management optimizations
+          Support for aptX/aptX HD
+          UI fixes for Quick Settings
+          Optimized Wi-Fi performance and security
+          Optimized battery usage statistics
+          Updated Android Security Patch
+          Other bug fixes and optimizations
+
 3.1.1-CE
     REMOVE: OPBugReportLite know for logging users data
     Thanks to: https://twitter.com/fs0c131y/status/933037531066785797
