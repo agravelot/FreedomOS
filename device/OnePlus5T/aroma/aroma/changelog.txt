@@ -1,2 +1,15 @@
+2.1
+    UPDATE: OxygenOS 4.7.4
+      Camera
+        Optimized UI of Camera
+        Improvements for photo quality
+      System
+        Optimizations for audio from speaker and earphones
+        Optimizations for face unlock
+        Optimizations for vibration
+        Wi-Fi battery usage optimization
+        Improved stability of fingerprint and GPS
+        General bug fixes and system stability improvements
+
 2.0.2
     Initial release (version number to fit with OnePus5)
