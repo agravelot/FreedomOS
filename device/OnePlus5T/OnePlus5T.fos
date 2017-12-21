@@ -28,8 +28,8 @@ VERSION=2.1
 ASSERT="OnePlus 5T"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus5TOxygen_43_OTA_006_all_1712062242_0ee65
-ROM_LINK=http://otafsg.h2os.com/patch/amazone2/GLO/OnePlus5TOxygen/OnePlus5TOxygen_43.O.06_GLO_006_1712062242/$ROM_NAME.zip
+ROM_NAME=OnePlus5TOxygen_43_OTA_006_all_1712062242_69a5125fb2eb4d87
+ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
 ROM_MD5=c957c918beb5c75ffef0f80e3eb430a0
 
