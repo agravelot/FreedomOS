@@ -1,3 +1,22 @@
+3.1-CE
+    UPDATE: OxygenOS 5.0
+        Launcher
+            Fixed widget issues
+            Fixed shortcut issues
+        Camera
+            UI improvements
+        File Manager
+            Added f4v format in video category
+            Speed improvements while deleting massive files
+        System
+            Improvements for Reading Mode
+            Improvements for vibration
+            Improvements for Bluetooth audio
+            Fixed Parallel Apps bugs
+            Fixed reboot issue when using Picture in Picture
+            Updated Android security patch to November
+            General bug fixes and stability improvements
+
 3.0-CE
     Initial release beta builds based on Oreo builds: 
         Updated to Android O (8.0)
