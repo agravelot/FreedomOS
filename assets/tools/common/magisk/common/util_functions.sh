@@ -7,9 +7,14 @@
 #
 ##########################################################################################
 
-MAGISK_VER="15.1"
-MAGISK_VER_CODE=1510
+MAGISK_VER="15.2"
+MAGISK_VER_CODE=1520
 SCRIPT_VERSION=$MAGISK_VER_CODE
+
+# Detect whether in boot mode
+ps | grep zygote | grep -v grep >/dev/null && BOOTMODE=true || BOOTMODE=false
+$BOOTMODE || ps -A 2>/dev/null | grep zygote | grep -v grep >/dev/null && BOOTMODE=true
+$BOOTMODE || id | grep -q 'uid=0' || BOOTMODE=true
 
 # Default location, will override if needed
 MAGISKBIN=/data/adb/magisk
@@ -48,7 +53,12 @@ mount_partitions() {
     SLOT=_`getprop ro.boot.slot`
     [ $SLOT = "_" ] && SLOT=
   fi
+
+  # Check the boot image to make sure the slot actually make sense
+  find_boot_image
+  find_dtbo_image
   [ -z $SLOT ] || ui_print "- A/B partition detected, current slot: $SLOT"
+
   ui_print "- Mounting /system, /vendor"
   is_mounted /system || [ -f /system/build.prop ] || mount -o ro /system 2>/dev/null
   if ! is_mounted /system && ! [ -f /system/build.prop ]; then
@@ -106,7 +116,10 @@ find_boot_image() {
   BOOTIMAGE=
   if [ ! -z $SLOT ]; then
     BOOTIMAGE=`find /dev/block -iname boot$SLOT | head -n 1` 2>/dev/null
-  else
+  fi
+  if [ -z "$BOOTIMAGE" ]; then
+    # The slot info is incorrect...
+    SLOT=
     for BLOCK in boot_a kern-a android_boot kernel boot lnx bootimg; do
       BOOTIMAGE=`find /dev/block -iname $BLOCK | head -n 1` 2>/dev/null
       [ ! -z $BOOTIMAGE ] && break
@@ -119,10 +132,10 @@ find_boot_image() {
       [ ! -z $BOOTIMAGE ] && break
     done
   fi
-  BOOTIMAGE=`resolve_link $BOOTIMAGE`
+  [ ! -z "$BOOTIMAGE" ] && BOOTIMAGE=`resolve_link $BOOTIMAGE`
 }
 
-migrate_boot_backup() {
+run_migrations() {
   # Update the broken boot backup
   if [ -f /data/stock_boot_.img.gz ]; then
     $MAGISKBIN/magiskboot --decompress /data/stock_boot_.img.gz /data/stock_boot.img
@@ -135,8 +148,17 @@ migrate_boot_backup() {
     mv /data/stock_boot.img $STOCKDUMP
     $MAGISKBIN/magiskboot --compress $STOCKDUMP
   fi
-  mv /data/magisk/stock_boot* /data 2>/dev/null
-  mv /data/magisk/adb/stock_boot* /data 2>/dev/null
+  # Move the stock backups
+  if [ -f /data/magisk/stock_boot* ]; then
+    rm -rf /data/stock_boot*
+    mv /data/magisk/stock_boot* /data 2>/dev/null
+  fi
+  if [ -f /data/adb/magisk/stock_boot* ]; then
+    rm -rf /data/stock_boot*
+    mv /data/adb/magisk/stock_boot* /data 2>/dev/null
+  fi
+  # Remove old dbs
+  rm -f /data/user*/*/magisk.db
 }
 
 flash_boot_image() {

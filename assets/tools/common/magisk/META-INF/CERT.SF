@@ -1,27 +1,27 @@
 Signature-Version: 1.0
-SHA1-Digest-Manifest: al7QmVAe9FY87c8M9i+yxY8jKk4=
+SHA1-Digest-Manifest: D0DajZ6q3wZDrCo12Pb7DLg3Hb8=
 Created-By: 1.0 (Android SignApk)
 
 Name: META-INF/com/google/android/updater-script
-SHA1-Digest-Manifest: Jk/FbkSLbsMgiKtjU3a5DkZSTXc=
+SHA1-Digest-Manifest: BmmwQURRpGU8K38wl4CN+Y1/ecc=
 
 Name: META-INF/com/google/android/update-binary
 SHA1-Digest-Manifest: d1eBu7llgnFRSDHstAv7q08xFvo=
 
 Name: common/boot_patch.sh
-SHA1-Digest-Manifest: IvDyenJWpnO0FR7EAgE7y+zEvXY=
+SHA1-Digest-Manifest: eCEYi2vCf1lzleH7gv0hs7W5l5Q=
 
 Name: x86/magiskboot
-SHA1-Digest-Manifest: +CUbsm8yLKdpOb8ZRH+V3yZrUw0=
+SHA1-Digest-Manifest: fWQKLadJ5nFPWmp8QLfC0qCK64A=
 
 Name: chromeos/kernel.keyblock
 SHA1-Digest-Manifest: obJ/Zq6Q4YjuLT9zMe2gVi0SVfQ=
 
 Name: x64/magiskinit
-SHA1-Digest-Manifest: iCm7M8B4V7bQRBhwK3VlOvtVobc=
+SHA1-Digest-Manifest: 8LQWlcMY3P+IKlXQdtFPHivL9E8=
 
 Name: x64/magiskboot
-SHA1-Digest-Manifest: 6BFGtsrWdqKEPzG1OEw2gTT6tDw=
+SHA1-Digest-Manifest: Ass4EwWoSfgBoRG2mUgUJRvW+2o=
 
 Name: chromeos/futility
 SHA1-Digest-Manifest: XFdhLSY2+Y0QmsdpQ86C1+PiRIM=
@@ -30,26 +30,26 @@ Name: chromeos/kernel_data_key.vbprivk
 SHA1-Digest-Manifest: 3QeXadLiF9HJzK0798JQDt+7buY=
 
 Name: x86/magiskinit
-SHA1-Digest-Manifest: qwSKjCDOf9rTVhYHpdwsJR3GrCQ=
+SHA1-Digest-Manifest: 8J6fWNjvsasH+sn9L4unIdSsmeQ=
 
 Name: common/util_functions.sh
-SHA1-Digest-Manifest: ualt3qT1rcdqZCEUb1c0H9giDuI=
+SHA1-Digest-Manifest: 9Y9QysEp3zYUfaAmwbtxD3Q2oXI=
 
 Name: addon.d/99-magisk.sh
-SHA1-Digest-Manifest: PoJMrpXjh9jFwQ+cTMPTSTlvg3g=
+SHA1-Digest-Manifest: BLcRyoNiTBloG445N5pgiiuG5rI=
 
 Name: arm64/magiskboot
-SHA1-Digest-Manifest: PdLe36xjF6dP6i/DAOf5AfFAofw=
+SHA1-Digest-Manifest: WoJl5MDHUlGEb5pJumPsP3rvA0w=
 
 Name: arm/magiskinit
-SHA1-Digest-Manifest: Swuo9mqHXLUoDNW5iBWDk8ZuXrk=
+SHA1-Digest-Manifest: 2sX1QHoA4w92jk82y0en0bVuyZM=
 
 Name: common/magisk.apk
-SHA1-Digest-Manifest: 3A0DVbS9Hvulec0DVMwUxD+E194=
+SHA1-Digest-Manifest: Kr0245DzgrGZ8LRaDcwb2G/wr2k=
 
 Name: arm/magiskboot
-SHA1-Digest-Manifest: z9JjCq7LlmdG6b8rud+S236ytRM=
+SHA1-Digest-Manifest: Jgcd3XmmwYfvamD8pc02I9gw4Ao=
 
 Name: arm64/magiskinit
-SHA1-Digest-Manifest: ne0VGiEFSWl4jXpVZM8UrqJRxsU=
+SHA1-Digest-Manifest: uuF1WJmFtiynblPQoI96TppROPs=
 
