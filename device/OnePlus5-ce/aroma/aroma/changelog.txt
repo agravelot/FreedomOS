@@ -1,5 +1,17 @@
+3.2-CE
+    UPDATE: OpenGapps 20180109
+    UPDATE: OxygenOS OpenBeta 3 
+        Recorder
+            Added app shortcut on Launcher
+        System
+            Added face unlock
+            Optimizations for vibration
+            Fixed connection issue of 5G Wi-Fi
+            General bug fixes and improvements
+            Updated Android security patch to December
+
 3.1-CE
-    UPDATE: OxygenOS 5.0
+    UPDATE: OxygenOS OpenBeta 2
         Launcher
             Fixed widget issues
             Fixed shortcut issues
