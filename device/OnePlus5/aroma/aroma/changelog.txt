@@ -1,5 +1,6 @@
 3.0
     UPDATE: OpenGapps 20180109
+    UPDATE: Magisk 15.2
     UPDATE: OxygenOS 5.0.1
         Updated to Android O (8.0)
         Launcher
