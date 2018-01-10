@@ -1,3 +1,18 @@
+2.2
+    UPDATE: OpenGapps 20180109
+    UPDATE: OxygenOS 4.7.6
+      Camera
+          Stability improvements
+          Clarity improvements for selfie in low light
+          Performance improvements for 3rd party camera apps
+      System
+          Added assistive lighting for face unlock
+          Improvements for expanded screenshot
+          Improvements for Wi-Fi display
+          Updated Android security patch to December
+
+
+
 2.1
     UPDATE: OxygenOS 4.7.4
       Camera
