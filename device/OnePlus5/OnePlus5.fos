@@ -28,20 +28,20 @@ VERSION=3.0
 ASSERT="OnePlus 5"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus5Oxygen_23_OTA_027_all_1712231851_8d16de8
-ROM_LINK=http://otafsg.h2os.com/patch/amazone2/GLO/OnePlus5Oxygen/OnePlus5Oxygen_23.O.27_GLO_027_1712231851/$ROM_NAME.zip
+ROM_NAME=OnePlus5Oxygen_23_OTA_028_all_1801031502_109fde3709984ec8
+ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=a51f59a01303c1aaaed92a4ecad7fcf3
+ROM_MD5=fb5d456d4e013ad2fcddaa016a47aeea
 
 # OpenGapps
 GAPPS_BUILD=true
 GAPPS_ANDROID=8.0
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=nano
-GAPPS_DATE=20171116
+GAPPS_DATE=20180109
 GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
 GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
-GAPPS_MD5=2d1832d333dac247fc4b5cee93a936c0
+GAPPS_MD5=6e8831306655705b4171fa0aae444796
 
 ARISE_BUILD=false
 
