@@ -1,3 +1,23 @@
+3.3-CE
+    UPDATE: GoogleApps 20180109
+    UPDATE: OxygenOS OpenBeta 29/20
+      Notes (New OnePlus) app
+        Take note quickly and simply
+        Share note as picture
+        Memo widget on Shelf is editable
+      Quick clipboard
+          Enhanced copying and editing ability
+      Weather
+          New weather widget
+      File Manager
+          Added large files category
+          Speed improvements while deleting massive files
+      System
+          Added OTG toggle in Quick Settings
+          Added notification when 3rd party apps delete contacts
+          Updated Android security patch to December
+          General bug fixes and improvements
+
 3.2-CE
     UPDATE: OxygenOS OpenBeta 28/19
       Launcher
