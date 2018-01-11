@@ -1,5 +1,5 @@
 Signature-Version: 1.0
-SHA1-Digest-Manifest: D0DajZ6q3wZDrCo12Pb7DLg3Hb8=
+SHA1-Digest-Manifest: YRT+SGKyqlVtRXEzYhh62Pc5cjM=
 Created-By: 1.0 (Android SignApk)
 
 Name: META-INF/com/google/android/updater-script
@@ -12,16 +12,16 @@ Name: common/boot_patch.sh
 SHA1-Digest-Manifest: eCEYi2vCf1lzleH7gv0hs7W5l5Q=
 
 Name: x86/magiskboot
-SHA1-Digest-Manifest: fWQKLadJ5nFPWmp8QLfC0qCK64A=
+SHA1-Digest-Manifest: 3li6EjOFiu026ZTlgJ13zJG+Or4=
 
 Name: chromeos/kernel.keyblock
 SHA1-Digest-Manifest: obJ/Zq6Q4YjuLT9zMe2gVi0SVfQ=
 
 Name: x64/magiskinit
-SHA1-Digest-Manifest: 8LQWlcMY3P+IKlXQdtFPHivL9E8=
+SHA1-Digest-Manifest: r7JC3cXWJh/712ubxhu39H21DYc=
 
 Name: x64/magiskboot
-SHA1-Digest-Manifest: Ass4EwWoSfgBoRG2mUgUJRvW+2o=
+SHA1-Digest-Manifest: k0no400NJ5NsybzmfQioOt6/Rpg=
 
 Name: chromeos/futility
 SHA1-Digest-Manifest: XFdhLSY2+Y0QmsdpQ86C1+PiRIM=
@@ -30,26 +30,26 @@ Name: chromeos/kernel_data_key.vbprivk
 SHA1-Digest-Manifest: 3QeXadLiF9HJzK0798JQDt+7buY=
 
 Name: x86/magiskinit
-SHA1-Digest-Manifest: 8J6fWNjvsasH+sn9L4unIdSsmeQ=
+SHA1-Digest-Manifest: 6tn2xm+P/QYwGFvqU1lq+i7E8Vs=
 
 Name: common/util_functions.sh
-SHA1-Digest-Manifest: 9Y9QysEp3zYUfaAmwbtxD3Q2oXI=
+SHA1-Digest-Manifest: nE8J4Rd/zqlkZvvQUriTIqQHFhs=
 
 Name: addon.d/99-magisk.sh
 SHA1-Digest-Manifest: BLcRyoNiTBloG445N5pgiiuG5rI=
 
 Name: arm64/magiskboot
-SHA1-Digest-Manifest: WoJl5MDHUlGEb5pJumPsP3rvA0w=
+SHA1-Digest-Manifest: mqnx1KF5phLE0+UklA3gte3WL44=
 
 Name: arm/magiskinit
-SHA1-Digest-Manifest: 2sX1QHoA4w92jk82y0en0bVuyZM=
+SHA1-Digest-Manifest: dnHHgpiXKrodondT0a/mL/ZWY44=
 
 Name: common/magisk.apk
-SHA1-Digest-Manifest: Kr0245DzgrGZ8LRaDcwb2G/wr2k=
+SHA1-Digest-Manifest: KGsqo9tGMdnY824bec90M0BfJSQ=
 
 Name: arm/magiskboot
-SHA1-Digest-Manifest: Jgcd3XmmwYfvamD8pc02I9gw4Ao=
+SHA1-Digest-Manifest: SyUGqmAJ4bbPV5M3k51ldBQZNHA=
 
 Name: arm64/magiskinit
-SHA1-Digest-Manifest: uuF1WJmFtiynblPQoI96TppROPs=
+SHA1-Digest-Manifest: 7LMFvi5xOepO7bP2RgGZBzcvl3s=
 

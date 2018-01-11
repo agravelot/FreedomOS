@@ -11,16 +11,16 @@ Name: common/boot_patch.sh
 SHA1-Digest: /QB+9p9MhxGF2EGkgdzpR7YX4A0=
 
 Name: x86/magiskboot
-SHA1-Digest: bf//uJDP29XANBa3LKWoiilpEWI=
+SHA1-Digest: 45d5fTVy6G819+6U3uc/F76NZM4=
 
 Name: chromeos/kernel.keyblock
 SHA1-Digest: zeiSVt//JG/gc0RW0507ZEaYVxU=
 
 Name: x64/magiskinit
-SHA1-Digest: Jp3hR5P7b9zQ99XumnG2b2RB5GQ=
+SHA1-Digest: 7VA8de9csXhk5C/XqILWGWx/bEY=
 
 Name: x64/magiskboot
-SHA1-Digest: gS3xYn14/QVVGaVAjP8gRmuyUrM=
+SHA1-Digest: RwxWltqBXNBNzUGSoNEFn5kbd+I=
 
 Name: chromeos/futility
 SHA1-Digest: Evd5+Hi0p6Pk1PV8KSghtak9Cdc=
@@ -29,26 +29,26 @@ Name: chromeos/kernel_data_key.vbprivk
 SHA1-Digest: oLkG4w/5HLb7fes+kXTkmmnIhY4=
 
 Name: x86/magiskinit
-SHA1-Digest: wN4ZjmSonSjMEz+aRSrAbyenxZA=
+SHA1-Digest: A37LQyqdR7Z3x2VcjcV/Toq/fIc=
 
 Name: common/util_functions.sh
-SHA1-Digest: 2+FViNx+gpQrgSGWaGvy9kkj8K4=
+SHA1-Digest: 5vehWkyGBtW38X/0WpnAzIBmLQ8=
 
 Name: addon.d/99-magisk.sh
 SHA1-Digest: 3+GI7qXgSw/EYVcN1P+4fQ9TkTA=
 
 Name: arm64/magiskboot
-SHA1-Digest: C2tC6u9A+VV8nCghNUHczBiMHKs=
+SHA1-Digest: Ifur3YBLzjVNNsVdeMCio3Owlgs=
 
 Name: arm/magiskinit
-SHA1-Digest: yOdWDPiM09GmrVUD9rLklKCncRA=
+SHA1-Digest: w3oj1R/m59A5aPXT0O7Gu5HGchM=
 
 Name: common/magisk.apk
-SHA1-Digest: eIF5feDZbHLAjmyq9fLjnZw9jhI=
+SHA1-Digest: leZzT6+Q2thgsyL3nydrSIK5Tbk=
 
 Name: arm/magiskboot
-SHA1-Digest: AkZogr84WlDfA0aSKbxvV/bTS40=
+SHA1-Digest: F0Sw0wXTUW8ZdWp9DuIcP7UGuiw=
 
 Name: arm64/magiskinit
-SHA1-Digest: 74C1LUsKLppZ3yCTwgcgF+cla1s=
+SHA1-Digest: iJ1mmML1FcKV9qCN7eu+7yPaQ/A=
 

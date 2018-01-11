@@ -1,6 +1,6 @@
 3.3    
     UPDATE: OxygenOS 5.0.1
-    UPDATE: Magisk 15.2
+    UPDATE: Magisk 15.3
     UPDATE: OpenGApps 20180111
 
 3.2.1

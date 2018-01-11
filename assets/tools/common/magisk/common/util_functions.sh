@@ -7,8 +7,8 @@
 #
 ##########################################################################################
 
-MAGISK_VER="15.2"
-MAGISK_VER_CODE=1520
+MAGISK_VER="15.3"
+MAGISK_VER_CODE=1530
 SCRIPT_VERSION=$MAGISK_VER_CODE
 
 # Detect whether in boot mode

@@ -1,4 +1,5 @@
 3.2-CE
+    UPDATE: Magisk 15.3
     UPDATE: OpenGapps 20180109
     UPDATE: OxygenOS OpenBeta 3 
         Recorder
