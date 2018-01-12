@@ -1,6 +1,7 @@
 3.3-CE
     UPDATE: GoogleApps 20180109
-    UPDATE: Magisk 15.2
+    FIX: Bad UID GID and CAP for some binaries
+    UPDATE: Magisk 15.3
     UPDATE: OxygenOS OpenBeta 29/20
       Notes (New OnePlus) app
         Take note quickly and simply

@@ -1,4 +1,5 @@
 3.3
+    FIX: Bad UID GID and CAP for some binaries
     UPDATE: OxygenOS 5.0.1
     UPDATE: Magisk 15.3
     UPDATE: OpenGApps 20180111

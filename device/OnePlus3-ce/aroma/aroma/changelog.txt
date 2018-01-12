@@ -1,4 +1,5 @@
 3.3-CE
+    FIX: Bad UID GID and CAP for some binaries
     UPDATE: GoogleApps 20180109
     UPDATE: Magisk 15.3
     UPDATE: OxygenOS OpenBeta 29/20
