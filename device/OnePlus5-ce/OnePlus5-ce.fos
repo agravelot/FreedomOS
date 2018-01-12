@@ -23,25 +23,25 @@ ZIP_NAME=FreedomOS-CE
 TARGET_ARCH=arm64
 CODENAME=op5
 DEVICE=OnePlus5
-VERSION=3.1
+VERSION=3.2
 # It will be used for the assert verification at the beginning of installation of the ROM.
 ASSERT="OnePlus 5"
 
 # Basically, it's just the name of the downloaded zip file without the ".zip" extension.
-ROM_NAME=OnePlus5Oxygen_23_OTA_002_all_1712130703_5bf3132a9f2c4028
+ROM_NAME=OnePlus5Oxygen_23_OTA_004_all_1801042227_9f9ce8776345425d
 ROM_LINK=http://oxygenos.oneplus.net.s3.amazonaws.com/$ROM_NAME.zip
 # This MD5 is used for checking the integrity of the original rom.
-ROM_MD5=06b71ff2a9ca6cb403a85e979767bb9a
+ROM_MD5=d0aa96508eef1b0913d07827105eed03
 
 # OpenGapps
 GAPPS_BUILD=true
 GAPPS_ANDROID=8.0
 GAPPS_PLATFORM=arm64
 GAPPS_TYPE=nano
-GAPPS_DATE=20171116
+GAPPS_DATE=20180109
 GAPPS_ZIP="open_gapps-${GAPPS_PLATFORM}-${GAPPS_ANDROID}-${GAPPS_TYPE}-${GAPPS_DATE}"
 GAPPS_LINK="https://github.com/opengapps/${GAPPS_PLATFORM}/releases/download/${GAPPS_DATE}/${GAPPS_ZIP}.zip"
-GAPPS_MD5=2d1832d333dac247fc4b5cee93a936c0
+GAPPS_MD5=6e8831306655705b4171fa0aae444796
 
 ARISE_BUILD=false
 

@@ -1,0 +1,14 @@
+1.0-CE
+    Initial FreedomOS release
+    Hotfix: third party camera applications no longer capture green pictures with front camera
+    Updated to Android O (8.0)
+    Launcher
+        Optimized the app shortcut style
+        Combine icon options with app shortcuts
+        Now able to upload photos to Shot on OnePlus
+    System
+        Added Picture in Picture
+        Added Auto-Fill
+        Added Smart Text Selection
+        New Quick Settings design
+        Updated Android security patch to December

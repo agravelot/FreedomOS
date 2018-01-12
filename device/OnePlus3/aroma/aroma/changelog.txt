@@ -1,3 +1,9 @@
+3.3    
+    FIX: Bad UID GID and CAP for some binaries   
+    UPDATE: OxygenOS 5.0.1
+    UPDATE: Magisk 15.3
+    UPDATE: OpenGApps 20180111
+
 3.2.1
     REMOVE: OPBugReportLite know for logging users data
     Thanks to: https://twitter.com/fs0c131y/status/933037531066785797
