@@ -24,7 +24,7 @@ welcome.device=Cihaz
 welcome.updated=Güncellenmiş
 welcome.microblog=YouTube
 welcome.developer=Geliştirici
-welcome.next=Yüklemeye Devam Etmek İçin İleri'ye basın...
+welcome.next=Yüklemeye Devam Etmek İçin İleri\'ye basın...
 
 changelog.title=Değişiklikler
 changelog.desc=FreedomOS Değişiklikleri
@@ -94,7 +94,7 @@ info.passwordfix_no=Eski dosya kalsın
 info.custom=Özgürlük yolunda
 info.stock=Orijinal OnePlus stok yazılımı, kök erişimi yok
 info.assert_yes=Build.prop içindeki varyantı kontrol et
-info.assert_no=Varyantı build.prop'te kontrol etme
+info.assert_no=Varyantı build.prop\'te kontrol etme
 
 sys.title=Sistem bilgisi
 sys.info.wait=Sistem bilgisi alınıyor...
@@ -110,8 +110,8 @@ sys.info.storage.free=Kullanılabilir
 
 pre.install.title=Yüklemeye hazır
 pre.install=Sihirbaz kuruluma başlamaya hazır.
-pre.install2=Kuruluma başlamak için <b>Şimdi Yükle</b>'ye basın.
-pre.install3=Yükleme ayarlarınızı gözden geçirmek veya değiştirmek isterseniz <b>Geri</b>'ye basın.
+pre.install2=Kuruluma başlamak için <b>Şimdi Yükle</b>\'ye basın.
+pre.install3=Yükleme ayarlarınızı gözden geçirmek veya değiştirmek isterseniz <b>Geri</b>\'ye basın.
 
 # -- - GOOGLE APPS - -- #
 
@@ -143,7 +143,7 @@ youtube=YouTube
 info.android_pay=NFC ödemeler
 info.calculator=0010 1010
 info.calendar=Google Takvim
-info.call_log=Arama geçmişinizi Google'a gönderin
+info.call_log=Arama geçmişinizi Google\'a gönderin
 info.chrome=Web tarayıcı
 info.drive=Bulut hizmeti
 info.duo=Görüntülü arama uygulaması
@@ -229,7 +229,7 @@ info.oem_log=Günlüğe kaydetme
 info.oneplus_camera=Fotoğraf ve video çekme
 info.oneplus_gallery=Resimleri ve videoları görüntüleme
 info.ota=OnePlus sistem güncellemesi
-info.oneplus_wizard=Google 'dan sonra gelen Kurulum Sihirbazı
+info.oneplus_wizard=Google\'dan sonra gelen Kurulum Sihirbazı
 info.phase_beam=Hareketli duvar kağıdı
 info.protips=Bazı ipuçları
 info.sensor_test=Sensör testi uygulaması
@@ -239,8 +239,8 @@ info.swiftkey=Swiftkey klavye
 info.tags=NFC Etiketleri
 info.weather=OnePlus Hava Durumu uygulaması
 info.wifi_test=Wifi Testi
-info.dive_icon=OnePlus'dan simgeler paketi
-info.rifon_icon=OnePlus'dan simgeler paketi
+info.dive_icon=OnePlus\'dan simgeler paketi
+info.rifon_icon=OnePlus\'dan simgeler paketi
 
 mod.title=Ekstra mod
 mod.title2=İstediğiniz ekstra modu seçin
@@ -271,7 +271,7 @@ mod.tittle3=Ekstra mod
 root=Kök erişimini etkinleştir
 xposed=Material Tasarım Xposed Yükleyici
 adaway=Adaway
-adb=ADB'yi etkinleştir
+adb=ADB\'yi etkinleştir
 dns=Google DNS
 fos_wallpapers=FreedomOS duvar kağıtları
 emoji_one=EmojiOne
@@ -283,27 +283,27 @@ permissive=İzin Verilenleri Etkinleştir
 substratum=Substratum
 android_o_font=Android O Emoji
 
-info.root=SafetyNet'i geçmek için gereklidir
+info.root=SafetyNet\'i geçmek için gereklidir
 info.xposed=Xposed Installer uygulaması yalnızca DVD android tarafından yapılan
 info.adaway=Android için Reklam Engelleyici
 info.adb=Android Hata Ayıklama Köprüsü
-info.dns=DNS'i Ayarla 8.8.8.8/8.8.4.4
+info.dns=DNS\'i Ayarla 8.8.8.8/8.8.4.4
 info.fos_wallpapers=Tasarım @badboy47
 info.emoji_one=Açık Emoji Standardı
 info.google_assistant=Yalnızca ABD
 info.arise=A.R.I.S.E Ses Sistemi
-info.aptx=Qualcomm'dan ekstra kodek bileşenleri
+info.aptx=Qualcomm\'dan ekstra kodek bileşenleri
 info.40-wifi=2.4 MHz üzerinde 40 MHz kanal genişliği
 info.permissive=Çekirdeği serbest (permissive) olarak yeniden paketleyin (Ayrıcalıklı olmanın avantajlı hale getirilmesi)
 info.substratum=Yeni Tema Motoru
-info.android_o_font=Extracted from latest developer preview
+info.android_o_font=En son geliştirici sürümünden çıkarıldı
 
 # -- - ROOT - -- #
 supersu=SuperSU yükle
 magisk=Install MagiskSU
 
-info.supersu=@Chainfire - <#f00>SafetyNet'i kıracak</#>
-info.magisk=@topjohnwu - <#0f0>SafetyNet'i geçmek için gereklidir</#>
+info.supersu=@Chainfire - <#f00>SafetyNet\'i kıracak</#>
+info.magisk=@topjohnwu - <#0f0>SafetyNet\'i geçmek için gereklidir</#>
 
 # -- - THEME - -- #
 splash.tittle=Önyükleme ekranınızı seçin, başlangıç animasyonu DEĞİL
@@ -335,7 +335,7 @@ v4a_profiles=V4A Profiles & Kernels
 arkamys=Arkamys™
 icesound=ICEsound™
 sony_player=Sony Müzik Çalar
-rm_deep_buffer=Deep_buffer'ı audio_policy'den kaldır
+rm_deep_buffer=Deep_buffer\'ı audio_policy\'den kaldır
 sdcard_perm=SD kart izinlerini düzelt
 dirac=Dirac
 
@@ -344,10 +344,10 @@ info.v4a_old=Eski kullanıcılar için
 info.v4a_profiles=Çeşitli  çekirdek ses profilleri
 info.arkamys=Arkamys™ Ses sistemi
 info.icesound=Verilen talimatları dikkatle okuyun
-info.sony_player=TrackID, Ağ/DLNA, podcast'leri dahil et
+info.sony_player=TrackID, Ağ/DLNA, podcast\'leri dahil et
 info.rm_deep_buffer=Çoğu sorunu çözecek, pil dostu değil!
 info.sdcard_perm=Kurtarma oturumuna 3 - 5 dakika ekleyebilir
-info.dirac=Install modified Dirac from ARISE
+info.dirac=Değiştirilmiş Dirac\'ı ARISE\'den yükle
 
 # -- - KERNEL - -- #
 kernel.tittle=Çekirdek
